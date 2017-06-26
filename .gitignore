@@ -1,6 +1,7 @@
 *.pem
 *.idea
 .ipynb_checkpoints
+notebooks
 
 # OS generated files #
 ######################
