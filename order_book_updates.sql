@@ -1,0 +1,23 @@
+CREATE TABLE OrderBookUpdates (
+    id INT(64) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	client_oid VARCHAR(32),
+	funds VARCHAR(33),
+	maker_order_id VARCHAR(36),
+	new_funds VARCHAR(32),
+	new_size VARCHAR(32),
+	old_funds VARCHAR(32),
+	old_size VARCHAR(32),
+	order_id VARCHAR(36),
+	order_type VARCHAR(16),
+	price VARCHAR(32),
+	product_id VARCHAR(8) NOT NULL,
+	reason VARCHAR(16),
+	remaining_size VARCHAR(32),
+	sequence INT(64) NOT NULL,
+	side VARCHAR(4),
+	size VARCHAR(32),
+	taker_order_id VARCHAR(36),
+	time TIMESTAMP,
+	trade_id INT(64),
+	type VARCHAR(8)
+)

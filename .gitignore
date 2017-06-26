@@ -1,0 +1,3 @@
+*.pem
+*.idea
+.ipynb_checkpoints
