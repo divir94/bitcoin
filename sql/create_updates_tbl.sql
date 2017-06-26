@@ -13,7 +13,7 @@ CREATE TABLE OrderBookUpdates (
 	product_id VARCHAR(8) NOT NULL,
 	reason VARCHAR(16),
 	remaining_size VARCHAR(32),
-	sequence INT(64) NOT NULL,
+	sequence VARCHAR(32) NOT NULL,
 	side VARCHAR(4),
 	size VARCHAR(32),
 	taker_order_id VARCHAR(36),

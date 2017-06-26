@@ -1,7 +1,11 @@
-*.pem
 *.idea
 .ipynb_checkpoints
 notebooks
+
+# sensitive #
+######################
+*.pem
+mysql_creds.json
 
 # OS generated files #
 ######################
