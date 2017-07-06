@@ -67,6 +67,7 @@ def run(sleep=60):
         try:
             snapshot_df.to_sql(name=TABLE_NAME, con=engine, if_exists='append', index=False)
             print 'Written to df'
+            print 'Sequence: {}'.format(snapshot_json['sequence'])
         except Exception as e:
             print 'Failed to write to db'
             print e

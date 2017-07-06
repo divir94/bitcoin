@@ -39,6 +39,7 @@ class StoreUpdates(object):
 
         # commit with some frequency
         if time_since_last_commit > self.commit_frequency:
+            print 'Sequence: {}'.format(resp['sequence'])
             self.commit()
 
         # when debugging close conn after some tiem
@@ -47,15 +48,16 @@ class StoreUpdates(object):
 
     def on_error(self, ws, error):
         print 'Message error:\n{}'.format(error)
-        try:
-            self.on_close(ws)
-        except:
-            'Failed to close connection. Restarting websocket.'
-            self.run()
+        self.on_close(ws)
+        self.run()
 
     def on_close(self, ws):
-        self.conn.close()
-        print '### Closing db connection and websocket ###'
+        try:
+            self.conn.close()
+            print '### Closing db connection and websocket ###'
+        except Exception as e:
+            print 'Failed to close connection. Restarting websocket.'
+            print e
 
     def on_open(self, ws):
         def run(*args):
