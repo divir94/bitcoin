@@ -1,5 +1,6 @@
 TASKS
 
+0. Increase the reliability of the currently deployed strategy so that we can add more cash to it.
 1. Often the bid-ask spread on Bitstamp is more than $5. Instead of just executing market orders on Bitstamp, we could put in very competitive limit orders to capture some of this spread. To be able to do this safely we will have to have very low latency updates to and from Bitstamp.
 2. Instead of placing arbitrary profitable limit orders on Gdax, we could adjust the order with respect to the other orders in the book. For instance, it is worth forgoing ~10 cents to get in front of a large order, similarly it's worth gaining ~30 cents by letting several small orders get in front of our order. Additionally, instead of hardcoding the spreads we want for our cross-exchange trade, we could adapt it to the gdax order book. If I can sell on Gdax and buy on Bitstamp for a $2 profit, whether or not I should take this opportunity depends on the Gdax order book. If there aren't many sell orders, I should wait for a better spread, if there is a huge sell order at $2.10 spread, I should take the $2 spread (since the gap is unlikely to widen, at least from Gdax's perspective).
 3. Think about whether we want progressively larger spreads for trades that make our balance worse.
@@ -10,6 +11,7 @@ TASKS
 
 VALUE ESTIMATES
 
+0. Adding 2x $$$ directly results in 2x profits at our present size (Might need to think harder about order sizes if we add a lot more $$$)
 1. This should increase our per trade profit by 1.5x to 2x by adding ~$5 to our spreads.
 2. Hard to estimate. This could result in a lot more trades while making up for lower spreads on some trades.
 3. TODO
