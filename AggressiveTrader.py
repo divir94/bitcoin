@@ -115,44 +115,35 @@ def get_outstanding_orders_gdax():
         if side in outstanding_orders:
             competing_order = outstanding_orders[side]
             if order["created_at"] > competing_order["created_at"]:
-                resp = POOL.apply_async(cancel_gdax_order, (competing_order["id"],))
-                cancellations.append(resp)
+                # resp = POOL.apply_async(cancel_gdax_order, (competing_order["id"],))
+                # cancellations.append(resp)
                 outstanding_orders[side] = our_format
             else:
-                resp = POOL.apply_async(cancel_gdax_order, (order["id"],))
-                cancellations.append(resp)
+                # resp = POOL.apply_async(cancel_gdax_order, (order["id"],))
+                # cancellations.append(resp)
+                pass
         else:
             outstanding_orders[side] = our_format
     print(" . " * 20)
     return outstanding_orders, cancellations
 
-
-def buy_limit_order_with_retry(price):
-    for _ in range(3):
-        buy_resp = gdax_client.buy(type="limit", size=str(LIMIT_ORDER_SIZE), price=str(price),
-                                   time_in_force="GTT", cancel_after="min", product_id='BTC-USD',
-                                   post_only="True")
-        if "message" in buy_resp and buy_resp["message"] == "Insufficient funds":
-            time.sleep(0.2)
-        elif "id" in buy_resp and "price" in buy_resp:
-            return buy_resp
-        else:
-            raise Exception("Unable to place buy order.\n" + str(buy_resp))
-    raise Exception("Insufficient funds.\n" + str(buy_resp))
-
-
-def sell_limit_order_with_retry(price):
-    for _ in range(3):
-        sell_resp = gdax_client.sell(type="limit", size=str(LIMIT_ORDER_SIZE), price=str(price),
+def gdax_limit_order(price, side):
+    if side == "buy":
+        resp = gdax_client.buy(type="limit", size=str(LIMIT_ORDER_SIZE), price=str(price),
                                      time_in_force="GTT", cancel_after="min", product_id='BTC-USD',
                                      post_only="True")
-        if "message" in sell_resp and sell_resp["message"] == "Insufficient funds":
-            time.sleep(0.2)
-        elif "id" in sell_resp and "price" in sell_resp:
-            return sell_resp
-        else:
-            raise Exception("Unable to place buy order.\n" + str(sell_resp))
-    raise Exception("Insufficient funds.\n" + str(sell_resp))
+    elif side == "sell":
+        resp = gdax_client.sell(type="limit", size=str(LIMIT_ORDER_SIZE), price=str(price),
+                                time_in_force="GTT", cancel_after="min", product_id='BTC-USD',
+                                post_only="True")
+    else:
+        raise Exception("Unknown  " + str(side))
+    if "message" not in resp or resp["message"] == "Insufficient funds":
+        return resp
+    elif "id" in resp and "price" in resp:
+        return resp
+    else:
+        raise Exception("Unable to place order.\n" + str(resp))
 
 
 def cancel_all_gdax():
@@ -165,11 +156,6 @@ def get_balances():
     gdax_balances_async = POOL.apply_async(get_gdax_available_balances)
     bitstamp_balances_async = POOL.apply_async(get_bitstamp_available_balances)
     return gdax_balances_async.get(), bitstamp_balances_async.get()
-
-def get_order_books():
-    gdax_order_book_async = POOL.apply_async(get_order_book_gdax)
-    bitstamp_order_book_async = POOL.apply_async(bitstamp_client.order_book)
-    return gdax_order_book_async.get(), bitstamp_order_book_async.get()
 
 def compute_buy_and_sell_spreads(balances):
     if balances[("BTC", "balance")] - REQUIRED_BTC / 2 < 0.05:
@@ -199,6 +185,10 @@ def rebalance():
     """
     if TEST:
         print("THIS IS A TEST.\n" * 5)
+
+    async_gdax_order_book = POOL.apply_async(get_order_book_gdax)
+    async_bitstamp_order_book = POOL.apply_async(bitstamp_client.order_book)
+    async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
     gdax_balances, bitstamp_balances = get_balances()
     total_btc = bitstamp_balances[("BTC", "balance")] + gdax_balances[("BTC", "balance")]
     if total_btc >= REQUIRED_BTC + 0.01:
@@ -209,7 +199,7 @@ def rebalance():
             sell_market_order(bitstamp_client, size)
             async_cancel.wait(timeout=5)
             # letting balances update
-            time.sleep(1)
+            time.sleep(1.5)
         else:
             print("TEST Mode " * 10)
     elif REQUIRED_BTC >= total_btc + 0.01:
@@ -220,12 +210,11 @@ def rebalance():
             buy_market_order(bitstamp_client, size)
             async_cancel.wait(timeout=5)
             # letting balances update
-            time.sleep(1)
+            time.sleep(1.5)
         else:
             print("TEST Mode " * 10)
     else:
-        async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
-        gdax_book, bitstamp_book = get_order_books()
+        bitstamp_book = async_bitstamp_order_book.get()
         bitstamp_sell_price = get_price_estimate_for_btc(bitstamp_book, 1.5)
         bitstamp_buy_price = get_price_estimate_for_usd(bitstamp_book, 1.5)
         # Valid sell price on gdax is bitstamp buy + fees + spread
@@ -237,6 +226,7 @@ def rebalance():
         gdax_profitable_buy_price = \
             round(bitstamp_sell_price - 0.0025 * bitstamp_sell_price - buy_spread, 2)
         # TODO(vidurj) Adjust these prices so that we are within 7 cents of the closest order behind us
+        gdax_book = async_gdax_order_book.get()
         max_bid, min_ask = compute_max_bid_and_min_ask(gdax_book)
         limit_sell_price = max(gdax_profitable_sell_price, min_ask)
         limit_buy_price = min(gdax_profitable_buy_price, max_bid)
@@ -252,9 +242,9 @@ def rebalance():
             if "buy" in outstanding_orders:
                 if abs(outstanding_orders["buy"]["price"] - limit_buy_price) > 0.2 or outstanding_orders["buy"]["filled_size"] > 0.05:
                     cancellations.extend(async_cancel_gdax_buy(outstanding_orders))
-                    buy_limit_order_with_retry(limit_buy_price)
+                    gdax_limit_order(limit_buy_price, "buy")
             elif gdax_balances[("USD", "balance")] >= LIMIT_ORDER_SIZE * limit_buy_price:
-                buy_limit_order_with_retry(limit_buy_price)
+                gdax_limit_order(limit_buy_price, "buy")
 
         if not bitstamp_supports_ask_on_gdax:
             cancellations.extend(async_cancel_gdax_sell(outstanding_orders))
@@ -262,9 +252,9 @@ def rebalance():
             if "sell" in outstanding_orders:
                 if abs(outstanding_orders["sell"]["price"] - limit_sell_price) > 0.2 or outstanding_orders["sell"]["filled_size"] > 0.05:
                     cancellations.extend(async_cancel_gdax_sell(outstanding_orders))
-                    sell_limit_order_with_retry(limit_sell_price)
+                    gdax_limit_order(limit_sell_price, "sell")
             elif gdax_balances[("BTC", "balance")] >= LIMIT_ORDER_SIZE:
-                sell_limit_order_with_retry(limit_sell_price)
+                gdax_limit_order(limit_sell_price, "sell")
 
         for resp in cancellations:
             print("Cancelled order", resp.get())
@@ -279,7 +269,7 @@ while True:
         signal.alarm(0)
         elapsed_time = time.time() - start_time
         print("elapsed time", elapsed_time)
-        time.sleep(1)
+        time.sleep(0.25)
     except:
         try:
             gdax_client.cancel_all(data={"product": "BTC-USD"})
