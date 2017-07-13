@@ -1,7 +1,7 @@
 # GDAX/Bitstamp Arbitrage
 When the spread on the two exchanges is greater than some threshold, we buy BTC on the cheaper exchange and sell on the more expensive one. We don't want to have any exposure to BTC so we are never long/short BTC. In order to make sure that we don't have only one side filled, we place a limit buy order on the cheaper exchange and when that fills we immediately execute a market order on the other exchange.
 
-Features
+## Features
 - We want to have an equal amount of BTC and cash on both exchanges in order to take advantage of a big spread in one direction
 - We make all calls async to reduce delays
 
