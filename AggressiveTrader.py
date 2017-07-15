@@ -11,8 +11,8 @@ import math
 from multiprocessing.pool import ThreadPool
 
 def create_clients():
-    bitstamp_client = bitstamp.client.Trading(username='752298', key='zVkOwtFZppdcdcJoltubTQflC6uKiE7t',
-                                              secret='lFP5T96pkoK4orvGX7K92gsZNhnpcflV')
+    bitstamp_client = bitstamp.client.Trading(username='752298', key='vBrdMQODpkodqrP5fCoRwZfyGsTdtwKN',
+                                              secret='LMZI5bd9OhS2T8jmi3pXklpE9776Cpwb')
     gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
                                            b64secret="uSysPzywwj3LUlPuuNkKEHRpxhd4A+K/JGwbEfrc28nkd4c6qMLwr1IbRsw1GB1BKQzVXoj88n/WjMvIAvv/MA==",
                                            passphrase="ltg10b8unuo")
@@ -20,8 +20,8 @@ def create_clients():
 
 POOL = ThreadPool(processes=5)
 TEST = False
-MIN_BALANCING_SPREAD = 0.2
-MIN_UNBALANCING_SPREAD = 3.2
+MIN_BALANCING_SPREAD = 3.2
+MIN_UNBALANCING_SPREAD = 7.2
 TIME_BETWEEN_REBALANCES = 2
 gdax_client, bitstamp_client = create_clients()
 
@@ -79,7 +79,7 @@ def get_price_estimate_for_usd(book, desired_vol, desired_orders=4):
             return price
     return 10 ** 8
 
-def get_price_estimate_for_btc(book, desired_vol, desired_orders=4):
+def get_price_estimate_for_btc(book, desired_vol, desired_orders=6):
     for item in book["bids"]:
         vol = float(item[1])
         desired_orders -= 1
@@ -168,11 +168,11 @@ def get_balances():
     return gdax_balances_async.get(), bitstamp_balances_async.get()
 
 def compute_buy_and_sell_spreads(balances):
-    if balances[("BTC", "balance")] - required_btc / 2 < 0.05:
+    if balances[("BTC", "balance")] - required_btc / 2 < 0.0:
         buy_spread = MIN_BALANCING_SPREAD
     else:
         buy_spread = MIN_UNBALANCING_SPREAD
-    if required_btc / 2 - balances[("BTC", "balance")] < 0.05:
+    if required_btc / 2 - balances[("BTC", "balance")] < 0.0:
         sell_spread = MIN_BALANCING_SPREAD
     else:
         sell_spread = MIN_UNBALANCING_SPREAD
@@ -199,7 +199,7 @@ def compute_max_bid_and_min_ask(book):
     max_bid = min(best_ask - 0.01, best_bid + 0.05)
     return max_bid, min_ask
 
-def rebalance(required_btc):
+def rebalance(data):
     """
     :param data: Must contain the balances on both exchanges. These are maintained by
     """
@@ -210,33 +210,37 @@ def rebalance(required_btc):
     async_bitstamp_order_book = POOL.apply_async(bitstamp_client.order_book)
     async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
     gdax_balances, bitstamp_balances = get_balances()
-    total_btc = bitstamp_balances[("BTC", "balance")] + gdax_balances[("BTC", "balance")]
-    if total_btc >= required_btc + 0.01:
-        size = round(total_btc - required_btc, 2)
+    if round(data["btc_on_bitstamp"], 2) != round(bitstamp_balances[("BTC", "balance")], 2):
+        print("!" * 120)
+        print("Local and Bitstamp balances out of sync", data["btc_on_bitstamp"], bitstamp_balances[("BTC", "balance")])
+        gdax_client.cancel_all(data={"product": "BTC-USD"})
+        time.sleep(1)
+        return data
+    total_btc =  data["btc_on_bitstamp"] + gdax_balances[("BTC", "balance")]
+    if total_btc >= data["required_btc"] + 0.01:
+        size = round(total_btc - data["required_btc"], 2)
         print("Executing market order on bitstamp. Selling ", size)
         async_cancel = POOL.apply_async(cancel_all_gdax)
         if not TEST:
+            data["btc_on_bitstamp"] = data["btc_on_bitstamp"] - size
             sell_market_order(bitstamp_client, size)
             async_cancel.wait(timeout=5)
-            # letting balances update
-            time.sleep(1.5)
         else:
             print("TEST Mode " * 10)
-    elif required_btc >= total_btc + 0.01:
-        size = round(required_btc - total_btc, 2)
+    elif data["required_btc"] >= total_btc + 0.01:
+        size = round(data["required_btc"] - total_btc, 2)
         print("Executing market order on bitstamp. Buying ", size)
         async_cancel = POOL.apply_async(cancel_all_gdax)
         if not TEST:
+            data["btc_on_bitstamp"] = data["btc_on_bitstamp"] + size
             buy_market_order(bitstamp_client, size)
             async_cancel.wait(timeout=5)
-            # letting balances update
-            time.sleep(1.5)
         else:
             print("TEST Mode " * 10)
     else:
         bitstamp_book = async_bitstamp_order_book.get()
-        bitstamp_sell_price = get_price_estimate_for_btc(bitstamp_book, 1.5)
-        bitstamp_buy_price = get_price_estimate_for_usd(bitstamp_book, 1.5)
+        bitstamp_sell_price = get_price_estimate_for_btc(bitstamp_book, 3)
+        bitstamp_buy_price = get_price_estimate_for_usd(bitstamp_book, 3)
         # Valid sell price on gdax is bitstamp buy + fees + spread
         buy_spread, sell_spread = compute_buy_and_sell_spreads(gdax_balances)
         print("buy spread:", buy_spread, "sell spread:", sell_spread)
@@ -275,29 +279,33 @@ def rebalance(required_btc):
 
         for resp in cancellations:
             print("Cancelled order", resp.get())
+    return data
 
 signal.signal(signal.SIGALRM, timeout_handler)
 gdax_client.cancel_all(data={"product": "BTC-USD"})
 time.sleep(2)
 gdax_balances, bitstamp_balances = get_balances()
 required_btc = bitstamp_balances[("BTC", "balance")] + gdax_balances[("BTC", "balance")]
+data = {
+    "required_btc": required_btc,
+    "btc_on_bitstamp": bitstamp_balances[("BTC", "balance")]
+}
 while True:
     try:
         start_time = time.time()
-        signal.alarm(30)
-        rebalance(required_btc)
+        signal.alarm(15)
+        data = rebalance(data)
         signal.alarm(0)
         elapsed_time = time.time() - start_time
         print("elapsed time", elapsed_time)
         time.sleep(0.25)
     except:
         try:
-            gdax_client, bitstamp_client = create_clients()
             gdax_client.cancel_all(data={"product": "BTC-USD"})
             print("Unexpected error:", sys.exc_info()[0])
             print(traceback.format_exc())
             signal.alarm(0)
-            time.sleep(30)
+            time.sleep(10)
         except:
             print("Unexpected error:", sys.exc_info()[0])
             print(traceback.format_exc())
