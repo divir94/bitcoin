@@ -7,10 +7,11 @@ When the spread on the two exchanges is greater than some threshold, we buy BTC 
 
 ## To Do Over the Next Few Days
 
-1. Check for the cheaper exchange before executing market orders. (vidurj)
-2. Add timeouts to each request in stead of the signal. (vidurj)
+1. Add timeouts to each request in stead of the signal. (vidurj) 
+2. Make sure that even if GDAX is lagging we're fine.
 3. Add logging. (vidurj)
-4. Analyse how we lost money on 2 trades. (divir94)
+4. Check for the cheaper exchange before executing market orders. (vidurj)
+5. Analyse how we lost money on 2 trades. (divir94)
 
 ## Mid Term Tasks
 
