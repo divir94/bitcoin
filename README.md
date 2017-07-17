@@ -5,7 +5,14 @@ When the spread on the two exchanges is greater than some threshold, we buy BTC 
 - We want to have an equal amount of BTC and cash on both exchanges in order to take advantage of a big spread in one direction
 - We make all calls async to reduce delays
 
-## Tasks
+## To Do Over the Next Few Days
+
+1. Check for the cheaper exchange before executing market orders. (vidurj)
+2. Add timeouts to each request in stead of the signal. (vidurj)
+3. Add logging. (vidurj)
+4. Analyse how we lost money on 2 trades. (divir94)
+
+## Mid Term Tasks
 
 1. Increase the reliability of the currently deployed strategy so that we can add more cash to it.
 2. Often the bid-ask spread on Bitstamp is more than $5. Instead of just executing market orders on Bitstamp, we could put in very competitive limit orders to capture some of this spread. To be able to do this safely we will have to have very low latency updates to and from Bitstamp.
