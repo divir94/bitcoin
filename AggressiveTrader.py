@@ -11,8 +11,8 @@ import math
 from multiprocessing.pool import ThreadPool
 
 def create_clients():
-    bitstamp_client = bitstamp.client.Trading(username='752298', key='zVkOwtFZppdcdcJoltubTQflC6uKiE7t',
-                                              secret='lFP5T96pkoK4orvGX7K92gsZNhnpcflV')
+    bitstamp_client = bitstamp.client.Trading(username='752298', key='vBrdMQODpkodqrP5fCoRwZfyGsTdtwKN',
+                                              secret='LMZI5bd9OhS2T8jmi3pXklpE9776Cpwb')
     gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
                                            b64secret="uSysPzywwj3LUlPuuNkKEHRpxhd4A+K/JGwbEfrc28nkd4c6qMLwr1IbRsw1GB1BKQzVXoj88n/WjMvIAvv/MA==",
                                            passphrase="ltg10b8unuo")

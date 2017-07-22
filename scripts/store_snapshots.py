@@ -37,7 +37,14 @@ ENGINE = get_sqlalchemy_engine()
 
 
 def store_df(df, tbl_name):
-    df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
+    try:
+        df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
+    except Exception as e:
+        now = pd.datetime.now()
+        time_msg = '=' * 20 + '\n{}\n'.format(now)
+        failed_msg = time_msg + 'Failed to store data'
+        print failed_msg
+        print e
     return
 
 
