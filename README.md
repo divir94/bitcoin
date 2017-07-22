@@ -7,7 +7,7 @@ When the spread on the two exchanges is greater than some threshold, we buy BTC 
 
 ## To Do Over the Next Few Days
 
-1. Add timeouts to each request in stead of the signal. (vidurj) 
+1. ~~Add timeouts to each request in stead of the signal. (vidurj)~~ Done for gdax, and will be subsumed by websockets anyway.  
 2. Make sure that even if GDAX is lagging we're fine.
 3. Add logging. (vidurj)
 4. Check for the cheaper exchange before executing market orders. (vidurj)
