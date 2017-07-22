@@ -157,7 +157,7 @@ def cancel_all_gdax():
     return gdax_client.cancel_all(data={"product": "BTC-USD"})
 
 def get_order_book_gdax():
-    return gdax_client.get_product_order_book('BTC-USD', level=1)
+    return gdax_client.get_product_order_book('BTC-USD', level=2)
 
 def get_balances():
     gdax_balances_async = POOL.apply_async(get_gdax_available_balances)
