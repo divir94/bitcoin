@@ -20,7 +20,7 @@ def create_clients():
 
 POOL = ThreadPool(processes=5)
 TEST = False
-MIN_BALANCING_SPREAD = 5.2
+MIN_BALANCING_SPREAD = 8.2
 MIN_UNBALANCING_SPREAD = 8.2
 gdax_client, bitstamp_client = create_clients()
 
@@ -178,12 +178,12 @@ def compute_buy_and_sell_spreads(balances):
 def compute_buy_order_size(gdax_balances, bitstamp_balances, gdax_buy_price):
     gdax_supported = gdax_balances[("USD", "balance")] / gdax_buy_price
     bitstamp_supported = bitstamp_balances[("BTC", "available")]
-    return min(round_down(min(bitstamp_supported, gdax_supported / 2.0)), 0.5)
+    return round_down(min(bitstamp_supported, gdax_supported))
 
 def compute_sell_order_size(gdax_balances, bitstamp_balances, bitstamp_buy_price):
     gdax_supported = gdax_balances[("BTC", "balance")]
     bitstamp_supported = bitstamp_balances[("USD", "available")] / bitstamp_buy_price
-    return min(round_down(min(bitstamp_supported, gdax_supported / 2.0)), 0.5)
+    return round_down(min(bitstamp_supported, gdax_supported))
 
 def compute_max_bid_and_min_ask(book):
     best_bid = float(book["bids"][0][0])
@@ -276,17 +276,17 @@ def rebalance(data):
             if (abs(outstanding_orders["buy"]["price"] - limit_buy_price) > 1) or (outstanding_orders["buy"]["filled_size"] > 0.05):
                 cancellations.extend(async_cancel_gdax_buy(outstanding_orders))
                 if buy_order_size > 0:
-                    gdax_limit_order(price=limit_buy_price, size=buy_order_size, side="buy")
+                    POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, "buy"))
         elif buy_order_size > 0:
-            gdax_limit_order(price=limit_buy_price, size=buy_order_size, side="buy")
+            POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, "buy"))
 
         if "sell" in outstanding_orders:
             if (abs(outstanding_orders["sell"]["price"] - limit_sell_price) > 1) or (outstanding_orders["sell"]["filled_size"] > 0.05):
                 cancellations.extend(async_cancel_gdax_sell(outstanding_orders))
                 if sell_order_size > 0:
-                    gdax_limit_order(price=limit_sell_price, size=sell_order_size, side="sell")
+                    POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, "sell"))
         elif sell_order_size > 0:
-            gdax_limit_order(price=limit_sell_price, size=sell_order_size, side="sell")
+            POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, "sell"))
     return data
 
 
