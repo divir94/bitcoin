@@ -1,6 +1,7 @@
 import gdax
 import bitstamp.client
 import time
+import logging
 import datetime
 import random
 import pickle
@@ -9,6 +10,23 @@ import traceback
 import math
 from multiprocessing.pool import ThreadPool
 import signal
+from datetime import datetime
+
+# logging
+logger = logging.getLogger()
+logging.Formatter.converter = time.gmtime
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+fh = logging.FileHandler('AggressiveTrader.log')
+fh.setFormatter(formatter)
+fh.setLevel(logging.INFO)
+logger.addHandler(fh)
+
+ch = logging.StreamHandler()
+ch.setFormatter(formatter)
+ch.setLevel(logging.WARN)
+logger.addHandler(ch)
 
 def create_clients():
     bitstamp_client = bitstamp.client.Trading(username='752298', key='MWaOh0LJmQLA2n6qxShMrFKTRNvqYXvO',
@@ -27,22 +45,23 @@ gdax_client, bitstamp_client = create_clients()
 
 def timeout_handler(signum, frame):
     gdax_client.cancel_all(data={"product": "BTC-USD"})
-    print("Bot got stuck!")
+    logger.error("Bot got stuck!")
     raise Exception("Bot got stuck!")
 
 def round_down(num):
     return math.floor(num * 100) / 100.0
 
 # TODO(vidurj) carefully think through whether we want to use balance or available in these two funcs
-def get_gdax_available_balances():
+def get_gdax_balances():
     data = {}
     accounts = gdax_client.get_accounts()
     for account in accounts:
         data[(account["currency"], "available")] = float(account["available"])
         data[(account["currency"], "balance")] = float(account["balance"])
+    logger.info("GDAX balances {}".format(data))
     return data
 
-def get_bitstamp_available_balances():
+def get_bitstamp_balances():
     balances = bitstamp_client.account_balance()
     data = {
         ("USD", "available"): float(balances["usd_available"]),
@@ -50,22 +69,25 @@ def get_bitstamp_available_balances():
         ("BTC", "available"): float(balances["btc_available"]),
         ("BTC", "balance"): float(balances["btc_balance"])
     }
+    logger.info("Bitstamp balances {}".format(data))
     return data
 
-def buy_market_order(client, amount, base="btc", quote="usd"):
+def bitstamp_buy_market_order(client, amount, base="btc", quote="usd"):
     """
     Order to buy amount of bitcoins for specified price.
     """
     data = {'amount': amount}
     url = client._construct_url("buy/market/", base, quote)
+    logger.info("executing bitstamp buy market order for {}".format(amount))
     return client._post(url, data=data, return_json=True, version=2)
 
-def sell_market_order(client, amount, base="btc", quote="usd"):
+def bitstamp_sell_market_order(client, amount, base="btc", quote="usd"):
     """
     Order to buy amount of bitcoins for specified price.
     """
     data = {'amount': amount}
     url = client._construct_url("sell/market/", base, quote)
+    logger.info("executing bitstamp sell market order for {}".format(amount))
     return client._post(url, data=data, return_json=True, version=2)
 
 def get_price_estimate_for_usd(book, desired_vol, desired_orders=4):
@@ -102,7 +124,7 @@ def async_cancel_gdax_sell(outstanding_orders):
 
 def cancel_gdax_order(order_id):
     resp = gdax_client.cancel_order(order_id)
-    print("Attempted to cancel order", order_id, resp)
+    logger.info("Attempted to cancel order {}\nResponse: {}".format(order_id, resp))
 
 
 def get_outstanding_orders_gdax():
@@ -110,11 +132,10 @@ def get_outstanding_orders_gdax():
     assert len(raw_orders) == 1
     orders = raw_orders[0]
     outstanding_orders = {}
-    print(" . " * 20)
     cancellations = []
+    outstanding_order_str = ""
     for order in orders:
-        print(" " * 29 + "*")
-        print(order)
+        outstanding_order_str += str(order)
         side = order["side"]
         assert side == "buy" or side == "sell"
         our_format = {
@@ -129,39 +150,43 @@ def get_outstanding_orders_gdax():
                 outstanding_orders[side] = our_format
         else:
             outstanding_orders[side] = our_format
-    print(" . " * 20)
+    logger.info(outstanding_order_str)
     return outstanding_orders, cancellations
 
 def gdax_limit_order(price, size, side):
     if side == "buy":
+
         resp = gdax_client.buy(type="limit", size=str(size), price=str(price),
                                      time_in_force="GTT", cancel_after="min", product_id='BTC-USD',
                                      post_only="True")
+        logger.info("Placing buy limit order for size {} and price {}\nResponse: {}".format(size, price, resp))
     elif side == "sell":
         resp = gdax_client.sell(type="limit", size=str(size), price=str(price),
                                 time_in_force="GTT", cancel_after="min", product_id='BTC-USD',
                                 post_only="True")
+        logger.info("Placing sell limit order for size {} and price {}\nResponse: {}".format(size, price, resp))
     else:
         raise Exception("Unknown  " + str(side))
     if "message" in resp and resp["message"] == "Insufficient funds":
         return resp
     elif "id" in resp and "price" in resp:
-        print("placed order", resp["side"], resp["price"], resp["size"], resp["id"])
         return resp
     else:
         raise Exception("Unable to place order.\n" + str(resp))
 
 
 def cancel_all_gdax():
-    print("Cancelling all GDAX orders")
+    logger.info("Cancelling all GDAX orders")
     return gdax_client.cancel_all(data={"product": "BTC-USD"})
 
 def get_order_book_gdax():
-    return gdax_client.get_product_order_book('BTC-USD', level=2)
+    book = gdax_client.get_product_order_book('BTC-USD', level=2)
+    #logger.debug("gdax book {}".format(book))
+    return book
 
 def get_balances():
-    gdax_balances_async = POOL.apply_async(get_gdax_available_balances)
-    bitstamp_balances_async = POOL.apply_async(get_bitstamp_available_balances)
+    gdax_balances_async = POOL.apply_async(get_gdax_balances)
+    bitstamp_balances_async = POOL.apply_async(get_bitstamp_balances)
     return gdax_balances_async.get(timeout=3), bitstamp_balances_async.get(timeout=3)
 
 def compute_buy_and_sell_spreads(balances):
@@ -173,6 +198,7 @@ def compute_buy_and_sell_spreads(balances):
         sell_spread = MIN_BALANCING_SPREAD
     else:
         sell_spread = MIN_UNBALANCING_SPREAD
+    logger.info("gdax buy spread {} sell spread {}".format(buy_spread, sell_spread))
     return buy_spread, sell_spread
 
 def compute_buy_order_size(gdax_balances, bitstamp_balances, gdax_buy_price):
@@ -194,6 +220,7 @@ def compute_max_bid_and_min_ask(book):
     # Cannot place a bid at or above the best ask. Doesn't make sense to place bid $0.05 better than
     # best bid
     max_bid = min(best_ask - 0.01, best_bid + 0.05)
+    logger.info("gdax max bid {} min ask {}".format(max_bid, min_ask))
     return max_bid, min_ask
 
 
@@ -210,10 +237,12 @@ def average_price_for_coins(book, requested_vol):
         if remaining_vol == 0:
             return total_cost / requested_vol
     return None
+
 def rebalance(data):
     """
     :param data: Must contain the balances on both exchanges. These are maintained by
     """
+    logger.info("rebalancing")
     if TEST:
         print("THIS IS A TEST.\n" * 5)
 
@@ -222,16 +251,15 @@ def rebalance(data):
     async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
     gdax_balances, bitstamp_balances = get_balances()
     bitstamp_book = async_bitstamp_order_book.get(timeout=3)
+    #logger.debug("bitstamp order book {}".format(bitstamp_book))
     if round(data["btc_on_bitstamp"], 2) != round(bitstamp_balances[("BTC", "balance")], 2):
-        print("!" * 120)
-        print("Local and Bitstamp balances out of sync", data["btc_on_bitstamp"], bitstamp_balances[("BTC", "balance")])
+        logger.warn("Local and Bitstamp balances out of sync {} {}".format(data["btc_on_bitstamp"], bitstamp_balances[("BTC", "balance")]))
         gdax_client.cancel_all(data={"product": "BTC-USD"})
         time.sleep(1)
         return data
     total_btc =  data["btc_on_bitstamp"] + gdax_balances[("BTC", "balance")]
     if total_btc >= data["required_btc"] + 0.01:
         size = round(total_btc - data["required_btc"], 2)
-        print("Executing market order on bitstamp. Selling ", size)
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
             data["btc_on_bitstamp"] = data["btc_on_bitstamp"] - size
@@ -241,7 +269,6 @@ def rebalance(data):
             print("TEST Mode " * 10)
     elif data["required_btc"] >= total_btc + 0.01:
         size = round(data["required_btc"] - total_btc, 2)
-        print("Executing market order on bitstamp. Buying ", size)
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
             data["btc_on_bitstamp"] = data["btc_on_bitstamp"] + size
@@ -255,13 +282,12 @@ def rebalance(data):
         bitstamp_buy_price = average_price_for_coins(bitstamp_book["asks"], 10)
         # Valid sell price on gdax is bitstamp buy + fees + spread
         buy_spread, sell_spread = compute_buy_and_sell_spreads(gdax_balances)
-        print("buy spread:", buy_spread, "sell spread:", sell_spread)
-        print("bitstamp buy:", bitstamp_buy_price, "bitstamp sell:", bitstamp_sell_price)
+        logger.info("bitstamp buy: {} bitstamp sell: {}".format(bitstamp_buy_price, bitstamp_sell_price))
         gdax_profitable_sell_price = round(bitstamp_buy_price * 1.0025 + sell_spread, 2)
         # Valid buy price on gdax is bitstamp sell - fees - spread
         gdax_profitable_buy_price = round(bitstamp_sell_price * (1 - 0.0025) - buy_spread, 2)
-        print("gdax profitable buy price", gdax_profitable_buy_price,
-              "gdax profitable sell price", gdax_profitable_sell_price)
+        logger.info("gdax profitable buy price {} gdax profitable sell price {}"
+                    .format(gdax_profitable_buy_price,gdax_profitable_sell_price))
         max_bid, min_ask = compute_max_bid_and_min_ask(gdax_book)
         limit_sell_price = max(gdax_profitable_sell_price, min_ask)
         limit_buy_price = min(gdax_profitable_buy_price, max_bid)
@@ -306,20 +332,17 @@ while True:
         data = rebalance(data)
         signal.alarm(0)
         elapsed_time = time.time() - start_time
-        print("elapsed time", elapsed_time)
+        logger.info("elapsed time {}".format(elapsed_time))
         if elapsed_time < 0.9:
             time.sleep(0.9 - elapsed_time)
     except:
         try:
+            logger.error("Unexpected error: {}\n{}".format(sys.exc_info()[0], traceback.format_exc()))
             cancel_all_gdax()
             signal.alarm(0)
-            print("Unexpected error:", sys.exc_info()[0])
-            print(traceback.format_exc())
         except:
-            print("Unexpected error:", sys.exc_info()[0])
-            print(traceback.format_exc())
+            logger.error("Unexpected error in error handling: {}\n{}".format(sys.exc_info()[0], traceback.format_exc()))
             time.sleep(120)
             gdax_client, bitstamp_client = create_clients()
             cancel_all_gdax()
-    print("-" * 60)
 
