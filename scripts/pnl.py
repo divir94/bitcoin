@@ -161,7 +161,7 @@ def run_report():
 
     balances = get_balances()
     print balances
-    return pnl
+    return fills
 
 
 if __name__ == '__main__':

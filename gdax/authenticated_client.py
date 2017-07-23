@@ -116,7 +116,7 @@ class AuthenticatedClient(PublicClient):
             self.paginate_orders(result, r.headers['cb-after'])
         return result
 
-    def get_fills(self, order_id='', product_id='', before='', after='', limit=''):
+    def get_fills(self, order_id='', product_id='', before='', after='', limit=100):
         result = []
         url = self.url + '/fills?'
         if order_id:
@@ -127,27 +127,31 @@ class AuthenticatedClient(PublicClient):
             url += "before={}&".format(str(before))
         if after:
             url += "after={}&".format(str(after))
-        if limit:
+        if limit < 100:
             url += "limit={}&".format(str(limit))
         r = requests.get(url, auth=self.auth)
         # r.raise_for_status()
         result.append(r.json())
         if 'cb-after' in r.headers and limit is not len(r.json()):
-            return self.paginate_fills(result, r.headers['cb-after'], order_id=order_id, product_id=product_id)
+            return self.paginate_fills(result, limit - 100, r.headers['cb-after'], order_id=order_id, product_id=product_id)
         return result
 
-    def paginate_fills(self, result, after, order_id='', product_id=''):
+    def paginate_fills(self, result, limit, after, order_id='', product_id=''):
+        if limit <= 0:
+            return result
         url = self.url + '/fills?after={}&'.format(str(after))
         if order_id:
             url += "order_id={}&".format(str(order_id))
         if product_id:
             url += "product_id={}&".format(product_id or self.product_id)
+        if limit < 100:
+            url += "limit={}&".format(str(limit))
         r = requests.get(url, auth=self.auth)
         # r.raise_for_status()
         if r.json():
             result.append(r.json())
         if 'cb-after' in r.headers:
-            return self.paginate_fills(result, r.headers['cb-after'], order_id=order_id, product_id=product_id)
+            return self.paginate_fills(result, limit - 100, r.headers['cb-after'], order_id=order_id, product_id=product_id)
         return result
 
     def get_fundings(self, result='', status='', after=''):
