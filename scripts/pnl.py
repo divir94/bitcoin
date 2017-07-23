@@ -20,10 +20,11 @@ bitstamp_client = bitstamp.client.Trading(username='752298',
                                           secret='49VrY4K9sJp3aBzHq7l2fyBBnBcmNeYA')
 
 
-def get_gdax_fills():
+def get_gdax_fills(limit=100):
     # get df
-    fills = gdax_client.get_fills(limit=100)
-    fills = pd.DataFrame.from_records(fills[0], index='created_at')
+    fills = gdax_client.get_fills(limit=limit)
+    fills = [item for sublist in fills for item in sublist]
+    fills = pd.DataFrame.from_records(fills, index='created_at')
     fills.index = pd.DatetimeIndex(fills.index)
     fills.index.name = 'datetime'
 
@@ -43,9 +44,9 @@ def get_gdax_fills():
     return fills[order]
 
 
-def get_bitstamp_fills():
+def get_bitstamp_fills(limit=100):
     # get df
-    fills = bitstamp_client.user_transactions()
+    fills = bitstamp_client.user_transactions(limit=limit)
     fills = pd.DataFrame.from_records(fills, index='datetime')
     fills.index = pd.DatetimeIndex(fills.index)
     fills = fills.astype(float)
@@ -71,12 +72,12 @@ def get_bitstamp_fills():
     return fills[order]
 
 
-def plot_all_fills():
+def plot_all_fills(limit=100):
     import cufflinks as cf
     cf.go_offline()
 
-    gdax_fills = get_gdax_fills()
-    bitstamp_fills = get_bitstamp_fills()
+    gdax_fills = get_gdax_fills(limit)
+    bitstamp_fills = get_bitstamp_fills(limit)
 
     gdax_pnl = gdax_fills.total.groupby(gdax_fills.index).sum()
     bitstamp_pnl = bitstamp_fills.total.groupby(bitstamp_fills.index).sum()
@@ -88,9 +89,9 @@ def plot_all_fills():
     return
 
 
-def get_all_fills():
-    gdax_fills = get_gdax_fills()
-    bitstamp_fills = get_bitstamp_fills()
+def get_all_fills(limit=100):
+    gdax_fills = get_gdax_fills(limit)
+    bitstamp_fills = get_bitstamp_fills(limit)
 
     gdax_fills['exchange'] = 'gdax'
     bitstamp_fills['exchange'] = 'bitstamp'
