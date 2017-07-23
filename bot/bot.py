@@ -15,7 +15,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-fh = logging.FileHandler('bot.log', 'w')
+fh = logging.FileHandler('../logs/bot.log', 'w')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 

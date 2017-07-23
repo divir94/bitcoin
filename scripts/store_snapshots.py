@@ -28,7 +28,7 @@ ENGINE = None # initialized later
 ###########
 
 def get_sqlalchemy_engine():
-    creds = json.load(open('../mysql_creds.json', 'rb'))
+    creds = json.load(open('../creds/mysql.json', 'rb'))
     engine_name = 'mysql://{user}:{pwd}@{host}/{db}'.format(**creds)
     engine = create_engine(engine_name, echo=False)
     return engine
