@@ -217,7 +217,6 @@ def cancel_all_gdax():
 
 def get_order_book_gdax():
     book = gdax_client.get_product_order_book('BTC-USD', level=2)
-    # logger.debug("gdax book {}".format(book))
     return book
 
 
@@ -264,7 +263,6 @@ def compute_max_bid_and_min_ask(book):
     # Cannot place a bid at or above the best ask. Doesn't make sense to place bid $0.05 better than
     # best bid
     max_bid = min(best_ask - 0.01, best_bid + 0.05)
-    logger.info("gdax max bid {} min ask {}".format(max_bid, min_ask))
     return max_bid, min_ask
 
 
@@ -340,7 +338,9 @@ def rebalance(data):
     async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
     gdax_balances, bitstamp_balances = get_balances()
     bitstamp_book = async_bitstamp_order_book.get()
+    logger.debug("bitstamp best bid {}, best ask {}".format(bitstamp_book["bids"][0], bitstamp_book["asks"][0]))
     gdax_book = async_gdax_order_book.get()
+    logger.debug("gdax best bid {}, best ask {}".format(gdax_book["bids"][0], gdax_book["asks"][0]))
     total_btc = round(bitstamp_balances[("BTC", "balance")] + gdax_balances[("BTC", "balance")], 2)
     if total_btc >= round(data["required_btc"] + 0.01, 2):
         size = round(total_btc - data["required_btc"], 2)
