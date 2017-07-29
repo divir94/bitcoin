@@ -241,9 +241,12 @@ def compute_buy_and_sell_spreads(balances):
 
 
 def compute_buy_order_size(gdax_balances, bitstamp_balances, gdax_buy_price):
-    gdax_supported = gdax_balances[("USD", "balance")] / gdax_buy_price
-    bitstamp_supported = bitstamp_balances[("BTC", "available")]
-    return round_down(min(bitstamp_supported, gdax_supported))
+    if gdax_buy_price:
+        gdax_supported = gdax_balances[("USD", "balance")] / gdax_buy_price
+        bitstamp_supported = bitstamp_balances[("BTC", "available")]
+        return round_down(min(bitstamp_supported, gdax_supported))
+    else:
+        return None
 
 
 def compute_sell_order_size(gdax_balances, bitstamp_balances, bitstamp_buy_price):
@@ -269,8 +272,8 @@ def get_vol_and_price(book):
     total_volume = 0
     vol_and_price = []
     for point in book:
-        price = float(book[0])
-        vol = float(book[1])
+        price = float(point[0])
+        vol = float(point[1])
         vol_and_price.append((total_volume, price))
         total_volume += vol
     return vol_and_price
@@ -290,7 +293,7 @@ def compute_gdax_buy_price(gdax_book, bitstamp_book):
                 gdax_buy_limit_vol_and_price = gdax_buy_limit_vol_and_price[1:]
         else:
             bitstamp_sell_market_vol_and_price = bitstamp_sell_market_vol_and_price[1:]
-    return 0
+    return None
 
 
 def compute_gdax_sell_price(gdax_book, bitstamp_book):
@@ -307,7 +310,7 @@ def compute_gdax_sell_price(gdax_book, bitstamp_book):
                 gdax_sell_limit_vol_and_price = gdax_sell_limit_vol_and_price[1:]
         else:
             bitstamp_buy_market_vol_and_price = bitstamp_buy_market_vol_and_price[1:]
-    return 5000
+    return None
 
 
 def average_price_for_coins(book, requested_vol):
@@ -343,6 +346,7 @@ def rebalance(data):
         size = round(total_btc - data["required_btc"], 2)
         bitstamp_sell_price = average_price_for_coins(bitstamp_book["bids"], size)
         gdax_sell_price = average_price_for_coins(gdax_book["bids"], size)
+        logger.warn("sell prices. gdax {} bitstamp {}".format(gdax_sell_price, bitstamp_sell_price))
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
             if bitstamp_sell_price * (1 - 0.0022) >= gdax_sell_price * (1 - 0.0025):
@@ -360,6 +364,7 @@ def rebalance(data):
         size = round(data["required_btc"] - total_btc, 2)
         bitstamp_buy_price = average_price_for_coins(bitstamp_book["asks"], size)
         gdax_buy_price = average_price_for_coins(gdax_book["asks"], size)
+        logger.warn("buy prices. gdax {} bitstamp {}".format(gdax_buy_price, bitstamp_buy_price))
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
             if bitstamp_buy_price * 1.0022 <= gdax_buy_price * 1.0025:
@@ -374,17 +379,7 @@ def rebalance(data):
         else:
             print("TEST Mode " * 10)
     else:
-        bitstamp_sell_price = average_price_for_coins(bitstamp_book["bids"], 10)
         bitstamp_buy_price = average_price_for_coins(bitstamp_book["asks"], 10)
-        # Valid sell price on gdax is bitstamp buy + fees + spread
-        buy_spread, sell_spread = compute_buy_and_sell_spreads(gdax_balances)
-        logger.info("bitstamp buy: {} bitstamp sell: {}".format(bitstamp_buy_price, bitstamp_sell_price))
-        gdax_profitable_sell_price = round(bitstamp_buy_price * 1.0025 + sell_spread, 2)
-        # Valid buy price on gdax is bitstamp sell - fees - spread
-        gdax_profitable_buy_price = round(bitstamp_sell_price * (1 - 0.0025) - buy_spread, 2)
-        logger.info("gdax profitable buy price {} gdax profitable sell price {}"
-                    .format(gdax_profitable_buy_price, gdax_profitable_sell_price))
-
         gdax_profitable_sell_price = compute_gdax_sell_price(gdax_book, bitstamp_book)
         gdax_profitable_buy_price = compute_gdax_buy_price(gdax_book, bitstamp_book)
         max_bid, min_ask = compute_max_bid_and_min_ask(gdax_book)
@@ -401,18 +396,18 @@ def rebalance(data):
             if (abs(outstanding_orders[BUY]["price"] - limit_buy_price) > 1) or (
                         outstanding_orders[BUY]["filled_size"] > 0.05):
                 cancellations.extend(async_cancel_gdax_buy(outstanding_orders))
-                if buy_order_size > 0:
+                if buy_order_size > 0 and limit_buy_price:
                     POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, BUY))
-        elif buy_order_size > 0:
+        elif buy_order_size > 0 and limit_buy_price:
             POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, BUY))
 
         if SELL in outstanding_orders:
             if (abs(outstanding_orders[SELL]["price"] - limit_sell_price) > 1) or (
                         outstanding_orders[SELL]["filled_size"] > 0.05):
                 cancellations.extend(async_cancel_gdax_sell(outstanding_orders))
-                if sell_order_size > 0:
+                if sell_order_size > 0 and limit_sell_price:
                     POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, SELL))
-        elif sell_order_size > 0:
+        elif sell_order_size > 0 and limit_sell_price:
             POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, SELL))
     return data
 
