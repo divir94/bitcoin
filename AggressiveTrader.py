@@ -338,9 +338,9 @@ def rebalance(data):
     async_outstanding_orders = POOL.apply_async(get_outstanding_orders_gdax)
     gdax_balances, bitstamp_balances = get_balances()
     bitstamp_book = async_bitstamp_order_book.get()
-    logger.debug("bitstamp best bid {}, best ask {}".format(bitstamp_book["bids"][0], bitstamp_book["asks"][0]))
+    logger.info("bitstamp best bid {}, best ask {}".format(bitstamp_book["bids"][0], bitstamp_book["asks"][0]))
     gdax_book = async_gdax_order_book.get()
-    logger.debug("gdax best bid {}, best ask {}".format(gdax_book["bids"][0], gdax_book["asks"][0]))
+    logger.info("gdax best bid {}, best ask {}".format(gdax_book["bids"][0], gdax_book["asks"][0]))
     total_btc = round(bitstamp_balances[("BTC", "balance")] + gdax_balances[("BTC", "balance")], 2)
     if total_btc >= round(data["required_btc"] + 0.01, 2):
         size = round(total_btc - data["required_btc"], 2)
