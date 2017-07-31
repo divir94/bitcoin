@@ -8,8 +8,8 @@ from bintrees import RBTree
 from decimal import Decimal
 import pickle
 
-from gdax.public_client import PublicClient
-from gdax.websocket_client import WebsocketClient
+from bitcoin.gdax.public_client import PublicClient
+from bitcoin.gdax.websocket_client import WebsocketClient
 
 
 class OrderBook(WebsocketClient):
@@ -34,6 +34,7 @@ class OrderBook(WebsocketClient):
             pickle.dump(message, self._log_to)
 
         sequence = message['sequence']
+        # initialize the order book from REST api
         if self._sequence == -1:
             self._asks = RBTree()
             self._bids = RBTree()
@@ -66,6 +67,8 @@ class OrderBook(WebsocketClient):
         msg_type = message['type']
         if msg_type == 'open':
             self.add(message)
+        # market orders will not have a remaining_size or price field as they are never on the open order book so we
+        # ignore them.
         elif msg_type == 'done' and 'price' in message:
             self.remove(message)
         elif msg_type == 'match':
@@ -85,6 +88,8 @@ class OrderBook(WebsocketClient):
         # print('bid: %f @ %f - ask: %f @ %f' % (bid_depth, bid, ask_depth, ask))
 
     def on_error(self, e):
+        print 'error!'
+        print e
         self._sequence = -1
         self.close()
         self.start()
@@ -117,8 +122,10 @@ class OrderBook(WebsocketClient):
             bids = self.get_bids(price)
             if bids is not None:
                 bids = [o for o in bids if o['id'] != order['order_id']]
+                # remove this order from the bids at this price
                 if len(bids) > 0:
                     self.set_bids(price, bids)
+                # no bids besides this order at this price. remove this price from the book
                 else:
                     self.remove_bids(price)
         else:
@@ -185,6 +192,7 @@ class OrderBook(WebsocketClient):
             return
 
     def get_current_ticker(self):
+        """last match message"""
         return self._current_ticker
 
     def get_current_book(self):

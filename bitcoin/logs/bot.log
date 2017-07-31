@@ -1,0 +1,1 @@
+2017-07-30 23:32:09,015 - websocket - DEBUG - Connecting to channel: {'data': {'channel': 'order_book'}, 'event': 'pusher:subscribe'}

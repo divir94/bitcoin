@@ -78,6 +78,7 @@ class WebsocketClient(object):
                 self.on_message(msg)
 
     def close(self):
+        self.ws.close()
         if not self.stop:
             if self.type == "heartbeat":
                 self.ws.send(json.dumps({"type": "heartbeat", "on": False}))
@@ -87,7 +88,8 @@ class WebsocketClient(object):
                 if self.ws:
                     self.ws.close()
             except WebSocketConnectionClosedException as e:
-                pass
+                print('WebSocketConnectionClosedException')
+                print(e)
 
     def on_open(self):
         print("-- Subscribed! --\n")
@@ -102,10 +104,8 @@ class WebsocketClient(object):
         print(e)
 
 if __name__ == "__main__":
-    import gdax
-    import time
 
-    class MyWebsocketClient(gdax.WebsocketClient):
+    class MyWebsocketClient(WebsocketClient):
         def on_open(self):
             self.url = "wss://ws-feed.gdax.com/"
             self.products = ["BTC-USD", "ETH-USD"]

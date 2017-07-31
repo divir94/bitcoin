@@ -1,23 +1,19 @@
 # general
-import json
 import pandas as pd
 import numpy as np
-from pprint import pprint
-from time import time
-
 
 # exchanges
-import gdax
-import bitstamp.client
+import bitcoin.gdax as gdax
+import bitcoin.bitstamp.client as bitstamp
 
 
 gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
                                        b64secret="uSysPzywwj3LUlPuuNkKEHRpxhd4A+K/JGwbEfrc28nkd4c6qMLwr1IbRsw1GB1BKQzVXoj88n/WjMvIAvv/MA==",
                                        passphrase="ltg10b8unuo")
 
-bitstamp_client = bitstamp.client.Trading(username='752298',
-                                          key='otqVIe8cjvxONsfzb7rz34jMJRPlnx4G',
-                                          secret='49VrY4K9sJp3aBzHq7l2fyBBnBcmNeYA')
+bitstamp_client = bitstamp.Trading(username='752298',
+                                   key='otqVIe8cjvxONsfzb7rz34jMJRPlnx4G',
+                                   secret='49VrY4K9sJp3aBzHq7l2fyBBnBcmNeYA')
 
 
 def get_gdax_fills(limit=100):
