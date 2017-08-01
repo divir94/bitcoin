@@ -24,7 +24,7 @@ class BitstampOrderBook(WebSocket):
         if msg['event'] == 'data':
             data = json.loads(msg['data'])
             # update local book
-            self.book = ob.to_order_book(data)
+            self.book = ob.get_order_book_from_level_2(data)
             # callback
             self.on_change(self.book, self.exchange)
 
