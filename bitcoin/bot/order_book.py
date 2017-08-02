@@ -4,16 +4,16 @@ from bitcoin.bot.util import JsonObject
 
 
 class OrderBook(JsonObject):
-    def __init__(self, bids, asks, _id=None):
+    def __init__(self, bids=None, asks=None, seq=None):
         """
 
         Parameters
         ----------
-        _id: int
+        seq: int
         bids: SortedListWithKey[PriceLevel]
         asks: SortedListWithKey[PriceLevel]
         """
-        self.id = _id
+        self.seq = seq
         self.bids = bids
         self.asks = asks
 
@@ -92,7 +92,7 @@ def get_price_levels_from_level_3(lst):
     return levels
 
 
-def get_order_book(data, level, _id=None):
+def get_order_book(data, level, seq=None):
     """bitstamp list of lists to order book object"""
     if level == 2:
         func = get_price_levels_from_level_2
@@ -103,6 +103,6 @@ def get_order_book(data, level, _id=None):
 
     bids = func(data['bids'])
     asks = func(data['asks'])
-    _id = data.get(_id)
-    book = OrderBook(bids, asks, _id)
+    seq = data.get(seq)
+    book = OrderBook(bids, asks, seq)
     return book
