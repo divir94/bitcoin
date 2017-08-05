@@ -17,6 +17,8 @@ BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
 ENGINE = None  # initialized later
 
+logger = util.get_logger('storage')
+
 
 ###########
 # Database
@@ -35,12 +37,13 @@ ENGINE = get_sqlalchemy_engine()
 def store_df(df, tbl_name):
     try:
         df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
+        logger.info('Stored table: {}'.format(tbl_name))
     except Exception as e:
         now = pd.datetime.now()
         time_msg = '=' * 20 + '\n{}\n'.format(now)
         failed_msg = time_msg + 'Failed to store data'
-        print failed_msg
-        print e
+        logger.error(failed_msg)
+        logger.error(e)
     return
 
 
@@ -59,20 +62,20 @@ def get_snapshot_json(url):
         response = requests.get(url, timeout=TIMEOUT)
         content_msg = 'Content: {}'.format(response.content)
     except requests.exceptions.RequestException as e:
-        print failed_msg, e
-        if response:
-            content_msg
-        return
+        logger.error(failed_msg)
+        logger.error(e)
 
     try:
         snapshot = json.loads(response.content)
     except ValueError, e:
-        print failed_msg, e, content_msg
+        logger.error(failed_msg)
+        logger.error(e)
+        logger.error(content_msg)
         return
 
     if 'bids' not in snapshot and 'asks' not in snapshot:
-        print failed_msg
-        print 'Invalid json format {}'.format(content_msg)
+        logger.error(failed_msg)
+        logger.error('Invalid json format {}'.format(content_msg))
         return
     return snapshot
 

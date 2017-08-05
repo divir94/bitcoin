@@ -18,7 +18,9 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def get_logger(name, fname, level, formatting=None):
+def get_logger(name, fname=None, level=None, formatting=None):
+    fname = fname or '{}.log'.format(name)
+    level = level or logging.DEBUG
     formatting = formatting or '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
     # format
