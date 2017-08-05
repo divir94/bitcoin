@@ -1,26 +1,21 @@
-# general
 import json
 import pandas as pd
-from pprint import pprint
 import time
-
-# db
-import MySQLdb
+import requests
 from sqlalchemy import create_engine
 
-# http
-import requests
+import bitcoin.util as util
 
 
 GDAX_URL = 'https://api.gdax.com/products/BTC-USD/book?level=2'
 BITSTAMP_URL = 'https://www.bitstamp.net/api/order_book/'
 TIMEOUT = 5
-ROWS_PER_CALL = 50 # number of top bids and asks to store per call
+ROWS_PER_CALL = 50  # number of top bids and asks to store per call
 
 GDAX_TBL_NAME = 'GdaxSnapshots'
 BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
-ENGINE = None # initialized later
+ENGINE = None  # initialized later
 
 
 ###########
@@ -28,7 +23,8 @@ ENGINE = None # initialized later
 ###########
 
 def get_sqlalchemy_engine():
-    creds = json.load(open('../creds/mysql.json', 'rb'))
+    root_path = util.get_project_root()
+    creds = json.load(open('{}/credentials/mysql.json'.format(root_path), 'rb'))
     engine_name = 'mysql://{user}:{pwd}@{host}/{db}'.format(**creds)
     engine = create_engine(engine_name, echo=False)
     return engine

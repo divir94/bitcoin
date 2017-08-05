@@ -1,9 +1,9 @@
 from sortedcontainers import SortedListWithKey
 
-from bitcoin.bot.util import JsonObject
+import bitcoin.util as util
 
 
-class OrderBook(JsonObject):
+class OrderBook(util.JsonObject):
     def __init__(self, bids=None, asks=None, seq=None):
         """
 
@@ -18,7 +18,7 @@ class OrderBook(JsonObject):
         self.asks = asks
 
 
-class PriceLevel(JsonObject):
+class PriceLevel(util.JsonObject):
     def __init__(self, price, size, orders={}):
         """
         All the bid or ask orders at a particular price
@@ -34,10 +34,34 @@ class PriceLevel(JsonObject):
         self.orders = orders
 
 
+def get_order_book(data, level, seq=None):
+    """bitstamp list of lists to order book object"""
+    if level == 2:
+        func = get_price_levels_from_level_2
+    elif level == 3:
+        func = get_price_levels_from_level_3
+    else:
+        raise ValueError('Invalid level: {}'.format(level))
+
+    bids = func(data['bids'])
+    asks = func(data['asks'])
+    seq = data.get(seq)
+    book = OrderBook(bids, asks, seq)
+    return book
+
+
 def get_price_levels_from_level_2(lst):
     levels = (PriceLevel(price, size) for price, size in lst)
     result = SortedListWithKey(levels, key=lambda level: level.price)
     return result
+
+
+def get_price_levels_from_level_3(lst):
+    levels = SortedListWithKey(key=lambda level: level.price)
+    for price, size, order_id in lst:
+        price, size = float(price), float(size)
+        add_order(levels, price, size, order_id)
+    return levels
 
 
 def add_order(levels, price, size, order_id):
@@ -82,27 +106,3 @@ def update_order(levels, price, new_size, order_id):
     price_level.orders[order_id] = new_size
     assert new_size <= old_size, 'new size has to be less than old size!'
     return
-
-
-def get_price_levels_from_level_3(lst):
-    levels = SortedListWithKey(key=lambda level: level.price)
-    for price, size, order_id in lst:
-        price, size = float(price), float(size)
-        add_order(levels, price, size, order_id)
-    return levels
-
-
-def get_order_book(data, level, seq=None):
-    """bitstamp list of lists to order book object"""
-    if level == 2:
-        func = get_price_levels_from_level_2
-    elif level == 3:
-        func = get_price_levels_from_level_3
-    else:
-        raise ValueError('Invalid level: {}'.format(level))
-
-    bids = func(data['bids'])
-    asks = func(data['asks'])
-    seq = data.get(seq)
-    book = OrderBook(bids, asks, seq)
-    return book

@@ -4,8 +4,9 @@ import requests
 from Queue import Queue
 from threading import Thread
 
+import bitcoin.order_book as ob
+import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
-import bitcoin.bot.order_book as ob
 
 
 GX_WS_URL = 'wss://ws-feed.gdax.com'
@@ -21,19 +22,22 @@ class GdaxOrderBook(WebSocket):
         self.on_change = on_change
         self.queue = Queue()
 
-        print 'init {}'.format(self.book.seq)
+        self.logger.debug('Initializing {}'.format(self.book.seq))
 
     def reset_book(self):
-        print 'resetting book'
+        """
+        Get level 3 order book and apply pending messages from queue
+        """
+        self.logger.info('Resetting book')
         level = 3
         request = requests.get(GX_HTTP_URL, params={'level': level})
         data = json.loads(request.content)
         book = ob.get_order_book(data, level, seq='sequence')
         self.book = book
-        print 'got book: {}'.format(self.book.seq)
+        self.logger.debug('Got book: {}'.format(self.book.seq))
 
         if not self.queue.empty():
-            print 'Applying queued msgs'
+            self.logger.info('Applying queued msgs')
 
         while not self.queue.empty():
             msg = self.queue.get()
@@ -41,15 +45,17 @@ class GdaxOrderBook(WebSocket):
 
     def on_message(self, ws, message):
         msg = self.parse_message(message)
-        print 'Msg: {}'.format(msg['sequence'])
+        sequence = msg['sequence']
+        self.logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
         if self.book.seq < 0:
-            print 'Queuing msg'
             # orderbook snapshot not loaded yet
             self.queue.put(msg)
+            self.logger.info('Queuing msg: {}'.format(sequence))
 
             if self.book.seq == -2:
                 # start first resync
+                self.logger.info('Starting first sync')
                 self.book.seq = -1
                 t = Thread(target=self.reset_book)
                 t.start()
@@ -61,10 +67,11 @@ class GdaxOrderBook(WebSocket):
 
         if sequence <= self.book.seq:
             # ignore older messages (e.g. before order book initialization from getProductOrderBook)
+            self.logger.info('Ignoring older msg: {}'.format(sequence))
             return
         elif sequence != self.book.seq + 1:
             # resync
-            print 'resynching'
+            self.logger.info('Out of synch: {}'.format(sequence))
             self.book.seq = -1
             self.queue = Queue()
 
@@ -74,23 +81,27 @@ class GdaxOrderBook(WebSocket):
         _type = msg['type']
         if _type == 'open':
             self.open_order(msg)
+
         # market orders will not have a price field in a done msg
         elif _type == 'done' and msg.get('price'):
             self.done_order(msg)
+
         elif _type == 'match':
             self.match_order(msg)
+
         # price is null for market orders in a change msg
         elif type == 'change' and msg.get('price') and msg.get('new_size'):
             self.change_order(msg)
 
         self.book.seq = msg['sequence']
-        print 'Book: {}'.format(self.book.seq)
+        self.logger.debug('Book: {}'.format(self.book.seq))
 
     def parse_message(self, msg):
-        numeric_fields = ['price', 'size', 'old_size', 'new_size', 'remaining_size']
+        """
+        Convert fields to float
+        """
         msg = json.loads(msg)
-        msg = {k: float(v) if k in numeric_fields else v
-               for k, v in msg.iteritems()}
+        msg = {k: util.to_float(v) for k, v in msg.iteritems()}
         return msg
 
     def _get_levels(self, side):
@@ -138,5 +149,5 @@ if __name__ == '__main__':
     gx_ws = GdaxOrderBook(None)
     gx_ws.run()
 
-    time.sleep(5)
+    time.sleep(10)
     gx_ws.close()
