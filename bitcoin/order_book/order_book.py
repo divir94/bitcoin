@@ -68,41 +68,52 @@ def add_order(levels, price, size, order_id):
     idx = levels.bisect_key_left(price)
     seen_price = idx < len(levels) and levels[idx].price == price
     if seen_price:
+        # add order to level
         price_level = levels[idx]
         price_level.size += size
         price_level.orders[order_id] = size
     else:
+        # add new price level
         price_level = PriceLevel(price, size, {order_id: size})
         levels.add(price_level)
     return
 
 
-def remove_order(levels, price, new_size, order_id):
+def remove_order(levels, price, size, order_id):
     """remove (partially) filled or cancelled orders"""
     idx = levels.bisect_key_left(price)
     price_level = levels[idx]
-    assert order_id in price_level.orders, 'order not in order book!'
+
+    if order_id not in price_level.orders:
+        # ignore done message which are not on the book. this could be because of fully-filled orders or
+        # self-trade prevention
+        return
+
+    assert price == price_level.price, 'Removing order that is not in order book!'
 
     # only order at this price level
     if len(price_level.orders) == 1:
-        levels.remove(price_level)
+        del levels[idx]
     # just remove this order from the price level
     else:
         old_size = price_level.orders[order_id]
-        price_level.size -= old_size
+        price_level.size -= size
         price_level.orders.pop(order_id)
-        assert new_size <= old_size, 'new size has to be less than old size!'
+        assert old_size == size, 'Size for remove order is not equal to original size!'
     return
 
 
-def update_order(levels, price, new_size, order_id):
+def update_order(levels, price, old_size, new_size, order_id):
     idx = levels.bisect_key_left(price)
     price_level = levels[idx]
+
     if order_id not in price_level.orders:
+        # ignore change orders for orders not in book
         return
 
-    old_size = price_level.orders[order_id]
+    assert old_size == price_level.orders[order_id], 'Change order old_size != original size!'
+    assert new_size <= old_size, 'New size has to be less than old size!'
+
     price_level.size -= (new_size - old_size)
     price_level.orders[order_id] = new_size
-    assert new_size <= old_size, 'new size has to be less than old size!'
     return
