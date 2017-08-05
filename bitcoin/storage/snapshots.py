@@ -58,12 +58,12 @@ def get_snapshot_json(url):
     failed_msg = time_msg + 'Get request failed for: {}\n\n'.format(url)
 
     try:
-        response = None
         response = requests.get(url, timeout=TIMEOUT)
         content_msg = 'Content: {}'.format(response.content)
     except requests.exceptions.RequestException as e:
         logger.error(failed_msg)
         logger.error(e)
+        return
 
     try:
         snapshot = json.loads(response.content)
