@@ -34,8 +34,7 @@ class PriceLevel(util.JsonObject):
         self.orders = orders
 
 
-def get_order_book(data, level, seq=None):
-    """bitstamp list of lists to order book object"""
+def convert_data_to_book(data, level, seq=None):
     if level == 2:
         func = get_price_levels_from_level_2
     elif level == 3:
@@ -82,24 +81,22 @@ def add_order(levels, price, size, order_id):
 def remove_order(levels, price, size, order_id):
     """remove (partially) filled or cancelled orders"""
     idx = levels.bisect_key_left(price)
-    price_level = levels[idx]
-
-    if order_id not in price_level.orders:
+    seen_order = idx < len(levels) and order_id in levels[idx].orders
+    if not seen_order:
         # ignore done message which are not on the book. this could be because of fully-filled orders or
         # self-trade prevention
         return
 
-    assert price == price_level.price, 'Removing order that is not in order book!'
+    price_level = levels[idx]
+    assert price == price_level.price, 'Removing order price does not match!'
 
     # only order at this price level
     if len(price_level.orders) == 1:
         del levels[idx]
     # just remove this order from the price level
     else:
-        old_size = price_level.orders[order_id]
         price_level.size -= size
         price_level.orders.pop(order_id)
-        assert old_size == size, 'Size for remove order is not equal to original size!'
     return
 
 
