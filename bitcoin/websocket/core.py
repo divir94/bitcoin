@@ -1,12 +1,16 @@
 import json
 import logging
-from websocket import WebSocketApp
+import websocket
 from threading import Thread
 
 import bitcoin.util as util
 
 
-class WebSocket(WebSocketApp):
+default_logger = util.get_logger(name='websocket', fname='websocket.log', level=logging.DEBUG)
+websocket.enableTrace(True)
+
+
+class WebSocket(websocket.WebSocketApp):
     def __init__(self, url, channel, logger=None):
         super(WebSocket, self).__init__(url,
                                         on_open=self.on_open,
@@ -14,9 +18,7 @@ class WebSocket(WebSocketApp):
                                         on_error=self.on_error,
                                         on_close=self.on_close)
         self.channel = channel
-        self.logger = logger or util.get_logger(name='websocket',
-                                                fname='websocket.log',
-                                                level=logging.DEBUG)
+        self.logger = logger or default_logger
 
     def on_open(self, ws):
         self.logger.debug('Connecting to channel: {}'.format(self.channel))
@@ -35,5 +37,4 @@ class WebSocket(WebSocketApp):
         self.logger.debug('Closing websocket')
 
     def run(self):
-        t = Thread(target=self.run_forever)
-        t.start()
+        Thread(target=self.run_forever).start()

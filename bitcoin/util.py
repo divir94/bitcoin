@@ -13,6 +13,9 @@ class JsonObject(object):
     def __repr__(self):
         return '\n' + pprint.pformat(self.__dict__)
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
 
 def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
