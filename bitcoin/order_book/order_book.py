@@ -1,3 +1,4 @@
+from decimal import Decimal
 from sortedcontainers import SortedListWithKey
 
 import bitcoin.util as util
@@ -29,8 +30,8 @@ class PriceLevel(util.JsonObject):
         size: float
         orders: dict[order_id, size]
         """
-        self.price = float(price)
-        self.size = float(size)
+        self.price = Decimal(price)
+        self.size = Decimal(size)
         self.orders = orders
 
 
@@ -58,7 +59,8 @@ def get_price_levels_from_level_2(lst):
 def get_price_levels_from_level_3(lst):
     levels = SortedListWithKey(key=lambda level: level.price)
     for price, size, order_id in lst:
-        price, size = float(price), float(size)
+        price = Decimal(price)
+        size = Decimal(size)
         add_order(levels, price, size, order_id)
     return levels
 
@@ -80,6 +82,10 @@ def add_order(levels, price, size, order_id):
 
 def remove_order(levels, price, size, order_id):
     """remove (partially) filled or cancelled orders"""
+    if not price:
+        # ignore market order
+        return
+
     idx = levels.bisect_key_left(price)
     seen_order = idx < len(levels) and order_id in levels[idx].orders
     if not seen_order:
@@ -101,6 +107,10 @@ def remove_order(levels, price, size, order_id):
 
 
 def update_order(levels, price, old_size, new_size, order_id):
+    if not price:
+        # ignore market order
+        return
+
     idx = levels.bisect_key_left(price)
     price_level = levels[idx]
 
@@ -114,3 +124,28 @@ def update_order(levels, price, old_size, new_size, order_id):
     price_level.size -= (new_size - old_size)
     price_level.orders[order_id] = new_size
     return
+
+
+def compare_books(book1, book2, logger=None):
+    if book1.seq != book2.seq:
+        print 'Sequence numbers do not match: {}, {}'.format(book1.seq, book2.seq)
+    bids_same = compare_levels('bid', book1.bids, book2.bids)
+    asks_same = compare_levels('ask', book1.asks, book2.asks)
+    return bids_same and asks_same
+
+
+def compare_levels(side, levels1, levels2):
+    is_same = True
+    size = min(len(levels1), len(levels2))
+    for i in range(size):
+        level1 = levels1[i]
+        level2 = levels2[i]
+        if level1 != level2:
+            import pdb;
+            pdb.set_trace()
+            is_same = False
+            print '\n{}: levels different'.format(side)
+            print level1
+            print '=' * 20
+            print level2
+    return is_same
