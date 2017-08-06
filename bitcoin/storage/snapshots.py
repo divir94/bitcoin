@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import time
 import requests
+import logging
 from sqlalchemy import create_engine
 
 import bitcoin.util as util
@@ -17,7 +18,7 @@ BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
 ENGINE = None  # initialized later
 
-logger = util.get_logger('storage')
+logger = util.get_logger('storage', level=logging.ERROR)
 
 
 ###########
