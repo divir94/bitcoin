@@ -2,7 +2,6 @@ import json
 import time
 import requests
 import logging
-from decimal import Decimal
 from Queue import Queue
 from threading import Thread
 from multiprocessing import Pool
@@ -34,7 +33,6 @@ class GdaxOrderBook(WebSocket):
         self.restart = True
         self.syncing = False
         self.on_change = on_change
-        self.seen_seq = {}
 
         self.checking = False
         self.check_queue = Queue()
@@ -60,7 +58,6 @@ class GdaxOrderBook(WebSocket):
     def on_message(self, ws, message):
         msg = self.parse_message(message)
         sequence = msg['sequence']
-        self.seen_seq[sequence] = True
         self.logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
         if self.restart:
@@ -104,8 +101,13 @@ class GdaxOrderBook(WebSocket):
         elif _type == 'match':
             self.match_order(msg, book)
 
-        elif type == 'change':
+        elif _type == 'change':
             self.change_order(msg, book)
+        elif _type == 'received':
+            pass
+        else:
+            self.logger.error('Ignoring message: {}'.format(msg['type']))
+            self.logger.error(msg)
 
         book.sequence = msg['sequence']
         self.logger.debug('Book: {}'.format(book.sequence))
@@ -219,7 +221,7 @@ class GdaxOrderBook(WebSocket):
         order_id = msg['maker_order_id']
         levels = self._get_levels(side, book)
 
-        ob.remove_order(levels, price, size, order_id)
+        ob.match_order(levels, price, size, order_id)
 
     def change_order(self, msg, book):
         """
@@ -299,6 +301,6 @@ if __name__ == '__main__':
     ws = GdaxOrderBook()
     ws.run()
 
-    time.sleep(10)
+    time.sleep(30)
     ws.check_book_in_sync()
     ws.close()
