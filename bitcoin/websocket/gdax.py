@@ -18,7 +18,9 @@ GX_HTTP_URL = 'https://api.gdax.com/products/BTC-USD/book'
 
 def get_gdax_book():
     request = requests.get(GX_HTTP_URL, params={'level': 3})
-    data = request.json()
+    data = json.loads(request.content)
+    print 'ready'
+    print data['sequence']
     return data
 
 
@@ -32,10 +34,10 @@ class GdaxOrderBook(WebSocket):
         self.restart = True
         self.syncing = False
         self.on_change = on_change
+        self.tmp_books = {}  # books to store while checking
+        self.seen_seq = {}
 
-        self.logger.setLevel(logging.INFO)
-        self.logger.debug('Initializing {}'.format(self.book.seq))
-
+        #self.logger.setLevel(logging.INFO)
 
     def reset_book(self):
         """
@@ -51,29 +53,27 @@ class GdaxOrderBook(WebSocket):
             msg = self.queue.get()
             self.logger.info('Applying queued msg: {}'.format(msg['sequence']))
             self.process_message(msg)
+        self.logger.info('Book ready')
         self.syncing = False
 
     def on_message(self, ws, message):
-        try:
-            msg = self.parse_message(message)
-            sequence = msg['sequence']
-            self.logger.debug('Msg receieved: {}'.format(msg['sequence']))
+        msg = self.parse_message(message)
+        sequence = msg['sequence']
+        self.seen_seq[sequence] = True
+        self.logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
-            if self.restart:
-                # reset order book and clear queue
-                self.logger.info('Restarting sync')
-                self.queue = Queue()
-                Thread(target=self.reset_book).start()
-                self.restart = False
-            elif self.syncing:
-                # sync in process, queue msgs
-                self.logger.info('Queuing msg: {}'.format(sequence))
-                self.queue.put(msg)
-            else:
-                self.process_message(msg)
-        except Exception as e:
-            self.logger.exception(e)
-            import pdb; pdb.set_trace()
+        if self.restart:
+            # reset order book and clear queue
+            self.logger.info('Restarting sync')
+            self.queue = Queue()
+            Thread(target=self.reset_book).start()
+            self.restart = False
+        elif self.syncing:
+            # sync in process, queue msgs
+            self.logger.info('Queuing msg: {}'.format(sequence))
+            self.queue.put(msg)
+        else:
+            self.process_message(msg)
 
     def process_message(self, msg):
         sequence = msg['sequence']
@@ -261,34 +261,38 @@ class GdaxOrderBook(WebSocket):
 
         ob.update_order(levels, price, old_size, new_size, order_id)
 
+    def _add_current_book(self, ):
+        sequence = self.book.seq
+        print 'myseq: {}'.format(sequence)
+        if sequence not in self.tmp_books:
+            book = deepcopy(self.book)
+            print 'adding myseq: {}'.format(sequence)
+            self.tmp_books[sequence] = book
+        return
+
     def check_book_in_sync(self):
         self.logger.info('Checking book in sync')
-        books = {}
-        pool = Pool()
+        pool = Pool(processes=5)
         result = pool.apply_async(get_gdax_book)
-        pool.close()
+        start = time.time()
+        time_elapsed = time.time() - start
 
-        while not result.ready():
-            # store all books
-            print 'checking'
-            sequence = self.book.seq
-            if sequence not in books:
-                print sequence
-                books[sequence] = deepcopy(self.book)
-        expected = result.get()
-        expected = ob.convert_data_to_book(expected, level=3, seq='sequence')
-        actual = books.get(expected['sequence'])
-        if not actual:
-            self.logger.info('Missed a sequence while checking')
-            return
-        assert actual == expected, 'Book logic incorrect!'
-        self.logger.info('Yay! Book is in sync')
+        while not result.ready() or time_elapsed < 5:
+            pool = pool.apply_async(self._add_current_book)
+            time_elapsed = time.time() - start
+
+        print 'done'
+        data = result.get()
+        expected = ob.convert_data_to_book(data, level=3, seq='sequence')
+        print 'expected: {}'.format(expected.seq)
+        self.logger.info('Missed a sequence while checking')
+        return
 
 
 if __name__ == '__main__':
     ws = GdaxOrderBook()
     ws.run()
 
-    time.sleep(5)
+    time.sleep(3)
     ws.check_book_in_sync()
     ws.close()
