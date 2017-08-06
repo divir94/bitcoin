@@ -11,6 +11,8 @@ class OrderBook(util.BaseObject):
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
         the corresponding PriceLevel for a given order_id.
 
+        The add, remove and update methods return (price, new_size, order_id).
+
         Parameters
         ----------
         sequence: int
@@ -22,17 +24,48 @@ class OrderBook(util.BaseObject):
         self.asks = asks or SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
 
-    def _get_levels(self, side):
+    def _get_levels_from_side(self, side):
+        """get either bids or asks based on the side"""
         return self.bids if side == 'buy' else self.asks
 
+    def _get_levels_from_price(self, price):
+        """get either bids or asks based on the price"""
+        if not self.asks:
+            assert self.bids, 'Both bids and asks canot be empty to get levels'
+            return self.bids
+        best_ask = self.asks[0].price
+        levels = self.asks if price >= best_ask else self.bids
+        return levels
+
     def _get_levels_idx(self, price, levels):
+        """gets the index of price in levels or -1"""
         idx = levels.bisect_key_left(price)
-        price_seen = idx < len(levels) and price == levels.price
+        price_seen = idx < len(levels) and price == levels[idx].price
         return idx if price_seen else -1
 
+    def _get_level(self, order_id):
+        """get PriceLevel from the order_id"""
+        price = self.orders[order_id]
+        levels = self._get_levels_from_price(price)
+        idx = self._get_levels_idx(price, levels)
+        assert idx != -1
+        level = levels[idx]
+        assert order_id in level.orders
+        return level
+
+    def get(self, order_id):
+        """get the (price, size, order_id)"""
+        assert order_id in self.orders
+        level = self._get_level(order_id)
+        price = level.price
+        size = level.orders[order_id]
+        return price, size, order_id
+
     def add(self, side, price, size, order_id):
+        """add an order to an exsiting price level or create a new price level"""
         assert order_id not in self.orders
-        levels = self._get_levels(side)
+        # get index
+        levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
         if idx == -1:
             # new price level
@@ -43,16 +76,24 @@ class OrderBook(util.BaseObject):
             level = levels[idx]
             level.add(size, order_id)  # this is PriceLevel.add
         self.orders[order_id] = price
-
-    def get(self, order_id):
-        """get the (price, size, order_id)"""
-        return
-
-    def remove(self, order_id):
-        return
+        return price, size, order_id
 
     def update(self, order_id, new_size):
-        return
+        """update or remove from an order from a price level"""
+        assert order_id in self.orders
+        level = self._get_level(order_id)
+        level.update(order_id, new_size)
+        price = level.price
+
+        # remove level
+        if level.size == 0:
+            levels = self._get_levels_from_price(price)
+            levels.update(level, 0)  # this is SortedListWithKey.remove
+
+        # remove order
+        if new_size == 0:
+            del self.orders[order_id]
+        return price, new_size, order_id
 
 
 class PriceLevel(util.BaseObject):
@@ -75,15 +116,6 @@ class PriceLevel(util.BaseObject):
         # add size and order_id
         self.size += size
         self.orders[order_id] = size
-        return self.price, size, order_id
-
-    def remove(self, order_id):
-        assert order_id in self.orders
-        # subtract original size
-        size = self.orders[order_id]
-        self.size -= size
-        # remove order
-        del self.orders[order_id]
         return self.price, size, order_id
 
     def update(self, order_id, new_size):
@@ -155,9 +187,3 @@ def get_price_levels_from_level_3(lst):
         size = Decimal(size)
         add_order(levels, price, size, order_id)
     return levels
-
-
-if __name__ == '__main__':
-    from bitcoin.websocket.gdax import get_gdax_book
-    data = get_gdax_book()
-    print get_price_levels_from_level_3(data['bids'])

@@ -14,14 +14,14 @@ def test_price_level_add():
 
 def test_price_level_remove():
     level = PriceLevel(price=1000., orders={'abc': 5., 'xyz': 10.})
-    level.remove('xyz')
+    level.update('xyz', 0)
     assert level.size == 5.
     assert level.orders == {'abc': 5.}
 
 
 def test_price_level_remove_last_order():
     level = PriceLevel(price=1000., orders={'abc': 5.})
-    level.remove('abc')
+    level.update('abc', 0)
     assert level.size == 0.
     assert level.orders == {}
 
