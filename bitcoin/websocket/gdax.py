@@ -2,6 +2,7 @@ import json
 import time
 import requests
 import logging
+from decimal import Decimal
 from Queue import Queue
 from threading import Thread
 from multiprocessing import Pool
@@ -14,13 +15,12 @@ from bitcoin.websocket.core import WebSocket
 
 GX_WS_URL = 'wss://ws-feed.gdax.com'
 GX_HTTP_URL = 'https://api.gdax.com/products/BTC-USD/book'
+POOL = Pool()
 
 
 def get_gdax_book():
     request = requests.get(GX_HTTP_URL, params={'level': 3})
     data = json.loads(request.content)
-    print 'ready'
-    print data['sequence']
     return data
 
 
@@ -34,10 +34,11 @@ class GdaxOrderBook(WebSocket):
         self.restart = True
         self.syncing = False
         self.on_change = on_change
-        self.tmp_books = {}  # books to store while checking
         self.seen_seq = {}
 
-        #self.logger.setLevel(logging.INFO)
+        self.checking = False
+        self.check_queue = Queue()
+        self.logger.setLevel(logging.INFO)
 
     def reset_book(self):
         """
@@ -51,7 +52,7 @@ class GdaxOrderBook(WebSocket):
 
         while not self.restart and not self.queue.empty():
             msg = self.queue.get()
-            self.logger.info('Applying queued msg: {}'.format(msg['sequence']))
+            self.logger.debug('Applying queued msg: {}'.format(msg['sequence']))
             self.process_message(msg)
         self.logger.info('Book ready')
         self.syncing = False
@@ -70,53 +71,58 @@ class GdaxOrderBook(WebSocket):
             self.restart = False
         elif self.syncing:
             # sync in process, queue msgs
-            self.logger.info('Queuing msg: {}'.format(sequence))
+            self.logger.debug('Queuing msg: {}'.format(sequence))
             self.queue.put(msg)
         else:
             self.process_message(msg)
 
-    def process_message(self, msg):
+        if self.checking:
+            self.logger.debug('Queuing msg for checking: {}'.format(sequence))
+            self.check_queue.put(msg)
+
+    def process_message(self, msg, book=None):
+        book = book or self.book
         sequence = msg['sequence']
 
-        if sequence <= self.book.seq:
+        if sequence <= book.seq:
             # ignore older messages (e.g. before order book initialization from getProductOrderBook)
-            self.logger.info('Ignoring older msg: {}'.format(sequence))
+            self.logger.debug('Ignoring older msg: {}'.format(sequence))
             return
-        elif sequence != self.book.seq + 1:
+        elif sequence != book.seq + 1:
             # resync
-            self.logger.info('Out of synch: {}'.format(sequence))
+            self.logger.info('Out of synch: book({}), message({})'.format(book.seq, sequence))
             self.restart = True
             return
 
         _type = msg['type']
         if _type == 'open':
-            self.open_order(msg)
+            self.open_order(msg, book)
 
         elif _type == 'done':
-            self.done_order(msg)
+            self.done_order(msg, book)
 
         elif _type == 'match':
-            self.match_order(msg)
+            self.match_order(msg, book)
 
-        # price is null for market orders in a change msg
-        elif type == 'change' and msg.get('price') and msg.get('new_size'):
-            self.change_order(msg)
+        elif type == 'change':
+            self.change_order(msg, book)
 
-        self.book.seq = msg['sequence']
-        self.logger.debug('Book: {}'.format(self.book.seq))
+        book.seq = msg['sequence']
+        self.logger.debug('Book: {}'.format(book.seq))
 
     def parse_message(self, msg):
         """
         Convert fields to float
         """
         msg = json.loads(msg)
-        msg = {k: util.to_float(v) for k, v in msg.iteritems()}
+        msg = {k: util.to_decimal(v) for k, v in msg.iteritems()}
         return msg
 
-    def _get_levels(self, side):
-        return self.book.bids if side == 'buy' else self.book.asks
+    def _get_levels(self, side, book):
+        book = book or self.book
+        return book.bids if side == 'buy' else book.asks
 
-    def open_order(self, msg):
+    def open_order(self, msg, book):
         """
         The order is now open on the order book. This message will only be sent for orders which are not fully filled
         immediately. remaining_size will indicate how much of the order is unfilled and going on the book.
@@ -140,11 +146,10 @@ class GdaxOrderBook(WebSocket):
         price = msg['price']
         size = msg['remaining_size']
         order_id = msg['order_id']
-
-        levels = self._get_levels(side)
+        levels = self._get_levels(side, book)
         ob.add_order(levels, price, size, order_id)
 
-    def done_order(self, msg):
+    def done_order(self, msg, book):
         """
         The order is no longer on the order book. Sent for all orders for which there was a received message.
         This message can result from an order being canceled or filled. There will be no more messages for this
@@ -178,17 +183,13 @@ class GdaxOrderBook(WebSocket):
         """
         price = msg.get('price')
         size = msg.get('remaining_size')
-        if not price or not size:
-            # ignore market order
-            return
-
         side = msg['side']
         order_id = msg['order_id']
 
-        levels = self._get_levels(side)
+        levels = self._get_levels(side, book)
         ob.remove_order(levels, price, size, order_id)
 
-    def match_order(self, msg):
+    def match_order(self, msg, book):
         """
         A trade occurred between two orders. The aggressor or taker order is the one executing immediately after being
         received and the maker order is a resting order on the book. The side field indicates the maker order side.
@@ -216,11 +217,11 @@ class GdaxOrderBook(WebSocket):
         price = msg['price']
         size = msg['size']
         order_id = msg['maker_order_id']
-        levels = self._get_levels(side)
+        levels = self._get_levels(side, book)
 
         ob.remove_order(levels, price, size, order_id)
 
-    def change_order(self, msg):
+    def change_order(self, msg, book):
         """
         An order has changed. This is the result of self-trade prevention adjusting the order size or available funds.
         Orders can only decrease in size or funds. change messages are sent anytime an order changes in size;
@@ -252,40 +253,38 @@ class GdaxOrderBook(WebSocket):
             "side": "sell"
         }
         """
+        price = msg.get('price')
         side = msg['side']
-        price = msg['price']
         old_size = msg['old_size']
         new_size = msg['new_size']
         order_id = msg['order_id']
-        levels = self._get_levels(side)
+        levels = self._get_levels(side, book)
 
         ob.update_order(levels, price, old_size, new_size, order_id)
 
-    def _add_current_book(self, ):
-        sequence = self.book.seq
-        print 'myseq: {}'.format(sequence)
-        if sequence not in self.tmp_books:
-            book = deepcopy(self.book)
-            print 'adding myseq: {}'.format(sequence)
-            self.tmp_books[sequence] = book
-        return
-
     def check_book_in_sync(self):
-        self.logger.info('Checking book in sync')
-        pool = Pool(processes=5)
-        result = pool.apply_async(get_gdax_book)
-        start = time.time()
-        time_elapsed = time.time() - start
+        self.logger.info('Checking book is in sync')
+        if self.restart or self.syncing:
+            self.logger.info('Book is not ready')
+            return
 
-        while not result.ready() or time_elapsed < 5:
-            pool = pool.apply_async(self._add_current_book)
-            time_elapsed = time.time() - start
+        self.checking = True
+        current_book = deepcopy(self.book)
+        self.logger.info('Current book: {}'.format(current_book.seq))
+        data = get_gdax_book()
+        expected = self.book = ob.convert_data_to_book(data, level=3, seq='sequence')
+        self.checking = False
 
-        print 'done'
-        data = result.get()
-        expected = ob.convert_data_to_book(data, level=3, seq='sequence')
-        print 'expected: {}'.format(expected.seq)
-        self.logger.info('Missed a sequence while checking')
+        while not self.check_queue.empty():
+            msg = self.check_queue.get()
+            if msg['sequence'] <= expected.seq:
+                self.process_message(msg, current_book)
+
+        is_same = ob.compare_books(current_book, expected)
+        if is_same:
+            self.logger.info('Book is in sync!')
+        else:
+            self.logger.error('Books are out of sync!')
         return
 
 
@@ -293,6 +292,6 @@ if __name__ == '__main__':
     ws = GdaxOrderBook()
     ws.run()
 
-    time.sleep(3)
+    time.sleep(10)
     ws.check_book_in_sync()
     ws.close()

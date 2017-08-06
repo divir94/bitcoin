@@ -1,6 +1,7 @@
 import pprint
 import logging
 import os
+from decimal import Decimal
 
 
 class JsonObject(object):
@@ -11,10 +12,13 @@ class JsonObject(object):
         return self.__dict__[attr]
 
     def __repr__(self):
-        return '\n' + pprint.pformat(self.__dict__)
+        return pprint.pformat(self.__dict__)
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 
 def get_project_root():
@@ -44,9 +48,9 @@ def get_logger(name, fname=None, level=None, formatting=None):
     return logger
 
 
-def to_float(value):
+def to_decimal(value):
     try:
-        num = float(value)
+        num = Decimal(value)
         return num
-    except ValueError:
+    except Exception:
         return value
