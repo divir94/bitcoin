@@ -1,16 +1,10 @@
 import pprint
 import logging
 import os
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 
 
-class JsonObject(object):
-    """
-    Access class attributes as dictionary
-    """
-    def __getitem__(self, attr):
-        return self.__dict__[attr]
-
+class BaseObject(object):
     def __repr__(self):
         return pprint.pformat(self.__dict__)
 
@@ -52,5 +46,5 @@ def to_decimal(value):
     try:
         num = Decimal(value)
         return num
-    except Exception:
+    except InvalidOperation:
         return value
