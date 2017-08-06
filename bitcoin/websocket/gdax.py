@@ -47,8 +47,8 @@ class GdaxOrderBook(WebSocket):
         self.logger.debug('Loading book')
         self.syncing = True
         data = get_gdax_book()
-        self.book = ob.convert_data_to_book(data, level=3, seq='sequence')
-        self.logger.debug('Got book: {}'.format(self.book.seq))
+        self.book = ob.json_to_book(data, level=3)
+        self.logger.debug('Got book: {}'.format(self.book.sequence))
 
         while not self.restart and not self.queue.empty():
             msg = self.queue.get()
@@ -84,13 +84,13 @@ class GdaxOrderBook(WebSocket):
         book = book or self.book
         sequence = msg['sequence']
 
-        if sequence <= book.seq:
+        if sequence <= book.sequence:
             # ignore older messages (e.g. before order book initialization from getProductOrderBook)
             self.logger.debug('Ignoring older msg: {}'.format(sequence))
             return
-        elif sequence != book.seq + 1:
+        elif sequence != book.sequence + 1:
             # resync
-            self.logger.info('Out of synch: book({}), message({})'.format(book.seq, sequence))
+            self.logger.info('Out of synch: book({}), message({})'.format(book.sequence, sequence))
             self.restart = True
             return
 
@@ -107,8 +107,8 @@ class GdaxOrderBook(WebSocket):
         elif type == 'change':
             self.change_order(msg, book)
 
-        book.seq = msg['sequence']
-        self.logger.debug('Book: {}'.format(book.seq))
+        book.sequence = msg['sequence']
+        self.logger.debug('Book: {}'.format(book.sequence))
 
     def parse_message(self, msg):
         """
@@ -264,23 +264,30 @@ class GdaxOrderBook(WebSocket):
 
     def check_book_in_sync(self):
         self.logger.info('Checking book is in sync')
+        # quit if restarting
         if self.restart or self.syncing:
             self.logger.info('Book is not ready')
             return
 
         self.checking = True
         current_book = deepcopy(self.book)
-        self.logger.info('Current book: {}'.format(current_book.seq))
+        self.logger.info('Current book: {}'.format(current_book.sequence))
+
+        # expected
         data = get_gdax_book()
-        expected = self.book = ob.convert_data_to_book(data, level=3, seq='sequence')
+        expected = ob.json_to_set(data)
         self.checking = False
 
+        # actual
         while not self.check_queue.empty():
             msg = self.check_queue.get()
-            if msg['sequence'] <= expected.seq:
+            if msg['sequence'] <= expected['sequence']:
                 self.process_message(msg, current_book)
+        actual = ob.book_to_set(current_book)
 
-        is_same = ob.compare_books(current_book, expected)
+        print expected['bids'].difference(actual['bids'])
+        print actual['bids'].difference(expected['bids'])
+        is_same = False
         if is_same:
             self.logger.info('Book is in sync!')
         else:

@@ -5,16 +5,16 @@ import bitcoin.util as util
 
 
 class OrderBook(util.JsonObject):
-    def __init__(self, bids=None, asks=None, seq=None):
+    def __init__(self, bids=None, asks=None, sequence=None):
         """
 
         Parameters
         ----------
-        seq: int
+        sequence: int
         bids: SortedListWithKey[PriceLevel]
         asks: SortedListWithKey[PriceLevel]
         """
-        self.seq = seq
+        self.sequence = sequence
         self.bids = bids
         self.asks = asks
 
@@ -35,7 +35,7 @@ class PriceLevel(util.JsonObject):
         self.orders = orders
 
 
-def convert_data_to_book(data, level, seq=None):
+def json_to_book(data, level, sequence='sequence'):
     if level == 2:
         func = get_price_levels_from_level_2
     elif level == 3:
@@ -45,9 +45,36 @@ def convert_data_to_book(data, level, seq=None):
 
     bids = func(data['bids'])
     asks = func(data['asks'])
-    seq = data.get(seq)
-    book = OrderBook(bids, asks, seq)
+    sequence = data.get(sequence)
+    book = OrderBook(bids, asks, sequence)
     return book
+
+
+def level_to_set(level):
+    result = {
+        (str(level.price), str(size), order_id)
+        for level in level
+        for order_id, size in level.orders.iteritems()
+    }
+    return result
+
+
+def book_to_set(book):
+    result = {
+        'sequence': book.sequence,
+        'bids': level_to_set(book.bids),
+        'asks': level_to_set(book.asks)
+    }
+    return result
+
+
+def json_to_set(data):
+    result = {
+        'sequence': data['sequence'],
+        'bids': {(price, size, order_id) for price, size, order_id in data['bids']},
+        'asks': {(price, size, order_id) for price, size, order_id in data['asks']}
+    }
+    return result
 
 
 def get_price_levels_from_level_2(lst):
@@ -87,7 +114,12 @@ def remove_order(levels, price, size, order_id):
         return
 
     idx = levels.bisect_key_left(price)
-    seen_order = idx < len(levels) and order_id in levels[idx].orders
+    try:
+        seen_order = idx < len(levels) and order_id in levels[idx].orders
+    except Exception as e:
+        import pdb
+        pdb.set_trace()
+
     if not seen_order:
         # ignore done message which are not on the book. this could be because of fully-filled orders or
         # self-trade prevention
@@ -126,26 +158,59 @@ def update_order(levels, price, old_size, new_size, order_id):
     return
 
 
-def compare_books(book1, book2, logger=None):
-    if book1.seq != book2.seq:
-        print 'Sequence numbers do not match: {}, {}'.format(book1.seq, book2.seq)
-    bids_same = compare_levels('bid', book1.bids, book2.bids)
-    asks_same = compare_levels('ask', book1.asks, book2.asks)
-    return bids_same and asks_same
+def compare_books(actual, expected):
+    if actual['sequence'] != expected['sequence']:
+        print 'Sequence numbers do not match: {}, {}'.format(actual.sequence, expected.sequence)
+    bids_same = compare_levels('bid', actual['bids'], expected['bids'])
+    #asks_same = compare_levels('ask', actual.asks, expected.asks)
+    return actual == expected
 
 
-def compare_levels(side, levels1, levels2):
+def compare_levels(side, actual, expected):
     is_same = True
-    size = min(len(levels1), len(levels2))
+    size = min(len(actual), len(expected))
+
+    if len(actual) != len(expected):
+        print 'book size mismatch'
+        is_same = False
+
     for i in range(size):
-        level1 = levels1[i]
-        level2 = levels2[i]
-        if level1 != level2:
-            import pdb;
-            pdb.set_trace()
+        actual_level = actual[i]
+        expected_level = expected[i]
+
+        if actual_level.price != expected_level.price:
+            print 'price mismatch'
             is_same = False
-            print '\n{}: levels different'.format(side)
-            print level1
-            print '=' * 20
-            print level2
+
+        if actual_level.size != expected_level.size:
+            print 'size mismatch'
+            is_same = False
+
+        actual_orders = set(actual_level.orders.keys())
+        expected_orders = set(expected_level.orders.keys())
+        extra_orders = actual_orders.difference(expected_orders)
+        missing_orders = expected_orders.difference(actual_orders)
+
+        if extra_orders:
+            print 'extra orders'
+            print extra_orders
+
+        if missing_orders:
+            print 'missing orders'
+            print missing_orders
+
+        # if actual_level != expected_level:
+        #     # import pdb;
+        #     # pdb.set_trace()
+        #     #is_same = False
+        #     print '\n{}: levels different'.format(side)
+        #     print actual_level
+        #     print '=' * 20
+        #     print expected_level
     return is_same
+
+
+if __name__ == '__main__':
+    from bitcoin.websocket.gdax import get_gdax_book
+    data = get_gdax_book()
+    print get_price_levels_from_level_3(data['bids'])
