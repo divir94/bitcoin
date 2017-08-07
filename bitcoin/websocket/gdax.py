@@ -187,6 +187,10 @@ class GdaxOrderBook(WebSocket):
         """
         price = msg.get('price')
         order_id = msg['order_id']
+
+        if order_id not in book.orders:
+            return
+
         result = book.update(order_id, 0)
         assert price == result[0]
 
@@ -264,6 +268,9 @@ class GdaxOrderBook(WebSocket):
         price = msg.get('price')
         new_size = msg['new_size']
         order_id = msg['order_id']
+
+        if order_id not in book.orders or not price:
+            return
 
         result = book.update(order_id, new_size)
         assert price == result[0]
