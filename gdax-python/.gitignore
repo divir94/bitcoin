@@ -1,8 +1,0 @@
-.idea
-*.pyc
-example.py
-build/
-dist/
-*.egg-info/
-*.rst
-venv/
