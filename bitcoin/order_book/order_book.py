@@ -2,6 +2,7 @@ from decimal import Decimal
 from sortedcontainers import SortedListWithKey
 
 import bitcoin.util as util
+from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
@@ -20,9 +21,18 @@ class OrderBook(util.BaseObject):
         asks: SortedListWithKey[PriceLevel]
         """
         self.sequence = int(sequence)
-        self.bids = bids or SortedListWithKey(key=lambda x: x.price)
-        self.asks = asks or SortedListWithKey(key=lambda x: x.price)
+        self.bids = SortedListWithKey(key=lambda x: x.price)
+        self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
+
+        # initialize bids and asks
+        bids = bids or []
+        for price, size, order_id in bids:
+            self.add('buy', price, size, order_id)
+
+        asks = asks or []
+        for price, size, order_id in asks:
+            self.add('sell', price, size, order_id)
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -64,6 +74,9 @@ class OrderBook(util.BaseObject):
     def add(self, side, price, size, order_id):
         """add an order to an exsiting price level or create a new price level"""
         assert order_id not in self.orders
+        price = Decimal(price)
+        size = Decimal(size)
+
         # get index
         levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
@@ -79,8 +92,10 @@ class OrderBook(util.BaseObject):
         return price, size, order_id
 
     def update(self, order_id, new_size):
-        """update or remove from an order from a price level"""
+        """update or remove an order from a price level"""
         assert order_id in self.orders
+        new_size = Decimal(new_size)
+
         level = self._get_level(order_id)
         level.update(order_id, new_size)
         price = level.price
@@ -88,102 +103,17 @@ class OrderBook(util.BaseObject):
         # remove level
         if level.size == 0:
             levels = self._get_levels_from_price(price)
-            levels.update(level, 0)  # this is SortedListWithKey.remove
+            levels.remove(level)  # this is SortedListWithKey.remove
 
         # remove order
         if new_size == 0:
             del self.orders[order_id]
         return price, new_size, order_id
 
-
-class PriceLevel(util.BaseObject):
-    def __init__(self, price, orders):
-        """
-        Contains sll the bid or ask orders for a corresponding price.
-        The add, remove and update methods return (price, new_size, order_id).
-
-        Parameters
-        ----------
-        price: float
-        orders: dict[order_id, size]
-        """
-        self.price = Decimal(price)
-        self.size = Decimal(sum(orders.values()))
-        self.orders = {k: Decimal(v) for k, v in orders.iteritems()}
-
-    def add(self, size, order_id):
-        size = Decimal(size)
-        # add size and order_id
-        self.size += size
-        self.orders[order_id] = size
-        return self.price, size, order_id
-
-    def update(self, order_id, new_size):
-        new_size = Decimal(new_size)
-        assert order_id in self.orders
-        # subtract the size change
-        old_size = self.orders[order_id]
-        self.size += (new_size - old_size)
-        # update order
-        self.orders[order_id] = new_size
-        # remove order if needed
-        if new_size == 0:
-            del self.orders[order_id]
-        return self.price, new_size, order_id
-
-
-def json_to_book(data, level, sequence='sequence'):
-    if level == 2:
-        func = get_price_levels_from_level_2
-    elif level == 3:
-        func = get_price_levels_from_level_3
-    else:
-        raise ValueError('Invalid level: {}'.format(level))
-
-    bids = func(data['bids'])
-    asks = func(data['asks'])
-    sequence = data.get(sequence)
-    book = OrderBook(bids, asks, sequence)
-    return book
-
-
-def level_to_set(level):
-    result = {
-        (str(level.price), str(size), order_id)
-        for level in level
-        for order_id, size in level.orders.iteritems()
-    }
-    return result
-
-
-def book_to_set(book):
-    result = {
-        'sequence': book.sequence,
-        'bids': level_to_set(book.bids),
-        'asks': level_to_set(book.asks)
-    }
-    return result
-
-
-def json_to_set(data):
-    result = {
-        'sequence': data['sequence'],
-        'bids': {(price, size, order_id) for price, size, order_id in data['bids']},
-        'asks': {(price, size, order_id) for price, size, order_id in data['asks']}
-    }
-    return result
-
-
-def get_price_levels_from_level_2(lst):
-    levels = (PriceLevel(price, size) for price, size in lst)
-    result = SortedListWithKey(levels, key=lambda level: level.price)
-    return result
-
-
-def get_price_levels_from_level_3(lst):
-    levels = SortedListWithKey(key=lambda level: level.price)
-    for price, size, order_id in lst:
-        price = Decimal(price)
-        size = Decimal(size)
-        add_order(levels, price, size, order_id)
-    return levels
+    def to_set(self):
+        """set of (price, size, order_id) for all orders"""
+        bids = [level.to_set() for level in self.bids]
+        asks = [level.to_set() for level in self.asks]
+        orders = bids + asks
+        result = set.union(*orders)
+        return result
