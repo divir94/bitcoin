@@ -1,0 +1,20 @@
+2017-08-05 10:58:11,260 - websocket - DEBUG - Connecting to channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-08-05 10:58:12,043 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:13,243 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:13,801 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:13,801 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:14,754 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:14,988 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:14,993 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:14,999 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:15,000 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,112 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,280 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,338 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,365 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,385 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,394 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,457 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,487 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,555 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
+2017-08-05 10:58:16,573 - websocket - ERROR - error from callback <bound method GdaxOrderBook.on_message of <__main__.GdaxOrderBook object at 0x108cf3090>>: order not in order book!
