@@ -35,7 +35,6 @@ class GdaxOrderBook(WebSocket):
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
-        self.checking = False  # checking if the book is in sync
         self.check_interval = 600  # check every x seconds
 
     def reset_book(self):
@@ -79,10 +78,6 @@ class GdaxOrderBook(WebSocket):
             self.queue = deque()
             Thread(target=self.reset_book).start()
             self.restart = False
-        elif self.checking:
-            # check queue
-            self.logger.debug('Queuing msg for checking: {}'.format(sequence))
-            self.queue.append(msg)
         elif self.syncing:
             # sync in process, queue msgs
             self.logger.debug('Queuing msg: {}'.format(sequence))
@@ -100,7 +95,7 @@ class GdaxOrderBook(WebSocket):
             return
         elif sequence != book.sequence + 1:
             # resync
-            self.logger.info('Out of synch: book({}), message({})'.format(book.sequence, sequence))
+            self.logger.info('Out of sync: book({}), message({})'.format(book.sequence, sequence))
             self.restart = True
             return
 
@@ -286,7 +281,7 @@ class GdaxOrderBook(WebSocket):
         assert price == result[0]
 
     def check_book(self):
-        self.checking = True
+        self.syncing = True
 
         # save current book
         current_book = deepcopy(self.book)
@@ -308,7 +303,7 @@ class GdaxOrderBook(WebSocket):
         self.apply_queue(expected_book)
         self.book = expected_book
         self.queue = deque()
-        self.checking = False
+        self.syncing = False
         self.logger.info('Current book end: {}'.format(self.book.sequence))
         return
 
