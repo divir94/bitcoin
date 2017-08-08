@@ -9,7 +9,7 @@ When the spread on the two exchanges is greater than some threshold, we buy BTC 
 
 1. ~~Add timeouts to each request in stead of the signal. (vidurj)~~ Done for gdax, and will be subsumed by websockets anyway.  
 2. Make sure that even if GDAX is lagging we're fine.
-3. Add logging. (vidurj)
+3. ~~Add logging. (vidurj)~~
 4. Check for the cheaper exchange before executing market orders. (vidurj)
 5. Analyse how we lost money on 2 trades. (divir94)
 
