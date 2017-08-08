@@ -1,5 +1,6 @@
 *.idea
 .ipynb_checkpoints
+*.cache
 
 # OS generated files #
 ######################
