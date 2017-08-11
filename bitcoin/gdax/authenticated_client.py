@@ -12,6 +12,8 @@ import base64
 import json
 from requests.auth import AuthBase
 from bitcoin.gdax.public_client import PublicClient
+import logging
+logger = logging.getLogger(__name__)
 
 
 class AuthenticatedClient(PublicClient):
@@ -79,10 +81,14 @@ class AuthenticatedClient(PublicClient):
                           auth=self.auth)
         return r.json()
 
+    def async_cancel_order(self, order_id, pool):
+        pool.apply_async(self.cancel_order, order_id)
+
     def cancel_order(self, order_id):
-        r = requests.delete(self.url + '/orders/' + order_id, auth=self.auth)
+        resp = requests.delete(self.url + '/orders/' + order_id, auth=self.auth).json()
         # r.raise_for_status()
-        return r.json()
+        logger.info("Attempted to cancel order {}\nResponse: {}".format(order_id, resp))
+        return resp
 
     def cancel_all(self, data=None, product=''):
         if type(data) is dict:
