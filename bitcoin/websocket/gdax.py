@@ -72,6 +72,9 @@ class GdaxOrderBook(WebSocket):
         sequence = msg['sequence']
         self.logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
+        if self.on_change is not None:
+            self.on_change(msg)
+
         if self.restart:
             # reset order book and clear queue
             self.logger.info('Restarting sync: {}'.format(sequence))
@@ -313,6 +316,9 @@ class GdaxOrderBook(WebSocket):
         while True:
             time.sleep(self.check_interval)
             self.check_book()
+
+    def get_level_2(self):
+        return self.book.to_level2()
 
 
 if __name__ == '__main__':

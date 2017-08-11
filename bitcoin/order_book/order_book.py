@@ -3,6 +3,7 @@ from sortedcontainers import SortedListWithKey
 
 import bitcoin.util as util
 from price_level import PriceLevel
+from AggressiveTrader import price_volume_pair
 
 
 class OrderBook(util.BaseObject):
@@ -117,3 +118,10 @@ class OrderBook(util.BaseObject):
         orders = bids + asks
         result = set.union(*orders)
         return result
+
+    def to_level2(self):
+        level2_book = {
+            "bids": [price_volume_pair(price=bid.price, volume=bid.size) for bid in self.bids],
+            "asls": [price_volume_pair(price=ask.price, volume=ask.size) for ask in self.asks]
+        }
+        return level2_book

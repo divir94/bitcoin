@@ -1,8 +1,9 @@
 import logging
 import time
-
+from AggressiveTrader import
 from bitcoin.websocket.bitstamp import BitstampOrderBook
-
+from bitcoin.websocket.gdax import GdaxOrderBook
+from collections import namedtuple
 # logging
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
@@ -21,14 +22,14 @@ BS_CHANNEL = 'order_book'
 
 
 class Bot(object):
+    outstanding_limit_orders = namedtuple("OutstandingLimitOrders", ["gdax", "bitstamp"])
     def __init__(self):
         self.balances = None
-        self.gx_book = {}
-        self.bs_book = {}
-        self.current_limit_orders = []
+        self.outstanding_limit_orders = Bot.outstanding_limit_orders(gdax=[], bitstamp=[])
 
     def run(self):
-        bs_ws = BitstampOrderBook(self.handle_book_change, BS_CHANNEL)
+        bs_ws = BitstampOrderBook(channel=BS_CHANNEL)
+        gdax_ws = GdaxOrderBook()
         bs_ws.run()
         time.sleep(10)
         bs_ws.close()
