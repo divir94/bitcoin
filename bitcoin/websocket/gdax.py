@@ -9,7 +9,6 @@ from copy import deepcopy
 
 import bitcoin.logs.logger
 import bitcoin.order_book as ob
-import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
 
 
@@ -28,7 +27,8 @@ def get_gdax_book():
 class GdaxOrderBook(WebSocket):
     def __init__(self, on_change=None):
         channel = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
-        super(GdaxOrderBook, self).__init__(GX_WS_URL, channel)
+        heartbeat = {'type': 'heartbeat', 'on': True}
+        super(GdaxOrderBook, self).__init__(GX_WS_URL, channel, heartbeat)
         self.exchange = 'GDAX'
         self.book = ob.OrderBook(-1)
         self.queue = deque()
@@ -68,8 +68,7 @@ class GdaxOrderBook(WebSocket):
         logger.debug('Book ready: {}'.format(book.sequence))
         return
 
-    def on_message(self, ws, message):
-        msg = self.parse_message(message)
+    def handle_message(self, msg):
         sequence = msg['sequence']
         logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
@@ -120,12 +119,6 @@ class GdaxOrderBook(WebSocket):
 
         book.sequence = msg['sequence']
         logger.debug('Book: {}'.format(book.sequence))
-
-    def parse_message(self, msg):
-        """convert fields to number"""
-        msg = json.loads(msg)
-        msg = {k: util.to_decimal(v) for k, v in msg.iteritems()}
-        return msg
 
     def _get_levels(self, side, book):
         book = book or self.book
@@ -319,5 +312,5 @@ class GdaxOrderBook(WebSocket):
 if __name__ == '__main__':
     ws = GdaxOrderBook()
     ws.run()
-    time.sleep(5)
-    ws.close()
+    # time.sleep(10)
+    # ws.close()
