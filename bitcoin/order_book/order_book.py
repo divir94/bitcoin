@@ -115,5 +115,7 @@ class OrderBook(util.BaseObject):
         bids = [level.to_set() for level in self.bids]
         asks = [level.to_set() for level in self.asks]
         orders = bids + asks
+        if not orders:
+            return set()
         result = set.union(*orders)
         return result
