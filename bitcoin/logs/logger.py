@@ -11,9 +11,6 @@ LOGGING_CONF = {
     'formatters': {
         'standard': {
             'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        },
-        'ob': {
-            'format': '%(asctime)s - %(name)s - %(levelname)s - %(sequence)s - %(message)s'
         }
     },
     'handlers': {
@@ -26,25 +23,11 @@ LOGGING_CONF = {
         'streamHandler': {
             'class': 'logging.StreamHandler',
             'formatter': 'standard',
-        },
-        'obFileHandler': {
-            'class': 'logging.FileHandler',
-            'formatter': 'ob',
-            'filename': FILENAME,
-            'mode': 'w',
-        },
-        'obStreamHandler': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'ob',
         }
     },
     'loggers': {
-        'core_websocket': {
+        '': {
             'handlers': ['fileHandler', 'streamHandler'],
-            'level': 'INFO',
-        },
-        'gdax_websocket': {
-            'handlers': ['obFileHandler', 'obStreamHandler'],
             'level': 'INFO',
         }
     },

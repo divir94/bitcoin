@@ -1,45 +1,9 @@
-2017-08-12 03:24:52,916 - gdax_websocket - INFO - -1 - Restarting sync
-2017-08-12 03:24:52,917 - gdax_websocket - INFO - -1 - ==============================
-2017-08-12 03:24:52,917 - gdax_websocket - INFO - -1 - Loading book
-2017-08-12 03:24:55,160 - gdax_websocket - INFO - 3824253792 - Got book
-2017-08-12 03:24:55,161 - gdax_websocket - INFO - 3824253792 - Applying queued msgs
-2017-08-12 03:24:55,189 - gdax_websocket - INFO - 3824253945 - Book ready
-2017-08-12 03:24:55,190 - gdax_websocket - INFO - 3824253945 - ==============================
-2017-08-12 03:24:55,191 - gdax_websocket - INFO - 3824253945 - Out of sync: message(3824253948)
-2017-08-12 03:24:55,193 - gdax_websocket - INFO - 3824253945 - Restarting sync
-2017-08-12 03:24:55,194 - gdax_websocket - INFO - 3824253945 - ==============================
-2017-08-12 03:24:55,194 - gdax_websocket - INFO - 3824253945 - Loading book
-2017-08-12 03:24:59,095 - gdax_websocket - INFO - 3824253996 - Got book
-2017-08-12 03:24:59,096 - gdax_websocket - INFO - 3824253996 - Applying queued msgs
-2017-08-12 03:24:59,125 - gdax_websocket - INFO - 3824254224 - Book ready
-2017-08-12 03:24:59,125 - gdax_websocket - INFO - 3824254224 - ==============================
-2017-08-12 03:25:02,578 - gdax_websocket - INFO - 3824254455 - ==============================
-2017-08-12 03:25:02,920 - gdax_websocket - INFO - 3824254455 - Checking book start
-2017-08-12 03:25:05,850 - gdax_websocket - INFO - 3824254495 - Expected book sequence
-2017-08-12 03:25:05,850 - gdax_websocket - INFO - 3824254455 - Applying queued msgs
-2017-08-12 03:25:05,858 - gdax_websocket - INFO - 3824254455 - Book ready
-2017-08-12 03:25:06,991 - gdax_websocket - INFO - 3824254495 - Book differences: 0
-2017-08-12 03:25:06,991 - gdax_websocket - INFO - 3824254455 - Applying queued msgs
-2017-08-12 03:25:07,027 - gdax_websocket - INFO - 3824254455 - Book ready
-2017-08-12 03:25:07,036 - gdax_websocket - INFO - 3824254696 - Checking book end
-2017-08-12 03:25:07,036 - gdax_websocket - INFO - 3824254696 - ==============================
-2017-08-12 03:25:12,604 - gdax_websocket - INFO - 3824254849 - ==============================
-2017-08-12 03:25:12,973 - gdax_websocket - INFO - 3824254849 - Checking book start
-2017-08-12 03:25:16,872 - gdax_websocket - INFO - 3824254856 - Expected book sequence
-2017-08-12 03:25:16,872 - gdax_websocket - INFO - 3824254849 - Applying queued msgs
-2017-08-12 03:25:16,873 - gdax_websocket - INFO - 3824254849 - Book ready
-2017-08-12 03:25:18,374 - gdax_websocket - INFO - 3824254856 - Book differences: 0
-2017-08-12 03:25:18,374 - gdax_websocket - INFO - 3824254849 - Applying queued msgs
-2017-08-12 03:25:18,412 - gdax_websocket - INFO - 3824254849 - Book ready
-2017-08-12 03:25:18,419 - gdax_websocket - INFO - 3824254978 - Checking book end
-2017-08-12 03:25:18,420 - gdax_websocket - INFO - 3824254978 - ==============================
-2017-08-12 03:25:22,921 - gdax_websocket - INFO - 3824255140 - ==============================
-2017-08-12 03:25:23,322 - gdax_websocket - INFO - 3824255140 - Checking book start
-2017-08-12 03:25:27,444 - gdax_websocket - INFO - 3824255185 - Expected book sequence
-2017-08-12 03:25:27,444 - gdax_websocket - INFO - 3824255140 - Applying queued msgs
-2017-08-12 03:25:27,450 - gdax_websocket - INFO - 3824255140 - Book ready
-2017-08-12 03:25:28,631 - gdax_websocket - INFO - 3824255185 - Book differences: 0
-2017-08-12 03:25:28,631 - gdax_websocket - INFO - 3824255140 - Applying queued msgs
-2017-08-12 03:25:28,658 - gdax_websocket - INFO - 3824255140 - Book ready
-2017-08-12 03:25:28,664 - gdax_websocket - INFO - 3824255360 - Checking book end
-2017-08-12 03:25:28,664 - gdax_websocket - INFO - 3824255360 - ==============================
+2017-08-12 12:24:13,901 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-08-12 12:24:14,124 - core_websocket - INFO - Listening for messages
+2017-08-12 12:24:14,243 - gdax_websocket - INFO - Restarting sync
+2017-08-12 12:24:14,243 - gdax_websocket - INFO - ==============================
+2017-08-12 12:24:14,244 - gdax_websocket - INFO - Loading book
+2017-08-12 12:24:16,399 - gdax_websocket - INFO - Got book: 3827170011
+2017-08-12 12:24:16,400 - gdax_websocket - INFO - Applying queued msgs: 3827170011
+2017-08-12 12:24:16,433 - gdax_websocket - INFO - Book ready: 3827170192
+2017-08-12 12:24:16,434 - gdax_websocket - INFO - ==============================
