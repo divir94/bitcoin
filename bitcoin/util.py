@@ -1,5 +1,4 @@
 import pprint
-import logging
 import os
 from decimal import Decimal, InvalidOperation
 
@@ -19,9 +18,11 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_decimal(value):
-    try:
-        num = Decimal(value)
-        return num
-    except InvalidOperation:
-        return value
+def to_decimal(msg):
+    result = {}
+    for k, v in msg.iteritems():
+        try:
+            result[k] = Decimal(v)
+        except InvalidOperation:
+            result[k] = v
+    return result
