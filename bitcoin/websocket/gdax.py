@@ -1,21 +1,21 @@
 import json
-import time
 import requests
 import logging
 from collections import deque
 from threading import Thread
-from multiprocessing import Pool
 from copy import deepcopy
 
 import bitcoin.logs.logger
 import bitcoin.order_book as ob
+import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
 
 
 GX_WS_URL = 'wss://ws-feed.gdax.com'
+GX_CHANNEL = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
 GX_HTTP_URL = 'https://api.gdax.com/products/BTC-USD/book'
-POOL = Pool()
 logger = logging.getLogger('gdax_websocket')
+#logger.setLevel(logging.DEBUG)
 
 
 def get_gdax_book():
@@ -26,9 +26,7 @@ def get_gdax_book():
 
 class GdaxOrderBook(WebSocket):
     def __init__(self, on_change=None):
-        channel = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
-        heartbeat = {'type': 'heartbeat', 'on': True}
-        super(GdaxOrderBook, self).__init__(GX_WS_URL, channel, heartbeat)
+        super(GdaxOrderBook, self).__init__(GX_WS_URL, GX_CHANNEL)
         self.exchange = 'GDAX'
         self.book = ob.OrderBook(-1)
         self.queue = deque()
@@ -36,53 +34,68 @@ class GdaxOrderBook(WebSocket):
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
-        self.check_interval = 600  # check every x seconds
+        self.check_freq = 10  # check every x seconds
+
+    def _get_levels(self, side, book):
+        book = book or self.book
+        return book.bids if side == 'buy' else book.asks
+
+    @property
+    def _log_extra(self):
+        return {'sequence': self.book.sequence}
 
     def reset_book(self):
         """get level 3 order book and apply pending messages from queue"""
-        logger.debug('Loading book')
+        logger.info('='*30, extra=self._log_extra)
+        logger.info('Loading book', extra=self._log_extra)
         self.syncing = True
 
         # get book
         data = get_gdax_book()
         self.book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
-        logger.debug('Got book: {}'.format(self.book.sequence))
+        logger.info('Got book', extra=self._log_extra)
 
         # apply queue
         self.apply_queue(self.book)
         self.queue = deque()
         self.syncing = False
+        logger.info('=' * 30, extra=self._log_extra)
 
     def apply_queue(self, book, end=None):
         """apply queued messages to book till end sequence"""
+        logger.info('Applying queued msgs', extra=self._log_extra)
         end = end or float('inf')
 
         while not self.restart and len(self.queue):
             msg = self.queue.popleft()
             sequence = msg['sequence']
+
             if sequence > end:
                 self.queue.appendleft(msg)
                 break
-            logger.debug('Applying queued msg: {}'.format(sequence))
-            self.process_message(msg, book)
-        logger.debug('Book ready: {}'.format(book.sequence))
+
+            result = self.process_message(msg, book)
+            if result != -1:
+                logger.debug('Processed queued msg', extra=self._log_extra)
+        logger.info('Book ready', extra=self._log_extra)
         return
 
-    def handle_message(self, msg):
+    def on_message(self, msg):
+        msg = util.to_decimal(msg)
         sequence = msg['sequence']
-        logger.debug('Msg receieved: {}'.format(msg['sequence']))
 
         if self.restart:
             # reset order book and clear queue
-            logger.info('Restarting sync: {}'.format(sequence))
+            logger.info('Restarting sync', extra=self._log_extra)
             self.queue = deque()
             Thread(target=self.reset_book).start()
             self.restart = False
         elif self.syncing:
             # sync in process, queue msgs
-            logger.debug('Queuing msg: {}'.format(sequence))
+            logger.debug('Queuing msg', extra=self._log_extra)
             self.queue.append(msg)
         else:
+            logger.debug('Processing msg', extra=self._log_extra)
             self.process_message(msg)
 
     def process_message(self, msg, book=None):
@@ -91,13 +104,13 @@ class GdaxOrderBook(WebSocket):
 
         if sequence <= book.sequence:
             # ignore older messages (e.g. before order book initialization from getProductOrderBook)
-            logger.debug('Ignoring older msg: {}'.format(sequence))
-            return
+            logger.debug('Ignoring older msg', extra=self._log_extra)
+            return -1
         elif sequence != book.sequence + 1:
             # resync
-            logger.info('Out of sync: book({}), message({})'.format(book.sequence, sequence))
+            logger.info('Out of sync: message({})'.format(sequence), extra=self._log_extra)
             self.restart = True
-            return
+            return -1
 
         _type = msg['type']
         if _type == 'open':
@@ -115,14 +128,9 @@ class GdaxOrderBook(WebSocket):
             pass
         else:
             assert _type == 'error'
-            logger.error('Error message: {}'.format(msg))
+            logger.error('Error message: {}'.format(msg), extra=self._log_extra)
 
-        book.sequence = msg['sequence']
-        logger.debug('Book: {}'.format(book.sequence))
-
-    def _get_levels(self, side, book):
-        book = book or self.book
-        return book.bids if side == 'buy' else book.asks
+        book.sequence = int(msg['sequence'])
 
     def open_order(self, msg, book):
         """
@@ -275,15 +283,17 @@ class GdaxOrderBook(WebSocket):
         assert price == result[0]
 
     def check_book(self):
+        logger.info('=' * 30, extra=self._log_extra)
         self.syncing = True
 
         # save current book
         current_book = deepcopy(self.book)
-        logger.info('Checking book start: {}'.format(current_book.sequence))
+        logger.info('Checking book start', extra={'sequence': current_book.sequence})
 
         # get expected book
         data = get_gdax_book()
         expected_book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
+        logger.info('Expected book sequence', extra={'sequence': expected_book.sequence})
 
         # apply queue to current book
         self.apply_queue(current_book, end=expected_book.sequence)
@@ -291,26 +301,19 @@ class GdaxOrderBook(WebSocket):
         # compare diffs
         num_diff = ob.compare_books(current_book, expected_book)
         msg = 'Book differences: {}'.format(num_diff)
-        logger.error(msg) if num_diff > 0 else logger.info(msg)
+        log_extra = {'sequence': current_book.sequence}
+        logger.error(msg, extra=log_extra) if num_diff > 0 else logger.info(msg, extra=log_extra)
 
         # reset book
         self.apply_queue(expected_book)
         self.book = expected_book
         self.queue = deque()
         self.syncing = False
-        logger.info('Current book end: {}'.format(self.book.sequence))
+        logger.info('Checking book end', extra=self._log_extra)
+        logger.info('=' * 30, extra=self._log_extra)
         return
-
-    def run(self):
-        Thread(target=self.run_forever).start()
-        # check queue
-        # while True:
-        #     time.sleep(self.check_interval)
-        #     self.check_book()
 
 
 if __name__ == '__main__':
     ws = GdaxOrderBook()
-    ws.run()
-    # time.sleep(10)
-    # ws.close()
+    ws.start()
