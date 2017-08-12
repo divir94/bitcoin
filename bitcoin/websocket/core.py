@@ -17,7 +17,7 @@ class WebSocket(websocket.WebSocketApp):
                                         on_message=self.on_message,
                                         on_error=self.on_error,
                                         on_close=self.on_close)
-        self.heartbeat_freq = 30
+        self.heartbeat_freq = 5
         self.channel = channel
         self.heartbeat = heartbeat
 
@@ -31,6 +31,8 @@ class WebSocket(websocket.WebSocketApp):
         # heartbeat
         if int(time() % self.heartbeat_freq) == 0:
             ws.ping('keepalive')
+            ws.close()
+            self.run()
 
         # handle msg
         msg = self.parse_message(message)

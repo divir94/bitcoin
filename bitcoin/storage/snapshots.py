@@ -18,7 +18,8 @@ BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
 ENGINE = None  # initialized later
 
-logger = util.get_logger('storage', level=logging.ERROR)
+logger = logging.getLogger('storage')
+logger.setLevel(logging.ERROR)
 
 
 ###########
