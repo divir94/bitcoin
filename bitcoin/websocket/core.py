@@ -18,9 +18,9 @@ class WebSocket(object):
         self.ws = None
 
         self.ping_freq = 30
-        self.heartbeat = False
+        self.heartbeat = True
         self.last_heartbeat = time.time()
-        self.heartbeat_tol = 2
+        self.heartbeat_tol = 5
         self.check_freq = None
         self.last_check = time.time()
 
@@ -101,6 +101,7 @@ class WebSocket(object):
         # stop listening and close the websocket
         time.sleep(1)
         self.ws.close()
+        time.sleep(1)
 
     def on_message(self, msg):
         # logger.debug(msg)
