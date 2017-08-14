@@ -1,6 +1,5 @@
 import json
 import logging
-import pandas as pd
 from sqlalchemy import create_engine
 
 import bitcoin.logs.logger
