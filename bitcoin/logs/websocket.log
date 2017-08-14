@@ -1,77 +1,709 @@
-2017-08-13 21:12:41,139 - db_util - INFO - Getting DB engine instance
-2017-08-13 21:12:41,274 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
-2017-08-13 21:12:41,443 - core_websocket - INFO - Turning on heartbeat
-2017-08-13 21:12:41,443 - core_websocket - INFO - Listening for messages
-2017-08-13 21:12:41,506 - gdax_msg_storage - ERROR - Out of sync: last sequence(-1), message(3836784172)
-2017-08-13 21:12:51,651 - gdax_msg_storage - INFO - Storing 325 messages after 10.38s
-2017-08-13 21:12:51,668 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:52,552 - db_util - INFO - Stored 109 rows in GdaxReceived
-2017-08-13 21:12:52,552 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:52,553 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:53,093 - db_util - INFO - Stored 107 rows in GdaxOpen
-2017-08-13 21:12:53,093 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:53,093 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:53,745 - db_util - INFO - Stored 2 rows in GdaxMatch
-2017-08-13 21:12:53,745 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:53,745 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:54,284 - db_util - INFO - Stored 107 rows in GdaxDone
-2017-08-13 21:12:54,284 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:12:54,285 - gdax_msg_storage - INFO - Took 2.63s to store 325 messages
-2017-08-13 21:13:01,697 - gdax_msg_storage - INFO - Storing 413 messages after 10.05s
-2017-08-13 21:13:01,718 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:03,446 - db_util - INFO - Stored 134 rows in GdaxDone
-2017-08-13 21:13:03,446 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:03,447 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:04,145 - db_util - INFO - Stored 140 rows in GdaxOpen
-2017-08-13 21:13:04,146 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:04,146 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:04,824 - db_util - INFO - Stored 139 rows in GdaxReceived
-2017-08-13 21:13:04,824 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:04,825 - gdax_msg_storage - INFO - Took 3.12s to store 413 messages
-2017-08-13 21:13:11,895 - gdax_msg_storage - INFO - Storing 400 messages after 10.20s
-2017-08-13 21:13:11,916 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,170 - db_util - INFO - Stored 133 rows in GdaxReceived
-2017-08-13 21:13:14,171 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,171 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,739 - db_util - INFO - Stored 132 rows in GdaxOpen
-2017-08-13 21:13:14,740 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,740 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,924 - db_util - INFO - Stored 135 rows in GdaxDone
-2017-08-13 21:13:14,925 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:14,925 - gdax_msg_storage - INFO - Took 3.02s to store 400 messages
-2017-08-13 21:13:22,051 - gdax_msg_storage - INFO - Storing 375 messages after 10.16s
-2017-08-13 21:13:22,071 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,034 - db_util - INFO - Stored 124 rows in GdaxReceived
-2017-08-13 21:13:24,034 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,034 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,349 - db_util - INFO - Stored 123 rows in GdaxOpen
-2017-08-13 21:13:24,349 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,350 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,513 - db_util - INFO - Stored 1 rows in GdaxMatch
-2017-08-13 21:13:24,514 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,514 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,690 - db_util - INFO - Stored 127 rows in GdaxDone
-2017-08-13 21:13:24,690 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:24,691 - gdax_msg_storage - INFO - Took 2.63s to store 375 messages
-2017-08-13 21:13:32,187 - gdax_msg_storage - INFO - Storing 244 messages after 10.14s
-2017-08-13 21:13:32,196 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:32,847 - db_util - INFO - Stored 79 rows in GdaxDone
-2017-08-13 21:13:32,848 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:32,848 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:33,408 - db_util - INFO - Stored 83 rows in GdaxOpen
-2017-08-13 21:13:33,408 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:33,409 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:33,832 - db_util - INFO - Stored 82 rows in GdaxReceived
-2017-08-13 21:13:33,832 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:33,833 - gdax_msg_storage - INFO - Took 1.64s to store 244 messages
-2017-08-13 21:13:42,363 - gdax_msg_storage - INFO - Storing 281 messages after 10.18s
-2017-08-13 21:13:42,373 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:42,884 - db_util - INFO - Stored 94 rows in GdaxReceived
-2017-08-13 21:13:42,885 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:42,885 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:43,296 - db_util - INFO - Stored 94 rows in GdaxOpen
-2017-08-13 21:13:43,297 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:43,297 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:43,451 - db_util - INFO - Stored 93 rows in GdaxDone
-2017-08-13 21:13:43,451 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2017-08-13 21:13:43,451 - gdax_msg_storage - INFO - Took 1.08s to store 281 messages
+2017-08-13 21:39:43,314 - db_util - INFO - Getting DB engine instance
+2017-08-13 21:39:43,406 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-08-13 21:39:43,706 - core_websocket - INFO - Turning on heartbeat
+2017-08-13 21:39:43,706 - core_websocket - INFO - Listening for messages
+2017-08-13 21:39:43,944 - gdax_msg_storage - ERROR - Out of sync: last sequence(-1), message(3836847537)
+2017-08-13 21:40:43,821 - gdax_msg_storage - INFO - Storing 936 messages after 60.41s
+2017-08-13 21:40:43,852 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:40:44,840 - db_util - INFO - Stored 5 rows in GdaxMatch
+2017-08-13 21:40:45,101 - db_util - INFO - Stored 315 rows in GdaxDone
+2017-08-13 21:40:45,306 - db_util - INFO - Stored 307 rows in GdaxOpen
+2017-08-13 21:40:45,506 - db_util - INFO - Stored 309 rows in GdaxReceived
+2017-08-13 21:40:45,507 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:40:45,507 - gdax_msg_storage - INFO - Took 1.67s to store 936 messages
+2017-08-13 21:41:43,966 - gdax_msg_storage - INFO - Storing 1566 messages after 60.14s
+2017-08-13 21:41:44,015 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:41:45,997 - db_util - INFO - Stored 7 rows in GdaxMatch
+2017-08-13 21:41:47,638 - db_util - INFO - Stored 516 rows in GdaxOpen
+2017-08-13 21:41:48,332 - db_util - INFO - Stored 524 rows in GdaxDone
+2017-08-13 21:41:49,224 - db_util - INFO - Stored 519 rows in GdaxReceived
+2017-08-13 21:41:49,225 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:41:49,225 - gdax_msg_storage - INFO - Took 5.24s to store 1566 messages
+2017-08-13 21:42:44,201 - gdax_msg_storage - INFO - Storing 749 messages after 60.23s
+2017-08-13 21:42:44,243 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:42:44,795 - db_util - INFO - Stored 2 rows in GdaxMatch
+2017-08-13 21:42:45,093 - db_util - INFO - Stored 249 rows in GdaxDone
+2017-08-13 21:42:45,301 - db_util - INFO - Stored 248 rows in GdaxOpen
+2017-08-13 21:42:45,530 - db_util - INFO - Stored 250 rows in GdaxReceived
+2017-08-13 21:42:45,530 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:42:45,531 - gdax_msg_storage - INFO - Took 1.31s to store 749 messages
+2017-08-13 21:43:44,352 - gdax_msg_storage - INFO - Storing 1378 messages after 60.15s
+2017-08-13 21:43:44,392 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:43:46,354 - db_util - INFO - Stored 21 rows in GdaxMatch
+2017-08-13 21:43:46,741 - db_util - INFO - Stored 463 rows in GdaxDone
+2017-08-13 21:43:46,954 - db_util - INFO - Stored 445 rows in GdaxOpen
+2017-08-13 21:43:47,165 - db_util - INFO - Stored 449 rows in GdaxReceived
+2017-08-13 21:43:47,166 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:43:47,166 - gdax_msg_storage - INFO - Took 2.80s to store 1378 messages
+2017-08-13 21:44:44,361 - gdax_msg_storage - INFO - Storing 1009 messages after 60.01s
+2017-08-13 21:44:44,392 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:44:44,854 - db_util - INFO - Stored 10 rows in GdaxMatch
+2017-08-13 21:44:45,701 - db_util - INFO - Stored 328 rows in GdaxOpen
+2017-08-13 21:44:46,685 - db_util - INFO - Stored 339 rows in GdaxDone
+2017-08-13 21:44:47,379 - db_util - INFO - Stored 332 rows in GdaxReceived
+2017-08-13 21:44:47,379 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:44:47,379 - gdax_msg_storage - INFO - Took 3.00s to store 1009 messages
+2017-08-13 21:45:44,380 - gdax_msg_storage - INFO - Storing 926 messages after 60.02s
+2017-08-13 21:45:44,435 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:45:44,976 - db_util - INFO - Stored 7 rows in GdaxMatch
+2017-08-13 21:45:45,268 - db_util - INFO - Stored 305 rows in GdaxDone
+2017-08-13 21:45:45,489 - db_util - INFO - Stored 305 rows in GdaxOpen
+2017-08-13 21:45:45,729 - db_util - INFO - Stored 309 rows in GdaxReceived
+2017-08-13 21:45:45,730 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:45:45,730 - gdax_msg_storage - INFO - Took 1.33s to store 926 messages
+2017-08-13 21:46:44,400 - gdax_msg_storage - INFO - Storing 1066 messages after 60.02s
+2017-08-13 21:46:44,433 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:46:44,636 - db_util - INFO - Stored 6 rows in GdaxMatch
+2017-08-13 21:46:44,928 - db_util - INFO - Stored 350 rows in GdaxOpen
+2017-08-13 21:46:45,153 - db_util - INFO - Stored 359 rows in GdaxDone
+2017-08-13 21:46:45,403 - db_util - INFO - Stored 351 rows in GdaxReceived
+2017-08-13 21:46:45,404 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:46:45,404 - gdax_msg_storage - INFO - Took 0.99s to store 1066 messages
+2017-08-13 21:47:44,543 - gdax_msg_storage - INFO - Storing 1815 messages after 60.14s
+2017-08-13 21:47:44,617 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:47:44,778 - db_util - INFO - Stored 13 rows in GdaxMatch
+2017-08-13 21:47:45,123 - db_util - INFO - Stored 592 rows in GdaxDone
+2017-08-13 21:47:45,345 - db_util - INFO - Stored 602 rows in GdaxOpen
+2017-08-13 21:47:45,568 - db_util - INFO - Stored 608 rows in GdaxReceived
+2017-08-13 21:47:45,569 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:47:45,569 - gdax_msg_storage - INFO - Took 0.98s to store 1815 messages
+2017-08-13 21:48:44,559 - gdax_msg_storage - INFO - Storing 2150 messages after 60.02s
+2017-08-13 21:48:44,626 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:48:44,996 - db_util - INFO - Stored 14 rows in GdaxMatch
+2017-08-13 21:48:45,994 - db_util - INFO - Stored 706 rows in GdaxOpen
+2017-08-13 21:48:46,804 - db_util - INFO - Stored 715 rows in GdaxDone
+2017-08-13 21:48:47,635 - db_util - INFO - Stored 715 rows in GdaxReceived
+2017-08-13 21:48:47,635 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:48:47,635 - gdax_msg_storage - INFO - Took 3.05s to store 2150 messages
+2017-08-13 21:49:44,579 - gdax_msg_storage - INFO - Storing 1646 messages after 60.02s
+2017-08-13 21:49:44,615 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:49:45,383 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 21:49:46,101 - db_util - INFO - Stored 545 rows in GdaxOpen
+2017-08-13 21:49:46,331 - db_util - INFO - Stored 544 rows in GdaxDone
+2017-08-13 21:49:46,567 - db_util - INFO - Stored 549 rows in GdaxReceived
+2017-08-13 21:49:46,568 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:49:46,568 - gdax_msg_storage - INFO - Took 1.97s to store 1646 messages
+2017-08-13 21:50:44,585 - gdax_msg_storage - INFO - Storing 1913 messages after 60.01s
+2017-08-13 21:50:44,629 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:50:44,801 - db_util - INFO - Stored 11 rows in GdaxMatch
+2017-08-13 21:50:45,174 - db_util - INFO - Stored 638 rows in GdaxDone
+2017-08-13 21:50:45,414 - db_util - INFO - Stored 629 rows in GdaxOpen
+2017-08-13 21:50:45,663 - db_util - INFO - Stored 635 rows in GdaxReceived
+2017-08-13 21:50:45,663 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:50:45,663 - gdax_msg_storage - INFO - Took 1.05s to store 1913 messages
+2017-08-13 21:51:44,654 - gdax_msg_storage - INFO - Storing 1510 messages after 60.07s
+2017-08-13 21:51:44,695 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:51:44,855 - db_util - INFO - Stored 14 rows in GdaxMatch
+2017-08-13 21:51:45,135 - db_util - INFO - Stored 499 rows in GdaxDone
+2017-08-13 21:51:45,342 - db_util - INFO - Stored 496 rows in GdaxOpen
+2017-08-13 21:51:45,542 - db_util - INFO - Stored 501 rows in GdaxReceived
+2017-08-13 21:51:45,542 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:51:45,543 - gdax_msg_storage - INFO - Took 0.86s to store 1510 messages
+2017-08-13 21:52:44,737 - gdax_msg_storage - INFO - Storing 1791 messages after 60.08s
+2017-08-13 21:52:44,793 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:52:44,954 - db_util - INFO - Stored 11 rows in GdaxMatch
+2017-08-13 21:52:45,274 - db_util - INFO - Stored 593 rows in GdaxDone
+2017-08-13 21:52:45,496 - db_util - INFO - Stored 591 rows in GdaxOpen
+2017-08-13 21:52:45,742 - db_util - INFO - Stored 596 rows in GdaxReceived
+2017-08-13 21:52:45,743 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:52:45,743 - gdax_msg_storage - INFO - Took 0.97s to store 1791 messages
+2017-08-13 21:53:44,787 - gdax_msg_storage - INFO - Storing 3514 messages after 60.05s
+2017-08-13 21:53:44,879 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:53:45,505 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 21:53:46,758 - db_util - INFO - Stored 1167 rows in GdaxOpen
+2017-08-13 21:53:47,056 - db_util - INFO - Stored 1167 rows in GdaxDone
+2017-08-13 21:53:47,344 - db_util - INFO - Stored 1172 rows in GdaxReceived
+2017-08-13 21:53:47,344 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:53:47,344 - gdax_msg_storage - INFO - Took 2.50s to store 3514 messages
+2017-08-13 21:54:44,894 - gdax_msg_storage - INFO - Storing 3253 messages after 60.10s
+2017-08-13 21:54:44,973 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:54:45,175 - db_util - INFO - Stored 40 rows in GdaxMatch
+2017-08-13 21:54:45,530 - db_util - INFO - Stored 1078 rows in GdaxDone
+2017-08-13 21:54:45,800 - db_util - INFO - Stored 1061 rows in GdaxOpen
+2017-08-13 21:54:46,211 - db_util - INFO - Stored 1074 rows in GdaxReceived
+2017-08-13 21:54:46,211 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:54:46,211 - gdax_msg_storage - INFO - Took 1.27s to store 3253 messages
+2017-08-13 21:55:44,926 - gdax_msg_storage - INFO - Storing 2483 messages after 60.03s
+2017-08-13 21:55:44,994 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:55:45,168 - db_util - INFO - Stored 33 rows in GdaxMatch
+2017-08-13 21:55:45,471 - db_util - INFO - Stored 806 rows in GdaxOpen
+2017-08-13 21:55:45,710 - db_util - INFO - Stored 815 rows in GdaxDone
+2017-08-13 21:55:45,980 - db_util - INFO - Stored 829 rows in GdaxReceived
+2017-08-13 21:55:45,980 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:55:45,980 - gdax_msg_storage - INFO - Took 1.02s to store 2483 messages
+2017-08-13 21:56:44,941 - gdax_msg_storage - INFO - Storing 2623 messages after 60.01s
+2017-08-13 21:56:45,019 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:56:45,615 - db_util - INFO - Stored 34 rows in GdaxMatch
+2017-08-13 21:56:46,730 - db_util - INFO - Stored 849 rows in GdaxOpen
+2017-08-13 21:56:47,552 - db_util - INFO - Stored 876 rows in GdaxDone
+2017-08-13 21:56:48,266 - db_util - INFO - Stored 864 rows in GdaxReceived
+2017-08-13 21:56:48,267 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:56:48,267 - gdax_msg_storage - INFO - Took 3.29s to store 2623 messages
+2017-08-13 21:57:44,976 - gdax_msg_storage - INFO - Storing 4746 messages after 60.03s
+2017-08-13 21:57:45,094 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:57:45,747 - db_util - INFO - Stored 55 rows in GdaxMatch
+2017-08-13 21:57:46,135 - db_util - INFO - Stored 1544 rows in GdaxOpen
+2017-08-13 21:57:46,436 - db_util - INFO - Stored 1575 rows in GdaxDone
+2017-08-13 21:57:46,754 - db_util - INFO - Stored 1572 rows in GdaxReceived
+2017-08-13 21:57:46,755 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:57:46,755 - gdax_msg_storage - INFO - Took 1.72s to store 4746 messages
+2017-08-13 21:58:45,469 - gdax_msg_storage - INFO - Storing 2685 messages after 60.49s
+2017-08-13 21:58:45,551 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:58:45,739 - db_util - INFO - Stored 18 rows in GdaxMatch
+2017-08-13 21:58:46,101 - db_util - INFO - Stored 887 rows in GdaxDone
+2017-08-13 21:58:46,398 - db_util - INFO - Stored 886 rows in GdaxOpen
+2017-08-13 21:58:46,781 - db_util - INFO - Stored 894 rows in GdaxReceived
+2017-08-13 21:58:46,781 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:58:46,781 - gdax_msg_storage - INFO - Took 1.26s to store 2685 messages
+2017-08-13 21:59:45,595 - gdax_msg_storage - INFO - Storing 2273 messages after 60.12s
+2017-08-13 21:59:45,681 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:59:45,894 - db_util - INFO - Stored 9 rows in GdaxMatch
+2017-08-13 21:59:46,221 - db_util - INFO - Stored 746 rows in GdaxOpen
+2017-08-13 21:59:46,498 - db_util - INFO - Stored 763 rows in GdaxDone
+2017-08-13 21:59:46,760 - db_util - INFO - Stored 755 rows in GdaxReceived
+2017-08-13 21:59:46,760 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 21:59:46,760 - gdax_msg_storage - INFO - Took 1.11s to store 2273 messages
+2017-08-13 22:00:45,769 - gdax_msg_storage - INFO - Storing 4295 messages after 60.17s
+2017-08-13 22:00:45,888 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:00:46,346 - db_util - INFO - Stored 21 rows in GdaxMatch
+2017-08-13 22:00:47,461 - db_util - INFO - Stored 1421 rows in GdaxOpen
+2017-08-13 22:00:48,288 - db_util - INFO - Stored 1416 rows in GdaxDone
+2017-08-13 22:00:49,276 - db_util - INFO - Stored 1437 rows in GdaxReceived
+2017-08-13 22:00:49,277 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:00:49,277 - gdax_msg_storage - INFO - Took 3.46s to store 4295 messages
+2017-08-13 22:01:45,882 - gdax_msg_storage - INFO - Storing 3554 messages after 60.11s
+2017-08-13 22:01:46,034 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:01:46,595 - db_util - INFO - Stored 17 rows in GdaxMatch
+2017-08-13 22:01:47,008 - db_util - INFO - Stored 1178 rows in GdaxDone
+2017-08-13 22:01:47,281 - db_util - INFO - Stored 1175 rows in GdaxOpen
+2017-08-13 22:01:47,551 - db_util - INFO - Stored 1184 rows in GdaxReceived
+2017-08-13 22:01:47,551 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:01:47,552 - gdax_msg_storage - INFO - Took 1.56s to store 3554 messages
+2017-08-13 22:02:46,384 - gdax_msg_storage - INFO - Storing 3336 messages after 60.50s
+2017-08-13 22:02:46,468 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:02:46,676 - db_util - INFO - Stored 38 rows in GdaxMatch
+2017-08-13 22:02:47,011 - db_util - INFO - Stored 1086 rows in GdaxOpen
+2017-08-13 22:02:47,287 - db_util - INFO - Stored 1115 rows in GdaxDone
+2017-08-13 22:02:47,571 - db_util - INFO - Stored 1097 rows in GdaxReceived
+2017-08-13 22:02:47,572 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:02:47,572 - gdax_msg_storage - INFO - Took 1.14s to store 3336 messages
+2017-08-13 22:03:46,404 - gdax_msg_storage - INFO - Storing 4241 messages after 60.02s
+2017-08-13 22:03:46,495 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:03:46,706 - db_util - INFO - Stored 48 rows in GdaxMatch
+2017-08-13 22:03:47,063 - db_util - INFO - Stored 1389 rows in GdaxOpen
+2017-08-13 22:03:47,352 - db_util - INFO - Stored 1399 rows in GdaxDone
+2017-08-13 22:03:49,334 - db_util - INFO - Stored 1405 rows in GdaxReceived
+2017-08-13 22:03:49,334 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:03:49,335 - gdax_msg_storage - INFO - Took 2.89s to store 4241 messages
+2017-08-13 22:04:46,428 - gdax_msg_storage - INFO - Storing 6182 messages after 60.02s
+2017-08-13 22:04:46,622 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:04:47,428 - db_util - INFO - Stored 71 rows in GdaxMatch
+2017-08-13 22:04:48,599 - db_util - INFO - Stored 2026 rows in GdaxOpen
+2017-08-13 22:04:48,921 - db_util - INFO - Stored 2041 rows in GdaxDone
+2017-08-13 22:04:49,269 - db_util - INFO - Stored 2044 rows in GdaxReceived
+2017-08-13 22:04:49,269 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:04:49,269 - gdax_msg_storage - INFO - Took 2.72s to store 6182 messages
+2017-08-13 22:05:46,444 - gdax_msg_storage - INFO - Storing 5304 messages after 60.02s
+2017-08-13 22:05:46,679 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:05:46,935 - db_util - INFO - Stored 58 rows in GdaxMatch
+2017-08-13 22:05:47,363 - db_util - INFO - Stored 1712 rows in GdaxOpen
+2017-08-13 22:05:47,719 - db_util - INFO - Stored 1790 rows in GdaxDone
+2017-08-13 22:05:48,152 - db_util - INFO - Stored 1744 rows in GdaxReceived
+2017-08-13 22:05:48,152 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:05:48,153 - gdax_msg_storage - INFO - Took 1.56s to store 5304 messages
+2017-08-13 22:06:46,457 - gdax_msg_storage - INFO - Storing 6664 messages after 60.01s
+2017-08-13 22:06:46,715 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:06:46,910 - db_util - INFO - Stored 38 rows in GdaxMatch
+2017-08-13 22:06:47,375 - db_util - INFO - Stored 2195 rows in GdaxDone
+2017-08-13 22:06:47,730 - db_util - INFO - Stored 2207 rows in GdaxOpen
+2017-08-13 22:06:48,129 - db_util - INFO - Stored 2224 rows in GdaxReceived
+2017-08-13 22:06:48,130 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:06:48,130 - gdax_msg_storage - INFO - Took 1.50s to store 6664 messages
+2017-08-13 22:07:46,483 - gdax_msg_storage - INFO - Storing 7399 messages after 60.02s
+2017-08-13 22:07:46,686 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:07:47,169 - db_util - INFO - Stored 43 rows in GdaxMatch
+2017-08-13 22:07:48,387 - db_util - INFO - Stored 2441 rows in GdaxOpen
+2017-08-13 22:07:49,218 - db_util - INFO - Stored 2455 rows in GdaxDone
+2017-08-13 22:07:49,845 - db_util - INFO - Stored 2460 rows in GdaxReceived
+2017-08-13 22:07:49,845 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:07:49,845 - gdax_msg_storage - INFO - Took 3.27s to store 7399 messages
+2017-08-13 22:08:46,694 - gdax_msg_storage - INFO - Storing 5611 messages after 60.21s
+2017-08-13 22:08:46,852 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:08:47,432 - db_util - INFO - Stored 59 rows in GdaxMatch
+2017-08-13 22:08:47,829 - db_util - INFO - Stored 1830 rows in GdaxOpen
+2017-08-13 22:08:48,350 - db_util - INFO - Stored 1864 rows in GdaxDone
+2017-08-13 22:08:48,681 - db_util - INFO - Stored 1858 rows in GdaxReceived
+2017-08-13 22:08:48,681 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:08:48,681 - gdax_msg_storage - INFO - Took 1.90s to store 5611 messages
+2017-08-13 22:09:46,706 - gdax_msg_storage - INFO - Storing 4695 messages after 60.01s
+2017-08-13 22:09:46,835 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:09:47,052 - db_util - INFO - Stored 47 rows in GdaxMatch
+2017-08-13 22:09:47,428 - db_util - INFO - Stored 1532 rows in GdaxOpen
+2017-08-13 22:09:47,747 - db_util - INFO - Stored 1554 rows in GdaxDone
+2017-08-13 22:09:48,125 - db_util - INFO - Stored 1562 rows in GdaxReceived
+2017-08-13 22:09:48,126 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:09:48,126 - gdax_msg_storage - INFO - Took 1.35s to store 4695 messages
+2017-08-13 22:10:47,475 - gdax_msg_storage - INFO - Storing 4018 messages after 60.77s
+2017-08-13 22:10:47,596 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:10:47,808 - db_util - INFO - Stored 16 rows in GdaxMatch
+2017-08-13 22:10:49,011 - db_util - INFO - Stored 1330 rows in GdaxOpen
+2017-08-13 22:10:50,499 - db_util - INFO - Stored 1332 rows in GdaxDone
+2017-08-13 22:10:51,605 - db_util - INFO - Stored 1340 rows in GdaxReceived
+2017-08-13 22:10:51,606 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:10:51,606 - gdax_msg_storage - INFO - Took 4.06s to store 4018 messages
+2017-08-13 22:11:47,510 - gdax_msg_storage - INFO - Storing 5232 messages after 60.03s
+2017-08-13 22:11:47,651 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:11:48,334 - db_util - INFO - Stored 24 rows in GdaxMatch
+2017-08-13 22:11:49,128 - db_util - INFO - Stored 1732 rows in GdaxDone
+2017-08-13 22:11:49,467 - db_util - INFO - Stored 1732 rows in GdaxOpen
+2017-08-13 22:11:49,767 - db_util - INFO - Stored 1744 rows in GdaxReceived
+2017-08-13 22:11:49,768 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:11:49,768 - gdax_msg_storage - INFO - Took 2.18s to store 5232 messages
+2017-08-13 22:12:47,632 - gdax_msg_storage - INFO - Storing 4844 messages after 60.12s
+2017-08-13 22:12:47,757 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:12:47,956 - db_util - INFO - Stored 35 rows in GdaxMatch
+2017-08-13 22:12:48,346 - db_util - INFO - Stored 1582 rows in GdaxOpen
+2017-08-13 22:12:48,752 - db_util - INFO - Stored 1627 rows in GdaxDone
+2017-08-13 22:12:49,117 - db_util - INFO - Stored 1600 rows in GdaxReceived
+2017-08-13 22:12:49,118 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:12:49,118 - gdax_msg_storage - INFO - Took 1.42s to store 4844 messages
+2017-08-13 22:13:47,648 - gdax_msg_storage - INFO - Storing 5288 messages after 60.01s
+2017-08-13 22:13:47,819 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:13:48,007 - db_util - INFO - Stored 16 rows in GdaxMatch
+2017-08-13 22:13:48,472 - db_util - INFO - Stored 1752 rows in GdaxDone
+2017-08-13 22:13:48,775 - db_util - INFO - Stored 1758 rows in GdaxOpen
+2017-08-13 22:13:49,106 - db_util - INFO - Stored 1762 rows in GdaxReceived
+2017-08-13 22:13:49,106 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:13:49,107 - gdax_msg_storage - INFO - Took 1.37s to store 5288 messages
+2017-08-13 22:14:47,802 - gdax_msg_storage - INFO - Storing 5342 messages after 60.15s
+2017-08-13 22:14:47,946 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:14:48,718 - db_util - INFO - Stored 86 rows in GdaxMatch
+2017-08-13 22:14:50,044 - db_util - INFO - Stored 1767 rows in GdaxDone
+2017-08-13 22:14:50,672 - db_util - INFO - Stored 1736 rows in GdaxOpen
+2017-08-13 22:14:50,995 - db_util - INFO - Stored 1753 rows in GdaxReceived
+2017-08-13 22:14:50,996 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:14:50,996 - gdax_msg_storage - INFO - Took 3.12s to store 5342 messages
+2017-08-13 22:15:47,805 - gdax_msg_storage - INFO - Storing 4708 messages after 60.00s
+2017-08-13 22:15:47,932 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:15:48,166 - db_util - INFO - Stored 55 rows in GdaxMatch
+2017-08-13 22:15:48,510 - db_util - INFO - Stored 1541 rows in GdaxOpen
+2017-08-13 22:15:48,809 - db_util - INFO - Stored 1558 rows in GdaxDone
+2017-08-13 22:15:49,129 - db_util - INFO - Stored 1554 rows in GdaxReceived
+2017-08-13 22:15:49,130 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:15:49,130 - gdax_msg_storage - INFO - Took 1.26s to store 4708 messages
+2017-08-13 22:16:47,834 - gdax_msg_storage - INFO - Storing 4170 messages after 60.03s
+2017-08-13 22:16:47,936 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:16:48,154 - db_util - INFO - Stored 66 rows in GdaxMatch
+2017-08-13 22:16:48,545 - db_util - INFO - Stored 1353 rows in GdaxOpen
+2017-08-13 22:16:48,900 - db_util - INFO - Stored 1377 rows in GdaxDone
+2017-08-13 22:16:49,232 - db_util - INFO - Stored 1374 rows in GdaxReceived
+2017-08-13 22:16:49,232 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:16:49,233 - gdax_msg_storage - INFO - Took 1.34s to store 4170 messages
+2017-08-13 22:17:47,845 - gdax_msg_storage - INFO - Storing 6680 messages after 60.01s
+2017-08-13 22:17:48,017 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:17:48,247 - db_util - INFO - Stored 70 rows in GdaxMatch
+2017-08-13 22:17:49,469 - db_util - INFO - Stored 2207 rows in GdaxDone
+2017-08-13 22:17:50,473 - db_util - INFO - Stored 2193 rows in GdaxOpen
+2017-08-13 22:17:51,475 - db_util - INFO - Stored 2210 rows in GdaxReceived
+2017-08-13 22:17:51,475 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:17:51,475 - gdax_msg_storage - INFO - Took 3.55s to store 6680 messages
+2017-08-13 22:18:47,939 - gdax_msg_storage - INFO - Storing 4807 messages after 60.09s
+2017-08-13 22:18:48,094 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:18:48,788 - db_util - INFO - Stored 41 rows in GdaxMatch
+2017-08-13 22:18:49,392 - db_util - INFO - Stored 1567 rows in GdaxDone
+2017-08-13 22:18:49,693 - db_util - INFO - Stored 1597 rows in GdaxOpen
+2017-08-13 22:18:50,026 - db_util - INFO - Stored 1602 rows in GdaxReceived
+2017-08-13 22:18:50,027 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:18:50,027 - gdax_msg_storage - INFO - Took 2.00s to store 4807 messages
+2017-08-13 22:19:48,010 - gdax_msg_storage - INFO - Storing 5200 messages after 60.07s
+2017-08-13 22:19:48,294 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:19:49,001 - db_util - INFO - Stored 38 rows in GdaxMatch
+2017-08-13 22:19:49,430 - db_util - INFO - Stored 1705 rows in GdaxOpen
+2017-08-13 22:19:49,760 - db_util - INFO - Stored 1736 rows in GdaxDone
+2017-08-13 22:19:50,109 - db_util - INFO - Stored 1721 rows in GdaxReceived
+2017-08-13 22:19:50,109 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:19:50,110 - gdax_msg_storage - INFO - Took 1.91s to store 5200 messages
+2017-08-13 22:20:48,063 - gdax_msg_storage - INFO - Storing 4577 messages after 60.05s
+2017-08-13 22:20:48,240 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:20:48,513 - db_util - INFO - Stored 46 rows in GdaxMatch
+2017-08-13 22:20:49,032 - db_util - INFO - Stored 1523 rows in GdaxDone
+2017-08-13 22:20:49,413 - db_util - INFO - Stored 1496 rows in GdaxOpen
+2017-08-13 22:20:49,794 - db_util - INFO - Stored 1512 rows in GdaxReceived
+2017-08-13 22:20:49,794 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:20:49,794 - gdax_msg_storage - INFO - Took 1.62s to store 4577 messages
+2017-08-13 22:21:48,073 - gdax_msg_storage - INFO - Storing 6502 messages after 60.01s
+2017-08-13 22:21:48,402 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:21:48,700 - db_util - INFO - Stored 58 rows in GdaxMatch
+2017-08-13 22:21:49,367 - db_util - INFO - Stored 2147 rows in GdaxDone
+2017-08-13 22:21:50,400 - db_util - INFO - Stored 2138 rows in GdaxOpen
+2017-08-13 22:21:51,407 - db_util - INFO - Stored 2159 rows in GdaxReceived
+2017-08-13 22:21:51,409 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:21:51,409 - gdax_msg_storage - INFO - Took 3.15s to store 6502 messages
+2017-08-13 22:22:48,228 - gdax_msg_storage - INFO - Storing 4846 messages after 60.15s
+2017-08-13 22:22:48,570 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:22:49,398 - db_util - INFO - Stored 29 rows in GdaxMatch
+2017-08-13 22:22:50,621 - db_util - INFO - Stored 1604 rows in GdaxOpen
+2017-08-13 22:22:51,123 - db_util - INFO - Stored 1597 rows in GdaxDone
+2017-08-13 22:22:51,555 - db_util - INFO - Stored 1616 rows in GdaxReceived
+2017-08-13 22:22:51,555 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:22:51,556 - gdax_msg_storage - INFO - Took 3.16s to store 4846 messages
+2017-08-13 22:23:48,357 - gdax_msg_storage - INFO - Storing 3940 messages after 60.13s
+2017-08-13 22:23:48,486 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:23:48,686 - db_util - INFO - Stored 24 rows in GdaxMatch
+2017-08-13 22:23:49,050 - db_util - INFO - Stored 1286 rows in GdaxOpen
+2017-08-13 22:23:49,331 - db_util - INFO - Stored 1334 rows in GdaxDone
+2017-08-13 22:23:49,603 - db_util - INFO - Stored 1296 rows in GdaxReceived
+2017-08-13 22:23:49,604 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:23:49,604 - gdax_msg_storage - INFO - Took 1.17s to store 3940 messages
+2017-08-13 22:24:48,402 - gdax_msg_storage - INFO - Storing 3939 messages after 60.04s
+2017-08-13 22:24:48,514 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:24:48,677 - db_util - INFO - Stored 6 rows in GdaxMatch
+2017-08-13 22:24:49,099 - db_util - INFO - Stored 1317 rows in GdaxOpen
+2017-08-13 22:24:49,470 - db_util - INFO - Stored 1295 rows in GdaxDone
+2017-08-13 22:24:49,807 - db_util - INFO - Stored 1321 rows in GdaxReceived
+2017-08-13 22:24:49,807 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:24:49,808 - gdax_msg_storage - INFO - Took 1.34s to store 3939 messages
+2017-08-13 22:25:48,446 - gdax_msg_storage - INFO - Storing 4383 messages after 60.04s
+2017-08-13 22:25:48,646 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:25:48,845 - db_util - INFO - Stored 36 rows in GdaxMatch
+2017-08-13 22:25:49,618 - db_util - INFO - Stored 1439 rows in GdaxOpen
+2017-08-13 22:25:50,392 - db_util - INFO - Stored 1454 rows in GdaxDone
+2017-08-13 22:25:51,348 - db_util - INFO - Stored 1454 rows in GdaxReceived
+2017-08-13 22:25:51,349 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:25:51,349 - gdax_msg_storage - INFO - Took 2.80s to store 4383 messages
+2017-08-13 22:26:48,474 - gdax_msg_storage - INFO - Storing 2779 messages after 60.03s
+2017-08-13 22:26:48,549 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:26:49,314 - db_util - INFO - Stored 9 rows in GdaxMatch
+2017-08-13 22:26:50,666 - db_util - INFO - Stored 917 rows in GdaxDone
+2017-08-13 22:26:51,073 - db_util - INFO - Stored 923 rows in GdaxOpen
+2017-08-13 22:26:51,372 - db_util - INFO - Stored 930 rows in GdaxReceived
+2017-08-13 22:26:51,373 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:26:51,373 - gdax_msg_storage - INFO - Took 2.85s to store 2779 messages
+2017-08-13 22:27:48,512 - gdax_msg_storage - INFO - Storing 3643 messages after 60.04s
+2017-08-13 22:27:48,630 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:27:48,798 - db_util - INFO - Stored 21 rows in GdaxMatch
+2017-08-13 22:27:49,153 - db_util - INFO - Stored 1196 rows in GdaxOpen
+2017-08-13 22:27:49,428 - db_util - INFO - Stored 1222 rows in GdaxDone
+2017-08-13 22:27:49,684 - db_util - INFO - Stored 1204 rows in GdaxReceived
+2017-08-13 22:27:49,685 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:27:49,685 - gdax_msg_storage - INFO - Took 1.10s to store 3643 messages
+2017-08-13 22:28:48,521 - gdax_msg_storage - INFO - Storing 4105 messages after 60.01s
+2017-08-13 22:28:48,703 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:28:48,898 - db_util - INFO - Stored 23 rows in GdaxMatch
+2017-08-13 22:28:49,278 - db_util - INFO - Stored 1355 rows in GdaxOpen
+2017-08-13 22:28:49,658 - db_util - INFO - Stored 1355 rows in GdaxDone
+2017-08-13 22:28:50,163 - db_util - INFO - Stored 1372 rows in GdaxReceived
+2017-08-13 22:28:50,163 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:28:50,163 - gdax_msg_storage - INFO - Took 1.51s to store 4105 messages
+2017-08-13 22:29:48,527 - gdax_msg_storage - INFO - Storing 4117 messages after 60.00s
+2017-08-13 22:29:48,618 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:29:48,870 - db_util - INFO - Stored 29 rows in GdaxMatch
+2017-08-13 22:29:49,254 - db_util - INFO - Stored 1356 rows in GdaxOpen
+2017-08-13 22:29:49,551 - db_util - INFO - Stored 1370 rows in GdaxDone
+2017-08-13 22:29:50,662 - db_util - INFO - Stored 1362 rows in GdaxReceived
+2017-08-13 22:29:50,663 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:29:50,663 - gdax_msg_storage - INFO - Took 2.09s to store 4117 messages
+2017-08-13 22:30:48,574 - gdax_msg_storage - INFO - Storing 2286 messages after 60.05s
+2017-08-13 22:30:48,676 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:30:49,398 - db_util - INFO - Stored 6 rows in GdaxMatch
+2017-08-13 22:30:50,377 - db_util - INFO - Stored 748 rows in GdaxDone
+2017-08-13 22:30:50,639 - db_util - INFO - Stored 765 rows in GdaxOpen
+2017-08-13 22:30:50,900 - db_util - INFO - Stored 767 rows in GdaxReceived
+2017-08-13 22:30:50,900 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:30:50,901 - gdax_msg_storage - INFO - Took 2.26s to store 2286 messages
+2017-08-13 22:31:49,194 - gdax_msg_storage - INFO - Storing 4596 messages after 60.62s
+2017-08-13 22:31:49,326 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:31:49,480 - db_util - INFO - Stored 19 rows in GdaxMatch
+2017-08-13 22:31:49,936 - db_util - INFO - Stored 1519 rows in GdaxOpen
+2017-08-13 22:31:50,227 - db_util - INFO - Stored 1527 rows in GdaxDone
+2017-08-13 22:31:50,586 - db_util - INFO - Stored 1531 rows in GdaxReceived
+2017-08-13 22:31:50,586 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:31:50,587 - gdax_msg_storage - INFO - Took 1.32s to store 4596 messages
+2017-08-13 22:32:49,237 - gdax_msg_storage - INFO - Storing 1788 messages after 60.04s
+2017-08-13 22:32:49,299 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:32:49,550 - db_util - INFO - Stored 14 rows in GdaxMatch
+2017-08-13 22:32:49,960 - db_util - INFO - Stored 589 rows in GdaxOpen
+2017-08-13 22:32:50,221 - db_util - INFO - Stored 590 rows in GdaxDone
+2017-08-13 22:32:50,485 - db_util - INFO - Stored 595 rows in GdaxReceived
+2017-08-13 22:32:50,485 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:32:50,485 - gdax_msg_storage - INFO - Took 1.21s to store 1788 messages
+2017-08-13 22:33:49,269 - gdax_msg_storage - INFO - Storing 2502 messages after 60.03s
+2017-08-13 22:33:49,327 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:33:49,509 - db_util - INFO - Stored 7 rows in GdaxMatch
+2017-08-13 22:33:50,569 - db_util - INFO - Stored 826 rows in GdaxOpen
+2017-08-13 22:33:51,391 - db_util - INFO - Stored 839 rows in GdaxDone
+2017-08-13 22:33:52,374 - db_util - INFO - Stored 830 rows in GdaxReceived
+2017-08-13 22:33:52,378 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:33:52,379 - gdax_msg_storage - INFO - Took 3.08s to store 2502 messages
+2017-08-13 22:34:49,329 - gdax_msg_storage - INFO - Storing 2657 messages after 60.06s
+2017-08-13 22:34:49,387 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:34:50,330 - db_util - INFO - Stored 36 rows in GdaxMatch
+2017-08-13 22:34:50,888 - db_util - INFO - Stored 862 rows in GdaxOpen
+2017-08-13 22:34:51,154 - db_util - INFO - Stored 890 rows in GdaxDone
+2017-08-13 22:34:51,419 - db_util - INFO - Stored 869 rows in GdaxReceived
+2017-08-13 22:34:51,419 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:34:51,420 - gdax_msg_storage - INFO - Took 2.06s to store 2657 messages
+2017-08-13 22:35:49,741 - gdax_msg_storage - INFO - Storing 1494 messages after 60.41s
+2017-08-13 22:35:49,779 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:35:49,932 - db_util - INFO - Stored 7 rows in GdaxMatch
+2017-08-13 22:35:50,207 - db_util - INFO - Stored 501 rows in GdaxOpen
+2017-08-13 22:35:50,462 - db_util - INFO - Stored 483 rows in GdaxDone
+2017-08-13 22:35:50,687 - db_util - INFO - Stored 503 rows in GdaxReceived
+2017-08-13 22:35:50,688 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:35:50,688 - gdax_msg_storage - INFO - Took 0.93s to store 1494 messages
+2017-08-13 22:36:50,569 - gdax_msg_storage - INFO - Storing 3457 messages after 60.83s
+2017-08-13 22:36:50,645 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:36:50,876 - db_util - INFO - Stored 25 rows in GdaxMatch
+2017-08-13 22:36:51,271 - db_util - INFO - Stored 1154 rows in GdaxDone
+2017-08-13 22:36:51,720 - db_util - INFO - Stored 1136 rows in GdaxOpen
+2017-08-13 22:36:52,885 - db_util - INFO - Stored 1142 rows in GdaxReceived
+2017-08-13 22:36:52,886 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:36:52,886 - gdax_msg_storage - INFO - Took 2.28s to store 3457 messages
+2017-08-13 22:37:50,696 - gdax_msg_storage - INFO - Storing 3693 messages after 60.13s
+2017-08-13 22:37:50,774 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:37:51,519 - db_util - INFO - Stored 10 rows in GdaxMatch
+2017-08-13 22:37:52,556 - db_util - INFO - Stored 1229 rows in GdaxOpen
+2017-08-13 22:37:52,858 - db_util - INFO - Stored 1222 rows in GdaxDone
+2017-08-13 22:37:53,129 - db_util - INFO - Stored 1232 rows in GdaxReceived
+2017-08-13 22:37:53,129 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:37:53,129 - gdax_msg_storage - INFO - Took 2.39s to store 3693 messages
+2017-08-13 22:38:51,302 - gdax_msg_storage - INFO - Storing 1776 messages after 60.61s
+2017-08-13 22:38:51,345 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:38:51,517 - db_util - INFO - Stored 12 rows in GdaxMatch
+2017-08-13 22:38:51,848 - db_util - INFO - Stored 590 rows in GdaxDone
+2017-08-13 22:38:52,091 - db_util - INFO - Stored 584 rows in GdaxOpen
+2017-08-13 22:38:52,318 - db_util - INFO - Stored 590 rows in GdaxReceived
+2017-08-13 22:38:52,318 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:38:52,319 - gdax_msg_storage - INFO - Took 0.99s to store 1776 messages
+2017-08-13 22:39:52,130 - gdax_msg_storage - INFO - Storing 1546 messages after 60.83s
+2017-08-13 22:39:52,166 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:39:52,318 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 22:39:52,681 - db_util - INFO - Stored 517 rows in GdaxDone
+2017-08-13 22:39:52,890 - db_util - INFO - Stored 509 rows in GdaxOpen
+2017-08-13 22:39:53,108 - db_util - INFO - Stored 512 rows in GdaxReceived
+2017-08-13 22:39:53,109 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:39:53,109 - gdax_msg_storage - INFO - Took 0.96s to store 1546 messages
+2017-08-13 22:40:52,371 - gdax_msg_storage - INFO - Storing 1087 messages after 60.24s
+2017-08-13 22:40:52,398 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:40:52,827 - db_util - INFO - Stored 4 rows in GdaxMatch
+2017-08-13 22:40:53,844 - db_util - INFO - Stored 362 rows in GdaxOpen
+2017-08-13 22:40:54,532 - db_util - INFO - Stored 355 rows in GdaxDone
+2017-08-13 22:40:55,071 - db_util - INFO - Stored 366 rows in GdaxReceived
+2017-08-13 22:40:55,071 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:40:55,072 - gdax_msg_storage - INFO - Took 2.69s to store 1087 messages
+2017-08-13 22:41:52,409 - gdax_msg_storage - INFO - Storing 2015 messages after 60.04s
+2017-08-13 22:41:52,453 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:41:53,086 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 22:41:53,689 - db_util - INFO - Stored 665 rows in GdaxDone
+2017-08-13 22:41:53,938 - db_util - INFO - Stored 668 rows in GdaxOpen
+2017-08-13 22:41:54,177 - db_util - INFO - Stored 674 rows in GdaxReceived
+2017-08-13 22:41:54,177 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:41:54,178 - gdax_msg_storage - INFO - Took 1.75s to store 2015 messages
+2017-08-13 22:42:52,770 - gdax_msg_storage - INFO - Storing 2572 messages after 60.36s
+2017-08-13 22:42:52,823 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:42:53,009 - db_util - INFO - Stored 15 rows in GdaxMatch
+2017-08-13 22:42:53,370 - db_util - INFO - Stored 845 rows in GdaxOpen
+2017-08-13 22:42:53,650 - db_util - INFO - Stored 864 rows in GdaxDone
+2017-08-13 22:42:53,907 - db_util - INFO - Stored 848 rows in GdaxReceived
+2017-08-13 22:42:53,908 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:42:53,908 - gdax_msg_storage - INFO - Took 1.11s to store 2572 messages
+2017-08-13 22:43:53,561 - gdax_msg_storage - INFO - Storing 977 messages after 60.79s
+2017-08-13 22:43:53,600 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:43:53,746 - db_util - INFO - Stored 4 rows in GdaxMatch
+2017-08-13 22:43:54,002 - db_util - INFO - Stored 319 rows in GdaxDone
+2017-08-13 22:43:54,208 - db_util - INFO - Stored 325 rows in GdaxOpen
+2017-08-13 22:43:54,430 - db_util - INFO - Stored 329 rows in GdaxReceived
+2017-08-13 22:43:54,431 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:43:54,431 - gdax_msg_storage - INFO - Took 0.85s to store 977 messages
+2017-08-13 22:44:53,570 - gdax_msg_storage - INFO - Storing 1241 messages after 60.01s
+2017-08-13 22:44:53,600 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:44:53,774 - db_util - INFO - Stored 10 rows in GdaxMatch
+2017-08-13 22:44:54,049 - db_util - INFO - Stored 404 rows in GdaxOpen
+2017-08-13 22:44:54,271 - db_util - INFO - Stored 419 rows in GdaxDone
+2017-08-13 22:44:54,482 - db_util - INFO - Stored 408 rows in GdaxReceived
+2017-08-13 22:44:54,482 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:44:54,482 - gdax_msg_storage - INFO - Took 0.90s to store 1241 messages
+2017-08-13 22:45:53,743 - gdax_msg_storage - INFO - Storing 1774 messages after 60.17s
+2017-08-13 22:45:53,787 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:45:54,342 - db_util - INFO - Stored 23 rows in GdaxMatch
+2017-08-13 22:45:55,353 - db_util - INFO - Stored 579 rows in GdaxDone
+2017-08-13 22:45:56,158 - db_util - INFO - Stored 582 rows in GdaxOpen
+2017-08-13 22:45:56,882 - db_util - INFO - Stored 590 rows in GdaxReceived
+2017-08-13 22:45:56,882 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:45:56,882 - gdax_msg_storage - INFO - Took 3.12s to store 1774 messages
+2017-08-13 22:46:53,843 - gdax_msg_storage - INFO - Storing 1860 messages after 60.10s
+2017-08-13 22:46:53,886 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:46:54,320 - db_util - INFO - Stored 11 rows in GdaxMatch
+2017-08-13 22:46:54,646 - db_util - INFO - Stored 611 rows in GdaxDone
+2017-08-13 22:46:54,882 - db_util - INFO - Stored 617 rows in GdaxOpen
+2017-08-13 22:46:55,164 - db_util - INFO - Stored 621 rows in GdaxReceived
+2017-08-13 22:46:55,164 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:46:55,165 - gdax_msg_storage - INFO - Took 1.30s to store 1860 messages
+2017-08-13 22:47:53,874 - gdax_msg_storage - INFO - Storing 1666 messages after 60.03s
+2017-08-13 22:47:53,931 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:47:54,099 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 22:47:54,400 - db_util - INFO - Stored 547 rows in GdaxOpen
+2017-08-13 22:47:54,637 - db_util - INFO - Stored 559 rows in GdaxDone
+2017-08-13 22:47:54,863 - db_util - INFO - Stored 552 rows in GdaxReceived
+2017-08-13 22:47:54,864 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:47:54,864 - gdax_msg_storage - INFO - Took 0.95s to store 1666 messages
+2017-08-13 22:48:53,915 - gdax_msg_storage - INFO - Storing 1302 messages after 60.04s
+2017-08-13 22:48:53,946 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:48:54,120 - db_util - INFO - Stored 3 rows in GdaxMatch
+2017-08-13 22:48:54,439 - db_util - INFO - Stored 419 rows in GdaxDone
+2017-08-13 22:48:54,668 - db_util - INFO - Stored 439 rows in GdaxOpen
+2017-08-13 22:48:54,888 - db_util - INFO - Stored 441 rows in GdaxReceived
+2017-08-13 22:48:54,889 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:48:54,889 - gdax_msg_storage - INFO - Took 0.96s to store 1302 messages
+2017-08-13 22:49:53,920 - gdax_msg_storage - INFO - Storing 3308 messages after 60.00s
+2017-08-13 22:49:53,998 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:49:54,343 - db_util - INFO - Stored 23 rows in GdaxMatch
+2017-08-13 22:49:55,520 - db_util - INFO - Stored 1088 rows in GdaxOpen
+2017-08-13 22:49:56,351 - db_util - INFO - Stored 1086 rows in GdaxDone
+2017-08-13 22:49:57,202 - db_util - INFO - Stored 1111 rows in GdaxReceived
+2017-08-13 22:49:57,202 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:49:57,203 - gdax_msg_storage - INFO - Took 3.24s to store 3308 messages
+2017-08-13 22:50:53,951 - gdax_msg_storage - INFO - Storing 4893 messages after 60.03s
+2017-08-13 22:50:54,067 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:50:54,954 - db_util - INFO - Stored 56 rows in GdaxMatch
+2017-08-13 22:50:55,739 - db_util - INFO - Stored 1573 rows in GdaxOpen
+2017-08-13 22:50:56,050 - db_util - INFO - Stored 1663 rows in GdaxDone
+2017-08-13 22:50:56,369 - db_util - INFO - Stored 1601 rows in GdaxReceived
+2017-08-13 22:50:56,369 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:50:56,369 - gdax_msg_storage - INFO - Took 2.36s to store 4893 messages
+2017-08-13 22:51:53,954 - gdax_msg_storage - INFO - Storing 6979 messages after 60.00s
+2017-08-13 22:51:54,212 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:51:54,401 - db_util - INFO - Stored 44 rows in GdaxMatch
+2017-08-13 22:51:54,791 - db_util - INFO - Stored 2296 rows in GdaxOpen
+2017-08-13 22:51:55,141 - db_util - INFO - Stored 2315 rows in GdaxDone
+2017-08-13 22:51:55,511 - db_util - INFO - Stored 2324 rows in GdaxReceived
+2017-08-13 22:51:55,512 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:51:55,512 - gdax_msg_storage - INFO - Took 1.39s to store 6979 messages
+2017-08-13 22:52:53,997 - gdax_msg_storage - INFO - Storing 3838 messages after 60.04s
+2017-08-13 22:52:54,087 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:52:54,283 - db_util - INFO - Stored 20 rows in GdaxMatch
+2017-08-13 22:52:54,680 - db_util - INFO - Stored 1274 rows in GdaxOpen
+2017-08-13 22:52:54,964 - db_util - INFO - Stored 1263 rows in GdaxDone
+2017-08-13 22:52:55,231 - db_util - INFO - Stored 1281 rows in GdaxReceived
+2017-08-13 22:52:55,232 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:52:55,232 - gdax_msg_storage - INFO - Took 1.19s to store 3838 messages
+2017-08-13 22:53:54,002 - gdax_msg_storage - INFO - Storing 2231 messages after 60.00s
+2017-08-13 22:53:54,061 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:53:54,670 - db_util - INFO - Stored 8 rows in GdaxMatch
+2017-08-13 22:53:55,981 - db_util - INFO - Stored 736 rows in GdaxOpen
+2017-08-13 22:53:56,828 - db_util - INFO - Stored 747 rows in GdaxDone
+2017-08-13 22:53:57,078 - db_util - INFO - Stored 740 rows in GdaxReceived
+2017-08-13 22:53:57,079 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:53:57,079 - gdax_msg_storage - INFO - Took 3.05s to store 2231 messages
+2017-08-13 22:54:54,158 - gdax_msg_storage - INFO - Storing 1945 messages after 60.16s
+2017-08-13 22:54:54,206 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:54:54,385 - db_util - INFO - Stored 2 rows in GdaxMatch
+2017-08-13 22:54:54,750 - db_util - INFO - Stored 642 rows in GdaxDone
+2017-08-13 22:54:55,006 - db_util - INFO - Stored 649 rows in GdaxOpen
+2017-08-13 22:54:55,257 - db_util - INFO - Stored 652 rows in GdaxReceived
+2017-08-13 22:54:55,257 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:54:55,258 - gdax_msg_storage - INFO - Took 1.07s to store 1945 messages
+2017-08-13 22:55:54,262 - gdax_msg_storage - INFO - Storing 3068 messages after 60.10s
+2017-08-13 22:55:54,332 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:55:54,483 - db_util - INFO - Stored 2 rows in GdaxMatch
+2017-08-13 22:55:54,827 - db_util - INFO - Stored 1019 rows in GdaxDone
+2017-08-13 22:55:55,071 - db_util - INFO - Stored 1023 rows in GdaxOpen
+2017-08-13 22:55:55,320 - db_util - INFO - Stored 1024 rows in GdaxReceived
+2017-08-13 22:55:55,321 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:55:55,321 - gdax_msg_storage - INFO - Took 1.02s to store 3068 messages
+2017-08-13 22:56:54,272 - gdax_msg_storage - INFO - Storing 4287 messages after 60.01s
+2017-08-13 22:56:54,369 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:56:54,543 - db_util - INFO - Stored 6 rows in GdaxMatch
+2017-08-13 22:56:54,947 - db_util - INFO - Stored 1426 rows in GdaxOpen
+2017-08-13 22:56:55,228 - db_util - INFO - Stored 1426 rows in GdaxDone
+2017-08-13 22:56:57,245 - db_util - INFO - Stored 1429 rows in GdaxReceived
+2017-08-13 22:56:57,246 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:56:57,246 - gdax_msg_storage - INFO - Took 2.92s to store 4287 messages
+2017-08-13 22:57:54,273 - gdax_msg_storage - INFO - Storing 3811 messages after 60.00s
+2017-08-13 22:57:54,359 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:57:54,934 - db_util - INFO - Stored 3 rows in GdaxMatch
+2017-08-13 22:57:56,263 - db_util - INFO - Stored 1268 rows in GdaxOpen
+2017-08-13 22:57:56,985 - db_util - INFO - Stored 1269 rows in GdaxDone
+2017-08-13 22:57:57,450 - db_util - INFO - Stored 1271 rows in GdaxReceived
+2017-08-13 22:57:57,450 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:57:57,451 - gdax_msg_storage - INFO - Took 3.13s to store 3811 messages
+2017-08-13 22:58:54,301 - gdax_msg_storage - INFO - Storing 3971 messages after 60.03s
+2017-08-13 22:58:54,441 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:58:54,980 - db_util - INFO - Stored 41 rows in GdaxMatch
+2017-08-13 22:58:56,300 - db_util - INFO - Stored 1290 rows in GdaxOpen
+2017-08-13 22:58:57,123 - db_util - INFO - Stored 1337 rows in GdaxDone
+2017-08-13 22:58:57,557 - db_util - INFO - Stored 1303 rows in GdaxReceived
+2017-08-13 22:58:57,557 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:58:57,558 - gdax_msg_storage - INFO - Took 3.19s to store 3971 messages
+2017-08-13 22:59:54,308 - gdax_msg_storage - INFO - Storing 4936 messages after 60.01s
+2017-08-13 22:59:54,414 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:59:54,616 - db_util - INFO - Stored 23 rows in GdaxMatch
+2017-08-13 22:59:54,975 - db_util - INFO - Stored 1636 rows in GdaxOpen
+2017-08-13 22:59:55,270 - db_util - INFO - Stored 1635 rows in GdaxDone
+2017-08-13 22:59:55,564 - db_util - INFO - Stored 1642 rows in GdaxReceived
+2017-08-13 22:59:55,564 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 22:59:55,565 - gdax_msg_storage - INFO - Took 1.21s to store 4936 messages
+2017-08-13 23:00:54,771 - gdax_msg_storage - INFO - Storing 3880 messages after 60.46s
+2017-08-13 23:00:54,856 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:00:55,024 - db_util - INFO - Stored 10 rows in GdaxMatch
+2017-08-13 23:00:55,419 - db_util - INFO - Stored 1269 rows in GdaxDone
+2017-08-13 23:00:55,668 - db_util - INFO - Stored 1300 rows in GdaxOpen
+2017-08-13 23:00:55,967 - db_util - INFO - Stored 1301 rows in GdaxReceived
+2017-08-13 23:00:55,968 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:00:55,968 - gdax_msg_storage - INFO - Took 1.15s to store 3880 messages
+2017-08-13 23:01:54,777 - gdax_msg_storage - INFO - Storing 3600 messages after 60.01s
+2017-08-13 23:01:54,861 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:01:55,054 - db_util - INFO - Stored 13 rows in GdaxMatch
+2017-08-13 23:01:55,651 - db_util - INFO - Stored 1193 rows in GdaxOpen
+2017-08-13 23:01:57,040 - db_util - INFO - Stored 1198 rows in GdaxDone
+2017-08-13 23:01:57,877 - db_util - INFO - Stored 1196 rows in GdaxReceived
+2017-08-13 23:01:57,878 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:01:57,878 - gdax_msg_storage - INFO - Took 3.06s to store 3600 messages
+2017-08-13 23:02:54,998 - gdax_msg_storage - INFO - Storing 3356 messages after 60.22s
+2017-08-13 23:02:55,125 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:02:55,708 - db_util - INFO - Stored 18 rows in GdaxMatch
+2017-08-13 23:02:57,050 - db_util - INFO - Stored 1109 rows in GdaxDone
+2017-08-13 23:02:57,885 - db_util - INFO - Stored 1112 rows in GdaxOpen
+2017-08-13 23:02:58,881 - db_util - INFO - Stored 1117 rows in GdaxReceived
+2017-08-13 23:02:58,883 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:02:58,883 - gdax_msg_storage - INFO - Took 3.82s to store 3356 messages
+2017-08-13 23:03:55,146 - gdax_msg_storage - INFO - Storing 4143 messages after 60.15s
+2017-08-13 23:03:55,251 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:03:55,792 - db_util - INFO - Stored 17 rows in GdaxMatch
+2017-08-13 23:03:56,354 - db_util - INFO - Stored 1373 rows in GdaxOpen
+2017-08-13 23:03:56,631 - db_util - INFO - Stored 1376 rows in GdaxDone
+2017-08-13 23:03:56,940 - db_util - INFO - Stored 1377 rows in GdaxReceived
+2017-08-13 23:03:56,941 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:03:56,941 - gdax_msg_storage - INFO - Took 1.74s to store 4143 messages
+2017-08-13 23:04:55,318 - gdax_msg_storage - INFO - Storing 2369 messages after 60.17s
+2017-08-13 23:04:55,377 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:04:55,554 - db_util - INFO - Stored 6 rows in GdaxMatch
+2017-08-13 23:04:55,941 - db_util - INFO - Stored 791 rows in GdaxDone
+2017-08-13 23:04:56,195 - db_util - INFO - Stored 785 rows in GdaxOpen
+2017-08-13 23:04:56,496 - db_util - INFO - Stored 787 rows in GdaxReceived
+2017-08-13 23:04:56,497 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:04:56,497 - gdax_msg_storage - INFO - Took 1.15s to store 2369 messages
+2017-08-13 23:05:55,531 - gdax_msg_storage - INFO - Storing 4363 messages after 60.21s
+2017-08-13 23:05:55,686 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:05:55,876 - db_util - INFO - Stored 21 rows in GdaxMatch
+2017-08-13 23:05:56,276 - db_util - INFO - Stored 1442 rows in GdaxDone
+2017-08-13 23:05:56,576 - db_util - INFO - Stored 1448 rows in GdaxOpen
+2017-08-13 23:05:57,073 - db_util - INFO - Stored 1452 rows in GdaxReceived
+2017-08-13 23:05:57,074 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:05:57,074 - gdax_msg_storage - INFO - Took 1.49s to store 4363 messages
+2017-08-13 23:06:55,669 - gdax_msg_storage - INFO - Storing 6172 messages after 60.14s
+2017-08-13 23:06:55,866 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:06:56,513 - db_util - INFO - Stored 19 rows in GdaxMatch
+2017-08-13 23:06:58,043 - db_util - INFO - Stored 2043 rows in GdaxOpen
+2017-08-13 23:06:58,409 - db_util - INFO - Stored 2063 rows in GdaxDone
+2017-08-13 23:06:58,775 - db_util - INFO - Stored 2047 rows in GdaxReceived
+2017-08-13 23:06:58,775 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:06:58,776 - gdax_msg_storage - INFO - Took 2.99s to store 6172 messages
+2017-08-13 23:07:55,670 - gdax_msg_storage - INFO - Storing 6770 messages after 60.00s
+2017-08-13 23:07:55,893 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:07:56,094 - db_util - INFO - Stored 15 rows in GdaxMatch
+2017-08-13 23:07:56,652 - db_util - INFO - Stored 2264 rows in GdaxDone
+2017-08-13 23:07:57,029 - db_util - INFO - Stored 2243 rows in GdaxOpen
+2017-08-13 23:07:57,440 - db_util - INFO - Stored 2248 rows in GdaxReceived
+2017-08-13 23:07:57,440 - db_util - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-08-13 23:07:57,441 - gdax_msg_storage - INFO - Took 1.68s to store 6770 messages

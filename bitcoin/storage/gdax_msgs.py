@@ -44,42 +44,38 @@ MSG_DB_MAPPING = {
 
 def store_msgs(msgs):
     """
-    Store list of messages to db.
+    Store list of messages to db
     """
     logger.debug('Store start')
     start = time()
-    dfs = msgs_to_dfs(msgs)
 
-    for _type, df in dfs.iteritems():
-        logger.debug('Store {}'.format(_type))
+    msg_dict = {}
+    # convert messages to dict[type, list[msg]]
+    for msg in msgs:
+        _type = msg['type']
+        msg_dict[_type] = msg_dict.get(_type, []) + [msg]
+
+    df_dict = {}
+    # convert to dict[tbl_name, df]
+    for _type, msg_lst in msg_dict.iteritems():
+        # filter to fiels we care about
+        fields = MSG_DB_MAPPING[_type]['fields']
+        df = pd.DataFrame(msg_lst, columns=fields)
+        df['time'] = pd.to_datetime(df['time'])
+
+        # add to dict
         tbl_name = MSG_DB_MAPPING[_type]['table']
-        st_util.store_df(df, tbl_name)
+        df_dict[tbl_name] = df
+
+    # store
+    st_util.store_dfs(df_dict)
 
     time_elapsed = time() - start
     logger.info('Took {:.2f}s to store {} messages'.format(time_elapsed, len(msgs)))
     return
 
 
-def msgs_to_dfs(msgs):
-    """
-    Convert list of messages to a dict of dataframes based on message type.
-    """
-    msgs_dict = {}
-    # add messages to dict
-    for msg in msgs:
-        _type = msg['type']
-        msgs_dict[_type] = msgs_dict.get(_type, []) + [msg]
-
-    # convert to df
-    for _type, msg_lst in msgs_dict.iteritems():
-        # filter to fiels we care about
-        fields = MSG_DB_MAPPING[_type]['fields']
-        df = pd.DataFrame(msg_lst, columns=fields)
-        df['time'] = pd.to_datetime(df['time'])
-        msgs_dict[_type] = df
-    return msgs_dict
-
-
+# TODO(divir): store level 3 book
 class GdaxMsgStorage(WebSocket):
     def __init__(self):
         super(GdaxMsgStorage, self).__init__(GX_WS_URL, GX_CHANNEL)
@@ -87,7 +83,7 @@ class GdaxMsgStorage(WebSocket):
         self.pool = mp.Pool()
         self.last_sequence = -1
 
-        self.store_freq = 10  # frequency of storing messages
+        self.store_freq = 60  # frequency of storing messages
         self.last_store_time = time()
 
     def on_message(self, msg):
