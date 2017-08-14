@@ -60,7 +60,6 @@ def round_down(num):
     return math.floor(num * 100) / 100.0
 
 
-# TODO(vidurj) carefully think through whether we want to use balance or available in these two funcs
 def get_gdax_balances():
     data = {}
     accounts = gdax_client.get_accounts()

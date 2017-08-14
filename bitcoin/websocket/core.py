@@ -11,6 +11,7 @@ logger = logging.getLogger('core_websocket')
 #logger.setLevel(logging.DEBUG)
 
 
+# TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
     def __init__(self, url, channel):
         self.url = url
