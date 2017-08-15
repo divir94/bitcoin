@@ -5,7 +5,7 @@ from collections import deque
 from threading import Thread
 from copy import deepcopy
 
-import bitcoin.logs.logger
+import bitcoin.logs.logger as lc
 import bitcoin.order_book as ob
 import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
@@ -14,8 +14,9 @@ from bitcoin.websocket.core import WebSocket
 GX_WS_URL = 'wss://ws-feed.gdax.com'
 GX_CHANNEL = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
 GX_HTTP_URL = 'https://api.gdax.com/products/BTC-USD/book'
-logger = logging.getLogger('gdax_websocket')
-#logger.setLevel(logging.DEBUG)
+
+logger = lc.config_logger('gdax_websocket')
+# logger.setLevel(logging.DEBUG)
 
 
 def get_gdax_book():
@@ -34,7 +35,7 @@ class GdaxOrderBook(WebSocket):
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
-        self.check_freq = 600  # check every x seconds
+        self.check_freq = 3600  # check every x seconds
 
     def _get_levels(self, side, book):
         book = book or self.book
@@ -42,9 +43,9 @@ class GdaxOrderBook(WebSocket):
 
     def reset_book(self):
         """get level 3 order book and apply pending messages from queue"""
+        self.syncing = True
         logger.info('='*30)
         logger.info('Loading book', extra={'sequence': self.book.sequence})
-        self.syncing = True
 
         # get book
         data = get_gdax_book()
@@ -279,12 +280,13 @@ class GdaxOrderBook(WebSocket):
         assert price == result[0]
 
     def check_book(self):
-        logger.info('^' * 30)
         self.syncing = True
+        logger.info('^' * 30)
 
         # save current book
         current_book = deepcopy(self.book)
         logger.info('Checking book start: {}'.format(current_book.sequence))
+        logger.setLevel(logging.DEBUG)
 
         # get expected book
         data = get_gdax_book()
@@ -303,9 +305,10 @@ class GdaxOrderBook(WebSocket):
         self.apply_queue(expected_book)
         self.book = expected_book
         self.queue = deque()
+        self.syncing = False
+        logger.setLevel(logging.INFO)
         logger.info('Checking book end: {}'.format(self.book.sequence))
         logger.info('^' * 30)
-        self.syncing = False
         return
 
 
