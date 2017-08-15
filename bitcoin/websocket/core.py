@@ -21,7 +21,7 @@ class WebSocket(object):
         self.ping_freq = 30
         self.heartbeat = True
         self.last_heartbeat = time.time()
-        self.heartbeat_tol = 5
+        self.heartbeat_tol = 2
         self.check_freq = None
         self.last_check = time.time()
 
@@ -76,17 +76,18 @@ class WebSocket(object):
                 self.last_check = time.time()
 
             # save heartbeat and handle message
+            msg = None
             try:
-                result = self.ws.recv()
-                msg = json.loads(result)
+                msg = self.ws.recv()
+                msg = json.loads(msg)
             except Exception as e:
-                self.on_error(e)
+                self.on_error(e, msg)
             else:
                 if msg['type'] == 'heartbeat':
                     logger.debug('Got heartbeat: {}'.format(msg))
-                    self.last_heartbeat = time.time()
                 else:
                     self.on_message(msg)
+                self.last_heartbeat = time.time()
 
     def close(self):
         """
@@ -111,8 +112,10 @@ class WebSocket(object):
     def check_book(self):
         pass
 
-    def on_error(self, error):
-        logger.exception('Message error: {}'.format(error))
+    def on_error(self, error, msg):
+        logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
+        self.close()
+        self.start()
 
 
 if __name__ == '__main__':

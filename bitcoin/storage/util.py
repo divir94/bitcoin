@@ -13,7 +13,7 @@ def get_sqlalchemy_engine():
     root_path = util.get_project_root()
     creds = json.load(open('{}/credentials/mysql.json'.format(root_path), 'rb'))
     engine_name = 'mysql://{user}:{pwd}@{host}/{db}'.format(**creds)
-    engine = create_engine(engine_name, echo=False)
+    engine = create_engine(engine_name, pool_recycle=1800, echo=False)
     return engine
 
 ENGINE = get_sqlalchemy_engine()
