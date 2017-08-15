@@ -104,7 +104,7 @@ class GdaxOrderBook(WebSocket):
             return -1
         elif sequence != book.sequence + 1:
             # resync
-            logger.info('Out of sync: book({}), message({})'.format(book.sequence, sequence))
+            logger.warning('Out of sync: book({}), message({})'.format(book.sequence, sequence))
             self.restart = True
             return -1
 
