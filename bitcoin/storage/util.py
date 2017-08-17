@@ -2,7 +2,6 @@ import json
 import logging
 from sqlalchemy import create_engine
 
-import bitcoin.logs.logger
 import bitcoin.util as util
 
 logger = logging.getLogger('db_util')
@@ -20,7 +19,7 @@ ENGINE = get_sqlalchemy_engine()
 
 
 def store_dfs(df_dict):
-    logger.info('~' * 30)
+    logger.debug('~' * 30)
     for tbl_name, df in df_dict.iteritems():
         try:
             df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
@@ -28,6 +27,5 @@ def store_dfs(df_dict):
         except Exception as e:
             logger.error('Failed to store in {}'.format(tbl_name))
             logger.error(e)
-            df.to_csv('{}.csv'.format(tbl_name), index=False)
-    logger.info('~' * 30)
+    logger.debug('~' * 30)
     return

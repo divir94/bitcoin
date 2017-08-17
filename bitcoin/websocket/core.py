@@ -4,16 +4,13 @@ import time
 from threading import Thread
 from websocket import create_connection
 
-import bitcoin.logs.logger
-
 
 logger = logging.getLogger('core_websocket')
-#logger.setLevel(logging.DEBUG)
 
 
 # TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
-    def __init__(self, url, channel):
+    def __init__(self, url, channel, error_callback=None):
         self.url = url
         self.channel = channel
         self.ws = None
@@ -24,6 +21,7 @@ class WebSocket(object):
         self.heartbeat_tol = 2
         self.check_freq = None
         self.last_check = time.time()
+        self.error_callback = error_callback
 
         self.stop = False
         
@@ -116,9 +114,5 @@ class WebSocket(object):
         logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
         self.close()
         self.start()
-
-
-if __name__ == '__main__':
-    ws = WebSocket(url='wss://ws-feed.gdax.com',
-                   channel={'type': 'subscribe', 'product_ids': ['BTC-USD']})
-    ws.start()
+        if self.error_callback is not None:
+            self.error_callback()

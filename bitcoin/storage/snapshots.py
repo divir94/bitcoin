@@ -2,9 +2,8 @@ import json
 import pandas as pd
 import time
 import requests
-import logging
 
-import bitcoin.logs.logger
+import bitcoin.logs.logger as lc
 import bitcoin.storage.util as st_util
 
 
@@ -17,7 +16,7 @@ GDAX_TBL_NAME = 'GdaxSnapshots'
 BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
 
-logger = logging.getLogger('storage')
+logger = lc.config_logger('snapshots')
 
 
 ################
@@ -125,17 +124,17 @@ def run(sleep=1):
         gdax_snapshot = get_snapshot_json(GDAX_URL)
         if gdax_snapshot:
             gdax_df = snapshot_to_df(gdax_snapshot, timestamp, exchange_name='gdax')
-            st_util.store_df(gdax_df, GDAX_TBL_NAME)
+            st_util.store_dfs({GDAX_TBL_NAME: gdax_df})
 
         # store bitstamp snapshot
         bitstamp_snapshot = get_snapshot_json(BITSTAMP_URL)
         if bitstamp_snapshot:
             bitstamp_df = snapshot_to_df(bitstamp_snapshot, timestamp, exchange_name='bitstamp')
-            st_util.store_df(bitstamp_df, BITSTAMP_TBL_NAME)
+            st_util.store_dfs({BITSTAMP_TBL_NAME: bitstamp_df})
 
         # store spread
         spread = snapshots_to_spread_df(gdax_snapshot, bitstamp_snapshot, timestamp)
-        st_util.store_df(spread, SPREAD_TBL_NAME)
+        st_util.store_dfs({SPREAD_TBL_NAME: spread})
 
         time.sleep(sleep)
 

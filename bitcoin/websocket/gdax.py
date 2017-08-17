@@ -1,41 +1,35 @@
-import json
-import requests
 import logging
 from collections import deque
 from threading import Thread
 from copy import deepcopy
 
+
 import bitcoin.logs.logger as lc
 import bitcoin.order_book as ob
 import bitcoin.util as util
+import bitcoin.gdax.public_client as gdax
+import bitcoin.gdax.params as params
 from bitcoin.websocket.core import WebSocket
 
-
-GX_WS_URL = 'wss://ws-feed.gdax.com'
-GX_CHANNEL = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
-GX_HTTP_URL = 'https://api.gdax.com/products/BTC-USD/book'
 
 logger = lc.config_logger('gdax_websocket')
 # logger.setLevel(logging.DEBUG)
 
 
-def get_gdax_book():
-    request = requests.get(GX_HTTP_URL, params={'level': 3})
-    data = json.loads(request.content)
-    return data
-
-
 class GdaxOrderBook(WebSocket):
     def __init__(self, on_change=None):
-        super(GdaxOrderBook, self).__init__(GX_WS_URL, GX_CHANNEL)
+        super(GdaxOrderBook, self).__init__(params.WS_URL, params.CHANNEL)
         self.exchange = 'GDAX'
         self.book = ob.OrderBook(-1)
         self.queue = deque()
         self.on_change = on_change
+        self.gdax_client = gdax.PublicClient()
+        self.product_id = 'BTC-USD'
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
         self.check_freq = 3600  # check every x seconds
+        self.sleep_time = 2
 
     def _get_levels(self, side, book):
         book = book or self.book
@@ -48,7 +42,7 @@ class GdaxOrderBook(WebSocket):
         logger.info('Loading book', extra={'sequence': self.book.sequence})
 
         # get book
-        data = get_gdax_book()
+        data = self.gdax_client.get_product_order_book(self.product_id, level=3)
         self.book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
         logger.info('Got book: {}'.format(self.book.sequence))
 
@@ -289,7 +283,7 @@ class GdaxOrderBook(WebSocket):
         logger.setLevel(logging.DEBUG)
 
         # get expected book
-        data = get_gdax_book()
+        data = self.gdax_client.get_product_order_book(self.product_id, level=3)
         expected_book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
         logger.info('Expected book: {}'.format(expected_book.sequence))
 

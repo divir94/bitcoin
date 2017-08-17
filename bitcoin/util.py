@@ -1,6 +1,7 @@
 import pprint
 import os
 from decimal import Decimal, InvalidOperation
+from datetime import datetime
 
 
 class BaseObject(object):
@@ -26,3 +27,10 @@ def to_decimal(msg):
         except InvalidOperation:
             result[k] = v
     return result
+
+
+def time_elapsed(last_time, tdelta):
+    """
+    Has it been more than `tdelta` since `last_time` in UTC?
+    """
+    return (datetime.utcnow() - last_time).seconds >= tdelta.seconds
