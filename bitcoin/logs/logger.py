@@ -1,10 +1,16 @@
+import os
 import logging.config
+from datetime import date
 
 import bitcoin.util as util
 
 
-def config_logger(fname):
+def config_logger(dirname):
     root = util.get_project_root()
+    today = date.today()
+    directory = '{}/logs/{}'.format(root, dirname)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     config = {
         'version': 1,
         'disable_existing_loggers': False,
@@ -17,7 +23,7 @@ def config_logger(fname):
             'fileHandler': {
                 'class': 'logging.FileHandler',
                 'formatter': 'standard',
-                'filename': '{}/logs/{}.log'.format(root, fname),
+                'filename': '{}/{}.log'.format(directory, today),
                 'mode': 'w',
             },
             'streamHandler': {
@@ -33,5 +39,5 @@ def config_logger(fname):
         },
     }
     logging.config.dictConfig(config)
-    logger = logging.getLogger(fname)
+    logger = logging.getLogger(dirname)
     return logger
