@@ -5,6 +5,11 @@
 # For public requests to the GDAX exchange
 
 import requests
+import logging
+import time
+
+
+logger = logging.getLogger('gdax_public_client')
 
 
 class PublicClient(object):
@@ -26,6 +31,7 @@ class PublicClient(object):
 
         """
         self.url = api_url.rstrip('/')
+        self.sleep_time = 2
 
     def get_products(self):
         """Get a list of available currency pairs for trading.
@@ -84,11 +90,18 @@ class PublicClient(object):
                 }
 
         """
-        params = {'level': level}
-        r = requests.get(self.url + '/products/{}/book'
-                         .format(product_id), params=params)
-        # r.raise_for_status()
-        return r.json()
+        # keep trying to get order book. sleep after every failure
+        while True:
+            try:
+                params = {'level': level}
+                url = self.url + '/products/{}/book'.format(product_id)
+                response = requests.get(url, params=params)
+                result = response.json()
+                return result
+            except Exception as e:
+                logger.error('Failed to get gdax order book: {}'.format(e))
+                logger.error('Sleeping for {}s before trying again'.format(self.sleep_time))
+                time.sleep(self.sleep_time)
 
     def get_product_ticker(self, product_id):
         """Snapshot about the last trade (tick), best bid/ask and 24h volume.

@@ -26,11 +26,11 @@ class OrderBook(util.BaseObject):
         self.orders = {}  # dict[order_id, price]
 
         # initialize bids and asks
-        bids = bids or []
+        bids = [] if bids is None else bids
         for price, size, order_id in bids:
             self.add('buy', price, size, order_id)
 
-        asks = asks or []
+        asks = [] if asks is None else asks
         for price, size, order_id in asks:
             self.add('sell', price, size, order_id)
 
