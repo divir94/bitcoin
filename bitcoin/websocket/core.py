@@ -78,6 +78,8 @@ class WebSocket(object):
             try:
                 msg = self.ws.recv()
                 msg = json.loads(msg)
+                if self.channel['product_ids'] == ['BTC-USD']:
+                    1 / 0
             except Exception as e:
                 self.on_error(e, msg)
             else:
@@ -113,6 +115,7 @@ class WebSocket(object):
     def on_error(self, error, msg):
         logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
         self.close()
+        logger.info('Closed Websocket')
         self.start()
         if self.error_callback is not None:
             Thread(target=self.error_callback)
