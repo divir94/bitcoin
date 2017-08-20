@@ -103,7 +103,7 @@ class GdaxMsgStorage(WebSocket):
         # store
         sutil.store_df(df, table_name)
 
-        time_elapsed = (datetime.utcnow() - start).seconds
+        time_elapsed = (datetime.utcnow() - start).total_seconds()
         logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
         return
 
