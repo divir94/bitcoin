@@ -34,3 +34,7 @@ def time_elapsed(last_time, tdelta):
     Has it been more than `tdelta` since `last_time` in UTC?
     """
     return (datetime.utcnow() - last_time).seconds >= tdelta.seconds
+
+
+def df_to_dict(df):
+    return [v.dropna().to_dict() for k, v in df.iterrows()]
