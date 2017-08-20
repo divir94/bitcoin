@@ -10,13 +10,13 @@ logger = logging.getLogger('core_websocket')
 
 # TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
-    def __init__(self, url, channel, error_callback=None):
+    def __init__(self, url, channel, heartbeat=True, error_callback=None):
         self.url = url
         self.channel = channel
         self.ws = None
 
         self.ping_freq = 30
-        self.heartbeat = True
+        self.heartbeat = heartbeat
         self.last_heartbeat = time.time()
         self.heartbeat_tol = 2
         self.check_freq = None
@@ -81,7 +81,7 @@ class WebSocket(object):
             except Exception as e:
                 self.on_error(e, msg)
             else:
-                if msg['type'] == 'heartbeat':
+                if self.heartbeat and msg['type'] == 'heartbeat':
                     logger.debug('Got heartbeat: {}'.format(msg))
                 else:
                     self.on_message(msg)

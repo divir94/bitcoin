@@ -1,15 +1,15 @@
-import pandas as pd
 import time
-from threading import Thread
 from datetime import datetime, timedelta
+from threading import Thread
 
-import bitcoin.logs.logger as lc
+import pandas as pd
+
 import bitcoin.gdax.public_client as gdax
-import bitcoin.gdax.params as params
-import bitcoin.util as util
+import bitcoin.logs.logger as lc
+import bitcoin.params as params
 import bitcoin.storage.util as sutil
+import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
-
 
 GDAX_CLIENT = gdax.PublicClient()
 logger = lc.config_logger('gdax_msgs')
@@ -23,7 +23,7 @@ class GdaxMsgStorage(WebSocket):
         self.product_id = product_id
         self.date_format = "%Y-%m-%dT%H:%M:%S.%fZ"
 
-        self.msg_store_freq = timedelta(minutes=3)  # frequency of storing messages
+        self.msg_store_freq = timedelta(minutes=1)  # frequency of storing messages
         self.book_store_freq = timedelta(minutes=60)  # frequency of storing order book
         self.last_msg_store_time = datetime.utcnow()
         self.last_book_store_time = datetime.utcnow() - self.book_store_freq
@@ -80,7 +80,7 @@ class GdaxMsgStorage(WebSocket):
         timestamp = pd.datetime.utcnow().strftime(self.date_format)
         df = sutil.gdax_book_to_df(data, timestamp)
         # store
-        table_name = params.SNAPSHOT_TBLS[self.product_id]
+        table_name = params.GX_SNAPSHOT_TBLS[self.product_id]
         sutil.store_df(df, table_name)
 
         logger.info('=' * 30)
@@ -95,8 +95,8 @@ class GdaxMsgStorage(WebSocket):
         self.msgs = []
         start = datetime.utcnow()
 
-        table_name = params.MSG_TBLS[self.product_id]
-        columns = params.MSG_COLS_TBL
+        table_name = params.GX_MSG_TBLS[self.product_id]
+        columns = params.GX_MSG_COLS_TBL
         # msgs to df
         df = pd.DataFrame(msgs, columns=columns)
 
@@ -109,7 +109,7 @@ class GdaxMsgStorage(WebSocket):
 
 
 if __name__ == '__main__':
-    for product_id, channel in params.CHANNELS.iteritems():
-        ws = GdaxMsgStorage(params.WS_URL, channel, product_id)
+    for product_id, channel in params.GX_CHANNELS.iteritems():
+        ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
         ws.start()
-        time.sleep(60)
+        time.sleep(20)
