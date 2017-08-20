@@ -115,4 +115,4 @@ class WebSocket(object):
         self.close()
         self.start()
         if self.error_callback is not None:
-            self.error_callback()
+            Thread(target=self.error_callback)

@@ -1,81 +1,25 @@
 import pandas as pd
-import multiprocessing as mp
+import time
 from threading import Thread
 from datetime import datetime, timedelta
 
 import bitcoin.logs.logger as lc
-import bitcoin.storage.util as st_util
 import bitcoin.gdax.public_client as gdax
 import bitcoin.gdax.params as params
 import bitcoin.util as util
+import bitcoin.storage.util as sutil
 from bitcoin.websocket.core import WebSocket
 
 
-logger = lc.config_logger('gdax_msgs')
 GDAX_CLIENT = gdax.PublicClient()
-
-
-def store_order_book(product_id):
-    logger.info('=' * 30)
-    logger.info('Storing order book')
-
-    # get data
-    data = GDAX_CLIENT.get_product_order_book(params.BTC_PRODUCT_ID, level=3)
-    # to df
-    timestamp = pd.datetime.utcnow()
-    df = gdax_book_to_df(data, timestamp)
-    # store
-    table_name = params.SNAPSHOT_TBLS[product_id]
-    st_util.store_df(df, table_name)
-
-    logger.info('=' * 30)
-    return
-
-
-def gdax_book_to_df(data, timestamp):
-    # combine bids and asks
-    columns = ['price', 'size', 'order_id']
-    bids = pd.DataFrame(data['bids'], columns=columns)
-    asks = pd.DataFrame(data['asks'], columns=columns)
-    bids['side'] = 'bid'
-    asks['side'] = 'ask'
-    df = pd.concat([bids, asks])
-
-    # add sequence and timestamp
-    df['sequence'] = data['sequence']
-    df['received_time'] = timestamp
-    return df
-
-
-def store_msgs(msgs, product_id):
-    """
-    Store list of messages to db
-    """
-    logger.info('~' * 30)
-    logger.debug('Storing messages')
-    start = datetime.utcnow()
-
-    table_name = params.MSG_TBLS[product_id]
-    columns = params.MSG_COLS_TBL
-    # msgs to df
-    df = pd.DataFrame(msgs, columns=columns)
-    df['time'] = pd.to_datetime(df['time'])
-
-    # store
-    st_util.store_df(df, table_name)
-
-    time_elapsed = (datetime.utcnow() - start).seconds
-    logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
-    logger.info('~' * 30)
-    return
+logger = lc.config_logger('gdax_msgs')
 
 
 class GdaxMsgStorage(WebSocket):
     def __init__(self, url, channel, product_id):
-        super(GdaxMsgStorage, self).__init__(url, channel, error_callback=self.store_book_wrapper)
+        super(GdaxMsgStorage, self).__init__(url, channel, error_callback=self.store_order_book)
         self.msgs = []
         self.last_sequence = -1
-        self.pool = mp.Pool()
         self.product_id = product_id
 
         self.msg_store_freq = timedelta(seconds=60)  # frequency of storing messages
@@ -97,12 +41,12 @@ class GdaxMsgStorage(WebSocket):
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
         if time_elapsed:
-            self.store_msgs_wrapper()
+            Thread(target=self.store_msgs).start()
 
         # store order book
         time_elapsed = util.time_elapsed(self.last_book_store_time, self.book_store_freq)
         if time_elapsed:
-            self.store_book_wrapper()
+            Thread(target=self.store_order_book).start()
 
     def check_msg(self, msg):
         """
@@ -110,26 +54,58 @@ class GdaxMsgStorage(WebSocket):
         """
         sequence = msg['sequence']
         if sequence <= self.last_sequence:
-            logger.error('Ignoring older msg: {}'.format(sequence))
+            logger.error('Ignoring older msg in {}: {}'.format(self.product_id, sequence))
         elif sequence != self.last_sequence + 1:
-            logger.error('Out of sync: last sequence({}), message({})'.format(self.last_sequence, sequence))
+            logger.error('{} out of sync: last sequence({}), message({})'.format(self.product_id,
+                                                                                 self.last_sequence,
+                                                                                 sequence))
             self.close()
             self.start()
-            self.store_book_wrapper()
+            Thread(target=self.store_order_book).start()
         self.last_sequence = sequence
 
-    def store_book_wrapper(self):
-        self.pool.apply_async(store_order_book, args=(self.product_id,))
+    def store_order_book(self):
         self.last_book_store_time = datetime.utcnow()
+        logger.info('=' * 30)
+        logger.info('Storing {} order book'.format(self.product_id))
 
-    def store_msgs_wrapper(self):
-        args = (list(self.msgs), self.product_id)
-        # self.pool.apply_async(store_msgs, args=args)
-        Thread(target=store_msgs, args=args).start()
-        self.msgs = []
+        # get data
+        data = GDAX_CLIENT.get_product_order_book(params.BTC_PRODUCT_ID, level=3)
+        # to df
+        timestamp = pd.datetime.utcnow()
+        df = sutil.gdax_book_to_df(data, timestamp)
+        # store
+        table_name = params.SNAPSHOT_TBLS[self.product_id]
+        sutil.store_df(df, table_name)
+
+        logger.info('=' * 30)
+        return
+
+    def store_msgs(self):
+        """
+        Store list of messages to db
+        """
         self.last_msg_store_time = datetime.utcnow()
+        msgs = list(self.msgs)
+        self.msgs = []
+        start = datetime.utcnow()
+
+        table_name = params.MSG_TBLS[self.product_id]
+        columns = params.MSG_COLS_TBL
+        # msgs to df
+        df = pd.DataFrame(msgs, columns=columns)
+        df['time'] = pd.to_datetime(df['time'])
+
+        # store
+        sutil.store_df(df, table_name)
+
+        time_elapsed = (datetime.utcnow() - start).seconds
+        logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
+        return
 
 
 if __name__ == '__main__':
-    btc_ws = GdaxMsgStorage(params.WS_URL, params.BTC_CHANNEL, params.BTC_PRODUCT_ID)
-    btc_ws.start()
+    for product_id, channel in params.CHANNELS.iteritems():
+        ws = GdaxMsgStorage(params.WS_URL, channel, product_id)
+        ws.start()
+        time.sleep(60)

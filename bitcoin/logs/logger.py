@@ -29,13 +29,13 @@ def config_logger(dirname, level='INFO'):
             'streamHandler': {
                 'class': 'logging.StreamHandler',
                 'formatter': 'standard',
-            }
+            },
         },
         'loggers': {
             '': {
                 'handlers': ['fileHandler', 'streamHandler'],
                 'level': level,
-            }
+            },
         },
     }
     logging.config.dictConfig(config)
