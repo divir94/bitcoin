@@ -65,6 +65,9 @@ class GdaxMsgStorage(WebSocket):
         self.last_sequence = sequence
 
     def store_order_book(self):
+        """
+        Store order book to db
+        """
         self.last_book_store_time = datetime.utcnow()
         logger.info('=' * 30)
         logger.info('Storing {} order book'.format(self.product_id))
@@ -108,4 +111,4 @@ if __name__ == '__main__':
     for product_id, channel in params.CHANNELS.iteritems():
         ws = GdaxMsgStorage(params.WS_URL, channel, product_id)
         ws.start()
-        time.sleep(60)
+        time.sleep(30)
