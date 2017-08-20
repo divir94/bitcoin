@@ -1,5 +1,6 @@
 import pandas as pd
 import multiprocessing as mp
+from threading import Thread
 from datetime import datetime, timedelta
 
 import bitcoin.logs.logger as lc
@@ -15,7 +16,7 @@ logger = lc.config_logger('gdax_msgs')
 GDAX_CLIENT = gdax.PublicClient()
 
 
-def store_order_book():
+def store_order_book(product_id):
     logger.info('=' * 30)
     logger.info('Storing order book')
 
@@ -25,8 +26,8 @@ def store_order_book():
     timestamp = pd.datetime.utcnow()
     df = gdax_book_to_df(data, timestamp)
     # store
-    df_dict = {params.BOOK_TBL: df}
-    st_util.store_dfs(df_dict)
+    table_name = params.SNAPSHOT_TBLS[product_id]
+    st_util.store_df(df, table_name)
 
     logger.info('=' * 30)
     return
@@ -47,7 +48,7 @@ def gdax_book_to_df(data, timestamp):
     return df
 
 
-def store_msgs(msgs):
+def store_msgs(msgs, product_id):
     """
     Store list of messages to db
     """
@@ -55,26 +56,14 @@ def store_msgs(msgs):
     logger.debug('Storing messages')
     start = datetime.utcnow()
 
-    msg_dict = {}
-    # convert messages to dict[type, list[msg]]
-    for msg in msgs:
-        _type = msg['type']
-        msg_dict[_type] = msg_dict.get(_type, []) + [msg]
-
-    df_dict = {}
-    # convert to dict[tbl_name, df]
-    for _type, msg_lst in msg_dict.iteritems():
-        # filter to fiels we care about
-        fields = params.MSG_DB_MAPPING[_type]['fields']
-        df = pd.DataFrame(msg_lst, columns=fields)
-        df['time'] = pd.to_datetime(df['time'])
-
-        # add to dict
-        tbl_name = params.MSG_DB_MAPPING[_type]['table']
-        df_dict[tbl_name] = df
+    table_name = params.MSG_TBLS[product_id]
+    columns = params.MSG_COLS_TBL
+    # msgs to df
+    df = pd.DataFrame(msgs, columns=columns)
+    df['time'] = pd.to_datetime(df['time'])
 
     # store
-    st_util.store_dfs(df_dict)
+    st_util.store_df(df, table_name)
 
     time_elapsed = (datetime.utcnow() - start).seconds
     logger.info('Took {:.2f}s to store {} messages'.format(time_elapsed, len(msgs)))
@@ -83,16 +72,15 @@ def store_msgs(msgs):
 
 
 class GdaxMsgStorage(WebSocket):
-    def __init__(self):
-        super(GdaxMsgStorage, self).__init__(url=params.WS_URL,
-                                             channel=params.CHANNEL,
-                                             error_callback=self.store_book_wrapper)
+    def __init__(self, url, channel, product_id):
+        super(GdaxMsgStorage, self).__init__(url, channel, error_callback=self.store_book_wrapper)
         self.msgs = []
         self.last_sequence = -1
         self.pool = mp.Pool()
+        self.product_id = product_id
 
-        self.msg_store_freq = timedelta(seconds=30)  # frequency of storing messages
-        self.book_store_freq = timedelta(minutes=1)  # frequency of storing order book
+        self.msg_store_freq = timedelta(seconds=60)  # frequency of storing messages
+        self.book_store_freq = timedelta(minutes=60)  # frequency of storing order book
         self.last_msg_store_time = datetime.utcnow()
         self.last_book_store_time = datetime.utcnow() - self.book_store_freq
 
@@ -100,10 +88,11 @@ class GdaxMsgStorage(WebSocket):
         """
         Check if message is out of order and store messages at regular intervals
         """
+        msg['received_time'] = datetime.utcnow()
+
         if self.last_sequence != -1:
             self.check_msg(msg)
 
-        msg['received_time'] = pd.datetime.utcnow()
         self.msgs.append(msg)
 
         # store messages
@@ -131,16 +120,17 @@ class GdaxMsgStorage(WebSocket):
         self.last_sequence = sequence
 
     def store_book_wrapper(self):
-        self.pool.apply_async(store_order_book)
+        self.pool.apply_async(store_order_book, args=(self.product_id,))
         self.last_book_store_time = datetime.utcnow()
 
     def store_msgs_wrapper(self):
-        msgs_copy = list(self.msgs)
-        self.pool.apply_async(store_msgs, args=(msgs_copy,))
+        args = (list(self.msgs), self.product_id)
+        # self.pool.apply_async(store_msgs, args=args)
+        Thread(target=store_msgs, args=args).start()
         self.msgs = []
         self.last_msg_store_time = datetime.utcnow()
 
 
 if __name__ == '__main__':
-    ws = GdaxMsgStorage()
-    ws.start()
+    btc_ws = GdaxMsgStorage(params.WS_URL, params.BTC_CHANNEL, params.BTC_PRODUCT_ID)
+    btc_ws.start()

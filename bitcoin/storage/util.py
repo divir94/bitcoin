@@ -18,14 +18,14 @@ def get_sqlalchemy_engine():
 ENGINE = get_sqlalchemy_engine()
 
 
-def store_dfs(df_dict):
+def store_df(df, tbl_name):
     logger.debug('~' * 30)
-    for tbl_name, df in df_dict.iteritems():
-        try:
-            df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
-            logger.info('Stored {} rows in {}'.format(len(df), tbl_name))
-        except Exception as e:
-            logger.error('Failed to store in {}'.format(tbl_name))
-            logger.error(e)
+
+    try:
+        df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
+        logger.info('Stored {} rows in {}'.format(len(df), tbl_name))
+    except Exception as e:
+        logger.error('Failed to store in {}'.format(tbl_name))
+        logger.error(e)
     logger.debug('~' * 30)
     return

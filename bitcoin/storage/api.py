@@ -43,16 +43,13 @@ def get_book_from_df(df, sequence):
 
 
 def get_messages_between(start_sequence, end_sequence):
-    all_msgs = {}
-    for _type, value in params.MSG_DB_MAPPING.iteritems():
-        sql = '''
-        SELECT * FROM {}
-        WHERE sequence >= {}
-        AND sequence <= {}
-        '''.format(value['table'], start_sequence, end_sequence)
-        msgs = pd.read_sql(sql, con=sutil.ENGINE)
-        all_msgs[_type] = msgs
-    return all_msgs
+    sql = '''
+    SELECT * FROM {}
+    WHERE sequence >= {}
+    AND sequence <= {}
+    '''.format(params.BTC_MSG_TBL, start_sequence, end_sequence)
+    msgs = pd.read_sql(sql, con=sutil.ENGINE)
+    return msgs
 
 
 def apply_messages(snapshot, messages):
