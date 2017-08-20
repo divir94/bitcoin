@@ -830,3 +830,4 @@ WebSocketConnectionClosedException: Connection is already closed.
 2017-08-20 15:50:11,375 - gdax_msgs - INFO - Stored 5453 messages in GdaxEthMessage in 0.57s
 2017-08-20 15:51:11,741 - gdax_msgs - INFO - Stored 6085 messages in GdaxEthMessage in 0.84s
 2017-08-20 15:52:11,544 - gdax_msgs - INFO - Stored 2743 messages in GdaxEthMessage in 0.30s
+2017-08-20 15:53:11,589 - gdax_msgs - INFO - Stored 3244 messages in GdaxEthMessage in 0.29s
