@@ -4,25 +4,24 @@ import time
 from threading import Thread
 from websocket import create_connection
 
-import bitcoin.logs.logger
-
 
 logger = logging.getLogger('core_websocket')
-#logger.setLevel(logging.DEBUG)
 
 
+# TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
-    def __init__(self, url, channel):
+    def __init__(self, url, channel, error_callback=None):
         self.url = url
         self.channel = channel
         self.ws = None
 
         self.ping_freq = 30
-        self.heartbeat = False
+        self.heartbeat = True
         self.last_heartbeat = time.time()
         self.heartbeat_tol = 2
         self.check_freq = None
         self.last_check = time.time()
+        self.error_callback = error_callback
 
         self.stop = False
         
@@ -75,17 +74,18 @@ class WebSocket(object):
                 self.last_check = time.time()
 
             # save heartbeat and handle message
+            msg = None
             try:
-                result = self.ws.recv()
-                msg = json.loads(result)
+                msg = self.ws.recv()
+                msg = json.loads(msg)
             except Exception as e:
-                self.on_error(e)
+                self.on_error(e, msg)
             else:
                 if msg['type'] == 'heartbeat':
                     logger.debug('Got heartbeat: {}'.format(msg))
-                    self.last_heartbeat = time.time()
                 else:
                     self.on_message(msg)
+                self.last_heartbeat = time.time()
 
     def close(self):
         """
@@ -101,6 +101,7 @@ class WebSocket(object):
         # stop listening and close the websocket
         time.sleep(1)
         self.ws.close()
+        time.sleep(1)
 
     def on_message(self, msg):
         # logger.debug(msg)
@@ -109,11 +110,9 @@ class WebSocket(object):
     def check_book(self):
         pass
 
-    def on_error(self, error):
-        logger.exception('Message error: {}'.format(error))
-
-
-if __name__ == '__main__':
-    ws = WebSocket(url='wss://ws-feed.gdax.com',
-                   channel={'type': 'subscribe', 'product_ids': ['BTC-USD']})
-    ws.start()
+    def on_error(self, error, msg):
+        logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
+        self.close()
+        self.start()
+        if self.error_callback is not None:
+            self.error_callback()

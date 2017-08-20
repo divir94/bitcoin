@@ -1,9 +1,0 @@
-2017-08-12 12:24:13,901 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
-2017-08-12 12:24:14,124 - core_websocket - INFO - Listening for messages
-2017-08-12 12:24:14,243 - gdax_websocket - INFO - Restarting sync
-2017-08-12 12:24:14,243 - gdax_websocket - INFO - ==============================
-2017-08-12 12:24:14,244 - gdax_websocket - INFO - Loading book
-2017-08-12 12:24:16,399 - gdax_websocket - INFO - Got book: 3827170011
-2017-08-12 12:24:16,400 - gdax_websocket - INFO - Applying queued msgs: 3827170011
-2017-08-12 12:24:16,433 - gdax_websocket - INFO - Book ready: 3827170192
-2017-08-12 12:24:16,434 - gdax_websocket - INFO - ==============================
