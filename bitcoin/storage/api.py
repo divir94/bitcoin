@@ -1,8 +1,8 @@
 import pandas as pd
 
-import bitcoin.storage.util as sutil
 import bitcoin.order_book as ob
-import bitcoin.gdax.params as params
+import bitcoin.params as params
+import bitcoin.storage.util as sutil
 
 
 def get_gdax_book(sequence):
