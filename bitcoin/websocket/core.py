@@ -2,7 +2,7 @@ import json
 import logging
 import time
 from threading import Thread
-from websocket import create_connection
+from websocket import create_connection, WebSocketConnectionClosedException
 
 
 logger = logging.getLogger('core_websocket')
@@ -78,8 +78,6 @@ class WebSocket(object):
             try:
                 msg = self.ws.recv()
                 msg = json.loads(msg)
-                if self.channel['product_ids'] == ['BTC-USD']:
-                    1 / 0
             except Exception as e:
                 self.on_error(e, msg)
             else:
@@ -102,11 +100,13 @@ class WebSocket(object):
 
         # stop listening and close the websocket
         time.sleep(1)
-        self.ws.close()
+        try:
+            self.ws.close()
+        except WebSocketConnectionClosedException as e:
+            logging.error('Failed to close websocket: {}'.format(e))
         time.sleep(1)
 
     def on_message(self, msg):
-        # logger.debug(msg)
         pass
 
     def check_book(self):

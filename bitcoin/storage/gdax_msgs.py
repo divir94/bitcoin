@@ -23,7 +23,7 @@ class GdaxMsgStorage(WebSocket):
         self.product_id = product_id
         self.date_format = "%Y-%m-%dT%H:%M:%S.%fZ"
 
-        self.msg_store_freq = timedelta(seconds=60)  # frequency of storing messages
+        self.msg_store_freq = timedelta(minutes=3)  # frequency of storing messages
         self.book_store_freq = timedelta(minutes=60)  # frequency of storing order book
         self.last_msg_store_time = datetime.utcnow()
         self.last_book_store_time = datetime.utcnow() - self.book_store_freq
@@ -42,13 +42,13 @@ class GdaxMsgStorage(WebSocket):
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
         if time_elapsed:
-            #Thread(target=self.store_msgs).start()
+            Thread(target=self.store_msgs).start()
             self.last_msg_store_time = datetime.utcnow()
 
         # store order book
         time_elapsed = util.time_elapsed(self.last_book_store_time, self.book_store_freq)
         if time_elapsed:
-            #Thread(target=self.store_order_book).start()
+            Thread(target=self.store_order_book).start()
             self.last_book_store_time = datetime.utcnow()
 
     def check_msg(self, msg):
@@ -64,7 +64,7 @@ class GdaxMsgStorage(WebSocket):
                                                                                  sequence))
             self.close()
             self.start()
-            #Thread(target=self.store_order_book).start()
+            Thread(target=self.store_order_book).start()
         self.last_sequence = sequence
 
     def store_order_book(self):
@@ -75,7 +75,7 @@ class GdaxMsgStorage(WebSocket):
         logger.info('Storing {} order book'.format(self.product_id))
 
         # get data
-        data = GDAX_CLIENT.get_product_order_book(params.BTC_PRODUCT_ID, level=3)
+        data = GDAX_CLIENT.get_product_order_book(self.product_id, level=3)
         # to df
         timestamp = pd.datetime.utcnow().strftime(self.date_format)
         df = sutil.gdax_book_to_df(data, timestamp)
@@ -112,4 +112,4 @@ if __name__ == '__main__':
     for product_id, channel in params.CHANNELS.iteritems():
         ws = GdaxMsgStorage(params.WS_URL, channel, product_id)
         ws.start()
-        time.sleep(10)
+        time.sleep(60)
