@@ -12,7 +12,6 @@ from bitcoin.websocket.core import WebSocket
 
 
 logger = lc.config_logger('gdax_msgs')
-# logger.setLevel(logging.DEBUG)
 GDAX_CLIENT = gdax.PublicClient()
 
 
@@ -66,7 +65,7 @@ def store_msgs(msgs, product_id):
     st_util.store_df(df, table_name)
 
     time_elapsed = (datetime.utcnow() - start).seconds
-    logger.info('Took {:.2f}s to store {} messages'.format(time_elapsed, len(msgs)))
+    logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
     logger.info('~' * 30)
     return
 

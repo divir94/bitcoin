@@ -5,7 +5,7 @@ from datetime import date
 import bitcoin.util as util
 
 
-def config_logger(dirname):
+def config_logger(dirname, level='INFO'):
     root = util.get_project_root()
     today = date.today()
     directory = '{}/logs/{}'.format(root, dirname)
@@ -34,7 +34,7 @@ def config_logger(dirname):
         'loggers': {
             '': {
                 'handlers': ['fileHandler', 'streamHandler'],
-                'level': 'INFO',
+                'level': level,
             }
         },
     }
