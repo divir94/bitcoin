@@ -1,5 +1,6 @@
 import json
 import logging
+import pandas as pd
 from sqlalchemy import create_engine
 
 import bitcoin.util as util
@@ -26,3 +27,18 @@ def store_df(df, tbl_name):
         logger.error('Failed to store in {}'.format(tbl_name))
         logger.error(e)
     return
+
+
+def gdax_book_to_df(data, timestamp):
+    # combine bids and asks
+    columns = ['price', 'size', 'order_id']
+    bids = pd.DataFrame(data['bids'], columns=columns)
+    asks = pd.DataFrame(data['asks'], columns=columns)
+    bids['side'] = 'bid'
+    asks['side'] = 'ask'
+    df = pd.concat([bids, asks])
+
+    # add sequence and timestamp
+    df['sequence'] = data['sequence']
+    df['received_time'] = timestamp
+    return df
