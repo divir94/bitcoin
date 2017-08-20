@@ -42,13 +42,13 @@ class GdaxMsgStorage(WebSocket):
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
         if time_elapsed:
-            Thread(target=self.store_msgs).start()
+            #Thread(target=self.store_msgs).start()
             self.last_msg_store_time = datetime.utcnow()
 
         # store order book
         time_elapsed = util.time_elapsed(self.last_book_store_time, self.book_store_freq)
         if time_elapsed:
-            Thread(target=self.store_order_book).start()
+            #Thread(target=self.store_order_book).start()
             self.last_book_store_time = datetime.utcnow()
 
     def check_msg(self, msg):
@@ -64,7 +64,7 @@ class GdaxMsgStorage(WebSocket):
                                                                                  sequence))
             self.close()
             self.start()
-            Thread(target=self.store_order_book).start()
+            #Thread(target=self.store_order_book).start()
         self.last_sequence = sequence
 
     def store_order_book(self):
@@ -112,4 +112,4 @@ if __name__ == '__main__':
     for product_id, channel in params.CHANNELS.iteritems():
         ws = GdaxMsgStorage(params.WS_URL, channel, product_id)
         ws.start()
-        time.sleep(30)
+        time.sleep(10)
