@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import time
 import requests
+import logging
 
 import bitcoin.logs.logger as lc
 import bitcoin.storage.util as st_util
@@ -17,6 +18,7 @@ BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
 
 logger = lc.config_logger('snapshots')
+logger.setLevel(logging.ERROR)
 
 
 ################
