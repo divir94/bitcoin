@@ -17,7 +17,7 @@ logger = lc.config_logger('gdax_msgs')
 
 class GdaxMsgStorage(WebSocket):
     def __init__(self, url, channel, product_id):
-        super(GdaxMsgStorage, self).__init__(url, channel, error_callback=self.store_order_book)
+        super(GdaxMsgStorage, self).__init__(url, channel)
         self.msgs = []
         self.last_sequence = -1
         self.product_id = product_id
@@ -38,6 +38,8 @@ class GdaxMsgStorage(WebSocket):
             self.check_msg(msg)
 
         self.msgs.append(msg)
+        if msg['type'] == 'error':
+            logger.error(msg)
 
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
@@ -112,4 +114,3 @@ if __name__ == '__main__':
     for product_id, channel in params.GX_CHANNELS.iteritems():
         ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
         ws.start()
-        time.sleep(20)

@@ -10,7 +10,7 @@ logger = logging.getLogger('core_websocket')
 
 # TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
-    def __init__(self, url, channel, heartbeat=True, error_callback=None):
+    def __init__(self, url, channel, heartbeat=True):
         self.url = url
         self.channel = channel
         self.ws = None
@@ -21,8 +21,6 @@ class WebSocket(object):
         self.heartbeat_tol = 2
         self.check_freq = None
         self.last_check = time.time()
-        self.error_callback = error_callback
-
         self.stop = False
         
     def start(self):
@@ -33,8 +31,8 @@ class WebSocket(object):
             self._connect()
             self._listen()
 
-        Thread(target=_go).start()
-            
+        _go()
+
     def _connect(self):
         """
         Create websocket object and send initial message.
@@ -92,6 +90,10 @@ class WebSocket(object):
         Close the connection and turn off heartbeat.
         """
         logger.info('Closing websocket')
+        if self.stop:
+            logger.info('Socket already closed!')
+            return
+
         self.stop = True
 
         # turn off heartbeat
@@ -102,6 +104,7 @@ class WebSocket(object):
         time.sleep(1)
         try:
             self.ws.close()
+            logger.info('Successfully closed Websocket')
         except WebSocketConnectionClosedException as e:
             logging.error('Failed to close websocket: {}'.format(e))
         time.sleep(1)
@@ -115,7 +118,4 @@ class WebSocket(object):
     def on_error(self, error, msg):
         logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
         self.close()
-        logger.info('Closed Websocket')
         self.start()
-        if self.error_callback is not None:
-            Thread(target=self.error_callback)
