@@ -48,7 +48,6 @@ def get_bitstamp_fills(limit=100):
     fills = fills.astype(float)
 
     # filter
-    ignore_orders = {60752232.0}
     fills = fills[(fills.type == 2) & (~fills.order_id.isin(ignore_orders))]
 
     # rename
