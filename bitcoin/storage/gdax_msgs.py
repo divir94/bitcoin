@@ -113,4 +113,4 @@ class GdaxMsgStorage(WebSocket):
 if __name__ == '__main__':
     for product_id, channel in params.GX_CHANNELS.iteritems():
         ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
-        ws.start()
+        Thread(target=ws.start).start()
