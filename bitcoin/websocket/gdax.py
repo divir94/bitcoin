@@ -1,30 +1,27 @@
 import logging
 from collections import deque
-from threading import Thread
 from copy import deepcopy
+from threading import Thread
 
-
+import bitcoin.gdax.public_client as gdax
 import bitcoin.logs.logger as lc
 import bitcoin.order_book as ob
+import bitcoin.params as params
 import bitcoin.util as util
-import bitcoin.gdax.public_client as gdax
-import bitcoin.gdax.params as params
 from bitcoin.websocket.core import WebSocket
-
 
 logger = lc.config_logger('gdax_websocket')
 # logger.setLevel(logging.DEBUG)
 
 
 class GdaxOrderBook(WebSocket):
-    def __init__(self, on_change=None):
-        super(GdaxOrderBook, self).__init__(params.WS_URL, params.BTC_CHANNEL)
-        self.exchange = 'GDAX'
+    def __init__(self, product_id, on_change=None):
+        super(GdaxOrderBook, self).__init__(params.GX_WS_URL, params.GX_CHANNELS[product_id])
         self.book = ob.OrderBook(-1)
         self.queue = deque()
         self.on_change = on_change
         self.gdax_client = gdax.PublicClient()
-        self.product_id = 'BTC-USD'
+        self.product_id = product_id
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
@@ -307,5 +304,5 @@ class GdaxOrderBook(WebSocket):
 
 
 if __name__ == '__main__':
-    ws = GdaxOrderBook()
+    ws = GdaxOrderBook(product_id='BTC-USD')
     ws.start()

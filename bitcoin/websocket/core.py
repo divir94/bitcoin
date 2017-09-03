@@ -2,7 +2,7 @@ import json
 import logging
 import time
 from threading import Thread
-from websocket import create_connection
+from websocket import create_connection, WebSocketConnectionClosedException
 
 
 logger = logging.getLogger('core_websocket')
@@ -10,19 +10,17 @@ logger = logging.getLogger('core_websocket')
 
 # TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
-    def __init__(self, url, channel, error_callback=None):
+    def __init__(self, url, channel, heartbeat=True):
         self.url = url
         self.channel = channel
         self.ws = None
 
         self.ping_freq = 30
-        self.heartbeat = True
+        self.heartbeat = heartbeat
         self.last_heartbeat = time.time()
         self.heartbeat_tol = 2
         self.check_freq = None
         self.last_check = time.time()
-        self.error_callback = error_callback
-
         self.stop = False
         
     def start(self):
@@ -33,8 +31,8 @@ class WebSocket(object):
             self._connect()
             self._listen()
 
-        Thread(target=_go).start()
-            
+        _go()
+
     def _connect(self):
         """
         Create websocket object and send initial message.
@@ -81,7 +79,7 @@ class WebSocket(object):
             except Exception as e:
                 self.on_error(e, msg)
             else:
-                if msg['type'] == 'heartbeat':
+                if self.heartbeat and msg['type'] == 'heartbeat':
                     logger.debug('Got heartbeat: {}'.format(msg))
                 else:
                     self.on_message(msg)
@@ -92,6 +90,10 @@ class WebSocket(object):
         Close the connection and turn off heartbeat.
         """
         logger.info('Closing websocket')
+        if self.stop:
+            logger.info('Socket already closed!')
+            return
+
         self.stop = True
 
         # turn off heartbeat
@@ -100,11 +102,14 @@ class WebSocket(object):
 
         # stop listening and close the websocket
         time.sleep(1)
-        self.ws.close()
+        try:
+            self.ws.close()
+            logger.info('Successfully closed Websocket')
+        except WebSocketConnectionClosedException as e:
+            logging.error('Failed to close websocket: {}'.format(e))
         time.sleep(1)
 
     def on_message(self, msg):
-        # logger.debug(msg)
         pass
 
     def check_book(self):
@@ -114,5 +119,3 @@ class WebSocket(object):
         logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
         self.close()
         self.start()
-        if self.error_callback is not None:
-            self.error_callback()
