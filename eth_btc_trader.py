@@ -22,7 +22,7 @@ SELL = "sell"
 MIN_ORDER_SIZE = 0.1
 SPARE_COINS = 5
 MIN_TICK = 0.00001
-PER_TRADE_SPREAD = 1.0025
+PER_TRADE_SPREAD = 1.0035
 
 price_volume_pair = namedtuple('PriceVolumePair', ['price', 'volume'])
 
@@ -84,27 +84,6 @@ def get_bitstamp_balances():
     }
     logger.info("Bitstamp balances {}".format(data))
     return data
-
-
-def gdax_market_order(size, side):
-    logger.info("executing gdax {} market order for {}".format(side, size))
-    if side == BUY:
-        return gdax_client.buy(type="market", size=str(size), product_id='ETH-BTC')
-    elif side == SELL:
-        return gdax_client.sell(type="market", size=str(size), product_id='ETH-BTC')
-    else:
-        raise Exception("{} not understood".format(side))
-
-
-def bitstamp_market_order(size, side):
-    """
-    Order to buy amount of bitcoins for specified price.
-    """
-    data = {'amount': size}
-    url = bitstamp_client._construct_url(side + "/market/", base="eth", quote="btc")
-    logger.info("executing bitstamp {} market order for {}".format(side, size))
-    return bitstamp_client._post(url, data=data, return_json=True, version=2)
-
 
 def wait_till_balance(exchange, eth_quant):
     if exchange == GDAX:
@@ -268,7 +247,7 @@ def compute_gdax_buy_price(gdax_book, bitstamp_book):
                 del gdax_buy_limit_vol_and_price[0]
         else:
             del bitstamp_sell_market_vol_and_price[0]
-    return 0
+    return MIN_TICK
 
 
 def compute_gdax_sell_price(gdax_book, bitstamp_book):
@@ -321,39 +300,39 @@ def rebalance(data):
     if total_eth >= round(data["required_eth"] + MIN_ORDER_SIZE, 2):
         size = round(total_eth - data["required_eth"], 2)
         bitstamp_sell_price = average_price_for_coins(bitstamp_book["bids"], size)
-        gdax_sell_price = average_price_for_coins(gdax_book["bids"], size)
+        gdax_sell_price = float(gdax_book["asks"][0][0])
         logger.warn("sell prices. gdax {} bitstamp {}".format(gdax_sell_price, bitstamp_sell_price))
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
-            new_gdax_eth_balance = gdax_balances[("ETH", "balance")] - size
             # TODO(vidurj) same as below.
-            if bitstamp_sell_price >= gdax_sell_price * (1 - 0.0025) or new_gdax_eth_balance < 0:
-                bitstamp_market_order(size=size, side=SELL)
+            if bitstamp_sell_price > gdax_sell_price:
+                bitstamp_client.buy_limit_order(amount=size, price=gdax_sell_price, base="eth", quote="btc")
                 new_bitstamp_eth_balance = bitstamp_balances[("ETH", "balance")] - size
                 wait_till_balance(BITSTAMP, new_bitstamp_eth_balance)
             else:
-                gdax_market_order(size=size, side=SELL)
-                wait_till_balance(GDAX, new_gdax_eth_balance)
+                logger.warn("Missed trade")
+                time.sleep(0.1)
+                return
             async_cancel_all.wait(30)
         else:
             print("TEST Mode " * 10)
     elif data["required_eth"] >= round(total_eth + MIN_ORDER_SIZE, 2):
         size = round(data["required_eth"] - total_eth, 2)
         bitstamp_buy_price = average_price_for_coins(bitstamp_book["asks"], size)
-        gdax_buy_price = average_price_for_coins(gdax_book["asks"], size)
+        gdax_buy_price = float(gdax_book["bids"][0][0])
         logger.warn("buy prices. gdax {} bitstamp {}".format(gdax_buy_price, bitstamp_buy_price))
         async_cancel_all = POOL.apply_async(cancel_all_gdax)
         if not TEST:
             # TODO(vidurj) when picking which exchange to execute on, not only do we need to check
             # for best price, but also where there are assets to support the order.
-            if bitstamp_buy_price <= gdax_buy_price * 1.0025:
+            if bitstamp_buy_price < gdax_buy_price:
                 bitstamp_market_order(size=size, side=BUY)
                 new_bitstamp_eth_balance = bitstamp_balances[("ETH", "balance")] + size
                 wait_till_balance(BITSTAMP, new_bitstamp_eth_balance)
             else:
-                gdax_market_order(size=size, side=BUY)
-                new_gdax_eth_balance = gdax_balances[("ETH", "balance")] + size
-                wait_till_balance(GDAX, new_gdax_eth_balance)
+                logger.warn("Missed trade")
+                time.sleep(0.1)
+                return
             async_cancel_all.wait(30)
         else:
             print("TEST Mode " * 10)
@@ -371,6 +350,9 @@ def rebalance(data):
                                                   bitstamp_balances=bitstamp_balances,
                                                   bitstamp_buy_price=bitstamp_buy_price)
         outstanding_orders = async_outstanding_orders.get()
+        logger.info("buy price {} buy size {} sell price {} sell size {}".format(
+            limit_buy_price, buy_order_size, limit_sell_price, sell_order_size
+        ))
         if BUY in outstanding_orders:
             if (abs(outstanding_orders[BUY]["price"] - limit_buy_price) > 1) or \
                     (outstanding_orders[BUY]["filled_size"] > 0.05):
