@@ -1,8 +1,8 @@
 import pandas as pd
 
-import bitcoin.storage.util as sutil
 import bitcoin.order_book as ob
-import bitcoin.gdax.params as params
+import bitcoin.params as params
+import bitcoin.storage.util as sutil
 
 
 def get_gdax_book(sequence):
@@ -32,7 +32,12 @@ def get_closest_snapshot(sequence):
     return df, closest_sequence
 
 
-def get_book_from_df(df, sequence):
+def get_book_from_df(df):
+    # get sequence
+    sequences = df['sequence'].unique()
+    assert len(sequences) == 1
+    sequence = sequences[0]
+
     bids = df[df['side'] == 'bid']
     asks = df[df['side'] == 'ask']
     columns = ['price', 'size', 'order_id']
