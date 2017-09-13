@@ -1,0 +1,1322 @@
+2017-08-23 05:00:58,525 - snapshots - ERROR - ====================
+2017-08-23 05:00:53.464343
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 05:00:58,525 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 05:01:23,560 - snapshots - ERROR - ====================
+2017-08-23 05:01:18.491623
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 05:01:23,561 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 05:10:36,675 - snapshots - ERROR - ====================
+2017-08-23 05:10:31.613887
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 05:10:36,676 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 05:25:49,682 - snapshots - ERROR - ====================
+2017-08-23 05:25:44.622080
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 05:25:49,682 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 05:59:53,687 - snapshots - ERROR - ====================
+2017-08-23 05:59:48.608781
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 05:59:53,687 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 06:01:44,664 - snapshots - ERROR - ====================
+2017-08-23 06:01:39.583822
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 06:01:44,665 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 06:32:03,688 - snapshots - ERROR - ====================
+2017-08-23 06:31:58.624389
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 06:32:03,688 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 07:09:15,761 - snapshots - ERROR - ====================
+2017-08-23 07:09:10.707178
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 07:09:15,762 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 07:28:26,778 - snapshots - ERROR - ====================
+2017-08-23 07:28:21.714113
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 07:28:26,779 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 07:31:52,615 - snapshots - ERROR - ====================
+2017-08-23 07:31:47.536579
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 07:31:52,616 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 07:37:46,700 - snapshots - ERROR - ====================
+2017-08-23 07:37:41.627738
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 07:37:46,700 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 08:10:40,121 - snapshots - ERROR - ====================
+2017-08-23 08:10:35.060946
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 08:10:40,121 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 08:18:13,650 - snapshots - ERROR - ====================
+2017-08-23 08:18:08.596559
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 08:18:13,651 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 08:50:47,675 - snapshots - ERROR - ====================
+2017-08-23 08:50:42.610093
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 08:50:47,676 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:12:19,600 - snapshots - ERROR - ====================
+2017-08-23 09:12:14.528960
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:12:19,600 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:12:31,503 - snapshots - ERROR - ====================
+2017-08-23 09:12:26.450500
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:12:31,504 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:15:55,586 - snapshots - ERROR - ====================
+2017-08-23 09:15:50.525444
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:15:55,586 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:19:43,154 - snapshots - ERROR - ====================
+2017-08-23 09:19:38.084884
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:19:43,154 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:28:29,522 - snapshots - ERROR - ====================
+2017-08-23 09:28:24.459687
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:28:29,522 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:54:27,617 - snapshots - ERROR - ====================
+2017-08-23 09:54:22.553672
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:54:27,617 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 09:56:44,666 - snapshots - ERROR - ====================
+2017-08-23 09:56:39.571174
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 09:56:44,667 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 10:13:55,457 - snapshots - ERROR - ====================
+2017-08-23 10:13:50.385812
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 10:13:55,458 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 10:32:54,645 - snapshots - ERROR - ====================
+2017-08-23 10:32:49.576124
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 10:32:54,645 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 10:54:02,659 - snapshots - ERROR - ====================
+2017-08-23 10:53:57.587493
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 10:54:02,659 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:11:47,650 - snapshots - ERROR - ====================
+2017-08-23 11:11:42.570283
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 11:11:47,650 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:14:48,370 - snapshots - ERROR - ====================
+2017-08-23 11:14:43.296364
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 11:14:48,370 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:15:24,259 - snapshots - ERROR - ====================
+2017-08-23 11:15:19.201569
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 11:15:24,259 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:45:58,521 - snapshots - ERROR - ====================
+2017-08-23 11:45:53.452318
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 11:45:58,521 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:54:49,700 - snapshots - ERROR - ====================
+2017-08-23 11:54:44.631413
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 11:54:49,700 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 11:59:47,640 - snapshots - ERROR - ====================
+2017-08-23 11:59:42.601411
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 11:59:47,641 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 12:02:32,424 - snapshots - ERROR - ====================
+2017-08-23 12:02:27.364155
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:02:32,424 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:11:47,506 - snapshots - ERROR - ====================
+2017-08-23 12:11:42.446204
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:11:47,506 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:20:03,866 - snapshots - ERROR - ====================
+2017-08-23 12:19:58.708018
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:20:03,867 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:25:28,491 - snapshots - ERROR - ====================
+2017-08-23 12:25:23.030591
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:25:28,491 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:26:49,348 - snapshots - ERROR - ====================
+2017-08-23 12:26:44.280194
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:26:49,348 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:32:14,664 - snapshots - ERROR - ====================
+2017-08-23 12:32:09.601060
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:32:14,664 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:42:15,472 - snapshots - ERROR - ====================
+2017-08-23 12:42:10.384368
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:42:15,473 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 12:51:07,117 - snapshots - ERROR - ====================
+2017-08-23 12:51:01.950661
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 12:51:07,117 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 13:01:52,492 - snapshots - ERROR - ====================
+2017-08-23 13:01:47.403821
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 13:01:52,493 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 13:05:58,484 - snapshots - ERROR - ====================
+2017-08-23 13:05:53.435895
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 13:05:58,485 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 13:11:22,392 - snapshots - ERROR - ====================
+2017-08-23 13:11:17.312931
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 13:11:22,392 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 13:17:48,521 - snapshots - ERROR - ====================
+2017-08-23 13:17:43.448038
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 13:17:48,522 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 13:23:09,652 - snapshots - ERROR - ====================
+2017-08-23 13:23:04.580830
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 13:23:09,652 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 13:56:35,604 - snapshots - ERROR - ====================
+2017-08-23 13:56:30.516308
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 13:56:35,605 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 14:25:48,733 - snapshots - ERROR - ====================
+2017-08-23 14:25:43.687967
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 14:25:48,733 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 14:40:45,042 - snapshots - ERROR - ====================
+2017-08-23 14:40:39.973828
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 14:40:45,042 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 14:42:32,700 - snapshots - ERROR - ====================
+2017-08-23 14:42:27.637884
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 14:42:32,701 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 14:51:01,295 - snapshots - ERROR - ====================
+2017-08-23 14:50:56.211715
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 14:51:01,296 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 14:53:18,573 - snapshots - ERROR - ====================
+2017-08-23 14:53:13.501700
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 14:53:18,573 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 15:04:43,694 - snapshots - ERROR - ====================
+2017-08-23 15:04:38.579898
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 15:04:43,694 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 15:54:40,660 - snapshots - ERROR - ====================
+2017-08-23 15:54:35.591039
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 15:54:40,661 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 15:56:57,239 - snapshots - ERROR - ====================
+2017-08-23 15:56:52.155640
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 15:56:57,239 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 16:07:00,697 - snapshots - ERROR - ====================
+2017-08-23 16:06:55.610565
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 16:07:00,698 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 16:07:28,645 - snapshots - ERROR - ====================
+2017-08-23 16:07:23.580602
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 16:07:28,646 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 16:40:57,620 - snapshots - ERROR - ====================
+2017-08-23 16:40:52.554991
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 16:40:57,620 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 16:50:49,319 - snapshots - ERROR - ====================
+2017-08-23 16:50:44.250885
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 16:50:49,319 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 16:56:32,544 - snapshots - ERROR - ====================
+2017-08-23 16:56:27.463786
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 16:56:32,544 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 17:14:40,568 - snapshots - ERROR - ====================
+2017-08-23 17:14:35.408382
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 17:14:40,568 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 18:05:34,640 - snapshots - ERROR - ====================
+2017-08-23 18:05:29.595975
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 18:05:34,640 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 18:22:40,234 - snapshots - ERROR - ====================
+2017-08-23 18:22:35.177711
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 18:22:40,235 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:00:32,327 - snapshots - ERROR - ====================
+2017-08-23 19:00:27.255637
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:00:32,327 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:06:25,595 - snapshots - ERROR - ====================
+2017-08-23 19:06:20.556907
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 19:06:25,595 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 19:06:52,390 - snapshots - ERROR - ====================
+2017-08-23 19:06:47.350821
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 19:06:52,391 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 19:13:34,367 - snapshots - ERROR - ====================
+2017-08-23 19:13:29.284561
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:13:34,367 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:27:37,995 - snapshots - ERROR - ====================
+2017-08-23 19:27:32.916019
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:27:37,995 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:40:32,607 - snapshots - ERROR - ====================
+2017-08-23 19:40:27.535651
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:40:32,607 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:42:37,223 - snapshots - ERROR - ====================
+2017-08-23 19:42:32.139790
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:42:37,224 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:50:18,371 - snapshots - ERROR - ====================
+2017-08-23 19:50:13.214891
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 19:50:18,371 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 19:57:10,514 - snapshots - ERROR - ====================
+2017-08-23 19:57:05.466203
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-23 19:57:10,514 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-23 20:05:14,368 - snapshots - ERROR - ====================
+2017-08-23 20:05:09.292266
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:05:14,369 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:15:28,187 - snapshots - ERROR - ====================
+2017-08-23 20:15:23.121433
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:15:28,188 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:20:28,703 - snapshots - ERROR - ====================
+2017-08-23 20:20:23.623882
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:20:28,704 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:38:48,697 - snapshots - ERROR - ====================
+2017-08-23 20:38:43.620244
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:38:48,697 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:40:46,595 - snapshots - ERROR - ====================
+2017-08-23 20:40:41.534500
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:40:46,596 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:46:44,026 - snapshots - ERROR - ====================
+2017-08-23 20:46:38.947386
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:46:44,026 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 20:59:06,634 - snapshots - ERROR - ====================
+2017-08-23 20:59:01.528391
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 20:59:06,634 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 21:31:34,379 - snapshots - ERROR - ====================
+2017-08-23 21:31:29.317725
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 21:31:34,380 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 21:32:26,543 - snapshots - ERROR - ====================
+2017-08-23 21:32:21.491471
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 21:32:26,544 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 21:49:59,697 - snapshots - ERROR - ====================
+2017-08-23 21:49:54.625371
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 21:49:59,697 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:02:42,695 - snapshots - ERROR - ====================
+2017-08-23 22:02:37.634831
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:02:42,696 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:19:32,565 - snapshots - ERROR - ====================
+2017-08-23 22:19:27.498197
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:19:32,566 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:30:25,431 - snapshots - ERROR - ====================
+2017-08-23 22:30:20.346567
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:30:25,431 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:33:23,207 - snapshots - ERROR - ====================
+2017-08-23 22:33:18.051691
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:33:23,207 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:44:21,551 - snapshots - ERROR - ====================
+2017-08-23 22:44:16.481794
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:44:21,551 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:47:11,400 - snapshots - ERROR - ====================
+2017-08-23 22:47:06.333528
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:47:11,401 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 22:50:53,566 - snapshots - ERROR - ====================
+2017-08-23 22:50:48.496875
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 22:50:53,566 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:02:17,567 - snapshots - ERROR - ====================
+2017-08-23 23:02:12.500194
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:02:17,567 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:27:37,704 - snapshots - ERROR - ====================
+2017-08-23 23:27:32.638596
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:27:37,704 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:29:20,558 - snapshots - ERROR - ====================
+2017-08-23 23:29:20.298716
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:29:20,558 - snapshots - ERROR - No JSON object could be decoded
+2017-08-23 23:29:20,558 - snapshots - ERROR - Content: <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></head><body style="margin:0px;height:100%"><iframe src="/_Incapsula_Resource?CWUDNSAI=20&xinfo=14-10192865-0 2NNN RT(1503530960167 36) q(0 0 0 -1) r(1 -1) b3&incident_id=702000200000000720-63444926230036814&edet=5&cinfo=ffffffff5591" frameborder=0 width="100%" height="100%" marginheight="0px" marginwidth="0px">Request unsuccessful. Incapsula incident ID: 702000200000000720-63444926230036814</iframe></body></html>
+2017-08-23 23:31:03,116 - snapshots - ERROR - ====================
+2017-08-23 23:30:58.051413
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:31:03,117 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:32:55,498 - snapshots - ERROR - ====================
+2017-08-23 23:32:50.428585
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:32:55,499 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:38:44,088 - snapshots - ERROR - ====================
+2017-08-23 23:38:39.016993
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:38:44,089 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-23 23:40:42,210 - snapshots - ERROR - ====================
+2017-08-23 23:40:37.140679
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-23 23:40:42,210 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 00:14:46,596 - snapshots - ERROR - ====================
+2017-08-24 00:14:41.540533
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 00:14:46,597 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 00:39:15,705 - snapshots - ERROR - ====================
+2017-08-24 00:39:10.616327
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 00:39:15,706 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 01:12:36,108 - snapshots - ERROR - ====================
+2017-08-24 01:12:36.056221
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 01:12:36,108 - snapshots - ERROR - No JSON object could be decoded
+2017-08-24 01:12:36,108 - snapshots - ERROR - Content: <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></head><body style="margin:0px;height:100%"><iframe src="/_Incapsula_Resource?CWUDNSAI=20&xinfo=14-11382330-0 2NNN RT(1503537155907 30) q(0 0 0 -1) r(0 -1) b3&incident_id=702000200000000720-70624170223731022&edet=5&cinfo=ffffffff5591" frameborder=0 width="100%" height="100%" marginheight="0px" marginwidth="0px">Request unsuccessful. Incapsula incident ID: 702000200000000720-70624170223731022</iframe></body></html>
+2017-08-24 01:16:38,085 - snapshots - ERROR - ====================
+2017-08-24 01:16:33.015630
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 01:16:38,086 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 01:21:13,540 - snapshots - ERROR - ====================
+2017-08-24 01:21:08.463281
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 01:21:13,540 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 01:48:07,534 - snapshots - ERROR - ====================
+2017-08-24 01:48:02.457792
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 01:48:07,535 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 01:48:31,653 - snapshots - ERROR - ====================
+2017-08-24 01:48:26.609449
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 01:48:31,653 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 01:51:23,993 - snapshots - ERROR - ====================
+2017-08-24 01:51:18.955272
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 01:51:23,993 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 02:06:08,214 - snapshots - ERROR - ====================
+2017-08-24 02:06:03.147649
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 02:06:08,214 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 02:10:15,139 - snapshots - ERROR - ====================
+2017-08-24 02:10:10.079816
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 02:10:15,140 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 02:20:47,444 - snapshots - ERROR - ====================
+2017-08-24 02:20:42.378682
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 02:20:47,445 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 02:41:29,672 - snapshots - ERROR - ====================
+2017-08-24 02:41:24.610346
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 02:41:29,672 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:08:30,815 - snapshots - ERROR - ====================
+2017-08-24 03:08:25.735227
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 03:08:30,815 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:09:35,433 - snapshots - ERROR - ====================
+2017-08-24 03:09:30.364775
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 03:09:35,434 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:14:16,402 - snapshots - ERROR - ====================
+2017-08-24 03:14:11.340436
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 03:14:16,402 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:15:44,878 - snapshots - ERROR - ====================
+2017-08-24 03:15:39.799997
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 03:15:44,878 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:16:37,819 - snapshots - ERROR - ====================
+2017-08-24 03:16:32.753620
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 03:16:37,820 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 03:40:39,338 - snapshots - ERROR - ====================
+2017-08-24 03:40:34.291202
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 03:40:39,339 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 04:02:44,733 - snapshots - ERROR - ====================
+2017-08-24 04:02:39.668895
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 04:02:44,733 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 04:36:03,358 - snapshots - ERROR - ====================
+2017-08-24 04:35:58.293134
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 04:36:03,359 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 04:38:27,488 - snapshots - ERROR - ====================
+2017-08-24 04:38:22.422882
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 04:38:27,489 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 04:39:08,697 - snapshots - ERROR - ====================
+2017-08-24 04:39:03.617386
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 04:39:08,697 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 04:44:33,645 - snapshots - ERROR - ====================
+2017-08-24 04:44:28.586496
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 04:44:33,646 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:05:43,402 - snapshots - ERROR - ====================
+2017-08-24 05:05:38.315843
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:05:43,403 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:18:35,603 - snapshots - ERROR - ====================
+2017-08-24 05:18:30.564473
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 05:18:35,604 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 05:22:45,298 - snapshots - ERROR - ====================
+2017-08-24 05:22:40.227607
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:22:45,298 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:30:52,931 - snapshots - ERROR - ====================
+2017-08-24 05:30:47.859829
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:30:52,932 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:32:51,465 - snapshots - ERROR - ====================
+2017-08-24 05:32:46.397341
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:32:51,466 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:35:05,410 - snapshots - ERROR - ====================
+2017-08-24 05:35:00.348824
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:35:05,410 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:35:11,615 - snapshots - ERROR - ====================
+2017-08-24 05:35:06.545512
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:35:11,616 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:39:07,430 - snapshots - ERROR - ====================
+2017-08-24 05:39:02.354158
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 05:39:07,430 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 05:40:20,569 - snapshots - ERROR - ====================
+2017-08-24 05:40:15.528801
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 05:40:20,569 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 06:02:24,638 - snapshots - ERROR - ====================
+2017-08-24 06:02:19.580814
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 06:02:24,639 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 06:42:55,622 - snapshots - ERROR - ====================
+2017-08-24 06:42:50.550365
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 06:42:55,623 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 06:57:09,622 - snapshots - ERROR - ====================
+2017-08-24 06:57:04.556866
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 06:57:09,623 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 07:05:15,931 - snapshots - ERROR - ====================
+2017-08-24 07:05:10.891774
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 07:05:15,932 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 07:12:48,228 - snapshots - ERROR - ====================
+2017-08-24 07:12:43.166181
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 07:12:48,229 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 07:20:24,467 - snapshots - ERROR - ====================
+2017-08-24 07:20:19.395925
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 07:20:24,467 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 07:41:33,538 - snapshots - ERROR - ====================
+2017-08-24 07:41:28.462377
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 07:41:33,539 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 07:49:26,585 - snapshots - ERROR - ====================
+2017-08-24 07:49:21.539075
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 07:49:26,586 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 08:01:16,396 - snapshots - ERROR - ====================
+2017-08-24 08:01:11.340102
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 08:01:16,396 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 08:09:01,700 - snapshots - ERROR - ====================
+2017-08-24 08:08:56.640695
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 08:09:01,700 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 08:17:47,229 - snapshots - ERROR - ====================
+2017-08-24 08:17:42.193098
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 08:17:47,230 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 08:33:29,281 - snapshots - ERROR - ====================
+2017-08-24 08:33:24.195724
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 08:33:29,282 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 08:38:33,467 - snapshots - ERROR - ====================
+2017-08-24 08:38:28.408815
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 08:38:33,468 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 08:58:21,309 - snapshots - ERROR - ====================
+2017-08-24 08:58:16.250026
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 08:58:21,309 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 09:16:52,594 - snapshots - ERROR - ====================
+2017-08-24 09:16:47.534300
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 09:16:52,595 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 09:19:49,374 - snapshots - ERROR - ====================
+2017-08-24 09:19:44.302398
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 09:19:49,374 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 09:24:57,695 - snapshots - ERROR - ====================
+2017-08-24 09:24:52.632717
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 09:24:57,695 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 09:29:08,931 - snapshots - ERROR - ====================
+2017-08-24 09:29:03.885812
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 09:29:08,932 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 09:55:56,698 - snapshots - ERROR - ====================
+2017-08-24 09:55:51.614417
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 09:55:56,699 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 10:06:47,574 - snapshots - ERROR - ====================
+2017-08-24 10:06:42.506188
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 10:06:47,574 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 11:30:05,350 - snapshots - ERROR - ====================
+2017-08-24 11:30:00.187211
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 11:30:05,351 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 11:39:21,682 - snapshots - ERROR - ====================
+2017-08-24 11:39:16.615991
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 11:39:21,682 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 11:50:16,186 - snapshots - ERROR - ====================
+2017-08-24 11:50:11.126156
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 11:50:16,187 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 11:51:35,907 - snapshots - ERROR - ====================
+2017-08-24 11:51:30.740475
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 11:51:35,908 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 11:58:40,664 - snapshots - ERROR - ====================
+2017-08-24 11:58:35.594344
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 11:58:40,665 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 12:00:20,665 - snapshots - ERROR - ====================
+2017-08-24 12:00:15.588438
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:00:20,666 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 12:04:55,590 - snapshots - ERROR - ====================
+2017-08-24 12:04:50.509912
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:04:55,591 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 12:37:32,209 - snapshots - ERROR - ====================
+2017-08-24 12:37:27.144983
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:37:32,210 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 12:56:59,045 - snapshots - ERROR - ====================
+2017-08-24 12:56:54.021816
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:56:59,046 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-08-24 12:57:05,285 - snapshots - ERROR - ====================
+2017-08-24 12:57:00.209873
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:05,285 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-08-24 12:57:11,438 - snapshots - ERROR - ====================
+2017-08-24 12:57:06.414456
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:11,438 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-08-24 12:57:17,632 - snapshots - ERROR - ====================
+2017-08-24 12:57:12.615311
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:17,632 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a190>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:57:23,798 - snapshots - ERROR - ====================
+2017-08-24 12:57:18.782519
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:23,798 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a450>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:57:29,967 - snapshots - ERROR - ====================
+2017-08-24 12:57:24.940851
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:29,967 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a2d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:57:36,110 - snapshots - ERROR - ====================
+2017-08-24 12:57:31.094269
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:36,111 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a290>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:57:45,326 - snapshots - ERROR - ====================
+2017-08-24 12:57:37.275920
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:45,326 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-08-24 12:57:51,527 - snapshots - ERROR - ====================
+2017-08-24 12:57:46.511432
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:51,527 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638afd0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:57:57,711 - snapshots - ERROR - ====================
+2017-08-24 12:57:52.685260
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:57:57,712 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638ac90>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:03,886 - snapshots - ERROR - ====================
+2017-08-24 12:57:58.859184
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:03,886 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a550>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:10,070 - snapshots - ERROR - ====================
+2017-08-24 12:58:05.032776
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:10,071 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a210>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:16,237 - snapshots - ERROR - ====================
+2017-08-24 12:58:11.221642
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:16,237 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638aed0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:22,398 - snapshots - ERROR - ====================
+2017-08-24 12:58:17.382963
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:22,398 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638ac50>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:28,553 - snapshots - ERROR - ====================
+2017-08-24 12:58:23.537902
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:28,553 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a8d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:34,718 - snapshots - ERROR - ====================
+2017-08-24 12:58:29.700596
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:34,718 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a1d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:40,897 - snapshots - ERROR - ====================
+2017-08-24 12:58:35.881286
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:40,897 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638af10>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:47,064 - snapshots - ERROR - ====================
+2017-08-24 12:58:42.040795
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:47,064 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638ac10>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:53,221 - snapshots - ERROR - ====================
+2017-08-24 12:58:48.202011
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:53,222 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a310>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:58:59,402 - snapshots - ERROR - ====================
+2017-08-24 12:58:54.384030
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:58:59,402 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638ae10>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:05,601 - snapshots - ERROR - ====================
+2017-08-24 12:59:00.564703
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:05,601 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a890>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:11,769 - snapshots - ERROR - ====================
+2017-08-24 12:59:06.752483
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:11,769 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638af90>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:17,950 - snapshots - ERROR - ====================
+2017-08-24 12:59:12.902563
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:17,950 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a3d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:24,115 - snapshots - ERROR - ====================
+2017-08-24 12:59:19.100161
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:24,115 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a350>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:30,264 - snapshots - ERROR - ====================
+2017-08-24 12:59:25.248882
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:30,265 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a910>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:36,420 - snapshots - ERROR - ====================
+2017-08-24 12:59:31.403484
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:36,420 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638aa50>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:42,572 - snapshots - ERROR - ====================
+2017-08-24 12:59:37.563943
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:42,572 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a4d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:48,758 - snapshots - ERROR - ====================
+2017-08-24 12:59:43.733386
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:48,758 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638aa90>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 12:59:54,939 - snapshots - ERROR - ====================
+2017-08-24 12:59:49.924044
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 12:59:54,939 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a990>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 13:00:01,087 - snapshots - ERROR - ====================
+2017-08-24 12:59:56.071914
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:00:01,087 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a790>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 13:00:07,276 - snapshots - ERROR - ====================
+2017-08-24 13:00:02.258082
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:00:07,276 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7f645638a9d0>, 'Connection to www.bitstamp.net timed out. (connect timeout=5)'))
+2017-08-24 13:05:32,879 - snapshots - ERROR - ====================
+2017-08-24 13:05:27.808248
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:05:32,879 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 13:20:32,027 - snapshots - ERROR - ====================
+2017-08-24 13:20:26.971521
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:20:32,028 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 13:32:12,454 - snapshots - ERROR - ====================
+2017-08-24 13:32:07.291263
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:32:12,455 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 13:58:46,955 - snapshots - ERROR - ====================
+2017-08-24 13:58:41.885207
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 13:58:46,955 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 14:36:00,250 - snapshots - ERROR - ====================
+2017-08-24 14:35:55.184760
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 14:36:00,250 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 14:38:29,773 - snapshots - ERROR - ====================
+2017-08-24 14:38:24.733996
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 14:38:29,773 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 15:42:51,284 - snapshots - ERROR - ====================
+2017-08-24 15:42:46.216375
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 15:42:51,285 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 16:05:49,796 - snapshots - ERROR - ====================
+2017-08-24 16:05:44.720912
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 16:05:49,797 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 16:07:58,950 - snapshots - ERROR - ====================
+2017-08-24 16:07:53.788431
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 16:07:58,950 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 16:18:32,288 - snapshots - ERROR - ====================
+2017-08-24 16:18:27.221601
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 16:18:32,288 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 16:32:46,291 - snapshots - ERROR - ====================
+2017-08-24 16:32:41.227120
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 16:32:46,292 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 17:16:14,579 - snapshots - ERROR - ====================
+2017-08-24 17:16:09.540505
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 17:16:14,579 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 17:27:40,003 - snapshots - ERROR - ====================
+2017-08-24 17:27:34.918408
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 17:27:40,003 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 18:27:33,000 - snapshots - ERROR - ====================
+2017-08-24 18:27:27.929822
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 18:27:33,000 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 18:50:46,088 - snapshots - ERROR - ====================
+2017-08-24 18:50:41.017856
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 18:50:46,089 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 19:09:52,086 - snapshots - ERROR - ====================
+2017-08-24 19:09:47.019357
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 19:09:52,086 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 19:31:11,927 - snapshots - ERROR - ====================
+2017-08-24 19:31:06.867163
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 19:31:11,928 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 19:35:46,200 - snapshots - ERROR - ====================
+2017-08-24 19:35:41.145647
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 19:35:46,200 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 19:37:57,333 - snapshots - ERROR - ====================
+2017-08-24 19:37:52.260545
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 19:37:57,334 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 20:13:01,492 - snapshots - ERROR - ====================
+2017-08-24 20:12:56.447279
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 20:13:01,492 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 20:41:10,887 - snapshots - ERROR - ====================
+2017-08-24 20:41:05.820751
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 20:41:10,888 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 20:45:00,178 - snapshots - ERROR - ====================
+2017-08-24 20:44:55.085751
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 20:45:00,179 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 20:46:02,721 - snapshots - ERROR - ====================
+2017-08-24 20:45:57.649493
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 20:46:02,722 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 21:15:50,318 - snapshots - ERROR - ====================
+2017-08-24 21:15:45.183810
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 21:15:50,318 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 21:24:41,624 - snapshots - ERROR - ====================
+2017-08-24 21:24:36.450685
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 21:24:41,625 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 21:32:50,046 - snapshots - ERROR - ====================
+2017-08-24 21:32:44.871477
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 21:32:50,046 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 22:05:21,794 - snapshots - ERROR - ====================
+2017-08-24 22:05:16.609406
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 22:05:21,794 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 22:30:04,118 - snapshots - ERROR - ====================
+2017-08-24 22:29:59.049936
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 22:30:04,118 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 22:52:42,202 - snapshots - ERROR - ====================
+2017-08-24 22:52:37.138548
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 22:52:42,203 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 23:10:19,304 - snapshots - ERROR - ====================
+2017-08-24 23:10:14.254226
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-08-24 23:10:19,305 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-08-24 23:39:21,167 - snapshots - ERROR - ====================
+2017-08-24 23:39:16.098005
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 23:39:21,168 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-24 23:41:52,191 - snapshots - ERROR - ====================
+2017-08-24 23:41:47.133219
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-24 23:41:52,191 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-25 00:07:52,107 - snapshots - ERROR - ====================
+2017-08-25 00:07:47.044558
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-25 00:07:52,108 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-25 00:24:31,917 - snapshots - ERROR - ====================
+2017-08-25 00:24:26.656907
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-25 00:24:31,918 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-25 00:26:10,921 - snapshots - ERROR - ====================
+2017-08-25 00:26:05.850641
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-25 00:26:10,921 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-08-25 00:38:42,069 - snapshots - ERROR - ====================
+2017-08-25 00:38:36.992828
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-08-25 00:38:42,069 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
