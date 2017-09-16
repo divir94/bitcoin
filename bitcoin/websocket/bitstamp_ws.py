@@ -1,7 +1,7 @@
 import bitcoin.logs.logger as lc
 import bitcoin.order_book as ob
 import bitcoin.params as params
-from bitcoin.websocket.core import WebSocket
+from bitcoin.websocket.core_ws import WebSocket
 
 
 logger = lc.config_logger('bitstamp_ws', 'DEBUG')

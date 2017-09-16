@@ -5,10 +5,11 @@ from threading import Thread
 
 import bitcoin.gdax.public_client as gdax
 import bitcoin.logs.logger as lc
-import bitcoin.order_book as ob
+import bitcoin.order_book.gdax_order_book as ob
+import bitcoin.order_book.util as ob_util
 import bitcoin.params as params
 import bitcoin.util as util
-from bitcoin.websocket.core import WebSocket
+from bitcoin.websocket.core_ws import WebSocket
 
 logger = lc.config_logger('gdax_websocket')
 # logger.setLevel(logging.DEBUG)
@@ -17,7 +18,7 @@ logger = lc.config_logger('gdax_websocket')
 class GdaxOrderBook(WebSocket):
     def __init__(self, product_id, on_change=None):
         super(GdaxOrderBook, self).__init__(params.GX_WS_URL, params.GX_CHANNELS[product_id])
-        self.book = ob.OrderBook(-1)
+        self.book = ob.GdaxOrderBook(-1)
         self.queue = deque()
         self.on_change = on_change
         self.gdax_client = gdax.PublicClient()
@@ -40,7 +41,7 @@ class GdaxOrderBook(WebSocket):
 
         # get book
         data = self.gdax_client.get_product_order_book(self.product_id, level=3)
-        self.book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
+        self.book = ob.GdaxOrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
         logger.info('Got book: {}'.format(self.book.sequence))
 
         # apply queue
@@ -100,25 +101,7 @@ class GdaxOrderBook(WebSocket):
             self.restart = True
             return -1
 
-        _type = msg['type']
-        if _type == 'open':
-            self.open_order(msg, book)
-
-        elif _type == 'done':
-            self.done_order(msg, book)
-
-        elif _type == 'match':
-            self.match_order(msg, book)
-
-        elif _type == 'change':
-            self.change_order(msg, book)
-        elif _type == 'received' or _type == 'heartbeat':
-            pass
-        else:
-            assert _type == 'error'
-            logger.error('Error message: {}'.format(msg))
-
-        book.sequence = int(msg['sequence'])
+        book.process_message(msg, book)
 
     def open_order(self, msg, book):
         """
@@ -139,7 +122,7 @@ class GdaxOrderBook(WebSocket):
             "remaining_size": "1.00",
             "side": "sell"
         }
-        book: ob.OrderBook
+        book: ob.GdaxOrderBook
         """
         side = msg['side']
         price = msg['price']
@@ -178,7 +161,7 @@ class GdaxOrderBook(WebSocket):
             "side": "sell",
             "remaining_size": "0.2"
         }
-        book: ob.OrderBook
+        book: ob.GdaxOrderBook
         """
         price = msg.get('price')
         order_id = msg['order_id']
@@ -212,7 +195,7 @@ class GdaxOrderBook(WebSocket):
             "price": "400.23",
             "side": "sell"
         }
-        book: ob.OrderBook
+        book: ob.GdaxOrderBook
         """
         price = msg['price']
         trade_size = msg['size']
@@ -258,7 +241,7 @@ class GdaxOrderBook(WebSocket):
             "price": "400.23",
             "side": "sell"
         }
-        book: ob.OrderBook
+        book: ob.GdaxOrderBook
         """
         price = msg.get('price')
         new_size = msg.get('new_size')
@@ -281,14 +264,14 @@ class GdaxOrderBook(WebSocket):
 
         # get expected book
         data = self.gdax_client.get_product_order_book(self.product_id, level=3)
-        expected_book = ob.OrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
+        expected_book = ob.GdaxOrderBook(sequence=data['sequence'], bids=data['bids'], asks=data['asks'])
         logger.info('Expected book: {}'.format(expected_book.sequence))
 
         # apply queue to current book
         self.apply_queue(current_book, end=expected_book.sequence)
 
         # compare diffs
-        num_diff = ob.compare_books(current_book, expected_book)
+        num_diff = ob_util.compare_books(current_book, expected_book)
         msg = 'Book differences: {}'.format(num_diff)
         logger.error(msg) if num_diff > 0 else logger.info(msg)
 

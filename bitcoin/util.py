@@ -37,4 +37,4 @@ def time_elapsed(last_time, tdelta):
 
 
 def df_to_dict(df):
-    return [v.dropna().to_dict() for k, v in df.iterrows()]
+    return (to_decimal(v.dropna().to_dict()) for k, v in df.iterrows())

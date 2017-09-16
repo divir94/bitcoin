@@ -1,7 +1,7 @@
 import logging
 import time
 
-from bitcoin.websocket.bitstamp import BitstampOrderBook
+from bitcoin.websocket.bitstamp_ws import BitstampOrderBook
 
 # logging
 logger = logging.getLogger()
