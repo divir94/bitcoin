@@ -5,12 +5,19 @@ from datetime import date
 import bitcoin.util as util
 
 
-def config_logger(dirname, level='INFO'):
+def config_logger(dirname, level='INFO', fsuffix=None):
     root = util.get_project_root()
     today = date.today()
     directory = '{}/logs/{}'.format(root, dirname)
+    # create dir
     if not os.path.exists(directory):
         os.makedirs(directory)
+    # get fname
+    if fsuffix:
+        fname = '{}/{}_{}.log'.format(directory, today, fsuffix)
+    else:
+        fname = '{}/{}.log'.format(directory, today)
+
     config = {
         'version': 1,
         'disable_existing_loggers': False,
@@ -23,7 +30,7 @@ def config_logger(dirname, level='INFO'):
             'fileHandler': {
                 'class': 'logging.FileHandler',
                 'formatter': 'standard',
-                'filename': '{}/{}.log'.format(directory, today),
+                'filename': fname,
                 'mode': 'w',
             },
             'streamHandler': {

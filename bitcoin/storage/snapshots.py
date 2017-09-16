@@ -27,7 +27,7 @@ logger.setLevel(logging.ERROR)
 
 def get_snapshot_json(url):
     """returns None if there is any error"""
-    now = pd.datetime.now()
+    now = pd.datetime.utcnow()
     time_msg = '=' * 20 + '\n{}\n'.format(now)
     failed_msg = time_msg + 'Get request failed for: {}\n\n'.format(url)
 
@@ -120,7 +120,7 @@ def snapshots_to_spread_df(gdax_snapshot, bitstamp_snapshot, timestamp):
 
 def run(sleep=1):
     while True:
-        timestamp = pd.datetime.now()
+        timestamp = pd.datetime.utcnow()
 
         # store gdax snapshot
         gdax_snapshot = get_snapshot_json(GDAX_URL)
