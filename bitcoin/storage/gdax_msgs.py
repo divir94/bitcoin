@@ -1,7 +1,7 @@
 import time
+import sys
 from datetime import datetime, timedelta
 from threading import Thread
-
 import pandas as pd
 
 import bitcoin.gdax.public_client as gdax
@@ -12,7 +12,6 @@ import bitcoin.util as util
 from bitcoin.websocket.core_ws import WebSocket
 
 GDAX_CLIENT = gdax.PublicClient()
-logger = lc.config_logger('gdax_msgs')
 
 
 class GdaxMsgStorage(WebSocket):
@@ -111,6 +110,9 @@ class GdaxMsgStorage(WebSocket):
 
 
 if __name__ == '__main__':
-    for product_id, channel in params.GX_CHANNELS.iteritems():
-        ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
-        Thread(target=ws.start).start()
+    product_id = sys.argv[1]
+    channel = params.GX_CHANNELS[product_id]
+    logger = lc.config_logger('gdax_msgs', fsuffix=product_id)
+
+    ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
+    ws.start()
