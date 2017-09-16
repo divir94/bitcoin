@@ -12,8 +12,8 @@ gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
                                        passphrase="ltg10b8unuo")
 
 bitstamp_client = bitstamp.Trading(username='752298',
-                                   key='otqVIe8cjvxONsfzb7rz34jMJRPlnx4G',
-                                   secret='49VrY4K9sJp3aBzHq7l2fyBBnBcmNeYA')
+                                   key='nFydjyriZNMhuSCYRFobnsv68OeIH9jx',
+                                   secret='55Cpc6DD2Fm6tY4OJ7GIzmpG3t7NCLGi')
 
 
 def get_gdax_fills(limit=100):
@@ -48,7 +48,7 @@ def get_bitstamp_fills(limit=100):
     fills = fills.astype(float)
 
     # filter
-    fills = fills[(fills.type == 2) & (~fills.order_id.isin(ignore_orders))]
+    fills = fills[(fills.type == 2)]
 
     # rename
     fills = fills[['btc', 'btc_usd', 'fee', 'usd']]

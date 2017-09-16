@@ -9,7 +9,7 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.storage.util as sutil
 import bitcoin.util as util
-from bitcoin.websocket.core import WebSocket
+from bitcoin.websocket.core_ws import WebSocket
 
 GDAX_CLIENT = gdax.PublicClient()
 logger = lc.config_logger('gdax_msgs')

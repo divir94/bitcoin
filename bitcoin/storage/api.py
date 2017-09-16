@@ -1,6 +1,6 @@
 import pandas as pd
 
-import bitcoin.order_book as ob
+import bitcoin.order_book.gdax_order_book as ob
 import bitcoin.params as params
 import bitcoin.storage.util as sutil
 
@@ -43,7 +43,7 @@ def get_book_from_df(df):
     columns = ['price', 'size', 'order_id']
     bids = bids[columns].values
     asks = asks[columns].values
-    book = ob.OrderBook(sequence, bids, asks)
+    book = ob.GdaxOrderBook(sequence, bids, asks)
     return book
 
 
