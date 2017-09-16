@@ -24,13 +24,14 @@ def get_gdax_book():
 
 
 class GdaxOrderBook(WebSocket):
-    def __init__(self, on_change=None):
-        channel = {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+    def __init__(self, product_id, user_defined_functions_on_msg=[]):
+        self.product_id = product_id
+        channel = {'type': 'subscribe', 'product_ids': [product_id]}
         super(GdaxOrderBook, self).__init__(GX_WS_URL, channel)
         self.exchange = 'GDAX'
         self.book = ob.OrderBook(-1)
         self.queue = deque()
-        self.on_change = on_change
+        self.user_defined_functions_on_msg = user_defined_functions_on_msg
         self.logger.setLevel(logging.INFO)
 
         self.restart = True  # load the order book
@@ -99,22 +100,25 @@ class GdaxOrderBook(WebSocket):
             self.restart = True
             return
 
-        _type = msg['type']
-        if _type == 'open':
+        for func in self.user_defined_functions_on_msg:
+            func(msg)
+        if msg['type'] == 'open':
             self.open_order(msg, book)
 
-        elif _type == 'done':
+        elif msg['type'] == 'done':
             self.done_order(msg, book)
 
-        elif _type == 'match':
+        elif msg['type'] == 'match':
             self.match_order(msg, book)
 
-        elif _type == 'change':
+        elif msg['type'] == 'change':
             self.change_order(msg, book)
-        elif _type == 'received' or _type == 'heartbeat':
+
+        elif msg['type'] == 'received' or msg['type'] == 'heartbeat':
             pass
+
         else:
-            assert _type == 'error'
+            assert msg['type'] == 'error'
             self.logger.error('Error message: {}'.format(msg))
 
         book.sequence = msg['sequence']
