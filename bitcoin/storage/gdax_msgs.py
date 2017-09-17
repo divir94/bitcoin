@@ -41,8 +41,6 @@ class GdaxMsgStorage(WebSocket):
         if msg['type'] == 'error':
             logger.error(msg)
 
-        1 / 0
-
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
         if time_elapsed:
