@@ -42,3 +42,19 @@ def gdax_book_to_df(data, timestamp):
     df['sequence'] = data['sequence']
     df['received_time'] = timestamp
     return df
+
+
+def xread_sql(sql, chunksize=100000):
+    """returns a generator of dict objects from the db"""
+    offset = 0
+
+    while True:
+        query = '{sql} LIMIT {offset}, {chunksize}'.format(sql=sql, offset=offset, chunksize=chunksize)
+        df = pd.read_sql(query, con=ENGINE)
+        if df.empty:
+            raise StopIteration
+        columns = df.columns
+        for row in df.values:
+            row_dict = dict(zip(columns, row))
+            offset += 1
+            yield row_dict

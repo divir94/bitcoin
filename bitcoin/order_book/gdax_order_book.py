@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 import bitcoin.order_book.order_book as ob
 
 
@@ -8,7 +10,9 @@ class GdaxOrderBook(ob.OrderBook):
     def process_message(self, msg, book=None):
         book = book or self
         sequence = msg['sequence']
-        assert sequence == book.sequence + 1
+        if sequence <= book.sequence:
+            return
+        assert sequence == book.sequence + 1, '{} != {} + 1'.format(sequence, book.sequence)
 
         _type = msg['type']
         if _type == 'open':
@@ -96,7 +100,7 @@ class GdaxOrderBook(ob.OrderBook):
             return
 
         result = book.update(order_id, 0)
-        assert price == result[0]
+        # assert price == result[0]
 
     def match_order(self, msg, book):
         """
@@ -124,13 +128,13 @@ class GdaxOrderBook(ob.OrderBook):
         book: ob.OrderBook
         """
         price = msg['price']
-        trade_size = msg['size']
+        trade_size = Decimal(msg['size'])
         order_id = msg['maker_order_id']
 
         # get original order size
         old_price, old_size, order_id = book.get(order_id)
-        assert price == old_price
-        assert trade_size <= old_size
+        # assert price == old_price
+        # assert trade_size <= old_size
 
         # update order to new size
         new_size = old_size - trade_size
@@ -177,4 +181,4 @@ class GdaxOrderBook(ob.OrderBook):
             return
 
         result = book.update(order_id, new_size)
-        assert price == result[0]
+        # assert price == result[0]
