@@ -57,7 +57,6 @@ class ProcessManager(object):
             self.last_time = datetime.utcnow()
 
         python_processes = self.get_python_processes()
-        logger.info([(p.pid, p.status(), p.is_running()) for p in python_processes])
         cmds = [p.cmdline() for p in python_processes if p.status() != 'zombie']
         for i, proc in enumerate(self.processes):
             running = proc['cmdline'] in cmds
