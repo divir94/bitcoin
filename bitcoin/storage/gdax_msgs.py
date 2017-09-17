@@ -12,6 +12,7 @@ import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
 
 GDAX_CLIENT = gdax.PublicClient()
+sys.excepthook = util.handle_exception
 
 
 class GdaxMsgStorage(WebSocket):
@@ -39,6 +40,8 @@ class GdaxMsgStorage(WebSocket):
         self.msgs.append(msg)
         if msg['type'] == 'error':
             logger.error(msg)
+
+        1 / 0
 
         # store messages
         time_elapsed = util.time_elapsed(self.last_msg_store_time, self.msg_store_freq)
