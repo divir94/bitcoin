@@ -1,7 +1,12 @@
 import pprint
 import os
+import sys
+import logging
 from decimal import Decimal, InvalidOperation
 from datetime import datetime
+
+
+logger = logging.getLogger('util')
 
 
 class BaseObject(object):
@@ -38,3 +43,11 @@ def time_elapsed(last_time, tdelta):
 
 def df_to_dict(df):
     return [v.dropna().to_dict() for k, v in df.iterrows()]
+
+
+def handle_exception(exc_type, exc_value, exc_traceback):
+    if issubclass(exc_type, KeyboardInterrupt):
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+
+    logger.error('Uncaught exception', exc_info=(exc_type, exc_value, exc_traceback))
