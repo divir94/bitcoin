@@ -5,7 +5,50 @@ from datetime import date
 import bitcoin.util as util
 
 
-def config_logger(dirname, level='INFO', fsuffix=None):
+def config_logger(dirname, level='INFO', fsuffix=None, file_handler=True):
+    formatters = {
+        'standard': {
+            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        }
+    }
+
+    stream_handler = {
+        'class': 'logging.StreamHandler',
+        'formatter': 'standard',
+    }
+
+    config = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': formatters,
+        'handlers': {
+            'streamHandler': stream_handler,
+        },
+        'loggers': {
+            '': {
+                'handlers': ['streamHandler'],
+                'level': level,
+            },
+        },
+    }
+
+    if file_handler:
+        fname = _get_fname(dirname, fsuffix)
+        fhandler = {
+            'class': 'logging.FileHandler',
+            'formatter': 'standard',
+            'filename': fname,
+            'mode': 'w',
+        }
+        config['handlers']['fileHandler'] = fhandler
+        config['loggers']['']['handlers'] = ['fileHandler', 'streamHandler']
+
+    logging.config.dictConfig(config)
+    logger = logging.getLogger(dirname)
+    return logger
+
+
+def _get_fname(dirname, fsuffix):
     root = util.get_project_root()
     today = date.today()
     directory = '{}/logs/{}'.format(root, dirname)
@@ -17,34 +60,4 @@ def config_logger(dirname, level='INFO', fsuffix=None):
         fname = '{}/{}_{}.log'.format(directory, today, fsuffix)
     else:
         fname = '{}/{}.log'.format(directory, today)
-
-    config = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'standard': {
-                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-            }
-        },
-        'handlers': {
-            'fileHandler': {
-                'class': 'logging.FileHandler',
-                'formatter': 'standard',
-                'filename': fname,
-                'mode': 'w',
-            },
-            'streamHandler': {
-                'class': 'logging.StreamHandler',
-                'formatter': 'standard',
-            },
-        },
-        'loggers': {
-            '': {
-                'handlers': ['fileHandler', 'streamHandler'],
-                'level': level,
-            },
-        },
-    }
-    logging.config.dictConfig(config)
-    logger = logging.getLogger(dirname)
-    return logger
+    return fname

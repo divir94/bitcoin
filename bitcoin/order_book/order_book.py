@@ -41,7 +41,7 @@ class OrderBook(util.BaseObject):
     def _get_levels_from_price(self, price):
         """get either bids or asks based on the price"""
         if not self.asks:
-            assert self.bids, 'Both bids and asks canot be empty to get levels'
+            assert self.bids, 'Both bids and asks cannot be empty to get levels'
             return self.bids
         best_ask = self.asks[0].price
         levels = self.asks if price >= best_ask else self.bids

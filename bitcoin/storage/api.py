@@ -3,33 +3,54 @@ import pandas as pd
 import bitcoin.order_book.gdax_order_book as ob
 import bitcoin.params as params
 import bitcoin.storage.util as sutil
+import bitcoin.logs.logger as lc
 
 
-def get_gdax_book(sequence):
-    snapshot_df, snapshot_sequence = get_closest_snapshot(sequence)
-    book = get_book_from_df(snapshot_df, snapshot_sequence)
-    messages = get_messages_between(snapshot_sequence, sequence)
+logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
+
+
+def get_book(exchange, product_id, time=None, id=None, live=False):
+    # get latest snapshot
+    snapshot_tbl = params.GX_SNAPSHOT_TBLS[product_id]
+    msg_name = params.GX_MSG_TBLS[product_id]
+    snapshot_df = get_closest_snapshot(snapshot_tbl, id)
+    logger.debug('Got snapshot')
+
+    # convert to book object
+    book = get_book_from_df(snapshot_df)
+    logger.debug('Got book: {}'.format(book.sequence))
+
+    # get and apply messages
+    messages = get_messages(msg_name, book.sequence)
+    for i, msg in enumerate(messages):
+        if i % 10000 == 0:
+            logger.debug('Applying msg: {}'.format(msg['sequence']))
+        book.process_message(msg)
+    logger.debug('Book ready: {}'.format(book.sequence))
     return book
 
 
-def get_closest_snapshot(sequence):
-    # get closest sequence
-    sql = '''
-    SELECT sequence FROM GdaxBookLevel3
-    WHERE sequence <= {}
-    ORDER BY sequence desc
-    LIMIT 1
-    '''.format(sequence)
+def get_closest_snapshot(table_name, sequence=None):
+    if sequence:
+        sql = '''
+        SELECT * FROM {table}
+        WHERE sequence = (
+            SELECT sequence FROM {table}
+            WHERE sequence <= {sequence}
+            ORDER BY sequence desc
+            LIMIT 1
+        )
+        '''.format(table=table_name, sequence=sequence)
+    else:
+        # latest snapshot
+        sql = '''
+        SELECT * FROM {table}
+        WHERE sequence = (
+            SELECT max(sequence) FROM {table}
+        )
+        '''.format(table=table_name)
     df = pd.read_sql(sql, con=sutil.ENGINE)
-    closest_sequence = df.values.item()
-
-    # get snapshot at closest sequence
-    sql = '''
-    SELECT * FROM GdaxBookLevel3
-    WHERE sequence = {}
-    '''.format(closest_sequence)
-    df = pd.read_sql(sql, con=sutil.ENGINE)
-    return df, closest_sequence
+    return df
 
 
 def get_book_from_df(df):
@@ -47,15 +68,8 @@ def get_book_from_df(df):
     return book
 
 
-def get_messages_between(start_sequence, end_sequence):
-    sql = '''
-    SELECT * FROM {}
-    WHERE sequence >= {}
-    AND sequence <= {}
-    '''.format(params.BTC_MSG_TBL, start_sequence, end_sequence)
-    msgs = pd.read_sql(sql, con=sutil.ENGINE)
-    return msgs
-
-
-def apply_messages(snapshot, messages):
-    pass
+def get_messages(table_name, sequence=None):
+    sequence = sequence or -1
+    sql = 'SELECT * from {} WHERE sequence >= {}'.format(table_name, sequence)
+    messages = sutil.xread_sql(sql)
+    return messages

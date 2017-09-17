@@ -1,0 +1,1 @@
+2017-09-17 03:43:29,702 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
