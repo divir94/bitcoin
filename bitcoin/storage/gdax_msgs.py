@@ -12,6 +12,7 @@ import bitcoin.util as util
 from bitcoin.websocket.core import WebSocket
 
 GDAX_CLIENT = gdax.PublicClient()
+sys.excepthook = util.handle_exception
 
 
 class GdaxMsgStorage(WebSocket):
