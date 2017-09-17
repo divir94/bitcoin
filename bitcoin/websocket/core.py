@@ -94,19 +94,19 @@ class WebSocket(object):
             logger.info('Socket already closed!')
             return
 
+        # stop listening for new messages
         self.stop = True
 
-        # turn off heartbeat
-        if self.heartbeat:
-            self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
-
-        # stop listening and close the websocket
-        time.sleep(1)
         try:
+            # turn off heartbeat
+            if self.heartbeat:
+                self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+            # close the websocket
+            time.sleep(1)
             self.ws.close()
             logger.info('Successfully closed Websocket')
-        except WebSocketConnectionClosedException as e:
-            logging.error('Failed to close websocket: {}'.format(e))
+        except Exception as e:
+            logger.exception('Failed to close websocket:\n{}'.format(e))
         time.sleep(1)
 
     def on_message(self, msg):
