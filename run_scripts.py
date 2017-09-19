@@ -10,6 +10,7 @@ import bitcoin.logs.logger as lc
 import bitcoin.util as util
 
 
+sys.excepthook = util.handle_exception
 logger = lc.config_logger('scripts')
 PROCESSES = [
     {
@@ -36,44 +37,41 @@ PROCESSES = [
 
 
 class ProcessManager(object):
-    def __init__(self, processes, log_freq=60):
+    def __init__(self, processes, check_freq=60):
         self.processes = processes
         self.pool = multiprocessing.Pool(len(self.processes))
-        self.log_freq = timedelta(seconds=log_freq)
+        self.check_freq = check_freq
         self.last_time = datetime.utcnow()
 
-    def get_python_processes(self):
-        result = []
-        for pid in psutil.pids():
-            p = psutil.Process(pid)
-            if 'python' in p.name():
-                result.append(p)
-        return result
+    def start_process(self, idx):
+        process = self.processes[idx]
+        # start
+        f, args = subprocess.Popen, process['cmdline']
+        p = self.pool.apply_async(f, args=(args,)).get()
+        # store pid
+        self.processes[idx]['pid'] = p.pid
+        logger.info('Starting process: {}'.format(process))
 
     def restart_stopped_processes(self):
-        time_elapsed = util.time_elapsed(self.last_time, self.log_freq)
+        # log check
+        time_elapsed = util.time_elapsed(self.last_time, timedelta(seconds=self.check_freq))
         if time_elapsed:
             logger.info('Checking processes')
             self.last_time = datetime.utcnow()
 
-        python_processes = self.get_python_processes()
-        logger.info([(p.pid, p.status(), p.is_running()) for p in python_processes])
-        cmds = [p.cmdline() for p in python_processes if p.status() != 'zombie']
         for i, proc in enumerate(self.processes):
-            running = proc['cmdline'] in cmds
-            if not running:
-                # restart in a new process
-                pid = proc['pid']
-                if pid:
-                    p = psutil.Process(pid)
+            pid = proc['pid']
+            if pid:
+                # check if running
+                p = psutil.Process(pid)
+                if p.status() == 'zombie' or not p.is_running():
+                    # kill and restart
                     p.kill()
                     logger.error('Stopped process: {}'.format(proc))
-                f, args = subprocess.Popen, proc['cmdline']
-                p = self.pool.apply_async(f, args=(args,)).get()
-                # store pid
-                proc['pid'] = p.pid
-                self.processes[i] = proc
-                logger.info('Starting process: {}'.format(proc))
+                    self.start_process(i)
+            else:
+                # first time start
+                self.start_process(i)
 
     def kill_processes(self):
         for proc in self.processes:
@@ -86,13 +84,16 @@ class ProcessManager(object):
     def run(self):
         logger.info('Current process: {}'.format(os.getpid()))
         while True:
-            self.restart_stopped_processes()
-            time.sleep(1)
+            try:
+                self.restart_stopped_processes()
+            except Exception as e:
+                logger.exception('Failed to check processes:\n{}'.format(e))
+            time.sleep(self.check_freq)
 
 
 if __name__ == '__main__':
+    pm = ProcessManager(PROCESSES)
     try:
-        pm = ProcessManager(PROCESSES)
         pm.run()
     except KeyboardInterrupt:
         logger.info('Keyboard interrupted')
