@@ -21,7 +21,6 @@ class GdaxMsgStorage(WebSocket):
         self.msgs = []
         self.last_sequence = -1
         self.product_id = product_id
-        self.date_format = "%Y-%m-%dT%H:%M:%S.%fZ"
 
         self.msg_store_freq = timedelta(minutes=1)  # frequency of storing messages
         self.book_store_freq = timedelta(minutes=60)  # frequency of storing order book
@@ -32,7 +31,7 @@ class GdaxMsgStorage(WebSocket):
         """
         Check if message is out of order and store messages at regular intervals
         """
-        msg['received_time'] = datetime.utcnow().strftime(self.date_format)
+        msg['received_time'] = datetime.utcnow().strftime(params.GDAX_DATE_FORMAT)
 
         if self.last_sequence != -1:
             self.check_msg(msg)
@@ -79,7 +78,7 @@ class GdaxMsgStorage(WebSocket):
         # get data
         data = GDAX_CLIENT.get_product_order_book(self.product_id, level=3)
         # to df
-        timestamp = pd.datetime.utcnow().strftime(self.date_format)
+        timestamp = pd.datetime.utcnow().strftime(params.GDAX_DATE_FORMAT)
         df = sutil.gdax_book_to_df(data, timestamp)
         # store
         table_name = params.GX_SNAPSHOT_TBLS[self.product_id]
@@ -108,12 +107,3 @@ class GdaxMsgStorage(WebSocket):
         time_elapsed = (datetime.utcnow() - start).total_seconds()
         logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
         return
-
-
-if __name__ == '__main__':
-    product_id = sys.argv[1]
-    channel = params.GX_CHANNELS[product_id]
-    logger = lc.config_logger('gdax_msgs', fsuffix=product_id)
-
-    ws = GdaxMsgStorage(params.GX_WS_URL, channel, product_id)
-    ws.start()
