@@ -1,11 +1,12 @@
 from decimal import Decimal
+from dateutil import parser
 
 import bitcoin.order_book.order_book as ob
 
 
 class GdaxOrderBook(ob.OrderBook):
     def __init__(self, sequence, bids=None, asks=None):
-        super(GdaxOrderBook, self).__init__(sequence, bids, asks)
+        super(GdaxOrderBook, self).__init__(bids=bids, asks=asks, sequence=sequence)
 
     def process_message(self, msg, book=None):
         book = book or self
@@ -32,6 +33,7 @@ class GdaxOrderBook(ob.OrderBook):
             assert _type == 'error'
 
         book.sequence = int(msg['sequence'])
+        book.timestamp = parser.parse(msg['time'])
 
     def open_order(self, msg, book):
         """

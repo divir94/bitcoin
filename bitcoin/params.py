@@ -26,6 +26,7 @@ GX_MSG_COLS_TBL = ['sequence', 'time', 'received_time', 'type', 'price', 'size',
                    'funds', 'remaining_size', 'reason', 'trade_id', 'maker_order_id', 'taker_order_id', 'new_size',
                    'old_size', 'new_funds', 'old_funds']
 
+GDAX_DATE_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 ###########
 # Bitstamp
