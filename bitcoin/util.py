@@ -1,7 +1,12 @@
 import pprint
 import os
+import sys
+import logging
 from decimal import Decimal, InvalidOperation
 from datetime import datetime
+
+
+logger = logging.getLogger('util')
 
 
 class BaseObject(object):
@@ -22,11 +27,10 @@ def get_project_root():
 def to_decimal(msg):
     result = {}
     for k, v in msg.iteritems():
-        if v:
-            try:
-                result[k] = Decimal(v)
-            except InvalidOperation:
-                result[k] = v
+        try:
+            result[k] = Decimal(v)
+        except InvalidOperation:
+            result[k] = v
     return result
 
 
@@ -38,4 +42,12 @@ def time_elapsed(last_time, tdelta):
 
 
 def df_to_dict(df):
-    return (to_decimal(v.dropna().to_dict()) for k, v in df.iterrows())
+    return [v.dropna().to_dict() for k, v in df.iterrows()]
+
+
+def handle_exception(exc_type, exc_value, exc_traceback):
+    if issubclass(exc_type, KeyboardInterrupt):
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+
+    logger.error('Uncaught exception', exc_info=(exc_type, exc_value, exc_traceback))
