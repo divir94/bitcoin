@@ -117,13 +117,8 @@ class GdaxOrderBook(WebSocket):
             pass
 
         else:
-<<<<<<< HEAD
-            assert msg['type'] == 'error'
-            self.logger.error('Error message: {}'.format(msg))
-=======
             assert _type == 'error'
             logger.error('Error message: {}'.format(msg))
->>>>>>> d9b5a2b92f81ea00bae5567e6f63d4fcf696c0b2
 
         book.sequence = int(msg['sequence'])
 
