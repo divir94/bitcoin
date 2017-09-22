@@ -3,9 +3,9 @@ import pandas as pd
 import time
 import requests
 import logging
-from sqlalchemy import create_engine
 
-import bitcoin.util as util
+import bitcoin.logs.logger as lc
+import bitcoin.storage.util as st_util
 
 
 GDAX_URL = 'https://api.gdax.com/products/BTC-USD/book?level=2'
@@ -16,36 +16,9 @@ ROWS_PER_CALL = 50  # number of top bids and asks to store per call
 GDAX_TBL_NAME = 'GdaxSnapshots'
 BITSTAMP_TBL_NAME = 'BitstampSnapshots'
 SPREAD_TBL_NAME = 'Spreads'
-ENGINE = None  # initialized later
 
-logger = util.get_logger('storage', level=logging.ERROR)
-
-
-###########
-# Database
-###########
-
-def get_sqlalchemy_engine():
-    root_path = util.get_project_root()
-    creds = json.load(open('{}/credentials/mysql.json'.format(root_path), 'rb'))
-    engine_name = 'mysql://{user}:{pwd}@{host}/{db}'.format(**creds)
-    engine = create_engine(engine_name, echo=False)
-    return engine
-
-ENGINE = get_sqlalchemy_engine()
-
-
-def store_df(df, tbl_name):
-    try:
-        df.to_sql(name=tbl_name, con=ENGINE, if_exists='append', index=False)
-        logger.info('Stored table: {}'.format(tbl_name))
-    except Exception as e:
-        now = pd.datetime.now()
-        time_msg = '=' * 20 + '\n{}\n'.format(now)
-        failed_msg = time_msg + 'Failed to store data'
-        logger.error(failed_msg)
-        logger.error(e)
-    return
+logger = lc.config_logger('snapshots')
+logger.setLevel(logging.ERROR)
 
 
 ################
@@ -54,7 +27,7 @@ def store_df(df, tbl_name):
 
 def get_snapshot_json(url):
     """returns None if there is any error"""
-    now = pd.datetime.now()
+    now = pd.datetime.utcnow()
     time_msg = '=' * 20 + '\n{}\n'.format(now)
     failed_msg = time_msg + 'Get request failed for: {}\n\n'.format(url)
 
@@ -147,23 +120,23 @@ def snapshots_to_spread_df(gdax_snapshot, bitstamp_snapshot, timestamp):
 
 def run(sleep=1):
     while True:
-        timestamp = pd.datetime.now()
+        timestamp = pd.datetime.utcnow()
 
         # store gdax snapshot
         gdax_snapshot = get_snapshot_json(GDAX_URL)
         if gdax_snapshot:
             gdax_df = snapshot_to_df(gdax_snapshot, timestamp, exchange_name='gdax')
-            store_df(gdax_df, GDAX_TBL_NAME)
+            st_util.store_df(gdax_df, GDAX_TBL_NAME)
 
         # store bitstamp snapshot
         bitstamp_snapshot = get_snapshot_json(BITSTAMP_URL)
         if bitstamp_snapshot:
             bitstamp_df = snapshot_to_df(bitstamp_snapshot, timestamp, exchange_name='bitstamp')
-            store_df(bitstamp_df, BITSTAMP_TBL_NAME)
+            st_util.store_df(bitstamp_df, BITSTAMP_TBL_NAME)
 
         # store spread
         spread = snapshots_to_spread_df(gdax_snapshot, bitstamp_snapshot, timestamp)
-        store_df(spread, SPREAD_TBL_NAME)
+        st_util.store_df(spread, SPREAD_TBL_NAME)
 
         time.sleep(sleep)
 

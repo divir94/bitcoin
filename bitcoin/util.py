@@ -1,7 +1,12 @@
 import pprint
-import logging
 import os
+import sys
+import logging
 from decimal import Decimal, InvalidOperation
+from datetime import datetime
+
+
+logger = logging.getLogger('util')
 
 
 class BaseObject(object):
@@ -19,32 +24,30 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def get_logger(name, fname=None, level=None, formatting=None):
-    fname = fname or '{}.log'.format(name)
-    level = level or logging.DEBUG
-    formatting = formatting or '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-
-    # format
-    logger = logging.getLogger(name)
-    logger.setLevel(level)
-    formatter = logging.Formatter(formatting)
-
-    # to file
-    root_path = get_project_root()
-    fh = logging.FileHandler('{}/logs/{}'.format(root_path, fname), 'w')
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-
-    # to stream
-    ch = logging.StreamHandler()
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-    return logger
+def to_decimal(msg):
+    result = {}
+    for k, v in msg.iteritems():
+        try:
+            result[k] = Decimal(v)
+        except InvalidOperation:
+            result[k] = v
+    return result
 
 
-def to_decimal(value):
-    try:
-        num = Decimal(value)
-        return num
-    except InvalidOperation:
-        return value
+def time_elapsed(last_time, tdelta):
+    """
+    Has it been more than `tdelta` since `last_time` in UTC?
+    """
+    return (datetime.utcnow() - last_time).seconds >= tdelta.seconds
+
+
+def df_to_dict(df):
+    return [v.dropna().to_dict() for k, v in df.iterrows()]
+
+
+def handle_exception(exc_type, exc_value, exc_traceback):
+    if issubclass(exc_type, KeyboardInterrupt):
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+
+    logger.error('Uncaught exception', exc_info=(exc_type, exc_value, exc_traceback))

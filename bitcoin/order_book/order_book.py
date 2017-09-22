@@ -26,11 +26,11 @@ class OrderBook(util.BaseObject):
         self.orders = {}  # dict[order_id, price]
 
         # initialize bids and asks
-        bids = bids or []
+        bids = [] if bids is None else bids
         for price, size, order_id in bids:
             self.add('buy', price, size, order_id)
 
-        asks = asks or []
+        asks = [] if asks is None else asks
         for price, size, order_id in asks:
             self.add('sell', price, size, order_id)
 
@@ -115,5 +115,7 @@ class OrderBook(util.BaseObject):
         bids = [level.to_set() for level in self.bids]
         asks = [level.to_set() for level in self.asks]
         orders = bids + asks
+        if not orders:
+            return set()
         result = set.union(*orders)
         return result
