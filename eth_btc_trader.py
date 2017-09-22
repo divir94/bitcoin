@@ -22,7 +22,7 @@ SELL = "sell"
 MIN_ORDER_SIZE = 0.1
 SPARE_COINS = 5
 MIN_TICK = 0.00001
-PER_TRADE_SPREAD = 1.0035
+PER_TRADE_SPREAD = 1.001
 
 price_volume_pair = namedtuple('PriceVolumePair', ['price', 'volume'])
 
@@ -84,6 +84,27 @@ def get_bitstamp_balances():
     }
     logger.info("Bitstamp balances {}".format(data))
     return data
+
+
+def gdax_market_order(size, side):
+    logger.info("executing gdax {} market order for {}".format(side, size))
+    if side == BUY:
+        return gdax_client.buy(type="market", size=str(size), product_id='ETH-BTC')
+    elif side == SELL:
+        return gdax_client.sell(type="market", size=str(size), product_id='ETH-BTC')
+    else:
+        raise Exception("{} not understood".format(side))
+
+
+def bitstamp_market_order(size, side):
+    """
+    Order to buy amount of bitcoins for specified price.
+    """
+    data = {'amount': size}
+    url = bitstamp_client._construct_url(side + "/market/", base="eth", quote="btc")
+    logger.info("executing bitstamp {} market order for {}".format(side, size))
+    return bitstamp_client._post(url, data=data, return_json=True, version=2)
+
 
 def wait_till_balance(exchange, eth_quant):
     if exchange == GDAX:
@@ -306,7 +327,7 @@ def rebalance(data):
         if not TEST:
             # TODO(vidurj) same as below.
             if bitstamp_sell_price > gdax_sell_price:
-                bitstamp_client.buy_limit_order(amount=size, price=gdax_sell_price, base="eth", quote="btc")
+                bitstamp_market_order(size=size, side=SELL)
                 new_bitstamp_eth_balance = bitstamp_balances[("ETH", "balance")] - size
                 wait_till_balance(BITSTAMP, new_bitstamp_eth_balance)
             else:

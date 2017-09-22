@@ -21,7 +21,7 @@ class OrderBook(util.BaseObject):
         asks: SortedListWithKey[PriceLevel]
         """
         self.sequence = int(sequence)
-        self.bids = SortedListWithKey(key=lambda x: x.price)
+        self.bids = SortedListWithKey(key=lambda x: - x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
 
