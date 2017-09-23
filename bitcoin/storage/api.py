@@ -9,12 +9,13 @@ import bitcoin.logs.logger as lc
 logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
 
 
-def get_book(product_id, timestamp=None, sequence=None, live=False):
+def get_book(exchange, product_id, timestamp=None, sequence=None, live=False):
     """
     Get orderbook at a particular time or sequence number
 
     Parameters
     ----------
+    exchange: str
     product_id: str
     timestamp: datetime
         None returns the latest book
@@ -27,12 +28,10 @@ def get_book(product_id, timestamp=None, sequence=None, live=False):
     ob.GdaxOrderBook
     """
     assert not (timestamp and sequence), 'Cannot specify both timestamp or sequence'
-    snapshot_tbl = params.GX_SNAPSHOT_TBLS[product_id]
-    msg_name = params.GX_MSG_TBLS[product_id]
-    time_str = timestamp.strftime(params.GDAX_DATE_FORMAT) if timestamp else None
+    time_str = timestamp.strftime(params.DATE_FORMAT[exchange]) if timestamp else None
 
     # get latest snapshot
-    snapshot_df = get_closest_snapshot(snapshot_tbl, timestamp, sequence)
+    snapshot_df = get_closest_snapshot(exchange, product_id, timestamp, sequence)
     logger.debug('Got snapshot')
 
     # convert to book object
@@ -40,7 +39,7 @@ def get_book(product_id, timestamp=None, sequence=None, live=False):
     logger.debug('Got book: {}'.format(book.sequence))
 
     # get and apply messages
-    messages = get_messages(msg_name, book.sequence)
+    messages = get_messages(exchange, product_id, book.sequence)
     for i, msg in enumerate(messages):
         if i % 10000 == 0:
             logger.debug('Applying msgs starting: {}'.format(msg['sequence']))
@@ -52,11 +51,13 @@ def get_book(product_id, timestamp=None, sequence=None, live=False):
     return book
 
 
-def get_closest_snapshot(table_name, timestamp=None, sequence=None):
+def get_closest_snapshot(exchange, product_id, timestamp=None, sequence=None):
+    table_name = params.SNAPSHOT_TBL[exchange][product_id]
+
     # get closest snapshot before timestamp or sequence
     if timestamp or sequence:
         _id = 'received_time' if timestamp else 'sequence'
-        value = timestamp.strftime(params.GDAX_DATE_FORMAT) if timestamp else sequence
+        value = timestamp.strftime(params.DATE_FORMAT[exchange]) if timestamp else sequence
 
         sql = '''
         SELECT * FROM {table}
@@ -96,8 +97,12 @@ def get_book_from_df(df):
     return book
 
 
-def get_messages(table_name, start_sequence=None):
-    start_sequence = start_sequence or -1
-    sql = 'SELECT * from {} WHERE sequence >= {}'.format(table_name, start_sequence)
+def get_messages(exchange, product_id, start=None, end=None):
+    table_name = params.MSG_TBL[exchange][product_id]
+    start = start or -1
+    sql = 'SELECT * from {} WHERE sequence >= {}'.format(table_name, start)
+    if end:
+        sql += 'AND sequence <= {}'.format(end)
+    logger.DEBUG(sql)
     messages = sutil.xread_sql(sql)
     return messages
