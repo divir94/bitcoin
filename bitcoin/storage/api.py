@@ -101,8 +101,3 @@ def get_messages(table_name, start_sequence=None):
     sql = 'SELECT * from {} WHERE sequence >= {}'.format(table_name, start_sequence)
     messages = sutil.xread_sql(sql)
     return messages
-
-
-if __name__ == '__main__':
-    book = get_book('BTC-USD', sequence=4050810140)
-    print len(book.asks)
