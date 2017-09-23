@@ -17,7 +17,11 @@ logger = lc.config_logger('gdax_websocket')
 
 class GdaxOrderBook(WebSocket):
     def __init__(self, product_id, on_change=None):
-        super(GdaxOrderBook, self).__init__(params.GX_WS_URL, params.GX_CHANNELS[product_id])
+        self.exchange = 'GDAX'
+        url = params.WS_URL[self.exchange]
+        channel = params.CHANNEL[self.exchange][product_id]
+        super(GdaxOrderBook, self).__init__(url, channel)
+
         self.book = ob.GdaxOrderBook(-1)
         self.queue = deque()
         self.on_change = on_change

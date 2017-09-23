@@ -1,4 +1,3 @@
-import time
 import sys
 from datetime import datetime, timedelta
 from threading import Thread
@@ -16,8 +15,12 @@ sys.excepthook = util.handle_exception
 
 
 class GdaxMsgStorage(WebSocket):
-    def __init__(self, url, channel, product_id):
+    def __init__(self, product_id):
+        self.exchange = 'GDAX'
+        url = params.WS_URL[self.exchange]
+        channel = params.CHANNEL[self.exchange][product_id]
         super(GdaxMsgStorage, self).__init__(url, channel)
+
         self.msgs = []
         self.last_sequence = -1
         self.product_id = product_id
@@ -31,7 +34,7 @@ class GdaxMsgStorage(WebSocket):
         """
         Check if message is out of order and store messages at regular intervals
         """
-        msg['received_time'] = datetime.utcnow().strftime(params.GDAX_DATE_FORMAT)
+        msg['received_time'] = datetime.utcnow().strftime(params.DATE_FORMAT[self.exchange])
 
         if self.last_sequence != -1:
             self.check_msg(msg)
@@ -78,10 +81,10 @@ class GdaxMsgStorage(WebSocket):
         # get data
         data = GDAX_CLIENT.get_product_order_book(self.product_id, level=3)
         # to df
-        timestamp = pd.datetime.utcnow().strftime(params.GDAX_DATE_FORMAT)
+        timestamp = pd.datetime.utcnow().strftime(params.DATE_FORMAT[self.exchange])
         df = sutil.gdax_book_to_df(data, timestamp)
         # store
-        table_name = params.GX_SNAPSHOT_TBLS[self.product_id]
+        table_name = params.SNAPSHOT_TBL[self.exchange][self.product_id]
         sutil.store_df(df, table_name)
 
         logger.info('=' * 30)
@@ -96,8 +99,8 @@ class GdaxMsgStorage(WebSocket):
         self.msgs = []
         start = datetime.utcnow()
 
-        table_name = params.GX_MSG_TBLS[self.product_id]
-        columns = params.GX_MSG_COLS_TBL
+        table_name = params.MSG_TBL[self.exchange][self.product_id]
+        columns = params.MSG_COL_NAME[self.exchange]
         # msgs to df
         df = pd.DataFrame(msgs, columns=columns)
 
@@ -107,3 +110,11 @@ class GdaxMsgStorage(WebSocket):
         time_elapsed = (datetime.utcnow() - start).total_seconds()
         logger.info('Stored {} messages in {} in {:.2f}s'.format(len(msgs), table_name, time_elapsed))
         return
+
+
+if __name__ == '__main__':
+    product_id = sys.argv[1]
+    logger = lc.config_logger('gdax_msgs', fsuffix=product_id)
+
+    ws = GdaxMsgStorage(product_id)
+    ws.start()
