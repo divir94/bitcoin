@@ -19,9 +19,15 @@ config_named_tuple = namedtuple('Config',
                                     'layer_sizes'
                                 ])
 
+outstanding_order_named_tuple = namedtuple('OutstandingOrder',
+                                           [
+                                               'id',
+                                               'price',
+                                               'filled_size'
+                                           ])
+
 cancel_named_tuple = namedtuple('Cancel', ['id'])
-limit_buy_order_named_tuple = namedtuple('LimitBuyOrder', ['price', 'size'])
-limit_sell_order_named_tuple = namedtuple('LimitSellOrder', ['price', 'size'])
+limit_order_named_tuple = namedtuple('LimitOrder', ['price', 'size', 'side'])
 
 btc_usd_config = config_named_tuple(
     product_id='BTC-USD',
@@ -91,20 +97,18 @@ class Decisions(object):
     def __init__(self):
         self.orders = []
 
-    def buy_limit_order(self, price, size):
-        self.orders.append(limit_buy_order_named_tuple(price, size))
-
-    def sell_limit_order(self, price, size):
-        self.orders.append(limit_sell_order_named_tuple(price, size))
+    def limit_order(self, price, size, side):
+        assert side == BUY or side == SELL
+        self.orders.append(limit_order_named_tuple(price, size, side))
 
     def cancel_all(self, outstanding_orders, side=None):
         if side == BUY:
-            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.buy_orders]
+            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.buy_orders]
         elif side == SELL:
-            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.sell_orders]
+            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.sell_orders]
         else:
             assert side is None
-            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.all_orders]
+            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.all_orders]
         self.orders.extend(cancellations)
 
 
@@ -186,13 +190,13 @@ class Strategy(object):
     def _update_orders(self, side, new_price, outstanding_orders, decisions):
         assert side == BUY or side == SELL
         if side in outstanding_orders:
-            if (abs(outstanding_orders[side]['price'] - new_price) > self.config.min_price_change) or \
-                    (outstanding_orders[side]['filled_size'] > 0):
+            if (abs(outstanding_orders[side].price - new_price) > self.config.min_price_change) or \
+                    (outstanding_orders[side].filled_size > 0):
                 decisions.cancel_all(outstanding_orders)
                 if new_price:
-                    decisions.sell_limit_order(price=new_price, size=self.config.order_size)
+                    decisions.limit_order(price=new_price, size=self.config.order_size, side=side)
         elif new_price:
-            decisions.sell_limit_order(price=new_price, size=self.config.order_size)
+            decisions.limit_order(price=new_price, size=self.config.order_size, side=side)
         return decisions
 
     def _book_to_cumulative_volume(self, side):
