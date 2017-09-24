@@ -15,7 +15,8 @@ config_named_tuple = namedtuple('Config',
                                     'max_vol2',
                                     'monitored_prices',
                                     'order_size',
-                                    'min_price_change'
+                                    'min_price_change',
+                                    'layer_sizes'
                                 ])
 
 cancel_named_tuple = namedtuple('Cancel', ['id'])
@@ -30,7 +31,8 @@ btc_usd_config = config_named_tuple(
     max_vol2=50,
     monitored_prices=[0.1, 1, 10],
     order_size=0.01,
-    min_price_change=1
+    min_price_change=1,
+    layer_sizes=[50, 25, 10]
 )
 
 
@@ -58,12 +60,12 @@ def compute_bucket_features(orders, side):
     0.05%, 0.1%, 0.15%, ... 0.25% of the best bid and asks respectively.
     This gives us 10 buckets, and so 10 real values features.
     """
-    assert side == 'bid' or side == 'ask'
+    assert side == BUY or side == SELL
     best_price = orders[0].price
     buckets = [-1 for _ in range(10)]
     volume = 0
     for point in orders:
-        if side == 'bid':
+        if side == BUY:
             distance = best_price / point.price - 1
         else:
             distance = point.price / best_price - 1
@@ -95,20 +97,15 @@ class Decisions(object):
     def sell_limit_order(self, price, size):
         self.orders.append(limit_sell_order_named_tuple(price, size))
 
-    def cancel_all(self, outstanding_orders):
-        cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.all_orders]
+    def cancel_all(self, outstanding_orders, side=None):
+        if side == BUY:
+            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.buy_orders]
+        elif side == SELL:
+            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.sell_orders]
+        else:
+            assert side is None
+            cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.all_orders]
         self.orders.extend(cancellations)
-
-    def cancel_buy_orders(self, outstanding_orders):
-        cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.buy_orders]
-        self.orders.extend(cancellations)
-
-    def cancel_sell_orders(self, outstanding_orders):
-        cancellations = [cancel_named_tuple(order['id']) for order in outstanding_orders.sell_orders]
-        self.orders.extend(cancellations)
-
-
-
 
 
 class Strategy(object):
@@ -117,9 +114,9 @@ class Strategy(object):
         self.asks_model = None
         self.bids_model = None
         self.config = config
-        self.order_features, self.estimated_profit = self.create_embedding()
+        self.order_features, self.estimated_profit = self._create_embedding()
 
-    def create_embedding(self):
+    def _create_embedding(self):
         features = tf.placeholder('float', [None, self.config.feature_dim])
         with_log_features = tf.concat([features, tf.log(features)], 1)
         input_dim = 2 * self.config.feature_dim
@@ -134,33 +131,37 @@ class Strategy(object):
         prediction = tf.matmul(w, input_vec) + b
         return features, prediction
 
-    def pick_best_order(self, orders, best_opp_side, side):
-        assert side == 'bid' or side == 'ask'
-        if side == 'bid':
+    def _pick_best_order(self, orders, best_opp_side, side, common_features):
+        assert side == BUY or side == SELL
+        if side == BUY:
             scorer = self.bids_model.score
         else:
             scorer = self.asks_model.score
         cumulative_volume_bids = self._book_to_cumulative_volume(orders)
+        num_order_specific_features = 1 + len(self.config.monitored_prices)
+        order_features = [None for _ in range(num_order_specific_features)] + common_features
         best_price = None
         best_score = - 1
         for vol, level in zip(cumulative_volume_bids, orders):
             if vol > self.config.max_vol:
                 break
-            if side == 'bid':
+            if side == BUY:
                 price = level.price + self.config.min_tick
             else:
                 price = level.price - self.config.min_tick
             if price == best_opp_side:
                 continue
-            features = [vol]
+            order_features[0] = vol
+            index = 1
             for price_delta in self.config.monitored_prices:
-                if side == 'bid':
+                if side == BUY:
                     new_index = orders.bisect_left(price - price_delta)
                 else:
                     new_index = orders.bisect_left(price + price_delta)
                 volume = cumulative_volume_bids[new_index] - vol
-                features.append(volume)
-            score = scorer(features)
+                order_features[index] = volume
+                index += 1
+            score = scorer(order_features)
             if score > 1 and score > best_score:
                 best_score = score
                 best_price = price
@@ -174,31 +175,25 @@ class Strategy(object):
             return decisions.orders
         # TODO(vidurj) it would be good to have this 'bids' 'asks' indicator be part of the side of the
         # order book
-        order_book_features = compute_bucket_features(book.bids, 'bids') + \
-                          compute_bucket_features(book.asks, 'asks')
-        order_book_embedding =
-        bid_price = self.pick_best_order(book.bids, book.asks[0].price, 'bids')
-        ask_price = self.pick_best_order(book.asks, book.bids[0].price, 'asks')
-
-        if BUY in outstanding_orders:
-            if (abs(outstanding_orders[BUY]['price'] - bid_price) > self.config.min_price_change) or \
-                    (outstanding_orders[BUY]['filled_size'] > 0):
-                decisions.cancel_buy_orders(outstanding_orders)
-                if bid_price:
-                    limit_buy_order_named_tuple(price=bid_price, size=self.config.order_size)
-        elif bid_price:
-            limit_buy_order_named_tuple(price=bid_price, size=self.config.order_size)
-
-        if SELL in outstanding_orders:
-            if (abs(outstanding_orders[SELL]['price'] - ask_price) > self.config.min_price_change) or \
-                    (outstanding_orders[SELL]['filled_size'] > 0):
-                decisions.cancel_sell_orders(outstanding_orders)
-                if ask_price:
-                    decisions.sell_limit_order(price=ask_price, size=self.config.order_size)
-        elif ask_price:
-            decisions.sell_limit_order(price=ask_price, size=self.config.order_size)
-
+        order_book_features = compute_bucket_features(book.bids, BUY) + \
+                              compute_bucket_features(book.asks, SELL)
+        bid_price = self._pick_best_order(book.bids, book.asks[0].price, BUY, order_book_features)
+        self._update_orders(BUY, bid_price, outstanding_orders, decisions)
+        ask_price = self._pick_best_order(book.asks, book.bids[0].price, SELL, order_book_features)
+        self._update_orders(SELL, ask_price, outstanding_orders, decisions)
         return decisions.orders
+
+    def _update_orders(self, side, new_price, outstanding_orders, decisions):
+        assert side == BUY or side == SELL
+        if side in outstanding_orders:
+            if (abs(outstanding_orders[side]['price'] - new_price) > self.config.min_price_change) or \
+                    (outstanding_orders[side]['filled_size'] > 0):
+                decisions.cancel_all(outstanding_orders)
+                if new_price:
+                    decisions.sell_limit_order(price=new_price, size=self.config.order_size)
+        elif new_price:
+            decisions.sell_limit_order(price=new_price, size=self.config.order_size)
+        return decisions
 
     def _book_to_cumulative_volume(self, side):
         total_volume = 0

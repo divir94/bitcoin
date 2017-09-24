@@ -321,6 +321,7 @@ def rebalance(required_eth):
             # TODO(vidurj) same as below.
             if bitstamp_sell_price > gdax_sell_price:
                 bitstamp_client.sell_limit_order(amount=size, price=gdax_sell_price, base='BTC', quote='ETH')
+                time.sleep(0.5)
                 bitstamp_client.cancel_all_orders()
                 time.sleep(10)
             else:
@@ -340,6 +341,7 @@ def rebalance(required_eth):
             # for best price, but also where there are assets to support the order.
             if bitstamp_buy_price < gdax_buy_price:
                 bitstamp_client.buy_limit_order(amount=size, price=gdax_buy_price, base='BTC', quote='ETH')
+                time.sleep(0.5)
                 bitstamp_client.cancel_all_orders()
                 time.sleep(10)
             else:
