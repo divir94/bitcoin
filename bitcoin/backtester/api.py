@@ -1,4 +1,9 @@
+from collections import namedtuple
+
 import bitcoin.storage.api as st
+
+
+Order = namedtuple('Order', ['id', 'type', 'currency', 'base', 'side', 'price', 'size', 'cancel'])
 
 
 class Backtester(object):
@@ -9,36 +14,56 @@ class Backtester(object):
         self.trades = {}
         self.balance = {}
 
-    def execute_orders(self, orders):
-        # update outstanding orders and balances
+    def place_orders(self, orders):
+        # update orders and balance
         for order in orders:
-            new_balance = self.update_balance(order)
-            self.balance = new_balance
-            self.outstanding_orders[order.id] = order
+            if order.type == 'limit':
+                if order.side == 'buy':
+                    value = order.price * order.size
+                    current_balance = self.balance[order.base]
+                    field = order.base
+                elif order.side == 'sell':
+                    value = order.size
+                    field = order.currency
+                    current_balance = self.balance[order.currency]
+                else:
+                    raise ValueError
+            else:
+                raise ValueError('Invalid order type {}'.format(order.type))
 
-    @staticmethod
-    def update_balance(order, balance):
-        new_balance = balance.copy()
-        if order.type == 'limit':
+            if order.cancel:
+                self.balance[field] += value
+                del self.outstanding_orders[order.id]
+            else:
+                assert current_balance >= value, 'Insufficient balance {} for order {}'.format(current_balance, order)
+                self.balance[field] -= value
+                self.outstanding_orders[order.id] = order
+        return
+
+    def get_fills(self, msg, book, orders):
+        # fills is dict[order id, fill qty]
+        fills = {}
+        return fills
+
+    def handle_fills(self, fills):
+        for order_id, fill_qty in fills.iteritems():
+            order = self.outstanding_orders[order_id]
+
             if order.side == 'buy':
-                value = order.price * order.size
-                current_balance = balance[order.base]
-                field = order.base
-            elif order.side == 'sell':
                 value = order.size
                 field = order.currency
-                current_balance = balance[order.currency]
+            elif order.side == 'sell':
+                value = order.price * order.size
+                field = order.base
             else:
                 raise ValueError
+            self.balance[field] += value
 
-            assert current_balance >= value, 'Insufficient balance {} for order {}'.format(current_balance, order)
-            new_balance[field] -= value
-        else:
-            raise ValueError('Invalid order type {}'.format(order.type))
-        return new_balance
-
-    def update_orders(self, msg):
-        pass
+            if fill_qty == 0:
+                del self.outstanding_orders[order.id]
+            else:
+                self.outstanding_orders[order.id].size -= fill_qty
+        return
 
     def run(self, strategy, start, end):
         book = st.get_book(self.exchange, self.product_id, timestamp=start)
@@ -49,6 +74,7 @@ class Backtester(object):
                                             book=book,
                                             outstanding_orders=self.outstanding_orders,
                                             balance=self.balance)
-            self.execute_orders(new_orders)
-            self.update_orders(msg)
+            self.place_orders(new_orders)
+            fills = self.get_fills(msg, book, self.outstanding_orders)
+            self.handle_fills(fills)
             book.process_message(msg)
