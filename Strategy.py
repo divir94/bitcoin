@@ -2,9 +2,7 @@ from collections import namedtuple
 import time
 import tensorflow as tf
 import numpy as np
-
-BUY = 'buy'
-SELL = 'sell'
+from bitcoin.backtester.api import BUY, SELL, Cancel, LimitOrder
 
 config_named_tuple = namedtuple('Config',
                                 [
@@ -18,16 +16,6 @@ config_named_tuple = namedtuple('Config',
                                     'min_price_change',
                                     'layer_sizes'
                                 ])
-
-outstanding_order_named_tuple = namedtuple('OutstandingOrder',
-                                           [
-                                               'id',
-                                               'price',
-                                               'filled_size'
-                                           ])
-
-cancel_named_tuple = namedtuple('Cancel', ['id'])
-limit_order_named_tuple = namedtuple('LimitOrder', ['price', 'size', 'side'])
 
 btc_usd_config = config_named_tuple(
     product_id='BTC-USD',
@@ -99,16 +87,16 @@ class Decisions(object):
 
     def limit_order(self, price, size, side):
         assert side == BUY or side == SELL
-        self.orders.append(limit_order_named_tuple(price, size, side))
+        self.orders.append(LimitOrder(price, size, side))
 
     def cancel_all(self, outstanding_orders, side=None):
         if side == BUY:
-            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.buy_orders]
+            cancellations = [Cancel(order.id) for order in outstanding_orders if side == BUY]
         elif side == SELL:
-            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.sell_orders]
+            cancellations = [Cancel(order.id) for order in outstanding_orders if side == SELL]
         else:
             assert side is None
-            cancellations = [cancel_named_tuple(order.id) for order in outstanding_orders.all_orders]
+            cancellations = [Cancel(order.id) for order in outstanding_orders]
         self.orders.extend(cancellations)
 
 
