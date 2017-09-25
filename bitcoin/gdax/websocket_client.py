@@ -45,7 +45,7 @@ class WebsocketClient(object):
         if self.url[-1] == "/":
             self.url = self.url[:-1]
 
-        sub_params = {'type': 'subscribe', 'product_ids': self.products}
+        sub_params = {'type': 'subscribe', 'product_ids': self.products, "channels": ["level2"]}
         if self.auth:
             timestamp = str(time.time())
             message = timestamp + 'GET' + '/users/self'
@@ -108,13 +108,14 @@ if __name__ == "__main__":
     class MyWebsocketClient(WebsocketClient):
         def on_open(self):
             self.url = "wss://ws-feed.gdax.com/"
-            self.products = ["BTC-USD", "ETH-USD"]
+            self.products = ["BTC-USD"]
             self.message_count = 0
             print("Let's count the messages!")
 
         def on_message(self, msg):
             if 'price' in msg and 'type' in msg:
                 print("Message type:", msg["type"], "\t@ %.3f" % float(msg["price"]))
+            print(msg)
             self.message_count += 1
 
         def on_close(self):
@@ -124,7 +125,7 @@ if __name__ == "__main__":
     wsClient.start()
     print(wsClient.url, wsClient.products)
     # Do some logic with the data
-    while wsClient.message_count < 10000:
+    while wsClient.message_count < 100:
         print("\nMessageCount =", "%i \n" % wsClient.message_count)
         time.sleep(1)
 

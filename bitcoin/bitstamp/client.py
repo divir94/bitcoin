@@ -176,7 +176,7 @@ class Trading(Public):
             nonce += 1
         # If the unix time is greater though, use that instead (helps low
         # concurrency multi-threaded apps always call with the largest nonce).
-        self._nonce = max(100 * int(time.time()), nonce)
+        self._nonce = max(1000 * int(time.time()), nonce)
         return self._nonce
 
     def _default_data(self, *args, **kwargs):

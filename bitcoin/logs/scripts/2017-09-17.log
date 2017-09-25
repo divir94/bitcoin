@@ -1,0 +1,18 @@
+2017-09-17 03:43:19,822 - scripts - INFO - Current process: 8341
+2017-09-17 03:43:19,832 - scripts - INFO - [(8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:19,835 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8343, 'name': 'Gdax Storage: BTC-USD'}
+2017-09-17 03:43:20,850 - scripts - INFO - [(8343, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:21,861 - scripts - INFO - [(8343, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:22,875 - scripts - INFO - [(8343, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:23,889 - scripts - INFO - [(8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True), (8343, 'zombie', True)]
+2017-09-17 03:43:23,889 - scripts - ERROR - Stopped process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8343, 'name': 'Gdax Storage: BTC-USD'}
+2017-09-17 03:43:23,891 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8356, 'name': 'Gdax Storage: BTC-USD'}
+2017-09-17 03:43:24,904 - scripts - INFO - [(8356, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:25,920 - scripts - INFO - [(8356, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:26,939 - scripts - INFO - [(8356, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:27,954 - scripts - INFO - [(8356, 'running', True), (8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True)]
+2017-09-17 03:43:28,967 - scripts - INFO - [(8342, 'running', True), (8341, 'running', True), (6832, 'running', True), (3683, 'running', True), (8356, 'zombie', True)]
+2017-09-17 03:43:28,967 - scripts - ERROR - Stopped process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8356, 'name': 'Gdax Storage: BTC-USD'}
+2017-09-17 03:43:28,969 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8368, 'name': 'Gdax Storage: BTC-USD'}
+2017-09-17 03:43:29,908 - scripts - INFO - Keyboard interrupted
+2017-09-17 03:43:29,909 - scripts - INFO - Killing process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 8368, 'name': 'Gdax Storage: BTC-USD'}

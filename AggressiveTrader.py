@@ -1,17 +1,15 @@
 # coding=utf-8
-import gdax
-import bitstamp.client
-import time
 import logging
-import datetime
-import random
-import pickle
-import sys
-import traceback
 import math
-from multiprocessing.pool import ThreadPool
-from datetime import datetime
+import sys
+import time
+import traceback
 from collections import namedtuple
+from multiprocessing.pool import ThreadPool
+
+import bitstamp.client
+
+import gdax
 
 # Exchange Name Constants
 GDAX = "gdax"
@@ -41,8 +39,8 @@ logger.addHandler(ch)
 
 
 def create_clients():
-    bitstamp_client = bitstamp.client.Trading(username='752298', key='MWaOh0LJmQLA2n6qxShMrFKTRNvqYXvO',
-                                              secret='gTilVxPezUaJNlPqrEADwpigHYd0o41C')
+    bitstamp_client = bitstamp.client.Trading(username='752298', key='bDtzFzYpceSrgN88E6AchsV0y4gX15GG',
+                                              secret='QRJvxiBpqLNNFC2RI50ulw2SjdZ7oysF')
     gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
                                            b64secret="uSysPzywwj3LUlPuuNkKEHRpxhd4A+K/JGwbEfrc28nkd4c6qMLwr1IbRsw1GB1BKQzVXoj88n/WjMvIAvv/MA==",
                                            passphrase="ltg10b8unuo")
@@ -164,7 +162,6 @@ def get_outstanding_orders_gdax():
     assert len(raw_orders) == 1
     orders = raw_orders[0]
     outstanding_orders = {}
-    cancellations = []
     outstanding_order_str = ""
     for order in orders:
         outstanding_order_str += str(order)
@@ -183,7 +180,7 @@ def get_outstanding_orders_gdax():
         else:
             outstanding_orders[side] = our_format
     logger.info(outstanding_order_str)
-    return outstanding_orders, cancellations
+    return outstanding_orders
 
 
 def gdax_limit_order(price, size, side):
@@ -281,14 +278,14 @@ def compute_gdax_buy_price(gdax_book, bitstamp_book):
     while len(gdax_buy_limit_vol_and_price) > 0 and len(bitstamp_sell_market_vol_and_price) > 0:
         gdax_pair = gdax_buy_limit_vol_and_price[0]
         bitstamp_pair = bitstamp_sell_market_vol_and_price[0]
-        if bitstamp_pair.volume >= gdax_pair.volume + spare_coins:
+        if bitstamp_pair.volume >= 0.7 * gdax_pair.volume + spare_coins:
             if bitstamp_pair.price * (1 - 0.0025) > gdax_pair.price * 1.001:
                 return gdax_pair.price + 0.01
             else:
                 del gdax_buy_limit_vol_and_price[0]
         else:
             del bitstamp_sell_market_vol_and_price[0]
-    return None
+    return 10.0
 
 
 def compute_gdax_sell_price(gdax_book, bitstamp_book):
@@ -298,14 +295,14 @@ def compute_gdax_sell_price(gdax_book, bitstamp_book):
     while len(gdax_sell_limit_vol_and_price) > 0 and len(bitstamp_buy_market_vol_and_price) > 0:
         gdax_point = gdax_sell_limit_vol_and_price[0]
         bitstamp_point = bitstamp_buy_market_vol_and_price[0]
-        if bitstamp_point.volume >= gdax_point.volume + spare_coins:
+        if bitstamp_point.volume >= 0.7 * gdax_point.volume + spare_coins:
             if gdax_point.price > bitstamp_point.price * 1.0025 * 1.001:
                 return gdax_point.price - 0.01
             else:
                 del gdax_sell_limit_vol_and_price[0]
         else:
             del bitstamp_buy_market_vol_and_price[0]
-    return None
+    return 20000.0
 
 
 def average_price_for_coins(book, requested_vol):
@@ -388,25 +385,23 @@ def rebalance(data):
         sell_order_size = compute_sell_order_size(gdax_balances=gdax_balances,
                                                   bitstamp_balances=bitstamp_balances,
                                                   bitstamp_buy_price=bitstamp_buy_price)
-        outstanding_orders, cancellations = async_outstanding_orders.get()
+        outstanding_orders = async_outstanding_orders.get()
         if BUY in outstanding_orders:
-            if limit_buy_price is None or \
-                    (abs(outstanding_orders[BUY]["price"] - limit_buy_price) > 1) or \
+            if (abs(outstanding_orders[BUY]["price"] - limit_buy_price) > 1) or \
                     (outstanding_orders[BUY]["filled_size"] > 0.05):
-                cancellations.extend(async_cancel_gdax_buy(outstanding_orders))
+                async_cancel_gdax_buy(outstanding_orders)
                 if buy_order_size > 0 and limit_buy_price:
                     POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, BUY))
-        elif buy_order_size > 0 and limit_buy_price:
+        elif buy_order_size > 0:
             POOL.apply_async(gdax_limit_order, (limit_buy_price, buy_order_size, BUY))
 
         if SELL in outstanding_orders:
-            if limit_sell_price is None or \
-                    (abs(outstanding_orders[SELL]["price"] - limit_sell_price) > 1) or \
+            if (abs(outstanding_orders[SELL]["price"] - limit_sell_price) > 1) or \
                     (outstanding_orders[SELL]["filled_size"] > 0.05):
-                cancellations.extend(async_cancel_gdax_sell(outstanding_orders))
+                async_cancel_gdax_sell(outstanding_orders)
                 if sell_order_size > 0 and limit_sell_price:
                     POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, SELL))
-        elif sell_order_size > 0 and limit_sell_price:
+        elif sell_order_size > 0:
             POOL.apply_async(gdax_limit_order, (limit_sell_price, sell_order_size, SELL))
     return data
 
