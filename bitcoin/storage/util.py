@@ -49,7 +49,12 @@ def xread_sql(sql, chunksize=100000):
     offset = 0
 
     while True:
+        if offset != 0 and offset < chunksize:
+            # got all available rows
+            raise StopIteration
+
         query = '{sql} LIMIT {offset}, {chunksize}'.format(sql=sql, offset=offset, chunksize=chunksize)
+        logger.debug(query)
         df = pd.read_sql(query, con=ENGINE)
         if df.empty:
             raise StopIteration

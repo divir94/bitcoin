@@ -39,7 +39,7 @@ def get_book(exchange, product_id, timestamp=None, sequence=None, live=False):
     logger.debug('Got book: {}'.format(book.sequence))
 
     # get and apply messages
-    messages = get_messages(exchange, product_id, book.sequence)
+    messages = get_messages_by_sequence(exchange, product_id, start=book.sequence, end=sequence)
     for i, msg in enumerate(messages):
         if i % 10000 == 0:
             logger.debug('Applying msgs starting: {}'.format(msg['sequence']))
@@ -97,12 +97,30 @@ def get_book_from_df(df):
     return book
 
 
-def get_messages(exchange, product_id, start=None, end=None):
+def get_messages_by_time(exchange, product_id, start=None, end=None):
+    field = 'time'
+    # date to string with quotes
+    start = '"{}"'.format(start.strftime(params.DATE_FORMAT[exchange])) if start else start
+    end = '"{}"'.format(end.strftime(params.DATE_FORMAT[exchange])) if end else end
+    messages = _get_messages(field, exchange, product_id, start, end)
+    return messages
+
+
+def get_messages_by_sequence(exchange, product_id, start=None, end=None):
+    field = 'sequence'
+    messages = _get_messages(field, exchange, product_id, start, end)
+    return messages
+
+
+def _get_messages(field, exchange, product_id, start, end):
     table_name = params.MSG_TBL[exchange][product_id]
-    start = start or -1
-    sql = 'SELECT * from {} WHERE sequence >= {}'.format(table_name, start)
-    if end:
-        sql += 'AND sequence <= {}'.format(end)
-    logger.DEBUG(sql)
+    start_cond = '{field} >= {value}'.format(field=field, value=start) if start else ''
+    end_cond = '{field} <= {value}'.format(field=field, value=end) if end else ''
+    where_cond = 'WHERE' if start_cond or end_cond else ''
+    and_cond = 'AND' if start_cond and end_cond else ''
+    sql = '''
+        SELECT * from {table} 
+        {where_cond} {start_cond} {and_cond} {end_cond}
+    '''.format(table=table_name, where_cond=where_cond, and_cond=and_cond, start_cond=start_cond, end_cond=end_cond)
     messages = sutil.xread_sql(sql)
     return messages
