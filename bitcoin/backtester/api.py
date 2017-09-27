@@ -35,7 +35,7 @@ class BackTester(object):
         self.trades = {}
 
     @staticmethod
-    def get_fills(msg, orders):
+    def get_fills(msg, orders, order_book):
         # fills is dict[order id, fill qty]
         assert len(orders) <= 2, 'More than a single buy/sell order is not currently supported'
         fills = {}
@@ -46,13 +46,15 @@ class BackTester(object):
         maker_side = msg['side']
         match_price = float(msg['price'])
         match_size = float(msg['size'])
-        match_time_string = msg['time']
+        #TODO Lol we need the time when the maker order was put on the book.
+        # Not the time when this match happened
+        maker_time_string = None
 
         for _, order in orders.iteritems():
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
             # match at same price if our order came before
-            early_at_same_price = (order.price == match_price) and (order.time_string < match_time_string)
+            early_at_same_price = (order.price == match_price) and (order.time_string < maker_time_string)
             # order has to be same side as maker i.e. opposite side of taker
             same_side_as_maker = (maker_side == order.side)
             if same_side_as_maker and (competitive_price or early_at_same_price):
@@ -98,6 +100,7 @@ class BackTester(object):
                     price=order.price,
                     base=order.base,
                     size=order.size,
+                    #TODO(vidurj) pd.to_datetime('now') is not in gdax time format
                     time_string=str(pd.to_datetime('now')),
                 )
                 self.outstanding_orders[outstanding_order.id] = outstanding_order
