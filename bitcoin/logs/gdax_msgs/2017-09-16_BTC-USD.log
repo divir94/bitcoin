@@ -1,0 +1,6 @@
+2017-09-16 17:14:21,446 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-09-16 17:14:21,606 - core_websocket - INFO - Turning on heartbeat
+2017-09-16 17:14:21,608 - core_websocket - INFO - Listening for messages
+2017-09-16 17:14:21,885 - gdax_msgs - INFO - ==============================
+2017-09-16 17:14:21,886 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-09-16 17:14:24,555 - gdax_msgs - INFO - ==============================

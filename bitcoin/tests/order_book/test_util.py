@@ -1,4 +1,4 @@
-from bitcoin.websocket.gdax import get_gdax_book
+from bitcoin.websocket.gdax_ws import get_gdax_book
 from bitcoin.order_book import *
 
 
