@@ -6,7 +6,7 @@ from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, sequence, bids=None, asks=None):
+    def __init__(self, bids, asks, sequence=None, timestamp=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -16,11 +16,13 @@ class OrderBook(util.BaseObject):
 
         Parameters
         ----------
-        sequence: int
         bids: SortedListWithKey[PriceLevel]
         asks: SortedListWithKey[PriceLevel]
+        sequence: int
+        timestamp: datetime
         """
         self.sequence = int(sequence)
+        self.timestamp = timestamp
         self.bids = SortedListWithKey(key=lambda x: x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
@@ -33,6 +35,7 @@ class OrderBook(util.BaseObject):
         asks = [] if asks is None else asks
         for price, size, order_id in asks:
             self.add('sell', price, size, order_id)
+        assert len(self.bids) and len(self.asks)
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -41,7 +44,7 @@ class OrderBook(util.BaseObject):
     def _get_levels_from_price(self, price):
         """get either bids or asks based on the price"""
         if not self.asks:
-            assert self.bids, 'Both bids and asks canot be empty to get levels'
+            assert self.bids, 'Both bids and asks cannot be empty to get levels'
             return self.bids
         best_ask = self.asks[0].price
         levels = self.asks if price >= best_ask else self.bids

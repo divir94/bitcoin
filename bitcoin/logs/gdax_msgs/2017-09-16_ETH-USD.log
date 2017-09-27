@@ -1,0 +1,6 @@
+2017-09-16 17:14:21,432 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-09-16 17:14:21,633 - core_websocket - INFO - Turning on heartbeat
+2017-09-16 17:14:21,634 - core_websocket - INFO - Listening for messages
+2017-09-16 17:14:21,761 - gdax_msgs - INFO - ==============================
+2017-09-16 17:14:21,761 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-09-16 17:14:25,561 - gdax_msgs - INFO - ==============================
