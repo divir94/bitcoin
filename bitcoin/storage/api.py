@@ -4,7 +4,7 @@ import bitcoin.order_book.gdax_order_book as ob
 import bitcoin.params as params
 import bitcoin.storage.util as sutil
 import bitcoin.logs.logger as lc
-
+import time
 
 logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
 

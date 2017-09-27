@@ -1,6 +1,4 @@
-from decimal import Decimal
-from dateutil import parser
-
+from cdecimal import Decimal
 import bitcoin.order_book.order_book as ob
 
 
@@ -33,7 +31,8 @@ class GdaxOrderBook(ob.OrderBook):
             assert _type == 'error'
 
         book.sequence = int(msg['sequence'])
-        book.timestamp = parser.parse(msg['time'])
+        # TODO(vidurj) cleanup the ramifications of having this be a string
+        book.timestamp_string = msg['time']
 
     def open_order(self, msg, book):
         """
@@ -95,14 +94,10 @@ class GdaxOrderBook(ob.OrderBook):
         }
         book: ob.OrderBook
         """
-        price = msg.get('price')
         order_id = msg['order_id']
-
         if order_id not in book.orders:
             return
-
-        result = book.update(order_id, 0)
-        # assert price == result[0]
+        book.update(order_id, 0)
 
     def match_order(self, msg, book):
         """
