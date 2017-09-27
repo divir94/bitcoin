@@ -5,7 +5,7 @@
 # Live order book updated from the gdax Websocket Feed
 
 from bintrees import RBTree
-from decimal import Decimal
+from cdecimal import Decimal
 import pickle
 
 from bitcoin.gdax.public_client import PublicClient

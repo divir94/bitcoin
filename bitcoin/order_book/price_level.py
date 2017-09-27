@@ -1,4 +1,4 @@
-from decimal import Decimal
+from cdecimal import Decimal
 
 import bitcoin.util as util
 

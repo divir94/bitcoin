@@ -1,4 +1,4 @@
-from decimal import Decimal
+from cdecimal import Decimal
 
 
 def order_book_data_to_set(data):
