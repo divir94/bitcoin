@@ -5,12 +5,14 @@ import bitcoin.util as util
 class GdaxOrderBook(ob.OrderBook):
     def __init__(self, sequence, bids=None, asks=None):
         super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks)
+        # dict[order id, time str]. timestamp is used in backtester to match orders
+        self.order_to_time = {}
 
     def process_message(self, msg, book=None):
         book = book or self
+        sequence = msg['sequence']
         msg = util.to_decimal(msg)
 
-        sequence = msg['sequence']
         if sequence <= book.sequence:
             return
         assert sequence == book.sequence + 1, '{} != {} + 1'.format(sequence, book.sequence)
@@ -18,9 +20,11 @@ class GdaxOrderBook(ob.OrderBook):
         _type = msg['type']
         if _type == 'open':
             self.open_order(msg, book)
+            self.order_to_time[msg['order_id']] = msg['time']
 
         elif _type == 'done':
             self.done_order(msg, book)
+            self.order_to_time.pop(msg['order_id'], None)
 
         elif _type == 'match':
             self.match_order(msg, book)
