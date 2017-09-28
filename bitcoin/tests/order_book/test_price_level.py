@@ -1,4 +1,4 @@
-from bitcoin.order_book import *
+from bitcoin.order_book.price_level import PriceLevel
 
 
 def test_price_level_add():

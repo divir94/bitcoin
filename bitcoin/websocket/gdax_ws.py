@@ -12,7 +12,6 @@ import bitcoin.util as util
 from bitcoin.websocket.core_ws import WebSocket
 
 logger = lc.config_logger('gdax_websocket')
-# logger.setLevel(logging.DEBUG)
 
 
 class GdaxOrderBook(WebSocket):
@@ -22,7 +21,7 @@ class GdaxOrderBook(WebSocket):
         channel = params.CHANNEL[self.exchange][product_id]
         super(GdaxOrderBook, self).__init__(url, channel)
 
-        self.book = ob.GdaxOrderBook(-1)
+        self.book = ob.GdaxOrderBook(sequence=-1)
         self.queue = deque()
         self.on_change = on_change
         self.gdax_client = gdax.PublicClient()
@@ -30,7 +29,7 @@ class GdaxOrderBook(WebSocket):
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
-        self.check_freq = 3600  # check every x seconds
+        self.check_freq = 10  # check every x seconds
         self.sleep_time = 2
 
     def _get_levels(self, side, book):

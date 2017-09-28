@@ -24,7 +24,7 @@ def get_new_balance(balance, order, action, fill_qty=None):
     assert action in SUPPORTED_ORDER_ACTIONS
     new_balance = balance.copy()
 
-    if action == 'placed':
+    if action == 'place':
         if order.side == 'buy':
             amount = -order.price * order.size
             currency = order.base
@@ -101,17 +101,21 @@ class BackTester(object):
                 new_orders[order.id] = order._replace(size=order.size - fill_qty)
         return new_balance, new_orders
 
-    def place_orders(self, orders):
+    @staticmethod
+    def place_orders(orders, balance, exchange):
         """
         Called to place orders. Updates balance and outstanding orders.
         """
+        new_orders = orders.copy()
+        new_balance = balance
+
         for order in orders:
             order_type = type(order).__name__
             assert order_type in SUPPORTED_ORDER_TYPES
 
             if order_type == 'LimitOrder':
-                now = pd.datetime.now().strftime(params.DATE_FORMAT[self.exchange])
-                self.balance = get_new_balance(self.balance, order, action='place')
+                now = pd.datetime.now().strftime(params.DATE_FORMAT[exchange])
+                new_balance = get_new_balance(balance, order, action='place')
                 outstanding_order = OutstandingOrder(
                     id=uuid.uuid4(),
                     side=order.side,
@@ -121,12 +125,12 @@ class BackTester(object):
                     size=order.size,
                     time_string=now,
                 )
-                self.outstanding_orders[outstanding_order.id] = outstanding_order
+                new_orders[outstanding_order.id] = outstanding_order
 
             elif order_type == 'CancelOrder':
-                self.balance = get_new_balance(self.balance, order, action='cancel')
-                del self.outstanding_orders[order.id]
-        return
+                new_balance = get_new_balance(balance, order, action='cancel')
+                del new_orders[order.id]
+        return new_balance, new_orders
 
     def run(self, strategy, start, end=None):
         book = st.get_book(self.exchange, self.product_id, timestamp=start)
@@ -134,22 +138,28 @@ class BackTester(object):
 
         for msg in msgs:
             book.process_message(msg)
+            orders, balance = self.outstanding_orders, self.balance
+
             # get and handle fills
             fills = self.get_fills(msg=msg,
-                                   orders=self.outstanding_orders,
+                                   orders=orders,
                                    book=book)
             new_balance, new_orders = self.handle_fills(fills=fills,
-                                                        orders=self.outstanding_orders,
-                                                        balance=self.balance)
-            self.balance = new_balance
-            self.outstanding_orders = new_orders
+                                                        orders=orders,
+                                                        balance=balance)
 
             # get and place new orders
             new_orders = strategy.rebalance(msg=msg,
                                             book=book,
-                                            outstanding_orders=self.outstanding_orders,
-                                            balance=self.balance)
-            self.place_orders(new_orders)
+                                            outstanding_orders=new_orders,
+                                            balance=new_balance)
+            new_balance, new_orders = self.place_orders(orders=new_orders,
+                                                        balance=new_balance,
+                                                        exchange=self.exchange)
+
+            # update
+            self.balance = new_balance
+            self.outstanding_orders = new_orders
         return book
 
 
