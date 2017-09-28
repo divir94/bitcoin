@@ -4,6 +4,7 @@ import uuid
 import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
 import bitcoin.params as params
+import bitcoin.util as util
 
 import bitcoin.backtester.strategy as strat
 import bitcoin.backtester.util as butil
@@ -65,15 +66,17 @@ class BackTester(object):
 
         # the message side field indicates the maker order side
         maker_side = msg['side']
-        match_price = float(msg['price'])
-        match_size = float(msg['size'])
-        # TODO(divir): use the time when the maker order was put on the book
-        maker_time_string = None
+        match_price = msg['price']
+        match_size = msg['size']
+        # if maker_time_string is None, it means that the maker order existed before we got a snapshot and
+        # thus we don't have a timestamp. In this case, our order was after the maker order
+        maker_time_string = book.order_to_time.get(msg['maker_order_id'])
 
         for _, order in orders.iteritems():
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
-            # match at same price if our order came before
+            # match at same price if our order came before. Note that order.time_string < None is False and implies
+            # that maker order is created before we got the snapshot
             early_at_same_price = (order.price == match_price) and (order.time_string < maker_time_string)
             # order has to be same side as maker i.e. opposite side of taker
             same_side_as_maker = (maker_side == order.side)
@@ -137,6 +140,7 @@ class BackTester(object):
         msgs = st.get_messages_by_time(self.exchange, self.product_id, start=start, end=end)
 
         for msg in msgs:
+            msg = util.to_decimal(msg)
             book.process_message(msg)
             orders, balance = self.outstanding_orders, self.balance
 

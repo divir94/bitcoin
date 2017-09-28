@@ -27,10 +27,11 @@ def get_project_root():
 def to_decimal(msg):
     result = {}
     for k, v in msg.iteritems():
-        try:
-            result[k] = Decimal(v)
-        except InvalidOperation:
-            result[k] = v
+        if v:
+            try:
+                result[k] = Decimal(v)
+            except InvalidOperation:
+                result[k] = v
     return result
 
 

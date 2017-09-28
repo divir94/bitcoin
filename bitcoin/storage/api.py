@@ -4,12 +4,12 @@ import bitcoin.order_book.gdax_order_book as ob
 import bitcoin.params as params
 import bitcoin.storage.util as sutil
 import bitcoin.logs.logger as lc
-import time
+
 
 logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
 
 
-def get_book(exchange, product_id, timestamp=None, sequence=None, live=False):
+def get_book(exchange, product_id, timestamp=None, sequence=None):
     """
     Get orderbook at a particular time or sequence number
 
@@ -21,7 +21,6 @@ def get_book(exchange, product_id, timestamp=None, sequence=None, live=False):
         None returns the latest book
     sequence: int
         None returns the latest book
-    live: bool
 
     Returns
     -------
