@@ -1,14 +1,16 @@
-import bitcoin.util as util
+from collections import namedtuple
 
-
-class Order(util.BaseObject):
-    def __init__(self, order_id, quote, base, side, price, size, time, order_type='limit', cancel=False):
-        self.id = order_id
-        self.quote = quote
-        self.base = base
-        self.side = side
-        self.price = price
-        self.size = size
-        self.time = time
-        self.type = order_type
-        self.cancel = cancel
+CancelOrder = namedtuple('CancelOrder', ['id'])
+LimitOrder = namedtuple('LimitOrder', ['price', 'size', 'side', 'base', 'quote'])
+# OutstandingOrder.time_string is assumed to come straight from the gdax api so that
+# lexicographical ordering is appropriate
+OutstandingOrder = namedtuple('OutstandingOrder',
+                              [
+                                  'id',
+                                  'quote',
+                                  'base',
+                                  'side',
+                                  'price',
+                                  'size',
+                                  'time_string'
+                              ])
