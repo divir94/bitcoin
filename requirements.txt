@@ -1,4 +1,3 @@
-cdecimal
 sortedcontainers==1.5.7
 pandas==0.20.3
 SQLAlchemy==1.1.11
@@ -8,5 +7,7 @@ boto3==1.4.4
 cufflinks==0.8.2
 requests==2.17.3
 bintrees==2.0.7
+cdecimal==2.3
 mock==2.0.0
 psutil==5.3.1
+pytz==2017.2
