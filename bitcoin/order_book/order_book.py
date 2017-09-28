@@ -1,4 +1,4 @@
-from decimal import Decimal
+from cdecimal import Decimal
 from sortedcontainers import SortedListWithKey
 
 import bitcoin.util as util
@@ -6,7 +6,7 @@ from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, bids, asks, sequence=None, timestamp=None):
+    def __init__(self, bids, asks, sequence=None, timestamp_string=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -22,7 +22,7 @@ class OrderBook(util.BaseObject):
         timestamp: datetime
         """
         self.sequence = int(sequence)
-        self.timestamp = timestamp
+        self.timestamp_string = timestamp_string
         self.bids = SortedListWithKey(key=lambda x: x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
