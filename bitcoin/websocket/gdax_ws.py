@@ -29,7 +29,7 @@ class GdaxOrderBook(WebSocket):
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
-        self.check_freq = 10  # check every x seconds
+        self.check_freq = 3600  # check every x seconds
         self.sleep_time = 2
 
     def _get_levels(self, side, book):
