@@ -1,13 +1,15 @@
-from cdecimal import Decimal
 import bitcoin.order_book.order_book as ob
+import bitcoin.util as util
 
 
 class GdaxOrderBook(ob.OrderBook):
     def __init__(self, sequence, bids=None, asks=None):
-        super(GdaxOrderBook, self).__init__(bids=bids, asks=asks, sequence=sequence)
+        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks)
 
     def process_message(self, msg, book=None):
         book = book or self
+        msg = util.to_decimal(msg)
+
         sequence = msg['sequence']
         if sequence <= book.sequence:
             return
@@ -31,10 +33,10 @@ class GdaxOrderBook(ob.OrderBook):
             assert _type == 'error'
 
         book.sequence = int(msg['sequence'])
-        # TODO(vidurj) cleanup the ramifications of having this be a string
-        book.timestamp_string = msg['time']
+        book.time_str = msg['time']
 
-    def open_order(self, msg, book):
+    @staticmethod
+    def open_order(msg, book):
         """
         The order is now open on the order book. This message will only be sent for orders which are not fully filled
         immediately. remaining_size will indicate how much of the order is unfilled and going on the book.
@@ -61,7 +63,8 @@ class GdaxOrderBook(ob.OrderBook):
         order_id = msg['order_id']
         book.add(side, price, size, order_id)
 
-    def done_order(self, msg, book):
+    @staticmethod
+    def done_order(msg, book):
         """
         The order is no longer on the order book. Sent for all orders for which there was a received message.
         This message can result from an order being canceled or filled. There will be no more messages for this
@@ -99,7 +102,8 @@ class GdaxOrderBook(ob.OrderBook):
             return
         book.update(order_id, 0)
 
-    def match_order(self, msg, book):
+    @staticmethod
+    def match_order(msg, book):
         """
         A trade occurred between two orders. The aggressor or taker order is the one executing immediately after being
         received and the maker order is a resting order on the book. The side field indicates the maker order side.
@@ -125,19 +129,20 @@ class GdaxOrderBook(ob.OrderBook):
         book: ob.OrderBook
         """
         price = msg['price']
-        trade_size = Decimal(msg['size'])
+        trade_size = msg['size']
         order_id = msg['maker_order_id']
 
         # get original order size
         old_price, old_size, order_id = book.get(order_id)
-        # assert price == old_price
-        # assert trade_size <= old_size
+        assert price == old_price
+        assert trade_size <= old_size
 
         # update order to new size
         new_size = old_size - trade_size
         book.update(order_id, new_size)
 
-    def change_order(self, msg, book):
+    @staticmethod
+    def change_order(msg, book):
         """
         An order has changed. This is the result of self-trade prevention adjusting the order size or available funds.
         Orders can only decrease in size or funds. change messages are sent anytime an order changes in size;
@@ -178,4 +183,4 @@ class GdaxOrderBook(ob.OrderBook):
             return
 
         result = book.update(order_id, new_size)
-        # assert price == result[0]
+        assert price == result[0]
