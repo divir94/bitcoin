@@ -17,6 +17,7 @@ SUPPORTED_ORDER_ACTIONS = ['fill', 'place']
 SUPPORTED_ORDER_SIDES = ['buy', 'sell']
 
 
+# TODO(divir): add 'cancel' action
 def get_new_balance(balance, order, action, fill_qty=None):
     """
     Decreases the available balance after an order is placed.
