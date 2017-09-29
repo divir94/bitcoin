@@ -106,14 +106,14 @@ class BackTester(object):
         return new_balance, new_orders
 
     @staticmethod
-    def place_orders(orders, balance, exchange):
+    def place_orders(new_orders, outstanding_orders, balance, exchange):
         """
         Called to place orders. Updates balance and outstanding orders.
         """
-        new_orders = orders.copy()
+        new_outstanding_orders = outstanding_orders.copy()
         new_balance = balance
 
-        for order in orders:
+        for order in new_orders:
             order_type = type(order).__name__
             assert order_type in SUPPORTED_ORDER_TYPES
 
@@ -129,12 +129,12 @@ class BackTester(object):
                     size=order.size,
                     time_string=now,
                 )
-                new_orders[outstanding_order.id] = outstanding_order
+                new_outstanding_orders[outstanding_order.id] = outstanding_order
 
             elif order_type == 'CancelOrder':
                 new_balance = get_new_balance(balance, order, action='cancel')
-                del new_orders[order.id]
-        return new_balance, new_orders
+                del new_outstanding_orders[order.id]
+        return new_balance, new_outstanding_orders
 
     def run(self, strategy, start, end=None):
         book = st.get_book(self.exchange, self.product_id, timestamp=start)
@@ -143,29 +143,26 @@ class BackTester(object):
         for msg in msgs:
             msg = util.to_decimal(msg)
             book.process_message(msg)
-            orders, balance = self.outstanding_orders, self.balance
+            outstanding_orders, balance = self.outstanding_orders, self.balance
 
             # get and handle fills
             fills = self.get_fills(msg=msg,
-                                   orders=orders,
+                                   orders=outstanding_orders,
                                    book=book)
-            new_balance, new_orders = self.handle_fills(fills=fills,
-                                                        orders=orders,
-                                                        balance=balance)
+            self.balance, self.outstanding_orders = self.handle_fills(fills=fills,
+                                                                      orders=outstanding_orders,
+                                                                      balance=balance)
 
             # get and place new orders
-            new_orders = strategy.rebalance(msg=msg,
-                                            book=book,
-                                            outstanding_orders=new_orders,
-                                            balance=new_balance)
-            new_balance, new_orders = self.place_orders(orders=new_orders,
-                                                        balance=new_balance,
-                                                        exchange=self.exchange)
-
-            # update
-            self.balance = new_balance
-            self.outstanding_orders = new_orders
-        return book
+            orders = strategy.rebalance(msg=msg,
+                                        book=book,
+                                        outstanding_orders=self.outstanding_orders,
+                                        balance=self.balance)
+            self.balance, self.outstanding_orders = self.place_orders(new_orders=orders,
+                                                                      outstanding_orders=self.outstanding_orders,
+                                                                      balance=self.balance,
+                                                                      exchange=self.exchange)
+        return
 
 
 if __name__ == '__main__':
@@ -175,5 +172,7 @@ if __name__ == '__main__':
     end = pd.datetime(2017, 9, 26, 4, 41)
     strategy = strat.Strategy()
 
-    back_tester = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
-    back_tester.run(strategy, start, end)
+    backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
+    backtest.run(strategy, start, end)
+    print backtest.balance
+    print backtest.outstanding_orders
