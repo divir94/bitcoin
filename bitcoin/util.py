@@ -24,13 +24,11 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_decimal(msg):
+def to_decimal(msg, numeric_fields):
     result = {}
     for k, v in msg.iteritems():
-        try:
-            result[k] = Decimal(v)
-        except InvalidOperation:
-            result[k] = v
+        if v:
+            result[k] = Decimal(v) if k in numeric_fields else v
     return result
 
 
@@ -46,8 +44,10 @@ def df_to_dict(df):
 
 
 def gdax_time_parser(time_string):
-    """Super light weight parser for gdax time strings.
-    Gdax time strings are of the form 2017-09-26T04:40:51.596000Z"""
+    """
+    Super light weight parser for gdax time strings.
+    Gdax time strings are of the form 2017-09-26T04:40:51.596000Z
+    """
     return datetime(
         year=int(time_string[:4]),
         month=int(time_string[5:7]),
