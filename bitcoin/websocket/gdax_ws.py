@@ -73,7 +73,7 @@ class GdaxOrderBook(WebSocket):
         return
 
     def on_message(self, msg):
-        msg = util.to_decimal(msg)
+        msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
         sequence = msg['sequence']
 
         if self.restart:

@@ -1,5 +1,6 @@
 import pandas as pd
 import uuid
+from collections import namedtuple
 
 import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
@@ -12,9 +13,14 @@ from bitcoin.backtester.orders import OutstandingOrder
 
 
 logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
-SUPPORTED_ORDER_TYPES = ['LimitOrder', 'CancelOrder']
-SUPPORTED_ORDER_ACTIONS = ['fill', 'place']
+
+SUPPORTED_ORDER_TYPES = ['LimitOrder', 'cancel']
+SUPPORTED_ORDER_ACTIONS = ['fill', 'place', 'cancel']
 SUPPORTED_ORDER_SIDES = ['buy', 'sell']
+
+OrderType = namedtuple('OrderType', ['LIMIT', 'CANCEL'])(*SUPPORTED_ORDER_TYPES)
+OrderAction = namedtuple('OrderAction', ['FILL', 'PLACE', 'CANCEL'])(*SUPPORTED_ORDER_ACTIONS)
+OrderSide = namedtuple('OrderSide', ['BUY', 'SELL'])(*SUPPORTED_ORDER_SIDES)
 
 
 class BackTester(object):
@@ -26,30 +32,43 @@ class BackTester(object):
         self.trades = {}
         self.book = None
 
-    # TODO(divir): add 'cancel' action
+    @staticmethod
+    def _get_place_order_balance(order):
+        if order.side == OrderSide.BUY:
+            amount = -order.price * order.size
+            currency = order.base
+        elif order.side == OrderSide.SELL:
+            amount = -order.size
+            currency = order.quote
+        else:
+            raise ValueError
+        return amount, currency
+
+    @staticmethod
+    def _get_fill_order_balance(order, fill_qty):
+        if order.side == OrderSide.BUY:
+            amount = fill_qty
+            currency = order.quote
+        elif order.side == OrderSide.SELL:
+            amount = order.price * fill_qty
+            currency = order.base
+        else:
+            raise ValueError
+        return amount, currency
+
     def update_balance(self, order, action, fill_qty=None):
         """
         Decreases the available balance after an order is placed.
         """
-        assert order.side in SUPPORTED_ORDER_SIDES
-        assert action in SUPPORTED_ORDER_ACTIONS
-
-        if action == 'place':
-            if order.side == 'buy':
-                amount = -order.price * order.size
-                currency = order.base
-            else:
-                amount = order.size
-                currency = order.quote
+        if action == OrderAction.PLACE:
+            amount, currency = self._get_place_order_balance(order)
+        elif action == OrderAction.FILL:
+            amount, currency = self._get_fill_order_balance(order, fill_qty)
+        elif action == OrderAction.CANCEL:
+            amount, currency = self._get_place_order_balance(order)
+            amount *= -1
         else:
-            # filled orders always increase balance
-            if order.side == 'buy':
-                amount = fill_qty
-                currency = order.quote
-            else:
-                amount = order.price * fill_qty
-                currency = order.base
-
+            raise ValueError
         self.balance[currency] += amount
         return
 
@@ -89,7 +108,7 @@ class BackTester(object):
         """
         for order_id, fill_qty in fills.iteritems():
             order = self.outstanding_orders[order_id]
-            self.update_balance(order=order, action='fill', fill_qty=fill_qty)
+            self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
 
             # remove if filled, otherwise update order
             if self.outstanding_orders[order.id].size == fill_qty:
@@ -106,26 +125,29 @@ class BackTester(object):
             order_type = type(order).__name__
             assert order_type in SUPPORTED_ORDER_TYPES
 
-            if order_type == 'LimitOrder':
-                self.update_balance(order=order, action='place')
+            if order_type == OrderType.LIMIT:
+                self.update_balance(order=order, action=OrderAction.PLACE)
                 now = pd.datetime.now().strftime(params.DATE_FORMAT[self.exchange])
                 outstanding_order = OutstandingOrder(id=uuid.uuid4(), side=order.side, quote=order.quote,
                                                      price=order.price, base=order.base, size=order.size,
                                                      time_string=now)
                 self.outstanding_orders[outstanding_order.id] = outstanding_order
 
-            elif order_type == 'CancelOrder':
-                self.update_balance(order=order, action='cancel')
+            elif order_type == OrderType.CANCEL:
+                self.update_balance(order=order, action=OrderAction.CANCEL)
                 del self.outstanding_orders[order.id]
+            else:
+                raise ValueError
         return
 
     def run(self, strategy, start, end=None):
+        logger.info('Backtest start')
         self.book = st.get_book(self.exchange, self.product_id, timestamp=start)
         msgs = st.get_messages_by_time(self.exchange, self.product_id, start=start, end=end)
 
         for msg in msgs:
             # update book
-            msg = util.to_decimal(msg)
+            msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
             self.book.process_message(msg)
 
             # get and handle fills
@@ -138,6 +160,8 @@ class BackTester(object):
                                         outstanding_orders=self.outstanding_orders,
                                         balance=self.balance)
             self.place_orders(orders)
+
+        logger.info('Backtest end')
         return
 
 
