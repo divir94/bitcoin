@@ -6,7 +6,7 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
 
-import bitcoin.backtester.strategy as strat
+import bitcoin.strategies.simple_strat as strat
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
@@ -154,7 +154,7 @@ class BackTester(object):
         self.book = st.get_book(self.exchange, self.product_id, timestamp=start)
         msgs = st.get_messages_by_time(self.exchange, self.product_id, start=start, end=end)
 
-        for i, msg in enumerate(msgs):
+        for msg in msgs:
             # update book
             msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
             self.book.process_message(msg)
@@ -164,12 +164,11 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            if i % 100 == 0:
-                orders = strategy.rebalance(msg=msg,
-                                            book=self.book,
-                                            outstanding_orders=self.outstanding_orders,
-                                            balance=self.balance)
-                self.place_orders(orders)
+            orders = strategy.rebalance(msg=msg,
+                                        book=self.book,
+                                        outstanding_orders=self.outstanding_orders,
+                                        balance=self.balance)
+            self.place_orders(orders)
 
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
         mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
