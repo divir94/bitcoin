@@ -12,7 +12,6 @@ import bitcoin.util as util
 from bitcoin.websocket.core_ws import WebSocket
 
 logger = lc.config_logger('gdax_websocket')
-# logger.setLevel(logging.DEBUG)
 
 
 class GdaxOrderBook(WebSocket):
@@ -22,7 +21,7 @@ class GdaxOrderBook(WebSocket):
         channel = params.CHANNEL[self.exchange][product_id]
         super(GdaxOrderBook, self).__init__(url, channel)
 
-        self.book = ob.GdaxOrderBook(-1)
+        self.book = ob.GdaxOrderBook(sequence=-1)
         self.queue = deque()
         self.on_change = on_change
         self.gdax_client = gdax.PublicClient()
@@ -74,7 +73,7 @@ class GdaxOrderBook(WebSocket):
         return
 
     def on_message(self, msg):
-        msg = util.to_decimal(msg)
+        msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
         sequence = msg['sequence']
 
         if self.restart:

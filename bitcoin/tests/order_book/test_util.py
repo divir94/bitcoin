@@ -1,9 +1,12 @@
-from bitcoin.websocket.gdax_ws import get_gdax_book
-from bitcoin.order_book import *
+import bitcoin.gdax.public_client as gdax
+from bitcoin.order_book.util import compare_books, order_book_data_to_set
+from bitcoin.order_book.order_book import OrderBook
+from bitcoin.order_book.price_level import PriceLevel
 
 
 def test_conversion_between_order_book_and_set():
-    data = get_gdax_book()
+    gdax_client = gdax.PublicClient()
+    data = gdax_client.get_product_order_book(product_id='BTC-USD', level=3)
     book = OrderBook(data['sequence'], bids=data['bids'], asks=data['asks'])
     expected = order_book_data_to_set(data)
     actual = book.to_set()

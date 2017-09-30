@@ -1,12 +1,12 @@
-from cdecimal import Decimal
 from sortedcontainers import SortedListWithKey
+from cdecimal import Decimal
 
 import bitcoin.util as util
 from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, bids, asks, sequence=None, timestamp_string=None):
+    def __init__(self, sequence, bids=None, asks=None, time_str=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -16,13 +16,13 @@ class OrderBook(util.BaseObject):
 
         Parameters
         ----------
-        bids: SortedListWithKey[PriceLevel]
-        asks: SortedListWithKey[PriceLevel]
         sequence: int
-        timestamp: datetime
+        bids: list[list]
+        asks: list[list]
+        time_str: str
         """
         self.sequence = int(sequence)
-        self.timestamp_string = timestamp_string
+        self.time_str = time_str
         self.bids = SortedListWithKey(key=lambda x: x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
@@ -35,7 +35,6 @@ class OrderBook(util.BaseObject):
         asks = [] if asks is None else asks
         for price, size, order_id in asks:
             self.add('sell', price, size, order_id)
-        assert len(self.bids) and len(self.asks)
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -75,7 +74,7 @@ class OrderBook(util.BaseObject):
         return price, size, order_id
 
     def add(self, side, price, size, order_id):
-        """add an order to an exsiting price level or create a new price level"""
+        """add an order to an existing price level or create a new price level"""
         assert order_id not in self.orders
         price = Decimal(price)
         size = Decimal(size)

@@ -1,8 +1,7 @@
 import pytest
 
-from sortedcontainers import SortedListWithKey
-
-from bitcoin.order_book import *
+from bitcoin.order_book.order_book import OrderBook
+from bitcoin.order_book.price_level import PriceLevel
 
 
 def test_order_book_add_single_order():

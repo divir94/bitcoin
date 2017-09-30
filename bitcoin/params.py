@@ -38,6 +38,11 @@ MSG_COL_NAME = {
          'old_size', 'new_funds', 'old_funds']
 }
 
+MSG_NUMERIC_FIELD = {
+    'GDAX':
+        {'price', 'size', 'funds', 'remaining_size', 'new_size', 'old_size', 'new_funds', 'old_funds'}
+}
+
 DATE_FORMAT = {
     'GDAX': '%Y-%m-%dT%H:%M:%S.%fZ'
 }
