@@ -5,7 +5,7 @@
 - Backtest a model that uses order book imbalance and other features. (*vidur*)
 
 ## Backtest GDAX-BITSTAMP strategies
-- Backtest ETH-USD arbitrage by collecting Bitstamp data and using new backtester. (*divir/vidur*)
+- Backtest ETH-BTC arbitrage by collecting Bitstamp data and using new backtester. (*divir/vidur*)
 - Backtest BTC-USD arbitrage using existing spreads data. Add realistic delays and use snapshots data to adjust
 when the book is thin at the best price. If we feel this works well, we can scale our existing strategy. (*divir*)
 
