@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-SUPPORTED_ORDER_TYPES = ['LimitOrder', 'cancel']
+SUPPORTED_ORDER_TYPES = ['LimitOrder', 'CancelOrder']
 SUPPORTED_ORDER_ACTIONS = ['fill', 'place', 'cancel']
 SUPPORTED_ORDER_SIDES = ['buy', 'sell']
 
