@@ -112,6 +112,11 @@ class OrderBook(util.BaseObject):
             del self.orders[order_id]
         return price, new_size, order_id
 
+    def get_best_bid_ask(self):
+        best_bid = self.bids[-1].price
+        best_ask = self.asks[0].price
+        return best_bid, best_ask
+
     def to_set(self):
         """set of (price, size, order_id) for all orders"""
         bids = [level.to_set() for level in self.bids]
