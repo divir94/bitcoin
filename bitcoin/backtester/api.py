@@ -11,33 +11,18 @@ import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
 
-logger = lc.config_logger('backtester', level='INFO', file_handler=False)
+logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
 
 
 class BackTester(object):
     def __init__(self, exchange, product_id, balance):
         self.exchange = exchange
         self.product_id = product_id
+        self.init_balance = butil.Balance(balance)
         self.balance = butil.Balance(balance)
         self.outstanding_orders = {}
         self.trades = pd.DataFrame()
         self.book = None
-
-    def update_balance(self, order, action, fill_qty=None):
-        """
-        Decreases the available balance after an order is placed.
-        """
-        if action == OrderAction.PLACE:
-            amount, currency = self._get_place_order_balance(order)
-        elif action == OrderAction.FILL:
-            amount, currency = self._get_fill_order_balance(order, fill_qty)
-        elif action == OrderAction.CANCEL:
-            amount, currency = self._get_place_order_balance(order)
-            amount *= -1
-        else:
-            raise ValueError
-        self.balance[currency] += amount
-        return
 
     @staticmethod
     def _get_place_order_balance(order):
@@ -100,8 +85,12 @@ class BackTester(object):
         trade.update({
             'trade_time': msg['time'],
             'sequence': msg['sequence'],
+            'best_bid': self.book.bids[-1].price,
+            'best_ask': self.book.asks[0].price,
         })
-        trade = pd.DataFrame([trade])
+
+        num_rows = self.trades.shape[0]
+        trade = pd.DataFrame([trade], index=[num_rows])
         self.trades = self.trades.append(trade)
         return
 
@@ -118,6 +107,23 @@ class BackTester(object):
                 del self.outstanding_orders[order.id]
             else:
                 self.outstanding_orders[order.id] = order._replace(size=order.size - fill_qty)
+        return
+
+    def update_balance(self, order, action, fill_qty=None):
+        """
+        Decreases the available balance after an order is placed.
+        """
+        if action == OrderAction.PLACE:
+            amount, currency = self._get_place_order_balance(order)
+        elif action == OrderAction.FILL:
+            amount, currency = self._get_fill_order_balance(order, fill_qty)
+        elif action == OrderAction.CANCEL:
+            order = self.outstanding_orders[order.id]
+            amount, currency = self._get_place_order_balance(order)
+            amount *= -1
+        else:
+            raise ValueError
+        self.balance[currency] += amount
         return
 
     def place_orders(self, orders):
@@ -144,11 +150,11 @@ class BackTester(object):
         return
 
     def run(self, strategy, start, end=None):
-        logger.info('Backtest start')
+        logger.info('Backtest start. Initial USD: {}'.format(self.balance['USD']))
         self.book = st.get_book(self.exchange, self.product_id, timestamp=start)
         msgs = st.get_messages_by_time(self.exchange, self.product_id, start=start, end=end)
 
-        for msg in msgs:
+        for i, msg in enumerate(msgs):
             # update book
             msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
             self.book.process_message(msg)
@@ -158,13 +164,18 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            orders = strategy.rebalance(msg=msg,
-                                        book=self.book,
-                                        outstanding_orders=self.outstanding_orders,
-                                        balance=self.balance)
-            self.place_orders(orders)
+            if i % 100 == 0:
+                orders = strategy.rebalance(msg=msg,
+                                            book=self.book,
+                                            outstanding_orders=self.outstanding_orders,
+                                            balance=self.balance)
+                self.place_orders(orders)
 
-        logger.info('Backtest end')
+        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
+        mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
+        coin_value = excess_coins * mid_price
+        final_usd = self.balance['USD'] + coin_value
+        logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
 
 

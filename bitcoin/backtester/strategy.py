@@ -10,23 +10,36 @@ class Strategy(util.BaseObject):
     def rebalance(msg, book, outstanding_orders, balance):
         best_bid = book.bids[-1].price
         best_ask = book.asks[0].price
-        sides = {order.side for order in outstanding_orders.values()}
+        orders = {order.side: order for order in outstanding_orders.values()}
         new_orders = []
+        tolerance = 1
+        size = 1
 
-        if OrderSide.BUY not in sides:
-            order = LimitOrder(quote='BTC',
-                               base='USD',
-                               side=OrderSide.BUY,
-                               price=best_bid,
-                               size=1)
-            new_orders.append(order)
+        side_dict = [
+            {'side': OrderSide.BUY, 'currency': 'USD', 'price': best_bid, 'amount': best_bid * size},
+            {'side': OrderSide.SELL, 'currency': 'BTC', 'price': best_ask, 'amount': size},
+        ]
 
-        if OrderSide.SELL not in sides:
-            order = LimitOrder(quote='BTC',
-                               base='USD',
-                               side=OrderSide.SELL,
-                               price=best_ask,
-                               size=1)
-            new_orders.append(order)
+        for item in side_dict:
+            side = item['side']
+            currency = item['currency']
+            price = item['price']
+            amount = item['amount']
+
+            if side in orders:
+                outstanding_order = orders[side]
+                # cancel if changed significantly
+                if abs(outstanding_order.price - best_bid) > tolerance:
+                    order = CancelOrder(outstanding_order.id)
+                    new_orders.append(order)
+            else:
+                # place a new order
+                if balance[currency] >= amount:
+                    order = LimitOrder(quote='BTC',
+                                       base='USD',
+                                       side=side,
+                                       price=price,
+                                       size=size)
+                    new_orders.append(order)
 
         return new_orders
