@@ -1,4 +1,5 @@
 import bitcoin.order_book.order_book as ob
+import bitcoin.params as params
 import bitcoin.util as util
 
 
@@ -7,11 +8,12 @@ class GdaxOrderBook(ob.OrderBook):
         super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks)
         # dict[order id, time str]. timestamp is used in backtester to match orders
         self.order_to_time = {}
+        self.exchange = 'GDAX'
 
     def process_message(self, msg, book=None):
         book = book or self
         sequence = msg['sequence']
-        msg = util.to_decimal(msg)
+        msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
 
         if sequence <= book.sequence:
             return

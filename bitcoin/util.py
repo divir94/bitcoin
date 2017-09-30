@@ -24,14 +24,11 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_decimal(msg):
+def to_decimal(msg, numeric_fields):
     result = {}
     for k, v in msg.iteritems():
         if v:
-            try:
-                result[k] = Decimal(v)
-            except InvalidOperation:
-                result[k] = v
+            result[k] = Decimal(v) if k in numeric_fields else v
     return result
 
 
