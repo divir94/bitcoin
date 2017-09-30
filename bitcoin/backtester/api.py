@@ -1,6 +1,5 @@
 import pandas as pd
 import uuid
-from collections import namedtuple
 
 import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
@@ -9,18 +8,10 @@ import bitcoin.util as util
 
 import bitcoin.backtester.strategy as strat
 import bitcoin.backtester.util as butil
-from bitcoin.backtester.orders import OutstandingOrder
+from bitcoin.backtester.orders import *
 
 
-logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
-
-SUPPORTED_ORDER_TYPES = ['LimitOrder', 'cancel']
-SUPPORTED_ORDER_ACTIONS = ['fill', 'place', 'cancel']
-SUPPORTED_ORDER_SIDES = ['buy', 'sell']
-
-OrderType = namedtuple('OrderType', ['LIMIT', 'CANCEL'])(*SUPPORTED_ORDER_TYPES)
-OrderAction = namedtuple('OrderAction', ['FILL', 'PLACE', 'CANCEL'])(*SUPPORTED_ORDER_ACTIONS)
-OrderSide = namedtuple('OrderSide', ['BUY', 'SELL'])(*SUPPORTED_ORDER_SIDES)
+logger = lc.config_logger('backtester', level='INFO', file_handler=False)
 
 
 class BackTester(object):
@@ -29,8 +20,24 @@ class BackTester(object):
         self.product_id = product_id
         self.balance = butil.Balance(balance)
         self.outstanding_orders = {}
-        self.trades = {}
+        self.trades = pd.DataFrame()
         self.book = None
+
+    def update_balance(self, order, action, fill_qty=None):
+        """
+        Decreases the available balance after an order is placed.
+        """
+        if action == OrderAction.PLACE:
+            amount, currency = self._get_place_order_balance(order)
+        elif action == OrderAction.FILL:
+            amount, currency = self._get_fill_order_balance(order, fill_qty)
+        elif action == OrderAction.CANCEL:
+            amount, currency = self._get_place_order_balance(order)
+            amount *= -1
+        else:
+            raise ValueError
+        self.balance[currency] += amount
+        return
 
     @staticmethod
     def _get_place_order_balance(order):
@@ -56,22 +63,6 @@ class BackTester(object):
             raise ValueError
         return amount, currency
 
-    def update_balance(self, order, action, fill_qty=None):
-        """
-        Decreases the available balance after an order is placed.
-        """
-        if action == OrderAction.PLACE:
-            amount, currency = self._get_place_order_balance(order)
-        elif action == OrderAction.FILL:
-            amount, currency = self._get_fill_order_balance(order, fill_qty)
-        elif action == OrderAction.CANCEL:
-            amount, currency = self._get_place_order_balance(order)
-            amount *= -1
-        else:
-            raise ValueError
-        self.balance[currency] += amount
-        return
-
     def get_fills(self, msg):
         """
         fills is dict[order id, fill qty]
@@ -87,20 +78,32 @@ class BackTester(object):
         match_size = msg['size']
         # if maker_time_string is None, it means that the maker order existed before we got a snapshot and
         # thus we don't have a timestamp. In this case, our order was after the maker order
-        maker_time_string = self.book.order_to_time.get(msg['maker_order_id'])
+        maker_time = self.book.order_to_time.get(msg['maker_order_id'])
 
         for _, order in self.outstanding_orders.iteritems():
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
             # match at same price if our order came before. Note that order.time_string < None is False and implies
             # that maker order is created before we got the snapshot
-            early_at_same_price = (order.price == match_price) and (order.time_string < maker_time_string)
+            early_at_same_price = (order.price == match_price) and (order.order_time < maker_time)
             # order has to be same side as maker i.e. opposite side of taker
             same_side_as_maker = (maker_side == order.side)
             if same_side_as_maker and (competitive_price or early_at_same_price):
                 fills[order.id] = min(match_size, order.size)
-                logger.info('Filled size {} of order: {}'.format(fills[order.id], order))
+                self._add_trade(order, msg)
+                logger.debug('Filled size {} of order: {}'.format(fills[order.id], order))
         return fills
+
+    def _add_trade(self, order, msg):
+        trade = order._asdict()
+        trade.update(self.balance)
+        trade.update({
+            'trade_time': msg['time'],
+            'sequence': msg['sequence'],
+        })
+        trade = pd.DataFrame([trade])
+        self.trades = self.trades.append(trade)
+        return
 
     def handle_fills(self, fills):
         """
@@ -130,7 +133,7 @@ class BackTester(object):
                 now = pd.datetime.now().strftime(params.DATE_FORMAT[self.exchange])
                 outstanding_order = OutstandingOrder(id=uuid.uuid4(), side=order.side, quote=order.quote,
                                                      price=order.price, base=order.base, size=order.size,
-                                                     time_string=now)
+                                                     order_time=now)
                 self.outstanding_orders[outstanding_order.id] = outstanding_order
 
             elif order_type == OrderType.CANCEL:
