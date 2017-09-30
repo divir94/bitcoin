@@ -6,7 +6,7 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
 
-import bitcoin.strategies.simple_strat as strat
+import bitcoin.strategies.rl_strat
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     product_id = 'BTC-USD'
     start = pd.datetime(2017, 9, 26, 4, 31)
     end = pd.datetime(2017, 9, 26, 4, 41)
-    strategy = strat.Strategy()
+    strategy = bitcoin.strategies.rl_strat.Strategy()
 
     backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
     backtest.run(strategy, start, end)
