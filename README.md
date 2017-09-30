@@ -16,5 +16,5 @@ This can be useful to get intuition for strategies. Implement "unprocessing" mes
 (*divir*)
 
 ## Current Bot
-- Backtest ETH-USD arbitrage by improving the PnL system to see how the strategy performed so far. (*divir*)
+- Backtest ETH-BTC arbitrage by improving the PnL system to see how the strategy performed so far. (*divir*)
 - Rewrite current bot to use web socket and have better PnL reporting. Maybe send emails everyday. (*divir/vidur*)
