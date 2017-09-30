@@ -1,13 +1,20 @@
+"""
+This strategy always has an order at the best bid and ask.
+"""
+
 import bitcoin.util as util
 from bitcoin.backtester.orders import *
 
 
 class Strategy(util.BaseObject):
     def __init__(self):
-        pass
+        self.num_msgs = -1
 
-    @staticmethod
-    def rebalance(msg, book, outstanding_orders, balance):
+    def rebalance(self, msg, book, outstanding_orders, balance):
+        self.num_msgs += 1
+        if self.num_msgs % 100 != 0:
+            return
+
         best_bid = book.bids[-1].price
         best_ask = book.asks[0].price
         orders = {order.side: order for order in outstanding_orders.values()}
