@@ -14,6 +14,8 @@ from bitcoin.backtester.orders import *
 
 logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
 
+logger = lc.config_logger('backtester', level='INFO', file_handler=False)
+
 
 class BackTester(object):
     def __init__(self, exchange, product_id, balance):
@@ -21,7 +23,7 @@ class BackTester(object):
         self.product_id = product_id
         self.init_balance = butil.Balance(balance)
         self.balance = butil.Balance(balance)
-        self.outstanding_orders = {}
+        self.outstanding_orders = {}  # dict of side to list of orders
         self.trades = pd.DataFrame()
         self.book = None
 
@@ -51,9 +53,8 @@ class BackTester(object):
 
     def get_fills(self, msg):
         """
-        fills is dict[order id, fill qty]
+        fills is dict[order, fill qty]
         """
-        assert len(self.outstanding_orders) <= 2, 'More than a single buy/sell order is not currently supported'
         fills = {}
         if not msg['type'] == 'match':
             return fills
@@ -66,7 +67,12 @@ class BackTester(object):
         # thus we don't have a timestamp. In this case, our order was after the maker order
         maker_time = self.book.order_to_time.get(msg['maker_order_id'])
 
-        for _, order in self.outstanding_orders.iteritems():
+        for side, orders in self.outstanding_orders.iteritems():
+            assert len(orders) <= 1, 'More than a single buy/sell order is not currently supported'
+            if not orders:
+                continue
+            order = orders[0]
+
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
             # match at same price if our order came before. Note that order.time_string < None is False and implies
@@ -75,9 +81,9 @@ class BackTester(object):
             # order has to be same side as maker i.e. opposite side of taker
             same_side_as_maker = (maker_side == order.side)
             if same_side_as_maker and (competitive_price or early_at_same_price):
-                fills[order.id] = min(match_size, order.size)
+                fills[order] = min(match_size, order.size)
                 self._add_trade(order, msg)
-                logger.debug('Filled size {} of order: {}'.format(fills[order.id], order))
+                logger.debug('Filled size {} of order: {}'.format(fills[order], order))
         return fills
 
     def _add_trade(self, order, msg):
@@ -99,15 +105,14 @@ class BackTester(object):
         """
         Called after orders have been filled. Updates balance and outstanding orders.
         """
-        for order_id, fill_qty in fills.iteritems():
-            order = self.outstanding_orders[order_id]
+        for order, fill_qty in fills.iteritems():
             self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
 
             # remove if filled, otherwise update order
-            if self.outstanding_orders[order.id].size == fill_qty:
-                del self.outstanding_orders[order.id]
+            if order.size == fill_qty:
+                self.outstanding_orders[order.side] = []
             else:
-                self.outstanding_orders[order.id] = order._replace(size=order.size - fill_qty)
+                self.outstanding_orders[order.side] = [order._replace(size=order.size - fill_qty)]
         return
 
     def update_balance(self, order, action, fill_qty=None):
@@ -119,13 +124,24 @@ class BackTester(object):
         elif action == OrderAction.FILL:
             amount, currency = self._get_fill_order_balance(order, fill_qty)
         elif action == OrderAction.CANCEL:
-            order = self.outstanding_orders[order.id]
-            amount, currency = self._get_place_order_balance(order)
+            original_order = self._get_order(order.id)
+            amount, currency = self._get_place_order_balance(original_order)
             amount *= -1
         else:
             raise ValueError
         self.balance[currency] += amount
         return
+
+    def _get_order(self, order_id):
+        buy_orders = self.outstanding_orders.get(OrderSide.BUY, [])
+        sell_orders = self.outstanding_orders.get(OrderSide.SELL, [])
+
+        if buy_orders and order_id == buy_orders[0].id:
+            return buy_orders[0]
+        elif sell_orders and order_id == sell_orders[0].id:
+            return sell_orders[0]
+        else:
+            raise Exception('Did not find order {}'.format(order_id))
 
     def place_orders(self, orders):
         """
@@ -141,11 +157,12 @@ class BackTester(object):
                 outstanding_order = OutstandingOrder(id=uuid.uuid4(), side=order.side, quote=order.quote,
                                                      price=order.price, base=order.base, size=order.size,
                                                      order_time=now)
-                self.outstanding_orders[outstanding_order.id] = outstanding_order
+                self.outstanding_orders[outstanding_order.side] = [outstanding_order]
 
             elif order_type == OrderType.CANCEL:
                 self.update_balance(order=order, action=OrderAction.CANCEL)
-                del self.outstanding_orders[order.id]
+                original_order = self._get_order(order.id)
+                self.outstanding_orders[original_order.side] = []
             else:
                 raise ValueError
         return
