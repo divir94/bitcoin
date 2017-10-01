@@ -1,3 +1,5 @@
+import pickle
+
 import pandas as pd
 import uuid
 
@@ -6,10 +8,9 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
 
-import bitcoin.strategies.simple_strat as strat
+import bitcoin.strategies.rl_strat
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
-
 
 logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
 
@@ -149,11 +150,9 @@ class BackTester(object):
                 raise ValueError
         return
 
-    def run(self, strategy, start, end=None):
+    def _run_with_data(self, strategy, book, msgs):
         logger.info('Backtest start. Initial USD: {}'.format(self.balance['USD']))
-        self.book = st.get_book(self.exchange, self.product_id, timestamp=start)
-        msgs = st.get_messages_by_time(self.exchange, self.product_id, start=start, end=end)
-
+        self.book = book
         for msg in msgs:
             # update book
             msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
@@ -177,15 +176,42 @@ class BackTester(object):
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
 
+    def run_with_saved_data(self, strategy, file_name):
+        with open(file_name, 'rb') as f:
+            snapshot_df, msgs = pickle.load(f)
+        book = st.get_book_from_df(snapshot_df)
+        self._run_with_data(strategy, book, msgs)
+
+    def save_data(self, start, num_msgs, file_name):
+        _, msgs, snapshot_df = self._get_data(start, num_msgs)
+        with open(file_name, 'wb') as f:
+            pickle.dump((snapshot_df, list(msgs)), f)
+
+    def _get_data(self, start, num_msgs):
+        snapshot_df = st.get_closest_snapshot(self.exchange, self.product_id, timestamp=start, sequence=None)
+        book = st.get_book_from_df(snapshot_df)
+        msgs = st.get_messages_by_sequence(self.exchange,
+                                           self.product_id,
+                                           start=book.sequence,
+                                           end=book.sequence + num_msgs)
+        return book, msgs, snapshot_df
+
+    def run(self, strategy, start, num_msgs):
+        book, msgs, _ = self._get_data(start, num_msgs)
+        self._run_with_data(strategy, book, msgs)
+
 
 if __name__ == '__main__':
-    exchange = 'GDAX'
-    product_id = 'BTC-USD'
-    start = pd.datetime(2017, 9, 26, 4, 31)
-    end = pd.datetime(2017, 9, 26, 4, 41)
-    strategy = strat.Strategy()
+    def main():
+        exchange = 'GDAX'
+        product_id = 'BTC-USD'
+        start = pd.datetime(2017, 9, 26, 4, 31)
+        end = pd.datetime(2017, 9, 26, 4, 41)
+        strategy = bitcoin.strategies.rl_strat.Strategy()
+        backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
+        # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
+        backtest.run_with_saved_data(strategy, 'test-data.pickle')
+        print backtest.balance
+        print backtest.outstanding_orders
 
-    backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
-    backtest.run(strategy, start, end)
-    print backtest.balance
-    print backtest.outstanding_orders
+    main()
