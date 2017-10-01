@@ -2,7 +2,9 @@ from collections import namedtuple
 import time
 import tensorflow as tf
 import numpy as np
+import copy
 from bitcoin.backtester.api import CancelOrder, LimitOrder, OutstandingOrder, OrderSide
+from bitcoin.order_book.price_level import PriceLevel
 
 config_named_tuple = namedtuple('Config',
                                 [
@@ -17,7 +19,7 @@ config_named_tuple = namedtuple('Config',
                                     'order_size',
                                     'min_price_change',
                                     'layer_sizes',
-                                    'feature_dim'
+                                    'num_order_book_buckets'
                                 ])
 
 btc_usd_config = config_named_tuple(
@@ -27,12 +29,12 @@ btc_usd_config = config_named_tuple(
     significant_volume=5,
     min_tick=0.01,
     max_vol=30,
-    max_vol2=50,
+    max_vol2=80,
     monitored_prices=[0.1, 1, 10],
     order_size=0.01,
     min_price_change=1,
-    layer_sizes=[50, 25, 10],
-    feature_dim=22
+    layer_sizes=[50, 20, 10],
+    num_order_book_buckets=5
 )
 
 
@@ -54,32 +56,6 @@ btc_usd_config = config_named_tuple(
 #         ]
 
 
-def compute_bucket_features(orders, side):
-    """
-    This function featurizes a limit order book by recording the order volume present between
-    0.05%, 0.1%, 0.15%, ... 0.25% of the best bid and asks respectively.
-    This gives us 10 buckets, and so 10 real values features.
-    """
-    assert side == OrderSide.BUY or side == OrderSide.SELL
-    if side == OrderSide.BUY:
-        best_price = orders[-1].price
-    else:
-        best_price = orders[0].price
-    buckets = [-1 for _ in range(10)]
-    volume = 0
-    for point in orders:
-        if side == OrderSide.BUY:
-            distance = best_price / point.price - 1
-        else:
-            distance = point.price / best_price - 1
-        volume += point.size
-        bucket_index = int(distance * 10000) / 5
-        if bucket_index < len(buckets):
-            buckets[bucket_index] = volume
-        else:
-            break
-    return buckets
-
 
 def get_volume_behind(side, cumulative_vol, index, x):
     new_index = side.bisect_left(x)
@@ -95,22 +71,26 @@ class Decisions(object):
     def __init__(self):
         self.orders = []
 
-    def limit_order(self, price, size, side):
+    def limit_order(self, price, size, side, base, quote):
         assert side == OrderSide.BUY or side == OrderSide.SELL
-        self.orders.append(LimitOrder(price, size, side))
+        self.orders.append(LimitOrder(side=side,
+                                      quote=quote,
+                                      base=base,
+                                      price=price,
+                                      size=size))
 
     def cancel_order(self, order):
         self.orders.append(CancelOrder(order.id))
 
-    # def cancel_all(self, outstanding_orders, side=None):
-    #     if side == OrderSide.BUY:
-    #         cancellations = [CancelOrder(order.id) for order in outstanding_orders if side == OrderSide.BUY]
-    #     elif side == OrderSide.SELL:
-    #         cancellations = [CancelOrder(order.id) for order in outstanding_orders if side == OrderSide.SELL]
-    #     else:
-    #         assert side is None
-    #         cancellations = [CancelOrder(order.id) for order in outstanding_orders]
-    #     self.orders.extend(cancellations)
+        # def cancel_all(self, outstanding_orders, side=None):
+        #     if side == OrderSide.BUY:
+        #         cancellations = [CancelOrder(order.id) for order in outstanding_orders if side == OrderSide.BUY]
+        #     elif side == OrderSide.SELL:
+        #         cancellations = [CancelOrder(order.id) for order in outstanding_orders if side == OrderSide.SELL]
+        #     else:
+        #         assert side is None
+        #         cancellations = [CancelOrder(order.id) for order in outstanding_orders]
+        #     self.orders.extend(cancellations)
 
 
 class Strategy(object):
@@ -120,15 +100,49 @@ class Strategy(object):
         self.order_features, self.estimated_profit = self._create_embedding()
         self.side_to_currency = {OrderSide.BUY: self.config.quote, OrderSide.SELL: self.config.base}
         self.sess = tf.Session()
+        self.sess.run(tf.global_variables_initializer())
 
     def _scorer(self, features):
-        pass
+        features = [[float(x) for x in features]]
+        print(features)
+        temp = self.sess.run(self.estimated_profit,
+                             feed_dict={self.order_features: features})
+        print(temp)
+        return temp[0][0]
+
+    def _compute_bucket_features(self, orders, side):
+        """
+        This function featurizes a limit order book by recording the order volume present between
+        0.05%, 0.1%, 0.15%, ... 0.25% of the best bid and asks respectively.
+        This gives us 10 buckets, and so 10 real values features.
+        """
+        assert side == OrderSide.BUY or side == OrderSide.SELL
+        if side == OrderSide.BUY:
+            best_price = orders[-1].price
+        else:
+            best_price = orders[0].price
+        buckets = [-1 for _ in range(self.config.num_order_book_buckets)]
+        volume = 0
+        for point in orders:
+            if side == OrderSide.BUY:
+                distance = best_price / point.price - 1
+            else:
+                distance = point.price / best_price - 1
+            volume += point.size
+            bucket_index = int(distance * 10000) / 5
+            if bucket_index < len(buckets):
+                buckets[bucket_index] = volume
+            else:
+                break
+        return buckets
 
     def _create_embedding(self):
-        features = tf.placeholder('float', [None, self.config.feature_dim])
-        with_log_features = tf.concat([features, tf.log(features)], 1)
-        input_dim = 2 * self.config.feature_dim
-        input_vec = with_log_features
+        feature_dim = 2 * self.config.num_order_book_buckets + 1 + len(self.config.monitored_prices) + 1
+        features = tf.placeholder('float', [None, feature_dim])
+        # TODO(vidurj) figure out log features with negative and 0 vals
+        # with_log_features = tf.concat([features, tf.log(features)], 1)
+        input_dim = feature_dim
+        input_vec = features
         for layer_n, output_dim in enumerate(self.config.layer_sizes):
             w = tf.Variable(tf.random_normal([input_dim, output_dim]), name='w_' + str(layer_n))
             b = tf.Variable(tf.zeros([output_dim]), name='b_' + str(layer_n))
@@ -136,35 +150,42 @@ class Strategy(object):
             input_dim = output_dim
         w = tf.Variable(tf.random_normal([input_dim, 1]), name='w_final')
         b = tf.Variable(tf.zeros([1]), name='b_final')
-        prediction = tf.matmul(w, input_vec) + b
+        prediction = tf.matmul(input_vec, w) + b
         return features, prediction
 
     def _pick_best_order(self, orders, best_opp_side, side, common_features):
         assert side == OrderSide.BUY or side == OrderSide.SELL
         cumulative_volume_bids = self._book_to_cumulative_volume(orders)
         num_order_specific_features = 1 + len(self.config.monitored_prices)
-        order_features = [None for _ in range(num_order_specific_features)] + common_features + [side == OrderSide.BUY]
+        print(common_features)
+        order_features = [-1 for _ in range(num_order_specific_features)] + common_features + \
+                         [float(side == OrderSide.BUY)]
         best_price = None
         best_score = - 1
         for vol, level in zip(cumulative_volume_bids, orders):
             if vol > self.config.max_vol:
                 break
             if side == OrderSide.BUY:
-                price = level.price + self.config.min_tick
+                price = float(level.price) + self.config.min_tick
             else:
-                price = level.price - self.config.min_tick
+                price = float(level.price) - self.config.min_tick
             if price == best_opp_side:
                 continue
             order_features[0] = vol
             index = 1
             for price_delta in self.config.monitored_prices:
                 if side == OrderSide.BUY:
-                    new_index = orders.bisect_left(price - price_delta)
+                    dummy = PriceLevel(price - price_delta, {})
+                    new_index = orders.bisect_left(dummy)
                 else:
-                    new_index = orders.bisect_left(price + price_delta)
-                volume = cumulative_volume_bids[new_index] - vol
-                order_features[index] = volume
-                index += 1
+                    dummy = PriceLevel(price + price_delta, {})
+                    new_index = orders.bisect_left(dummy)
+                if new_index < len(cumulative_volume_bids):
+                    volume = cumulative_volume_bids[new_index] - vol
+                    order_features[index] = volume
+                    index += 1
+                else:
+                    break
             score = self._scorer(order_features)
             if score > 1 and score > best_score:
                 best_score = score
@@ -179,17 +200,17 @@ class Strategy(object):
             return decisions.orders
         # TODO(vidurj) it would be good to have this 'bids' 'asks' indicator be part of the side of the
         # order book
-        order_book_features = compute_bucket_features(book.bids, OrderSide.BUY) + \
-                              compute_bucket_features(book.asks, OrderSide.SELL)
+        order_book_features = self._compute_bucket_features(book.bids, OrderSide.BUY) + \
+                              self._compute_bucket_features(book.asks, OrderSide.SELL)
         bid_price = self._pick_best_order(book.bids, book.asks[0].price, OrderSide.BUY, order_book_features)
-        self._update_orders(OrderSide.BUY, bid_price, outstanding_orders.values(), decisions, balance)
-        ask_price = self._pick_best_order(book.asks, book.bids[0].price, OrderSide.SELL, order_book_features)
-        self._update_orders(OrderSide.SELL, ask_price, outstanding_orders.values(), decisions, balance)
+        self._update_orders(OrderSide.BUY, bid_price, outstanding_orders, decisions, balance)
+        ask_price = self._pick_best_order(book.asks, book.bids[-1].price, OrderSide.SELL, order_book_features)
+        self._update_orders(OrderSide.SELL, ask_price, outstanding_orders, decisions, balance)
         return decisions.orders
 
     def _update_orders(self, side, new_price, outstanding_orders, decisions, balance):
         assert side == OrderSide.BUY or side == OrderSide.SELL
-        relevant_orders = [order.side == side for order in outstanding_orders]
+        relevant_orders = outstanding_orders.get(side, [])
         if len(relevant_orders) > 0:
             assert len(relevant_orders) == 1
             relevant_order = relevant_orders[0]
@@ -197,9 +218,17 @@ class Strategy(object):
                     (relevant_order.filled_size > 0):
                 decisions.cancel_order(relevant_order)
                 if new_price:
-                    decisions.limit_order(price=new_price, size=self.config.order_size, side=side)
+                    decisions.limit_order(price=new_price,
+                                          size=self.config.order_size,
+                                          side=side,
+                                          base=self.config.base,
+                                          quote=self.config.quote)
         elif new_price and balance[self.side_to_currency[side]] >= self.config.order_size:
-            decisions.limit_order(price=new_price, size=self.config.order_size, side=side)
+            decisions.limit_order(price=new_price,
+                                  size=self.config.order_size,
+                                  side=side,
+                                  base=self.config.base,
+                                  quote=self.config.quote)
         return decisions
 
     def _book_to_cumulative_volume(self, side):
