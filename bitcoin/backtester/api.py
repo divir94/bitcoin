@@ -1,6 +1,5 @@
-import pickle
-
 import pandas as pd
+import pickle
 import uuid
 
 import bitcoin.storage.api as st
@@ -8,13 +7,12 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
 
-import bitcoin.strategies.rl_strat
+import bitcoin.strategies.rl
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
-logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
 
-logger = lc.config_logger('backtester', level='INFO', file_handler=False)
+logger = lc.config_logger('backtester', level='DEBUG', file_handler=False)
 
 
 class BackTester(object):
@@ -218,17 +216,18 @@ class BackTester(object):
         self._run_with_data(strategy, book, msgs)
 
 
-if __name__ == '__main__':
-    def main():
-        exchange = 'GDAX'
-        product_id = 'BTC-USD'
-        start = pd.datetime(2017, 9, 26, 4, 31)
-        end = pd.datetime(2017, 9, 26, 4, 41)
-        strategy = bitcoin.strategies.rl_strat.Strategy()
-        backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
-        # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
-        backtest.run_with_saved_data(strategy, 'test-data.pickle')
-        print backtest.balance
-        print backtest.outstanding_orders
+def main():
+    exchange = 'GDAX'
+    product_id = 'BTC-USD'
+    start = pd.datetime(2017, 9, 26, 4, 31)
+    end = pd.datetime(2017, 9, 26, 4, 41)
+    strategy = bitcoin.strategies.rl.Strategy()
+    backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
+    # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
+    backtest.run_with_saved_data(strategy, 'test-data.pickle')
+    print backtest.balance
+    print backtest.outstanding_orders
 
+
+if __name__ == '__main__':
     main()
