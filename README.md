@@ -10,10 +10,12 @@
 when the book is thin at the best price. If we feel this works well, we can scale our existing strategy. (*divir*)
 
 ## Backtester improvements
+- Add tests! (*divir*)
 - Make backtester faster so we can run through a week's data in 10 min. (*vidur*)
 - Create a tool to visualize order book and have "previous" and "next" buttons to simulate running the order book.
 This can be useful to get intuition for strategies. Implement "unprocessing" messages to use the "previous" feature.
 (*divir*)
+- Change order book bids to descending order
 
 ## Current Bot
 - Backtest ETH-BTC arbitrage by improving the PnL system to see how the strategy performed so far. (*divir*)
