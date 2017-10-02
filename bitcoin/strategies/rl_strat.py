@@ -28,7 +28,7 @@ btc_usd_config = config_named_tuple(
     quote='USD',
     significant_volume=5,
     min_tick=0.01,
-    max_vol=30,
+    max_vol=10,
     max_vol2=80,
     monitored_prices=[0.1, 1, 10],
     order_size=0.01,
@@ -104,10 +104,8 @@ class Strategy(object):
 
     def _scorer(self, features):
         features = [[float(x) for x in features]]
-        # print(features)
         temp = self.sess.run(self.estimated_profit,
                              feed_dict={self.order_features: features})
-        # print(temp)
         return temp[0][0]
 
     def _compute_bucket_features(self, orders, side):
@@ -163,7 +161,6 @@ class Strategy(object):
             orders = book.asks
         cumulative_volume_bids = self._book_to_cumulative_volume(orders)
         num_order_specific_features = 1 + len(self.config.monitored_prices)
-        # print(common_features)
         order_features = [-1 for _ in range(num_order_specific_features)] + common_features + \
                          [float(side == OrderSide.BUY)]
         best_price = None
@@ -196,7 +193,6 @@ class Strategy(object):
             if best_score is None or score > best_score:
                 best_score = score
                 best_price = price
-        assert best_price is not None
         return best_price
 
     def rebalance(self, msg, book, balance, outstanding_orders):
@@ -218,9 +214,11 @@ class Strategy(object):
     def _update_orders(self, side, new_price, outstanding_orders, decisions, balance):
         assert side == OrderSide.BUY or side == OrderSide.SELL
         relevant_orders = [order for order in outstanding_orders if order.side == side]
-        print(new_price, side, balance)
-        if len(relevant_orders) > 0:
-            assert len(relevant_orders) == 1
+        assert len(relevant_orders) <= 1
+        if new_price is None:
+            for order in relevant_orders:
+                decisions.cancel_order(order)
+        elif len(relevant_orders) == 1:
             relevant_order = relevant_orders[0]
             if (abs(relevant_order.price - new_price) > self.config.min_price_change) or \
                     (relevant_order.size < self.config.order_size):

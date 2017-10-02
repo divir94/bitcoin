@@ -7,7 +7,6 @@ import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
-
 import bitcoin.strategies.rl_strat
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
@@ -29,10 +28,10 @@ class BackTester(object):
     def _get_place_order_balance(order):
         if order.side == OrderSide.BUY:
             amount = -order.price * order.size
-            currency = order.base
+            currency = order.quote
         elif order.side == OrderSide.SELL:
             amount = -order.size
-            currency = order.quote
+            currency = order.base
         else:
             raise ValueError
         return amount, currency
@@ -168,9 +167,10 @@ class BackTester(object):
                                         book=self.book,
                                         outstanding_orders=self.outstanding_orders,
                                         balance=self.balance)
-            print(instructions)
             self.place_orders(instructions)
 
+        cancel_all = [CancelOrder(order.id) for order in self.outstanding_orders]
+        self.place_orders(cancel_all)
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
         mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
         coin_value = excess_coins * mid_price
@@ -210,10 +210,8 @@ if __name__ == '__main__':
         start = pd.datetime(2017, 9, 26, 4, 31)
         end = pd.datetime(2017, 9, 26, 4, 41)
         strategy = bitcoin.strategies.rl_strat.Strategy()
-        backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
+        backtest = BackTester(exchange, product_id, {'USD': 10000, 'BTC': 0})
         # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
         backtest.run_with_saved_data(strategy, 'test-data.pickle')
-        print backtest.balance
-        print backtest.outstanding_orders
 
     main()
