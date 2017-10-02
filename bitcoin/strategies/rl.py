@@ -206,14 +206,14 @@ class Strategy(object):
         order_book_features = self._compute_bucket_features(book.bids, OrderSide.BUY) + \
                               self._compute_bucket_features(book.asks, OrderSide.SELL)
         bid_price = self._pick_best_order(book, book.asks[0].price, OrderSide.BUY, order_book_features)
-        self._update_orders(OrderSide.BUY, bid_price, outstanding_orders.values(), decisions, balance)
+        self._update_orders(OrderSide.BUY, bid_price, outstanding_orders, decisions, balance)
         ask_price = self._pick_best_order(book, book.bids[0].price, OrderSide.SELL, order_book_features)
-        self._update_orders(OrderSide.SELL, ask_price, outstanding_orders.values(), decisions, balance)
+        self._update_orders(OrderSide.SELL, ask_price, outstanding_orders, decisions, balance)
         return decisions.orders
 
     def _update_orders(self, side, new_price, outstanding_orders, decisions, balance):
         assert side == OrderSide.BUY or side == OrderSide.SELL
-        relevant_orders = [order for order in outstanding_orders if order.side == side]
+        relevant_orders = outstanding_orders.get(side, [])
         assert len(relevant_orders) <= 1
         if new_price is None:
             for order in relevant_orders:
