@@ -40,10 +40,10 @@ class BackTester(object):
     def _get_fill_order_balance(order, fill_qty):
         if order.side == OrderSide.BUY:
             amount = fill_qty
-            currency = order.quote
+            currency = order.base
         elif order.side == OrderSide.SELL:
             amount = order.price * fill_qty
-            currency = order.base
+            currency = order.quote
         else:
             raise ValueError
         return amount, currency
@@ -101,8 +101,9 @@ class BackTester(object):
         """
         for order_id, fill_qty in fills.iteritems():
             order = self.outstanding_orders[order_id]
+            print(order, fill_qty)
             self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
-
+            print(self.balance)
             # remove if filled, otherwise update order
             if self.outstanding_orders[order.id].size == fill_qty:
                 del self.outstanding_orders[order.id]
@@ -169,12 +170,13 @@ class BackTester(object):
                                         balance=self.balance)
             self.place_orders(instructions)
 
-        cancel_all = [CancelOrder(order.id) for order in self.outstanding_orders]
+        cancel_all = [CancelOrder(id) for id in self.outstanding_orders]
         self.place_orders(cancel_all)
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
         mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
         coin_value = excess_coins * mid_price
         final_usd = self.balance['USD'] + coin_value
+        print(self.balance)
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
 
