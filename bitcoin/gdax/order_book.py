@@ -5,7 +5,6 @@
 # Live order book updated from the gdax Websocket Feed
 
 from bintrees import RBTree
-from cdecimal import Decimal
 import pickle
 
 from bitcoin.gdax.public_client import PublicClient
@@ -43,15 +42,15 @@ class OrderBook(WebsocketClient):
                 self.add({
                     'id': bid[2],
                     'side': 'buy',
-                    'price': Decimal(bid[0]),
-                    'size': Decimal(bid[1])
+                    'price': bid[0],
+                    'size': bid[1]
                 })
             for ask in res['asks']:
                 self.add({
                     'id': ask[2],
                     'side': 'sell',
-                    'price': Decimal(ask[0]),
-                    'size': Decimal(ask[1])
+                    'price': ask[0],
+                    'size': ask[1]
                 })
             self._sequence = res['sequence']
 
@@ -98,8 +97,8 @@ class OrderBook(WebsocketClient):
         order = {
             'id': order.get('order_id') or order['id'],
             'side': order['side'],
-            'price': Decimal(order['price']),
-            'size': Decimal(order.get('size') or order['remaining_size'])
+            'price': order['price'],
+            'size': order.get('size') or order['remaining_size']
         }
         if order['side'] == 'buy':
             bids = self.get_bids(order['price'])
@@ -117,7 +116,7 @@ class OrderBook(WebsocketClient):
             self.set_asks(order['price'], asks)
 
     def remove(self, order):
-        price = Decimal(order['price'])
+        price = order['price']
         if order['side'] == 'buy':
             bids = self.get_bids(price)
             if bids is not None:
@@ -138,8 +137,8 @@ class OrderBook(WebsocketClient):
                     self.remove_asks(price)
 
     def match(self, order):
-        size = Decimal(order['size'])
-        price = Decimal(order['price'])
+        size = order['size']
+        price = order['price']
 
         if order['side'] == 'buy':
             bids = self.get_bids(price)
@@ -164,11 +163,11 @@ class OrderBook(WebsocketClient):
 
     def change(self, order):
         try:
-            new_size = Decimal(order['new_size'])
+            new_size = order['new_size']
         except KeyError:
             return
 
-        price = Decimal(order['price'])
+        price = order['price']
 
         if order['side'] == 'buy':
             bids = self.get_bids(price)

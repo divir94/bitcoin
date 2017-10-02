@@ -2,7 +2,6 @@ import pprint
 import os
 import sys
 import logging
-from cdecimal import Decimal, InvalidOperation
 from datetime import datetime
 import pytz
 
@@ -28,7 +27,7 @@ def to_decimal(msg, numeric_fields):
     result = {}
     for k, v in msg.iteritems():
         if v:
-            result[k] = Decimal(v) if k in numeric_fields else v
+            result[k] = float(v) if k in numeric_fields else v
     return result
 
 

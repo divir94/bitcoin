@@ -1,6 +1,4 @@
 from sortedcontainers import SortedListWithKey
-from cdecimal import Decimal
-
 import bitcoin.util as util
 from price_level import PriceLevel
 
@@ -30,13 +28,11 @@ class OrderBook(util.BaseObject):
         # initialize bids and asks
         bids = [] if bids is None else bids
         for price, size, order_id in bids:
-            self.add('buy', price, size, order_id)
+            self.add('buy', float(price), float(size), order_id)
 
         asks = [] if asks is None else asks
         for price, size, order_id in asks:
-            self.add('sell', price, size, order_id)
-
-        print([x.price for x in self.asks])
+            self.add('sell', float(price), float(size), order_id)
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -63,10 +59,6 @@ class OrderBook(util.BaseObject):
         price = self.orders[order_id]
         levels = self._get_levels_from_price(price)
         idx = self._get_levels_idx(price, levels)
-        print("*" * 40)
-        print(price)
-        print(price in set([x.price for x in levels]))
-        print("-" * 40)
         assert idx is not None
         level = levels[idx]
         assert order_id in level.orders
@@ -83,14 +75,14 @@ class OrderBook(util.BaseObject):
     def add(self, side, price, size, order_id):
         """add an order to an existing price level or create a new price level"""
         assert order_id not in self.orders
-        price = Decimal(price)
-        size = Decimal(size)
 
         # get index
         levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
         if idx is None:
-            assert not any([x.price == price for x in levels]), "{} {}".format(price, [x.price for x in levels])
+            # TODO(vidurj) This assert is to expensive to have, but would make a great test. We can create an order
+            # book from a df, and assert this as the test
+            # assert not any([x.price == price for x in levels]), "{} {}".format(price, [x.price for x in levels])
             # new price level
             level = PriceLevel(price, orders={order_id: size})
             # TODO(vidurj) there should be some way to make this more efficient since we are already computing the
@@ -106,7 +98,6 @@ class OrderBook(util.BaseObject):
     def update(self, order_id, new_size):
         """update or remove an order from a price level"""
         assert order_id in self.orders
-        new_size = Decimal(new_size)
 
         level = self._get_level(order_id)
         level.update(order_id, new_size)
