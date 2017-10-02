@@ -23,7 +23,7 @@ class OrderBook(util.BaseObject):
         """
         self.sequence = int(sequence)
         self.time_str = time_str
-        self.bids = SortedListWithKey(key=lambda x: x.price)
+        self.bids = SortedListWithKey(key=lambda x: -x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
 
@@ -35,6 +35,8 @@ class OrderBook(util.BaseObject):
         asks = [] if asks is None else asks
         for price, size, order_id in asks:
             self.add('sell', price, size, order_id)
+
+        print([x.price for x in self.asks])
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -50,17 +52,22 @@ class OrderBook(util.BaseObject):
         return levels
 
     def _get_levels_idx(self, price, levels):
-        """gets the index of price in levels or -1"""
-        idx = levels.bisect_key_left(price)
+        """gets the index of price in levels or None"""
+        dummy_price_level = PriceLevel(price, {})
+        idx = levels.bisect_left(dummy_price_level)
         price_seen = idx < len(levels) and price == levels[idx].price
-        return idx if price_seen else -1
+        return idx if price_seen else None
 
     def _get_level(self, order_id):
         """get PriceLevel from the order_id"""
         price = self.orders[order_id]
         levels = self._get_levels_from_price(price)
         idx = self._get_levels_idx(price, levels)
-        assert idx != -1
+        print("*" * 40)
+        print(price)
+        print(price in set([x.price for x in levels]))
+        print("-" * 40)
+        assert idx is not None
         level = levels[idx]
         assert order_id in level.orders
         return level
@@ -82,9 +89,12 @@ class OrderBook(util.BaseObject):
         # get index
         levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
-        if idx == -1:
+        if idx is None:
+            assert not any([x.price == price for x in levels]), "{} {}".format(price, [x.price for x in levels])
             # new price level
             level = PriceLevel(price, orders={order_id: size})
+            # TODO(vidurj) there should be some way to make this more efficient since we are already computing the
+            # location to place this element
             levels.add(level)  # this is SortedListWithKey.add
         else:
             # add to existing price level

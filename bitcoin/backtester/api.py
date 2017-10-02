@@ -53,7 +53,8 @@ class BackTester(object):
         """
         fills is dict[order id, fill qty]
         """
-        assert len(self.outstanding_orders) <= 2, 'More than a single buy/sell order is not currently supported'
+        assert len(self.outstanding_orders) <= 2, \
+            'More than a single buy/sell order is not currently supported {}'.format(self.outstanding_orders)
         fills = {}
         if not msg['type'] == 'match':
             return fills
@@ -163,11 +164,12 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            orders = strategy.rebalance(msg=msg,
+            instructions = strategy.rebalance(msg=msg,
                                         book=self.book,
                                         outstanding_orders=self.outstanding_orders,
                                         balance=self.balance)
-            self.place_orders(orders)
+            print(instructions)
+            self.place_orders(instructions)
 
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
         mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
