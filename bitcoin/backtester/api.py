@@ -184,12 +184,17 @@ class BackTester(object):
                                         balance=self.balance)
             self.place_orders(orders)
 
-        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
-        mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
-        coin_value = excess_coins * mid_price
-        final_usd = self.balance['USD'] + coin_value
+        final_usd = self._liquidate_positions()
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
+
+    def _liquidate_positions(self):
+        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
+        best_bid, best_ask = self.book.get_bid_ask_prices()
+        mid_price = (best_bid + best_ask) / 2
+        coin_value = excess_coins * mid_price
+        final_usd = self.balance['USD'] + coin_value
+        return final_usd
 
     def run_with_saved_data(self, strategy, file_name):
         with open(file_name, 'rb') as f:
@@ -223,7 +228,7 @@ def main():
     end = pd.datetime(2017, 9, 26, 4, 41)
     strategy = bitcoin.strategies.rl.Strategy()
     backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
-    # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
+    # backtest.save_data(start=start, num_msgs=10000, file_name='data/test-data.pickle')
     backtest.run_with_saved_data(strategy, 'test-data.pickle')
     print backtest.balance
     print backtest.outstanding_orders
