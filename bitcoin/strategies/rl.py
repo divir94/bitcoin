@@ -28,7 +28,7 @@ btc_usd_config = config_named_tuple(
     quote='USD',
     significant_volume=5,
     min_tick=0.01,
-    max_vol=30,
+    max_vol=10,
     max_vol2=80,
     monitored_prices=[0.1, 1, 10],
     order_size=0.01,
@@ -104,10 +104,8 @@ class Strategy(object):
 
     def _scorer(self, features):
         features = [[float(x) for x in features]]
-        print(features)
         temp = self.sess.run(self.estimated_profit,
                              feed_dict={self.order_features: features})
-        print(temp)
         return temp[0][0]
 
     def _compute_bucket_features(self, orders, side):
@@ -117,10 +115,7 @@ class Strategy(object):
         This gives us 10 buckets, and so 10 real values features.
         """
         assert side == OrderSide.BUY or side == OrderSide.SELL
-        if side == OrderSide.BUY:
-            best_price = orders[-1].price
-        else:
-            best_price = orders[0].price
+        best_price = orders[0].price
         buckets = [-1 for _ in range(self.config.num_order_book_buckets)]
         volume = 0
         for point in orders:
@@ -132,6 +127,11 @@ class Strategy(object):
             bucket_index = int(distance * 10000) / 5
             if bucket_index < len(buckets):
                 buckets[bucket_index] = volume
+                for i in range(1, bucket_index + 1):
+                    if buckets[bucket_index - i] == -1:
+                        buckets[bucket_index - i] = volume
+                    else:
+                        break
             else:
                 break
         return buckets
@@ -153,15 +153,18 @@ class Strategy(object):
         prediction = tf.matmul(input_vec, w) + b
         return features, prediction
 
-    def _pick_best_order(self, orders, best_opp_side, side, common_features):
+    def _pick_best_order(self, book, best_opp_side, side, common_features):
         assert side == OrderSide.BUY or side == OrderSide.SELL
+        if side == OrderSide.BUY:
+            orders = book.bids
+        else:
+            orders = book.asks
         cumulative_volume_bids = self._book_to_cumulative_volume(orders)
         num_order_specific_features = 1 + len(self.config.monitored_prices)
-        print(common_features)
         order_features = [-1 for _ in range(num_order_specific_features)] + common_features + \
                          [float(side == OrderSide.BUY)]
         best_price = None
-        best_score = - 1
+        best_score = None
         for vol, level in zip(cumulative_volume_bids, orders):
             if vol > self.config.max_vol:
                 break
@@ -187,7 +190,7 @@ class Strategy(object):
                 else:
                     break
             score = self._scorer(order_features)
-            if score > 1 and score > best_score:
+            if best_score is None or score > best_score:
                 best_score = score
                 best_price = price
         return best_price
@@ -202,28 +205,31 @@ class Strategy(object):
         # order book
         order_book_features = self._compute_bucket_features(book.bids, OrderSide.BUY) + \
                               self._compute_bucket_features(book.asks, OrderSide.SELL)
-        bid_price = self._pick_best_order(book.bids, book.asks[0].price, OrderSide.BUY, order_book_features)
+        bid_price = self._pick_best_order(book, book.asks[0].price, OrderSide.BUY, order_book_features)
         self._update_orders(OrderSide.BUY, bid_price, outstanding_orders, decisions, balance)
-        ask_price = self._pick_best_order(book.asks, book.bids[-1].price, OrderSide.SELL, order_book_features)
+        ask_price = self._pick_best_order(book, book.bids[0].price, OrderSide.SELL, order_book_features)
         self._update_orders(OrderSide.SELL, ask_price, outstanding_orders, decisions, balance)
         return decisions.orders
 
     def _update_orders(self, side, new_price, outstanding_orders, decisions, balance):
         assert side == OrderSide.BUY or side == OrderSide.SELL
         relevant_orders = outstanding_orders.get(side, [])
-        if len(relevant_orders) > 0:
-            assert len(relevant_orders) == 1
+        assert len(relevant_orders) <= 1
+        if new_price is None:
+            for order in relevant_orders:
+                decisions.cancel_order(order)
+        elif len(relevant_orders) == 1:
             relevant_order = relevant_orders[0]
             if (abs(relevant_order.price - new_price) > self.config.min_price_change) or \
-                    (relevant_order.filled_size > 0):
+                    (relevant_order.size < self.config.order_size):
                 decisions.cancel_order(relevant_order)
-                if new_price:
+                if balance[self.side_to_currency[side]] >= self.config.order_size:
                     decisions.limit_order(price=new_price,
                                           size=self.config.order_size,
                                           side=side,
                                           base=self.config.base,
                                           quote=self.config.quote)
-        elif new_price and balance[self.side_to_currency[side]] >= self.config.order_size:
+        elif balance[self.side_to_currency[side]] >= self.config.order_size:
             decisions.limit_order(price=new_price,
                                   size=self.config.order_size,
                                   side=side,
