@@ -25,14 +25,18 @@ class BackTester(object):
         self.trades = pd.DataFrame()
         self.book = None
 
+    @property
+    def all_outstanding_orders(self):
+        return self.outstanding_orders.get(OrderSide.BUY, []) + self.outstanding_orders.get(OrderSide.SELL, [])
+
     @staticmethod
     def _get_place_order_balance(order):
         if order.side == OrderSide.BUY:
             amount = -order.price * order.size
-            currency = order.base
+            currency = order.quote
         elif order.side == OrderSide.SELL:
             amount = -order.size
-            currency = order.quote
+            currency = order.base
         else:
             raise ValueError
         return amount, currency
@@ -41,10 +45,10 @@ class BackTester(object):
     def _get_fill_order_balance(order, fill_qty):
         if order.side == OrderSide.BUY:
             amount = fill_qty
-            currency = order.quote
+            currency = order.base
         elif order.side == OrderSide.SELL:
             amount = order.price * fill_qty
-            currency = order.base
+            currency = order.quote
         else:
             raise ValueError
         return amount, currency
@@ -131,15 +135,10 @@ class BackTester(object):
         return
 
     def _get_order(self, order_id):
-        buy_orders = self.outstanding_orders.get(OrderSide.BUY, [])
-        sell_orders = self.outstanding_orders.get(OrderSide.SELL, [])
-
-        if buy_orders and order_id == buy_orders[0].id:
-            return buy_orders[0]
-        elif sell_orders and order_id == sell_orders[0].id:
-            return sell_orders[0]
-        else:
-            raise Exception('Did not find order {}'.format(order_id))
+        for order in self.all_outstanding_orders:
+            if order.id == order_id:
+                return order
+        raise Exception('Did not find order {}'.format(order_id))
 
     def place_orders(self, orders):
         """
@@ -184,6 +183,8 @@ class BackTester(object):
                                               balance=self.balance)
             self.place_orders(instructions)
 
+        cancel_all = [CancelOrder(order.id) for order in self.all_outstanding_orders]
+        self.place_orders(cancel_all)
         final_usd = self._liquidate_positions()
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return

@@ -37,7 +37,7 @@ class BaseStrategy(util.BaseObject):
         if num_orders != 0:
             return orders
 
-        currency = self.base if side == OrderSide.BUY else self.quote
+        currency = self.quote if side == OrderSide.BUY else self.base
         amount = target_price * self.order_size if side == OrderSide.BUY else self.order_size
 
         if balance[currency] >= amount and target_price != -1:
