@@ -179,9 +179,9 @@ class BackTester(object):
 
             # get and place new orders
             instructions = strategy.rebalance(msg=msg,
-                                        book=self.book,
-                                        outstanding_orders=self.outstanding_orders,
-                                        balance=self.balance)
+                                              book=self.book,
+                                              outstanding_orders=self.outstanding_orders,
+                                              balance=self.balance)
             self.place_orders(instructions)
 
         final_usd = self._liquidate_positions()

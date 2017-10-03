@@ -3,7 +3,7 @@ from bitcoin.backtester.orders import *
 
 
 class BaseStrategy(util.BaseObject):
-    def __init__(self, quote='BTC', base='USD', skip_msgs=1, order_size=1, sig_price_change=0.5):
+    def __init__(self, quote='USD', base='BTC', skip_msgs=1, order_size=1, sig_price_change=0.5):
         self.quote = quote
         self.base = base
         self.skip_msgs = skip_msgs  # skip some messages

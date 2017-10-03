@@ -1,7 +1,6 @@
 import bitcoin.gdax.public_client as gdax
 from bitcoin.order_book.util import compare_books, order_book_data_to_set
 from bitcoin.order_book.order_book import OrderBook
-from bitcoin.order_book.price_level import PriceLevel
 
 
 def test_conversion_between_order_book_and_set():
@@ -22,6 +21,6 @@ def test_compare_books():
     }
     expected = OrderBook(data['sequence'], bids=data['bids'], asks=data['asks'])
     actual = OrderBook(data['sequence'], bids=data['bids'], asks=data['asks'])
-    actual.update(order_id='3f681726-9078-4b8c-bfb2-dbc25910b75e', new_size='1')
+    actual.update(order_id='3f681726-9078-4b8c-bfb2-dbc25910b75e', new_size=1)
     num_diff = compare_books(actual, expected)
     assert num_diff == 2
