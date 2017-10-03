@@ -1,10 +1,9 @@
-from cdecimal import Decimal
 
 
 def order_book_data_to_set(data):
     """order book json to set of (price, size, order_id)"""
     orders = data['bids'] + data['asks']
-    result = {(Decimal(price), Decimal(size), order_id) for price, size, order_id in orders}
+    result = {(float(price), float(size), order_id) for price, size, order_id in orders}
     return result
 
 

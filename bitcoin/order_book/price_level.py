@@ -1,5 +1,3 @@
-from cdecimal import Decimal
-
 import bitcoin.util as util
 
 
@@ -14,19 +12,17 @@ class PriceLevel(util.BaseObject):
         price: float
         orders: dict[order_id, size]
         """
-        self.price = Decimal(price)
-        self.orders = {k: Decimal(v) for k, v in orders.iteritems()}
+        self.price = price
+        self.orders = orders
         self.size = sum(self.orders.values())
 
     def add(self, size, order_id):
-        size = Decimal(size)
         # add size and order_id
         self.size += size
         self.orders[order_id] = size
         return self.price, size, order_id
 
     def update(self, order_id, new_size):
-        new_size = Decimal(new_size)
         assert order_id in self.orders
         # subtract the size change
         old_size = self.orders[order_id]

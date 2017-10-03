@@ -6,7 +6,6 @@ import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
-
 import bitcoin.strategies.rl
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
@@ -29,10 +28,10 @@ class BackTester(object):
     def _get_place_order_balance(order):
         if order.side == OrderSide.BUY:
             amount = -order.price * order.size
-            currency = order.base
+            currency = order.quote
         elif order.side == OrderSide.SELL:
             amount = -order.size
-            currency = order.quote
+            currency = order.base
         else:
             raise ValueError
         return amount, currency
@@ -41,10 +40,10 @@ class BackTester(object):
     def _get_fill_order_balance(order, fill_qty):
         if order.side == OrderSide.BUY:
             amount = fill_qty
-            currency = order.quote
+            currency = order.base
         elif order.side == OrderSide.SELL:
             amount = order.price * fill_qty
-            currency = order.base
+            currency = order.quote
         else:
             raise ValueError
         return amount, currency
@@ -53,6 +52,10 @@ class BackTester(object):
         """
         fills is dict[order, fill qty]
         """
+        assert len(self.outstanding_orders) <= 2, \
+            'More than a single buy/sell order is not currently supported {}'.format(self.outstanding_orders)
+
+
         fills = {}
         if not msg['type'] == 'match':
             return fills
@@ -105,7 +108,7 @@ class BackTester(object):
         """
         for order, fill_qty in fills.iteritems():
             self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
-
+            print(self.balance)
             # remove if filled, otherwise update order
             if order.size == fill_qty:
                 self.outstanding_orders[order.side] = []
@@ -178,16 +181,19 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            orders = strategy.rebalance(msg=msg,
+            instructions = strategy.rebalance(msg=msg,
                                         book=self.book,
                                         outstanding_orders=self.outstanding_orders,
                                         balance=self.balance)
-            self.place_orders(orders)
+            self.place_orders(instructions)
 
+        cancel_all = [CancelOrder(id) for id in self.outstanding_orders]
+        self.place_orders(cancel_all)
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
         mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
         coin_value = excess_coins * mid_price
         final_usd = self.balance['USD'] + coin_value
+        print(self.balance)
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
 
@@ -222,7 +228,7 @@ def main():
     start = pd.datetime(2017, 9, 26, 4, 31)
     end = pd.datetime(2017, 9, 26, 4, 41)
     strategy = bitcoin.strategies.rl.Strategy()
-    backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
+    backtest = BackTester(exchange, product_id, {'USD': 1000, 'BTC': 0})
     # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
     backtest.run_with_saved_data(strategy, 'test-data.pickle')
     print backtest.balance
