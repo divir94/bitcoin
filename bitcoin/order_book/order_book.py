@@ -47,7 +47,8 @@ class OrderBook(util.BaseObject):
         levels = self.asks if price >= best_ask else self.bids
         return levels
 
-    def _get_levels_idx(self, price, levels):
+    @staticmethod
+    def _get_levels_idx(price, levels):
         """gets the index of price in levels or None"""
         dummy_price_level = PriceLevel(price, {})
         idx = levels.bisect_left(dummy_price_level)

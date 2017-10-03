@@ -22,7 +22,7 @@ def test_order_book_add_multiple_orders():
 
     book.add('buy', 90., 2., 'c')
     assert len(book.bids) == 2
-    assert book.bids[0] == PriceLevel(90., {'c': 2.})
+    assert book.bids[0] == PriceLevel(100., {'a': 5.})
     assert book.orders == {'a': 100., 'b': 105., 'c': 90.}
 
 
@@ -33,7 +33,7 @@ def test_order_book_add_orders_at_same_price():
     book.add('sell', 150., 5., 'c')
     book.add('buy', 100., 1., 'd')
     assert len(book.bids) == 2
-    assert book.bids[0] == PriceLevel(100., {'b': 2., 'd': 1.})
+    assert book.bids[-1] == PriceLevel(100., {'b': 2., 'd': 1.})
     assert book.orders == {'a': 110.,
                            'b': 100.,
                            'c': 150.,

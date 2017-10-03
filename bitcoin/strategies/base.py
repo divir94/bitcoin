@@ -1,9 +1,15 @@
+from sortedcontainers import SortedListWithKey
+
 import bitcoin.util as util
 from bitcoin.backtester.orders import *
 
 
+CumPriceLevel = namedtuple('CumPriceLevel', ['price', 'cum_size'])
+CumPriceLevel.__new__.__defaults__ = (None,)
+
+
 class BaseStrategy(util.BaseObject):
-    def __init__(self, quote='BTC', base='USD', skip_msgs=1, order_size=1, sig_price_change=0.5):
+    def __init__(self, quote='USD', base='BTC', skip_msgs=1, order_size=1, sig_price_change=0.5):
         self.quote = quote
         self.base = base
         self.skip_msgs = skip_msgs  # skip some messages
@@ -11,17 +17,43 @@ class BaseStrategy(util.BaseObject):
         self.sig_price_change = sig_price_change  # significant price change to update order
         self.msg_num = -1
 
-    @staticmethod
-    def get_target_prices(book):
+    def get_target_prices(self, book):
         """
         Get price at which to place orders on both sides before a wall.
         """
         raise NotImplementedError
 
+    @staticmethod
+    def get_cumulative_volume(book, max_volume=None):
+        """
+        {
+            'asks': list of (price, cumulative volume) is ascending order,
+            'bids': list of (price, cumulative volume) is descending order,
+        }
+        """
+        volume_so_far = 0
+        all_levels = {
+            'bids': book.bids,
+            'asks': book.asks
+        }
+        cumulative_volume = {
+            'bids': SortedListWithKey(key=lambda x: -x.price),
+            'asks': SortedListWithKey(key=lambda x: x.price)
+        }
+
+        for side, levels in all_levels.iteritems():
+            for level in levels:
+                volume_so_far += level.size
+                value = CumPriceLevel(price=level.price, cum_size=volume_so_far)
+                cumulative_volume[side].add(value)
+                if max_volume and (volume_so_far > max_volume):
+                    break
+        return cumulative_volume
+
     def _get_cancel_orders(self, outstanding_orders, side, target_price):
         orders = []
         num_orders = len(outstanding_orders.get(side, []))
-        if num_orders == 0:
+        if num_orders == 0 or target_price is None:
             return orders
 
         current_order = outstanding_orders[side][0]
@@ -34,13 +66,13 @@ class BaseStrategy(util.BaseObject):
     def _get_new_orders(self, outstanding_orders, side, target_price, balance):
         orders = []
         num_orders = len(outstanding_orders.get(side, []))
-        if num_orders != 0:
+        if num_orders != 0 or target_price is None:
             return orders
 
-        currency = self.base if side == OrderSide.BUY else self.quote
+        currency = self.quote if side == OrderSide.BUY else self.base
         amount = target_price * self.order_size if side == OrderSide.BUY else self.order_size
 
-        if balance[currency] >= amount and target_price != -1:
+        if balance[currency] >= amount and target_price is not None:
             limit_order = LimitOrder(quote=self.quote,
                                      base=self.base,
                                      side=side,
