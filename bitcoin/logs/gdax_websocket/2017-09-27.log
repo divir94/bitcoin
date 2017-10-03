@@ -1,0 +1,1334 @@
+2017-09-27 23:34:36,779 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-09-27 23:34:36,918 - core_websocket - INFO - Turning on heartbeat
+2017-09-27 23:34:36,918 - core_websocket - INFO - Listening for messages
+2017-09-27 23:34:36,972 - gdax_websocket - INFO - Restarting sync
+2017-09-27 23:34:36,972 - gdax_websocket - INFO - ==============================
+2017-09-27 23:34:36,972 - gdax_websocket - INFO - Loading book
+2017-09-27 23:34:37,818 - gdax_websocket - INFO - Got book: 4112166888
+2017-09-27 23:34:37,818 - gdax_websocket - INFO - Applying queued msgs: 4112166888
+2017-09-27 23:34:37,822 - gdax_websocket - INFO - Book ready: 4112166973
+2017-09-27 23:34:37,823 - gdax_websocket - INFO - ==============================
+2017-09-27 23:34:37,823 - gdax_websocket - WARNING - Out of sync: book(4112166973), message(4112166975)
+2017-09-27 23:34:37,832 - gdax_websocket - INFO - Restarting sync
+2017-09-27 23:34:37,833 - gdax_websocket - INFO - ==============================
+2017-09-27 23:34:37,833 - gdax_websocket - INFO - Loading book
+2017-09-27 23:34:38,436 - gdax_websocket - INFO - Got book: 4112166978
+2017-09-27 23:34:38,437 - gdax_websocket - INFO - Applying queued msgs: 4112166978
+2017-09-27 23:34:38,438 - gdax_websocket - INFO - Book ready: 4112166997
+2017-09-27 23:34:38,438 - gdax_websocket - INFO - ==============================
+2017-09-27 23:34:46,813 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:34:47,150 - gdax_websocket - INFO - Checking book start: 4112167848
+2017-09-27 23:34:47,152 - gdax_websocket - DEBUG - Queuing msg: 4112167872
+2017-09-27 23:34:47,153 - gdax_websocket - DEBUG - Queuing msg: 4112167873
+2017-09-27 23:34:47,153 - gdax_websocket - DEBUG - Queuing msg: 4112167874
+2017-09-27 23:34:47,267 - gdax_websocket - DEBUG - Queuing msg: 4112167875
+2017-09-27 23:34:47,277 - gdax_websocket - DEBUG - Queuing msg: 4112167876
+2017-09-27 23:34:47,279 - gdax_websocket - DEBUG - Queuing msg: 4112167877
+2017-09-27 23:34:47,282 - gdax_websocket - DEBUG - Queuing msg: 4112167878
+2017-09-27 23:34:47,286 - gdax_websocket - DEBUG - Queuing msg: 4112167879
+2017-09-27 23:34:47,309 - gdax_websocket - DEBUG - Queuing msg: 4112167880
+2017-09-27 23:34:47,309 - gdax_websocket - DEBUG - Queuing msg: 4112167881
+2017-09-27 23:34:47,310 - gdax_websocket - DEBUG - Queuing msg: 4112167882
+2017-09-27 23:34:47,312 - gdax_websocket - DEBUG - Queuing msg: 4112167883
+2017-09-27 23:34:47,325 - gdax_websocket - DEBUG - Queuing msg: 4112167884
+2017-09-27 23:34:47,326 - gdax_websocket - DEBUG - Queuing msg: 4112167885
+2017-09-27 23:34:47,400 - gdax_websocket - DEBUG - Queuing msg: 4112167886
+2017-09-27 23:34:47,439 - gdax_websocket - DEBUG - Queuing msg: 4112167887
+2017-09-27 23:34:47,444 - gdax_websocket - DEBUG - Queuing msg: 4112167888
+2017-09-27 23:34:47,536 - gdax_websocket - DEBUG - Queuing msg: 4112167889
+2017-09-27 23:34:47,542 - gdax_websocket - DEBUG - Queuing msg: 4112167890
+2017-09-27 23:34:47,552 - gdax_websocket - DEBUG - Queuing msg: 4112167891
+2017-09-27 23:34:47,552 - gdax_websocket - DEBUG - Queuing msg: 4112167892
+2017-09-27 23:34:47,581 - gdax_websocket - DEBUG - Queuing msg: 4112167893
+2017-09-27 23:34:47,602 - gdax_websocket - DEBUG - Queuing msg: 4112167894
+2017-09-27 23:34:47,685 - gdax_websocket - DEBUG - Queuing msg: 4112167895
+2017-09-27 23:34:47,748 - gdax_websocket - DEBUG - Queuing msg: 4112167896
+2017-09-27 23:34:47,767 - gdax_websocket - DEBUG - Queuing msg: 4112167897
+2017-09-27 23:34:47,776 - gdax_websocket - DEBUG - Queuing msg: 4112167898
+2017-09-27 23:34:47,784 - gdax_websocket - DEBUG - Queuing msg: 4112167899
+2017-09-27 23:34:47,847 - gdax_websocket - DEBUG - Queuing msg: 4112167900
+2017-09-27 23:34:47,860 - gdax_websocket - DEBUG - Queuing msg: 4112167901
+2017-09-27 23:34:47,901 - gdax_websocket - DEBUG - Queuing msg: 4112167902
+2017-09-27 23:34:47,932 - gdax_websocket - DEBUG - Queuing msg: 4112167903
+2017-09-27 23:34:47,941 - gdax_websocket - DEBUG - Queuing msg: 4112167904
+2017-09-27 23:34:47,956 - gdax_websocket - DEBUG - Queuing msg: 4112167905
+2017-09-27 23:34:47,957 - gdax_websocket - DEBUG - Queuing msg: 4112167906
+2017-09-27 23:34:47,959 - gdax_websocket - DEBUG - Queuing msg: 4112167907
+2017-09-27 23:34:47,964 - gdax_websocket - DEBUG - Queuing msg: 4112167908
+2017-09-27 23:34:47,964 - gdax_websocket - DEBUG - Queuing msg: 4112167909
+2017-09-27 23:34:47,972 - gdax_websocket - DEBUG - Queuing msg: 4112167910
+2017-09-27 23:34:47,992 - gdax_websocket - DEBUG - Queuing msg: 4112167911
+2017-09-27 23:34:47,996 - gdax_websocket - DEBUG - Queuing msg: 4112167912
+2017-09-27 23:34:47,999 - gdax_websocket - DEBUG - Queuing msg: 4112167913
+2017-09-27 23:34:48,000 - gdax_websocket - INFO - Expected book: 4112167874
+2017-09-27 23:34:48,000 - gdax_websocket - INFO - Applying queued msgs: 4112167848
+2017-09-27 23:34:48,000 - gdax_websocket - DEBUG - Queuing msg: 4112167914
+2017-09-27 23:34:48,001 - gdax_websocket - DEBUG - Processed queued msg: 4112167849
+2017-09-27 23:34:48,001 - gdax_websocket - DEBUG - Queuing msg: 4112167915
+2017-09-27 23:34:48,002 - gdax_websocket - DEBUG - Processed queued msg: 4112167850
+2017-09-27 23:34:48,002 - gdax_websocket - DEBUG - Processed queued msg: 4112167851
+2017-09-27 23:34:48,002 - gdax_websocket - DEBUG - Queuing msg: 4112167916
+2017-09-27 23:34:48,003 - gdax_websocket - DEBUG - Processed queued msg: 4112167852
+2017-09-27 23:34:48,003 - gdax_websocket - DEBUG - Queuing msg: 4112167917
+2017-09-27 23:34:48,003 - gdax_websocket - DEBUG - Processed queued msg: 4112167853
+2017-09-27 23:34:48,004 - gdax_websocket - DEBUG - Queuing msg: 4112167918
+2017-09-27 23:34:48,004 - gdax_websocket - DEBUG - Processed queued msg: 4112167854
+2017-09-27 23:34:48,005 - gdax_websocket - DEBUG - Processed queued msg: 4112167855
+2017-09-27 23:34:48,005 - gdax_websocket - DEBUG - Processed queued msg: 4112167856
+2017-09-27 23:34:48,005 - gdax_websocket - DEBUG - Processed queued msg: 4112167857
+2017-09-27 23:34:48,005 - gdax_websocket - DEBUG - Processed queued msg: 4112167858
+2017-09-27 23:34:48,005 - gdax_websocket - DEBUG - Queuing msg: 4112167919
+2017-09-27 23:34:48,006 - gdax_websocket - DEBUG - Processed queued msg: 4112167859
+2017-09-27 23:34:48,006 - gdax_websocket - DEBUG - Processed queued msg: 4112167860
+2017-09-27 23:34:48,006 - gdax_websocket - DEBUG - Queuing msg: 4112167920
+2017-09-27 23:34:48,007 - gdax_websocket - DEBUG - Processed queued msg: 4112167861
+2017-09-27 23:34:48,007 - gdax_websocket - DEBUG - Queuing msg: 4112167921
+2017-09-27 23:34:48,007 - gdax_websocket - DEBUG - Processed queued msg: 4112167862
+2017-09-27 23:34:48,008 - gdax_websocket - DEBUG - Queuing msg: 4112167922
+2017-09-27 23:34:48,008 - gdax_websocket - DEBUG - Processed queued msg: 4112167863
+2017-09-27 23:34:48,009 - gdax_websocket - DEBUG - Processed queued msg: 4112167864
+2017-09-27 23:34:48,009 - gdax_websocket - DEBUG - Processed queued msg: 4112167865
+2017-09-27 23:34:48,009 - gdax_websocket - DEBUG - Processed queued msg: 4112167866
+2017-09-27 23:34:48,009 - gdax_websocket - DEBUG - Processed queued msg: 4112167867
+2017-09-27 23:34:48,010 - gdax_websocket - DEBUG - Processed queued msg: 4112167868
+2017-09-27 23:34:48,010 - gdax_websocket - DEBUG - Processed queued msg: 4112167869
+2017-09-27 23:34:48,010 - gdax_websocket - DEBUG - Queuing msg: 4112167923
+2017-09-27 23:34:48,010 - gdax_websocket - DEBUG - Processed queued msg: 4112167870
+2017-09-27 23:34:48,011 - gdax_websocket - DEBUG - Queuing msg: 4112167924
+2017-09-27 23:34:48,011 - gdax_websocket - DEBUG - Processed queued msg: 4112167871
+2017-09-27 23:34:48,011 - gdax_websocket - DEBUG - Queuing msg: 4112167925
+2017-09-27 23:34:48,012 - gdax_websocket - DEBUG - Processed queued msg: 4112167872
+2017-09-27 23:34:48,012 - gdax_websocket - DEBUG - Processed queued msg: 4112167873
+2017-09-27 23:34:48,012 - gdax_websocket - DEBUG - Queuing msg: 4112167926
+2017-09-27 23:34:48,012 - gdax_websocket - DEBUG - Processed queued msg: 4112167874
+2017-09-27 23:34:48,013 - gdax_websocket - DEBUG - Queuing msg: 4112167927
+2017-09-27 23:34:48,013 - gdax_websocket - INFO - Book ready: 4112167874
+2017-09-27 23:34:48,014 - gdax_websocket - DEBUG - Queuing msg: 4112167928
+2017-09-27 23:34:48,182 - gdax_websocket - DEBUG - Queuing msg: 4112167929
+2017-09-27 23:34:48,199 - gdax_websocket - DEBUG - Queuing msg: 4112167930
+2017-09-27 23:34:48,344 - gdax_websocket - DEBUG - Queuing msg: 4112167931
+2017-09-27 23:34:48,358 - gdax_websocket - DEBUG - Queuing msg: 4112167932
+2017-09-27 23:34:48,430 - gdax_websocket - DEBUG - Queuing msg: 4112167933
+2017-09-27 23:34:48,581 - gdax_websocket - INFO - Book differences: 0
+2017-09-27 23:34:48,582 - gdax_websocket - DEBUG - Queuing msg: 4112167934
+2017-09-27 23:34:48,582 - gdax_websocket - INFO - Applying queued msgs: 4112167874
+2017-09-27 23:34:48,582 - gdax_websocket - DEBUG - Processed queued msg: 4112167875
+2017-09-27 23:34:48,582 - gdax_websocket - DEBUG - Processed queued msg: 4112167876
+2017-09-27 23:34:48,583 - gdax_websocket - DEBUG - Processed queued msg: 4112167877
+2017-09-27 23:34:48,583 - gdax_websocket - DEBUG - Queuing msg: 4112167935
+2017-09-27 23:34:48,583 - gdax_websocket - DEBUG - Processed queued msg: 4112167878
+2017-09-27 23:34:48,584 - gdax_websocket - DEBUG - Queuing msg: 4112167936
+2017-09-27 23:34:48,584 - gdax_websocket - DEBUG - Processed queued msg: 4112167879
+2017-09-27 23:34:48,584 - gdax_websocket - DEBUG - Queuing msg: 4112167937
+2017-09-27 23:34:48,585 - gdax_websocket - DEBUG - Processed queued msg: 4112167880
+2017-09-27 23:34:48,585 - gdax_websocket - DEBUG - Processed queued msg: 4112167881
+2017-09-27 23:34:48,585 - gdax_websocket - DEBUG - Processed queued msg: 4112167882
+2017-09-27 23:34:48,586 - gdax_websocket - DEBUG - Processed queued msg: 4112167883
+2017-09-27 23:34:48,586 - gdax_websocket - DEBUG - Queuing msg: 4112167938
+2017-09-27 23:34:48,586 - gdax_websocket - DEBUG - Processed queued msg: 4112167884
+2017-09-27 23:34:48,587 - gdax_websocket - DEBUG - Queuing msg: 4112167939
+2017-09-27 23:34:48,587 - gdax_websocket - DEBUG - Processed queued msg: 4112167885
+2017-09-27 23:34:48,588 - gdax_websocket - DEBUG - Queuing msg: 4112167940
+2017-09-27 23:34:48,588 - gdax_websocket - DEBUG - Processed queued msg: 4112167886
+2017-09-27 23:34:48,588 - gdax_websocket - DEBUG - Processed queued msg: 4112167887
+2017-09-27 23:34:48,589 - gdax_websocket - DEBUG - Queuing msg: 4112167941
+2017-09-27 23:34:48,589 - gdax_websocket - DEBUG - Processed queued msg: 4112167888
+2017-09-27 23:34:48,589 - gdax_websocket - DEBUG - Queuing msg: 4112167942
+2017-09-27 23:34:48,589 - gdax_websocket - DEBUG - Processed queued msg: 4112167889
+2017-09-27 23:34:48,590 - gdax_websocket - DEBUG - Queuing msg: 4112167943
+2017-09-27 23:34:48,590 - gdax_websocket - DEBUG - Processed queued msg: 4112167890
+2017-09-27 23:34:48,591 - gdax_websocket - DEBUG - Queuing msg: 4112167944
+2017-09-27 23:34:48,591 - gdax_websocket - DEBUG - Processed queued msg: 4112167891
+2017-09-27 23:34:48,591 - gdax_websocket - DEBUG - Queuing msg: 4112167945
+2017-09-27 23:34:48,591 - gdax_websocket - DEBUG - Processed queued msg: 4112167892
+2017-09-27 23:34:48,591 - gdax_websocket - DEBUG - Processed queued msg: 4112167893
+2017-09-27 23:34:48,592 - gdax_websocket - DEBUG - Queuing msg: 4112167946
+2017-09-27 23:34:48,592 - gdax_websocket - DEBUG - Processed queued msg: 4112167894
+2017-09-27 23:34:48,593 - gdax_websocket - DEBUG - Queuing msg: 4112167947
+2017-09-27 23:34:48,593 - gdax_websocket - DEBUG - Processed queued msg: 4112167895
+2017-09-27 23:34:48,593 - gdax_websocket - DEBUG - Queuing msg: 4112167948
+2017-09-27 23:34:48,593 - gdax_websocket - DEBUG - Processed queued msg: 4112167896
+2017-09-27 23:34:48,594 - gdax_websocket - DEBUG - Queuing msg: 4112167949
+2017-09-27 23:34:48,594 - gdax_websocket - DEBUG - Processed queued msg: 4112167897
+2017-09-27 23:34:48,595 - gdax_websocket - DEBUG - Queuing msg: 4112167950
+2017-09-27 23:34:48,595 - gdax_websocket - DEBUG - Queuing msg: 4112167951
+2017-09-27 23:34:48,595 - gdax_websocket - DEBUG - Processed queued msg: 4112167898
+2017-09-27 23:34:48,595 - gdax_websocket - DEBUG - Processed queued msg: 4112167899
+2017-09-27 23:34:48,596 - gdax_websocket - DEBUG - Processed queued msg: 4112167900
+2017-09-27 23:34:48,596 - gdax_websocket - DEBUG - Queuing msg: 4112167952
+2017-09-27 23:34:48,596 - gdax_websocket - DEBUG - Processed queued msg: 4112167901
+2017-09-27 23:34:48,596 - gdax_websocket - DEBUG - Processed queued msg: 4112167902
+2017-09-27 23:34:48,597 - gdax_websocket - DEBUG - Queuing msg: 4112167953
+2017-09-27 23:34:48,597 - gdax_websocket - DEBUG - Processed queued msg: 4112167903
+2017-09-27 23:34:48,597 - gdax_websocket - DEBUG - Processed queued msg: 4112167904
+2017-09-27 23:34:48,598 - gdax_websocket - DEBUG - Queuing msg: 4112167954
+2017-09-27 23:34:48,598 - gdax_websocket - DEBUG - Processed queued msg: 4112167905
+2017-09-27 23:34:48,598 - gdax_websocket - DEBUG - Queuing msg: 4112167955
+2017-09-27 23:34:48,598 - gdax_websocket - DEBUG - Processed queued msg: 4112167906
+2017-09-27 23:34:48,598 - gdax_websocket - DEBUG - Queuing msg: 4112167956
+2017-09-27 23:34:48,599 - gdax_websocket - DEBUG - Processed queued msg: 4112167907
+2017-09-27 23:34:48,599 - gdax_websocket - DEBUG - Queuing msg: 4112167957
+2017-09-27 23:34:48,599 - gdax_websocket - DEBUG - Processed queued msg: 4112167908
+2017-09-27 23:34:48,600 - gdax_websocket - DEBUG - Queuing msg: 4112167958
+2017-09-27 23:34:48,600 - gdax_websocket - DEBUG - Processed queued msg: 4112167909
+2017-09-27 23:34:48,600 - gdax_websocket - DEBUG - Processed queued msg: 4112167910
+2017-09-27 23:34:48,600 - gdax_websocket - DEBUG - Queuing msg: 4112167959
+2017-09-27 23:34:48,601 - gdax_websocket - DEBUG - Processed queued msg: 4112167911
+2017-09-27 23:34:48,601 - gdax_websocket - DEBUG - Queuing msg: 4112167960
+2017-09-27 23:34:48,601 - gdax_websocket - DEBUG - Processed queued msg: 4112167912
+2017-09-27 23:34:48,601 - gdax_websocket - DEBUG - Queuing msg: 4112167961
+2017-09-27 23:34:48,602 - gdax_websocket - DEBUG - Processed queued msg: 4112167913
+2017-09-27 23:34:48,602 - gdax_websocket - DEBUG - Queuing msg: 4112167962
+2017-09-27 23:34:48,602 - gdax_websocket - DEBUG - Processed queued msg: 4112167914
+2017-09-27 23:34:48,602 - gdax_websocket - DEBUG - Processed queued msg: 4112167915
+2017-09-27 23:34:48,603 - gdax_websocket - DEBUG - Queuing msg: 4112167963
+2017-09-27 23:34:48,603 - gdax_websocket - DEBUG - Processed queued msg: 4112167916
+2017-09-27 23:34:48,603 - gdax_websocket - DEBUG - Queuing msg: 4112167964
+2017-09-27 23:34:48,603 - gdax_websocket - DEBUG - Processed queued msg: 4112167917
+2017-09-27 23:34:48,604 - gdax_websocket - DEBUG - Queuing msg: 4112167965
+2017-09-27 23:34:48,604 - gdax_websocket - DEBUG - Processed queued msg: 4112167918
+2017-09-27 23:34:48,604 - gdax_websocket - DEBUG - Queuing msg: 4112167966
+2017-09-27 23:34:48,604 - gdax_websocket - DEBUG - Processed queued msg: 4112167919
+2017-09-27 23:34:48,605 - gdax_websocket - DEBUG - Queuing msg: 4112167967
+2017-09-27 23:34:48,605 - gdax_websocket - DEBUG - Processed queued msg: 4112167920
+2017-09-27 23:34:48,605 - gdax_websocket - DEBUG - Processed queued msg: 4112167921
+2017-09-27 23:34:48,605 - gdax_websocket - DEBUG - Queuing msg: 4112167968
+2017-09-27 23:34:48,606 - gdax_websocket - DEBUG - Processed queued msg: 4112167922
+2017-09-27 23:34:48,606 - gdax_websocket - DEBUG - Processed queued msg: 4112167923
+2017-09-27 23:34:48,606 - gdax_websocket - DEBUG - Queuing msg: 4112167969
+2017-09-27 23:34:48,606 - gdax_websocket - DEBUG - Processed queued msg: 4112167924
+2017-09-27 23:34:48,607 - gdax_websocket - DEBUG - Processed queued msg: 4112167925
+2017-09-27 23:34:48,607 - gdax_websocket - DEBUG - Queuing msg: 4112167970
+2017-09-27 23:34:48,607 - gdax_websocket - DEBUG - Processed queued msg: 4112167926
+2017-09-27 23:34:48,607 - gdax_websocket - DEBUG - Processed queued msg: 4112167927
+2017-09-27 23:34:48,608 - gdax_websocket - DEBUG - Queuing msg: 4112167971
+2017-09-27 23:34:48,608 - gdax_websocket - DEBUG - Processed queued msg: 4112167928
+2017-09-27 23:34:48,608 - gdax_websocket - DEBUG - Queuing msg: 4112167972
+2017-09-27 23:34:48,608 - gdax_websocket - DEBUG - Processed queued msg: 4112167929
+2017-09-27 23:34:48,609 - gdax_websocket - DEBUG - Queuing msg: 4112167973
+2017-09-27 23:34:48,609 - gdax_websocket - DEBUG - Processed queued msg: 4112167930
+2017-09-27 23:34:48,609 - gdax_websocket - DEBUG - Queuing msg: 4112167974
+2017-09-27 23:34:48,609 - gdax_websocket - DEBUG - Processed queued msg: 4112167931
+2017-09-27 23:34:48,610 - gdax_websocket - DEBUG - Queuing msg: 4112167975
+2017-09-27 23:34:48,610 - gdax_websocket - DEBUG - Processed queued msg: 4112167932
+2017-09-27 23:34:48,610 - gdax_websocket - DEBUG - Queuing msg: 4112167976
+2017-09-27 23:34:48,610 - gdax_websocket - DEBUG - Processed queued msg: 4112167933
+2017-09-27 23:34:48,611 - gdax_websocket - DEBUG - Queuing msg: 4112167977
+2017-09-27 23:34:48,611 - gdax_websocket - DEBUG - Processed queued msg: 4112167934
+2017-09-27 23:34:48,611 - gdax_websocket - DEBUG - Queuing msg: 4112167978
+2017-09-27 23:34:48,612 - gdax_websocket - DEBUG - Processed queued msg: 4112167935
+2017-09-27 23:34:48,612 - gdax_websocket - DEBUG - Queuing msg: 4112167979
+2017-09-27 23:34:48,612 - gdax_websocket - DEBUG - Processed queued msg: 4112167936
+2017-09-27 23:34:48,613 - gdax_websocket - DEBUG - Queuing msg: 4112167980
+2017-09-27 23:34:48,613 - gdax_websocket - DEBUG - Processed queued msg: 4112167937
+2017-09-27 23:34:48,613 - gdax_websocket - DEBUG - Queuing msg: 4112167981
+2017-09-27 23:34:48,613 - gdax_websocket - DEBUG - Processed queued msg: 4112167938
+2017-09-27 23:34:48,614 - gdax_websocket - DEBUG - Queuing msg: 4112167982
+2017-09-27 23:34:48,614 - gdax_websocket - DEBUG - Processed queued msg: 4112167939
+2017-09-27 23:34:48,614 - gdax_websocket - DEBUG - Queuing msg: 4112167983
+2017-09-27 23:34:48,615 - gdax_websocket - DEBUG - Processed queued msg: 4112167940
+2017-09-27 23:34:48,615 - gdax_websocket - DEBUG - Queuing msg: 4112167984
+2017-09-27 23:34:48,615 - gdax_websocket - DEBUG - Processed queued msg: 4112167941
+2017-09-27 23:34:48,615 - gdax_websocket - DEBUG - Queuing msg: 4112167985
+2017-09-27 23:34:48,616 - gdax_websocket - DEBUG - Processed queued msg: 4112167942
+2017-09-27 23:34:48,616 - gdax_websocket - DEBUG - Queuing msg: 4112167986
+2017-09-27 23:34:48,616 - gdax_websocket - DEBUG - Processed queued msg: 4112167943
+2017-09-27 23:34:48,617 - gdax_websocket - DEBUG - Queuing msg: 4112167987
+2017-09-27 23:34:48,617 - gdax_websocket - DEBUG - Processed queued msg: 4112167944
+2017-09-27 23:34:48,617 - gdax_websocket - DEBUG - Queuing msg: 4112167988
+2017-09-27 23:34:48,617 - gdax_websocket - DEBUG - Processed queued msg: 4112167945
+2017-09-27 23:34:48,618 - gdax_websocket - DEBUG - Queuing msg: 4112167989
+2017-09-27 23:34:48,618 - gdax_websocket - DEBUG - Processed queued msg: 4112167946
+2017-09-27 23:34:48,618 - gdax_websocket - DEBUG - Queuing msg: 4112167990
+2017-09-27 23:34:48,618 - gdax_websocket - DEBUG - Processed queued msg: 4112167947
+2017-09-27 23:34:48,619 - gdax_websocket - DEBUG - Queuing msg: 4112167991
+2017-09-27 23:34:48,619 - gdax_websocket - DEBUG - Processed queued msg: 4112167948
+2017-09-27 23:34:48,619 - gdax_websocket - DEBUG - Queuing msg: 4112167992
+2017-09-27 23:34:48,620 - gdax_websocket - DEBUG - Processed queued msg: 4112167949
+2017-09-27 23:34:48,620 - gdax_websocket - DEBUG - Queuing msg: 4112167993
+2017-09-27 23:34:48,620 - gdax_websocket - DEBUG - Processed queued msg: 4112167950
+2017-09-27 23:34:48,621 - gdax_websocket - DEBUG - Processed queued msg: 4112167951
+2017-09-27 23:34:48,621 - gdax_websocket - DEBUG - Queuing msg: 4112167994
+2017-09-27 23:34:48,621 - gdax_websocket - DEBUG - Processed queued msg: 4112167952
+2017-09-27 23:34:48,622 - gdax_websocket - DEBUG - Queuing msg: 4112167995
+2017-09-27 23:34:48,622 - gdax_websocket - DEBUG - Processed queued msg: 4112167953
+2017-09-27 23:34:48,622 - gdax_websocket - DEBUG - Queuing msg: 4112167996
+2017-09-27 23:34:48,623 - gdax_websocket - DEBUG - Processed queued msg: 4112167954
+2017-09-27 23:34:48,623 - gdax_websocket - DEBUG - Processed queued msg: 4112167955
+2017-09-27 23:34:48,623 - gdax_websocket - DEBUG - Processed queued msg: 4112167956
+2017-09-27 23:34:48,624 - gdax_websocket - DEBUG - Queuing msg: 4112167997
+2017-09-27 23:34:48,624 - gdax_websocket - DEBUG - Processed queued msg: 4112167957
+2017-09-27 23:34:48,624 - gdax_websocket - DEBUG - Processed queued msg: 4112167958
+2017-09-27 23:34:48,625 - gdax_websocket - DEBUG - Queuing msg: 4112167998
+2017-09-27 23:34:48,625 - gdax_websocket - DEBUG - Processed queued msg: 4112167959
+2017-09-27 23:34:48,625 - gdax_websocket - DEBUG - Queuing msg: 4112167999
+2017-09-27 23:34:48,626 - gdax_websocket - DEBUG - Processed queued msg: 4112167960
+2017-09-27 23:34:48,626 - gdax_websocket - DEBUG - Processed queued msg: 4112167961
+2017-09-27 23:34:48,626 - gdax_websocket - DEBUG - Processed queued msg: 4112167962
+2017-09-27 23:34:48,626 - gdax_websocket - DEBUG - Queuing msg: 4112168000
+2017-09-27 23:34:48,627 - gdax_websocket - DEBUG - Processed queued msg: 4112167963
+2017-09-27 23:34:48,627 - gdax_websocket - DEBUG - Processed queued msg: 4112167964
+2017-09-27 23:34:48,627 - gdax_websocket - DEBUG - Processed queued msg: 4112167965
+2017-09-27 23:34:48,628 - gdax_websocket - DEBUG - Processed queued msg: 4112167966
+2017-09-27 23:34:48,628 - gdax_websocket - DEBUG - Queuing msg: 4112168001
+2017-09-27 23:34:48,628 - gdax_websocket - DEBUG - Processed queued msg: 4112167967
+2017-09-27 23:34:48,628 - gdax_websocket - DEBUG - Processed queued msg: 4112167968
+2017-09-27 23:34:48,629 - gdax_websocket - DEBUG - Queuing msg: 4112168002
+2017-09-27 23:34:48,629 - gdax_websocket - DEBUG - Processed queued msg: 4112167969
+2017-09-27 23:34:48,630 - gdax_websocket - DEBUG - Queuing msg: 4112168003
+2017-09-27 23:34:48,630 - gdax_websocket - DEBUG - Processed queued msg: 4112167970
+2017-09-27 23:34:48,630 - gdax_websocket - DEBUG - Processed queued msg: 4112167971
+2017-09-27 23:34:48,631 - gdax_websocket - DEBUG - Queuing msg: 4112168004
+2017-09-27 23:34:48,631 - gdax_websocket - DEBUG - Processed queued msg: 4112167972
+2017-09-27 23:34:48,631 - gdax_websocket - DEBUG - Processed queued msg: 4112167973
+2017-09-27 23:34:48,631 - gdax_websocket - DEBUG - Queuing msg: 4112168005
+2017-09-27 23:34:48,632 - gdax_websocket - DEBUG - Processed queued msg: 4112167974
+2017-09-27 23:34:48,632 - gdax_websocket - DEBUG - Queuing msg: 4112168006
+2017-09-27 23:34:48,632 - gdax_websocket - DEBUG - Processed queued msg: 4112167975
+2017-09-27 23:34:48,633 - gdax_websocket - DEBUG - Queuing msg: 4112168007
+2017-09-27 23:34:48,633 - gdax_websocket - DEBUG - Processed queued msg: 4112167976
+2017-09-27 23:34:48,633 - gdax_websocket - DEBUG - Processed queued msg: 4112167977
+2017-09-27 23:34:48,634 - gdax_websocket - DEBUG - Queuing msg: 4112168008
+2017-09-27 23:34:48,634 - gdax_websocket - DEBUG - Processed queued msg: 4112167978
+2017-09-27 23:34:48,635 - gdax_websocket - DEBUG - Queuing msg: 4112168009
+2017-09-27 23:34:48,635 - gdax_websocket - DEBUG - Processed queued msg: 4112167979
+2017-09-27 23:34:48,635 - gdax_websocket - DEBUG - Queuing msg: 4112168010
+2017-09-27 23:34:48,636 - gdax_websocket - DEBUG - Processed queued msg: 4112167980
+2017-09-27 23:34:48,636 - gdax_websocket - DEBUG - Processed queued msg: 4112167981
+2017-09-27 23:34:48,636 - gdax_websocket - DEBUG - Processed queued msg: 4112167982
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Queuing msg: 4112168011
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167983
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167984
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167985
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167986
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167987
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167988
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167989
+2017-09-27 23:34:48,637 - gdax_websocket - DEBUG - Processed queued msg: 4112167990
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167991
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167992
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167993
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167994
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167995
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167996
+2017-09-27 23:34:48,638 - gdax_websocket - DEBUG - Processed queued msg: 4112167997
+2017-09-27 23:34:48,639 - gdax_websocket - DEBUG - Queuing msg: 4112168012
+2017-09-27 23:34:48,639 - gdax_websocket - DEBUG - Processed queued msg: 4112167998
+2017-09-27 23:34:48,640 - gdax_websocket - DEBUG - Queuing msg: 4112168013
+2017-09-27 23:34:48,640 - gdax_websocket - DEBUG - Processed queued msg: 4112167999
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Queuing msg: 4112168014
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168000
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168001
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168002
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168003
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168004
+2017-09-27 23:34:48,641 - gdax_websocket - DEBUG - Processed queued msg: 4112168005
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Processed queued msg: 4112168006
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Processed queued msg: 4112168007
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Processed queued msg: 4112168008
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Processed queued msg: 4112168009
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Processed queued msg: 4112168010
+2017-09-27 23:34:48,642 - gdax_websocket - DEBUG - Queuing msg: 4112168015
+2017-09-27 23:34:48,643 - gdax_websocket - DEBUG - Processed queued msg: 4112168011
+2017-09-27 23:34:48,643 - gdax_websocket - DEBUG - Processed queued msg: 4112168012
+2017-09-27 23:34:48,643 - gdax_websocket - DEBUG - Processed queued msg: 4112168013
+2017-09-27 23:34:48,643 - gdax_websocket - DEBUG - Processed queued msg: 4112168014
+2017-09-27 23:34:48,643 - gdax_websocket - DEBUG - Processed queued msg: 4112168015
+2017-09-27 23:34:48,643 - gdax_websocket - INFO - Book ready: 4112168015
+2017-09-27 23:34:48,646 - gdax_websocket - INFO - Checking book end: 4112168015
+2017-09-27 23:34:48,646 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:34:56,814 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:34:57,188 - gdax_websocket - INFO - Checking book start: 4112168706
+2017-09-27 23:34:57,251 - gdax_websocket - DEBUG - Queuing msg: 4112168755
+2017-09-27 23:34:57,252 - gdax_websocket - DEBUG - Queuing msg: 4112168756
+2017-09-27 23:34:57,254 - gdax_websocket - DEBUG - Queuing msg: 4112168757
+2017-09-27 23:34:57,312 - gdax_websocket - DEBUG - Queuing msg: 4112168758
+2017-09-27 23:34:57,331 - gdax_websocket - DEBUG - Queuing msg: 4112168759
+2017-09-27 23:34:57,345 - gdax_websocket - DEBUG - Queuing msg: 4112168760
+2017-09-27 23:34:57,347 - gdax_websocket - DEBUG - Queuing msg: 4112168761
+2017-09-27 23:34:57,351 - gdax_websocket - DEBUG - Queuing msg: 4112168762
+2017-09-27 23:34:57,354 - gdax_websocket - DEBUG - Queuing msg: 4112168763
+2017-09-27 23:34:57,358 - gdax_websocket - DEBUG - Queuing msg: 4112168764
+2017-09-27 23:34:57,506 - gdax_websocket - DEBUG - Queuing msg: 4112168765
+2017-09-27 23:34:57,508 - gdax_websocket - DEBUG - Queuing msg: 4112168766
+2017-09-27 23:34:57,565 - gdax_websocket - DEBUG - Queuing msg: 4112168767
+2017-09-27 23:34:57,586 - gdax_websocket - DEBUG - Queuing msg: 4112168768
+2017-09-27 23:34:57,604 - gdax_websocket - DEBUG - Queuing msg: 4112168769
+2017-09-27 23:34:57,612 - gdax_websocket - DEBUG - Queuing msg: 4112168770
+2017-09-27 23:34:57,640 - gdax_websocket - DEBUG - Queuing msg: 4112168771
+2017-09-27 23:34:57,657 - gdax_websocket - DEBUG - Queuing msg: 4112168772
+2017-09-27 23:34:57,703 - gdax_websocket - DEBUG - Queuing msg: 4112168773
+2017-09-27 23:34:57,729 - gdax_websocket - DEBUG - Queuing msg: 4112168774
+2017-09-27 23:34:57,745 - gdax_websocket - DEBUG - Queuing msg: 4112168775
+2017-09-27 23:34:57,773 - gdax_websocket - DEBUG - Queuing msg: 4112168776
+2017-09-27 23:34:57,789 - gdax_websocket - DEBUG - Queuing msg: 4112168777
+2017-09-27 23:34:57,792 - gdax_websocket - DEBUG - Queuing msg: 4112168778
+2017-09-27 23:34:57,809 - gdax_websocket - DEBUG - Queuing msg: 4112168779
+2017-09-27 23:34:57,826 - gdax_websocket - DEBUG - Queuing msg: 4112168780
+2017-09-27 23:34:57,828 - gdax_websocket - DEBUG - Queuing msg: 4112168781
+2017-09-27 23:34:57,839 - gdax_websocket - DEBUG - Queuing msg: 4112168782
+2017-09-27 23:34:57,846 - gdax_websocket - DEBUG - Queuing msg: 4112168783
+2017-09-27 23:34:57,858 - gdax_websocket - DEBUG - Queuing msg: 4112168784
+2017-09-27 23:34:57,858 - gdax_websocket - DEBUG - Queuing msg: 4112168785
+2017-09-27 23:34:57,859 - gdax_websocket - DEBUG - Queuing msg: 4112168786
+2017-09-27 23:34:57,866 - gdax_websocket - INFO - Expected book: 4112168758
+2017-09-27 23:34:57,866 - gdax_websocket - DEBUG - Queuing msg: 4112168787
+2017-09-27 23:34:57,867 - gdax_websocket - INFO - Applying queued msgs: 4112168706
+2017-09-27 23:34:57,867 - gdax_websocket - DEBUG - Queuing msg: 4112168788
+2017-09-27 23:34:57,867 - gdax_websocket - DEBUG - Processed queued msg: 4112168707
+2017-09-27 23:34:57,868 - gdax_websocket - DEBUG - Queuing msg: 4112168789
+2017-09-27 23:34:57,868 - gdax_websocket - DEBUG - Processed queued msg: 4112168708
+2017-09-27 23:34:57,868 - gdax_websocket - DEBUG - Queuing msg: 4112168790
+2017-09-27 23:34:57,868 - gdax_websocket - DEBUG - Processed queued msg: 4112168709
+2017-09-27 23:34:57,869 - gdax_websocket - DEBUG - Processed queued msg: 4112168710
+2017-09-27 23:34:57,869 - gdax_websocket - DEBUG - Queuing msg: 4112168791
+2017-09-27 23:34:57,869 - gdax_websocket - DEBUG - Processed queued msg: 4112168711
+2017-09-27 23:34:57,869 - gdax_websocket - DEBUG - Processed queued msg: 4112168712
+2017-09-27 23:34:57,870 - gdax_websocket - DEBUG - Queuing msg: 4112168792
+2017-09-27 23:34:57,870 - gdax_websocket - DEBUG - Processed queued msg: 4112168713
+2017-09-27 23:34:57,870 - gdax_websocket - DEBUG - Processed queued msg: 4112168714
+2017-09-27 23:34:57,870 - gdax_websocket - DEBUG - Processed queued msg: 4112168715
+2017-09-27 23:34:57,871 - gdax_websocket - DEBUG - Queuing msg: 4112168793
+2017-09-27 23:34:57,871 - gdax_websocket - DEBUG - Processed queued msg: 4112168716
+2017-09-27 23:34:57,871 - gdax_websocket - DEBUG - Queuing msg: 4112168794
+2017-09-27 23:34:57,871 - gdax_websocket - DEBUG - Processed queued msg: 4112168717
+2017-09-27 23:34:57,872 - gdax_websocket - DEBUG - Queuing msg: 4112168795
+2017-09-27 23:34:57,872 - gdax_websocket - DEBUG - Processed queued msg: 4112168718
+2017-09-27 23:34:57,873 - gdax_websocket - DEBUG - Queuing msg: 4112168796
+2017-09-27 23:34:57,873 - gdax_websocket - DEBUG - Processed queued msg: 4112168719
+2017-09-27 23:34:57,873 - gdax_websocket - DEBUG - Processed queued msg: 4112168720
+2017-09-27 23:34:57,873 - gdax_websocket - DEBUG - Processed queued msg: 4112168721
+2017-09-27 23:34:57,874 - gdax_websocket - DEBUG - Queuing msg: 4112168797
+2017-09-27 23:34:57,874 - gdax_websocket - DEBUG - Processed queued msg: 4112168722
+2017-09-27 23:34:57,874 - gdax_websocket - DEBUG - Queuing msg: 4112168798
+2017-09-27 23:34:57,874 - gdax_websocket - DEBUG - Processed queued msg: 4112168723
+2017-09-27 23:34:57,875 - gdax_websocket - DEBUG - Queuing msg: 4112168799
+2017-09-27 23:34:57,875 - gdax_websocket - DEBUG - Processed queued msg: 4112168724
+2017-09-27 23:34:57,875 - gdax_websocket - DEBUG - Queuing msg: 4112168800
+2017-09-27 23:34:57,875 - gdax_websocket - DEBUG - Processed queued msg: 4112168725
+2017-09-27 23:34:57,875 - gdax_websocket - DEBUG - Processed queued msg: 4112168726
+2017-09-27 23:34:57,876 - gdax_websocket - DEBUG - Queuing msg: 4112168801
+2017-09-27 23:34:57,876 - gdax_websocket - DEBUG - Processed queued msg: 4112168727
+2017-09-27 23:34:57,876 - gdax_websocket - DEBUG - Queuing msg: 4112168802
+2017-09-27 23:34:57,876 - gdax_websocket - DEBUG - Processed queued msg: 4112168728
+2017-09-27 23:34:57,877 - gdax_websocket - DEBUG - Queuing msg: 4112168803
+2017-09-27 23:34:57,877 - gdax_websocket - DEBUG - Processed queued msg: 4112168729
+2017-09-27 23:34:57,877 - gdax_websocket - DEBUG - Queuing msg: 4112168804
+2017-09-27 23:34:57,878 - gdax_websocket - DEBUG - Processed queued msg: 4112168730
+2017-09-27 23:34:57,878 - gdax_websocket - DEBUG - Queuing msg: 4112168805
+2017-09-27 23:34:57,878 - gdax_websocket - DEBUG - Processed queued msg: 4112168731
+2017-09-27 23:34:57,879 - gdax_websocket - DEBUG - Queuing msg: 4112168806
+2017-09-27 23:34:57,879 - gdax_websocket - DEBUG - Processed queued msg: 4112168732
+2017-09-27 23:34:57,879 - gdax_websocket - DEBUG - Processed queued msg: 4112168733
+2017-09-27 23:34:57,879 - gdax_websocket - DEBUG - Queuing msg: 4112168807
+2017-09-27 23:34:57,879 - gdax_websocket - DEBUG - Processed queued msg: 4112168734
+2017-09-27 23:34:57,880 - gdax_websocket - DEBUG - Queuing msg: 4112168808
+2017-09-27 23:34:57,880 - gdax_websocket - DEBUG - Processed queued msg: 4112168735
+2017-09-27 23:34:57,880 - gdax_websocket - DEBUG - Queuing msg: 4112168809
+2017-09-27 23:34:57,881 - gdax_websocket - DEBUG - Processed queued msg: 4112168736
+2017-09-27 23:34:57,881 - gdax_websocket - DEBUG - Queuing msg: 4112168810
+2017-09-27 23:34:57,881 - gdax_websocket - DEBUG - Processed queued msg: 4112168737
+2017-09-27 23:34:57,881 - gdax_websocket - DEBUG - Processed queued msg: 4112168738
+2017-09-27 23:34:57,882 - gdax_websocket - DEBUG - Queuing msg: 4112168811
+2017-09-27 23:34:57,882 - gdax_websocket - DEBUG - Processed queued msg: 4112168739
+2017-09-27 23:34:57,882 - gdax_websocket - DEBUG - Processed queued msg: 4112168740
+2017-09-27 23:34:57,882 - gdax_websocket - DEBUG - Queuing msg: 4112168812
+2017-09-27 23:34:57,882 - gdax_websocket - DEBUG - Processed queued msg: 4112168741
+2017-09-27 23:34:57,883 - gdax_websocket - DEBUG - Queuing msg: 4112168813
+2017-09-27 23:34:57,883 - gdax_websocket - DEBUG - Processed queued msg: 4112168742
+2017-09-27 23:34:57,883 - gdax_websocket - DEBUG - Queuing msg: 4112168814
+2017-09-27 23:34:57,884 - gdax_websocket - DEBUG - Processed queued msg: 4112168743
+2017-09-27 23:34:57,884 - gdax_websocket - DEBUG - Queuing msg: 4112168815
+2017-09-27 23:34:57,884 - gdax_websocket - DEBUG - Processed queued msg: 4112168744
+2017-09-27 23:34:57,884 - gdax_websocket - DEBUG - Processed queued msg: 4112168745
+2017-09-27 23:34:57,884 - gdax_websocket - DEBUG - Processed queued msg: 4112168746
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168747
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168748
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168749
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168750
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168751
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168752
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168753
+2017-09-27 23:34:57,885 - gdax_websocket - DEBUG - Processed queued msg: 4112168754
+2017-09-27 23:34:57,886 - gdax_websocket - DEBUG - Processed queued msg: 4112168755
+2017-09-27 23:34:57,886 - gdax_websocket - DEBUG - Processed queued msg: 4112168756
+2017-09-27 23:34:57,886 - gdax_websocket - DEBUG - Processed queued msg: 4112168757
+2017-09-27 23:34:57,886 - gdax_websocket - DEBUG - Processed queued msg: 4112168758
+2017-09-27 23:34:57,886 - gdax_websocket - INFO - Book ready: 4112168758
+2017-09-27 23:34:58,131 - gdax_websocket - DEBUG - Queuing msg: 4112168816
+2017-09-27 23:34:58,143 - gdax_websocket - DEBUG - Queuing msg: 4112168817
+2017-09-27 23:34:58,376 - gdax_websocket - INFO - Book differences: 0
+2017-09-27 23:34:58,376 - gdax_websocket - DEBUG - Queuing msg: 4112168818
+2017-09-27 23:34:58,376 - gdax_websocket - INFO - Applying queued msgs: 4112168758
+2017-09-27 23:34:58,377 - gdax_websocket - DEBUG - Processed queued msg: 4112168759
+2017-09-27 23:34:58,377 - gdax_websocket - DEBUG - Processed queued msg: 4112168760
+2017-09-27 23:34:58,377 - gdax_websocket - DEBUG - Queuing msg: 4112168819
+2017-09-27 23:34:58,378 - gdax_websocket - DEBUG - Processed queued msg: 4112168761
+2017-09-27 23:34:58,378 - gdax_websocket - DEBUG - Queuing msg: 4112168820
+2017-09-27 23:34:58,378 - gdax_websocket - DEBUG - Processed queued msg: 4112168762
+2017-09-27 23:34:58,378 - gdax_websocket - DEBUG - Processed queued msg: 4112168763
+2017-09-27 23:34:58,379 - gdax_websocket - DEBUG - Queuing msg: 4112168821
+2017-09-27 23:34:58,379 - gdax_websocket - DEBUG - Processed queued msg: 4112168764
+2017-09-27 23:34:58,379 - gdax_websocket - DEBUG - Queuing msg: 4112168822
+2017-09-27 23:34:58,379 - gdax_websocket - DEBUG - Processed queued msg: 4112168765
+2017-09-27 23:34:58,380 - gdax_websocket - DEBUG - Processed queued msg: 4112168766
+2017-09-27 23:34:58,380 - gdax_websocket - DEBUG - Queuing msg: 4112168823
+2017-09-27 23:34:58,380 - gdax_websocket - DEBUG - Processed queued msg: 4112168767
+2017-09-27 23:34:58,381 - gdax_websocket - DEBUG - Processed queued msg: 4112168768
+2017-09-27 23:34:58,381 - gdax_websocket - DEBUG - Queuing msg: 4112168824
+2017-09-27 23:34:58,381 - gdax_websocket - DEBUG - Processed queued msg: 4112168769
+2017-09-27 23:34:58,381 - gdax_websocket - DEBUG - Queuing msg: 4112168825
+2017-09-27 23:34:58,381 - gdax_websocket - DEBUG - Processed queued msg: 4112168770
+2017-09-27 23:34:58,382 - gdax_websocket - DEBUG - Processed queued msg: 4112168771
+2017-09-27 23:34:58,382 - gdax_websocket - DEBUG - Queuing msg: 4112168826
+2017-09-27 23:34:58,382 - gdax_websocket - DEBUG - Processed queued msg: 4112168772
+2017-09-27 23:34:58,383 - gdax_websocket - DEBUG - Queuing msg: 4112168827
+2017-09-27 23:34:58,383 - gdax_websocket - DEBUG - Processed queued msg: 4112168773
+2017-09-27 23:34:58,383 - gdax_websocket - DEBUG - Processed queued msg: 4112168774
+2017-09-27 23:34:58,383 - gdax_websocket - DEBUG - Queuing msg: 4112168828
+2017-09-27 23:34:58,383 - gdax_websocket - DEBUG - Processed queued msg: 4112168775
+2017-09-27 23:34:58,384 - gdax_websocket - DEBUG - Queuing msg: 4112168829
+2017-09-27 23:34:58,384 - gdax_websocket - DEBUG - Processed queued msg: 4112168776
+2017-09-27 23:34:58,384 - gdax_websocket - DEBUG - Queuing msg: 4112168830
+2017-09-27 23:34:58,385 - gdax_websocket - DEBUG - Processed queued msg: 4112168777
+2017-09-27 23:34:58,385 - gdax_websocket - DEBUG - Queuing msg: 4112168831
+2017-09-27 23:34:58,385 - gdax_websocket - DEBUG - Processed queued msg: 4112168778
+2017-09-27 23:34:58,385 - gdax_websocket - DEBUG - Queuing msg: 4112168832
+2017-09-27 23:34:58,386 - gdax_websocket - DEBUG - Processed queued msg: 4112168779
+2017-09-27 23:34:58,386 - gdax_websocket - DEBUG - Queuing msg: 4112168833
+2017-09-27 23:34:58,386 - gdax_websocket - DEBUG - Processed queued msg: 4112168780
+2017-09-27 23:34:58,387 - gdax_websocket - DEBUG - Queuing msg: 4112168834
+2017-09-27 23:34:58,387 - gdax_websocket - DEBUG - Processed queued msg: 4112168781
+2017-09-27 23:34:58,388 - gdax_websocket - DEBUG - Queuing msg: 4112168835
+2017-09-27 23:34:58,388 - gdax_websocket - DEBUG - Processed queued msg: 4112168782
+2017-09-27 23:34:58,388 - gdax_websocket - DEBUG - Processed queued msg: 4112168783
+2017-09-27 23:34:58,389 - gdax_websocket - DEBUG - Queuing msg: 4112168836
+2017-09-27 23:34:58,389 - gdax_websocket - DEBUG - Processed queued msg: 4112168784
+2017-09-27 23:34:58,389 - gdax_websocket - DEBUG - Queuing msg: 4112168837
+2017-09-27 23:34:58,390 - gdax_websocket - DEBUG - Processed queued msg: 4112168785
+2017-09-27 23:34:58,390 - gdax_websocket - DEBUG - Queuing msg: 4112168838
+2017-09-27 23:34:58,390 - gdax_websocket - DEBUG - Processed queued msg: 4112168786
+2017-09-27 23:34:58,391 - gdax_websocket - DEBUG - Processed queued msg: 4112168787
+2017-09-27 23:34:58,391 - gdax_websocket - DEBUG - Queuing msg: 4112168839
+2017-09-27 23:34:58,391 - gdax_websocket - DEBUG - Processed queued msg: 4112168788
+2017-09-27 23:34:58,391 - gdax_websocket - DEBUG - Processed queued msg: 4112168789
+2017-09-27 23:34:58,392 - gdax_websocket - DEBUG - Processed queued msg: 4112168790
+2017-09-27 23:34:58,392 - gdax_websocket - DEBUG - Processed queued msg: 4112168791
+2017-09-27 23:34:58,392 - gdax_websocket - DEBUG - Queuing msg: 4112168840
+2017-09-27 23:34:58,392 - gdax_websocket - DEBUG - Processed queued msg: 4112168792
+2017-09-27 23:34:58,393 - gdax_websocket - DEBUG - Queuing msg: 4112168841
+2017-09-27 23:34:58,393 - gdax_websocket - DEBUG - Processed queued msg: 4112168793
+2017-09-27 23:34:58,393 - gdax_websocket - DEBUG - Queuing msg: 4112168842
+2017-09-27 23:34:58,393 - gdax_websocket - DEBUG - Processed queued msg: 4112168794
+2017-09-27 23:34:58,394 - gdax_websocket - DEBUG - Queuing msg: 4112168843
+2017-09-27 23:34:58,394 - gdax_websocket - DEBUG - Processed queued msg: 4112168795
+2017-09-27 23:34:58,394 - gdax_websocket - DEBUG - Queuing msg: 4112168844
+2017-09-27 23:34:58,395 - gdax_websocket - DEBUG - Processed queued msg: 4112168796
+2017-09-27 23:34:58,395 - gdax_websocket - DEBUG - Queuing msg: 4112168845
+2017-09-27 23:34:58,395 - gdax_websocket - DEBUG - Processed queued msg: 4112168797
+2017-09-27 23:34:58,396 - gdax_websocket - DEBUG - Processed queued msg: 4112168798
+2017-09-27 23:34:58,396 - gdax_websocket - DEBUG - Queuing msg: 4112168846
+2017-09-27 23:34:58,396 - gdax_websocket - DEBUG - Processed queued msg: 4112168799
+2017-09-27 23:34:58,396 - gdax_websocket - DEBUG - Queuing msg: 4112168847
+2017-09-27 23:34:58,396 - gdax_websocket - DEBUG - Processed queued msg: 4112168800
+2017-09-27 23:34:58,397 - gdax_websocket - DEBUG - Processed queued msg: 4112168801
+2017-09-27 23:34:58,397 - gdax_websocket - DEBUG - Queuing msg: 4112168848
+2017-09-27 23:34:58,397 - gdax_websocket - DEBUG - Processed queued msg: 4112168802
+2017-09-27 23:34:58,397 - gdax_websocket - DEBUG - Queuing msg: 4112168849
+2017-09-27 23:34:58,398 - gdax_websocket - DEBUG - Processed queued msg: 4112168803
+2017-09-27 23:34:58,398 - gdax_websocket - DEBUG - Queuing msg: 4112168850
+2017-09-27 23:34:58,398 - gdax_websocket - DEBUG - Processed queued msg: 4112168804
+2017-09-27 23:34:58,399 - gdax_websocket - DEBUG - Queuing msg: 4112168851
+2017-09-27 23:34:58,399 - gdax_websocket - DEBUG - Processed queued msg: 4112168805
+2017-09-27 23:34:58,399 - gdax_websocket - DEBUG - Processed queued msg: 4112168806
+2017-09-27 23:34:58,399 - gdax_websocket - DEBUG - Queuing msg: 4112168852
+2017-09-27 23:34:58,400 - gdax_websocket - DEBUG - Processed queued msg: 4112168807
+2017-09-27 23:34:58,400 - gdax_websocket - DEBUG - Queuing msg: 4112168853
+2017-09-27 23:34:58,400 - gdax_websocket - DEBUG - Processed queued msg: 4112168808
+2017-09-27 23:34:58,401 - gdax_websocket - DEBUG - Queuing msg: 4112168854
+2017-09-27 23:34:58,401 - gdax_websocket - DEBUG - Processed queued msg: 4112168809
+2017-09-27 23:34:58,401 - gdax_websocket - DEBUG - Queuing msg: 4112168855
+2017-09-27 23:34:58,401 - gdax_websocket - DEBUG - Processed queued msg: 4112168810
+2017-09-27 23:34:58,402 - gdax_websocket - DEBUG - Queuing msg: 4112168856
+2017-09-27 23:34:58,402 - gdax_websocket - DEBUG - Processed queued msg: 4112168811
+2017-09-27 23:34:58,402 - gdax_websocket - DEBUG - Processed queued msg: 4112168812
+2017-09-27 23:34:58,402 - gdax_websocket - DEBUG - Queuing msg: 4112168857
+2017-09-27 23:34:58,403 - gdax_websocket - DEBUG - Processed queued msg: 4112168813
+2017-09-27 23:34:58,403 - gdax_websocket - DEBUG - Queuing msg: 4112168858
+2017-09-27 23:34:58,403 - gdax_websocket - DEBUG - Processed queued msg: 4112168814
+2017-09-27 23:34:58,403 - gdax_websocket - DEBUG - Processed queued msg: 4112168815
+2017-09-27 23:34:58,404 - gdax_websocket - DEBUG - Queuing msg: 4112168859
+2017-09-27 23:34:58,404 - gdax_websocket - DEBUG - Processed queued msg: 4112168816
+2017-09-27 23:34:58,404 - gdax_websocket - DEBUG - Queuing msg: 4112168860
+2017-09-27 23:34:58,404 - gdax_websocket - DEBUG - Processed queued msg: 4112168817
+2017-09-27 23:34:58,405 - gdax_websocket - DEBUG - Queuing msg: 4112168861
+2017-09-27 23:34:58,405 - gdax_websocket - DEBUG - Processed queued msg: 4112168818
+2017-09-27 23:34:58,406 - gdax_websocket - DEBUG - Queuing msg: 4112168862
+2017-09-27 23:34:58,406 - gdax_websocket - DEBUG - Processed queued msg: 4112168819
+2017-09-27 23:34:58,406 - gdax_websocket - DEBUG - Queuing msg: 4112168863
+2017-09-27 23:34:58,406 - gdax_websocket - DEBUG - Processed queued msg: 4112168820
+2017-09-27 23:34:58,407 - gdax_websocket - DEBUG - Processed queued msg: 4112168821
+2017-09-27 23:34:58,407 - gdax_websocket - DEBUG - Processed queued msg: 4112168822
+2017-09-27 23:34:58,407 - gdax_websocket - DEBUG - Queuing msg: 4112168864
+2017-09-27 23:34:58,407 - gdax_websocket - DEBUG - Processed queued msg: 4112168823
+2017-09-27 23:34:58,408 - gdax_websocket - DEBUG - Queuing msg: 4112168865
+2017-09-27 23:34:58,408 - gdax_websocket - DEBUG - Processed queued msg: 4112168824
+2017-09-27 23:34:58,408 - gdax_websocket - DEBUG - Processed queued msg: 4112168825
+2017-09-27 23:34:58,408 - gdax_websocket - DEBUG - Queuing msg: 4112168866
+2017-09-27 23:34:58,408 - gdax_websocket - DEBUG - Processed queued msg: 4112168826
+2017-09-27 23:34:58,409 - gdax_websocket - DEBUG - Queuing msg: 4112168867
+2017-09-27 23:34:58,409 - gdax_websocket - DEBUG - Processed queued msg: 4112168827
+2017-09-27 23:34:58,409 - gdax_websocket - DEBUG - Queuing msg: 4112168868
+2017-09-27 23:34:58,410 - gdax_websocket - DEBUG - Processed queued msg: 4112168828
+2017-09-27 23:34:58,410 - gdax_websocket - DEBUG - Queuing msg: 4112168869
+2017-09-27 23:34:58,410 - gdax_websocket - DEBUG - Processed queued msg: 4112168829
+2017-09-27 23:34:58,411 - gdax_websocket - DEBUG - Queuing msg: 4112168870
+2017-09-27 23:34:58,411 - gdax_websocket - DEBUG - Processed queued msg: 4112168830
+2017-09-27 23:34:58,411 - gdax_websocket - DEBUG - Processed queued msg: 4112168831
+2017-09-27 23:34:58,411 - gdax_websocket - DEBUG - Queuing msg: 4112168871
+2017-09-27 23:34:58,411 - gdax_websocket - DEBUG - Processed queued msg: 4112168832
+2017-09-27 23:34:58,412 - gdax_websocket - DEBUG - Queuing msg: 4112168872
+2017-09-27 23:34:58,412 - gdax_websocket - DEBUG - Processed queued msg: 4112168833
+2017-09-27 23:34:58,412 - gdax_websocket - DEBUG - Queuing msg: 4112168873
+2017-09-27 23:34:58,413 - gdax_websocket - DEBUG - Processed queued msg: 4112168834
+2017-09-27 23:34:58,413 - gdax_websocket - DEBUG - Queuing msg: 4112168874
+2017-09-27 23:34:58,413 - gdax_websocket - DEBUG - Processed queued msg: 4112168835
+2017-09-27 23:34:58,414 - gdax_websocket - DEBUG - Queuing msg: 4112168875
+2017-09-27 23:34:58,414 - gdax_websocket - DEBUG - Processed queued msg: 4112168836
+2017-09-27 23:34:58,414 - gdax_websocket - DEBUG - Queuing msg: 4112168876
+2017-09-27 23:34:58,414 - gdax_websocket - DEBUG - Processed queued msg: 4112168837
+2017-09-27 23:34:58,415 - gdax_websocket - DEBUG - Queuing msg: 4112168877
+2017-09-27 23:34:58,415 - gdax_websocket - DEBUG - Processed queued msg: 4112168838
+2017-09-27 23:34:58,415 - gdax_websocket - DEBUG - Queuing msg: 4112168878
+2017-09-27 23:34:58,415 - gdax_websocket - DEBUG - Processed queued msg: 4112168839
+2017-09-27 23:34:58,416 - gdax_websocket - DEBUG - Queuing msg: 4112168879
+2017-09-27 23:34:58,416 - gdax_websocket - DEBUG - Processed queued msg: 4112168840
+2017-09-27 23:34:58,416 - gdax_websocket - DEBUG - Processed queued msg: 4112168841
+2017-09-27 23:34:58,416 - gdax_websocket - DEBUG - Queuing msg: 4112168880
+2017-09-27 23:34:58,416 - gdax_websocket - DEBUG - Processed queued msg: 4112168842
+2017-09-27 23:34:58,417 - gdax_websocket - DEBUG - Queuing msg: 4112168881
+2017-09-27 23:34:58,417 - gdax_websocket - DEBUG - Processed queued msg: 4112168843
+2017-09-27 23:34:58,417 - gdax_websocket - DEBUG - Queuing msg: 4112168882
+2017-09-27 23:34:58,417 - gdax_websocket - DEBUG - Processed queued msg: 4112168844
+2017-09-27 23:34:58,418 - gdax_websocket - DEBUG - Processed queued msg: 4112168845
+2017-09-27 23:34:58,418 - gdax_websocket - DEBUG - Queuing msg: 4112168883
+2017-09-27 23:34:58,418 - gdax_websocket - DEBUG - Processed queued msg: 4112168846
+2017-09-27 23:34:58,418 - gdax_websocket - DEBUG - Processed queued msg: 4112168847
+2017-09-27 23:34:58,419 - gdax_websocket - DEBUG - Queuing msg: 4112168884
+2017-09-27 23:34:58,419 - gdax_websocket - DEBUG - Processed queued msg: 4112168848
+2017-09-27 23:34:58,420 - gdax_websocket - DEBUG - Processed queued msg: 4112168849
+2017-09-27 23:34:58,420 - gdax_websocket - DEBUG - Queuing msg: 4112168885
+2017-09-27 23:34:58,420 - gdax_websocket - DEBUG - Processed queued msg: 4112168850
+2017-09-27 23:34:58,420 - gdax_websocket - DEBUG - Queuing msg: 4112168886
+2017-09-27 23:34:58,421 - gdax_websocket - DEBUG - Processed queued msg: 4112168851
+2017-09-27 23:34:58,421 - gdax_websocket - DEBUG - Queuing msg: 4112168887
+2017-09-27 23:34:58,421 - gdax_websocket - DEBUG - Processed queued msg: 4112168852
+2017-09-27 23:34:58,421 - gdax_websocket - DEBUG - Processed queued msg: 4112168853
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168854
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168855
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168856
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168857
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168858
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168859
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168860
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168861
+2017-09-27 23:34:58,422 - gdax_websocket - DEBUG - Processed queued msg: 4112168862
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168863
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168864
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168865
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168866
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168867
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168868
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168869
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168870
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168871
+2017-09-27 23:34:58,423 - gdax_websocket - DEBUG - Processed queued msg: 4112168872
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168873
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168874
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168875
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168876
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168877
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168878
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168879
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168880
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168881
+2017-09-27 23:34:58,424 - gdax_websocket - DEBUG - Processed queued msg: 4112168882
+2017-09-27 23:34:58,425 - gdax_websocket - DEBUG - Processed queued msg: 4112168883
+2017-09-27 23:34:58,425 - gdax_websocket - DEBUG - Processed queued msg: 4112168884
+2017-09-27 23:34:58,425 - gdax_websocket - DEBUG - Processed queued msg: 4112168885
+2017-09-27 23:34:58,425 - gdax_websocket - DEBUG - Processed queued msg: 4112168886
+2017-09-27 23:34:58,425 - gdax_websocket - DEBUG - Processed queued msg: 4112168887
+2017-09-27 23:34:58,425 - gdax_websocket - INFO - Book ready: 4112168887
+2017-09-27 23:34:58,428 - gdax_websocket - INFO - Checking book end: 4112168887
+2017-09-27 23:34:58,428 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:35:07,106 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:35:07,517 - gdax_websocket - INFO - Checking book start: 4112169664
+2017-09-27 23:35:07,523 - gdax_websocket - DEBUG - Queuing msg: 4112169704
+2017-09-27 23:35:07,525 - gdax_websocket - DEBUG - Queuing msg: 4112169705
+2017-09-27 23:35:07,526 - gdax_websocket - DEBUG - Queuing msg: 4112169706
+2017-09-27 23:35:07,532 - gdax_websocket - DEBUG - Queuing msg: 4112169707
+2017-09-27 23:35:07,532 - gdax_websocket - DEBUG - Queuing msg: 4112169708
+2017-09-27 23:35:07,537 - gdax_websocket - DEBUG - Queuing msg: 4112169709
+2017-09-27 23:35:07,538 - gdax_websocket - DEBUG - Queuing msg: 4112169710
+2017-09-27 23:35:07,569 - gdax_websocket - DEBUG - Queuing msg: 4112169711
+2017-09-27 23:35:07,570 - gdax_websocket - DEBUG - Queuing msg: 4112169712
+2017-09-27 23:35:07,571 - gdax_websocket - DEBUG - Queuing msg: 4112169713
+2017-09-27 23:35:07,582 - gdax_websocket - DEBUG - Queuing msg: 4112169714
+2017-09-27 23:35:07,584 - gdax_websocket - DEBUG - Queuing msg: 4112169715
+2017-09-27 23:35:07,585 - gdax_websocket - DEBUG - Queuing msg: 4112169716
+2017-09-27 23:35:07,600 - gdax_websocket - DEBUG - Queuing msg: 4112169717
+2017-09-27 23:35:07,600 - gdax_websocket - DEBUG - Queuing msg: 4112169718
+2017-09-27 23:35:07,604 - gdax_websocket - DEBUG - Queuing msg: 4112169719
+2017-09-27 23:35:07,606 - gdax_websocket - DEBUG - Queuing msg: 4112169720
+2017-09-27 23:35:07,610 - gdax_websocket - DEBUG - Queuing msg: 4112169721
+2017-09-27 23:35:07,633 - gdax_websocket - DEBUG - Queuing msg: 4112169722
+2017-09-27 23:35:07,633 - gdax_websocket - DEBUG - Queuing msg: 4112169723
+2017-09-27 23:35:07,634 - gdax_websocket - DEBUG - Queuing msg: 4112169724
+2017-09-27 23:35:07,634 - gdax_websocket - DEBUG - Queuing msg: 4112169725
+2017-09-27 23:35:07,664 - gdax_websocket - DEBUG - Queuing msg: 4112169726
+2017-09-27 23:35:07,685 - gdax_websocket - DEBUG - Queuing msg: 4112169727
+2017-09-27 23:35:07,686 - gdax_websocket - DEBUG - Queuing msg: 4112169728
+2017-09-27 23:35:07,686 - gdax_websocket - DEBUG - Queuing msg: 4112169729
+2017-09-27 23:35:07,687 - gdax_websocket - DEBUG - Queuing msg: 4112169730
+2017-09-27 23:35:07,688 - gdax_websocket - DEBUG - Queuing msg: 4112169731
+2017-09-27 23:35:07,736 - gdax_websocket - DEBUG - Queuing msg: 4112169732
+2017-09-27 23:35:07,738 - gdax_websocket - DEBUG - Queuing msg: 4112169733
+2017-09-27 23:35:07,739 - gdax_websocket - DEBUG - Queuing msg: 4112169734
+2017-09-27 23:35:07,741 - gdax_websocket - DEBUG - Queuing msg: 4112169735
+2017-09-27 23:35:07,742 - gdax_websocket - DEBUG - Queuing msg: 4112169736
+2017-09-27 23:35:07,744 - gdax_websocket - DEBUG - Queuing msg: 4112169737
+2017-09-27 23:35:07,764 - gdax_websocket - DEBUG - Queuing msg: 4112169738
+2017-09-27 23:35:07,777 - gdax_websocket - DEBUG - Queuing msg: 4112169739
+2017-09-27 23:35:07,778 - gdax_websocket - DEBUG - Queuing msg: 4112169740
+2017-09-27 23:35:07,791 - gdax_websocket - DEBUG - Queuing msg: 4112169741
+2017-09-27 23:35:07,792 - gdax_websocket - DEBUG - Queuing msg: 4112169742
+2017-09-27 23:35:07,870 - gdax_websocket - DEBUG - Queuing msg: 4112169743
+2017-09-27 23:35:07,954 - gdax_websocket - DEBUG - Queuing msg: 4112169744
+2017-09-27 23:35:08,011 - gdax_websocket - DEBUG - Queuing msg: 4112169745
+2017-09-27 23:35:08,042 - gdax_websocket - DEBUG - Queuing msg: 4112169746
+2017-09-27 23:35:08,090 - gdax_websocket - DEBUG - Queuing msg: 4112169747
+2017-09-27 23:35:08,093 - gdax_websocket - DEBUG - Queuing msg: 4112169748
+2017-09-27 23:35:08,175 - gdax_websocket - DEBUG - Queuing msg: 4112169749
+2017-09-27 23:35:08,250 - gdax_websocket - DEBUG - Queuing msg: 4112169750
+2017-09-27 23:35:08,282 - gdax_websocket - DEBUG - Queuing msg: 4112169751
+2017-09-27 23:35:08,350 - gdax_websocket - DEBUG - Queuing msg: 4112169752
+2017-09-27 23:35:08,390 - gdax_websocket - DEBUG - Queuing msg: 4112169753
+2017-09-27 23:35:08,405 - gdax_websocket - DEBUG - Queuing msg: 4112169754
+2017-09-27 23:35:08,405 - gdax_websocket - DEBUG - Queuing msg: 4112169755
+2017-09-27 23:35:08,474 - gdax_websocket - DEBUG - Queuing msg: 4112169756
+2017-09-27 23:35:08,478 - gdax_websocket - DEBUG - Queuing msg: 4112169757
+2017-09-27 23:35:08,480 - gdax_websocket - DEBUG - Queuing msg: 4112169758
+2017-09-27 23:35:08,522 - gdax_websocket - DEBUG - Queuing msg: 4112169759
+2017-09-27 23:35:08,533 - gdax_websocket - INFO - Expected book: 4112169725
+2017-09-27 23:35:08,533 - gdax_websocket - DEBUG - Queuing msg: 4112169760
+2017-09-27 23:35:08,534 - gdax_websocket - INFO - Applying queued msgs: 4112169664
+2017-09-27 23:35:08,534 - gdax_websocket - DEBUG - Processed queued msg: 4112169665
+2017-09-27 23:35:08,534 - gdax_websocket - DEBUG - Processed queued msg: 4112169666
+2017-09-27 23:35:08,535 - gdax_websocket - DEBUG - Processed queued msg: 4112169667
+2017-09-27 23:35:08,535 - gdax_websocket - DEBUG - Queuing msg: 4112169761
+2017-09-27 23:35:08,535 - gdax_websocket - DEBUG - Processed queued msg: 4112169668
+2017-09-27 23:35:08,536 - gdax_websocket - DEBUG - Processed queued msg: 4112169669
+2017-09-27 23:35:08,537 - gdax_websocket - DEBUG - Processed queued msg: 4112169670
+2017-09-27 23:35:08,536 - gdax_websocket - DEBUG - Queuing msg: 4112169762
+2017-09-27 23:35:08,538 - gdax_websocket - DEBUG - Processed queued msg: 4112169671
+2017-09-27 23:35:08,539 - gdax_websocket - DEBUG - Processed queued msg: 4112169672
+2017-09-27 23:35:08,541 - gdax_websocket - DEBUG - Queuing msg: 4112169763
+2017-09-27 23:35:08,542 - gdax_websocket - DEBUG - Processed queued msg: 4112169673
+2017-09-27 23:35:08,543 - gdax_websocket - DEBUG - Processed queued msg: 4112169674
+2017-09-27 23:35:08,544 - gdax_websocket - DEBUG - Processed queued msg: 4112169675
+2017-09-27 23:35:08,544 - gdax_websocket - DEBUG - Processed queued msg: 4112169676
+2017-09-27 23:35:08,545 - gdax_websocket - DEBUG - Queuing msg: 4112169764
+2017-09-27 23:35:08,545 - gdax_websocket - DEBUG - Processed queued msg: 4112169677
+2017-09-27 23:35:08,546 - gdax_websocket - DEBUG - Processed queued msg: 4112169678
+2017-09-27 23:35:08,546 - gdax_websocket - DEBUG - Queuing msg: 4112169765
+2017-09-27 23:35:08,546 - gdax_websocket - DEBUG - Processed queued msg: 4112169679
+2017-09-27 23:35:08,547 - gdax_websocket - DEBUG - Queuing msg: 4112169766
+2017-09-27 23:35:08,548 - gdax_websocket - DEBUG - Processed queued msg: 4112169680
+2017-09-27 23:35:08,549 - gdax_websocket - DEBUG - Processed queued msg: 4112169681
+2017-09-27 23:35:08,549 - gdax_websocket - DEBUG - Processed queued msg: 4112169682
+2017-09-27 23:35:08,549 - gdax_websocket - DEBUG - Processed queued msg: 4112169683
+2017-09-27 23:35:08,549 - gdax_websocket - DEBUG - Processed queued msg: 4112169684
+2017-09-27 23:35:08,550 - gdax_websocket - DEBUG - Processed queued msg: 4112169685
+2017-09-27 23:35:08,550 - gdax_websocket - DEBUG - Queuing msg: 4112169767
+2017-09-27 23:35:08,550 - gdax_websocket - DEBUG - Processed queued msg: 4112169686
+2017-09-27 23:35:08,551 - gdax_websocket - DEBUG - Processed queued msg: 4112169687
+2017-09-27 23:35:08,552 - gdax_websocket - DEBUG - Queuing msg: 4112169768
+2017-09-27 23:35:08,552 - gdax_websocket - DEBUG - Processed queued msg: 4112169688
+2017-09-27 23:35:08,552 - gdax_websocket - DEBUG - Processed queued msg: 4112169689
+2017-09-27 23:35:08,554 - gdax_websocket - DEBUG - Processed queued msg: 4112169690
+2017-09-27 23:35:08,554 - gdax_websocket - DEBUG - Queuing msg: 4112169769
+2017-09-27 23:35:08,555 - gdax_websocket - DEBUG - Processed queued msg: 4112169691
+2017-09-27 23:35:08,557 - gdax_websocket - DEBUG - Processed queued msg: 4112169692
+2017-09-27 23:35:08,557 - gdax_websocket - DEBUG - Processed queued msg: 4112169693
+2017-09-27 23:35:08,557 - gdax_websocket - DEBUG - Queuing msg: 4112169770
+2017-09-27 23:35:08,558 - gdax_websocket - DEBUG - Processed queued msg: 4112169694
+2017-09-27 23:35:08,559 - gdax_websocket - DEBUG - Processed queued msg: 4112169695
+2017-09-27 23:35:08,560 - gdax_websocket - DEBUG - Processed queued msg: 4112169696
+2017-09-27 23:35:08,562 - gdax_websocket - DEBUG - Processed queued msg: 4112169697
+2017-09-27 23:35:08,562 - gdax_websocket - DEBUG - Queuing msg: 4112169771
+2017-09-27 23:35:08,563 - gdax_websocket - DEBUG - Processed queued msg: 4112169698
+2017-09-27 23:35:08,563 - gdax_websocket - DEBUG - Processed queued msg: 4112169699
+2017-09-27 23:35:08,564 - gdax_websocket - DEBUG - Processed queued msg: 4112169700
+2017-09-27 23:35:08,564 - gdax_websocket - DEBUG - Queuing msg: 4112169772
+2017-09-27 23:35:08,564 - gdax_websocket - DEBUG - Processed queued msg: 4112169701
+2017-09-27 23:35:08,565 - gdax_websocket - DEBUG - Processed queued msg: 4112169702
+2017-09-27 23:35:08,566 - gdax_websocket - DEBUG - Queuing msg: 4112169773
+2017-09-27 23:35:08,566 - gdax_websocket - DEBUG - Processed queued msg: 4112169703
+2017-09-27 23:35:08,566 - gdax_websocket - DEBUG - Processed queued msg: 4112169704
+2017-09-27 23:35:08,567 - gdax_websocket - DEBUG - Queuing msg: 4112169774
+2017-09-27 23:35:08,568 - gdax_websocket - DEBUG - Processed queued msg: 4112169705
+2017-09-27 23:35:08,569 - gdax_websocket - DEBUG - Queuing msg: 4112169775
+2017-09-27 23:35:08,570 - gdax_websocket - DEBUG - Processed queued msg: 4112169706
+2017-09-27 23:35:08,572 - gdax_websocket - DEBUG - Queuing msg: 4112169776
+2017-09-27 23:35:08,573 - gdax_websocket - DEBUG - Processed queued msg: 4112169707
+2017-09-27 23:35:08,574 - gdax_websocket - DEBUG - Queuing msg: 4112169777
+2017-09-27 23:35:08,575 - gdax_websocket - DEBUG - Processed queued msg: 4112169708
+2017-09-27 23:35:08,576 - gdax_websocket - DEBUG - Processed queued msg: 4112169709
+2017-09-27 23:35:08,577 - gdax_websocket - DEBUG - Processed queued msg: 4112169710
+2017-09-27 23:35:08,578 - gdax_websocket - DEBUG - Queuing msg: 4112169778
+2017-09-27 23:35:08,578 - gdax_websocket - DEBUG - Processed queued msg: 4112169711
+2017-09-27 23:35:08,579 - gdax_websocket - DEBUG - Processed queued msg: 4112169712
+2017-09-27 23:35:08,579 - gdax_websocket - DEBUG - Queuing msg: 4112169779
+2017-09-27 23:35:08,579 - gdax_websocket - DEBUG - Processed queued msg: 4112169713
+2017-09-27 23:35:08,580 - gdax_websocket - DEBUG - Queuing msg: 4112169780
+2017-09-27 23:35:08,580 - gdax_websocket - DEBUG - Processed queued msg: 4112169714
+2017-09-27 23:35:08,582 - gdax_websocket - DEBUG - Processed queued msg: 4112169715
+2017-09-27 23:35:08,581 - gdax_websocket - DEBUG - Queuing msg: 4112169781
+2017-09-27 23:35:08,583 - gdax_websocket - DEBUG - Processed queued msg: 4112169716
+2017-09-27 23:35:08,584 - gdax_websocket - DEBUG - Queuing msg: 4112169782
+2017-09-27 23:35:08,585 - gdax_websocket - DEBUG - Processed queued msg: 4112169717
+2017-09-27 23:35:08,587 - gdax_websocket - DEBUG - Processed queued msg: 4112169718
+2017-09-27 23:35:08,587 - gdax_websocket - DEBUG - Processed queued msg: 4112169719
+2017-09-27 23:35:08,588 - gdax_websocket - DEBUG - Queuing msg: 4112169783
+2017-09-27 23:35:08,588 - gdax_websocket - DEBUG - Processed queued msg: 4112169720
+2017-09-27 23:35:08,589 - gdax_websocket - DEBUG - Processed queued msg: 4112169721
+2017-09-27 23:35:08,589 - gdax_websocket - DEBUG - Queuing msg: 4112169784
+2017-09-27 23:35:08,589 - gdax_websocket - DEBUG - Processed queued msg: 4112169722
+2017-09-27 23:35:08,590 - gdax_websocket - DEBUG - Queuing msg: 4112169785
+2017-09-27 23:35:08,590 - gdax_websocket - DEBUG - Processed queued msg: 4112169723
+2017-09-27 23:35:08,591 - gdax_websocket - DEBUG - Processed queued msg: 4112169724
+2017-09-27 23:35:08,592 - gdax_websocket - DEBUG - Queuing msg: 4112169786
+2017-09-27 23:35:08,592 - gdax_websocket - DEBUG - Processed queued msg: 4112169725
+2017-09-27 23:35:08,594 - gdax_websocket - DEBUG - Queuing msg: 4112169787
+2017-09-27 23:35:08,594 - gdax_websocket - INFO - Book ready: 4112169725
+2017-09-27 23:35:08,597 - gdax_websocket - DEBUG - Queuing msg: 4112169788
+2017-09-27 23:35:08,739 - gdax_websocket - DEBUG - Queuing msg: 4112169789
+2017-09-27 23:35:08,791 - gdax_websocket - DEBUG - Queuing msg: 4112169790
+2017-09-27 23:35:09,074 - gdax_websocket - INFO - Book differences: 0
+2017-09-27 23:35:09,074 - gdax_websocket - DEBUG - Queuing msg: 4112169791
+2017-09-27 23:35:09,074 - gdax_websocket - INFO - Applying queued msgs: 4112169725
+2017-09-27 23:35:09,075 - gdax_websocket - DEBUG - Processed queued msg: 4112169726
+2017-09-27 23:35:09,075 - gdax_websocket - DEBUG - Queuing msg: 4112169792
+2017-09-27 23:35:09,075 - gdax_websocket - DEBUG - Processed queued msg: 4112169727
+2017-09-27 23:35:09,075 - gdax_websocket - DEBUG - Processed queued msg: 4112169728
+2017-09-27 23:35:09,076 - gdax_websocket - DEBUG - Queuing msg: 4112169793
+2017-09-27 23:35:09,076 - gdax_websocket - DEBUG - Processed queued msg: 4112169729
+2017-09-27 23:35:09,076 - gdax_websocket - DEBUG - Queuing msg: 4112169794
+2017-09-27 23:35:09,077 - gdax_websocket - DEBUG - Processed queued msg: 4112169730
+2017-09-27 23:35:09,077 - gdax_websocket - DEBUG - Processed queued msg: 4112169731
+2017-09-27 23:35:09,077 - gdax_websocket - DEBUG - Queuing msg: 4112169795
+2017-09-27 23:35:09,077 - gdax_websocket - DEBUG - Processed queued msg: 4112169732
+2017-09-27 23:35:09,078 - gdax_websocket - DEBUG - Queuing msg: 4112169796
+2017-09-27 23:35:09,078 - gdax_websocket - DEBUG - Processed queued msg: 4112169733
+2017-09-27 23:35:09,078 - gdax_websocket - DEBUG - Queuing msg: 4112169797
+2017-09-27 23:35:09,079 - gdax_websocket - DEBUG - Processed queued msg: 4112169734
+2017-09-27 23:35:09,079 - gdax_websocket - DEBUG - Queuing msg: 4112169798
+2017-09-27 23:35:09,079 - gdax_websocket - DEBUG - Processed queued msg: 4112169735
+2017-09-27 23:35:09,079 - gdax_websocket - DEBUG - Processed queued msg: 4112169736
+2017-09-27 23:35:09,080 - gdax_websocket - DEBUG - Queuing msg: 4112169799
+2017-09-27 23:35:09,080 - gdax_websocket - DEBUG - Processed queued msg: 4112169737
+2017-09-27 23:35:09,080 - gdax_websocket - DEBUG - Processed queued msg: 4112169738
+2017-09-27 23:35:09,080 - gdax_websocket - DEBUG - Processed queued msg: 4112169739
+2017-09-27 23:35:09,081 - gdax_websocket - DEBUG - Queuing msg: 4112169800
+2017-09-27 23:35:09,081 - gdax_websocket - DEBUG - Processed queued msg: 4112169740
+2017-09-27 23:35:09,081 - gdax_websocket - DEBUG - Queuing msg: 4112169801
+2017-09-27 23:35:09,081 - gdax_websocket - DEBUG - Processed queued msg: 4112169741
+2017-09-27 23:35:09,082 - gdax_websocket - DEBUG - Queuing msg: 4112169802
+2017-09-27 23:35:09,082 - gdax_websocket - DEBUG - Processed queued msg: 4112169742
+2017-09-27 23:35:09,082 - gdax_websocket - DEBUG - Queuing msg: 4112169803
+2017-09-27 23:35:09,083 - gdax_websocket - DEBUG - Processed queued msg: 4112169743
+2017-09-27 23:35:09,083 - gdax_websocket - DEBUG - Queuing msg: 4112169804
+2017-09-27 23:35:09,083 - gdax_websocket - DEBUG - Processed queued msg: 4112169744
+2017-09-27 23:35:09,084 - gdax_websocket - DEBUG - Queuing msg: 4112169805
+2017-09-27 23:35:09,084 - gdax_websocket - DEBUG - Processed queued msg: 4112169745
+2017-09-27 23:35:09,084 - gdax_websocket - DEBUG - Processed queued msg: 4112169746
+2017-09-27 23:35:09,084 - gdax_websocket - DEBUG - Queuing msg: 4112169806
+2017-09-27 23:35:09,084 - gdax_websocket - DEBUG - Processed queued msg: 4112169747
+2017-09-27 23:35:09,085 - gdax_websocket - DEBUG - Queuing msg: 4112169807
+2017-09-27 23:35:09,085 - gdax_websocket - DEBUG - Processed queued msg: 4112169748
+2017-09-27 23:35:09,085 - gdax_websocket - DEBUG - Queuing msg: 4112169808
+2017-09-27 23:35:09,085 - gdax_websocket - DEBUG - Processed queued msg: 4112169749
+2017-09-27 23:35:09,086 - gdax_websocket - DEBUG - Processed queued msg: 4112169750
+2017-09-27 23:35:09,086 - gdax_websocket - DEBUG - Queuing msg: 4112169809
+2017-09-27 23:35:09,086 - gdax_websocket - DEBUG - Processed queued msg: 4112169751
+2017-09-27 23:35:09,087 - gdax_websocket - DEBUG - Queuing msg: 4112169810
+2017-09-27 23:35:09,087 - gdax_websocket - DEBUG - Processed queued msg: 4112169752
+2017-09-27 23:35:09,087 - gdax_websocket - DEBUG - Queuing msg: 4112169811
+2017-09-27 23:35:09,087 - gdax_websocket - DEBUG - Processed queued msg: 4112169753
+2017-09-27 23:35:09,088 - gdax_websocket - DEBUG - Queuing msg: 4112169812
+2017-09-27 23:35:09,088 - gdax_websocket - DEBUG - Processed queued msg: 4112169754
+2017-09-27 23:35:09,088 - gdax_websocket - DEBUG - Processed queued msg: 4112169755
+2017-09-27 23:35:09,089 - gdax_websocket - DEBUG - Queuing msg: 4112169813
+2017-09-27 23:35:09,089 - gdax_websocket - DEBUG - Processed queued msg: 4112169756
+2017-09-27 23:35:09,089 - gdax_websocket - DEBUG - Queuing msg: 4112169814
+2017-09-27 23:35:09,089 - gdax_websocket - DEBUG - Processed queued msg: 4112169757
+2017-09-27 23:35:09,090 - gdax_websocket - DEBUG - Queuing msg: 4112169815
+2017-09-27 23:35:09,090 - gdax_websocket - DEBUG - Processed queued msg: 4112169758
+2017-09-27 23:35:09,090 - gdax_websocket - DEBUG - Queuing msg: 4112169816
+2017-09-27 23:35:09,090 - gdax_websocket - DEBUG - Processed queued msg: 4112169759
+2017-09-27 23:35:09,091 - gdax_websocket - DEBUG - Processed queued msg: 4112169760
+2017-09-27 23:35:09,091 - gdax_websocket - DEBUG - Queuing msg: 4112169817
+2017-09-27 23:35:09,091 - gdax_websocket - DEBUG - Processed queued msg: 4112169761
+2017-09-27 23:35:09,091 - gdax_websocket - DEBUG - Queuing msg: 4112169818
+2017-09-27 23:35:09,092 - gdax_websocket - DEBUG - Processed queued msg: 4112169762
+2017-09-27 23:35:09,092 - gdax_websocket - DEBUG - Queuing msg: 4112169819
+2017-09-27 23:35:09,092 - gdax_websocket - DEBUG - Processed queued msg: 4112169763
+2017-09-27 23:35:09,092 - gdax_websocket - DEBUG - Queuing msg: 4112169820
+2017-09-27 23:35:09,093 - gdax_websocket - DEBUG - Processed queued msg: 4112169764
+2017-09-27 23:35:09,093 - gdax_websocket - DEBUG - Processed queued msg: 4112169765
+2017-09-27 23:35:09,093 - gdax_websocket - DEBUG - Queuing msg: 4112169821
+2017-09-27 23:35:09,093 - gdax_websocket - DEBUG - Processed queued msg: 4112169766
+2017-09-27 23:35:09,094 - gdax_websocket - DEBUG - Processed queued msg: 4112169767
+2017-09-27 23:35:09,094 - gdax_websocket - DEBUG - Queuing msg: 4112169822
+2017-09-27 23:35:09,094 - gdax_websocket - DEBUG - Processed queued msg: 4112169768
+2017-09-27 23:35:09,095 - gdax_websocket - DEBUG - Queuing msg: 4112169823
+2017-09-27 23:35:09,095 - gdax_websocket - DEBUG - Processed queued msg: 4112169769
+2017-09-27 23:35:09,095 - gdax_websocket - DEBUG - Queuing msg: 4112169824
+2017-09-27 23:35:09,095 - gdax_websocket - DEBUG - Processed queued msg: 4112169770
+2017-09-27 23:35:09,096 - gdax_websocket - DEBUG - Queuing msg: 4112169825
+2017-09-27 23:35:09,096 - gdax_websocket - DEBUG - Processed queued msg: 4112169771
+2017-09-27 23:35:09,097 - gdax_websocket - DEBUG - Queuing msg: 4112169826
+2017-09-27 23:35:09,097 - gdax_websocket - DEBUG - Processed queued msg: 4112169772
+2017-09-27 23:35:09,097 - gdax_websocket - DEBUG - Queuing msg: 4112169827
+2017-09-27 23:35:09,097 - gdax_websocket - DEBUG - Processed queued msg: 4112169773
+2017-09-27 23:35:09,098 - gdax_websocket - DEBUG - Queuing msg: 4112169828
+2017-09-27 23:35:09,098 - gdax_websocket - DEBUG - Processed queued msg: 4112169774
+2017-09-27 23:35:09,098 - gdax_websocket - DEBUG - Processed queued msg: 4112169775
+2017-09-27 23:35:09,099 - gdax_websocket - DEBUG - Queuing msg: 4112169829
+2017-09-27 23:35:09,099 - gdax_websocket - DEBUG - Processed queued msg: 4112169776
+2017-09-27 23:35:09,099 - gdax_websocket - DEBUG - Queuing msg: 4112169830
+2017-09-27 23:35:09,099 - gdax_websocket - DEBUG - Processed queued msg: 4112169777
+2017-09-27 23:35:09,099 - gdax_websocket - DEBUG - Queuing msg: 4112169831
+2017-09-27 23:35:09,100 - gdax_websocket - DEBUG - Processed queued msg: 4112169778
+2017-09-27 23:35:09,100 - gdax_websocket - DEBUG - Processed queued msg: 4112169779
+2017-09-27 23:35:09,100 - gdax_websocket - DEBUG - Queuing msg: 4112169832
+2017-09-27 23:35:09,100 - gdax_websocket - DEBUG - Processed queued msg: 4112169780
+2017-09-27 23:35:09,100 - gdax_websocket - DEBUG - Processed queued msg: 4112169781
+2017-09-27 23:35:09,101 - gdax_websocket - DEBUG - Queuing msg: 4112169833
+2017-09-27 23:35:09,101 - gdax_websocket - DEBUG - Processed queued msg: 4112169782
+2017-09-27 23:35:09,101 - gdax_websocket - DEBUG - Queuing msg: 4112169834
+2017-09-27 23:35:09,101 - gdax_websocket - DEBUG - Processed queued msg: 4112169783
+2017-09-27 23:35:09,102 - gdax_websocket - DEBUG - Processed queued msg: 4112169784
+2017-09-27 23:35:09,102 - gdax_websocket - DEBUG - Queuing msg: 4112169835
+2017-09-27 23:35:09,102 - gdax_websocket - DEBUG - Processed queued msg: 4112169785
+2017-09-27 23:35:09,102 - gdax_websocket - DEBUG - Queuing msg: 4112169836
+2017-09-27 23:35:09,103 - gdax_websocket - DEBUG - Processed queued msg: 4112169786
+2017-09-27 23:35:09,103 - gdax_websocket - DEBUG - Processed queued msg: 4112169787
+2017-09-27 23:35:09,103 - gdax_websocket - DEBUG - Processed queued msg: 4112169788
+2017-09-27 23:35:09,103 - gdax_websocket - DEBUG - Queuing msg: 4112169837
+2017-09-27 23:35:09,103 - gdax_websocket - DEBUG - Processed queued msg: 4112169789
+2017-09-27 23:35:09,104 - gdax_websocket - DEBUG - Processed queued msg: 4112169790
+2017-09-27 23:35:09,104 - gdax_websocket - DEBUG - Queuing msg: 4112169838
+2017-09-27 23:35:09,104 - gdax_websocket - DEBUG - Processed queued msg: 4112169791
+2017-09-27 23:35:09,104 - gdax_websocket - DEBUG - Queuing msg: 4112169839
+2017-09-27 23:35:09,105 - gdax_websocket - DEBUG - Processed queued msg: 4112169792
+2017-09-27 23:35:09,105 - gdax_websocket - DEBUG - Queuing msg: 4112169840
+2017-09-27 23:35:09,105 - gdax_websocket - DEBUG - Processed queued msg: 4112169793
+2017-09-27 23:35:09,106 - gdax_websocket - DEBUG - Queuing msg: 4112169841
+2017-09-27 23:35:09,106 - gdax_websocket - DEBUG - Processed queued msg: 4112169794
+2017-09-27 23:35:09,106 - gdax_websocket - DEBUG - Processed queued msg: 4112169795
+2017-09-27 23:35:09,106 - gdax_websocket - DEBUG - Queuing msg: 4112169842
+2017-09-27 23:35:09,106 - gdax_websocket - DEBUG - Processed queued msg: 4112169796
+2017-09-27 23:35:09,107 - gdax_websocket - DEBUG - Queuing msg: 4112169843
+2017-09-27 23:35:09,107 - gdax_websocket - DEBUG - Processed queued msg: 4112169797
+2017-09-27 23:35:09,107 - gdax_websocket - DEBUG - Queuing msg: 4112169844
+2017-09-27 23:35:09,108 - gdax_websocket - DEBUG - Processed queued msg: 4112169798
+2017-09-27 23:35:09,108 - gdax_websocket - DEBUG - Processed queued msg: 4112169799
+2017-09-27 23:35:09,108 - gdax_websocket - DEBUG - Queuing msg: 4112169845
+2017-09-27 23:35:09,108 - gdax_websocket - DEBUG - Processed queued msg: 4112169800
+2017-09-27 23:35:09,108 - gdax_websocket - DEBUG - Processed queued msg: 4112169801
+2017-09-27 23:35:09,109 - gdax_websocket - DEBUG - Queuing msg: 4112169846
+2017-09-27 23:35:09,109 - gdax_websocket - DEBUG - Processed queued msg: 4112169802
+2017-09-27 23:35:09,109 - gdax_websocket - DEBUG - Processed queued msg: 4112169803
+2017-09-27 23:35:09,109 - gdax_websocket - DEBUG - Queuing msg: 4112169847
+2017-09-27 23:35:09,109 - gdax_websocket - DEBUG - Processed queued msg: 4112169804
+2017-09-27 23:35:09,110 - gdax_websocket - DEBUG - Queuing msg: 4112169848
+2017-09-27 23:35:09,110 - gdax_websocket - DEBUG - Processed queued msg: 4112169805
+2017-09-27 23:35:09,110 - gdax_websocket - DEBUG - Queuing msg: 4112169849
+2017-09-27 23:35:09,111 - gdax_websocket - DEBUG - Processed queued msg: 4112169806
+2017-09-27 23:35:09,111 - gdax_websocket - DEBUG - Queuing msg: 4112169850
+2017-09-27 23:35:09,111 - gdax_websocket - DEBUG - Processed queued msg: 4112169807
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Queuing msg: 4112169851
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Processed queued msg: 4112169808
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Processed queued msg: 4112169809
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Processed queued msg: 4112169810
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Processed queued msg: 4112169811
+2017-09-27 23:35:09,112 - gdax_websocket - DEBUG - Processed queued msg: 4112169812
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169813
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169814
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169815
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169816
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169817
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169818
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169819
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169820
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169821
+2017-09-27 23:35:09,113 - gdax_websocket - DEBUG - Processed queued msg: 4112169822
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169823
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169824
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169825
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169826
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169827
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169828
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169829
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169830
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169831
+2017-09-27 23:35:09,114 - gdax_websocket - DEBUG - Processed queued msg: 4112169832
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169833
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169834
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169835
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169836
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169837
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169838
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169839
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169840
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169841
+2017-09-27 23:35:09,115 - gdax_websocket - DEBUG - Processed queued msg: 4112169842
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169843
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169844
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169845
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169846
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169847
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169848
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169849
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169850
+2017-09-27 23:35:09,116 - gdax_websocket - DEBUG - Processed queued msg: 4112169851
+2017-09-27 23:35:09,116 - gdax_websocket - INFO - Book ready: 4112169851
+2017-09-27 23:35:09,120 - gdax_websocket - INFO - Checking book end: 4112169851
+2017-09-27 23:35:09,120 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:35:17,121 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2017-09-27 23:35:17,918 - gdax_websocket - INFO - Checking book start: 4112170500
+2017-09-27 23:35:17,919 - gdax_websocket - DEBUG - Queuing msg: 4112170571
+2017-09-27 23:35:17,920 - gdax_websocket - DEBUG - Queuing msg: 4112170572
+2017-09-27 23:35:17,921 - gdax_websocket - DEBUG - Queuing msg: 4112170573
+2017-09-27 23:35:17,921 - gdax_websocket - DEBUG - Queuing msg: 4112170574
+2017-09-27 23:35:17,922 - gdax_websocket - DEBUG - Queuing msg: 4112170575
+2017-09-27 23:35:17,922 - gdax_websocket - DEBUG - Queuing msg: 4112170576
+2017-09-27 23:35:17,969 - gdax_websocket - DEBUG - Queuing msg: 4112170577
+2017-09-27 23:35:17,970 - gdax_websocket - DEBUG - Queuing msg: 4112170578
+2017-09-27 23:35:17,995 - gdax_websocket - DEBUG - Queuing msg: 4112170579
+2017-09-27 23:35:18,016 - gdax_websocket - DEBUG - Queuing msg: 4112170580
+2017-09-27 23:35:18,017 - gdax_websocket - DEBUG - Queuing msg: 4112170581
+2017-09-27 23:35:18,023 - gdax_websocket - DEBUG - Queuing msg: 4112170582
+2017-09-27 23:35:18,026 - gdax_websocket - DEBUG - Queuing msg: 4112170583
+2017-09-27 23:35:18,027 - gdax_websocket - DEBUG - Queuing msg: 4112170584
+2017-09-27 23:35:18,028 - gdax_websocket - DEBUG - Queuing msg: 4112170585
+2017-09-27 23:35:18,030 - gdax_websocket - DEBUG - Queuing msg: 4112170586
+2017-09-27 23:35:18,031 - gdax_websocket - DEBUG - Queuing msg: 4112170587
+2017-09-27 23:35:18,033 - gdax_websocket - DEBUG - Queuing msg: 4112170588
+2017-09-27 23:35:18,060 - gdax_websocket - DEBUG - Queuing msg: 4112170589
+2017-09-27 23:35:18,082 - gdax_websocket - DEBUG - Queuing msg: 4112170590
+2017-09-27 23:35:18,083 - gdax_websocket - DEBUG - Queuing msg: 4112170591
+2017-09-27 23:35:18,093 - gdax_websocket - DEBUG - Queuing msg: 4112170592
+2017-09-27 23:35:18,094 - gdax_websocket - DEBUG - Queuing msg: 4112170593
+2017-09-27 23:35:18,094 - gdax_websocket - DEBUG - Queuing msg: 4112170594
+2017-09-27 23:35:18,095 - gdax_websocket - DEBUG - Queuing msg: 4112170595
+2017-09-27 23:35:18,149 - gdax_websocket - DEBUG - Queuing msg: 4112170596
+2017-09-27 23:35:18,153 - gdax_websocket - DEBUG - Queuing msg: 4112170597
+2017-09-27 23:35:18,163 - gdax_websocket - DEBUG - Queuing msg: 4112170598
+2017-09-27 23:35:18,171 - gdax_websocket - DEBUG - Queuing msg: 4112170599
+2017-09-27 23:35:18,176 - gdax_websocket - DEBUG - Queuing msg: 4112170600
+2017-09-27 23:35:18,228 - gdax_websocket - DEBUG - Queuing msg: 4112170601
+2017-09-27 23:35:18,229 - gdax_websocket - DEBUG - Queuing msg: 4112170602
+2017-09-27 23:35:18,246 - gdax_websocket - DEBUG - Queuing msg: 4112170603
+2017-09-27 23:35:18,249 - gdax_websocket - DEBUG - Queuing msg: 4112170604
+2017-09-27 23:35:18,251 - gdax_websocket - DEBUG - Queuing msg: 4112170605
+2017-09-27 23:35:18,252 - gdax_websocket - DEBUG - Queuing msg: 4112170606
+2017-09-27 23:35:18,253 - gdax_websocket - DEBUG - Queuing msg: 4112170607
+2017-09-27 23:35:18,254 - gdax_websocket - DEBUG - Queuing msg: 4112170608
+2017-09-27 23:35:18,268 - gdax_websocket - DEBUG - Queuing msg: 4112170609
+2017-09-27 23:35:18,269 - gdax_websocket - DEBUG - Queuing msg: 4112170610
+2017-09-27 23:35:18,270 - gdax_websocket - DEBUG - Queuing msg: 4112170611
+2017-09-27 23:35:18,270 - gdax_websocket - DEBUG - Queuing msg: 4112170612
+2017-09-27 23:35:18,271 - gdax_websocket - DEBUG - Queuing msg: 4112170613
+2017-09-27 23:35:18,297 - gdax_websocket - DEBUG - Queuing msg: 4112170614
+2017-09-27 23:35:18,305 - gdax_websocket - DEBUG - Queuing msg: 4112170615
+2017-09-27 23:35:18,305 - gdax_websocket - DEBUG - Queuing msg: 4112170616
+2017-09-27 23:35:18,353 - gdax_websocket - DEBUG - Queuing msg: 4112170617
+2017-09-27 23:35:18,389 - gdax_websocket - DEBUG - Queuing msg: 4112170618
+2017-09-27 23:35:18,410 - gdax_websocket - DEBUG - Queuing msg: 4112170619
+2017-09-27 23:35:18,421 - gdax_websocket - DEBUG - Queuing msg: 4112170620
+2017-09-27 23:35:18,524 - gdax_websocket - DEBUG - Queuing msg: 4112170621
+2017-09-27 23:35:18,550 - gdax_websocket - DEBUG - Queuing msg: 4112170622
+2017-09-27 23:35:18,557 - gdax_websocket - DEBUG - Queuing msg: 4112170623
+2017-09-27 23:35:18,673 - gdax_websocket - INFO - Expected book: 4112170586
+2017-09-27 23:35:18,673 - gdax_websocket - DEBUG - Queuing msg: 4112170624
+2017-09-27 23:35:18,673 - gdax_websocket - INFO - Applying queued msgs: 4112170500
+2017-09-27 23:35:18,674 - gdax_websocket - DEBUG - Processed queued msg: 4112170501
+2017-09-27 23:35:18,675 - gdax_websocket - DEBUG - Processed queued msg: 4112170502
+2017-09-27 23:35:18,675 - gdax_websocket - DEBUG - Queuing msg: 4112170625
+2017-09-27 23:35:18,676 - gdax_websocket - DEBUG - Processed queued msg: 4112170503
+2017-09-27 23:35:18,677 - gdax_websocket - DEBUG - Queuing msg: 4112170626
+2017-09-27 23:35:18,677 - gdax_websocket - DEBUG - Processed queued msg: 4112170504
+2017-09-27 23:35:18,678 - gdax_websocket - DEBUG - Processed queued msg: 4112170505
+2017-09-27 23:35:18,678 - gdax_websocket - DEBUG - Queuing msg: 4112170627
+2017-09-27 23:35:18,678 - gdax_websocket - DEBUG - Processed queued msg: 4112170506
+2017-09-27 23:35:18,679 - gdax_websocket - DEBUG - Queuing msg: 4112170628
+2017-09-27 23:35:18,679 - gdax_websocket - DEBUG - Processed queued msg: 4112170507
+2017-09-27 23:35:18,679 - gdax_websocket - DEBUG - Processed queued msg: 4112170508
+2017-09-27 23:35:18,680 - gdax_websocket - DEBUG - Queuing msg: 4112170629
+2017-09-27 23:35:18,680 - gdax_websocket - DEBUG - Processed queued msg: 4112170509
+2017-09-27 23:35:18,680 - gdax_websocket - DEBUG - Queuing msg: 4112170630
+2017-09-27 23:35:18,681 - gdax_websocket - DEBUG - Processed queued msg: 4112170510
+2017-09-27 23:35:18,681 - gdax_websocket - DEBUG - Processed queued msg: 4112170511
+2017-09-27 23:35:18,681 - gdax_websocket - DEBUG - Queuing msg: 4112170631
+2017-09-27 23:35:18,681 - gdax_websocket - DEBUG - Processed queued msg: 4112170512
+2017-09-27 23:35:18,682 - gdax_websocket - DEBUG - Queuing msg: 4112170632
+2017-09-27 23:35:18,682 - gdax_websocket - DEBUG - Processed queued msg: 4112170513
+2017-09-27 23:35:18,682 - gdax_websocket - DEBUG - Processed queued msg: 4112170514
+2017-09-27 23:35:18,683 - gdax_websocket - DEBUG - Queuing msg: 4112170633
+2017-09-27 23:35:18,683 - gdax_websocket - DEBUG - Processed queued msg: 4112170515
+2017-09-27 23:35:18,683 - gdax_websocket - DEBUG - Processed queued msg: 4112170516
+2017-09-27 23:35:18,683 - gdax_websocket - DEBUG - Processed queued msg: 4112170517
+2017-09-27 23:35:18,683 - gdax_websocket - DEBUG - Processed queued msg: 4112170518
+2017-09-27 23:35:18,684 - gdax_websocket - DEBUG - Queuing msg: 4112170634
+2017-09-27 23:35:18,684 - gdax_websocket - DEBUG - Processed queued msg: 4112170519
+2017-09-27 23:35:18,684 - gdax_websocket - DEBUG - Queuing msg: 4112170635
+2017-09-27 23:35:18,684 - gdax_websocket - DEBUG - Processed queued msg: 4112170520
+2017-09-27 23:35:18,685 - gdax_websocket - DEBUG - Queuing msg: 4112170636
+2017-09-27 23:35:18,685 - gdax_websocket - DEBUG - Processed queued msg: 4112170521
+2017-09-27 23:35:18,685 - gdax_websocket - DEBUG - Processed queued msg: 4112170522
+2017-09-27 23:35:18,685 - gdax_websocket - DEBUG - Processed queued msg: 4112170523
+2017-09-27 23:35:18,685 - gdax_websocket - DEBUG - Processed queued msg: 4112170524
+2017-09-27 23:35:18,686 - gdax_websocket - DEBUG - Processed queued msg: 4112170525
+2017-09-27 23:35:18,686 - gdax_websocket - DEBUG - Queuing msg: 4112170637
+2017-09-27 23:35:18,686 - gdax_websocket - DEBUG - Processed queued msg: 4112170526
+2017-09-27 23:35:18,686 - gdax_websocket - DEBUG - Processed queued msg: 4112170527
+2017-09-27 23:35:18,687 - gdax_websocket - DEBUG - Queuing msg: 4112170638
+2017-09-27 23:35:18,687 - gdax_websocket - DEBUG - Processed queued msg: 4112170528
+2017-09-27 23:35:18,688 - gdax_websocket - DEBUG - Queuing msg: 4112170639
+2017-09-27 23:35:18,689 - gdax_websocket - DEBUG - Processed queued msg: 4112170529
+2017-09-27 23:35:18,691 - gdax_websocket - DEBUG - Processed queued msg: 4112170530
+2017-09-27 23:35:18,692 - gdax_websocket - DEBUG - Queuing msg: 4112170640
+2017-09-27 23:35:18,692 - gdax_websocket - DEBUG - Processed queued msg: 4112170531
+2017-09-27 23:35:18,692 - gdax_websocket - DEBUG - Processed queued msg: 4112170532
+2017-09-27 23:35:18,693 - gdax_websocket - DEBUG - Queuing msg: 4112170641
+2017-09-27 23:35:18,693 - gdax_websocket - DEBUG - Processed queued msg: 4112170533
+2017-09-27 23:35:18,694 - gdax_websocket - DEBUG - Queuing msg: 4112170642
+2017-09-27 23:35:18,694 - gdax_websocket - DEBUG - Processed queued msg: 4112170534
+2017-09-27 23:35:18,694 - gdax_websocket - DEBUG - Queuing msg: 4112170643
+2017-09-27 23:35:18,694 - gdax_websocket - DEBUG - Processed queued msg: 4112170535
+2017-09-27 23:35:18,695 - gdax_websocket - DEBUG - Processed queued msg: 4112170536
+2017-09-27 23:35:18,695 - gdax_websocket - DEBUG - Processed queued msg: 4112170537
+2017-09-27 23:35:18,695 - gdax_websocket - DEBUG - Queuing msg: 4112170644
+2017-09-27 23:35:18,695 - gdax_websocket - DEBUG - Processed queued msg: 4112170538
+2017-09-27 23:35:18,696 - gdax_websocket - DEBUG - Processed queued msg: 4112170539
+2017-09-27 23:35:18,696 - gdax_websocket - DEBUG - Queuing msg: 4112170645
+2017-09-27 23:35:18,696 - gdax_websocket - DEBUG - Processed queued msg: 4112170540
+2017-09-27 23:35:18,696 - gdax_websocket - DEBUG - Queuing msg: 4112170646
+2017-09-27 23:35:18,697 - gdax_websocket - DEBUG - Processed queued msg: 4112170541
+2017-09-27 23:35:18,697 - gdax_websocket - DEBUG - Queuing msg: 4112170647
+2017-09-27 23:35:18,697 - gdax_websocket - DEBUG - Processed queued msg: 4112170542
+2017-09-27 23:35:18,698 - gdax_websocket - DEBUG - Queuing msg: 4112170648
+2017-09-27 23:35:18,698 - gdax_websocket - DEBUG - Processed queued msg: 4112170543
+2017-09-27 23:35:18,698 - gdax_websocket - DEBUG - Queuing msg: 4112170649
+2017-09-27 23:35:18,698 - gdax_websocket - DEBUG - Processed queued msg: 4112170544
+2017-09-27 23:35:18,699 - gdax_websocket - DEBUG - Processed queued msg: 4112170545
+2017-09-27 23:35:18,699 - gdax_websocket - DEBUG - Queuing msg: 4112170650
+2017-09-27 23:35:18,699 - gdax_websocket - DEBUG - Processed queued msg: 4112170546
+2017-09-27 23:35:18,699 - gdax_websocket - DEBUG - Queuing msg: 4112170651
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170547
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170548
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170549
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170550
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170551
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170552
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170553
+2017-09-27 23:35:18,700 - gdax_websocket - DEBUG - Processed queued msg: 4112170554
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170555
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170556
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170557
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170558
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170559
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170560
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170561
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170562
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170563
+2017-09-27 23:35:18,701 - gdax_websocket - DEBUG - Processed queued msg: 4112170564
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170565
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170566
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170567
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170568
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170569
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170570
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170571
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170572
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170573
+2017-09-27 23:35:18,702 - gdax_websocket - DEBUG - Processed queued msg: 4112170574
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170575
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170576
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170577
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170578
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170579
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170580
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170581
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170582
+2017-09-27 23:35:18,703 - gdax_websocket - DEBUG - Processed queued msg: 4112170583
+2017-09-27 23:35:18,704 - gdax_websocket - DEBUG - Processed queued msg: 4112170584
+2017-09-27 23:35:18,704 - gdax_websocket - DEBUG - Processed queued msg: 4112170585
+2017-09-27 23:35:18,704 - gdax_websocket - DEBUG - Processed queued msg: 4112170586
+2017-09-27 23:35:18,704 - gdax_websocket - INFO - Book ready: 4112170586
+2017-09-27 23:35:18,760 - gdax_websocket - DEBUG - Queuing msg: 4112170652
+2017-09-27 23:35:18,972 - gdax_websocket - DEBUG - Queuing msg: 4112170653
+2017-09-27 23:35:19,097 - gdax_websocket - INFO - Book differences: 0
+2017-09-27 23:35:19,098 - gdax_websocket - INFO - Applying queued msgs: 4112170586
+2017-09-27 23:35:19,098 - gdax_websocket - DEBUG - Processed queued msg: 4112170587
+2017-09-27 23:35:19,098 - gdax_websocket - DEBUG - Queuing msg: 4112170654
+2017-09-27 23:35:19,099 - gdax_websocket - DEBUG - Processed queued msg: 4112170588
+2017-09-27 23:35:19,099 - gdax_websocket - DEBUG - Queuing msg: 4112170655
+2017-09-27 23:35:19,100 - gdax_websocket - DEBUG - Processed queued msg: 4112170589
+2017-09-27 23:35:19,100 - gdax_websocket - DEBUG - Processed queued msg: 4112170590
+2017-09-27 23:35:19,100 - gdax_websocket - DEBUG - Queuing msg: 4112170656
+2017-09-27 23:35:19,100 - gdax_websocket - DEBUG - Processed queued msg: 4112170591
+2017-09-27 23:35:19,100 - gdax_websocket - DEBUG - Processed queued msg: 4112170592
+2017-09-27 23:35:19,101 - gdax_websocket - DEBUG - Queuing msg: 4112170657
+2017-09-27 23:35:19,101 - gdax_websocket - DEBUG - Processed queued msg: 4112170593
+2017-09-27 23:35:19,101 - gdax_websocket - DEBUG - Queuing msg: 4112170658
+2017-09-27 23:35:19,101 - gdax_websocket - DEBUG - Processed queued msg: 4112170594
+2017-09-27 23:35:19,102 - gdax_websocket - DEBUG - Processed queued msg: 4112170595
+2017-09-27 23:35:19,102 - gdax_websocket - DEBUG - Queuing msg: 4112170659
+2017-09-27 23:35:19,102 - gdax_websocket - DEBUG - Processed queued msg: 4112170596
+2017-09-27 23:35:19,103 - gdax_websocket - DEBUG - Queuing msg: 4112170660
+2017-09-27 23:35:19,103 - gdax_websocket - DEBUG - Processed queued msg: 4112170597
+2017-09-27 23:35:19,103 - gdax_websocket - DEBUG - Queuing msg: 4112170661
+2017-09-27 23:35:19,103 - gdax_websocket - DEBUG - Processed queued msg: 4112170598
+2017-09-27 23:35:19,104 - gdax_websocket - DEBUG - Queuing msg: 4112170662
+2017-09-27 23:35:19,104 - gdax_websocket - DEBUG - Processed queued msg: 4112170599
+2017-09-27 23:35:19,104 - gdax_websocket - DEBUG - Queuing msg: 4112170663
+2017-09-27 23:35:19,104 - gdax_websocket - DEBUG - Processed queued msg: 4112170600
+2017-09-27 23:35:19,105 - gdax_websocket - DEBUG - Queuing msg: 4112170664
+2017-09-27 23:35:19,105 - gdax_websocket - DEBUG - Processed queued msg: 4112170601
+2017-09-27 23:35:19,105 - gdax_websocket - DEBUG - Queuing msg: 4112170665
+2017-09-27 23:35:19,106 - gdax_websocket - DEBUG - Processed queued msg: 4112170602
+2017-09-27 23:35:19,106 - gdax_websocket - DEBUG - Processed queued msg: 4112170603
+2017-09-27 23:35:19,106 - gdax_websocket - DEBUG - Queuing msg: 4112170666
+2017-09-27 23:35:19,106 - gdax_websocket - DEBUG - Processed queued msg: 4112170604
+2017-09-27 23:35:19,107 - gdax_websocket - DEBUG - Queuing msg: 4112170667
+2017-09-27 23:35:19,107 - gdax_websocket - DEBUG - Processed queued msg: 4112170605
+2017-09-27 23:35:19,107 - gdax_websocket - DEBUG - Processed queued msg: 4112170606
+2017-09-27 23:35:19,107 - gdax_websocket - DEBUG - Queuing msg: 4112170668
+2017-09-27 23:35:19,107 - gdax_websocket - DEBUG - Processed queued msg: 4112170607
+2017-09-27 23:35:19,108 - gdax_websocket - DEBUG - Queuing msg: 4112170669
+2017-09-27 23:35:19,108 - gdax_websocket - DEBUG - Processed queued msg: 4112170608
+2017-09-27 23:35:19,108 - gdax_websocket - DEBUG - Processed queued msg: 4112170609
+2017-09-27 23:35:19,109 - gdax_websocket - DEBUG - Queuing msg: 4112170670
+2017-09-27 23:35:19,109 - gdax_websocket - DEBUG - Processed queued msg: 4112170610
+2017-09-27 23:35:19,109 - gdax_websocket - DEBUG - Queuing msg: 4112170671
+2017-09-27 23:35:19,109 - gdax_websocket - DEBUG - Processed queued msg: 4112170611
+2017-09-27 23:35:19,110 - gdax_websocket - DEBUG - Processed queued msg: 4112170612
+2017-09-27 23:35:19,110 - gdax_websocket - DEBUG - Queuing msg: 4112170672
+2017-09-27 23:35:19,110 - gdax_websocket - DEBUG - Processed queued msg: 4112170613
+2017-09-27 23:35:19,111 - gdax_websocket - DEBUG - Queuing msg: 4112170673
+2017-09-27 23:35:19,111 - gdax_websocket - DEBUG - Processed queued msg: 4112170614
+2017-09-27 23:35:19,111 - gdax_websocket - DEBUG - Queuing msg: 4112170674
+2017-09-27 23:35:19,111 - gdax_websocket - DEBUG - Processed queued msg: 4112170615
+2017-09-27 23:35:19,112 - gdax_websocket - DEBUG - Queuing msg: 4112170675
+2017-09-27 23:35:19,112 - gdax_websocket - DEBUG - Processed queued msg: 4112170616
+2017-09-27 23:35:19,112 - gdax_websocket - DEBUG - Queuing msg: 4112170676
+2017-09-27 23:35:19,113 - gdax_websocket - DEBUG - Processed queued msg: 4112170617
+2017-09-27 23:35:19,113 - gdax_websocket - DEBUG - Queuing msg: 4112170677
+2017-09-27 23:35:19,113 - gdax_websocket - DEBUG - Processed queued msg: 4112170618
+2017-09-27 23:35:19,114 - gdax_websocket - DEBUG - Queuing msg: 4112170678
+2017-09-27 23:35:19,114 - gdax_websocket - DEBUG - Processed queued msg: 4112170619
+2017-09-27 23:35:19,114 - gdax_websocket - DEBUG - Queuing msg: 4112170679
+2017-09-27 23:35:19,114 - gdax_websocket - DEBUG - Processed queued msg: 4112170620
+2017-09-27 23:35:19,115 - gdax_websocket - DEBUG - Queuing msg: 4112170680
+2017-09-27 23:35:19,115 - gdax_websocket - DEBUG - Processed queued msg: 4112170621
+2017-09-27 23:35:19,115 - gdax_websocket - DEBUG - Queuing msg: 4112170681
+2017-09-27 23:35:19,116 - gdax_websocket - DEBUG - Processed queued msg: 4112170622
+2017-09-27 23:35:19,116 - gdax_websocket - DEBUG - Queuing msg: 4112170682
+2017-09-27 23:35:19,116 - gdax_websocket - DEBUG - Processed queued msg: 4112170623
+2017-09-27 23:35:19,117 - gdax_websocket - DEBUG - Queuing msg: 4112170683
+2017-09-27 23:35:19,117 - gdax_websocket - DEBUG - Processed queued msg: 4112170624
+2017-09-27 23:35:19,117 - gdax_websocket - DEBUG - Queuing msg: 4112170684
+2017-09-27 23:35:19,117 - gdax_websocket - DEBUG - Processed queued msg: 4112170625
+2017-09-27 23:35:19,118 - gdax_websocket - DEBUG - Queuing msg: 4112170685
+2017-09-27 23:35:19,118 - gdax_websocket - DEBUG - Processed queued msg: 4112170626
+2017-09-27 23:35:19,118 - gdax_websocket - DEBUG - Queuing msg: 4112170686
+2017-09-27 23:35:19,118 - gdax_websocket - DEBUG - Processed queued msg: 4112170627
+2017-09-27 23:35:19,119 - gdax_websocket - DEBUG - Queuing msg: 4112170687
+2017-09-27 23:35:19,119 - gdax_websocket - DEBUG - Processed queued msg: 4112170628
+2017-09-27 23:35:19,119 - gdax_websocket - DEBUG - Queuing msg: 4112170688
+2017-09-27 23:35:19,119 - gdax_websocket - DEBUG - Processed queued msg: 4112170629
+2017-09-27 23:35:19,120 - gdax_websocket - DEBUG - Processed queued msg: 4112170630
+2017-09-27 23:35:19,120 - gdax_websocket - DEBUG - Queuing msg: 4112170689
+2017-09-27 23:35:19,120 - gdax_websocket - DEBUG - Processed queued msg: 4112170631
+2017-09-27 23:35:19,120 - gdax_websocket - DEBUG - Queuing msg: 4112170690
+2017-09-27 23:35:19,121 - gdax_websocket - DEBUG - Processed queued msg: 4112170632
+2017-09-27 23:35:19,121 - gdax_websocket - DEBUG - Queuing msg: 4112170691
+2017-09-27 23:35:19,121 - gdax_websocket - DEBUG - Processed queued msg: 4112170633
+2017-09-27 23:35:19,122 - gdax_websocket - DEBUG - Queuing msg: 4112170692
+2017-09-27 23:35:19,122 - gdax_websocket - DEBUG - Processed queued msg: 4112170634
+2017-09-27 23:35:19,122 - gdax_websocket - DEBUG - Processed queued msg: 4112170635
+2017-09-27 23:35:19,122 - gdax_websocket - DEBUG - Queuing msg: 4112170693
+2017-09-27 23:35:19,122 - gdax_websocket - DEBUG - Processed queued msg: 4112170636
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170637
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170638
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170639
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170640
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170641
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170642
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170643
+2017-09-27 23:35:19,123 - gdax_websocket - DEBUG - Processed queued msg: 4112170644
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170645
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170646
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170647
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170648
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170649
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170650
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170651
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170652
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170653
+2017-09-27 23:35:19,124 - gdax_websocket - DEBUG - Processed queued msg: 4112170654
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170655
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170656
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170657
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170658
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170659
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170660
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170661
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170662
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170663
+2017-09-27 23:35:19,125 - gdax_websocket - DEBUG - Processed queued msg: 4112170664
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170665
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170666
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170667
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170668
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170669
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170670
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170671
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170672
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170673
+2017-09-27 23:35:19,126 - gdax_websocket - DEBUG - Processed queued msg: 4112170674
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170675
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170676
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170677
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170678
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170679
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170680
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170681
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170682
+2017-09-27 23:35:19,127 - gdax_websocket - DEBUG - Processed queued msg: 4112170683
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170684
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170685
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170686
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170687
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170688
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170689
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170690
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170691
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170692
+2017-09-27 23:35:19,128 - gdax_websocket - DEBUG - Processed queued msg: 4112170693
+2017-09-27 23:35:19,128 - gdax_websocket - INFO - Book ready: 4112170693
+2017-09-27 23:35:19,132 - gdax_websocket - INFO - Checking book end: 4112170693
+2017-09-27 23:35:19,132 - gdax_websocket - INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

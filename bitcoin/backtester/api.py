@@ -6,7 +6,7 @@ import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
-import bitcoin.strategies.rl
+
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
@@ -23,6 +23,10 @@ class BackTester(object):
         self.outstanding_orders = {}  # dict of side to list of orders
         self.trades = pd.DataFrame()
         self.book = None
+
+    @property
+    def all_outstanding_orders(self):
+        return self.outstanding_orders.get(OrderSide.BUY, []) + self.outstanding_orders.get(OrderSide.SELL, [])
 
     @staticmethod
     def _get_place_order_balance(order):
@@ -52,10 +56,6 @@ class BackTester(object):
         """
         fills is dict[order, fill qty]
         """
-        assert len(self.outstanding_orders) <= 2, \
-            'More than a single buy/sell order is not currently supported {}'.format(self.outstanding_orders)
-
-
         fills = {}
         if not msg['type'] == 'match':
             return fills
@@ -108,7 +108,7 @@ class BackTester(object):
         """
         for order, fill_qty in fills.iteritems():
             self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
-            print(self.balance)
+
             # remove if filled, otherwise update order
             if order.size == fill_qty:
                 self.outstanding_orders[order.side] = []
@@ -134,15 +134,10 @@ class BackTester(object):
         return
 
     def _get_order(self, order_id):
-        buy_orders = self.outstanding_orders.get(OrderSide.BUY, [])
-        sell_orders = self.outstanding_orders.get(OrderSide.SELL, [])
-
-        if buy_orders and order_id == buy_orders[0].id:
-            return buy_orders[0]
-        elif sell_orders and order_id == sell_orders[0].id:
-            return sell_orders[0]
-        else:
-            raise Exception('Did not find order {}'.format(order_id))
+        for order in self.all_outstanding_orders:
+            if order.id == order_id:
+                return order
+        raise Exception('Did not find order {}'.format(order_id))
 
     def place_orders(self, orders):
         """
@@ -182,20 +177,24 @@ class BackTester(object):
 
             # get and place new orders
             instructions = strategy.rebalance(msg=msg,
-                                        book=self.book,
-                                        outstanding_orders=self.outstanding_orders,
-                                        balance=self.balance)
+                                              book=self.book,
+                                              outstanding_orders=self.outstanding_orders,
+                                              balance=self.balance)
             self.place_orders(instructions)
 
-        cancel_all = [CancelOrder(id) for id in self.outstanding_orders]
+        cancel_all = [CancelOrder(order.id) for order in self.all_outstanding_orders]
         self.place_orders(cancel_all)
-        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
-        mid_price = (self.book.asks[0].price + self.book.bids[-1].price) / 2
-        coin_value = excess_coins * mid_price
-        final_usd = self.balance['USD'] + coin_value
-        print(self.balance)
+        final_usd = self._liquidate_positions()
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
         return
+
+    def _liquidate_positions(self):
+        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
+        best_bid, best_ask = self.book.get_best_bid_ask()
+        mid_price = (best_bid + best_ask) / 2
+        coin_value = excess_coins * mid_price
+        final_usd = self.balance['USD'] + coin_value
+        return final_usd
 
     def run_with_saved_data(self, strategy, file_name):
         with open(file_name, 'rb') as f:
@@ -223,14 +222,16 @@ class BackTester(object):
 
 
 def main():
-    exchange = 'GDAX'
-    product_id = 'BTC-USD'
-    start = pd.datetime(2017, 9, 26, 4, 31)
-    end = pd.datetime(2017, 9, 26, 4, 41)
-    strategy = bitcoin.strategies.rl.Strategy()
-    backtest = BackTester(exchange, product_id, {'USD': 1000, 'BTC': 0})
-    # backtest.save_data(start=start, num_msgs=10000, file_name='test-data.pickle')
-    backtest.run_with_saved_data(strategy, 'test-data.pickle')
+    from bitcoin.strategies.wall import WallStrategy
+    strategy = WallStrategy()
+
+    root = util.get_project_root()
+    file_name = '{}/data/test_data.pickle'.format(root)
+    backtest = BackTester(exchange='GDAX', product_id='BTC-USD', balance={'USD': 100000, 'BTC': 1000})
+
+    # backtest.save_data(start=pd.datetime(2017, 9, 26, 4, 31), num_msgs=100000, file_name=file_name)
+    backtest.run_with_saved_data(strategy, file_name)
+
     print backtest.balance
     print backtest.outstanding_orders
 
