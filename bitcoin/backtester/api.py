@@ -178,11 +178,11 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            orders = strategy.rebalance(msg=msg,
+            instructions = strategy.rebalance(msg=msg,
                                         book=self.book,
                                         outstanding_orders=self.outstanding_orders,
                                         balance=self.balance)
-            self.place_orders(orders)
+            self.place_orders(instructions)
 
         final_usd = self._liquidate_positions()
         logger.info('Backtest end. Final USD: {}'.format(final_usd))
