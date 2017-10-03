@@ -18,7 +18,7 @@ class WallStrategy(BaseStrategy):
         target_buy, target_ask = None, None
 
         for side, levels in cumulative_volume.iteritems():
-            for level in cumulative_volume:
+            for level in levels:
                 # reached max volume
                 if level.cum_size > self.max_volume:
                     break
@@ -32,7 +32,7 @@ class WallStrategy(BaseStrategy):
                 # get volume behind current level
                 price_delta = -self.price_delta if side == 'bids' else self.price_delta
                 search_price = CumPriceLevel(price + price_delta)
-                new_index = cumulative_volume.bisect_key_left(search_price)
+                new_index = levels.bisect_key_left(search_price)
                 if new_index < len(levels):
                     volume_behind = levels[new_index] - level.cum_size
                 else:

@@ -41,7 +41,7 @@ class BaseStrategy(util.BaseObject):
             'asks': SortedListWithKey(key=lambda x: x.price)
         }
 
-        for side, levels in all_levels:
+        for side, levels in all_levels.iteritems():
             for level in levels:
                 volume_so_far += level.size
                 value = CumPriceLevel(price=level.price, cum_size=volume_so_far)
@@ -53,7 +53,7 @@ class BaseStrategy(util.BaseObject):
     def _get_cancel_orders(self, outstanding_orders, side, target_price):
         orders = []
         num_orders = len(outstanding_orders.get(side, []))
-        if num_orders == 0:
+        if num_orders == 0 or target_price is None:
             return orders
 
         current_order = outstanding_orders[side][0]
@@ -66,7 +66,7 @@ class BaseStrategy(util.BaseObject):
     def _get_new_orders(self, outstanding_orders, side, target_price, balance):
         orders = []
         num_orders = len(outstanding_orders.get(side, []))
-        if num_orders != 0:
+        if num_orders != 0 or target_price is None:
             return orders
 
         currency = self.quote if side == OrderSide.BUY else self.base

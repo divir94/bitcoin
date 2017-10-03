@@ -7,7 +7,6 @@ import bitcoin.logs.logger as lc
 import bitcoin.params as params
 import bitcoin.util as util
 
-import bitcoin.strategies.rl
 import bitcoin.backtester.util as butil
 from bitcoin.backtester.orders import *
 
@@ -191,7 +190,7 @@ class BackTester(object):
 
     def _liquidate_positions(self):
         excess_coins = self.balance['BTC'] - self.init_balance['BTC']
-        best_bid, best_ask = self.book.get_bid_ask_prices()
+        best_bid, best_ask = self.book.get_best_bid_ask()
         mid_price = (best_bid + best_ask) / 2
         coin_value = excess_coins * mid_price
         final_usd = self.balance['USD'] + coin_value
@@ -223,14 +222,16 @@ class BackTester(object):
 
 
 def main():
-    exchange = 'GDAX'
-    product_id = 'BTC-USD'
-    start = pd.datetime(2017, 9, 26, 4, 31)
-    end = pd.datetime(2017, 9, 26, 4, 41)
-    strategy = bitcoin.strategies.rl.Strategy()
-    backtest = BackTester(exchange, product_id, {'USD': 100000, 'BTC': 1000})
-    # backtest.save_data(start=start, num_msgs=10000, file_name='data/test-data.pickle')
-    backtest.run_with_saved_data(strategy, 'test-data.pickle')
+    from bitcoin.strategies.wall import WallStrategy
+    strategy = WallStrategy()
+
+    root = util.get_project_root()
+    file_name = '{}/data/test_data.pickle'.format(root)
+    backtest = BackTester(exchange='GDAX', product_id='BTC-USD', balance={'USD': 100000, 'BTC': 1000})
+
+    # backtest.save_data(start=pd.datetime(2017, 9, 26, 4, 31), num_msgs=100000, file_name=file_name)
+    backtest.run_with_saved_data(strategy, file_name)
+
     print backtest.balance
     print backtest.outstanding_orders
 
