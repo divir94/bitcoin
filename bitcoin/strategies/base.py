@@ -1,5 +1,11 @@
+from sortedcontainers import SortedListWithKey
+
 import bitcoin.util as util
 from bitcoin.backtester.orders import *
+
+
+CumPriceLevel = namedtuple('CumPriceLevel', ['price', 'cum_size'])
+CumPriceLevel.__new__.__defaults__ = (None,)
 
 
 class BaseStrategy(util.BaseObject):
@@ -11,12 +17,38 @@ class BaseStrategy(util.BaseObject):
         self.sig_price_change = sig_price_change  # significant price change to update order
         self.msg_num = -1
 
-    @staticmethod
-    def get_target_prices(book):
+    def get_target_prices(self, book):
         """
         Get price at which to place orders on both sides before a wall.
         """
         raise NotImplementedError
+
+    @staticmethod
+    def get_cumulative_volume(book, max_volume=None):
+        """
+        {
+            'asks': list of (price, cumulative volume) is ascending order,
+            'bids': list of (price, cumulative volume) is descending order,
+        }
+        """
+        volume_so_far = 0
+        all_levels = {
+            'bids': book.bids,
+            'asks': book.asks
+        }
+        cumulative_volume = {
+            'bids': SortedListWithKey(key=lambda x: -x.price),
+            'asks': SortedListWithKey(key=lambda x: x.price)
+        }
+
+        for side, levels in all_levels:
+            for level in levels:
+                volume_so_far += level.size
+                value = CumPriceLevel(price=level.price, cum_size=volume_so_far)
+                cumulative_volume[side].add(value)
+                if max_volume and (volume_so_far > max_volume):
+                    break
+        return cumulative_volume
 
     def _get_cancel_orders(self, outstanding_orders, side, target_price):
         orders = []
@@ -40,7 +72,7 @@ class BaseStrategy(util.BaseObject):
         currency = self.quote if side == OrderSide.BUY else self.base
         amount = target_price * self.order_size if side == OrderSide.BUY else self.order_size
 
-        if balance[currency] >= amount and target_price != -1:
+        if balance[currency] >= amount and target_price is not None:
             limit_order = LimitOrder(quote=self.quote,
                                      base=self.base,
                                      side=side,
