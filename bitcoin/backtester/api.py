@@ -1,5 +1,5 @@
 import pandas as pd
-import pickle
+import cPickle as pickle
 import uuid
 
 import bitcoin.storage.api as st
