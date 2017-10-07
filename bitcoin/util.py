@@ -23,7 +23,7 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_decimal(msg, numeric_fields):
+def to_numeric(msg, numeric_fields):
     result = {}
     for k, v in msg.iteritems():
         if v:
@@ -42,21 +42,8 @@ def df_to_dict(df):
     return [v.dropna().to_dict() for k, v in df.iterrows()]
 
 
-def gdax_time_parser(time_string):
-    """
-    Super light weight parser for gdax time strings.
-    Gdax time strings are of the form 2017-09-26T04:40:51.596000Z
-    """
-    return datetime(
-        year=int(time_string[:4]),
-        month=int(time_string[5:7]),
-        day=int(time_string[8:10]),
-        hour=int(time_string[11:13]),
-        minute=int(time_string[14:16]),
-        second=int(time_string[17:19]),
-        microsecond=int(time_string[20:26]),
-        tzinfo=pytz.utc
-    )
+def is_close(a, b, abs_tol=1e-9):
+    return abs(a-b) <= abs_tol
 
 
 def handle_exception(exc_type, exc_value, exc_traceback):

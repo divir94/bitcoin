@@ -13,7 +13,7 @@ class GdaxOrderBook(ob.OrderBook):
     def process_message(self, msg, book=None):
         book = book or self
         sequence = msg['sequence']
-        msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
+        msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
 
         if sequence <= book.sequence:
             return
@@ -140,8 +140,8 @@ class GdaxOrderBook(ob.OrderBook):
 
         # get original order size
         old_price, old_size, order_id = book.get(order_id)
-        assert price == old_price
-        assert trade_size <= old_size
+        assert price == old_price, '{} == {}'.format(price, old_price)
+        assert trade_size <= (old_size + 1e-9), '{} <= {}'.format(trade_size, old_size)
 
         # update order to new size
         new_size = old_size - trade_size
@@ -189,4 +189,4 @@ class GdaxOrderBook(ob.OrderBook):
             return
 
         result = book.update(order_id, new_size)
-        assert price == result[0]
+        assert price == result[0], '{} == {}'.format(price, result[0])

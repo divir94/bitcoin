@@ -168,7 +168,7 @@ class BackTester(object):
         self.book = book
         for msg in msgs:
             # update book
-            msg = util.to_decimal(msg, params.MSG_NUMERIC_FIELD[self.exchange])
+            msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
             self.book.process_message(msg)
 
             # get and handle fills

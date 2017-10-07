@@ -4,7 +4,7 @@ from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
+    def __init__(self, sequence, bids=[], asks=[], time_str=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -26,13 +26,11 @@ class OrderBook(util.BaseObject):
         self.orders = {}  # dict[order_id, price]
 
         # initialize bids and asks
-        bids = [] if bids is None else bids
-        for price, size, order_id in bids:
-            self.add('buy', float(price), float(size), order_id)
-
-        asks = [] if asks is None else asks
-        for price, size, order_id in asks:
-            self.add('sell', float(price), float(size), order_id)
+        sides = {'buy': bids, 'sell': asks}
+        for side, orders in sides.iteritems():
+            for price, size, order_id in orders:
+                price, size = float(price), float(size)
+                self.add(side=side, price=price, size=size, order_id=order_id)
 
     def _get_levels_from_side(self, side):
         """get either bids or asks based on the side"""
@@ -105,12 +103,12 @@ class OrderBook(util.BaseObject):
         price = level.price
 
         # remove level
-        if level.size == 0:
+        if util.is_close(level.size, 0):
             levels = self._get_levels_from_price(price)
             levels.remove(level)  # this is SortedListWithKey.remove
 
         # remove order
-        if new_size == 0:
+        if util.is_close(new_size, 0):
             del self.orders[order_id]
         return price, new_size, order_id
 
