@@ -91,7 +91,8 @@ def get_book_from_df(df):
     columns = ['price', 'size', 'order_id']
     bids = bids[columns].values
     asks = asks[columns].values
-    book = ob.GdaxOrderBook(sequence, bids, asks)
+    time_str = df['received_time'].unique()[0]
+    book = ob.GdaxOrderBook(sequence, bids=bids, asks=asks, time_str=time_str)
     return book
 
 

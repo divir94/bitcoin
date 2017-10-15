@@ -4,8 +4,8 @@ import bitcoin.util as util
 
 
 class GdaxOrderBook(ob.OrderBook):
-    def __init__(self, sequence, bids=None, asks=None):
-        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks)
+    def __init__(self, sequence, bids=None, asks=None, time_str=None):
+        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, time_str=time_str)
         # dict[order id, time str]. timestamp is used in backtester to match orders
         self.order_to_time = {}
         self.exchange = 'GDAX'

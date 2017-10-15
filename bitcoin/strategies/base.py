@@ -31,7 +31,6 @@ class BaseStrategy(util.BaseObject):
             'bids': list of (price, cumulative volume) is descending order,
         }
         """
-        volume_so_far = 0
         all_levels = {
             'bids': book.bids,
             'asks': book.asks
@@ -42,6 +41,7 @@ class BaseStrategy(util.BaseObject):
         }
 
         for side, levels in all_levels.iteritems():
+            volume_so_far = 0
             for level in levels:
                 volume_so_far += level.size
                 value = CumPriceLevel(price=level.price, cum_size=volume_so_far)
