@@ -82,22 +82,27 @@ class BackTester(object):
             # order has to be same side as maker i.e. opposite side of taker
             same_side_as_maker = (maker_side == order.side)
             if same_side_as_maker and (competitive_price or early_at_same_price):
-                fills[order] = min(match_size, order.size)
-                self._add_trade(order, msg)
-                logger.debug('Filled size {} of order: {}'.format(fills[order], order))
+                fill_size = min(match_size, order.size)
+                fills[order] = fill_size
+                self._add_trade(order, msg, fill_size)
         return fills
 
-    def _add_trade(self, order, msg):
-        trade = order._asdict()
+    def _add_trade(self, order, msg, fill_size):
+        trade = dict(order._asdict())
+        # add current balance to trade log
         trade.update(self.balance)
+        # add best bid/ask to trade log
+        best_bid, best_ask = self.book.get_best_bid_ask()
         trade.update({
             'trade_time': msg['time'],
-            'sequence': msg['sequence'],
-            'best_bid': self.book.bids[-1].price,
-            'best_ask': self.book.asks[0].price,
+            'match_seq': msg['sequence'],
+            'best_bid': best_bid,
+            'best_ask': best_ask,
+            'fill_size': fill_size,
         })
 
         num_rows = self.trades.shape[0]
+        logger.debug('Order filled at {}'.format(self.book.time_str))
         trade = pd.DataFrame([trade], index=[num_rows])
         self.trades = self.trades.append(trade)
         return
@@ -149,10 +154,9 @@ class BackTester(object):
 
             if order_type == OrderType.LIMIT:
                 self.update_balance(order=order, action=OrderAction.PLACE)
-                now = pd.datetime.now().strftime(params.DATE_FORMAT[self.exchange])
                 outstanding_order = OutstandingOrder(id=uuid.uuid4(), side=order.side, quote=order.quote,
                                                      price=order.price, base=order.base, size=order.size,
-                                                     order_time=now)
+                                                     order_time=self.book.time_str, order_seq=self.book.sequence)
                 self.outstanding_orders[outstanding_order.side] = [outstanding_order]
 
             elif order_type == OrderType.CANCEL:
@@ -164,8 +168,8 @@ class BackTester(object):
         return
 
     def _run_with_data(self, strategy, book, msgs):
-        logger.info('Backtest start. Initial USD: {}'.format(self.balance['USD']))
         self.book = book
+        logger.info('Backtest start: {}. Initial USD: {}'.format(self.book.time_str, self.balance['USD']))
         for msg in msgs:
             # update book
             msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
@@ -185,7 +189,7 @@ class BackTester(object):
         cancel_all = [CancelOrder(order.id) for order in self.all_outstanding_orders]
         self.place_orders(cancel_all)
         final_usd = self._liquidate_positions()
-        logger.info('Backtest end. Final USD: {}'.format(final_usd))
+        logger.info('Backtest end: {}. Final USD: {}'.format(self.book.time_str, final_usd))
         return
 
     def _liquidate_positions(self):

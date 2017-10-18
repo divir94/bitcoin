@@ -8,7 +8,7 @@ class WallStrategy(BaseStrategy):
     def __init__(self):
         super(WallStrategy, self).__init__()
         self.max_volume = 100
-        self.min_tick = 0.1
+        self.min_tick = 0.01
         self.price_delta = 1
         self.required_volume = 10
 
@@ -24,18 +24,19 @@ class WallStrategy(BaseStrategy):
                     break
 
                 # crossed bid-ask spread
-                min_tick = -self.min_tick if side == 'bids' else self.min_tick
+                min_tick = self.min_tick if side == 'bids' else -self.min_tick
                 price = level.price + min_tick
-                if price == best_ask:
+                if (side == 'bids' and price >= best_ask) or (side == 'asks' and price <= best_bid):
                     continue
 
                 # get volume behind current level
                 price_delta = -self.price_delta if side == 'bids' else self.price_delta
                 search_price = CumPriceLevel(price + price_delta)
-                new_index = levels.bisect_key_left(search_price)
+                new_index = levels.bisect_left(search_price)
                 if new_index < len(levels):
-                    volume_behind = levels[new_index] - level.cum_size
+                    volume_behind = levels[new_index].cum_size - level.cum_size
                 else:
+                    # reached tail end of book
                     break
 
                 # update target price if there is enough volume behind
@@ -44,5 +45,22 @@ class WallStrategy(BaseStrategy):
                         target_buy = price
                     else:
                         target_ask = price
+                    break
 
         return target_buy, target_ask
+
+
+if __name__ == '__main__':
+    import pickle
+    import bitcoin.storage.api as st
+    import bitcoin.util as util
+
+    # root = util.get_project_root()
+    # file_name = '{}/data/test_data.pickle'.format(root)
+    # with open(file_name, 'rb') as f:
+    #     snapshot_df, _ = pickle.load(f)
+    # book = st.get_book_from_df(snapshot_df)
+    book = st.get_book(exchange='GDAX', product_id='BTC-USD', sequence=4104226434)
+
+    strategy = WallStrategy()
+    strategy.get_target_prices(book)
