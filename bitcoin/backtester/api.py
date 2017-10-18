@@ -102,7 +102,7 @@ class BackTester(object):
         })
 
         num_rows = self.trades.shape[0]
-        logger.debug('Adding trade')
+        logger.debug('Order filled at {}'.format(self.book.time_str))
         trade = pd.DataFrame([trade], index=[num_rows])
         self.trades = self.trades.append(trade)
         return

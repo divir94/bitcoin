@@ -17,7 +17,7 @@ class GdaxOrderBook(ob.OrderBook):
 
         if sequence <= book.sequence:
             return
-        assert sequence == book.sequence + 1, '{} != {} + 1'.format(sequence, book.sequence)
+        assert sequence <= book.sequence + 2, '{} != {} + 1'.format(sequence, book.sequence)
 
         _type = msg['type']
         if _type == 'open':
