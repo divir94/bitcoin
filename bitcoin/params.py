@@ -11,7 +11,7 @@ CHANNEL = {
         'ETH-BTC': {'type': 'subscribe', 'product_ids': ['ETH-BTC']}
     },
     'BITSTAMP': {
-        'btcusd': {'event': 'pusher:subscribe', 'data': {'channel': 'live_orders'}},
+        'BTC-USD': {'event': 'pusher:subscribe', 'data': {'channel': 'live_orders'}},
     }
 }
 

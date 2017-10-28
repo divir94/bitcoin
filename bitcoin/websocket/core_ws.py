@@ -2,7 +2,7 @@ import json
 import logging
 import time
 from threading import Thread
-from websocket import create_connection, WebSocketConnectionClosedException
+from websocket import create_connection
 
 
 logger = logging.getLogger('core_websocket')
@@ -10,6 +10,10 @@ logger = logging.getLogger('core_websocket')
 
 # TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
+    """
+    The core websocket connects and listens for messages. It is independent of any crypto specific stuff i.e.
+    it does not maintain any order book information.
+    """
     def __init__(self, url, channel, heartbeat=True):
         self.url = url
         self.channel = channel
@@ -25,7 +29,7 @@ class WebSocket(object):
         
     def start(self):
         """
-        Connect and listen to messages
+        Connect and listen to messages.
         """
         def _go():
             self._connect()
@@ -85,6 +89,17 @@ class WebSocket(object):
                     self.on_message(msg)
                 self.last_heartbeat = time.time()
 
+    def on_message(self, msg):
+        raise NotImplementedError
+
+    def check_book(self):
+        pass
+
+    def on_error(self, error, msg):
+        logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
+        self.close()
+        self.start()
+
     def close(self):
         """
         Close the connection and turn off heartbeat.
@@ -108,14 +123,3 @@ class WebSocket(object):
         except Exception as e:
             logger.exception('Failed to close websocket:\n{}'.format(e))
         time.sleep(1)
-
-    def on_message(self, msg):
-        pass
-
-    def check_book(self):
-        pass
-
-    def on_error(self, error, msg):
-        logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
-        self.close()
-        self.start()
