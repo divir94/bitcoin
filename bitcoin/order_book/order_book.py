@@ -117,8 +117,7 @@ class OrderBook(util.BaseObject):
         assert order_id in self.orders
 
         level = self._get_level(order_id)
-        level.update(order_id, new_size)
-        price = level.price
+        price, old_size, order_id = level.update(order_id, new_size)
 
         # remove level
         if util.is_close(level.size, 0):
@@ -128,7 +127,7 @@ class OrderBook(util.BaseObject):
         # remove order
         if util.is_close(new_size, 0):
             del self.orders[order_id]
-        return price, new_size, order_id
+        return price, old_size, order_id
 
     def get_best_bid_ask(self):
         best_bid = self.bids[0].price

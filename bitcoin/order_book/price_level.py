@@ -32,7 +32,7 @@ class PriceLevel(util.BaseObject):
         # remove order if needed
         if new_size == 0:
             del self.orders[order_id]
-        return self.price, new_size, order_id
+        return self.price, old_size, order_id
 
     def to_set(self):
         return {(self.price, size, order_id)
