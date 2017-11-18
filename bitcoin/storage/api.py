@@ -61,7 +61,7 @@ def get_closest_snapshot(exchange, product_id, timestamp=None, sequence=None):
         SELECT * FROM {table}
         WHERE {id} = (
             SELECT {id} FROM {table}
-            WHERE {id} <= '{value}'
+            WHERE {id} <= "{value}"
             ORDER BY {id} desc
             LIMIT 1
         )
@@ -113,8 +113,8 @@ def get_messages_by_sequence(exchange, product_id, start=None, end=None):
 
 def _get_messages(field, exchange, product_id, start, end):
     table_name = params.MSG_TBL[exchange][product_id]
-    start_cond = '{field} >= {value}'.format(field=field, value=start) if start else ''
-    end_cond = '{field} <= {value}'.format(field=field, value=end) if end else ''
+    start_cond = '{field} >= "{value}"'.format(field=field, value=start) if start else ''
+    end_cond = '{field} <= "{value}"'.format(field=field, value=end) if end else ''
     where_cond = 'WHERE' if start_cond or end_cond else ''
     and_cond = 'AND' if start_cond and end_cond else ''
     sql = '''

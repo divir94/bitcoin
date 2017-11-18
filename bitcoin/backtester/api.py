@@ -1,6 +1,6 @@
 import pandas as pd
+import json
 import cPickle as pickle
-import uuid
 
 import bitcoin.storage.api as st
 import bitcoin.logs.logger as lc
@@ -20,34 +20,38 @@ class BackTester(object):
         self.product_id = product_id
         self.init_balance = butil.Balance(balance)
         self.balance = butil.Balance(balance)
-        self.outstanding_orders = {}  # dict of side to list of orders
+        self.exposure = 0
+        self.current_orders = {}  # dict of side to order
         self.trades = pd.DataFrame()
         self.book = None
+        self.quote = 'USD'
+        self.base = 'BTC'
+        self.view = 0
 
     @property
-    def all_outstanding_orders(self):
-        return self.outstanding_orders.get(OrderSide.BUY, []) + self.outstanding_orders.get(OrderSide.SELL, [])
+    def all_current_orders(self):
+        current_orders = self.current_orders.values()
+        current_orders = [x for x in current_orders if x]
+        return current_orders
 
-    @staticmethod
-    def _get_place_order_balance(order):
+    def _get_place_order_balance(self, order):
         if order.side == OrderSide.BUY:
             amount = -order.price * order.size
-            currency = order.quote
+            currency = self.quote
         elif order.side == OrderSide.SELL:
             amount = -order.size
-            currency = order.base
+            currency = self.base
         else:
             raise ValueError
         return amount, currency
 
-    @staticmethod
-    def _get_fill_order_balance(order, fill_qty):
+    def _get_fill_order_balance(self, order, fill_qty):
         if order.side == OrderSide.BUY:
             amount = fill_qty
-            currency = order.base
+            currency = self.base
         elif order.side == OrderSide.SELL:
             amount = order.price * fill_qty
-            currency = order.quote
+            currency = self.quote
         else:
             raise ValueError
         return amount, currency
@@ -68,11 +72,9 @@ class BackTester(object):
         # thus we don't have a timestamp. In this case, our order was after the maker order
         maker_time = self.book.order_to_time.get(msg['maker_order_id'])
 
-        for side, orders in self.outstanding_orders.iteritems():
-            assert len(orders) <= 1, 'More than a single buy/sell order is not currently supported'
-            if not orders:
+        for side, order in self.current_orders.iteritems():
+            if not order:
                 continue
-            order = orders[0]
 
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
@@ -93,32 +95,38 @@ class BackTester(object):
         trade.update(self.balance)
         # add best bid/ask to trade log
         best_bid, best_ask = self.book.get_best_bid_ask()
+        balance = self._liquidate_positions()
         trade.update({
             'trade_time': msg['time'],
-            'match_seq': msg['sequence'],
             'best_bid': best_bid,
             'best_ask': best_ask,
             'fill_size': fill_size,
+            'remaining_size': order.size - fill_size,
+            'exposure': self.exposure,
+            'view': self.view,
+            'balance': balance,
         })
 
         num_rows = self.trades.shape[0]
-        logger.debug('Order filled at {}'.format(self.book.time_str))
+        if fill_size > 1e-4:
+            logger.info('Order filled {} at {}. balance: {}'.format(fill_size, self.book.time_str, balance))
         trade = pd.DataFrame([trade], index=[num_rows])
         self.trades = self.trades.append(trade)
         return
 
     def handle_fills(self, fills):
         """
-        Called after orders have been filled. Updates balance and outstanding orders.
+        Called after orders have been filled. Updates balance and current orders.
         """
         for order, fill_qty in fills.iteritems():
             self.update_balance(order=order, action=OrderAction.FILL, fill_qty=fill_qty)
+            self.exposure += fill_qty if order.side == OrderSide.BUY else -fill_qty
 
             # remove if filled, otherwise update order
             if order.size == fill_qty:
-                self.outstanding_orders[order.side] = []
+                self.current_orders[order.side] = None
             else:
-                self.outstanding_orders[order.side] = [order._replace(size=order.size - fill_qty)]
+                self.current_orders[order.side] = order._replace(size=order.size - fill_qty)
         return
 
     def update_balance(self, order, action, fill_qty=None):
@@ -139,14 +147,14 @@ class BackTester(object):
         return
 
     def _get_order(self, order_id):
-        for order in self.all_outstanding_orders:
+        for order in self.all_current_orders:
             if order.id == order_id:
                 return order
         raise Exception('Did not find order {}'.format(order_id))
 
     def place_orders(self, orders):
         """
-        Called to place orders. Updates balance and outstanding orders.
+        Called to place orders. Updates balance and current orders.
         """
         for order in orders:
             order_type = type(order).__name__
@@ -154,22 +162,26 @@ class BackTester(object):
 
             if order_type == OrderType.LIMIT:
                 self.update_balance(order=order, action=OrderAction.PLACE)
-                outstanding_order = OutstandingOrder(id=uuid.uuid4(), side=order.side, quote=order.quote,
-                                                     price=order.price, base=order.base, size=order.size,
-                                                     order_time=self.book.time_str, order_seq=self.book.sequence)
-                self.outstanding_orders[outstanding_order.side] = [outstanding_order]
+                current_order = CurrentOrder(id=order.id,
+                                             side=order.side,
+                                             price=order.price,
+                                             size=order.size,
+                                             order_time=self.book.time_str)
+                self.current_orders[current_order.side] = current_order
 
             elif order_type == OrderType.CANCEL:
                 self.update_balance(order=order, action=OrderAction.CANCEL)
                 original_order = self._get_order(order.id)
-                self.outstanding_orders[original_order.side] = []
+                self.current_orders[original_order.side] = None
             else:
                 raise ValueError
         return
 
     def _run_with_data(self, strategy, book, msgs):
         self.book = book
-        logger.info('Backtest start: {}. Initial USD: {}'.format(self.book.time_str, self.balance['USD']))
+        logger.info('Backtest start: {}. USD: {}. BTC: {}'.format(self.book.time_str,
+                                                                  self.balance['USD'],
+                                                                  self.balance['BTC']))
         for msg in msgs:
             # update book
             msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
@@ -180,36 +192,50 @@ class BackTester(object):
             self.handle_fills(fills=fills)
 
             # get and place new orders
-            instructions = strategy.rebalance(msg=msg,
-                                              book=self.book,
-                                              outstanding_orders=self.outstanding_orders,
-                                              balance=self.balance)
+            instructions, view = strategy.rebalance(msg=msg,
+                                                    book=self.book,
+                                                    current_orders=self.current_orders,
+                                                    balance=self.balance,
+                                                    exposure=self.exposure)
+            self.view = view or self.view
             self.place_orders(instructions)
 
-        cancel_all = [CancelOrder(order.id) for order in self.all_outstanding_orders]
+        cancel_all = [CancelOrder(order.id) for order in self.all_current_orders]
         self.place_orders(cancel_all)
         final_usd = self._liquidate_positions()
+        if not self.trades.empty:
+            self.trades = self.trades.set_index(['order_time', 'id', 'side'])
         logger.info('Backtest end: {}. Final USD: {}'.format(self.book.time_str, final_usd))
-        return
 
     def _liquidate_positions(self):
-        excess_coins = self.balance['BTC'] - self.init_balance['BTC']
+        balance = self.balance.copy()
+
+        # get balance for current orders
+        for order in self.all_current_orders:
+            order_type = type(order).__name__
+            if order_type == 'CurrentOrder':
+                amount, currency = self._get_place_order_balance(order)
+                amount *= -1
+                balance[currency] += amount
+
+        excess_coins = balance['BTC'] - self.init_balance['BTC']
         best_bid, best_ask = self.book.get_best_bid_ask()
         mid_price = (best_bid + best_ask) / 2
         coin_value = excess_coins * mid_price
-        final_usd = self.balance['USD'] + coin_value
+        final_usd = balance['USD'] + coin_value
         return final_usd
 
     def run_with_saved_data(self, strategy, file_name):
-        with open(file_name, 'rb') as f:
-            snapshot_df, msgs = pickle.load(f)
+        snapshot_df = pickle.load(open('{}.pickle'.format(file_name), 'rb'))
+        msgs = json.load(open('{}.json'.format(file_name), 'rb'))['data']
         book = st.get_book_from_df(snapshot_df)
         self._run_with_data(strategy, book, msgs)
 
     def save_data(self, start, num_msgs, file_name):
         _, msgs, snapshot_df = self._get_data(start, num_msgs)
-        with open(file_name, 'wb') as f:
-            pickle.dump((snapshot_df, list(msgs)), f)
+        msgs = {'data': list(msgs)}
+        pickle.dump(snapshot_df, open('{}.pickle'.format(file_name), 'wb'))
+        json.dump(msgs, open('{}.json'.format(file_name), 'wb'))
 
     def _get_data(self, start, num_msgs):
         snapshot_df = st.get_closest_snapshot(self.exchange, self.product_id, timestamp=start, sequence=None)
@@ -226,8 +252,8 @@ class BackTester(object):
 
 
 def main():
-    from bitcoin.strategies.wall import WallStrategy
-    strategy = WallStrategy()
+    from bitcoin.strategies.mom import TSMomStrategy
+    strategy = TSMomStrategy()
 
     root = util.get_project_root()
     file_name = '{}/data/test_data.pickle'.format(root)
@@ -235,9 +261,7 @@ def main():
 
     # backtest.save_data(start=pd.datetime(2017, 9, 26, 4, 31), num_msgs=100000, file_name=file_name)
     backtest.run_with_saved_data(strategy, file_name)
-
-    print backtest.balance
-    print backtest.outstanding_orders
+    return backtest
 
 
 if __name__ == '__main__':
