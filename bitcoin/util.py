@@ -3,7 +3,7 @@ import os
 import sys
 import logging
 from datetime import datetime
-import pytz
+
 
 logger = logging.getLogger('util')
 
