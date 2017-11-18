@@ -9,6 +9,5 @@ OrderAction = namedtuple('OrderAction', ['FILL', 'PLACE', 'CANCEL'])(*SUPPORTED_
 OrderSide = namedtuple('OrderSide', ['BUY', 'SELL'])(*SUPPORTED_ORDER_SIDES)
 
 CancelOrder = namedtuple('CancelOrder', ['id'])
-LimitOrder = namedtuple('LimitOrder', ['side', 'quote', 'base', 'price', 'size'])
-OutstandingOrder = namedtuple('OutstandingOrder', ['id', 'side', 'quote', 'base', 'price', 'size', 'order_time',
-                                                   'order_seq'])
+LimitOrder = namedtuple('LimitOrder', ['id', 'side', 'price', 'size'])
+CurrentOrder = namedtuple('CurrentOrder', ['id', 'side', 'price', 'size', 'order_time'])

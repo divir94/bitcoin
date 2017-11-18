@@ -15,12 +15,12 @@ class GdaxOrderBook(ob.OrderBook):
 
     def process_message(self, msg, book=None):
         book = book or self
-        sequence = msg['sequence']
+        sequence = int(msg['sequence'])
         msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
 
         if sequence <= book.sequence:
             return
-        assert sequence <= book.sequence + 2, '{} != {} + 1'.format(sequence, book.sequence)
+        assert sequence <= book.sequence + 2, '{} != {} + 2'.format(sequence, book.sequence)
 
         _type = msg['type']
         if _type == 'open':

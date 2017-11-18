@@ -48,19 +48,3 @@ class WallStrategy(BaseStrategy):
                     break
 
         return target_buy, target_ask
-
-
-if __name__ == '__main__':
-    import pickle
-    import bitcoin.storage.api as st
-    import bitcoin.util as util
-
-    # root = util.get_project_root()
-    # file_name = '{}/data/test_data.pickle'.format(root)
-    # with open(file_name, 'rb') as f:
-    #     snapshot_df, _ = pickle.load(f)
-    # book = st.get_book_from_df(snapshot_df)
-    book = st.get_book(exchange='GDAX', product_id='BTC-USD', sequence=4104226434)
-
-    strategy = WallStrategy()
-    strategy.get_target_prices(book)
