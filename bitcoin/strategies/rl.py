@@ -3,7 +3,7 @@ import time
 import tensorflow as tf
 import numpy as np
 import copy
-from bitcoin.backtester.api import CancelOrder, LimitOrder, OutstandingOrder, OrderSide
+from bitcoin.backtester.api import CancelOrder, LimitOrder, CurrentOrder, OrderSide
 from bitcoin.order_book.price_level import PriceLevel
 
 config_named_tuple = namedtuple('Config',
