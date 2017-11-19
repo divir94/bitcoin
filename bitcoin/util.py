@@ -4,6 +4,8 @@ import sys
 import logging
 from datetime import datetime
 
+import bitcoin.params as params
+
 
 logger = logging.getLogger('util')
 
@@ -29,6 +31,13 @@ def to_numeric(msg, numeric_fields):
         if v:
             result[k] = float(v) if k in numeric_fields else v
     return result
+
+
+def time_to_str(timestamp, exchange):
+    if not timestamp or not isinstance(timestamp, datetime):
+        return timestamp
+    time_str = timestamp.strftime(params.DATE_FORMAT[exchange])
+    return time_str
 
 
 def time_elapsed(last_time, tdelta):

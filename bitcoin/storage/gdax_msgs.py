@@ -82,7 +82,7 @@ class GdaxMsgStorage(WebSocket):
         data = GDAX_CLIENT.get_product_order_book(self.product_id, level=3)
         # to df
         timestamp = pd.datetime.utcnow().strftime(params.DATE_FORMAT[self.exchange])
-        df = sutil.gdax_book_to_df(data, timestamp)
+        df = sutil.book_to_df(data, timestamp)
         # store
         table_name = params.SNAPSHOT_TBL[self.exchange][self.product_id]
         sutil.store_df(df, table_name)

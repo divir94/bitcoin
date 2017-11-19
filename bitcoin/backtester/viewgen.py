@@ -1,5 +1,7 @@
 import pandas as pd
 
+import bitcoin.util as util
+
 
 class ViewGen(object):
     """
@@ -16,7 +18,11 @@ class ViewGen(object):
         """
         self.strategy = strategy
         self._context = Context()
-        self.result = self._context.result
+        self.exchange = 'GDAX'
+
+    @property
+    def result(self):
+        return self._context.result
 
     def run(self, data, end=None):
         """
@@ -25,19 +31,21 @@ class ViewGen(object):
 
         Parameters
         ----------
-        data: object
+        data: namedtuple
             has book and messages as fields
-        end: str
+        end: pd.datetime or str
             used to end the viewgen early
 
         Returns
         -------
         self.result
         """
+        end = util.time_to_str(end, self.exchange)
         book = data.book
         messages = data.messages
 
-        for msg in messages:
+        for msg in messages.itertuples():
+            msg = msg.__dict__
             if end and book.time_str > end:
                 return
 
@@ -61,7 +69,10 @@ class Context(object):
 
     @property
     def result(self):
-        return pd.DataFrame(self._recorded_vars)
+        df = pd.DataFrame(self._recorded_vars).drop_duplicates()
+        if 'time' in df.columns:
+            df.set_index('time', inplace=True)
+        return df
 
     def record(self, **kwargs):
-        self._recorded_vars.append(**kwargs)
+        self._recorded_vars.append(kwargs)

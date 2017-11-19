@@ -33,7 +33,7 @@ class MomStrategy(object):
         ----------
         context: Context object
             implements `record` method
-        book: object
+        book: OrderBook
             has `time_str` attribute used to index recorded variables
 
         Returns
@@ -59,10 +59,13 @@ class MomStrategy(object):
                 self.past_vwaps.popleft()
 
         # get view
-        last_vwap = self.past_vwaps[-1]
+        last_vwap = self.past_vwaps[0]
         past_price_change = price - last_vwap.price
-        bins = [-np.inf, -self.short_thresh, self.long_thresh, np.inf]
+        bins = [-np.inf, self.short_thresh, self.long_thresh, np.inf]
         view = pd.cut([past_price_change], bins=bins, labels=[-1, 0, 1])[0]
 
         # record
-        context.record(view=view, price=price, past_price_change=past_price_change)
+        context.record(time=book.time_str,
+                       view=view,
+                       price=price,
+                       past_price_change=past_price_change)
