@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 from collections import deque, namedtuple
 from datetime import datetime
 
@@ -42,7 +40,8 @@ class MomStrategy(object):
         """
         # get current vwap
         price = sutil.get_vwap(book, size=1)
-        current_time = datetime.strptime(book.time_str, params.DATE_FORMAT['GDAX'])
+        #current_time = datetime.strptime(book.time_str, params.DATE_FORMAT['GDAX'])
+        current_time = book.time_str
         current_vwap = vwap(time=current_time, price=price)
         self.past_vwaps.append(current_vwap)
 
@@ -61,11 +60,16 @@ class MomStrategy(object):
         # get view
         last_vwap = self.past_vwaps[0]
         past_price_change = price - last_vwap.price
-        bins = [-np.inf, self.short_thresh, self.long_thresh, np.inf]
-        view = pd.cut([past_price_change], bins=bins, labels=[-1, 0, 1])[0]
+        if past_price_change >= self.long_thresh:
+            view = 1
+        elif past_price_change <= self.short_thresh:
+            view = -1
+        else:
+            view = 0
 
         # record
         context.record(time=book.time_str,
                        view=view,
                        price=price,
+                       past_price=last_vwap.price,
                        past_price_change=past_price_change)

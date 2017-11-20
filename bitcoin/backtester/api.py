@@ -184,7 +184,7 @@ class BackTester(object):
                                                                   self.balance['BTC']))
         for msg in msgs:
             # update book
-            msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
+            msg = util.to_numeric(msg, params.MSG_DTYPE[self.exchange])
             self.book.process_message(msg)
 
             # get and handle fills

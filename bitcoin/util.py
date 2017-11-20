@@ -3,8 +3,9 @@ import os
 import sys
 import logging
 from datetime import datetime
+from decimal import Decimal
 
-import bitcoin.params as params
+import bitcoin.params as pms
 
 
 logger = logging.getLogger('util')
@@ -25,18 +26,21 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_numeric(msg, numeric_fields):
+def to_numeric(msg, exchange=None):
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+    dtypes = pms.MSG_DTYPE[exchange]
     result = {}
+
     for k, v in msg.iteritems():
         if v:
-            result[k] = float(v) if k in numeric_fields else v
+            result[k] = dtypes[k](v)
     return result
 
 
-def time_to_str(timestamp, exchange):
+def time_to_str(timestamp):
     if not timestamp or not isinstance(timestamp, datetime):
         return timestamp
-    time_str = timestamp.strftime(params.DATE_FORMAT[exchange])
+    time_str = '"{}"'.format(str(timestamp))
     return time_str
 
 
@@ -52,7 +56,11 @@ def df_to_dict(df):
 
 
 def is_close(a, b, abs_tol=1e-9):
-    return abs(a-b) <= abs_tol
+    return abs(a-b) <= Decimal(abs_tol)
+
+
+def is_less(a, b, abs_tol=1e-9):
+    return a <= (b + Decimal(abs_tol))
 
 
 def handle_exception(exc_type, exc_value, exc_traceback):

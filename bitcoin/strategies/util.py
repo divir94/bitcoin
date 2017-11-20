@@ -34,9 +34,9 @@ def get_vwap(book, size):
                 # reached max size
                 break
     # midpoint
-    avg_bid = vwap['bids'] / float(size)
-    avg_ask = vwap['asks'] / float(size)
-    mid_vwap = (avg_bid + avg_ask) / 2.
+    avg_bid = vwap['bids'] / size
+    avg_ask = vwap['asks'] / size
+    mid_vwap = (avg_bid + avg_ask) / 2
     return mid_vwap
 
 

@@ -75,7 +75,7 @@ def df_to_book(df):
     columns = ['price', 'size', 'order_id']
     bids = bids[columns].values
     asks = asks[columns].values
-    time_str = df['received_time'].unique()[0]
+    time_str = pd.to_datetime(df['received_time'].unique()[0])
     book = ob.GdaxOrderBook(sequence, bids=bids, asks=asks, time_str=time_str)
     return book
 
@@ -122,7 +122,7 @@ def xread_sql(sql, chunksize=100000):
     Returns
     -------
     generator
-        yields array of results
+        yields dict with nans removed
     """
     offset = 0
 
@@ -133,13 +133,13 @@ def xread_sql(sql, chunksize=100000):
 
         query = '{sql} LIMIT {offset}, {chunksize}'.format(sql=sql, offset=offset, chunksize=chunksize)
         logger.debug(query)
-        df = pd.read_sql(query, con=ENGINE)
+        result = ENGINE.execute(query)
 
-        if df.empty:
+        if not result.rowcount:
             raise StopIteration
 
-        columns = df.columns
-        for row in df.values:
-            row_dict = dict(zip(columns, row))
+        columns = result.keys()
+        for row in result:
+            row_dict = {k: v for k, v in zip(columns, row) if v}
             offset += 1
             yield row_dict

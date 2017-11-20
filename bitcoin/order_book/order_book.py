@@ -1,4 +1,5 @@
 import pandas as pd
+from decimal import Decimal
 
 from sortedcontainers import SortedListWithKey
 import bitcoin.util as util
@@ -33,7 +34,7 @@ class OrderBook(util.BaseObject):
             if orders is None:
                 continue
             for price, size, order_id in orders:
-                price, size = float(price), float(size)
+                price, size = Decimal(price), Decimal(size)
                 self.add(side=side, price=price, size=size, order_id=order_id)
 
     def _get_levels_from_side(self, side):
@@ -146,7 +147,7 @@ class OrderBook(util.BaseObject):
         result = set.union(*orders)
         return result
 
-    def to_df(self, level_type=2, depth=None):
+    def to_df(self, level_type, depth=None):
         """
         Get level 2 or level 3 book as a DataFrame
 

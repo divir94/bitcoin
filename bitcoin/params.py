@@ -1,3 +1,9 @@
+import pandas as pd
+
+
+DEFAULT_EXCHANGE = 'GDAX'
+DEFAULT_PRODUCT = 'BTC-USD'
+
 WS_URL = {
     'GDAX': 'wss://ws-feed.gdax.com',
     'BITSTAMP': 'ws://ws.pusherapp.com/app/de504dc5763aeef9ff52?protocol=7',
@@ -38,9 +44,29 @@ MSG_COL_NAME = {
          'old_size', 'new_funds', 'old_funds']
 }
 
-MSG_NUMERIC_FIELD = {
+MSG_DTYPE = {
     'GDAX':
-        {'price', 'size', 'funds', 'remaining_size', 'new_size', 'old_size', 'new_funds', 'old_funds'}
+        {
+            'sequence': int,
+            'time': pd.to_datetime,
+            'received_time': pd.to_datetime,
+            'type': str,
+            'price': float,
+            'size': float,
+            'order_id': str,
+            'side': str,
+            'order_type': str,
+            'funds': float,
+            'remaining_size': float,
+            'reason': str,
+            'trade_id': int,
+            'maker_order_id': str,
+            'taker_order_id': str,
+            'new_size': float,
+            'old_size': float,
+            'new_funds': float,
+            'old_funds': float,
+        }
 }
 
 DATE_FORMAT = {

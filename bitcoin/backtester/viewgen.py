@@ -1,6 +1,6 @@
 import pandas as pd
 
-import bitcoin.util as util
+import bitcoin.storage.util as sutil
 
 
 class ViewGen(object):
@@ -40,12 +40,12 @@ class ViewGen(object):
         -------
         self.result
         """
-        end = util.time_to_str(end, self.exchange)
-        book = data.book
+        self._context = Context()
+        book = sutil.df_to_book(data.book)
         messages = data.messages
 
         for msg in messages.itertuples():
-            msg = msg.__dict__
+            msg = msg._asdict()
             if end and book.time_str > end:
                 return
 
