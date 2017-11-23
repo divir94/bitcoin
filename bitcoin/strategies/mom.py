@@ -1,58 +1,75 @@
-from collections import deque
-from datetime import datetime
+import numpy as np
+from collections import deque, namedtuple
 
-import bitcoin.strategies.util as autil
-import bitcoin.params as params
-from bitcoin.strategies.base import BaseStrategy
+import bitcoin.strategies.util as sutil
 
 
-class TSMomStrategy(BaseStrategy):
+vwap = namedtuple('item', ['time', 'price'])
+
+
+class MomStrategy(object):
+    """
+    Time series momentum strategy that goes long/short based on the price change over the past minute.
+    The idea is to long the top decile and short the bottom decile of past price changes.
+    The decile bounds are updated in an expanding window.
+    """
     def __init__(self):
-        super(TSMomStrategy, self).__init__()
-        # go long/short if past price change is more than this amount in USD
-        self.long_thresh = 30
-        self.short_thresh = -30
-        self.vwaps = deque()
-        self.tracking = {}
+        # go long/short if past price change is more/less than this amount in %
+        self.long_thresh = 5
+        self.short_thresh = -5
+        # num seconds in the past to look at to calculate past price change
+        self.lookback = 60
+        # deque is double sided queue of dict(time, vwap)
+        self.past_vwaps = deque()
 
-    def get_view(self, book):
+    def rebalance(self, context, book):
         """
-        View is an integer (e.g. +1, 0, -1) for desired exposure
+        Record view and other variables in the context.
+
+        Parameters
+        ----------
+        context: Context object
+            implements `record` method
+        book: OrderBook
+            has `timestamp` attribute used to index recorded variables
+
+        Returns
+        -------
+        None
         """
         # get current vwap
-        vwap = autil.get_vwap(book, size=10)
-        current_time = datetime.strptime(book.time_str, params.DATE_FORMAT['GDAX'])
-        vwap['time'] = current_time
-        self.vwaps.append(vwap)
+        price = sutil.get_vwap(book, size=1)
+        current_time = book.timestamp
+        current_vwap = vwap(time=current_time, price=price)
+        self.past_vwaps.append(current_vwap)
 
         # update past 1 min vwap
-        current_vwap = self.vwaps[-1]
-        prev_vwap = self.vwaps[0]
-        last_time = prev_vwap['time']
+        update = True
 
-        update_deque = True
-        while update_deque:
-            time_delta = (current_vwap['time'] - prev_vwap['time']).total_seconds()
-            last_minute = time_delta > 60
-            if last_minute:
-                self.vwaps.popleft()
-            else:
-                update_deque = False
-            prev_vwap = self.vwaps[0]
+        # remove old values greater than the lookback period
+        while update:
+            last_time = self.past_vwaps[0].time
+            time_delta = (current_time - last_time).total_seconds()
+            update = time_delta > self.lookback
+            # remove old value
+            if update:
+                self.past_vwaps.popleft()
 
-        # get past return
-        prev_mid_vwap = (prev_vwap['asks'] + prev_vwap['bids']) / 2
-        current_mid_vwap = (current_vwap['asks'] + current_vwap['bids']) / 2
-        price_change = current_mid_vwap - prev_mid_vwap
-
-        # view
-        if price_change > self.long_thresh:
+        # get view
+        last_vwap = self.past_vwaps[0]
+        time_delta = (current_time - last_vwap.time).total_seconds()
+        past_price_change = price - last_vwap.price if time_delta > self.long_thresh else np.nan
+        if past_price_change >= self.long_thresh:
             view = 1
-        elif price_change < self.short_thresh:
+        elif past_price_change <= self.short_thresh:
             view = -1
         else:
             view = 0
 
-        # track
-        self.tracking[current_time] = [view, price_change, current_mid_vwap, last_time]
-        return view
+        # record
+        context.record(time=book.timestamp,
+                       view=view,
+                       price=price,
+                       num_msgs=len(self.past_vwaps),
+                       past_price=last_vwap.price,
+                       past_price_change=past_price_change)

@@ -36,7 +36,7 @@ class GdaxWebSocket(WebSocket):
         self.check_freq = 3600  # check every x seconds
 
     def on_message(self, msg):
-        msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
+        msg = util.parse_message(msg)
         sequence = msg['sequence']
 
         if self.restart:

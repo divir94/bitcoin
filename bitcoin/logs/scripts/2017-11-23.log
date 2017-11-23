@@ -1,0 +1,10 @@
+2017-11-23 04:25:37,256 - scripts - INFO - Current process: 42890
+2017-11-23 04:25:37,260 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 42901, 'name': 'Gdax Storage: BTC-USD'}
+2017-11-23 04:25:37,264 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-USD'], 'pid': 42902, 'name': 'Gdax Storage: ETH-USD'}
+2017-11-23 04:25:37,269 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-BTC'], 'pid': 42903, 'name': 'Gdax Storage: ETH-BTC'}
+2017-11-23 04:25:37,276 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.snapshots'], 'pid': 42904, 'name': 'Snapshot Storage'}
+2017-11-23 04:25:56,844 - scripts - INFO - Keyboard interrupted
+2017-11-23 04:25:56,846 - scripts - INFO - Killing process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 42901, 'name': 'Gdax Storage: BTC-USD'}
+2017-11-23 04:25:56,846 - scripts - INFO - Killing process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-USD'], 'pid': 42902, 'name': 'Gdax Storage: ETH-USD'}
+2017-11-23 04:25:56,846 - scripts - INFO - Killing process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-BTC'], 'pid': 42903, 'name': 'Gdax Storage: ETH-BTC'}
+2017-11-23 04:25:56,846 - scripts - INFO - Killing process: {'cmdline': ['python', '-m', 'bitcoin.storage.snapshots'], 'pid': 42904, 'name': 'Snapshot Storage'}

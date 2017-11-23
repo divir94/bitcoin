@@ -1,5 +1,4 @@
 import bitcoin.order_book.order_book as ob
-import bitcoin.params as params
 import bitcoin.util as util
 
 
@@ -7,8 +6,8 @@ class GdaxOrderBook(ob.OrderBook):
     """
     Processes GDAX messages to maintain an order book.
     """
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
-        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, time_str=time_str)
+    def __init__(self, sequence, bids=None, asks=None, timestamp=None):
+        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, timestamp=timestamp)
         # dict[order id, time str]. timestamp is used in backtester to match orders
         self.order_to_time = {}
         self.exchange = 'GDAX'
@@ -16,7 +15,6 @@ class GdaxOrderBook(ob.OrderBook):
     def process_message(self, msg, book=None):
         book = book or self
         sequence = int(msg['sequence'])
-        msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
 
         if sequence <= book.sequence:
             return
@@ -42,7 +40,7 @@ class GdaxOrderBook(ob.OrderBook):
             assert _type == 'error'
 
         book.sequence = int(msg['sequence'])
-        book.time_str = msg['time']
+        book.timestamp = msg['time']
 
     @staticmethod
     def open_order(msg, book):
@@ -143,8 +141,8 @@ class GdaxOrderBook(ob.OrderBook):
 
         # get original order size
         old_price, old_size, order_id = book.get(order_id)
-        assert price == old_price, '{} == {}'.format(price, old_price)
-        assert trade_size <= (old_size + 1e-9), '{} <= {}'.format(trade_size, old_size)
+        assert util.is_close(price, old_price), '{} == {}'.format(price, old_price)
+        assert util.is_less(trade_size, old_size), '{} <= {}'.format(trade_size, old_size)
 
         # update order to new size
         new_size = old_size - trade_size

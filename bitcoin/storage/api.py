@@ -1,67 +1,97 @@
 import pandas as pd
+from collections import namedtuple
 
-import bitcoin.order_book.gdax_order_book as ob
-import bitcoin.params as params
+import bitcoin.params as pms
 import bitcoin.storage.util as sutil
 import bitcoin.logs.logger as lc
+import bitcoin.util as util
+
 
 logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
+Dataset = namedtuple('Dataset', ['book', 'messages'])
 
 
-def get_book(exchange, product_id, timestamp=None, sequence=None):
+def get_book(at=None, exchange=None, product=None):
     """
-    Get orderbook at a particular time or sequence number
+    Get order book at a particular time or sequence number.
 
     Parameters
     ----------
+    at: pd.datetime or int
+        datetime: get book at time
+        int: get book at sequence number
+        by default return the latest book
     exchange: str
-    product_id: str
-    timestamp: datetime
-        None returns the latest book
-    sequence: int
-        None returns the latest book
+    product: str
 
     Returns
     -------
-    ob.GdaxOrderBook
+    GdaxOrderBook
     """
-    assert not (timestamp and sequence), 'Cannot specify both timestamp or sequence'
-    time_str = timestamp.strftime(params.DATE_FORMAT[exchange]) if timestamp else None
+    exchange = exchange or pms.DEFAULT_EXCHANGE
 
     # get latest snapshot
-    snapshot_df = get_closest_snapshot(exchange, product_id, timestamp, sequence)
-    logger.debug('Got snapshot')
+    snapshot_df = get_closest_snapshot(at=at, exchange=exchange, product=product)
 
     # convert to book object
-    book = get_book_from_df(snapshot_df)
+    book = sutil.df_to_book(snapshot_df)
     logger.debug('Got book: {}'.format(book.sequence))
 
-    # get and apply messages
-    messages = get_messages_by_sequence(exchange, product_id, start=book.sequence, end=sequence)
-    for i, msg in enumerate(messages):
-        if i % 10000 == 0:
-            logger.debug('Applying msgs starting: {}'.format(msg['sequence']))
-        # break if reached id. If id is None apply all available msgs
-        if (timestamp and msg['time'] > time_str) or (sequence and msg['sequence'] > sequence):
+    # get messages
+    if isinstance(at, int):
+        start = book.sequence
+        end = at
+    else:
+        # move start back by 1 sec to get any missing messages
+        start = pd.to_datetime(book.timestamp) - pd.offsets.Timedelta('1m')
+        end = pd.to_datetime(at)
+    messages = get_messages(start=start, end=end, exchange=exchange, product=product)
+
+    # apply messages
+    for msg in messages:
+        # break if reached the end
+        if isinstance(at, int) and book.sequence >= at:
             break
-        book.process_message(msg)
+        elif isinstance(at, pd.datetime) and book.timestamp >= at:
+            break
+        else:
+            book.process_message(msg)
     logger.debug('Book ready: {}'.format(book.sequence))
     return book
 
 
-def get_closest_snapshot(exchange, product_id, timestamp=None, sequence=None):
-    table_name = params.SNAPSHOT_TBL[exchange][product_id]
+def get_closest_snapshot(at=None, exchange=None, product=None):
+    """
+    Get closest snapshot before timestamp of sequence base on `at`.
+
+    Parameters
+    ----------
+    at: pd.datetime or int
+        datetime: get book at time
+        int: get book at sequence number
+        by default return the latest book
+    exchange: str
+    product: str
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+    product = product or pms.DEFAULT_PRODUCT
+    at = util.time_to_str(at)
+    table_name = pms.SNAPSHOT_TBL[exchange][product]
 
     # get closest snapshot before timestamp or sequence
-    if timestamp or sequence:
-        _id = 'received_time' if timestamp else 'sequence'
-        value = timestamp.strftime(params.DATE_FORMAT[exchange]) if timestamp else sequence
+    if at:
+        _id = 'sequence' if isinstance(at, int) else 'received_time'
+        value = at if isinstance(at, int) else "{}".format(at)
 
         sql = '''
         SELECT * FROM {table}
         WHERE {id} = (
             SELECT {id} FROM {table}
-            WHERE {id} <= "{value}"
+            WHERE {id} <= {value}
             ORDER BY {id} desc
             LIMIT 1
         )
@@ -76,50 +106,117 @@ def get_closest_snapshot(exchange, product_id, timestamp=None, sequence=None):
         '''.format(table=table_name)
     logger.debug(sql)
     df = pd.read_sql(sql, con=sutil.ENGINE)
-    assert not df.empty, 'No snapshot found at time: {}, sequence: {}'.format(timestamp, sequence)
+    assert not df.empty, 'No snapshot found at {}'.format(at)
     return df
 
 
-def get_book_from_df(df):
-    # get sequence
-    sequences = df['sequence'].unique()
-    assert len(sequences) == 1
-    sequence = sequences[0]
+def get_messages(start=None, end=None, exchange=None, product=None):
+    """
+    Get messages by time or sequence number.
 
-    bids = df[df['side'] == 'bid']
-    asks = df[df['side'] == 'ask']
-    columns = ['price', 'size', 'order_id']
-    bids = bids[columns].values
-    asks = asks[columns].values
-    time_str = df['received_time'].unique()[0]
-    book = ob.GdaxOrderBook(sequence, bids=bids, asks=asks, time_str=time_str)
-    return book
+    Parameters
+    ----------
+    start: pd.datetime or int
+        datetime: query by time
+        int: query by sequence
+    end: pd.datetime or int
+        datetime: query by time
+        int: query by sequence
+    exchange: str
+    product: str
 
+    Returns
+    -------
+    generator
+        yields array of dict with appropriate dtypes
+    """
+    assert type(start) == type(end), 'Start and end types do not match'
 
-def get_messages_by_time(exchange, product_id, start=None, end=None):
-    field = 'time'
-    # date to string with quotes
-    start = '"{}"'.format(start.strftime(params.DATE_FORMAT[exchange])) if start else start
-    end = '"{}"'.format(end.strftime(params.DATE_FORMAT[exchange])) if end else end
-    messages = _get_messages(field, exchange, product_id, start, end)
-    return messages
+    start = util.time_to_str(start)
+    end = util.time_to_str(end)
+    # add quotes for time
+    start_value = start if isinstance(start, int) else "{}".format(start)
+    end_value = end if isinstance(end, int) else "{}".format(end)
 
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+    product = product or pms.DEFAULT_PRODUCT
+    table_name = pms.MSG_TBL[exchange][product]
 
-def get_messages_by_sequence(exchange, product_id, start=None, end=None):
-    field = 'sequence'
-    messages = _get_messages(field, exchange, product_id, start, end)
-    return messages
+    # create sql
+    start_field = 'sequence' if isinstance(start, int) else 'time'
+    end_field = 'sequence' if isinstance(end, int) else 'time'
 
-
-def _get_messages(field, exchange, product_id, start, end):
-    table_name = params.MSG_TBL[exchange][product_id]
-    start_cond = '{field} >= "{value}"'.format(field=field, value=start) if start else ''
-    end_cond = '{field} <= "{value}"'.format(field=field, value=end) if end else ''
+    start_cond = '{field} >= {value}'.format(field=start_field, value=start_value) if start else ''
+    end_cond = '{field} <= {value}'.format(field=end_field, value=end_value) if end else ''
     where_cond = 'WHERE' if start_cond or end_cond else ''
     and_cond = 'AND' if start_cond and end_cond else ''
+
     sql = '''
         SELECT * from {table} 
         {where_cond} {start_cond} {and_cond} {end_cond}
-    '''.format(table=table_name, where_cond=where_cond, and_cond=and_cond, start_cond=start_cond, end_cond=end_cond)
+    '''.format(table=table_name,
+               where_cond=where_cond,
+               and_cond=and_cond,
+               start_cond=start_cond,
+               end_cond=end_cond)
+
     messages = sutil.xread_sql(sql)
-    return messages
+
+    for msg in messages:
+        msg = util.parse_message(msg, exchange)
+        yield msg
+
+
+def store_dataset(name, start, end, exchange=None, product=None):
+    """
+    Store order book and messages to disk for faster retrieval.
+
+    Parameters
+    ----------
+    name: str
+    start: pd.datetime
+    end: pd.datetime
+    exchange: str
+    product: str
+
+    Returns
+    -------
+    None
+    """
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+
+    # get book
+    book = get_book(at=start, exchange=exchange, product=product)
+    book_df = book.to_df(level_type=3)
+
+    # get messages
+    start = start - pd.offsets.Timedelta('1m')
+    msg_generator = get_messages(start=start, end=end, exchange=exchange, product=product)
+    msg_df = pd.DataFrame(list(msg_generator))
+
+    # store
+    fname = '../data/{}.hdf5'.format(name)
+    book_df.to_hdf(fname, 'book')
+    msg_df.to_hdf(fname, 'messages')
+
+
+def get_dataset(name):
+    """
+    Get dataset from disk.
+
+    Parameters
+    ----------
+    name: str
+        e.g. '2017-11-10_00_to_2017-11-10_03'
+
+    Returns
+    -------
+    namedtuple
+        fields: [book, messages]
+    """
+    fname = '../data/{}.hdf5'.format(name)
+    book_df = pd.read_hdf(fname, 'book')
+    msg_df = pd.read_hdf(fname, 'messages')
+    msg_lst = msg_df.to_dict(orient='records')
+    dataset = Dataset(book=book_df, messages=msg_lst)
+    return dataset

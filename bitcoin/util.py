@@ -3,7 +3,10 @@ import os
 import sys
 import logging
 from datetime import datetime
-import pytz
+from decimal import Decimal
+
+import bitcoin.params as pms
+
 
 logger = logging.getLogger('util')
 
@@ -23,11 +26,62 @@ def get_project_root():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def to_numeric(msg, numeric_fields):
-    result = {}
-    for k, v in msg.iteritems():
-        if v:
-            result[k] = float(v) if k in numeric_fields else v
+def time_to_str(timestamp):
+    """
+    Convert datetime to GDAX time format string for SQL queries.
+
+    Parameters
+    ----------
+    timestamp: pd.datetime
+
+    Returns
+    -------
+    str
+    """
+    if not timestamp or not isinstance(timestamp, datetime):
+        return timestamp
+    # add quotes to use in sql
+    time_str = timestamp.strftime(pms.DATE_FORMAT)
+    return time_str
+
+
+def df_as_type(df, types):
+    """
+    Convert df columns to dtypes. Modifies input df.
+
+    Parameters
+    ----------
+    df: pd.DataFrame
+    types: dict
+        column name to types
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    missing_types = set(types.keys()).difference(set(df.columns))
+    assert not missing_types, 'Missing dtypes: {}'.format(missing_types)
+    for col in df.columns:
+        _type = types[col]
+        df[col] = df[col].astype(_type)
+    return df
+
+
+def parse_message(msg, exchange):
+    """
+    Convert message to appropriate dtypes.
+
+    Parameters
+    ----------
+    msg: dict
+    exchange: str
+
+    Returns
+    -------
+    dict
+    """
+    dtypes = pms.MSG_DTYPE[exchange]
+    result = {k: dtypes[k](v) for k, v in msg.iteritems() if v}
     return result
 
 
@@ -38,12 +92,12 @@ def time_elapsed(last_time, tdelta):
     return (datetime.utcnow() - last_time).seconds >= tdelta.seconds
 
 
-def df_to_dict(df):
-    return [v.dropna().to_dict() for k, v in df.iterrows()]
-
-
 def is_close(a, b, abs_tol=1e-9):
     return abs(a-b) <= abs_tol
+
+
+def is_less(a, b, abs_tol=1e-9):
+    return a <= (b + abs_tol)
 
 
 def handle_exception(exc_type, exc_value, exc_traceback):

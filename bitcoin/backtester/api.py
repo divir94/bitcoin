@@ -68,7 +68,7 @@ class BackTester(object):
         maker_side = msg['side']
         match_price = msg['price']
         match_size = msg['size']
-        # if maker_time_string is None, it means that the maker order existed before we got a snapshot and
+        # if maker_timestamping is None, it means that the maker order existed before we got a snapshot and
         # thus we don't have a timestamp. In this case, our order was after the maker order
         maker_time = self.book.order_to_time.get(msg['maker_order_id'])
 
@@ -78,7 +78,7 @@ class BackTester(object):
 
             # our order is competitive if it has a better price than the match price
             competitive_price = order.price > match_price if order.side == 'buy' else order.price < match_price
-            # match at same price if our order came before. Note that order.time_string < None is False and implies
+            # match at same price if our order came before. Note that order.timestamping < None is False and implies
             # that maker order is created before we got the snapshot
             early_at_same_price = (order.price == match_price) and (order.order_time < maker_time)
             # order has to be same side as maker i.e. opposite side of taker
@@ -109,7 +109,7 @@ class BackTester(object):
 
         num_rows = self.trades.shape[0]
         if fill_size > 1e-4:
-            logger.info('Order filled {} at {}. balance: {}'.format(fill_size, self.book.time_str, balance))
+            logger.info('Order filled {} at {}. balance: {}'.format(fill_size, self.book.timestamp, balance))
         trade = pd.DataFrame([trade], index=[num_rows])
         self.trades = self.trades.append(trade)
         return
@@ -166,7 +166,7 @@ class BackTester(object):
                                              side=order.side,
                                              price=order.price,
                                              size=order.size,
-                                             order_time=self.book.time_str)
+                                             order_time=self.book.timestamp)
                 self.current_orders[current_order.side] = current_order
 
             elif order_type == OrderType.CANCEL:
@@ -179,12 +179,12 @@ class BackTester(object):
 
     def _run_with_data(self, strategy, book, msgs):
         self.book = book
-        logger.info('Backtest start: {}. USD: {}. BTC: {}'.format(self.book.time_str,
+        logger.info('Backtest start: {}. USD: {}. BTC: {}'.format(self.book.timestamp,
                                                                   self.balance['USD'],
                                                                   self.balance['BTC']))
         for msg in msgs:
             # update book
-            msg = util.to_numeric(msg, params.MSG_NUMERIC_FIELD[self.exchange])
+            msg = util.to_numeric(msg, params.MSG_DTYPE[self.exchange])
             self.book.process_message(msg)
 
             # get and handle fills
@@ -205,7 +205,7 @@ class BackTester(object):
         final_usd = self._liquidate_positions()
         if not self.trades.empty:
             self.trades = self.trades.set_index(['order_time', 'id', 'side'])
-        logger.info('Backtest end: {}. Final USD: {}'.format(self.book.time_str, final_usd))
+        logger.info('Backtest end: {}. Final USD: {}'.format(self.book.timestamp, final_usd))
 
     def _liquidate_positions(self):
         balance = self.balance.copy()

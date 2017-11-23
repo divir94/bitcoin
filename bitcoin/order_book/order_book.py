@@ -6,7 +6,7 @@ from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
+    def __init__(self, sequence, bids=None, asks=None, timestamp=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -19,10 +19,10 @@ class OrderBook(util.BaseObject):
         sequence: int
         bids: list[list]
         asks: list[list]
-        time_str: str
+        timestamp: pd.datetime
         """
         self.sequence = int(sequence)
-        self.time_str = time_str
+        self.timestamp = timestamp
         self.bids = SortedListWithKey(key=lambda x: -x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
@@ -95,9 +95,6 @@ class OrderBook(util.BaseObject):
         levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
         if idx is None:
-            # TODO(vidurj) This assert is to expensive to have, but would make a great test. We can create an order
-            # book from a df, and assert this as the test
-            # assert not any([x.price == price for x in levels]), "{} {}".format(price, [x.price for x in levels])
             # new price level
             level = PriceLevel(price, orders={order_id: size})
             # TODO(vidurj) there should be some way to make this more efficient since we are already computing the
@@ -146,13 +143,46 @@ class OrderBook(util.BaseObject):
         result = set.union(*orders)
         return result
 
-    def to_df(self, level_depth=20):
+    def to_df(self, level_type, depth=None):
         """
-        Get level 2 book as a DataFrame with the first few levels
+        Get level 2 or level 3 book as a DataFrame
+
+        Parameters
+        ----------
+        level_type: int
+        depth: int
+            depth to truncate the book
+
+        Returns
+        -------
+        pd.DataFrame
+            if level_type is 2:
+                columns: [bid, bid_size, ask, ask_size]
+            if level_type is 3:
+                columns: [sequence, received_time, side, price, size, order_id]
         """
-        bids = pd.DataFrame(data=[(level.size, level.price) for level in self.bids[:level_depth]],
-                            columns=['bid_size', 'bid'])
-        asks = pd.DataFrame(data=[(level.price, level.size) for level in self.asks[:level_depth]],
-                            columns=['ask', 'ask_size'])
-        df = pd.concat([bids, asks], axis=1).set_index('bid_size')
+        def _get_data(levels, side):
+            if level_type == 2:
+                data = [(level.price, level.size) for level in levels[:depth]]
+                columns = [side, '{}_size'.format(side)]
+                data = pd.DataFrame(data, columns=columns)
+            else:
+                data = [(level.price, order_size, order_id)
+                        for level in levels[:depth]
+                        for order_id, order_size in level.orders.iteritems()]
+                data = pd.DataFrame(data, columns=['price', 'size', 'order_id'])
+            return data
+
+        assert level_type in [2, 3]
+        bids = _get_data(self.bids, 'bid')
+        asks = _get_data(self.asks, 'ask')
+
+        if level_type == 2:
+            df = pd.concat([bids, asks], axis=1)
+        else:
+            bids['side'] = 'bid'
+            asks['side'] = 'ask'
+            df = pd.concat([bids, asks])
+            df['sequence'] = self.sequence
+            df['received_time'] = util.time_to_str(self.timestamp)
         return df

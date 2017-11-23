@@ -34,7 +34,7 @@ class GdaxMsgStorage(WebSocket):
         """
         Check if message is out of order and store messages at regular intervals
         """
-        msg['received_time'] = datetime.utcnow().strftime(params.DATE_FORMAT[self.exchange])
+        msg['received_time'] = util.time_to_str(datetime.utcnow())
 
         if self.last_sequence != -1:
             self.check_msg(msg)
@@ -81,8 +81,8 @@ class GdaxMsgStorage(WebSocket):
         # get data
         data = GDAX_CLIENT.get_product_order_book(self.product_id, level=3)
         # to df
-        timestamp = pd.datetime.utcnow().strftime(params.DATE_FORMAT[self.exchange])
-        df = sutil.gdax_book_to_df(data, timestamp)
+        timestamp = pd.datetime.utcnow()
+        df = sutil.book_to_df(data, timestamp)
         # store
         table_name = params.SNAPSHOT_TBL[self.exchange][self.product_id]
         sutil.store_df(df, table_name)
