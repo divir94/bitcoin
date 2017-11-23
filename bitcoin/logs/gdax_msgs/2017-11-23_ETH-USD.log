@@ -1,0 +1,16 @@
+2017-11-23 03:43:58,651 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-11-23 03:43:59,379 - core_websocket - INFO - Turning on heartbeat
+2017-11-23 03:43:59,379 - core_websocket - INFO - Listening for messages
+2017-11-23 03:43:59,506 - gdax_msgs - INFO - ==============================
+2017-11-23 03:43:59,507 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-11-23 03:44:09,400 - gdax_msgs - INFO - ==============================
+2017-11-23 03:45:02,892 - gdax_msgs - INFO - Stored 8212 messages in GdaxEthUsdMessage in 4.23s
+2017-11-23 03:46:02,592 - gdax_msgs - INFO - Stored 6052 messages in GdaxEthUsdMessage in 3.93s
+2017-11-23 03:47:02,019 - gdax_msgs - INFO - Stored 9554 messages in GdaxEthUsdMessage in 3.35s
+2017-11-23 03:48:01,832 - gdax_msgs - INFO - Stored 4876 messages in GdaxEthUsdMessage in 3.03s
+2017-11-23 03:49:03,323 - gdax_msgs - INFO - Stored 7114 messages in GdaxEthUsdMessage in 4.50s
+2017-11-23 03:50:07,375 - gdax_msgs - INFO - Stored 5347 messages in GdaxEthUsdMessage in 8.54s
+2017-11-23 03:51:00,589 - gdax_msgs - INFO - Stored 3712 messages in GdaxEthUsdMessage in 1.67s
+2017-11-23 03:52:04,710 - gdax_msgs - INFO - Stored 3630 messages in GdaxEthUsdMessage in 5.66s
+2017-11-23 03:53:01,901 - gdax_msgs - INFO - Stored 6203 messages in GdaxEthUsdMessage in 2.82s
+2017-11-23 03:54:03,033 - gdax_msgs - INFO - Stored 9174 messages in GdaxEthUsdMessage in 3.89s

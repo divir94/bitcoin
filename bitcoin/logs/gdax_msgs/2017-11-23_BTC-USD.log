@@ -1,0 +1,17 @@
+2017-11-23 03:43:58,651 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-11-23 03:43:59,379 - core_websocket - INFO - Turning on heartbeat
+2017-11-23 03:43:59,379 - core_websocket - INFO - Listening for messages
+2017-11-23 03:43:59,499 - gdax_msgs - INFO - ==============================
+2017-11-23 03:43:59,499 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-11-23 03:44:12,852 - gdax_msgs - INFO - ==============================
+2017-11-23 03:45:00,217 - gdax_msgs - INFO - Stored 2503 messages in GdaxBtcUsdMessage in 1.54s
+2017-11-23 03:46:00,222 - gdax_msgs - INFO - Stored 2256 messages in GdaxBtcUsdMessage in 1.53s
+2017-11-23 03:46:59,919 - gdax_msgs - INFO - Stored 1854 messages in GdaxBtcUsdMessage in 1.17s
+2017-11-23 03:48:00,673 - gdax_msgs - INFO - Stored 1513 messages in GdaxBtcUsdMessage in 1.70s
+2017-11-23 03:49:02,092 - gdax_msgs - INFO - Stored 3391 messages in GdaxBtcUsdMessage in 3.12s
+2017-11-23 03:50:04,267 - gdax_msgs - INFO - Stored 1968 messages in GdaxBtcUsdMessage in 5.29s
+2017-11-23 03:51:00,643 - gdax_msgs - INFO - Stored 1660 messages in GdaxBtcUsdMessage in 1.64s
+2017-11-23 03:52:01,309 - gdax_msgs - INFO - Stored 1567 messages in GdaxBtcUsdMessage in 2.26s
+2017-11-23 03:53:00,232 - gdax_msgs - INFO - Stored 1566 messages in GdaxBtcUsdMessage in 1.17s
+2017-11-23 03:54:00,658 - gdax_msgs - INFO - Stored 3525 messages in GdaxBtcUsdMessage in 1.59s
+2017-11-23 03:55:03,476 - gdax_msgs - INFO - Stored 3543 messages in GdaxBtcUsdMessage in 4.36s

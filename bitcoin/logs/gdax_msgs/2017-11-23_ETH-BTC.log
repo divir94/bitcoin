@@ -1,0 +1,17 @@
+2017-11-23 03:43:58,650 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-BTC']}
+2017-11-23 03:43:59,379 - core_websocket - INFO - Turning on heartbeat
+2017-11-23 03:43:59,379 - core_websocket - INFO - Listening for messages
+2017-11-23 03:43:59,654 - gdax_msgs - INFO - ==============================
+2017-11-23 03:43:59,655 - gdax_msgs - INFO - Storing ETH-BTC order book
+2017-11-23 03:44:03,064 - gdax_msgs - INFO - ==============================
+2017-11-23 03:45:01,018 - gdax_msgs - INFO - Stored 2632 messages in GdaxEthBtcMessage in 2.34s
+2017-11-23 03:46:02,594 - gdax_msgs - INFO - Stored 2408 messages in GdaxEthBtcMessage in 3.86s
+2017-11-23 03:47:00,908 - gdax_msgs - INFO - Stored 2418 messages in GdaxEthBtcMessage in 2.15s
+2017-11-23 03:48:01,751 - gdax_msgs - INFO - Stored 2347 messages in GdaxEthBtcMessage in 2.95s
+2017-11-23 03:49:02,350 - gdax_msgs - INFO - Stored 2851 messages in GdaxEthBtcMessage in 3.54s
+2017-11-23 03:50:00,049 - gdax_msgs - INFO - Stored 2365 messages in GdaxEthBtcMessage in 1.23s
+2017-11-23 03:51:00,672 - gdax_msgs - INFO - Stored 2232 messages in GdaxEthBtcMessage in 1.77s
+2017-11-23 03:52:06,399 - gdax_msgs - INFO - Stored 1839 messages in GdaxEthBtcMessage in 7.47s
+2017-11-23 03:53:00,496 - gdax_msgs - INFO - Stored 2221 messages in GdaxEthBtcMessage in 1.23s
+2017-11-23 03:54:06,668 - gdax_msgs - INFO - Stored 2156 messages in GdaxEthBtcMessage in 7.40s
+2017-11-23 03:55:00,577 - gdax_msgs - INFO - Stored 2110 messages in GdaxEthBtcMessage in 1.21s

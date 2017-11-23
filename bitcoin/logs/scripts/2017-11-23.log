@@ -1,0 +1,16 @@
+2017-11-23 03:43:56,678 - scripts - INFO - Current process: 38492
+2017-11-23 03:43:56,682 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'BTC-USD'], 'pid': 38503, 'name': 'Gdax Storage: BTC-USD'}
+2017-11-23 03:43:56,686 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-USD'], 'pid': 38504, 'name': 'Gdax Storage: ETH-USD'}
+2017-11-23 03:43:56,692 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.gdax_msgs', 'ETH-BTC'], 'pid': 38505, 'name': 'Gdax Storage: ETH-BTC'}
+2017-11-23 03:43:56,704 - scripts - INFO - Starting process: {'cmdline': ['python', '-m', 'bitcoin.storage.snapshots'], 'pid': 38506, 'name': 'Snapshot Storage'}
+2017-11-23 03:44:56,795 - scripts - INFO - Checking processes
+2017-11-23 03:45:56,802 - scripts - INFO - Checking processes
+2017-11-23 03:46:56,809 - scripts - INFO - Checking processes
+2017-11-23 03:47:56,813 - scripts - INFO - Checking processes
+2017-11-23 03:48:56,819 - scripts - INFO - Checking processes
+2017-11-23 03:49:56,824 - scripts - INFO - Checking processes
+2017-11-23 03:50:56,831 - scripts - INFO - Checking processes
+2017-11-23 03:51:56,836 - scripts - INFO - Checking processes
+2017-11-23 03:52:56,839 - scripts - INFO - Checking processes
+2017-11-23 03:53:56,846 - scripts - INFO - Checking processes
+2017-11-23 03:54:56,851 - scripts - INFO - Checking processes
