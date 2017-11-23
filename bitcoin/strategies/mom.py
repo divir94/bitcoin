@@ -1,8 +1,7 @@
+import numpy as np
 from collections import deque, namedtuple
-from datetime import datetime
 
 import bitcoin.strategies.util as sutil
-import bitcoin.params as params
 
 
 vwap = namedtuple('item', ['time', 'price'])
@@ -32,7 +31,7 @@ class MomStrategy(object):
         context: Context object
             implements `record` method
         book: OrderBook
-            has `time_str` attribute used to index recorded variables
+            has `timestamp` attribute used to index recorded variables
 
         Returns
         -------
@@ -40,8 +39,7 @@ class MomStrategy(object):
         """
         # get current vwap
         price = sutil.get_vwap(book, size=1)
-        #current_time = datetime.strptime(book.time_str, params.DATE_FORMAT['GDAX'])
-        current_time = book.time_str
+        current_time = book.timestamp
         current_vwap = vwap(time=current_time, price=price)
         self.past_vwaps.append(current_vwap)
 
@@ -50,7 +48,7 @@ class MomStrategy(object):
 
         # remove old values greater than the lookback period
         while update:
-            last_time = self.past_vwaps[-1].time
+            last_time = self.past_vwaps[0].time
             time_delta = (current_time - last_time).total_seconds()
             update = time_delta > self.lookback
             # remove old value
@@ -59,7 +57,8 @@ class MomStrategy(object):
 
         # get view
         last_vwap = self.past_vwaps[0]
-        past_price_change = price - last_vwap.price
+        time_delta = (current_time - last_vwap.time).total_seconds()
+        past_price_change = price - last_vwap.price if time_delta > self.long_thresh else np.nan
         if past_price_change >= self.long_thresh:
             view = 1
         elif past_price_change <= self.short_thresh:
@@ -68,8 +67,9 @@ class MomStrategy(object):
             view = 0
 
         # record
-        context.record(time=book.time_str,
+        context.record(time=book.timestamp,
                        view=view,
                        price=price,
+                       num_msgs=len(self.past_vwaps),
                        past_price=last_vwap.price,
                        past_price_change=past_price_change)

@@ -6,8 +6,8 @@ class GdaxOrderBook(ob.OrderBook):
     """
     Processes GDAX messages to maintain an order book.
     """
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
-        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, time_str=time_str)
+    def __init__(self, sequence, bids=None, asks=None, timestamp=None):
+        super(GdaxOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, timestamp=timestamp)
         # dict[order id, time str]. timestamp is used in backtester to match orders
         self.order_to_time = {}
         self.exchange = 'GDAX'
@@ -40,7 +40,7 @@ class GdaxOrderBook(ob.OrderBook):
             assert _type == 'error'
 
         book.sequence = int(msg['sequence'])
-        book.time_str = msg['time']
+        book.timestamp = msg['time']
 
     @staticmethod
     def open_order(msg, book):

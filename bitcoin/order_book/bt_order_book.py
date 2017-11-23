@@ -5,8 +5,8 @@ class BtOrderBook(ob.OrderBook):
     """
     Processes Bitstamp messages to maintain an order book.
     """
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
-        super(BtOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, time_str=time_str)
+    def __init__(self, sequence, bids=None, asks=None, timestamp=None):
+        super(BtOrderBook, self).__init__(sequence=sequence, bids=bids, asks=asks, timestamp=timestamp)
         self.exchange = 'GDAX'
 
     def process_message(self, msg, book=None):
@@ -26,7 +26,7 @@ class BtOrderBook(ob.OrderBook):
             pass
 
         book.sequence = data.get('id')
-        book.time_str = data.get('datetime')
+        book.timestamp = data.get('datetime')
 
     @staticmethod
     def create_order(data, book):

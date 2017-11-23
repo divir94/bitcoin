@@ -21,6 +21,7 @@ class ViewGen(object):
         self.exchange = 'GDAX'
 
     @property
+    # TODO(divir): memoize this
     def result(self):
         return self._context.result
 
@@ -44,9 +45,8 @@ class ViewGen(object):
         book = sutil.df_to_book(data.book)
         messages = data.messages
 
-        for msg in messages.itertuples():
-            msg = msg._asdict()
-            if end and book.time_str > end:
+        for msg in messages:
+            if end and book.timestamp > end:
                 return
 
             # received messages have no impact

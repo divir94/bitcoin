@@ -1,5 +1,4 @@
 import pandas as pd
-import json
 from collections import namedtuple
 
 import bitcoin.params as pms
@@ -44,7 +43,7 @@ def get_book(at=None, exchange=None, product=None):
         end = at
     else:
         # move start back by 1 sec to get any missing messages
-        start = pd.to_datetime(book.time_str) - pd.offsets.Timedelta('1m')
+        start = pd.to_datetime(book.timestamp) - pd.offsets.Timedelta('1m')
         end = pd.to_datetime(at)
     messages = get_messages(start=start, end=end, exchange=exchange, product=product)
 
@@ -53,7 +52,7 @@ def get_book(at=None, exchange=None, product=None):
         # break if reached the end
         if isinstance(at, int) and book.sequence >= at:
             break
-        elif isinstance(at, pd.datetime) and book.time_str >= at:
+        elif isinstance(at, pd.datetime) and book.timestamp >= at:
             break
         else:
             book.process_message(msg)
@@ -86,6 +85,7 @@ def get_closest_snapshot(at=None, exchange=None, product=None):
     # get closest snapshot before timestamp or sequence
     if at:
         _id = 'sequence' if isinstance(at, int) else 'received_time'
+        value = at if isinstance(at, int) else "{}".format(at)
 
         sql = '''
         SELECT * FROM {table}
@@ -95,7 +95,7 @@ def get_closest_snapshot(at=None, exchange=None, product=None):
             ORDER BY {id} desc
             LIMIT 1
         )
-        '''.format(table=table_name, id=_id, value=at)
+        '''.format(table=table_name, id=_id, value=value)
     else:
         # latest snapshot
         sql = '''
@@ -128,22 +128,29 @@ def get_messages(start=None, end=None, exchange=None, product=None):
     Returns
     -------
     generator
-        yields array of results
+        yields array of dict with appropriate dtypes
     """
     assert type(start) == type(end), 'Start and end types do not match'
-    exchange = exchange or pms.DEFAULT_EXCHANGE
-    product = product or pms.DEFAULT_PRODUCT
+
     start = util.time_to_str(start)
     end = util.time_to_str(end)
+    # add quotes for time
+    start_value = start if isinstance(start, int) else "{}".format(start)
+    end_value = end if isinstance(end, int) else "{}".format(end)
+
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+    product = product or pms.DEFAULT_PRODUCT
+    table_name = pms.MSG_TBL[exchange][product]
 
     # create sql
     start_field = 'sequence' if isinstance(start, int) else 'time'
     end_field = 'sequence' if isinstance(end, int) else 'time'
-    table_name = pms.MSG_TBL[exchange][product]
-    start_cond = '{field} >= {value}'.format(field=start_field, value=start) if start else ''
-    end_cond = '{field} <= {value}'.format(field=end_field, value=end) if end else ''
+
+    start_cond = '{field} >= {value}'.format(field=start_field, value=start_value) if start else ''
+    end_cond = '{field} <= {value}'.format(field=end_field, value=end_value) if end else ''
     where_cond = 'WHERE' if start_cond or end_cond else ''
     and_cond = 'AND' if start_cond and end_cond else ''
+
     sql = '''
         SELECT * from {table} 
         {where_cond} {start_cond} {and_cond} {end_cond}
@@ -152,8 +159,12 @@ def get_messages(start=None, end=None, exchange=None, product=None):
                and_cond=and_cond,
                start_cond=start_cond,
                end_cond=end_cond)
+
     messages = sutil.xread_sql(sql)
-    return messages
+
+    for msg in messages:
+        msg = util.parse_message(msg, exchange)
+        yield msg
 
 
 def store_dataset(name, start, end, exchange=None, product=None):
@@ -172,10 +183,11 @@ def store_dataset(name, start, end, exchange=None, product=None):
     -------
     None
     """
+    exchange = exchange or pms.DEFAULT_EXCHANGE
+
     # get book
     book = get_book(at=start, exchange=exchange, product=product)
     book_df = book.to_df(level_type=3)
-    #book_list = book_df.to_dict(orient='records')
 
     # get messages
     start = start - pd.offsets.Timedelta('1m')
@@ -205,5 +217,6 @@ def get_dataset(name):
     fname = '../data/{}.hdf5'.format(name)
     book_df = pd.read_hdf(fname, 'book')
     msg_df = pd.read_hdf(fname, 'messages')
-    dataset = Dataset(book=book_df, messages=msg_df)
+    msg_lst = msg_df.to_dict(orient='records')
+    dataset = Dataset(book=book_df, messages=msg_lst)
     return dataset

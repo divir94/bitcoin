@@ -8,7 +8,6 @@ from websocket import create_connection
 logger = logging.getLogger('core_websocket')
 
 
-# TODO(divir): add an optional dict[name, func and freq] are to call func periodically
 class WebSocket(object):
     """
     The core websocket connects and listens for messages. It is independent of any crypto specific stuff i.e.

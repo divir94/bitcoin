@@ -1,5 +1,4 @@
 import pandas as pd
-from decimal import Decimal
 
 from sortedcontainers import SortedListWithKey
 import bitcoin.util as util
@@ -7,7 +6,7 @@ from price_level import PriceLevel
 
 
 class OrderBook(util.BaseObject):
-    def __init__(self, sequence, bids=None, asks=None, time_str=None):
+    def __init__(self, sequence, bids=None, asks=None, timestamp=None):
         """
         Bids and asks are sorted lists of PriceLevel objects. Each PriceLevel corresponds to a price and contains
         all the orders for that price. The class also maintains a mapping of order_id to price. The can be used to get
@@ -20,10 +19,10 @@ class OrderBook(util.BaseObject):
         sequence: int
         bids: list[list]
         asks: list[list]
-        time_str: str
+        timestamp: pd.datetime
         """
         self.sequence = int(sequence)
-        self.time_str = time_str
+        self.timestamp = timestamp
         self.bids = SortedListWithKey(key=lambda x: -x.price)
         self.asks = SortedListWithKey(key=lambda x: x.price)
         self.orders = {}  # dict[order_id, price]
@@ -34,7 +33,7 @@ class OrderBook(util.BaseObject):
             if orders is None:
                 continue
             for price, size, order_id in orders:
-                price, size = Decimal(price), Decimal(size)
+                price, size = float(price), float(size)
                 self.add(side=side, price=price, size=size, order_id=order_id)
 
     def _get_levels_from_side(self, side):
@@ -96,9 +95,6 @@ class OrderBook(util.BaseObject):
         levels = self._get_levels_from_side(side)
         idx = self._get_levels_idx(price, levels)
         if idx is None:
-            # TODO(vidurj) This assert is to expensive to have, but would make a great test. We can create an order
-            # book from a df, and assert this as the test
-            # assert not any([x.price == price for x in levels]), "{} {}".format(price, [x.price for x in levels])
             # new price level
             level = PriceLevel(price, orders={order_id: size})
             # TODO(vidurj) there should be some way to make this more efficient since we are already computing the
@@ -188,5 +184,5 @@ class OrderBook(util.BaseObject):
             asks['side'] = 'ask'
             df = pd.concat([bids, asks])
             df['sequence'] = self.sequence
-            df['received_time'] = self.time_str
+            df['received_time'] = util.time_to_str(self.timestamp)
         return df

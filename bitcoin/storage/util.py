@@ -53,7 +53,7 @@ def store_df(df, tbl_name):
 
 def df_to_book(df):
     """
-    Convert dataframe to order book.
+    Convert DataFrame to order book.
 
     Parameters
     ----------
@@ -75,8 +75,8 @@ def df_to_book(df):
     columns = ['price', 'size', 'order_id']
     bids = bids[columns].values
     asks = asks[columns].values
-    time_str = pd.to_datetime(df['received_time'].unique()[0])
-    book = ob.GdaxOrderBook(sequence, bids=bids, asks=asks, time_str=time_str)
+    timestamp = pd.to_datetime(df['received_time'].unique()[0])
+    book = ob.GdaxOrderBook(sequence, bids=bids, asks=asks, timestamp=timestamp)
     return book
 
 
@@ -88,7 +88,7 @@ def book_to_df(data, timestamp):
     ----------
     data: dict
         keys: [sequence, bids and asks]
-    timestamp: str
+    timestamp: pd.datetime
 
     Returns
     -------
@@ -106,7 +106,7 @@ def book_to_df(data, timestamp):
 
     # add sequence and timestamp
     df['sequence'] = data['sequence']
-    df['received_time'] = timestamp
+    df['received_time'] = util.time_to_str(timestamp)
     return df
 
 
@@ -140,6 +140,6 @@ def xread_sql(sql, chunksize=100000):
 
         columns = result.keys()
         for row in result:
-            row_dict = {k: v for k, v in zip(columns, row) if v}
+            row_dict = dict(zip(columns, row))
             offset += 1
             yield row_dict

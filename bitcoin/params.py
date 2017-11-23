@@ -1,4 +1,4 @@
-import pandas as pd
+import numpy as np
 
 
 DEFAULT_EXCHANGE = 'GDAX'
@@ -47,28 +47,26 @@ MSG_COL_NAME = {
 MSG_DTYPE = {
     'GDAX':
         {
-            'sequence': int,
-            'time': pd.to_datetime,
-            'received_time': pd.to_datetime,
-            'type': str,
-            'price': float,
-            'size': float,
-            'order_id': str,
-            'side': str,
-            'order_type': str,
-            'funds': float,
-            'remaining_size': float,
-            'reason': str,
-            'trade_id': int,
-            'maker_order_id': str,
-            'taker_order_id': str,
-            'new_size': float,
-            'old_size': float,
-            'new_funds': float,
-            'old_funds': float,
+            'sequence': np.int_,
+            'time': np.datetime64,
+            'received_time': np.datetime64,
+            'type': np.object_,
+            'price': np.float_,
+            'size': np.float_,
+            'order_id': np.object_,
+            'side': np.object_,
+            'order_type': np.object_,
+            'funds': np.float_,
+            'remaining_size': np.float_,
+            'reason': np.object_,
+            'trade_id': np.float_,
+            'maker_order_id': np.object_,
+            'taker_order_id': np.object_,
+            'new_size': np.float_,
+            'old_size': np.float_,
+            'new_funds': np.float_,
+            'old_funds': np.float_,
         }
 }
 
-DATE_FORMAT = {
-    'GDAX': '%Y-%m-%dT%H:%M:%S.%fZ'
-}
+DATE_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'

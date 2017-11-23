@@ -1,4 +1,6 @@
 import uuid
+import numpy as np
+import pandas as pd
 
 import bitcoin.logs.logger as lc
 from bitcoin.backtester.orders import *
@@ -99,3 +101,31 @@ def filter_orders(orders, balance):
     """
     new_orders = orders
     return new_orders
+
+
+def get_mom_deciles(prices, bins=10):
+    """
+    Get time series momentum deciles i.e. mean forward price difference when sorted by mean past price difference.
+
+    Parameters
+    ----------
+    prices: pd.Series
+    bins: int
+
+    Returns
+    -------
+    pd.DataFrame
+        index: bin numbers
+        columns: [fwd, past]
+    """
+    groups = prices.groupby(pd.TimeGrouper(freq='1T'))
+    past = groups.mean().diff()
+    fwd = past.shift(-1)
+    past_fwd = pd.DataFrame(dict(past=past, fwd=fwd))
+    past_fwd = past_fwd[~past_fwd.past.isnull()]
+
+    # split into equal sized bins and take the mean
+    chunks = np.array_split(past_fwd.sort_values('past'), bins)
+    deciles = pd.DataFrame([chunk.mean() for chunk in chunks])
+    deciles.iplot(kind='bar', title='TS Mom Price Differences')
+    return deciles
