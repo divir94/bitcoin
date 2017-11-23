@@ -3,6 +3,7 @@
 *.cache
 *.pyc
 bitcoin/data/
+bitcoin/credentials/
 
 # OS generated files #
 ######################
