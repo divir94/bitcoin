@@ -119,6 +119,7 @@ def get_mom_deciles(prices, bins=10):
         columns: [fwd, past]
     """
     groups = prices.groupby(pd.TimeGrouper(freq='1T'))
+    # past return is the difference b/w the mean prices of the current and past minute
     past = groups.mean().diff()
     fwd = past.shift(-1)
     past_fwd = pd.DataFrame(dict(past=past, fwd=fwd))

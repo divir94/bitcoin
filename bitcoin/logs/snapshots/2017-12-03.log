@@ -1,0 +1,533 @@
+2017-12-03 20:52:40,070 - snapshots - ERROR - ====================
+2017-12-04 01:50:46.000118
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-03 20:52:40,070 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Max retries exceeded with url: /api/order_book/ (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x10fc85b50>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+2017-12-03 21:07:35,370 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:35,371 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:35-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11350', 'bid', u'1.47692149', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11345.95', 'bid', u'0.02', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11345.93', 'bid', u'0.04389944', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11342', 'bid', u'0.275', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11340.28', 'bid', u'0.015', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11340.11', 'bid', u'0.08', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11340.1', 'bid', u'4.07545143', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11340.03', 'bid', u'0.01', '4463475628')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11440.02', 'ask', u'0.2', '4463475628'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11440.05', 'ask', u'0.325', '4463475628'))]
+2017-12-03 21:07:36,166 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:36,166 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:35-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11271.53', 'bid', u'15.29693039', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11268.90', 'bid', u'0.01239307', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11267.00', 'bid', u'0.00070473', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11261.36', 'bid', u'0.84980000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11259.88', 'bid', u'0.02404578', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11258.00', 'bid', u'0.00070530', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11257.27', 'bid', u'0.00400000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11255.00', 'bid', u'0.50000000', '1512353254')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11420.15', 'ask', u'0.02423075', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 35, 25055), u'11421.28', 'ask', u'0.20000000', '1512353254'))]
+2017-12-03 21:07:36,302 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:36,302 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:35' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463475628, datetime.datetime(2017, 12, 4, 2, 7, 35, 25055))]
+2017-12-03 21:07:37,633 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:37,634 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:37-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11350', 'bid', u'1.47594124', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11345.95', 'bid', u'0.02', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11345.93', 'bid', u'0.04389944', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11344', 'bid', u'1.08', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11342', 'bid', u'0.275', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11340.1', 'bid', u'4.07545143', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11340.03', 'bid', u'0.01', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11340.02', 'bid', u'0.01791749', '4463475796')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11440.01', 'ask', u'10.81861082', '4463475796'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11440.02', 'ask', u'0.2', '4463475796'))]
+2017-12-03 21:07:38,071 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:38,071 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:37-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11271.53', 'bid', u'15.29693039', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11268.90', 'bid', u'0.01239307', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11267.00', 'bid', u'0.00070473', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11261.36', 'bid', u'0.84980000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11259.88', 'bid', u'0.02404578', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11258.00', 'bid', u'0.00070530', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11257.27', 'bid', u'0.00400000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11255.00', 'bid', u'0.50000000', '1512353254')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11420.15', 'ask', u'0.02423075', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 37, 303361), u'11421.28', 'ask', u'0.20000000', '1512353254'))]
+2017-12-03 21:07:38,190 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:38,190 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:37' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463475796, datetime.datetime(2017, 12, 4, 2, 7, 37, 303361))]
+2017-12-03 21:07:39,560 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:39,561 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:39-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11350', 'bid', u'2.51161381', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11349.91', 'bid', u'0.01', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11345.95', 'bid', u'0.02', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11345.93', 'bid', u'0.04389944', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11344', 'bid', u'1.08', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11342', 'bid', u'0.185', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11340.1', 'bid', u'4.15545143', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11340.03', 'bid', u'0.01', '4463475907')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11440.05', 'ask', u'0.325', '4463475907'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11440.07', 'ask', u'15.25379184', '4463475907'))]
+2017-12-03 21:07:39,917 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:39,917 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:39-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11271.53', 'bid', u'15.29693039', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11268.90', 'bid', u'0.01239307', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11267.00', 'bid', u'0.00070473', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11261.36', 'bid', u'0.84980000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11259.88', 'bid', u'0.02404578', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11258.00', 'bid', u'0.00070530', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11257.27', 'bid', u'0.00400000', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11255.00', 'bid', u'0.50000000', '1512353254')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11420.15', 'ask', u'0.02423075', '1512353254'), (datetime.datetime(2017, 12, 4, 2, 7, 39, 195823), u'11421.28', 'ask', u'0.20000000', '1512353254'))]
+2017-12-03 21:07:40,038 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:40,039 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:39' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463475907, datetime.datetime(2017, 12, 4, 2, 7, 39, 195823))]
+2017-12-03 21:07:41,402 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:41,402 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:41-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11350', 'bid', u'2.53533132', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11349.91', 'bid', u'0.01', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11345.94', 'bid', u'0.02', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11345.93', 'bid', u'0.04389944', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11344', 'bid', u'1.08', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11342', 'bid', u'0.185', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11340.1', 'bid', u'4.15545143', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11340.03', 'bid', u'0.01', '4463476024')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11440.01', 'ask', u'10.81861082', '4463476024'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11440.02', 'ask', u'0.2', '4463476024'))]
+2017-12-03 21:07:41,736 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:41,736 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:41-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11271.53', 'bid', u'15.29593039', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11268.90', 'bid', u'0.01239307', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11267.00', 'bid', u'0.00070473', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11261.36', 'bid', u'0.84980000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11259.88', 'bid', u'0.02404578', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11258.00', 'bid', u'0.00070530', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11257.27', 'bid', u'0.00400000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11255.00', 'bid', u'0.50000000', '1512353257')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11420.15', 'ask', u'0.02423075', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 41, 40585), u'11421.28', 'ask', u'0.20000000', '1512353257'))]
+2017-12-03 21:07:41,850 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:41,850 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:41' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463476024, datetime.datetime(2017, 12, 4, 2, 7, 41, 40585))]
+2017-12-03 21:07:43,216 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:43,217 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:43-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11350', 'bid', u'2.57674418', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11349.91', 'bid', u'0.01', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11345.94', 'bid', u'0.02', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11345.93', 'bid', u'0.04389944', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11344', 'bid', u'1.08', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11342', 'bid', u'0.185', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11340.1', 'bid', u'4.15545143', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11340.03', 'bid', u'0.01', '4463476127')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11437.48', 'ask', u'1.01087367', '4463476127'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11440', 'ask', u'0.74009481', '4463476127'))]
+2017-12-03 21:07:43,526 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:43,527 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:43-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11271.53', 'bid', u'15.29593039', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11268.90', 'bid', u'0.01239307', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11267.00', 'bid', u'0.00070473', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11261.36', 'bid', u'0.84980000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11259.88', 'bid', u'0.02404578', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11258.00', 'bid', u'0.00070530', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11257.27', 'bid', u'0.00400000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11255.00', 'bid', u'0.50000000', '1512353257')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11420.15', 'ask', u'0.02423075', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 42, 855491), u'11421.28', 'ask', u'0.20000000', '1512353257'))]
+2017-12-03 21:07:43,652 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:43,652 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:43' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463476127, datetime.datetime(2017, 12, 4, 2, 7, 42, 855491))]
+2017-12-03 21:07:44,980 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:44,980 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:45-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11350', 'bid', u'2.49899995', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11349.91', 'bid', u'0.01', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11345.94', 'bid', u'0.02', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11345.93', 'bid', u'0.04389944', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11344', 'bid', u'1.08', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11342', 'bid', u'0.185', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11340.1', 'bid', u'4.15545143', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11340.03', 'bid', u'0.01', '4463476234')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11440.01', 'ask', u'10.81861082', '4463476234'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11440.02', 'ask', u'0.2', '4463476234'))]
+2017-12-03 21:07:45,464 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:45,464 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:45-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11271.53', 'bid', u'15.29593039', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11268.90', 'bid', u'0.01239307', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11267.00', 'bid', u'0.00070473', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11261.36', 'bid', u'0.84980000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11259.88', 'bid', u'0.02404578', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11258.00', 'bid', u'0.00070530', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11257.27', 'bid', u'0.00400000', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11255.00', 'bid', u'0.50000000', '1512353257')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11420.15', 'ask', u'0.02423075', '1512353257'), (datetime.datetime(2017, 12, 4, 2, 7, 44, 658041), u'11421.28', 'ask', u'0.20000000', '1512353257'))]
+2017-12-03 21:07:45,572 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:45,572 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:45' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463476234, datetime.datetime(2017, 12, 4, 2, 7, 44, 658041))]
+2017-12-03 21:07:46,905 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:46,905 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:47-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11350', 'bid', u'0.4308089', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11349.92', 'bid', u'0.01', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11349.91', 'bid', u'0.01', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11345.93', 'bid', u'0.04389944', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11344', 'bid', u'1', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11342', 'bid', u'0.185', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11340.11', 'bid', u'0.08', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11340.1', 'bid', u'4.07545143', '4463476571')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11440.01', 'ask', u'10.81861082', '4463476571'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11440.02', 'ask', u'0.2', '4463476571'))]
+2017-12-03 21:07:47,578 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:47,579 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:47-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11271.53', 'bid', u'0.59442529', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11268.90', 'bid', u'0.01239307', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11267.00', 'bid', u'0.00070473', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11261.36', 'bid', u'0.84980000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11259.88', 'bid', u'0.02404578', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11258.00', 'bid', u'0.00070530', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11257.27', 'bid', u'0.00400000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11255.00', 'bid', u'0.50000000', '1512353264')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11420.15', 'ask', u'0.02423075', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 46, 573627), u'11421.28', 'ask', u'0.20000000', '1512353264'))]
+2017-12-03 21:07:47,690 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:47,690 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:47' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11350', 4463476571, datetime.datetime(2017, 12, 4, 2, 7, 46, 573627))]
+2017-12-03 21:07:49,055 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:49,055 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:49-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11345.93', 'bid', u'0.04389944', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11344.01', 'bid', u'0.09', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11344', 'bid', u'1.085', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11343.01', 'bid', u'0.03', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11342.87', 'bid', u'0.01', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11342', 'bid', u'0.1', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11340.11', 'bid', u'0.08', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11340.1', 'bid', u'4.07545143', '4463476694')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11440.07', 'ask', u'15.25379184', '4463476694'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11440.1', 'ask', u'0.023', '4463476694'))]
+2017-12-03 21:07:49,399 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:49,400 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:49-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11271.53', 'bid', u'0.59442529', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11268.90', 'bid', u'0.01239307', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11267.00', 'bid', u'0.00070473', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11261.36', 'bid', u'0.84980000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11259.88', 'bid', u'0.02404578', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11258.00', 'bid', u'0.00070530', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11257.27', 'bid', u'0.00400000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11255.00', 'bid', u'0.50000000', '1512353264')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11420.15', 'ask', u'0.02423075', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 48, 693364), u'11421.28', 'ask', u'0.20000000', '1512353264'))]
+2017-12-03 21:07:49,531 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:49,531 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:49' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11350.01', u'11345.93', 4463476694, datetime.datetime(2017, 12, 4, 2, 7, 48, 693364))]
+2017-12-03 21:07:50,874 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:07:50,874 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:51-11407.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11345.93', 'bid', u'0.13280325', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11344.01', 'bid', u'0.09', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11344', 'bid', u'1', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11342', 'bid', u'0.1', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11340.11', 'bid', u'0.165', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11340.1', 'bid', u'4.07545143', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11340.03', 'bid', u'0.01', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11340.02', 'bid', u'0.01791749', '4463476914')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11434.07', 'ask', u'7.9', '4463476914'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11437.48', 'ask', u'1.01087367', '4463476914'))]
+2017-12-03 21:07:51,208 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:07:51,209 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:51-11271.53' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11271.53', 'bid', u'0.59442529', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11268.90', 'bid', u'0.01239307', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11267.00', 'bid', u'0.00070473', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11261.36', 'bid', u'0.84980000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11259.88', 'bid', u'0.02404578', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11258.00', 'bid', u'0.00070530', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11257.27', 'bid', u'0.00400000', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11255.00', 'bid', u'0.50000000', '1512353264')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11420.15', 'ask', u'0.02423075', '1512353264'), (datetime.datetime(2017, 12, 4, 2, 7, 50, 535480), u'11421.28', 'ask', u'0.20000000', '1512353264'))]
+2017-12-03 21:07:51,330 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:07:51,330 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:07:51' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11271.54', u'11271.53', u'11271.53', u'11345.94', u'11345.93', 4463476914, datetime.datetime(2017, 12, 4, 2, 7, 50, 535480))]
+2017-12-03 21:08:02,301 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:02,302 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:02-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11340.1', 'bid', u'3.56568997', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11340.03', 'bid', u'0.01', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11340.02', 'bid', u'0.01791749', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11340.01', 'bid', u'0.01', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11340', 'bid', u'0.07535784', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11338.08', 'bid', u'11.00624444', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11338.05', 'bid', u'2.96980902', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11335.73', 'bid', u'0.37', '4463477732')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11437.48', 'ask', u'1.01087367', '4463477732'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11440', 'ask', u'0.09822149', '4463477732'))]
+2017-12-03 21:08:02,928 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:02,928 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:02-11258.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11265.11', 'bid', u'0.71643342', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11259.88', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11258.00', 'bid', u'0.00070530', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11257.27', 'bid', u'0.00400000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11255.00', 'bid', u'0.50000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11253.28', 'bid', u'0.00506819', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11250.87', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11250.18', 'bid', u'0.10000000', '1512353274')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11420.00', 'ask', u'1.15000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 1, 937092), u'11420.15', 'ask', u'0.02423075', '1512353274'))]
+2017-12-03 21:08:03,042 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:03,042 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:02' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11268.90', u'11265.11', u'11265.11', u'11340.11', u'11340.1', 4463477732, datetime.datetime(2017, 12, 4, 2, 8, 1, 937092))]
+2017-12-03 21:08:04,415 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:04,415 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:04-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340.1', 'bid', u'3.66489329', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340.04', 'bid', u'0.01', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340.03', 'bid', u'0.01', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340.02', 'bid', u'0.01791749', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340.01', 'bid', u'0.01', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11340', 'bid', u'0.07535784', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11338.08', 'bid', u'11.00624444', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11338.05', 'bid', u'2.96980902', '4463477821')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11434.07', 'ask', u'7.9', '4463477821'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11437.48', 'ask', u'1.01087367', '4463477821'))]
+2017-12-03 21:08:04,748 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:04,748 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:04-11258.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11265.11', 'bid', u'0.71643342', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11259.88', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11258.00', 'bid', u'0.00070530', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11257.27', 'bid', u'0.00400000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11255.00', 'bid', u'0.50000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11253.28', 'bid', u'0.00506819', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11250.87', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11250.18', 'bid', u'0.10000000', '1512353274')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11420.00', 'ask', u'1.15000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 4, 43206), u'11420.15', 'ask', u'0.02423075', '1512353274'))]
+2017-12-03 21:08:04,866 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:04,866 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:04' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11268.90', u'11265.11', u'11265.11', u'11340.11', u'11340.1', 4463477821, datetime.datetime(2017, 12, 4, 2, 8, 4, 43206))]
+2017-12-03 21:08:06,206 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:06,206 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:06-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340.1', 'bid', u'3.17499848', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340.04', 'bid', u'0.01', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340.03', 'bid', u'0.01', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340.02', 'bid', u'0.01791749', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340.01', 'bid', u'0.01', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11340', 'bid', u'0.07535784', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11338.08', 'bid', u'11.00624444', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11338.05', 'bid', u'2.96980902', '4463477923')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11434.06', 'ask', u'1.972063', '4463477923'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11434.07', 'ask', u'7.9', '4463477923'))]
+2017-12-03 21:08:06,868 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:06,868 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:06-11258.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11265.11', 'bid', u'0.71643342', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11259.88', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11258.00', 'bid', u'0.00070530', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11257.27', 'bid', u'0.00400000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11255.00', 'bid', u'0.50000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11253.28', 'bid', u'0.00506819', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11250.87', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11250.18', 'bid', u'0.10000000', '1512353274')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11420.00', 'ask', u'1.15000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 5, 869238), u'11420.15', 'ask', u'0.02423075', '1512353274'))]
+2017-12-03 21:08:06,974 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:06,974 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:06' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11268.90', u'11265.11', u'11265.11', u'11340.11', u'11340.1', 4463477923, datetime.datetime(2017, 12, 4, 2, 8, 5, 869238))]
+2017-12-03 21:08:08,325 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:08,325 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:08-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340.1', 'bid', u'3.17488309', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340.05', 'bid', u'0.02302', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340.04', 'bid', u'0.01', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340.02', 'bid', u'0.01791749', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340.01', 'bid', u'0.01', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11340', 'bid', u'0.07535784', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11338.08', 'bid', u'11.00624444', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11338.05', 'bid', u'2.96980902', '4463478013')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11434.07', 'ask', u'7.9', '4463478013'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11437.48', 'ask', u'1.01087367', '4463478013'))]
+2017-12-03 21:08:08,655 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:08,655 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:08-11258.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11265.11', 'bid', u'0.71643342', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11259.88', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11258.00', 'bid', u'0.00070530', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11257.27', 'bid', u'0.00400000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11255.00', 'bid', u'0.50000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11253.28', 'bid', u'0.00506819', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11250.87', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11250.18', 'bid', u'0.10000000', '1512353274')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11420.00', 'ask', u'1.15000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 7, 975484), u'11420.15', 'ask', u'0.02423075', '1512353274'))]
+2017-12-03 21:08:08,775 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:08,775 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:08' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11268.90', u'11265.11', u'11265.11', u'11340.11', u'11340.1', 4463478013, datetime.datetime(2017, 12, 4, 2, 8, 7, 975484))]
+2017-12-03 21:08:10,115 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:10,115 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:10-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340.1', 'bid', u'3.09288368', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340.05', 'bid', u'0.02302', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340.04', 'bid', u'0.01', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340.02', 'bid', u'0.01791749', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340.01', 'bid', u'0.02', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11340', 'bid', u'0.07535784', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11338.08', 'bid', u'11.00624444', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11335.73', 'bid', u'0.37', '4463478066')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11434.07', 'ask', u'7.9', '4463478066'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11437.48', 'ask', u'1.01087367', '4463478066'))]
+2017-12-03 21:08:10,459 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:10,460 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:10-11258.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11265.11', 'bid', u'0.71643342', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11259.88', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11258.00', 'bid', u'0.00070530', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11257.27', 'bid', u'0.00400000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11255.00', 'bid', u'0.50000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11253.28', 'bid', u'0.00506819', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11250.87', 'bid', u'0.02404578', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11250.18', 'bid', u'0.10000000', '1512353274')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11420.00', 'ask', u'1.15000000', '1512353274'), (datetime.datetime(2017, 12, 4, 2, 8, 9, 779824), u'11420.15', 'ask', u'0.02423075', '1512353274'))]
+2017-12-03 21:08:10,574 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:10,575 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:10' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11268.90', u'11265.11', u'11265.11', u'11340.11', u'11340.1', 4463478066, datetime.datetime(2017, 12, 4, 2, 8, 9, 779824))]
+2017-12-03 21:08:11,935 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:11,936 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:12-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340.1', 'bid', u'2.89529849', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340.05', 'bid', u'0.02302', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340.04', 'bid', u'0.01', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340.02', 'bid', u'0.01791749', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340.01', 'bid', u'0.02', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11340', 'bid', u'0.07535784', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11338.08', 'bid', u'11.00624444', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11335.73', 'bid', u'0.37', '4463478150')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11437.48', 'ask', u'1.01087367', '4463478150'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11439.04', 'ask', u'0.03', '4463478150'))]
+2017-12-03 21:08:13,084 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:13,085 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:12-11250.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11230.99', 'bid', u'0.00200000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11213.01', 'bid', u'0.15160960', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11210.03', 'bid', u'0.45000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11210.02', 'bid', u'1.24902876', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11210.00', 'bid', u'10.00000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11209.00', 'bid', u'0.02500000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11207.00', 'bid', u'0.05000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11204.00', 'bid', u'0.02570870', '1512353290')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11384.23', 'ask', u'0.63048075', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 11, 575941), u'11384.25', 'ask', u'50.00000000', '1512353290'))]
+2017-12-03 21:08:13,193 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:13,194 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:12' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11249.99', u'11230.99', u'11230.99', u'11340.11', u'11340.1', 4463478150, datetime.datetime(2017, 12, 4, 2, 8, 11, 575941))]
+2017-12-03 21:08:14,565 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:14,566 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:14-11400.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340.1', 'bid', u'2.67482686', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340.05', 'bid', u'0.02302', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340.04', 'bid', u'0.01', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340.02', 'bid', u'0.01791749', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340.01', 'bid', u'0.02', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11340', 'bid', u'0.07535784', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11338.08', 'bid', u'11.00624444', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11335.73', 'bid', u'0.37', '4463478240')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11439.04', 'ask', u'0.03', '4463478240'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11440', 'ask', u'0.09822149', '4463478240'))]
+2017-12-03 21:08:14,920 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:14,920 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:14-11250.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11230.99', 'bid', u'0.00200000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11213.01', 'bid', u'0.15160960', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11210.03', 'bid', u'0.45000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11210.02', 'bid', u'1.24902876', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11210.00', 'bid', u'10.00000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11209.00', 'bid', u'0.02500000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11207.00', 'bid', u'0.05000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11204.00', 'bid', u'0.02570870', '1512353290')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11384.23', 'ask', u'0.63048075', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 14, 194849), u'11384.25', 'ask', u'50.00000000', '1512353290'))]
+2017-12-03 21:08:15,050 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:15,050 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:14' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11249.99', u'11230.99', u'11230.99', u'11340.11', u'11340.1', 4463478240, datetime.datetime(2017, 12, 4, 2, 8, 14, 194849))]
+2017-12-03 21:08:16,401 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:16,402 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:16-11399.01' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340.1', 'bid', u'2.70156512', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340.06', 'bid', u'0.01', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340.05', 'bid', u'0.02302', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340.02', 'bid', u'0.01791749', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340.01', 'bid', u'0.02', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11340', 'bid', u'0.07535784', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11338.08', 'bid', u'11.00624444', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11335.73', 'bid', u'0.37', '4463478283')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11437.48', 'ask', u'1.01087367', '4463478283'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11439.04', 'ask', u'0.03', '4463478283'))]
+2017-12-03 21:08:16,725 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:16,725 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:16-11250.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11230.99', 'bid', u'0.00200000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11213.01', 'bid', u'0.15160960', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11210.03', 'bid', u'0.45000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11210.02', 'bid', u'1.24902876', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11210.00', 'bid', u'10.00000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11209.00', 'bid', u'0.02500000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11207.00', 'bid', u'0.05000000', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11204.00', 'bid', u'0.02570870', '1512353290')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11384.23', 'ask', u'0.63048075', '1512353290'), (datetime.datetime(2017, 12, 4, 2, 8, 16, 55175), u'11384.25', 'ask', u'50.00000000', '1512353290'))]
+2017-12-03 21:08:16,830 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:16,830 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:16' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11249.99', u'11230.99', u'11230.99', u'11340.11', u'11340.1', 4463478283, datetime.datetime(2017, 12, 4, 2, 8, 16, 55175))]
+2017-12-03 21:08:40,134 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:40,134 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:40-11340.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11300.02', 'bid', u'11.25135577', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11300.01', 'bid', u'0.77826505', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11300', 'bid', u'15.22331148', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11299.93', 'bid', u'0.01', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11298', 'bid', u'0.01862542', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11297', 'bid', u'0.01', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11293.25', 'bid', u'0.04', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11291', 'bid', u'0.12', '4463481424')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11422.38', 'ask', u'7.72', '4463481424'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11422.5', 'ask', u'0.0803', '4463481424'))]
+2017-12-03 21:08:40,471 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:40,471 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:40-11240.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11240.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11231.00', 'bid', u'0.18556718', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11221.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11210.15', 'bid', u'0.12870434', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11210.12', 'bid', u'0.79300000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11210.00', 'bid', u'10.00000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11209.00', 'bid', u'0.02500000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11207.00', 'bid', u'0.05000000', '1512353315')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11386.00', 'ask', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 39, 778420), u'11386.56', 'ask', u'0.00070172', '1512353315'))]
+2017-12-03 21:08:40,590 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:40,591 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:40' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11243.48', u'11240.00', u'11240.00', u'11300.03', u'11300.02', 4463481424, datetime.datetime(2017, 12, 4, 2, 8, 39, 778420))]
+2017-12-03 21:08:41,912 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:41,912 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:42-11340.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11300.02', 'bid', u'11.22910854', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11300.01', 'bid', u'0.77826505', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11300', 'bid', u'15.81138599', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11299.93', 'bid', u'0.01', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11298', 'bid', u'0.01862542', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11297', 'bid', u'0.01', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11293.25', 'bid', u'0.04', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11291', 'bid', u'0.12', '4463481574')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11422.38', 'ask', u'7.72', '4463481574'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11422.5', 'ask', u'0.0803', '4463481574'))]
+2017-12-03 21:08:42,258 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:42,258 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:42-11240.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11240.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11231.00', 'bid', u'0.18556718', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11221.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11210.15', 'bid', u'0.12870434', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11210.12', 'bid', u'0.79300000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11210.00', 'bid', u'10.00000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11209.00', 'bid', u'0.02500000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11207.00', 'bid', u'0.05000000', '1512353315')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11386.00', 'ask', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 41, 592304), u'11386.56', 'ask', u'0.00070172', '1512353315'))]
+2017-12-03 21:08:42,375 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:42,375 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:42' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11243.48', u'11240.00', u'11240.00', u'11300.03', u'11300.02', 4463481574, datetime.datetime(2017, 12, 4, 2, 8, 41, 592304))]
+2017-12-03 21:08:46,030 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:46,030 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:46-11300.02' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11300.02', 'bid', u'15.10748971', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11300.01', 'bid', u'0.73826505', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11300', 'bid', u'16.01138599', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11299.93', 'bid', u'0.01', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11298.01', 'bid', u'0.05', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11298', 'bid', u'0.01862542', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11297', 'bid', u'0.01', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11293.25', 'bid', u'0.04', '4463481807')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11414.99', 'ask', u'0.02', '4463481807'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11417.58', 'ask', u'0.0165', '4463481807'))]
+2017-12-03 21:08:46,580 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:46,580 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:46-11240.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11240.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11231.00', 'bid', u'0.18556718', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11221.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11210.15', 'bid', u'0.12870434', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11210.12', 'bid', u'0.79300000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11210.00', 'bid', u'10.00000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11209.00', 'bid', u'0.02500000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11207.00', 'bid', u'0.05000000', '1512353315')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11386.00', 'ask', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 45, 630093), u'11386.56', 'ask', u'0.00070172', '1512353315'))]
+2017-12-03 21:08:46,696 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:46,696 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:46' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11243.48', u'11240.00', u'11240.00', u'11300.03', u'11300.02', 4463481807, datetime.datetime(2017, 12, 4, 2, 8, 45, 630093))]
+2017-12-03 21:08:48,032 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-03 21:08:48,032 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:48-11340.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `GdaxSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11300.02', 'bid', u'6.95133491', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11300.01', 'bid', u'0.81826505', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11300', 'bid', u'16.01138599', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11299.93', 'bid', u'0.01', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11298.01', 'bid', u'0.05', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11298', 'bid', u'0.01862542', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11297', 'bid', u'0.01', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11293.25', 'bid', u'0.04', '4463482040')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11414.99', 'ask', u'0.02', '4463482040'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11417.58', 'ask', u'0.0165', '4463482040'))]
+2017-12-03 21:08:48,370 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-03 21:08:48,370 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:48-11240.00' for key 'PRIMARY'") [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11240.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11231.00', 'bid', u'0.18556718', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11221.00', 'bid', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11210.15', 'bid', u'0.12870434', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11210.12', 'bid', u'0.79300000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11210.00', 'bid', u'10.00000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11209.00', 'bid', u'0.02500000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11207.00', 'bid', u'0.05000000', '1512353315')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11386.00', 'ask', u'0.20000000', '1512353315'), (datetime.datetime(2017, 12, 4, 2, 8, 47, 696834), u'11386.56', 'ask', u'0.00070172', '1512353315'))]
+2017-12-03 21:08:48,475 - db_util - ERROR - Failed to store in Spreads
+2017-12-03 21:08:48,475 - db_util - ERROR - (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '2017-12-04 02:08:48' for key 'PRIMARY'") [SQL: u'INSERT INTO `Spreads` (bitstamp_ask, bitstamp_bid, bitstamp_id, gdax_ask, gdax_bid, gdax_id, time) VALUES (%s, %s, %s, %s, %s, %s, %s)'] [parameters: (u'11243.48', u'11240.00', u'11240.00', u'11300.03', u'11300.02', 4463482040, datetime.datetime(2017, 12, 4, 2, 8, 47, 696834))]
+2017-12-04 06:46:16,583 - snapshots - ERROR - ====================
+2017-12-04 11:46:16.121470
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 06:46:16,584 - snapshots - ERROR - No JSON object could be decoded
+2017-12-04 06:46:16,584 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<meta http-equiv="set-cookie" content="cf_use_ob=443; expires=Mon, 04-Dec-17 11:46:46 GMT; path=/">
+
+<meta http-equiv="set-cookie" content="cf_ob_info=504:3c7e8633a8fc91b8:EWR; expires=Mon, 04-Dec-17 11:46:46 GMT; path=/">
+
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3c7e8633a8fc91b8 &bull; 2017-12-04 11:46:16 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Newark</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3c7e8633a8fc91b8</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 67.80.186.88</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-04 08:19:02,258 - snapshots - ERROR - ====================
+2017-12-04 13:18:57.157555
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 08:19:02,259 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 08:19:08,949 - snapshots - ERROR - ====================
+2017-12-04 13:19:03.860835
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 08:19:08,949 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 08:19:15,569 - snapshots - ERROR - ====================
+2017-12-04 13:19:10.478902
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 08:19:15,570 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 08:29:27,103 - snapshots - ERROR - ====================
+2017-12-04 13:29:26.424627
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 08:29:27,104 - snapshots - ERROR - No JSON object could be decoded
+2017-12-04 08:29:27,105 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<meta http-equiv="set-cookie" content="cf_use_ob=443; expires=Mon, 04-Dec-17 13:29:57 GMT; path=/">
+
+<meta http-equiv="set-cookie" content="cf_ob_info=504:3c7f1d54ff0b9a04:EWR; expires=Mon, 04-Dec-17 13:29:57 GMT; path=/">
+
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3c7f1d54ff0b9a04 &bull; 2017-12-04 13:29:27 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Newark</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3c7f1d54ff0b9a04</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 67.80.186.88</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-04 11:01:50,438 - snapshots - ERROR - ====================
+2017-12-04 16:01:45.348355
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-04 11:01:50,440 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-04 12:55:23,082 - snapshots - ERROR - ====================
+2017-12-04 17:55:17.981556
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 12:55:23,083 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 12:56:40,231 - snapshots - ERROR - ====================
+2017-12-04 17:56:35.140150
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 12:56:40,232 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 14:47:01,978 - snapshots - ERROR - ====================
+2017-12-04 19:46:56.886460
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 14:47:01,979 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 16:01:25,019 - snapshots - ERROR - ====================
+2017-12-04 21:01:19.781145
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 16:01:25,020 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-04 16:41:13,174 - snapshots - ERROR - ====================
+2017-12-04 21:41:11.828782
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-04 16:41:13,175 - snapshots - ERROR - No JSON object could be decoded
+2017-12-04 16:41:13,175 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<meta http-equiv="set-cookie" content="cf_use_ob=443; expires=Mon, 04-Dec-17 21:41:43 GMT; path=/">
+
+<meta http-equiv="set-cookie" content="cf_ob_info=504:3c81edaddeaa0efd:EWR; expires=Mon, 04-Dec-17 21:41:43 GMT; path=/">
+
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3c81edaddeaa0efd &bull; 2017-12-04 21:41:13 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Newark</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3c81edaddeaa0efd</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 67.80.186.88</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-04 19:45:01,801 - snapshots - ERROR - ====================
+2017-12-05 00:44:56.686645
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-04 19:45:01,802 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-04 19:54:39,209 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-04 19:54:39,210 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query')
