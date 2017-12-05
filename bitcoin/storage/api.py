@@ -85,7 +85,7 @@ def get_closest_snapshot(at=None, exchange=None, product=None):
     # get closest snapshot before timestamp or sequence
     if at:
         _id = 'sequence' if isinstance(at, int) else 'received_time'
-        value = at if isinstance(at, int) else "{}".format(at)
+        value = at if isinstance(at, int) else '"{}"'.format(at)
 
         sql = '''
         SELECT * FROM {table}
@@ -135,8 +135,8 @@ def get_messages(start=None, end=None, exchange=None, product=None):
     start = util.time_to_str(start)
     end = util.time_to_str(end)
     # add quotes for time
-    start_value = start if isinstance(start, int) else "{}".format(start)
-    end_value = end if isinstance(end, int) else "{}".format(end)
+    start_value = start if isinstance(start, int) else '"{}"'.format(start)
+    end_value = end if isinstance(end, int) else '"{}"'.format(end)
 
     exchange = exchange or pms.DEFAULT_EXCHANGE
     product = product or pms.DEFAULT_PRODUCT

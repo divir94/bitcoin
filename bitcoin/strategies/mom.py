@@ -14,7 +14,7 @@ class MomStrategy(object):
     The decile bounds are updated in an expanding window.
     """
     def __init__(self):
-        # go long/short if past price change is more/less than this amount in %
+        # go long/short if past price change is more/less than this amount
         self.long_thresh = 5
         self.short_thresh = -5
         # num seconds in the past to look at to calculate past price change

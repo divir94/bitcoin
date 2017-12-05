@@ -1,0 +1,467 @@
+2017-12-01 23:22:35,702 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-01 23:22:35,966 - core_websocket - INFO - Turning on heartbeat
+2017-12-01 23:22:35,967 - core_websocket - INFO - Listening for messages
+2017-12-01 23:22:36,012 - gdax_msgs - INFO - ==============================
+2017-12-01 23:22:36,013 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-01 23:22:41,344 - gdax_msgs - INFO - ==============================
+2017-12-01 23:23:36,959 - gdax_msgs - INFO - Stored 6486 messages in GdaxEthUsdMessage in 1.21s
+2017-12-01 23:24:37,307 - gdax_msgs - INFO - Stored 4823 messages in GdaxEthUsdMessage in 1.56s
+2017-12-01 23:25:36,439 - gdax_msgs - INFO - Stored 3331 messages in GdaxEthUsdMessage in 0.68s
+2017-12-01 23:26:36,395 - gdax_msgs - INFO - Stored 2925 messages in GdaxEthUsdMessage in 0.59s
+2017-12-01 23:27:36,609 - gdax_msgs - INFO - Stored 4343 messages in GdaxEthUsdMessage in 0.80s
+2017-12-01 23:28:36,950 - gdax_msgs - INFO - Stored 6052 messages in GdaxEthUsdMessage in 1.09s
+2017-12-01 23:29:37,320 - gdax_msgs - INFO - Stored 8671 messages in GdaxEthUsdMessage in 1.45s
+2017-12-01 23:30:37,198 - gdax_msgs - INFO - Stored 7247 messages in GdaxEthUsdMessage in 1.30s
+2017-12-01 23:31:37,242 - gdax_msgs - INFO - Stored 6964 messages in GdaxEthUsdMessage in 1.35s
+2017-12-01 23:32:37,154 - gdax_msgs - INFO - Stored 6316 messages in GdaxEthUsdMessage in 1.11s
+2017-12-01 23:33:37,235 - gdax_msgs - INFO - Stored 5737 messages in GdaxEthUsdMessage in 0.98s
+2017-12-01 23:34:37,412 - gdax_msgs - INFO - Stored 5391 messages in GdaxEthUsdMessage in 1.16s
+2017-12-01 23:35:37,486 - gdax_msgs - INFO - Stored 6977 messages in GdaxEthUsdMessage in 1.23s
+2017-12-01 23:36:38,585 - gdax_msgs - INFO - Stored 5088 messages in GdaxEthUsdMessage in 2.28s
+2017-12-01 23:37:38,781 - gdax_msgs - INFO - Stored 5509 messages in GdaxEthUsdMessage in 2.46s
+2017-12-01 23:38:37,946 - gdax_msgs - INFO - Stored 6194 messages in GdaxEthUsdMessage in 1.40s
+2017-12-01 23:39:37,617 - gdax_msgs - INFO - Stored 6173 messages in GdaxEthUsdMessage in 1.02s
+2017-12-01 23:40:38,442 - gdax_msgs - INFO - Stored 4138 messages in GdaxEthUsdMessage in 1.84s
+2017-12-01 23:41:39,014 - gdax_msgs - INFO - Stored 4422 messages in GdaxEthUsdMessage in 2.29s
+2017-12-01 23:42:37,496 - gdax_msgs - INFO - Stored 3721 messages in GdaxEthUsdMessage in 0.76s
+2017-12-01 23:43:37,818 - gdax_msgs - INFO - Stored 6015 messages in GdaxEthUsdMessage in 1.04s
+2017-12-01 23:44:38,203 - gdax_msgs - INFO - Stored 6668 messages in GdaxEthUsdMessage in 1.42s
+2017-12-01 23:45:37,622 - gdax_msgs - INFO - Stored 4447 messages in GdaxEthUsdMessage in 0.83s
+2017-12-01 23:46:38,074 - gdax_msgs - INFO - Stored 6788 messages in GdaxEthUsdMessage in 1.28s
+2017-12-01 23:47:37,719 - gdax_msgs - INFO - Stored 4445 messages in GdaxEthUsdMessage in 0.82s
+2017-12-01 23:48:37,778 - gdax_msgs - INFO - Stored 4361 messages in GdaxEthUsdMessage in 0.78s
+2017-12-01 23:49:39,440 - gdax_msgs - INFO - Stored 4779 messages in GdaxEthUsdMessage in 2.38s
+2017-12-01 23:50:38,586 - gdax_msgs - INFO - Stored 4152 messages in GdaxEthUsdMessage in 1.50s
+2017-12-01 23:51:40,065 - gdax_msgs - INFO - Stored 7308 messages in GdaxEthUsdMessage in 2.95s
+2017-12-01 23:52:38,605 - gdax_msgs - INFO - Stored 6602 messages in GdaxEthUsdMessage in 1.48s
+2017-12-01 23:53:38,526 - gdax_msgs - INFO - Stored 5832 messages in GdaxEthUsdMessage in 1.40s
+2017-12-01 23:54:38,196 - gdax_msgs - INFO - Stored 5905 messages in GdaxEthUsdMessage in 1.06s
+2017-12-01 23:55:38,210 - gdax_msgs - INFO - Stored 5732 messages in GdaxEthUsdMessage in 1.04s
+2017-12-01 23:56:38,669 - gdax_msgs - INFO - Stored 6235 messages in GdaxEthUsdMessage in 1.49s
+2017-12-01 23:57:38,159 - gdax_msgs - INFO - Stored 4074 messages in GdaxEthUsdMessage in 0.98s
+2017-12-01 23:58:37,917 - gdax_msgs - INFO - Stored 3570 messages in GdaxEthUsdMessage in 0.72s
+2017-12-01 23:59:37,998 - gdax_msgs - INFO - Stored 3414 messages in GdaxEthUsdMessage in 0.70s
+2017-12-02 00:00:38,255 - gdax_msgs - INFO - Stored 2111 messages in GdaxEthUsdMessage in 0.54s
+2017-12-02 00:01:38,263 - gdax_msgs - INFO - Stored 2401 messages in GdaxEthUsdMessage in 0.49s
+2017-12-02 00:02:38,536 - gdax_msgs - INFO - Stored 2764 messages in GdaxEthUsdMessage in 0.61s
+2017-12-02 00:03:38,673 - gdax_msgs - INFO - Stored 3179 messages in GdaxEthUsdMessage in 0.70s
+2017-12-02 00:04:38,656 - gdax_msgs - INFO - Stored 2940 messages in GdaxEthUsdMessage in 0.67s
+2017-12-02 00:05:38,950 - gdax_msgs - INFO - Stored 3869 messages in GdaxEthUsdMessage in 0.82s
+2017-12-02 00:06:38,954 - gdax_msgs - INFO - Stored 3557 messages in GdaxEthUsdMessage in 0.76s
+2017-12-02 00:07:38,949 - gdax_msgs - INFO - Stored 3502 messages in GdaxEthUsdMessage in 0.74s
+2017-12-02 00:08:39,382 - gdax_msgs - INFO - Stored 4694 messages in GdaxEthUsdMessage in 1.12s
+2017-12-02 00:09:39,139 - gdax_msgs - INFO - Stored 4458 messages in GdaxEthUsdMessage in 0.87s
+2017-12-02 00:10:39,440 - gdax_msgs - INFO - Stored 5945 messages in GdaxEthUsdMessage in 1.14s
+2017-12-02 00:11:38,835 - gdax_msgs - INFO - Stored 2547 messages in GdaxEthUsdMessage in 0.52s
+2017-12-02 00:12:38,918 - gdax_msgs - INFO - Stored 2471 messages in GdaxEthUsdMessage in 0.56s
+2017-12-02 00:13:38,901 - gdax_msgs - INFO - Stored 2420 messages in GdaxEthUsdMessage in 0.54s
+2017-12-02 00:14:39,058 - gdax_msgs - INFO - Stored 2614 messages in GdaxEthUsdMessage in 0.69s
+2017-12-02 00:15:39,154 - gdax_msgs - INFO - Stored 4200 messages in GdaxEthUsdMessage in 0.78s
+2017-12-02 00:16:39,271 - gdax_msgs - INFO - Stored 3881 messages in GdaxEthUsdMessage in 0.85s
+2017-12-02 00:17:39,186 - gdax_msgs - INFO - Stored 4030 messages in GdaxEthUsdMessage in 0.76s
+2017-12-02 00:18:39,878 - gdax_msgs - INFO - Stored 6081 messages in GdaxEthUsdMessage in 1.41s
+2017-12-02 00:19:40,342 - gdax_msgs - INFO - Stored 6487 messages in GdaxEthUsdMessage in 1.65s
+2017-12-02 00:20:39,927 - gdax_msgs - INFO - Stored 4364 messages in GdaxEthUsdMessage in 1.22s
+2017-12-02 00:21:39,706 - gdax_msgs - INFO - Stored 5430 messages in GdaxEthUsdMessage in 1.00s
+2017-12-02 00:22:36,082 - gdax_msgs - INFO - ==============================
+2017-12-02 00:22:36,082 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-02 00:22:40,195 - gdax_msgs - INFO - Stored 2170 messages in GdaxEthUsdMessage in 1.41s
+2017-12-02 00:22:40,461 - gdax_msgs - INFO - ==============================
+2017-12-02 00:23:39,318 - gdax_msgs - INFO - Stored 1782 messages in GdaxEthUsdMessage in 0.52s
+2017-12-02 00:24:39,402 - gdax_msgs - INFO - Stored 2606 messages in GdaxEthUsdMessage in 0.61s
+2017-12-02 00:25:39,534 - gdax_msgs - INFO - Stored 4293 messages in GdaxEthUsdMessage in 0.73s
+2017-12-02 00:26:39,818 - gdax_msgs - INFO - Stored 5415 messages in GdaxEthUsdMessage in 0.97s
+2017-12-02 00:27:39,719 - gdax_msgs - INFO - Stored 4821 messages in GdaxEthUsdMessage in 0.87s
+2017-12-02 00:28:39,909 - gdax_msgs - INFO - Stored 5858 messages in GdaxEthUsdMessage in 1.06s
+2017-12-02 00:29:39,779 - gdax_msgs - INFO - Stored 4811 messages in GdaxEthUsdMessage in 0.83s
+2017-12-02 00:30:39,569 - gdax_msgs - INFO - Stored 3227 messages in GdaxEthUsdMessage in 0.61s
+2017-12-02 00:31:39,574 - gdax_msgs - INFO - Stored 3145 messages in GdaxEthUsdMessage in 0.60s
+2017-12-02 00:32:39,617 - gdax_msgs - INFO - Stored 3076 messages in GdaxEthUsdMessage in 0.64s
+2017-12-02 00:33:39,487 - gdax_msgs - INFO - Stored 2416 messages in GdaxEthUsdMessage in 0.48s
+2017-12-02 00:34:40,261 - gdax_msgs - INFO - Stored 7092 messages in GdaxEthUsdMessage in 1.24s
+2017-12-02 00:35:40,125 - gdax_msgs - INFO - Stored 6250 messages in GdaxEthUsdMessage in 1.07s
+2017-12-02 00:36:39,985 - gdax_msgs - INFO - Stored 3308 messages in GdaxEthUsdMessage in 0.60s
+2017-12-02 00:37:40,142 - gdax_msgs - INFO - Stored 2910 messages in GdaxEthUsdMessage in 0.60s
+2017-12-02 00:38:40,371 - gdax_msgs - INFO - Stored 3880 messages in GdaxEthUsdMessage in 0.73s
+2017-12-02 00:39:40,693 - gdax_msgs - INFO - Stored 5910 messages in GdaxEthUsdMessage in 1.05s
+2017-12-02 00:40:40,478 - gdax_msgs - INFO - Stored 4896 messages in GdaxEthUsdMessage in 0.83s
+2017-12-02 00:41:40,369 - gdax_msgs - INFO - Stored 3570 messages in GdaxEthUsdMessage in 0.72s
+2017-12-02 00:42:40,537 - gdax_msgs - INFO - Stored 4783 messages in GdaxEthUsdMessage in 0.86s
+2017-12-02 00:43:40,743 - gdax_msgs - INFO - Stored 5447 messages in GdaxEthUsdMessage in 1.05s
+2017-12-02 00:44:40,634 - gdax_msgs - INFO - Stored 5106 messages in GdaxEthUsdMessage in 0.94s
+2017-12-02 00:45:40,314 - gdax_msgs - INFO - Stored 2957 messages in GdaxEthUsdMessage in 0.59s
+2017-12-02 00:46:40,809 - gdax_msgs - INFO - Stored 4001 messages in GdaxEthUsdMessage in 1.05s
+2017-12-02 00:47:42,268 - gdax_msgs - INFO - Stored 4305 messages in GdaxEthUsdMessage in 2.47s
+2017-12-02 00:48:40,608 - gdax_msgs - INFO - Stored 3126 messages in GdaxEthUsdMessage in 0.65s
+2017-12-02 00:49:40,485 - gdax_msgs - INFO - Stored 1871 messages in GdaxEthUsdMessage in 0.48s
+2017-12-02 00:50:40,619 - gdax_msgs - INFO - Stored 2206 messages in GdaxEthUsdMessage in 0.49s
+2017-12-02 00:51:40,843 - gdax_msgs - INFO - Stored 2209 messages in GdaxEthUsdMessage in 0.54s
+2017-12-02 00:52:41,155 - gdax_msgs - INFO - Stored 1613 messages in GdaxEthUsdMessage in 0.80s
+2017-12-02 00:53:40,911 - gdax_msgs - INFO - Stored 1108 messages in GdaxEthUsdMessage in 0.53s
+2017-12-02 00:54:40,981 - gdax_msgs - INFO - Stored 2392 messages in GdaxEthUsdMessage in 0.58s
+2017-12-02 00:55:41,017 - gdax_msgs - INFO - Stored 2476 messages in GdaxEthUsdMessage in 0.59s
+2017-12-02 01:03:53,396 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 01:03:53,398 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on 'cryptodb.ch7tzkxzans9.us-east-1.rds.amazonaws.com' (60)")
+2017-12-02 01:03:53,398 - gdax_msgs - INFO - Stored 1546 messages in GdaxEthUsdMessage in 11.71s
+2017-12-02 01:04:53,677 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 01:04:53,677 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on 'cryptodb.ch7tzkxzans9.us-east-1.rds.amazonaws.com' (60)")
+2017-12-02 01:04:53,677 - gdax_msgs - INFO - Stored 2236 messages in GdaxEthUsdMessage in 11.94s
+2017-12-02 01:06:59,723 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 01:06:59,724 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on 'cryptodb.ch7tzkxzans9.us-east-1.rds.amazonaws.com' (60)")
+2017-12-02 01:06:59,724 - gdax_msgs - INFO - Stored 3236 messages in GdaxEthUsdMessage in 77.68s
+2017-12-02 01:07:44,487 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 01:07:44,487 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on 'cryptodb.ch7tzkxzans9.us-east-1.rds.amazonaws.com' (61)")
+2017-12-02 01:07:44,488 - gdax_msgs - INFO - Stored 5883 messages in GdaxEthUsdMessage in 2.19s
+2017-12-02 01:07:53,409 - gdax_msgs - INFO - Stored 1917 messages in GdaxEthUsdMessage in 71.14s
+2017-12-02 01:08:43,117 - gdax_msgs - INFO - Stored 3735 messages in GdaxEthUsdMessage in 0.81s
+2017-12-02 01:09:43,035 - gdax_msgs - INFO - Stored 3201 messages in GdaxEthUsdMessage in 0.70s
+2017-12-02 01:10:43,288 - gdax_msgs - INFO - Stored 3703 messages in GdaxEthUsdMessage in 0.94s
+2017-12-02 01:11:43,349 - gdax_msgs - INFO - Stored 4767 messages in GdaxEthUsdMessage in 0.98s
+2017-12-02 01:12:43,338 - gdax_msgs - INFO - Stored 4887 messages in GdaxEthUsdMessage in 0.95s
+2017-12-02 01:13:43,572 - gdax_msgs - INFO - Stored 5696 messages in GdaxEthUsdMessage in 1.18s
+2017-12-02 01:14:43,552 - gdax_msgs - INFO - Stored 5292 messages in GdaxEthUsdMessage in 1.13s
+2017-12-02 01:15:43,407 - gdax_msgs - INFO - Stored 4287 messages in GdaxEthUsdMessage in 0.98s
+2017-12-02 01:16:43,237 - gdax_msgs - INFO - Stored 2987 messages in GdaxEthUsdMessage in 0.68s
+2017-12-02 01:17:43,491 - gdax_msgs - INFO - Stored 4136 messages in GdaxEthUsdMessage in 0.91s
+2017-12-02 01:18:43,275 - gdax_msgs - INFO - Stored 2876 messages in GdaxEthUsdMessage in 0.66s
+2017-12-02 01:19:43,184 - gdax_msgs - INFO - Stored 2170 messages in GdaxEthUsdMessage in 0.55s
+2017-12-02 01:20:43,304 - gdax_msgs - INFO - Stored 1699 messages in GdaxEthUsdMessage in 0.45s
+2017-12-02 01:21:43,532 - gdax_msgs - INFO - Stored 2475 messages in GdaxEthUsdMessage in 0.59s
+2017-12-02 01:22:36,100 - gdax_msgs - INFO - ==============================
+2017-12-02 01:22:36,100 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-02 01:22:40,836 - gdax_msgs - INFO - ==============================
+2017-12-02 01:22:43,567 - gdax_msgs - INFO - Stored 2094 messages in GdaxEthUsdMessage in 0.59s
+2017-12-02 01:23:44,970 - gdax_msgs - INFO - Stored 11016 messages in GdaxEthUsdMessage in 1.99s
+2017-12-02 01:24:44,141 - gdax_msgs - INFO - Stored 6348 messages in GdaxEthUsdMessage in 1.15s
+2017-12-02 01:25:43,732 - gdax_msgs - INFO - Stored 3518 messages in GdaxEthUsdMessage in 0.74s
+2017-12-02 01:26:44,227 - gdax_msgs - INFO - Stored 6176 messages in GdaxEthUsdMessage in 1.22s
+2017-12-02 01:27:44,412 - gdax_msgs - INFO - Stored 4799 messages in GdaxEthUsdMessage in 0.92s
+2017-12-02 01:28:43,963 - gdax_msgs - INFO - Stored 1702 messages in GdaxEthUsdMessage in 0.45s
+2017-12-02 01:29:44,270 - gdax_msgs - INFO - Stored 3358 messages in GdaxEthUsdMessage in 0.75s
+2017-12-02 01:30:44,501 - gdax_msgs - INFO - Stored 4192 messages in GdaxEthUsdMessage in 0.81s
+2017-12-02 01:31:45,290 - gdax_msgs - INFO - Stored 2249 messages in GdaxEthUsdMessage in 1.51s
+2017-12-02 01:32:44,479 - gdax_msgs - INFO - Stored 3334 messages in GdaxEthUsdMessage in 0.68s
+2017-12-02 01:33:44,374 - gdax_msgs - INFO - Stored 2483 messages in GdaxEthUsdMessage in 0.57s
+2017-12-02 01:34:44,520 - gdax_msgs - INFO - Stored 2971 messages in GdaxEthUsdMessage in 0.63s
+2017-12-02 01:35:44,454 - gdax_msgs - INFO - Stored 2236 messages in GdaxEthUsdMessage in 0.51s
+2017-12-02 01:36:44,832 - gdax_msgs - INFO - Stored 3881 messages in GdaxEthUsdMessage in 0.85s
+2017-12-02 01:37:44,846 - gdax_msgs - INFO - Stored 3277 messages in GdaxEthUsdMessage in 0.68s
+2017-12-02 01:38:44,736 - gdax_msgs - INFO - Stored 2657 messages in GdaxEthUsdMessage in 0.53s
+2017-12-02 01:39:45,308 - gdax_msgs - INFO - Stored 6263 messages in GdaxEthUsdMessage in 1.07s
+2017-12-02 01:40:45,427 - gdax_msgs - INFO - Stored 6020 messages in GdaxEthUsdMessage in 1.13s
+2017-12-02 01:41:46,709 - gdax_msgs - INFO - Stored 7698 messages in GdaxEthUsdMessage in 2.38s
+2017-12-02 01:42:45,594 - gdax_msgs - INFO - Stored 7770 messages in GdaxEthUsdMessage in 1.25s
+2017-12-02 01:43:45,454 - gdax_msgs - INFO - Stored 6518 messages in GdaxEthUsdMessage in 1.11s
+2017-12-02 01:44:45,455 - gdax_msgs - INFO - Stored 6445 messages in GdaxEthUsdMessage in 1.10s
+2017-12-02 03:54:17,955 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:54:17,956 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:54:17,956 - gdax_msgs - INFO - Stored 1219 messages in GdaxEthUsdMessage in 10536.51s
+2017-12-02 03:55:16,286 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:55:16,286 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:55:16,286 - gdax_msgs - INFO - Stored 1492 messages in GdaxEthUsdMessage in 10534.83s
+2017-12-02 03:56:14,196 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:56:14,196 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:56:14,197 - gdax_msgs - INFO - Stored 784 messages in GdaxEthUsdMessage in 10532.68s
+2017-12-02 03:57:11,200 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:57:11,200 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:57:11,200 - gdax_msgs - INFO - Stored 3540 messages in GdaxEthUsdMessage in 10830.74s
+2017-12-02 03:57:11,688 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:57:11,688 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:57:11,688 - gdax_msgs - INFO - Stored 3180 messages in GdaxEthUsdMessage in 10530.12s
+2017-12-02 03:58:10,610 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:58:10,610 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:58:10,610 - gdax_msgs - INFO - Stored 3058 messages in GdaxEthUsdMessage in 10829.26s
+2017-12-02 03:58:10,818 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 03:58:10,818 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 03:58:10,819 - gdax_msgs - INFO - Stored 1991 messages in GdaxEthUsdMessage in 10529.16s
+2017-12-02 05:22:50,330 - core_websocket - ERROR - Message error: [Errno 54] Connection reset by peer
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 336, in recv_frame
+    self.recv_header()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 286, in recv_header
+    header = self.recv_strict(2)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 80, in recv
+    bytes_ = sock.recv(bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 756, in recv
+    return self.read(buflen)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 643, in read
+    v = self._sslobj.read(len)
+error: [Errno 54] Connection reset by peer
+2017-12-02 05:22:50,336 - core_websocket - INFO - Closing websocket
+2017-12-02 05:22:50,337 - core_websocket - ERROR - Failed to close websocket:
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 116, in send
+    return sock.send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 709, in send
+    v = self._sslobj.write(data)
+error: [Errno 32] Broken pipe
+2017-12-02 05:22:51,340 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-02 05:22:51,614 - core_websocket - INFO - Turning on heartbeat
+2017-12-02 05:22:51,615 - core_websocket - INFO - Listening for messages
+2017-12-02 05:22:51,766 - gdax_msgs - INFO - ==============================
+2017-12-02 05:22:51,767 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-02 05:22:52,487 - gdax_msgs - INFO - Stored 746 messages in GdaxEthUsdMessage in 0.72s
+2017-12-02 05:22:55,655 - gdax_msgs - INFO - ==============================
+2017-12-02 05:23:52,905 - gdax_msgs - INFO - Stored 4839 messages in GdaxEthUsdMessage in 1.12s
+2017-12-02 05:24:52,945 - gdax_msgs - INFO - Stored 6612 messages in GdaxEthUsdMessage in 1.15s
+2017-12-02 05:25:52,511 - gdax_msgs - INFO - Stored 3042 messages in GdaxEthUsdMessage in 0.71s
+2017-12-02 05:26:52,841 - gdax_msgs - INFO - Stored 5108 messages in GdaxEthUsdMessage in 1.03s
+2017-12-02 05:27:53,330 - gdax_msgs - INFO - Stored 8708 messages in GdaxEthUsdMessage in 1.52s
+2017-12-02 05:28:53,552 - gdax_msgs - INFO - Stored 8945 messages in GdaxEthUsdMessage in 1.72s
+2017-12-02 05:29:53,443 - gdax_msgs - INFO - Stored 8684 messages in GdaxEthUsdMessage in 1.60s
+2017-12-02 05:30:53,938 - gdax_msgs - INFO - Stored 10635 messages in GdaxEthUsdMessage in 2.09s
+2017-12-02 05:31:53,511 - gdax_msgs - INFO - Stored 9640 messages in GdaxEthUsdMessage in 1.64s
+2017-12-02 05:32:53,266 - gdax_msgs - INFO - Stored 7037 messages in GdaxEthUsdMessage in 1.37s
+2017-12-02 05:33:53,331 - gdax_msgs - INFO - Stored 7962 messages in GdaxEthUsdMessage in 1.36s
+2017-12-02 05:34:53,072 - gdax_msgs - INFO - Stored 5586 messages in GdaxEthUsdMessage in 1.04s
+2017-12-02 05:35:53,696 - gdax_msgs - INFO - Stored 10202 messages in GdaxEthUsdMessage in 1.66s
+2017-12-02 05:36:52,973 - gdax_msgs - INFO - Stored 5105 messages in GdaxEthUsdMessage in 0.93s
+2017-12-02 05:37:54,295 - gdax_msgs - INFO - Stored 10055 messages in GdaxEthUsdMessage in 2.25s
+2017-12-02 05:38:53,824 - gdax_msgs - INFO - Stored 10218 messages in GdaxEthUsdMessage in 1.75s
+2017-12-02 05:39:52,899 - gdax_msgs - INFO - Stored 3586 messages in GdaxEthUsdMessage in 0.65s
+2017-12-02 05:40:53,439 - gdax_msgs - INFO - Stored 6038 messages in GdaxEthUsdMessage in 1.18s
+2017-12-02 05:41:53,637 - gdax_msgs - INFO - Stored 7084 messages in GdaxEthUsdMessage in 1.37s
+2017-12-02 05:42:53,938 - gdax_msgs - INFO - Stored 6391 messages in GdaxEthUsdMessage in 1.66s
+2017-12-02 05:43:53,568 - gdax_msgs - INFO - Stored 7335 messages in GdaxEthUsdMessage in 1.28s
+2017-12-02 05:44:53,003 - gdax_msgs - INFO - Stored 4200 messages in GdaxEthUsdMessage in 0.72s
+2017-12-02 05:45:53,327 - gdax_msgs - INFO - Stored 6140 messages in GdaxEthUsdMessage in 1.02s
+2017-12-02 05:46:53,575 - gdax_msgs - INFO - Stored 7157 messages in GdaxEthUsdMessage in 1.17s
+2017-12-02 05:47:53,400 - gdax_msgs - INFO - Stored 5084 messages in GdaxEthUsdMessage in 0.99s
+2017-12-02 05:48:53,718 - gdax_msgs - INFO - Stored 8069 messages in GdaxEthUsdMessage in 1.29s
+2017-12-02 05:49:53,490 - gdax_msgs - INFO - Stored 6581 messages in GdaxEthUsdMessage in 1.06s
+2017-12-02 05:50:53,492 - gdax_msgs - INFO - Stored 5899 messages in GdaxEthUsdMessage in 1.03s
+2017-12-02 05:51:53,893 - gdax_msgs - INFO - Stored 7956 messages in GdaxEthUsdMessage in 1.43s
+2017-12-02 06:04:48,785 - core_websocket - ERROR - Message error: [Errno 60] Operation timed out
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 350, in recv_frame
+    payload = self.recv_strict(length)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 80, in recv
+    bytes_ = sock.recv(bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 756, in recv
+    return self.read(buflen)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 643, in read
+    v = self._sslobj.read(len)
+error: [Errno 60] Operation timed out
+2017-12-02 06:04:48,786 - core_websocket - INFO - Closing websocket
+2017-12-02 06:04:48,787 - core_websocket - ERROR - Failed to close websocket:
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 116, in send
+    return sock.send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 709, in send
+    v = self._sslobj.write(data)
+error: [Errno 32] Broken pipe
+2017-12-02 06:04:49,790 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-02 06:04:49,875 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 06:04:49,876 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2005, "Unknown MySQL server host 'cryptodb.ch7tzkxzans9.us-east-1.rds.amazonaws.com' (0)")
+2017-12-02 06:04:49,876 - gdax_msgs - INFO - Stored 335 messages in GdaxEthUsdMessage in 30.03s
+2017-12-02 06:05:05,129 - core_websocket - INFO - Turning on heartbeat
+2017-12-02 06:05:05,130 - core_websocket - INFO - Listening for messages
+2017-12-02 06:05:28,043 - gdax_msgs - INFO - Stored 52897 messages in GdaxEthUsdMessage in 8.19s
+2017-12-02 06:06:21,402 - gdax_msgs - INFO - Stored 7706 messages in GdaxEthUsdMessage in 1.47s
+2017-12-02 06:07:20,965 - gdax_msgs - INFO - Stored 5751 messages in GdaxEthUsdMessage in 1.02s
+2017-12-02 06:08:21,472 - gdax_msgs - INFO - Stored 8963 messages in GdaxEthUsdMessage in 1.52s
+2017-12-02 06:09:21,931 - gdax_msgs - INFO - Stored 11769 messages in GdaxEthUsdMessage in 1.97s
+2017-12-02 06:10:21,392 - gdax_msgs - INFO - Stored 6932 messages in GdaxEthUsdMessage in 1.17s
+2017-12-02 06:11:21,777 - gdax_msgs - INFO - Stored 8949 messages in GdaxEthUsdMessage in 1.55s
+2017-12-02 06:12:21,527 - gdax_msgs - INFO - Stored 7847 messages in GdaxEthUsdMessage in 1.27s
+2017-12-02 06:13:21,393 - gdax_msgs - INFO - Stored 6595 messages in GdaxEthUsdMessage in 1.09s
+2017-12-02 06:14:21,519 - gdax_msgs - INFO - Stored 6908 messages in GdaxEthUsdMessage in 1.14s
+2017-12-02 06:15:21,395 - gdax_msgs - INFO - Stored 5460 messages in GdaxEthUsdMessage in 0.99s
+2017-12-02 06:16:21,646 - gdax_msgs - INFO - Stored 7735 messages in GdaxEthUsdMessage in 1.24s
+2017-12-02 06:17:21,227 - gdax_msgs - INFO - Stored 4532 messages in GdaxEthUsdMessage in 0.82s
+2017-12-02 06:18:21,805 - gdax_msgs - INFO - Stored 8505 messages in GdaxEthUsdMessage in 1.35s
+2017-12-02 06:19:21,774 - gdax_msgs - INFO - Stored 7276 messages in GdaxEthUsdMessage in 1.16s
+2017-12-02 06:20:21,827 - gdax_msgs - INFO - Stored 7193 messages in GdaxEthUsdMessage in 1.21s
+2017-12-02 06:21:21,542 - gdax_msgs - INFO - Stored 4864 messages in GdaxEthUsdMessage in 0.86s
+2017-12-02 06:22:22,129 - gdax_msgs - INFO - Stored 7689 messages in GdaxEthUsdMessage in 1.30s
+2017-12-02 06:22:51,769 - gdax_msgs - INFO - ==============================
+2017-12-02 06:22:51,770 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-02 06:22:57,687 - gdax_msgs - INFO - ==============================
+2017-12-02 06:23:22,381 - gdax_msgs - INFO - Stored 9175 messages in GdaxEthUsdMessage in 1.53s
+2017-12-02 06:24:23,266 - gdax_msgs - INFO - Stored 11041 messages in GdaxEthUsdMessage in 2.41s
+2017-12-02 06:25:22,053 - gdax_msgs - INFO - Stored 7064 messages in GdaxEthUsdMessage in 1.19s
+2017-12-02 06:26:22,604 - gdax_msgs - INFO - Stored 10721 messages in GdaxEthUsdMessage in 1.73s
+2017-12-02 06:27:22,756 - gdax_msgs - INFO - Stored 11609 messages in GdaxEthUsdMessage in 1.88s
+2017-12-02 06:28:22,402 - gdax_msgs - INFO - Stored 9021 messages in GdaxEthUsdMessage in 1.53s
+2017-12-02 06:29:22,158 - gdax_msgs - INFO - Stored 8108 messages in GdaxEthUsdMessage in 1.27s
+2017-12-02 06:30:22,334 - gdax_msgs - INFO - Stored 9311 messages in GdaxEthUsdMessage in 1.44s
+2017-12-02 06:31:22,256 - gdax_msgs - INFO - Stored 7046 messages in GdaxEthUsdMessage in 1.19s
+2017-12-02 06:32:22,781 - gdax_msgs - INFO - Stored 6656 messages in GdaxEthUsdMessage in 1.70s
+2017-12-02 10:17:46,440 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 10:17:46,441 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, "Lost connection to MySQL server at 'reading initial communication packet', system error: 60")
+2017-12-02 10:17:46,441 - gdax_msgs - INFO - Stored 6678 messages in GdaxEthUsdMessage in 15893.45s
+2017-12-02 10:35:37,162 - core_websocket - ERROR - Message error: [Errno 54] Connection reset by peer
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 336, in recv_frame
+    self.recv_header()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 286, in recv_header
+    header = self.recv_strict(2)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 80, in recv
+    bytes_ = sock.recv(bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 756, in recv
+    return self.read(buflen)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 643, in read
+    v = self._sslobj.read(len)
+error: [Errno 54] Connection reset by peer
+2017-12-02 10:35:37,165 - core_websocket - INFO - Closing websocket
+2017-12-02 10:35:37,165 - core_websocket - ERROR - Failed to close websocket:
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 116, in send
+    return sock.send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/ssl.py", line 709, in send
+    v = self._sslobj.write(data)
+error: [Errno 32] Broken pipe
+2017-12-02 10:35:38,170 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-02 10:35:38,378 - core_websocket - INFO - Turning on heartbeat
+2017-12-02 10:35:38,379 - core_websocket - INFO - Listening for messages
+2017-12-02 10:35:38,413 - gdax_msgs - INFO - ==============================
+2017-12-02 10:35:38,417 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-02 10:35:40,276 - gdax_msgs - INFO - Stored 6371 messages in GdaxEthUsdMessage in 1.86s
+2017-12-02 10:35:43,080 - gdax_msgs - INFO - ==============================
+2017-12-02 10:36:39,765 - gdax_msgs - INFO - Stored 7223 messages in GdaxEthUsdMessage in 1.32s
+2017-12-02 10:37:39,600 - gdax_msgs - INFO - Stored 5831 messages in GdaxEthUsdMessage in 1.15s
+2017-12-02 10:51:50,432 - core_websocket - ERROR - Message error: Connection is already closed.
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 336, in recv_frame
+    self.recv_header()
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 286, in recv_header
+    header = self.recv_strict(2)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 93, in recv
+    "Connection is already closed.")
+WebSocketConnectionClosedException: Connection is already closed.
+2017-12-02 10:51:50,433 - core_websocket - INFO - Closing websocket
+2017-12-02 10:51:50,434 - core_websocket - ERROR - Failed to close websocket:
+socket is already closed.
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/Users/Divir/miniconda2/envs/py2/lib/python2.7/site-packages/websocket/_socket.py", line 113, in send
+    raise WebSocketConnectionClosedException("socket is already closed.")
+WebSocketConnectionClosedException: socket is already closed.
+2017-12-02 10:51:51,437 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-02 10:51:51,637 - core_websocket - INFO - Turning on heartbeat
+2017-12-02 10:51:51,638 - core_websocket - INFO - Listening for messages
+2017-12-02 10:52:06,180 - db_util - ERROR - Failed to store in GdaxEthUsdMessage
+2017-12-02 10:52:06,181 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxEthUsdMessage`']
+2017-12-02 10:52:06,181 - gdax_msgs - INFO - Stored 2078 messages in GdaxEthUsdMessage in 29.79s
+2017-12-02 10:52:46,422 - gdax_msgs - INFO - Stored 50509 messages in GdaxEthUsdMessage in 10.02s
+2017-12-02 10:53:37,910 - gdax_msgs - INFO - Stored 7134 messages in GdaxEthUsdMessage in 1.50s
+2017-12-02 10:54:37,404 - gdax_msgs - INFO - Stored 4707 messages in GdaxEthUsdMessage in 0.97s
+2017-12-02 10:55:37,530 - gdax_msgs - INFO - Stored 4901 messages in GdaxEthUsdMessage in 1.09s
+2017-12-02 10:56:37,596 - gdax_msgs - INFO - Stored 6445 messages in GdaxEthUsdMessage in 1.13s
+2017-12-02 10:57:37,970 - gdax_msgs - INFO - Stored 8913 messages in GdaxEthUsdMessage in 1.50s
+2017-12-02 10:58:37,467 - gdax_msgs - INFO - Stored 5363 messages in GdaxEthUsdMessage in 0.99s
+2017-12-02 10:59:37,656 - gdax_msgs - INFO - Stored 4396 messages in GdaxEthUsdMessage in 0.88s
+2017-12-02 11:00:37,375 - gdax_msgs - INFO - Stored 2578 messages in GdaxEthUsdMessage in 0.59s
+2017-12-02 11:01:37,652 - gdax_msgs - INFO - Stored 4400 messages in GdaxEthUsdMessage in 0.83s
+2017-12-02 11:02:37,887 - gdax_msgs - INFO - Stored 6142 messages in GdaxEthUsdMessage in 1.06s
+2017-12-02 11:03:38,289 - gdax_msgs - INFO - Stored 9059 messages in GdaxEthUsdMessage in 1.46s
+2017-12-02 11:04:38,042 - gdax_msgs - INFO - Stored 6625 messages in GdaxEthUsdMessage in 1.20s
+2017-12-02 11:05:37,892 - gdax_msgs - INFO - Stored 5989 messages in GdaxEthUsdMessage in 1.03s
+2017-12-02 11:06:38,165 - gdax_msgs - INFO - Stored 7776 messages in GdaxEthUsdMessage in 1.29s
+2017-12-02 11:07:38,170 - gdax_msgs - INFO - Stored 7983 messages in GdaxEthUsdMessage in 1.29s
+2017-12-02 11:08:38,207 - gdax_msgs - INFO - Stored 7637 messages in GdaxEthUsdMessage in 1.32s
+2017-12-02 11:09:38,393 - gdax_msgs - INFO - Stored 8511 messages in GdaxEthUsdMessage in 1.49s
+2017-12-02 11:10:38,097 - gdax_msgs - INFO - Stored 6122 messages in GdaxEthUsdMessage in 1.04s
+2017-12-02 11:11:38,296 - gdax_msgs - INFO - Stored 7492 messages in GdaxEthUsdMessage in 1.23s
+2017-12-02 11:12:38,265 - gdax_msgs - INFO - Stored 7490 messages in GdaxEthUsdMessage in 1.20s
+2017-12-02 11:13:37,994 - gdax_msgs - INFO - Stored 5225 messages in GdaxEthUsdMessage in 0.92s
+2017-12-02 11:14:38,246 - gdax_msgs - INFO - Stored 6749 messages in GdaxEthUsdMessage in 1.14s
+2017-12-02 11:15:37,812 - gdax_msgs - INFO - Stored 3556 messages in GdaxEthUsdMessage in 0.68s
+2017-12-02 11:16:38,080 - gdax_msgs - INFO - Stored 5508 messages in GdaxEthUsdMessage in 0.93s
+2017-12-02 11:17:38,072 - gdax_msgs - INFO - Stored 5205 messages in GdaxEthUsdMessage in 0.91s
+2017-12-02 11:18:38,017 - gdax_msgs - INFO - Stored 4013 messages in GdaxEthUsdMessage in 0.80s
+2017-12-02 11:19:38,592 - gdax_msgs - INFO - Stored 7182 messages in GdaxEthUsdMessage in 1.38s
