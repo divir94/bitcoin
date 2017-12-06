@@ -1,0 +1,131 @@
+2017-12-06 04:31:37,918 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-BTC']}
+2017-12-06 04:31:38,091 - core_websocket - INFO - Turning on heartbeat
+2017-12-06 04:31:38,092 - core_websocket - INFO - Listening for messages
+2017-12-06 04:31:38,289 - gdax_msgs - INFO - ==============================
+2017-12-06 04:31:38,290 - gdax_msgs - INFO - Storing ETH-BTC order book
+2017-12-06 04:31:39,077 - gdax_msgs - INFO - ==============================
+2017-12-06 04:32:38,557 - gdax_msgs - INFO - Stored 695 messages in GdaxEthBtcMessage in 0.35s
+2017-12-06 04:33:38,873 - gdax_msgs - INFO - Stored 710 messages in GdaxEthBtcMessage in 0.46s
+2017-12-06 04:34:38,681 - gdax_msgs - INFO - Stored 519 messages in GdaxEthBtcMessage in 0.12s
+2017-12-06 04:35:39,022 - gdax_msgs - INFO - Stored 608 messages in GdaxEthBtcMessage in 0.18s
+2017-12-06 04:36:39,165 - gdax_msgs - INFO - Stored 1305 messages in GdaxEthBtcMessage in 0.28s
+2017-12-06 04:37:39,255 - gdax_msgs - INFO - Stored 1351 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 04:38:39,248 - gdax_msgs - INFO - Stored 1041 messages in GdaxEthBtcMessage in 0.18s
+2017-12-06 04:39:39,626 - gdax_msgs - INFO - Stored 987 messages in GdaxEthBtcMessage in 0.32s
+2017-12-06 04:40:39,802 - gdax_msgs - INFO - Stored 794 messages in GdaxEthBtcMessage in 0.45s
+2017-12-06 04:41:39,772 - gdax_msgs - INFO - Stored 821 messages in GdaxEthBtcMessage in 0.22s
+2017-12-06 04:42:39,728 - gdax_msgs - INFO - Stored 1004 messages in GdaxEthBtcMessage in 0.16s
+2017-12-06 04:43:40,014 - gdax_msgs - INFO - Stored 861 messages in GdaxEthBtcMessage in 0.21s
+2017-12-06 04:44:40,408 - gdax_msgs - INFO - Stored 793 messages in GdaxEthBtcMessage in 0.13s
+2017-12-06 04:45:40,424 - gdax_msgs - INFO - Stored 1088 messages in GdaxEthBtcMessage in 0.15s
+2017-12-06 04:46:40,548 - gdax_msgs - INFO - Stored 937 messages in GdaxEthBtcMessage in 0.13s
+2017-12-06 04:47:40,683 - gdax_msgs - INFO - Stored 974 messages in GdaxEthBtcMessage in 0.16s
+2017-12-06 04:48:40,718 - gdax_msgs - INFO - Stored 1073 messages in GdaxEthBtcMessage in 0.11s
+2017-12-06 04:49:40,768 - gdax_msgs - INFO - Stored 1098 messages in GdaxEthBtcMessage in 0.12s
+2017-12-06 04:50:40,869 - gdax_msgs - INFO - Stored 2105 messages in GdaxEthBtcMessage in 0.21s
+2017-12-06 04:51:40,824 - gdax_msgs - INFO - Stored 1657 messages in GdaxEthBtcMessage in 0.16s
+2017-12-06 04:52:41,235 - gdax_msgs - INFO - Stored 1142 messages in GdaxEthBtcMessage in 0.12s
+2017-12-06 04:53:41,603 - gdax_msgs - INFO - Stored 1173 messages in GdaxEthBtcMessage in 0.12s
+2017-12-06 04:54:41,816 - gdax_msgs - INFO - Stored 1520 messages in GdaxEthBtcMessage in 0.27s
+2017-12-06 04:55:41,858 - gdax_msgs - INFO - Stored 1131 messages in GdaxEthBtcMessage in 0.18s
+2017-12-06 04:56:41,992 - gdax_msgs - INFO - Stored 1356 messages in GdaxEthBtcMessage in 0.20s
+2017-12-06 04:57:41,989 - gdax_msgs - INFO - Stored 1274 messages in GdaxEthBtcMessage in 0.19s
+2017-12-06 04:58:42,518 - gdax_msgs - INFO - Stored 1680 messages in GdaxEthBtcMessage in 0.35s
+2017-12-06 04:59:43,013 - gdax_msgs - INFO - Stored 1540 messages in GdaxEthBtcMessage in 0.75s
+2017-12-06 05:00:42,990 - gdax_msgs - INFO - Stored 1183 messages in GdaxEthBtcMessage in 0.71s
+2017-12-06 05:01:43,490 - gdax_msgs - INFO - Stored 1516 messages in GdaxEthBtcMessage in 1.07s
+2017-12-06 05:02:43,418 - gdax_msgs - INFO - Stored 1346 messages in GdaxEthBtcMessage in 0.68s
+2017-12-06 05:03:43,476 - gdax_msgs - INFO - Stored 1217 messages in GdaxEthBtcMessage in 0.69s
+2017-12-06 05:04:43,431 - gdax_msgs - INFO - Stored 1159 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 05:05:43,458 - gdax_msgs - INFO - Stored 1024 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 05:06:43,755 - gdax_msgs - INFO - Stored 1300 messages in GdaxEthBtcMessage in 0.52s
+2017-12-06 05:07:43,959 - gdax_msgs - INFO - Stored 953 messages in GdaxEthBtcMessage in 0.45s
+2017-12-06 05:08:44,221 - gdax_msgs - INFO - Stored 920 messages in GdaxEthBtcMessage in 0.54s
+2017-12-06 05:09:44,672 - gdax_msgs - INFO - Stored 770 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 05:10:44,485 - gdax_msgs - INFO - Stored 945 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 05:11:44,674 - gdax_msgs - INFO - Stored 1330 messages in GdaxEthBtcMessage in 0.45s
+2017-12-06 05:12:45,172 - gdax_msgs - INFO - Stored 903 messages in GdaxEthBtcMessage in 0.88s
+2017-12-06 05:13:44,923 - gdax_msgs - INFO - Stored 1151 messages in GdaxEthBtcMessage in 0.51s
+2017-12-06 05:14:45,162 - gdax_msgs - INFO - Stored 855 messages in GdaxEthBtcMessage in 0.65s
+2017-12-06 05:15:45,667 - gdax_msgs - INFO - Stored 945 messages in GdaxEthBtcMessage in 1.01s
+2017-12-06 05:16:45,223 - gdax_msgs - INFO - Stored 1052 messages in GdaxEthBtcMessage in 0.48s
+2017-12-06 05:17:45,417 - gdax_msgs - INFO - Stored 868 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 05:18:45,263 - gdax_msgs - INFO - Stored 1125 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 05:19:45,445 - gdax_msgs - INFO - Stored 1189 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 05:20:46,170 - gdax_msgs - INFO - Stored 617 messages in GdaxEthBtcMessage in 0.36s
+2017-12-06 05:21:46,279 - gdax_msgs - INFO - Stored 1424 messages in GdaxEthBtcMessage in 0.37s
+2017-12-06 05:22:46,912 - gdax_msgs - INFO - Stored 964 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 05:23:46,953 - gdax_msgs - INFO - Stored 928 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 05:24:46,972 - gdax_msgs - INFO - Stored 1220 messages in GdaxEthBtcMessage in 0.51s
+2017-12-06 05:25:46,970 - gdax_msgs - INFO - Stored 944 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 05:26:47,250 - gdax_msgs - INFO - Stored 838 messages in GdaxEthBtcMessage in 0.51s
+2017-12-06 05:27:47,523 - gdax_msgs - INFO - Stored 1087 messages in GdaxEthBtcMessage in 0.75s
+2017-12-06 05:28:47,272 - gdax_msgs - INFO - Stored 1242 messages in GdaxEthBtcMessage in 0.36s
+2017-12-06 05:29:47,430 - gdax_msgs - INFO - Stored 984 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 05:30:47,420 - gdax_msgs - INFO - Stored 1022 messages in GdaxEthBtcMessage in 0.39s
+2017-12-06 05:31:38,525 - gdax_msgs - INFO - ==============================
+2017-12-06 05:31:38,526 - gdax_msgs - INFO - Storing ETH-BTC order book
+2017-12-06 05:31:40,436 - gdax_msgs - INFO - ==============================
+2017-12-06 05:31:48,488 - gdax_msgs - INFO - Stored 970 messages in GdaxEthBtcMessage in 1.04s
+2017-12-06 05:32:47,961 - gdax_msgs - INFO - Stored 729 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 05:33:48,024 - gdax_msgs - INFO - Stored 854 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 05:34:48,240 - gdax_msgs - INFO - Stored 833 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 05:35:48,223 - gdax_msgs - INFO - Stored 1366 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 05:36:48,469 - gdax_msgs - INFO - Stored 1016 messages in GdaxEthBtcMessage in 0.44s
+2017-12-06 05:37:48,672 - gdax_msgs - INFO - Stored 879 messages in GdaxEthBtcMessage in 0.51s
+2017-12-06 05:38:48,525 - gdax_msgs - INFO - Stored 1407 messages in GdaxEthBtcMessage in 0.34s
+2017-12-06 05:39:48,672 - gdax_msgs - INFO - Stored 1079 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 05:40:48,746 - gdax_msgs - INFO - Stored 1059 messages in GdaxEthBtcMessage in 0.34s
+2017-12-06 05:41:48,920 - gdax_msgs - INFO - Stored 575 messages in GdaxEthBtcMessage in 0.26s
+2017-12-06 05:42:49,175 - gdax_msgs - INFO - Stored 1130 messages in GdaxEthBtcMessage in 0.39s
+2017-12-06 05:43:49,169 - gdax_msgs - INFO - Stored 864 messages in GdaxEthBtcMessage in 0.26s
+2017-12-06 05:44:49,495 - gdax_msgs - INFO - Stored 804 messages in GdaxEthBtcMessage in 0.33s
+2017-12-06 05:45:49,958 - gdax_msgs - INFO - Stored 791 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 05:46:50,025 - gdax_msgs - INFO - Stored 781 messages in GdaxEthBtcMessage in 0.27s
+2017-12-06 05:47:50,209 - gdax_msgs - INFO - Stored 601 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 05:48:51,175 - gdax_msgs - INFO - Stored 934 messages in GdaxEthBtcMessage in 0.41s
+2017-12-06 05:49:51,476 - gdax_msgs - INFO - Stored 651 messages in GdaxEthBtcMessage in 0.32s
+2017-12-06 05:50:52,226 - gdax_msgs - INFO - Stored 830 messages in GdaxEthBtcMessage in 0.57s
+2017-12-06 05:51:52,217 - gdax_msgs - INFO - Stored 1124 messages in GdaxEthBtcMessage in 0.55s
+2017-12-06 05:52:51,976 - gdax_msgs - INFO - Stored 1135 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 05:53:52,254 - gdax_msgs - INFO - Stored 911 messages in GdaxEthBtcMessage in 0.57s
+2017-12-06 05:54:52,242 - gdax_msgs - INFO - Stored 906 messages in GdaxEthBtcMessage in 0.33s
+2017-12-06 05:55:52,534 - gdax_msgs - INFO - Stored 1202 messages in GdaxEthBtcMessage in 0.60s
+2017-12-06 05:56:52,418 - gdax_msgs - INFO - Stored 1043 messages in GdaxEthBtcMessage in 0.48s
+2017-12-06 05:57:52,161 - gdax_msgs - INFO - Stored 698 messages in GdaxEthBtcMessage in 0.18s
+2017-12-06 05:58:53,419 - gdax_msgs - INFO - Stored 793 messages in GdaxEthBtcMessage in 0.48s
+2017-12-06 05:59:53,723 - gdax_msgs - INFO - Stored 829 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 06:00:54,530 - gdax_msgs - INFO - Stored 1187 messages in GdaxEthBtcMessage in 0.55s
+2017-12-06 06:01:54,410 - gdax_msgs - INFO - Stored 1205 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 06:02:54,493 - gdax_msgs - INFO - Stored 1089 messages in GdaxEthBtcMessage in 0.33s
+2017-12-06 06:03:54,472 - gdax_msgs - INFO - Stored 1132 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 06:04:54,677 - gdax_msgs - INFO - Stored 1407 messages in GdaxEthBtcMessage in 0.39s
+2017-12-06 06:05:54,673 - gdax_msgs - INFO - Stored 938 messages in GdaxEthBtcMessage in 0.38s
+2017-12-06 06:06:55,003 - gdax_msgs - INFO - Stored 1681 messages in GdaxEthBtcMessage in 0.34s
+2017-12-06 06:07:55,228 - gdax_msgs - INFO - Stored 1483 messages in GdaxEthBtcMessage in 0.52s
+2017-12-06 06:08:55,739 - gdax_msgs - INFO - Stored 1748 messages in GdaxEthBtcMessage in 0.97s
+2017-12-06 06:09:55,248 - gdax_msgs - INFO - Stored 1232 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 06:10:55,660 - gdax_msgs - INFO - Stored 1338 messages in GdaxEthBtcMessage in 0.43s
+2017-12-06 06:11:55,732 - gdax_msgs - INFO - Stored 1060 messages in GdaxEthBtcMessage in 0.32s
+2017-12-06 06:12:55,908 - gdax_msgs - INFO - Stored 1048 messages in GdaxEthBtcMessage in 0.38s
+2017-12-06 06:13:56,004 - gdax_msgs - INFO - Stored 851 messages in GdaxEthBtcMessage in 0.34s
+2017-12-06 06:14:56,956 - gdax_msgs - INFO - Stored 899 messages in GdaxEthBtcMessage in 0.91s
+2017-12-06 06:15:56,463 - gdax_msgs - INFO - Stored 938 messages in GdaxEthBtcMessage in 0.30s
+2017-12-06 06:16:56,657 - gdax_msgs - INFO - Stored 741 messages in GdaxEthBtcMessage in 0.49s
+2017-12-06 06:17:56,920 - gdax_msgs - INFO - Stored 532 messages in GdaxEthBtcMessage in 0.26s
+2017-12-06 06:18:56,974 - gdax_msgs - INFO - Stored 756 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 06:19:57,500 - gdax_msgs - INFO - Stored 674 messages in GdaxEthBtcMessage in 0.49s
+2017-12-06 06:20:57,741 - gdax_msgs - INFO - Stored 846 messages in GdaxEthBtcMessage in 0.32s
+2017-12-06 06:21:57,736 - gdax_msgs - INFO - Stored 623 messages in GdaxEthBtcMessage in 0.27s
+2017-12-06 06:22:57,918 - gdax_msgs - INFO - Stored 1038 messages in GdaxEthBtcMessage in 0.40s
+2017-12-06 06:23:58,202 - gdax_msgs - INFO - Stored 1246 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 06:24:58,460 - gdax_msgs - INFO - Stored 1717 messages in GdaxEthBtcMessage in 0.52s
+2017-12-06 06:25:58,463 - gdax_msgs - INFO - Stored 1268 messages in GdaxEthBtcMessage in 0.29s
+2017-12-06 06:26:58,721 - gdax_msgs - INFO - Stored 964 messages in GdaxEthBtcMessage in 0.45s
+2017-12-06 06:27:58,733 - gdax_msgs - INFO - Stored 1251 messages in GdaxEthBtcMessage in 0.45s
+2017-12-06 06:28:58,728 - gdax_msgs - INFO - Stored 894 messages in GdaxEthBtcMessage in 0.31s
+2017-12-06 06:29:59,161 - gdax_msgs - INFO - Stored 760 messages in GdaxEthBtcMessage in 0.50s
+2017-12-06 06:30:59,453 - gdax_msgs - INFO - Stored 1621 messages in GdaxEthBtcMessage in 0.54s
+2017-12-06 06:31:38,532 - gdax_msgs - INFO - ==============================
+2017-12-06 06:31:38,533 - gdax_msgs - INFO - Storing ETH-BTC order book
+2017-12-06 06:31:41,483 - gdax_msgs - INFO - ==============================

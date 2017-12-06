@@ -1,0 +1,12 @@
+2017-12-06 05:11:09,486 - snapshots - ERROR - ====================
+2017-12-06 05:11:04.256101
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-06 05:11:09,489 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-06 06:08:23,034 - snapshots - ERROR - ====================
+2017-12-06 06:08:17.908830
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-06 06:08:23,047 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
