@@ -1,0 +1,884 @@
+2017-12-07 14:24:36,591 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-07 14:24:36,772 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 14:24:36,774 - core_websocket - INFO - Listening for messages
+2017-12-07 14:24:36,833 - gdax_msgs - INFO - ==============================
+2017-12-07 14:24:36,834 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 14:24:43,937 - gdax_msgs - INFO - ==============================
+2017-12-07 14:25:38,891 - gdax_msgs - INFO - Stored 5112 messages in GdaxEthUsdMessage in 2.29s
+2017-12-07 14:26:38,281 - gdax_msgs - INFO - Stored 6194 messages in GdaxEthUsdMessage in 1.65s
+2017-12-07 14:27:38,141 - gdax_msgs - INFO - Stored 4423 messages in GdaxEthUsdMessage in 1.50s
+2017-12-07 14:28:39,308 - gdax_msgs - INFO - Stored 6474 messages in GdaxEthUsdMessage in 2.61s
+2017-12-07 14:29:38,615 - gdax_msgs - INFO - Stored 5365 messages in GdaxEthUsdMessage in 1.89s
+2017-12-07 14:30:37,793 - gdax_msgs - INFO - Stored 3812 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 14:31:37,921 - gdax_msgs - INFO - Stored 2978 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 14:32:38,672 - gdax_msgs - INFO - Stored 7058 messages in GdaxEthUsdMessage in 1.80s
+2017-12-07 14:33:38,300 - gdax_msgs - INFO - Stored 4334 messages in GdaxEthUsdMessage in 1.42s
+2017-12-07 14:34:38,809 - gdax_msgs - INFO - Stored 5547 messages in GdaxEthUsdMessage in 1.79s
+2017-12-07 14:35:39,679 - gdax_msgs - INFO - Stored 6212 messages in GdaxEthUsdMessage in 2.44s
+2017-12-07 14:36:38,863 - gdax_msgs - INFO - Stored 5034 messages in GdaxEthUsdMessage in 1.59s
+2017-12-07 14:37:38,242 - gdax_msgs - INFO - Stored 2328 messages in GdaxEthUsdMessage in 0.83s
+2017-12-07 14:38:38,927 - gdax_msgs - INFO - Stored 3236 messages in GdaxEthUsdMessage in 1.50s
+2017-12-07 14:39:39,131 - gdax_msgs - INFO - Stored 5193 messages in GdaxEthUsdMessage in 1.71s
+2017-12-07 14:40:39,622 - gdax_msgs - INFO - Stored 7706 messages in GdaxEthUsdMessage in 2.12s
+2017-12-07 14:41:39,037 - gdax_msgs - INFO - Stored 6385 messages in GdaxEthUsdMessage in 1.51s
+2017-12-07 14:42:39,320 - gdax_msgs - INFO - Stored 6182 messages in GdaxEthUsdMessage in 1.79s
+2017-12-07 14:43:39,494 - gdax_msgs - INFO - Stored 5556 messages in GdaxEthUsdMessage in 1.93s
+2017-12-07 14:44:39,050 - gdax_msgs - INFO - Stored 5859 messages in GdaxEthUsdMessage in 1.47s
+2017-12-07 14:45:39,552 - gdax_msgs - INFO - Stored 6653 messages in GdaxEthUsdMessage in 1.94s
+2017-12-07 14:46:39,987 - gdax_msgs - INFO - Stored 10006 messages in GdaxEthUsdMessage in 2.36s
+2017-12-07 14:47:40,504 - gdax_msgs - INFO - Stored 9068 messages in GdaxEthUsdMessage in 2.87s
+2017-12-07 14:48:39,403 - gdax_msgs - INFO - Stored 6733 messages in GdaxEthUsdMessage in 1.69s
+2017-12-07 14:49:39,321 - gdax_msgs - INFO - Stored 6675 messages in GdaxEthUsdMessage in 1.59s
+2017-12-07 14:50:39,366 - gdax_msgs - INFO - Stored 5521 messages in GdaxEthUsdMessage in 1.56s
+2017-12-07 14:51:39,893 - gdax_msgs - INFO - Stored 8092 messages in GdaxEthUsdMessage in 2.04s
+2017-12-07 14:52:38,802 - gdax_msgs - INFO - Stored 4221 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 14:53:39,466 - gdax_msgs - INFO - Stored 5349 messages in GdaxEthUsdMessage in 1.57s
+2017-12-07 14:54:39,594 - gdax_msgs - INFO - Stored 6274 messages in GdaxEthUsdMessage in 1.62s
+2017-12-07 14:55:39,533 - gdax_msgs - INFO - Stored 4671 messages in GdaxEthUsdMessage in 1.47s
+2017-12-07 14:56:38,970 - gdax_msgs - INFO - Stored 3494 messages in GdaxEthUsdMessage in 0.91s
+2017-12-07 14:57:38,922 - gdax_msgs - INFO - Stored 4056 messages in GdaxEthUsdMessage in 0.83s
+2017-12-07 14:58:40,308 - gdax_msgs - INFO - Stored 5868 messages in GdaxEthUsdMessage in 2.15s
+2017-12-07 14:59:39,844 - gdax_msgs - INFO - Stored 6468 messages in GdaxEthUsdMessage in 1.55s
+2017-12-07 15:00:39,966 - gdax_msgs - INFO - Stored 5164 messages in GdaxEthUsdMessage in 1.62s
+2017-12-07 15:01:39,245 - gdax_msgs - INFO - Stored 3675 messages in GdaxEthUsdMessage in 0.89s
+2017-12-07 15:02:39,434 - gdax_msgs - INFO - Stored 4183 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 15:03:39,995 - gdax_msgs - INFO - Stored 5168 messages in GdaxEthUsdMessage in 1.60s
+2017-12-07 15:04:41,777 - gdax_msgs - INFO - Stored 7512 messages in GdaxEthUsdMessage in 3.36s
+2017-12-07 15:05:39,512 - gdax_msgs - INFO - Stored 4499 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 15:06:39,136 - gdax_msgs - INFO - Stored 3265 messages in GdaxEthUsdMessage in 0.67s
+2017-12-07 15:07:39,403 - gdax_msgs - INFO - Stored 4193 messages in GdaxEthUsdMessage in 0.92s
+2017-12-07 15:08:39,665 - gdax_msgs - INFO - Stored 4898 messages in GdaxEthUsdMessage in 1.17s
+2017-12-07 15:09:39,446 - gdax_msgs - INFO - Stored 3642 messages in GdaxEthUsdMessage in 0.95s
+2017-12-07 15:10:41,190 - gdax_msgs - INFO - Stored 4812 messages in GdaxEthUsdMessage in 2.56s
+2017-12-07 15:11:40,237 - gdax_msgs - INFO - Stored 4732 messages in GdaxEthUsdMessage in 1.57s
+2017-12-07 15:12:41,117 - gdax_msgs - INFO - Stored 3715 messages in GdaxEthUsdMessage in 2.44s
+2017-12-07 15:13:39,887 - gdax_msgs - INFO - Stored 4133 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 15:14:40,216 - gdax_msgs - INFO - Stored 4406 messages in GdaxEthUsdMessage in 1.45s
+2017-12-07 15:15:40,923 - gdax_msgs - INFO - Stored 7064 messages in GdaxEthUsdMessage in 2.15s
+2017-12-07 15:16:40,884 - gdax_msgs - INFO - Stored 6679 messages in GdaxEthUsdMessage in 2.10s
+2017-12-07 15:17:39,980 - gdax_msgs - INFO - Stored 6439 messages in GdaxEthUsdMessage in 1.18s
+2017-12-07 15:18:40,453 - gdax_msgs - INFO - Stored 6334 messages in GdaxEthUsdMessage in 1.60s
+2017-12-07 15:19:40,712 - gdax_msgs - INFO - Stored 5786 messages in GdaxEthUsdMessage in 1.86s
+2017-12-07 15:20:40,689 - gdax_msgs - INFO - Stored 5809 messages in GdaxEthUsdMessage in 1.60s
+2017-12-07 15:21:40,294 - gdax_msgs - INFO - Stored 4328 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 15:22:40,637 - gdax_msgs - INFO - Stored 4653 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 15:23:40,963 - gdax_msgs - INFO - Stored 5062 messages in GdaxEthUsdMessage in 1.66s
+2017-12-07 15:24:36,901 - gdax_msgs - INFO - ==============================
+2017-12-07 15:24:36,901 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 15:24:43,034 - gdax_msgs - INFO - Stored 6529 messages in GdaxEthUsdMessage in 3.55s
+2017-12-07 15:24:48,104 - gdax_msgs - INFO - ==============================
+2017-12-07 15:25:40,863 - gdax_msgs - INFO - Stored 6666 messages in GdaxEthUsdMessage in 1.36s
+2017-12-07 15:26:41,027 - gdax_msgs - INFO - Stored 5997 messages in GdaxEthUsdMessage in 1.50s
+2017-12-07 15:27:41,196 - gdax_msgs - INFO - Stored 5239 messages in GdaxEthUsdMessage in 1.67s
+2017-12-07 15:28:41,655 - gdax_msgs - INFO - Stored 4949 messages in GdaxEthUsdMessage in 1.76s
+2017-12-07 15:29:40,579 - gdax_msgs - INFO - Stored 3789 messages in GdaxEthUsdMessage in 0.66s
+2017-12-07 15:30:42,801 - gdax_msgs - INFO - Stored 6309 messages in GdaxEthUsdMessage in 2.87s
+2017-12-07 15:31:41,444 - gdax_msgs - INFO - Stored 4077 messages in GdaxEthUsdMessage in 1.21s
+2017-12-07 15:32:41,478 - gdax_msgs - INFO - Stored 2723 messages in GdaxEthUsdMessage in 0.92s
+2017-12-07 15:33:42,199 - gdax_msgs - INFO - Stored 3719 messages in GdaxEthUsdMessage in 1.59s
+2017-12-07 15:34:42,489 - gdax_msgs - INFO - Stored 5452 messages in GdaxEthUsdMessage in 1.84s
+2017-12-07 15:35:42,133 - gdax_msgs - INFO - Stored 4162 messages in GdaxEthUsdMessage in 1.43s
+2017-12-07 15:36:42,270 - gdax_msgs - INFO - Stored 4137 messages in GdaxEthUsdMessage in 1.34s
+2017-12-07 15:37:42,643 - gdax_msgs - INFO - Stored 5337 messages in GdaxEthUsdMessage in 1.00s
+2017-12-07 15:38:42,841 - gdax_msgs - INFO - Stored 4412 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 15:39:43,109 - gdax_msgs - INFO - Stored 3828 messages in GdaxEthUsdMessage in 1.29s
+2017-12-07 15:40:44,426 - gdax_msgs - INFO - Stored 4180 messages in GdaxEthUsdMessage in 2.55s
+2017-12-07 15:41:42,653 - gdax_msgs - INFO - Stored 3940 messages in GdaxEthUsdMessage in 0.77s
+2017-12-07 15:42:43,077 - gdax_msgs - INFO - Stored 5031 messages in GdaxEthUsdMessage in 1.18s
+2017-12-07 15:43:42,889 - gdax_msgs - INFO - Stored 4720 messages in GdaxEthUsdMessage in 0.98s
+2017-12-07 15:44:42,535 - gdax_msgs - INFO - Stored 3881 messages in GdaxEthUsdMessage in 0.61s
+2017-12-07 15:45:42,338 - gdax_msgs - INFO - Stored 1528 messages in GdaxEthUsdMessage in 0.41s
+2017-12-07 15:46:42,327 - gdax_msgs - INFO - Stored 2047 messages in GdaxEthUsdMessage in 0.35s
+2017-12-07 15:47:42,905 - gdax_msgs - INFO - Stored 3202 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 15:48:42,951 - gdax_msgs - INFO - Stored 3041 messages in GdaxEthUsdMessage in 0.88s
+2017-12-07 15:49:43,439 - gdax_msgs - INFO - Stored 4197 messages in GdaxEthUsdMessage in 1.32s
+2017-12-07 15:50:43,443 - gdax_msgs - INFO - Stored 2290 messages in GdaxEthUsdMessage in 1.28s
+2017-12-07 15:51:42,987 - gdax_msgs - INFO - Stored 2551 messages in GdaxEthUsdMessage in 0.80s
+2017-12-07 15:52:43,470 - gdax_msgs - INFO - Stored 5050 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 15:53:43,300 - gdax_msgs - INFO - Stored 4642 messages in GdaxEthUsdMessage in 0.89s
+2017-12-07 15:54:43,914 - gdax_msgs - INFO - Stored 5333 messages in GdaxEthUsdMessage in 1.48s
+2017-12-07 15:55:43,399 - gdax_msgs - INFO - Stored 3714 messages in GdaxEthUsdMessage in 0.91s
+2017-12-07 15:56:43,540 - gdax_msgs - INFO - Stored 4790 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 15:57:43,631 - gdax_msgs - INFO - Stored 4311 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 15:58:43,339 - gdax_msgs - INFO - Stored 4042 messages in GdaxEthUsdMessage in 0.68s
+2017-12-07 15:59:43,311 - gdax_msgs - INFO - Stored 3642 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 16:00:43,983 - gdax_msgs - INFO - Stored 6159 messages in GdaxEthUsdMessage in 1.23s
+2017-12-07 16:01:44,075 - gdax_msgs - INFO - Stored 6247 messages in GdaxEthUsdMessage in 1.31s
+2017-12-07 16:02:43,764 - gdax_msgs - INFO - Stored 5106 messages in GdaxEthUsdMessage in 1.00s
+2017-12-07 16:03:44,121 - gdax_msgs - INFO - Stored 5324 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 16:04:44,731 - gdax_msgs - INFO - Stored 6537 messages in GdaxEthUsdMessage in 1.92s
+2017-12-07 16:05:43,542 - gdax_msgs - INFO - Stored 4206 messages in GdaxEthUsdMessage in 0.69s
+2017-12-07 16:06:43,958 - gdax_msgs - INFO - Stored 4624 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 16:07:45,272 - gdax_msgs - INFO - Stored 6052 messages in GdaxEthUsdMessage in 2.37s
+2017-12-07 16:08:43,569 - gdax_msgs - INFO - Stored 2337 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 16:09:43,440 - gdax_msgs - INFO - Stored 2110 messages in GdaxEthUsdMessage in 0.45s
+2017-12-07 16:10:44,123 - gdax_msgs - INFO - Stored 2323 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 16:11:43,700 - gdax_msgs - INFO - Stored 1584 messages in GdaxEthUsdMessage in 0.34s
+2017-12-07 16:12:43,918 - gdax_msgs - INFO - Stored 2011 messages in GdaxEthUsdMessage in 0.49s
+2017-12-07 16:13:44,484 - gdax_msgs - INFO - Stored 3326 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 16:14:44,377 - gdax_msgs - INFO - Stored 2069 messages in GdaxEthUsdMessage in 0.40s
+2017-12-07 16:15:45,531 - gdax_msgs - INFO - Stored 4994 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 16:16:45,875 - gdax_msgs - INFO - Stored 4626 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 16:17:46,461 - gdax_msgs - INFO - Stored 3108 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 16:18:46,698 - gdax_msgs - INFO - Stored 2487 messages in GdaxEthUsdMessage in 0.41s
+2017-12-07 16:19:47,007 - gdax_msgs - INFO - Stored 3390 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 16:20:47,381 - gdax_msgs - INFO - Stored 4421 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 16:21:47,763 - gdax_msgs - INFO - Stored 2326 messages in GdaxEthUsdMessage in 0.47s
+2017-12-07 16:22:48,549 - gdax_msgs - INFO - Stored 1997 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 16:23:50,226 - gdax_msgs - INFO - Stored 1941 messages in GdaxEthUsdMessage in 0.62s
+2017-12-07 16:24:37,064 - gdax_msgs - INFO - ==============================
+2017-12-07 16:24:37,064 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 16:24:47,142 - gdax_msgs - INFO - ==============================
+2017-12-07 16:24:50,983 - gdax_msgs - INFO - Stored 1676 messages in GdaxEthUsdMessage in 0.30s
+2017-12-07 16:25:57,632 - gdax_msgs - INFO - Stored 1824 messages in GdaxEthUsdMessage in 0.46s
+2017-12-07 16:26:58,109 - gdax_msgs - INFO - Stored 2907 messages in GdaxEthUsdMessage in 0.68s
+2017-12-07 16:27:58,262 - gdax_msgs - INFO - Stored 2881 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 16:29:01,792 - gdax_msgs - INFO - Stored 2093 messages in GdaxEthUsdMessage in 0.39s
+2017-12-07 16:30:02,971 - gdax_msgs - INFO - Stored 513 messages in GdaxEthUsdMessage in 0.17s
+2017-12-07 16:31:03,364 - gdax_msgs - INFO - Stored 1710 messages in GdaxEthUsdMessage in 0.29s
+2017-12-07 16:32:06,298 - gdax_msgs - INFO - Stored 258 messages in GdaxEthUsdMessage in 0.22s
+2017-12-07 16:33:10,179 - gdax_msgs - INFO - Stored 390 messages in GdaxEthUsdMessage in 0.12s
+2017-12-07 16:34:10,410 - gdax_msgs - INFO - Stored 421 messages in GdaxEthUsdMessage in 0.18s
+2017-12-07 16:35:10,808 - gdax_msgs - INFO - Stored 635 messages in GdaxEthUsdMessage in 0.24s
+2017-12-07 16:36:11,156 - gdax_msgs - INFO - Stored 671 messages in GdaxEthUsdMessage in 0.19s
+2017-12-07 16:37:11,521 - gdax_msgs - INFO - Stored 917 messages in GdaxEthUsdMessage in 0.32s
+2017-12-07 16:38:11,612 - gdax_msgs - INFO - Stored 2041 messages in GdaxEthUsdMessage in 0.41s
+2017-12-07 16:39:13,843 - gdax_msgs - INFO - Stored 2891 messages in GdaxEthUsdMessage in 0.82s
+2017-12-07 16:40:13,717 - gdax_msgs - INFO - Stored 2467 messages in GdaxEthUsdMessage in 0.52s
+2017-12-07 16:41:18,358 - gdax_msgs - INFO - Stored 2572 messages in GdaxEthUsdMessage in 1.30s
+2017-12-07 16:42:18,008 - gdax_msgs - INFO - Stored 1904 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 16:43:18,576 - gdax_msgs - INFO - Stored 2971 messages in GdaxEthUsdMessage in 0.86s
+2017-12-07 16:44:18,719 - gdax_msgs - INFO - Stored 3253 messages in GdaxEthUsdMessage in 0.93s
+2017-12-07 16:45:18,408 - gdax_msgs - INFO - Stored 3722 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 16:46:19,200 - gdax_msgs - INFO - Stored 1630 messages in GdaxEthUsdMessage in 0.29s
+2017-12-07 16:47:20,700 - gdax_msgs - INFO - Stored 819 messages in GdaxEthUsdMessage in 0.35s
+2017-12-07 16:48:20,725 - gdax_msgs - INFO - Stored 1113 messages in GdaxEthUsdMessage in 0.23s
+2017-12-07 16:49:21,200 - gdax_msgs - INFO - Stored 2756 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 16:50:21,796 - gdax_msgs - INFO - Stored 3587 messages in GdaxEthUsdMessage in 0.95s
+2017-12-07 16:51:30,097 - gdax_msgs - INFO - Stored 3494 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 16:52:29,840 - gdax_msgs - INFO - Stored 1778 messages in GdaxEthUsdMessage in 0.29s
+2017-12-07 16:53:32,132 - gdax_msgs - INFO - Stored 642 messages in GdaxEthUsdMessage in 0.33s
+2017-12-07 16:54:32,046 - gdax_msgs - INFO - Stored 890 messages in GdaxEthUsdMessage in 0.22s
+2017-12-07 16:55:32,542 - gdax_msgs - INFO - Stored 1390 messages in GdaxEthUsdMessage in 0.34s
+2017-12-07 16:56:41,842 - gdax_msgs - INFO - Stored 452 messages in GdaxEthUsdMessage in 0.19s
+2017-12-07 16:57:42,095 - gdax_msgs - INFO - Stored 904 messages in GdaxEthUsdMessage in 0.42s
+2017-12-07 16:58:42,237 - gdax_msgs - INFO - Stored 902 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 16:59:42,716 - gdax_msgs - INFO - Stored 636 messages in GdaxEthUsdMessage in 0.19s
+2017-12-07 17:00:42,791 - gdax_msgs - INFO - Stored 766 messages in GdaxEthUsdMessage in 0.21s
+2017-12-07 17:01:43,029 - gdax_msgs - INFO - Stored 469 messages in GdaxEthUsdMessage in 0.15s
+2017-12-07 17:02:44,099 - gdax_msgs - INFO - Stored 412 messages in GdaxEthUsdMessage in 0.13s
+2017-12-07 17:03:30,526 - core_websocket - ERROR - Message error: No JSON object could be decoded
+Message: 
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 81, in _listen
+    msg = json.loads(msg)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2017-12-07 17:03:30,526 - core_websocket - INFO - Closing websocket
+2017-12-07 17:03:31,529 - core_websocket - INFO - Successfully closed Websocket
+2017-12-07 17:03:32,531 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-07 17:03:32,631 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 17:03:32,631 - core_websocket - INFO - Listening for messages
+2017-12-07 17:03:44,163 - gdax_msgs - INFO - Stored 579 messages in GdaxEthUsdMessage in 0.15s
+2017-12-07 17:04:44,722 - gdax_msgs - INFO - Stored 470 messages in GdaxEthUsdMessage in 0.17s
+2017-12-07 17:05:44,920 - gdax_msgs - INFO - Stored 580 messages in GdaxEthUsdMessage in 0.22s
+2017-12-07 17:06:44,962 - gdax_msgs - INFO - Stored 1503 messages in GdaxEthUsdMessage in 0.26s
+2017-12-07 17:07:45,038 - gdax_msgs - INFO - Stored 1273 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 17:08:45,111 - gdax_msgs - INFO - Stored 856 messages in GdaxEthUsdMessage in 0.26s
+2017-12-07 17:09:45,082 - gdax_msgs - INFO - Stored 627 messages in GdaxEthUsdMessage in 0.17s
+2017-12-07 17:10:47,243 - gdax_msgs - INFO - Stored 628 messages in GdaxEthUsdMessage in 0.23s
+2017-12-07 17:11:47,363 - gdax_msgs - INFO - Stored 557 messages in GdaxEthUsdMessage in 0.31s
+2017-12-07 17:12:47,727 - gdax_msgs - INFO - Stored 717 messages in GdaxEthUsdMessage in 0.20s
+2017-12-07 17:13:47,889 - gdax_msgs - INFO - Stored 543 messages in GdaxEthUsdMessage in 0.17s
+2017-12-07 17:14:48,581 - gdax_msgs - INFO - Stored 526 messages in GdaxEthUsdMessage in 0.15s
+2017-12-07 17:15:48,662 - gdax_msgs - INFO - Stored 593 messages in GdaxEthUsdMessage in 0.20s
+2017-12-07 17:16:48,909 - gdax_msgs - INFO - Stored 1004 messages in GdaxEthUsdMessage in 0.18s
+2017-12-07 17:17:48,978 - gdax_msgs - INFO - Stored 526 messages in GdaxEthUsdMessage in 0.23s
+2017-12-07 17:18:49,031 - gdax_msgs - INFO - Stored 954 messages in GdaxEthUsdMessage in 0.23s
+2017-12-07 17:19:49,348 - gdax_msgs - INFO - Stored 725 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 17:20:49,296 - gdax_msgs - INFO - Stored 669 messages in GdaxEthUsdMessage in 0.18s
+2017-12-07 17:21:50,337 - gdax_msgs - INFO - Stored 708 messages in GdaxEthUsdMessage in 0.20s
+2017-12-07 17:22:50,643 - gdax_msgs - INFO - Stored 814 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 17:23:51,198 - gdax_msgs - INFO - Stored 505 messages in GdaxEthUsdMessage in 0.13s
+2017-12-07 17:24:37,342 - gdax_msgs - INFO - ==============================
+2017-12-07 17:24:37,342 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 17:24:45,777 - gdax_msgs - INFO - ==============================
+2017-12-07 17:24:51,985 - gdax_msgs - INFO - Stored 302 messages in GdaxEthUsdMessage in 0.16s
+2017-12-07 17:25:52,429 - gdax_msgs - INFO - Stored 345 messages in GdaxEthUsdMessage in 0.27s
+2017-12-07 17:26:52,442 - gdax_msgs - INFO - Stored 380 messages in GdaxEthUsdMessage in 0.24s
+2017-12-07 17:27:52,996 - gdax_msgs - INFO - Stored 315 messages in GdaxEthUsdMessage in 0.13s
+2017-12-07 17:28:53,553 - gdax_msgs - INFO - Stored 3122 messages in GdaxEthUsdMessage in 0.59s
+2017-12-07 17:29:46,745 - core_websocket - ERROR - Message error: Connection is already closed.
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 336, in recv_frame
+    self.recv_header()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 286, in recv_header
+    header = self.recv_strict(2)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_socket.py", line 93, in recv
+    "Connection is already closed.")
+WebSocketConnectionClosedException: Connection is already closed.
+2017-12-07 17:29:46,777 - core_websocket - INFO - Closing websocket
+2017-12-07 17:29:46,777 - core_websocket - ERROR - Failed to close websocket:
+socket is already closed.
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_socket.py", line 113, in send
+    raise WebSocketConnectionClosedException("socket is already closed.")
+WebSocketConnectionClosedException: socket is already closed.
+2017-12-07 17:29:47,779 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-07 17:30:32,659 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 17:30:32,660 - core_websocket - INFO - Listening for messages
+2017-12-07 17:30:33,529 - gdax_msgs - INFO - Stored 4042 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 17:31:33,338 - gdax_msgs - INFO - Stored 1893 messages in GdaxEthUsdMessage in 0.59s
+2017-12-07 17:32:33,700 - gdax_msgs - INFO - Stored 2003 messages in GdaxEthUsdMessage in 0.56s
+2017-12-07 17:33:37,620 - gdax_msgs - INFO - Stored 1030 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 17:34:38,082 - gdax_msgs - INFO - Stored 2463 messages in GdaxEthUsdMessage in 0.67s
+2017-12-07 17:35:38,283 - gdax_msgs - INFO - Stored 3095 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 17:36:38,185 - gdax_msgs - INFO - Stored 2011 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 17:37:40,708 - gdax_msgs - INFO - Stored 2433 messages in GdaxEthUsdMessage in 0.47s
+2017-12-07 17:38:59,407 - gdax_msgs - INFO - Stored 2331 messages in GdaxEthUsdMessage in 0.84s
+2017-12-07 17:40:06,725 - gdax_msgs - INFO - Stored 2892 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 17:41:07,892 - gdax_msgs - INFO - Stored 6461 messages in GdaxEthUsdMessage in 1.74s
+2017-12-07 17:42:06,981 - gdax_msgs - INFO - Stored 5270 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 17:43:06,773 - gdax_msgs - INFO - Stored 3118 messages in GdaxEthUsdMessage in 0.59s
+2017-12-07 17:44:06,830 - gdax_msgs - INFO - Stored 3398 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 17:45:06,864 - gdax_msgs - INFO - Stored 3348 messages in GdaxEthUsdMessage in 0.59s
+2017-12-07 17:46:07,197 - gdax_msgs - INFO - Stored 4737 messages in GdaxEthUsdMessage in 0.77s
+2017-12-07 17:47:07,016 - gdax_msgs - INFO - Stored 2996 messages in GdaxEthUsdMessage in 0.50s
+2017-12-07 17:48:07,554 - gdax_msgs - INFO - Stored 3894 messages in GdaxEthUsdMessage in 0.71s
+2017-12-07 17:49:08,204 - gdax_msgs - INFO - Stored 4481 messages in GdaxEthUsdMessage in 1.26s
+2017-12-07 17:50:08,872 - gdax_msgs - INFO - Stored 4870 messages in GdaxEthUsdMessage in 1.86s
+2017-12-07 17:51:08,430 - gdax_msgs - INFO - Stored 4730 messages in GdaxEthUsdMessage in 1.36s
+2017-12-07 17:52:16,171 - gdax_msgs - INFO - Stored 5520 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 17:53:18,214 - gdax_msgs - INFO - Stored 3731 messages in GdaxEthUsdMessage in 0.84s
+2017-12-07 17:54:26,210 - gdax_msgs - INFO - Stored 2184 messages in GdaxEthUsdMessage in 0.58s
+2017-12-07 17:55:27,361 - gdax_msgs - INFO - Stored 4530 messages in GdaxEthUsdMessage in 1.62s
+2017-12-07 17:56:26,674 - gdax_msgs - INFO - Stored 3259 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 17:57:26,744 - gdax_msgs - INFO - Stored 4322 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 17:58:29,967 - gdax_msgs - INFO - Stored 5029 messages in GdaxEthUsdMessage in 1.64s
+2017-12-07 17:59:29,283 - gdax_msgs - INFO - Stored 4144 messages in GdaxEthUsdMessage in 0.90s
+2017-12-07 18:00:29,741 - gdax_msgs - INFO - Stored 6540 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 18:01:29,804 - gdax_msgs - INFO - Stored 4448 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 18:02:28,983 - gdax_msgs - INFO - Stored 3081 messages in GdaxEthUsdMessage in 0.52s
+2017-12-07 18:03:29,347 - gdax_msgs - INFO - Stored 4008 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 18:04:29,769 - gdax_msgs - INFO - Stored 4924 messages in GdaxEthUsdMessage in 1.14s
+2017-12-07 18:05:29,595 - gdax_msgs - INFO - Stored 5099 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 18:06:34,130 - gdax_msgs - INFO - Stored 6933 messages in GdaxEthUsdMessage in 5.43s
+2017-12-07 18:07:30,735 - gdax_msgs - INFO - Stored 7684 messages in GdaxEthUsdMessage in 2.00s
+2017-12-07 18:08:30,076 - gdax_msgs - INFO - Stored 5829 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 18:09:36,098 - gdax_msgs - INFO - Stored 4168 messages in GdaxEthUsdMessage in 1.70s
+2017-12-07 18:10:35,561 - gdax_msgs - INFO - Stored 3160 messages in GdaxEthUsdMessage in 0.87s
+2017-12-07 18:11:35,409 - gdax_msgs - INFO - Stored 2796 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 18:12:35,557 - gdax_msgs - INFO - Stored 3046 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 18:13:36,423 - gdax_msgs - INFO - Stored 2631 messages in GdaxEthUsdMessage in 1.20s
+2017-12-07 18:14:38,490 - gdax_msgs - INFO - Stored 2970 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 18:15:39,080 - gdax_msgs - INFO - Stored 4024 messages in GdaxEthUsdMessage in 0.65s
+2017-12-07 18:16:39,110 - gdax_msgs - INFO - Stored 3679 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 18:17:39,633 - gdax_msgs - INFO - Stored 4956 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 18:18:39,734 - gdax_msgs - INFO - Stored 5746 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 18:19:40,310 - gdax_msgs - INFO - Stored 4485 messages in GdaxEthUsdMessage in 1.64s
+2017-12-07 18:20:39,408 - gdax_msgs - INFO - Stored 3974 messages in GdaxEthUsdMessage in 0.67s
+2017-12-07 18:21:39,810 - gdax_msgs - INFO - Stored 5058 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 18:22:39,663 - gdax_msgs - INFO - Stored 2556 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 18:23:40,204 - gdax_msgs - INFO - Stored 4834 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 18:24:37,522 - gdax_msgs - INFO - ==============================
+2017-12-07 18:24:37,525 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 18:24:40,637 - gdax_msgs - INFO - Stored 2097 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 18:24:47,133 - gdax_msgs - INFO - ==============================
+2017-12-07 18:25:40,729 - gdax_msgs - INFO - Stored 6713 messages in GdaxEthUsdMessage in 1.47s
+2017-12-07 18:26:40,376 - gdax_msgs - INFO - Stored 7074 messages in GdaxEthUsdMessage in 1.11s
+2017-12-07 18:27:50,159 - gdax_msgs - INFO - Stored 2911 messages in GdaxEthUsdMessage in 0.69s
+2017-12-07 18:28:51,586 - gdax_msgs - INFO - Stored 4888 messages in GdaxEthUsdMessage in 1.22s
+2017-12-07 18:29:51,543 - gdax_msgs - INFO - Stored 5610 messages in GdaxEthUsdMessage in 1.03s
+2017-12-07 18:30:51,549 - gdax_msgs - INFO - Stored 4628 messages in GdaxEthUsdMessage in 0.84s
+2017-12-07 18:31:51,961 - gdax_msgs - INFO - Stored 6319 messages in GdaxEthUsdMessage in 1.25s
+2017-12-07 18:32:51,984 - gdax_msgs - INFO - Stored 5377 messages in GdaxEthUsdMessage in 1.26s
+2017-12-07 18:33:51,723 - gdax_msgs - INFO - Stored 5082 messages in GdaxEthUsdMessage in 0.90s
+2017-12-07 18:34:53,242 - gdax_msgs - INFO - Stored 4300 messages in GdaxEthUsdMessage in 0.73s
+2017-12-07 18:35:53,549 - gdax_msgs - INFO - Stored 5494 messages in GdaxEthUsdMessage in 0.96s
+2017-12-07 18:36:54,019 - gdax_msgs - INFO - Stored 5597 messages in GdaxEthUsdMessage in 1.41s
+2017-12-07 18:37:53,215 - gdax_msgs - INFO - Stored 2118 messages in GdaxEthUsdMessage in 0.52s
+2017-12-07 18:38:53,436 - gdax_msgs - INFO - Stored 4218 messages in GdaxEthUsdMessage in 0.73s
+2017-12-07 18:39:54,090 - gdax_msgs - INFO - Stored 3805 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 18:40:54,829 - gdax_msgs - INFO - Stored 5702 messages in GdaxEthUsdMessage in 1.13s
+2017-12-07 18:41:54,376 - gdax_msgs - INFO - Stored 2994 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 18:42:54,058 - gdax_msgs - INFO - Stored 1477 messages in GdaxEthUsdMessage in 0.29s
+2017-12-07 18:43:54,343 - gdax_msgs - INFO - Stored 2841 messages in GdaxEthUsdMessage in 0.55s
+2017-12-07 18:44:54,312 - gdax_msgs - INFO - Stored 3310 messages in GdaxEthUsdMessage in 0.51s
+2017-12-07 18:45:54,551 - gdax_msgs - INFO - Stored 3117 messages in GdaxEthUsdMessage in 0.73s
+2017-12-07 18:46:55,672 - gdax_msgs - INFO - Stored 5989 messages in GdaxEthUsdMessage in 1.53s
+2017-12-07 18:47:55,461 - gdax_msgs - INFO - Stored 5126 messages in GdaxEthUsdMessage in 1.15s
+2017-12-07 18:48:55,611 - gdax_msgs - INFO - Stored 6333 messages in GdaxEthUsdMessage in 1.28s
+2017-12-07 18:49:56,783 - gdax_msgs - INFO - Stored 5677 messages in GdaxEthUsdMessage in 1.58s
+2017-12-07 18:50:55,966 - gdax_msgs - INFO - Stored 2933 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 18:51:56,263 - gdax_msgs - INFO - Stored 4555 messages in GdaxEthUsdMessage in 0.92s
+2017-12-07 18:52:56,262 - gdax_msgs - INFO - Stored 2397 messages in GdaxEthUsdMessage in 0.91s
+2017-12-07 18:53:56,756 - gdax_msgs - INFO - Stored 4442 messages in GdaxEthUsdMessage in 1.37s
+2017-12-07 18:54:56,251 - gdax_msgs - INFO - Stored 3586 messages in GdaxEthUsdMessage in 0.82s
+2017-12-07 18:55:56,648 - gdax_msgs - INFO - Stored 2722 messages in GdaxEthUsdMessage in 1.17s
+2017-12-07 18:56:55,966 - gdax_msgs - INFO - Stored 2520 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 18:57:55,998 - gdax_msgs - INFO - Stored 3212 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 18:58:56,459 - gdax_msgs - INFO - Stored 2856 messages in GdaxEthUsdMessage in 0.49s
+2017-12-07 18:59:56,755 - gdax_msgs - INFO - Stored 4418 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 19:00:57,384 - gdax_msgs - INFO - Stored 3414 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 19:01:56,808 - gdax_msgs - INFO - Stored 4085 messages in GdaxEthUsdMessage in 0.68s
+2017-12-07 19:02:57,029 - gdax_msgs - INFO - Stored 4144 messages in GdaxEthUsdMessage in 0.87s
+2017-12-07 19:03:56,950 - gdax_msgs - INFO - Stored 4777 messages in GdaxEthUsdMessage in 0.77s
+2017-12-07 19:04:57,594 - gdax_msgs - INFO - Stored 3750 messages in GdaxEthUsdMessage in 1.40s
+2017-12-07 19:05:57,933 - gdax_msgs - INFO - Stored 3088 messages in GdaxEthUsdMessage in 0.63s
+2017-12-07 19:07:02,451 - gdax_msgs - INFO - Stored 3770 messages in GdaxEthUsdMessage in 1.21s
+2017-12-07 19:08:04,425 - gdax_msgs - INFO - Stored 5748 messages in GdaxEthUsdMessage in 1.13s
+2017-12-07 19:09:07,986 - gdax_msgs - INFO - Stored 5138 messages in GdaxEthUsdMessage in 1.83s
+2017-12-07 19:10:07,548 - gdax_msgs - INFO - Stored 4678 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 19:11:07,570 - gdax_msgs - INFO - Stored 3826 messages in GdaxEthUsdMessage in 1.28s
+2017-12-07 19:12:09,209 - gdax_msgs - INFO - Stored 6785 messages in GdaxEthUsdMessage in 2.89s
+2017-12-07 19:13:09,291 - gdax_msgs - INFO - Stored 8498 messages in GdaxEthUsdMessage in 2.92s
+2017-12-07 19:14:07,373 - gdax_msgs - INFO - Stored 3417 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 19:15:08,190 - gdax_msgs - INFO - Stored 3419 messages in GdaxEthUsdMessage in 1.11s
+2017-12-07 19:16:08,234 - gdax_msgs - INFO - Stored 3859 messages in GdaxEthUsdMessage in 1.01s
+2017-12-07 19:17:08,355 - gdax_msgs - INFO - Stored 5750 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 19:18:08,527 - gdax_msgs - INFO - Stored 6331 messages in GdaxEthUsdMessage in 1.25s
+2017-12-07 19:19:10,033 - gdax_msgs - INFO - Stored 7569 messages in GdaxEthUsdMessage in 2.75s
+2017-12-07 19:20:09,090 - gdax_msgs - INFO - Stored 7205 messages in GdaxEthUsdMessage in 1.71s
+2017-12-07 19:21:08,771 - gdax_msgs - INFO - Stored 3355 messages in GdaxEthUsdMessage in 1.17s
+2017-12-07 19:22:08,925 - gdax_msgs - INFO - Stored 4124 messages in GdaxEthUsdMessage in 1.27s
+2017-12-07 19:23:08,086 - gdax_msgs - INFO - Stored 2347 messages in GdaxEthUsdMessage in 0.37s
+2017-12-07 19:24:08,358 - gdax_msgs - INFO - Stored 2417 messages in GdaxEthUsdMessage in 0.54s
+2017-12-07 19:24:37,939 - gdax_msgs - INFO - ==============================
+2017-12-07 19:24:37,940 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 19:24:46,081 - gdax_msgs - INFO - ==============================
+2017-12-07 19:25:09,898 - gdax_msgs - INFO - Stored 5387 messages in GdaxEthUsdMessage in 2.01s
+2017-12-07 19:26:09,778 - gdax_msgs - INFO - Stored 7673 messages in GdaxEthUsdMessage in 1.83s
+2017-12-07 19:27:09,046 - gdax_msgs - INFO - Stored 3932 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 19:28:09,834 - gdax_msgs - INFO - Stored 3001 messages in GdaxEthUsdMessage in 0.65s
+2017-12-07 19:29:09,969 - gdax_msgs - INFO - Stored 4242 messages in GdaxEthUsdMessage in 0.71s
+2017-12-07 19:30:10,470 - gdax_msgs - INFO - Stored 3785 messages in GdaxEthUsdMessage in 1.17s
+2017-12-07 19:31:11,062 - gdax_msgs - INFO - Stored 3995 messages in GdaxEthUsdMessage in 1.66s
+2017-12-07 19:32:14,007 - gdax_msgs - INFO - Stored 6118 messages in GdaxEthUsdMessage in 1.23s
+2017-12-07 19:33:13,334 - gdax_msgs - INFO - Stored 1852 messages in GdaxEthUsdMessage in 0.44s
+2017-12-07 19:34:13,505 - gdax_msgs - INFO - Stored 2749 messages in GdaxEthUsdMessage in 0.52s
+2017-12-07 19:35:14,270 - gdax_msgs - INFO - Stored 5948 messages in GdaxEthUsdMessage in 1.28s
+2017-12-07 19:36:19,353 - gdax_msgs - INFO - Stored 5372 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 19:37:19,298 - gdax_msgs - INFO - Stored 5229 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 19:38:19,454 - gdax_msgs - INFO - Stored 5812 messages in GdaxEthUsdMessage in 1.21s
+2017-12-07 19:39:19,417 - gdax_msgs - INFO - Stored 5899 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 19:40:19,382 - gdax_msgs - INFO - Stored 4942 messages in GdaxEthUsdMessage in 1.06s
+2017-12-07 19:41:19,701 - gdax_msgs - INFO - Stored 5402 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 19:42:19,483 - gdax_msgs - INFO - Stored 6020 messages in GdaxEthUsdMessage in 1.03s
+2017-12-07 19:43:19,841 - gdax_msgs - INFO - Stored 4012 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 19:44:19,862 - gdax_msgs - INFO - Stored 5792 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 19:45:19,231 - gdax_msgs - INFO - Stored 3503 messages in GdaxEthUsdMessage in 0.55s
+2017-12-07 19:46:20,021 - gdax_msgs - INFO - Stored 5430 messages in GdaxEthUsdMessage in 1.02s
+2017-12-07 19:47:20,860 - gdax_msgs - INFO - Stored 4975 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 19:48:20,465 - gdax_msgs - INFO - Stored 4556 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 19:49:21,485 - gdax_msgs - INFO - Stored 7806 messages in GdaxEthUsdMessage in 1.74s
+2017-12-07 19:50:20,988 - gdax_msgs - INFO - Stored 6926 messages in GdaxEthUsdMessage in 1.20s
+2017-12-07 19:51:21,262 - gdax_msgs - INFO - Stored 6026 messages in GdaxEthUsdMessage in 1.46s
+2017-12-07 19:52:21,417 - gdax_msgs - INFO - Stored 7313 messages in GdaxEthUsdMessage in 1.57s
+2017-12-07 19:53:21,334 - gdax_msgs - INFO - Stored 5142 messages in GdaxEthUsdMessage in 1.47s
+2017-12-07 19:54:21,355 - gdax_msgs - INFO - Stored 6295 messages in GdaxEthUsdMessage in 1.48s
+2017-12-07 19:55:21,891 - gdax_msgs - INFO - Stored 7831 messages in GdaxEthUsdMessage in 2.01s
+2017-12-07 19:56:21,310 - gdax_msgs - INFO - Stored 5813 messages in GdaxEthUsdMessage in 1.36s
+2017-12-07 19:57:21,547 - gdax_msgs - INFO - Stored 6599 messages in GdaxEthUsdMessage in 1.60s
+2017-12-07 19:58:21,240 - gdax_msgs - INFO - Stored 5140 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 19:59:20,906 - gdax_msgs - INFO - Stored 5042 messages in GdaxEthUsdMessage in 0.89s
+2017-12-07 20:00:21,071 - gdax_msgs - INFO - Stored 5489 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 20:01:21,849 - gdax_msgs - INFO - Stored 8180 messages in GdaxEthUsdMessage in 1.74s
+2017-12-07 20:02:21,952 - gdax_msgs - INFO - Stored 5335 messages in GdaxEthUsdMessage in 1.78s
+2017-12-07 20:03:21,785 - gdax_msgs - INFO - Stored 6617 messages in GdaxEthUsdMessage in 1.57s
+2017-12-07 20:04:22,195 - gdax_msgs - INFO - Stored 8953 messages in GdaxEthUsdMessage in 1.97s
+2017-12-07 20:05:21,177 - gdax_msgs - INFO - Stored 4946 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 20:06:21,424 - gdax_msgs - INFO - Stored 7754 messages in GdaxEthUsdMessage in 1.18s
+2017-12-07 20:07:21,592 - gdax_msgs - INFO - Stored 6147 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 20:08:21,314 - gdax_msgs - INFO - Stored 4765 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 20:09:21,222 - gdax_msgs - INFO - Stored 3231 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 20:10:21,629 - gdax_msgs - INFO - Stored 4435 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 20:11:21,297 - gdax_msgs - INFO - Stored 4761 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 20:12:21,888 - gdax_msgs - INFO - Stored 5719 messages in GdaxEthUsdMessage in 1.31s
+2017-12-07 20:13:21,142 - gdax_msgs - INFO - Stored 3542 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 20:14:21,776 - gdax_msgs - INFO - Stored 5580 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 20:15:22,451 - gdax_msgs - INFO - Stored 7353 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 20:16:22,222 - gdax_msgs - INFO - Stored 5764 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 20:17:22,676 - gdax_msgs - INFO - Stored 6653 messages in GdaxEthUsdMessage in 1.54s
+2017-12-07 20:18:23,515 - gdax_msgs - INFO - Stored 6988 messages in GdaxEthUsdMessage in 2.33s
+2017-12-07 20:19:23,079 - gdax_msgs - INFO - Stored 6484 messages in GdaxEthUsdMessage in 1.73s
+2017-12-07 20:20:22,589 - gdax_msgs - INFO - Stored 6585 messages in GdaxEthUsdMessage in 1.22s
+2017-12-07 20:21:22,838 - gdax_msgs - INFO - Stored 5850 messages in GdaxEthUsdMessage in 1.46s
+2017-12-07 20:22:22,236 - gdax_msgs - INFO - Stored 4315 messages in GdaxEthUsdMessage in 0.83s
+2017-12-07 20:23:22,594 - gdax_msgs - INFO - Stored 6277 messages in GdaxEthUsdMessage in 1.18s
+2017-12-07 20:24:22,683 - gdax_msgs - INFO - Stored 4083 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 20:24:37,950 - gdax_msgs - INFO - ==============================
+2017-12-07 20:24:37,951 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 20:24:47,218 - gdax_msgs - INFO - ==============================
+2017-12-07 20:25:22,398 - gdax_msgs - INFO - Stored 3918 messages in GdaxEthUsdMessage in 0.89s
+2017-12-07 20:26:22,291 - gdax_msgs - INFO - Stored 3965 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 20:27:22,677 - gdax_msgs - INFO - Stored 4740 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 20:28:22,125 - gdax_msgs - INFO - Stored 2412 messages in GdaxEthUsdMessage in 0.46s
+2017-12-07 20:29:22,822 - gdax_msgs - INFO - Stored 4237 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 20:30:22,826 - gdax_msgs - INFO - Stored 5478 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 20:31:23,103 - gdax_msgs - INFO - Stored 5143 messages in GdaxEthUsdMessage in 1.34s
+2017-12-07 20:32:24,124 - gdax_msgs - INFO - Stored 7280 messages in GdaxEthUsdMessage in 2.34s
+2017-12-07 20:33:23,757 - gdax_msgs - INFO - Stored 7555 messages in GdaxEthUsdMessage in 1.91s
+2017-12-07 20:34:23,317 - gdax_msgs - INFO - Stored 6058 messages in GdaxEthUsdMessage in 1.38s
+2017-12-07 20:35:23,069 - gdax_msgs - INFO - Stored 5261 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 20:36:22,829 - gdax_msgs - INFO - Stored 3131 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 20:37:24,043 - gdax_msgs - INFO - Stored 5432 messages in GdaxEthUsdMessage in 1.86s
+2017-12-07 20:38:23,075 - gdax_msgs - INFO - Stored 4759 messages in GdaxEthUsdMessage in 0.86s
+2017-12-07 20:39:23,347 - gdax_msgs - INFO - Stored 4422 messages in GdaxEthUsdMessage in 1.12s
+2017-12-07 20:40:22,846 - gdax_msgs - INFO - Stored 3236 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 20:41:22,960 - gdax_msgs - INFO - Stored 3002 messages in GdaxEthUsdMessage in 0.66s
+2017-12-07 20:42:23,213 - gdax_msgs - INFO - Stored 3443 messages in GdaxEthUsdMessage in 0.76s
+2017-12-07 20:43:23,268 - gdax_msgs - INFO - Stored 3136 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 20:44:23,329 - gdax_msgs - INFO - Stored 2413 messages in GdaxEthUsdMessage in 0.86s
+2017-12-07 20:45:22,925 - gdax_msgs - INFO - Stored 2506 messages in GdaxEthUsdMessage in 0.43s
+2017-12-07 20:46:23,653 - gdax_msgs - INFO - Stored 6223 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 20:47:23,615 - gdax_msgs - INFO - Stored 5564 messages in GdaxEthUsdMessage in 1.00s
+2017-12-07 20:48:23,847 - gdax_msgs - INFO - Stored 4152 messages in GdaxEthUsdMessage in 1.19s
+2017-12-07 20:49:23,673 - gdax_msgs - INFO - Stored 6004 messages in GdaxEthUsdMessage in 1.01s
+2017-12-07 20:50:25,561 - gdax_msgs - INFO - Stored 8020 messages in GdaxEthUsdMessage in 2.85s
+2017-12-07 20:51:23,889 - gdax_msgs - INFO - Stored 5179 messages in GdaxEthUsdMessage in 1.13s
+2017-12-07 20:52:24,911 - gdax_msgs - INFO - Stored 5783 messages in GdaxEthUsdMessage in 2.10s
+2017-12-07 20:53:23,656 - gdax_msgs - INFO - Stored 5173 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 20:54:23,929 - gdax_msgs - INFO - Stored 4988 messages in GdaxEthUsdMessage in 1.03s
+2017-12-07 20:55:23,939 - gdax_msgs - INFO - Stored 4961 messages in GdaxEthUsdMessage in 1.01s
+2017-12-07 20:56:23,527 - gdax_msgs - INFO - Stored 3306 messages in GdaxEthUsdMessage in 0.56s
+2017-12-07 20:57:23,455 - gdax_msgs - INFO - Stored 2101 messages in GdaxEthUsdMessage in 0.47s
+2017-12-07 20:58:23,580 - gdax_msgs - INFO - Stored 2289 messages in GdaxEthUsdMessage in 0.59s
+2017-12-07 20:59:23,918 - gdax_msgs - INFO - Stored 4945 messages in GdaxEthUsdMessage in 0.91s
+2017-12-07 21:00:23,894 - gdax_msgs - INFO - Stored 4027 messages in GdaxEthUsdMessage in 0.83s
+2017-12-07 21:01:23,702 - gdax_msgs - INFO - Stored 3750 messages in GdaxEthUsdMessage in 0.55s
+2017-12-07 21:02:23,635 - gdax_msgs - INFO - Stored 1412 messages in GdaxEthUsdMessage in 0.22s
+2017-12-07 21:03:24,096 - gdax_msgs - INFO - Stored 3428 messages in GdaxEthUsdMessage in 0.65s
+2017-12-07 21:04:23,852 - gdax_msgs - INFO - Stored 2105 messages in GdaxEthUsdMessage in 0.40s
+2017-12-07 21:05:24,113 - gdax_msgs - INFO - Stored 2621 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 21:06:24,228 - gdax_msgs - INFO - Stored 3384 messages in GdaxEthUsdMessage in 0.66s
+2017-12-07 21:07:24,363 - gdax_msgs - INFO - Stored 4603 messages in GdaxEthUsdMessage in 0.77s
+2017-12-07 21:08:24,638 - gdax_msgs - INFO - Stored 2886 messages in GdaxEthUsdMessage in 0.40s
+2017-12-07 21:09:24,965 - gdax_msgs - INFO - Stored 4517 messages in GdaxEthUsdMessage in 0.66s
+2017-12-07 21:10:24,762 - gdax_msgs - INFO - Stored 2869 messages in GdaxEthUsdMessage in 0.43s
+2017-12-07 21:11:24,656 - gdax_msgs - INFO - Stored 1832 messages in GdaxEthUsdMessage in 0.31s
+2017-12-07 21:12:24,860 - gdax_msgs - INFO - Stored 3063 messages in GdaxEthUsdMessage in 0.50s
+2017-12-07 21:13:24,992 - gdax_msgs - INFO - Stored 2632 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 21:14:25,552 - gdax_msgs - INFO - Stored 2948 messages in GdaxEthUsdMessage in 0.67s
+2017-12-07 21:15:25,630 - gdax_msgs - INFO - Stored 3275 messages in GdaxEthUsdMessage in 0.61s
+2017-12-07 21:16:25,528 - gdax_msgs - INFO - Stored 2616 messages in GdaxEthUsdMessage in 0.43s
+2017-12-07 21:17:25,614 - gdax_msgs - INFO - Stored 3292 messages in GdaxEthUsdMessage in 0.49s
+2017-12-07 21:18:26,256 - gdax_msgs - INFO - Stored 4958 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 21:19:25,772 - gdax_msgs - INFO - Stored 4189 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 21:20:26,820 - gdax_msgs - INFO - Stored 4006 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 21:21:26,724 - gdax_msgs - INFO - Stored 4732 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 21:22:26,860 - gdax_msgs - INFO - Stored 3758 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 21:23:27,262 - gdax_msgs - INFO - Stored 3997 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 21:24:27,099 - gdax_msgs - INFO - Stored 5176 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 21:24:37,955 - gdax_msgs - INFO - ==============================
+2017-12-07 21:24:37,955 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 21:24:46,022 - gdax_msgs - INFO - ==============================
+2017-12-07 21:25:27,129 - gdax_msgs - INFO - Stored 3435 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 21:26:27,029 - gdax_msgs - INFO - Stored 3200 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 21:27:27,120 - gdax_msgs - INFO - Stored 3455 messages in GdaxEthUsdMessage in 0.68s
+2017-12-07 21:28:27,214 - gdax_msgs - INFO - Stored 3298 messages in GdaxEthUsdMessage in 0.60s
+2017-12-07 21:29:26,944 - gdax_msgs - INFO - Stored 2016 messages in GdaxEthUsdMessage in 0.30s
+2017-12-07 21:30:27,784 - gdax_msgs - INFO - Stored 5031 messages in GdaxEthUsdMessage in 0.88s
+2017-12-07 21:31:27,637 - gdax_msgs - INFO - Stored 3857 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 21:32:27,424 - gdax_msgs - INFO - Stored 3427 messages in GdaxEthUsdMessage in 0.45s
+2017-12-07 21:33:28,145 - gdax_msgs - INFO - Stored 3193 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 21:34:28,779 - gdax_msgs - INFO - Stored 8269 messages in GdaxEthUsdMessage in 1.41s
+2017-12-07 21:35:28,888 - gdax_msgs - INFO - Stored 8813 messages in GdaxEthUsdMessage in 1.51s
+2017-12-07 21:36:28,454 - gdax_msgs - INFO - Stored 6926 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 21:37:28,319 - gdax_msgs - INFO - Stored 6572 messages in GdaxEthUsdMessage in 0.89s
+2017-12-07 21:38:28,328 - gdax_msgs - INFO - Stored 5280 messages in GdaxEthUsdMessage in 0.86s
+2017-12-07 21:39:28,057 - gdax_msgs - INFO - Stored 3745 messages in GdaxEthUsdMessage in 0.57s
+2017-12-07 21:40:28,265 - gdax_msgs - INFO - Stored 2187 messages in GdaxEthUsdMessage in 0.32s
+2017-12-07 21:41:29,032 - gdax_msgs - INFO - Stored 2641 messages in GdaxEthUsdMessage in 0.48s
+2017-12-07 21:42:29,189 - gdax_msgs - INFO - Stored 2524 messages in GdaxEthUsdMessage in 0.61s
+2017-12-07 21:43:28,910 - gdax_msgs - INFO - Stored 1639 messages in GdaxEthUsdMessage in 0.25s
+2017-12-07 21:44:29,442 - gdax_msgs - INFO - Stored 4700 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 21:45:29,956 - gdax_msgs - INFO - Stored 5448 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 21:46:29,444 - gdax_msgs - INFO - Stored 2033 messages in GdaxEthUsdMessage in 0.32s
+2017-12-07 21:47:29,823 - gdax_msgs - INFO - Stored 3946 messages in GdaxEthUsdMessage in 0.67s
+2017-12-07 21:48:30,033 - gdax_msgs - INFO - Stored 5692 messages in GdaxEthUsdMessage in 0.83s
+2017-12-07 21:49:30,287 - gdax_msgs - INFO - Stored 5531 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 21:50:30,651 - gdax_msgs - INFO - Stored 6531 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 21:51:30,211 - gdax_msgs - INFO - Stored 6053 messages in GdaxEthUsdMessage in 0.84s
+2017-12-07 21:52:30,645 - gdax_msgs - INFO - Stored 5224 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 21:53:30,233 - gdax_msgs - INFO - Stored 3965 messages in GdaxEthUsdMessage in 0.70s
+2017-12-07 21:54:30,294 - gdax_msgs - INFO - Stored 3696 messages in GdaxEthUsdMessage in 0.69s
+2017-12-07 21:55:30,488 - gdax_msgs - INFO - Stored 3660 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 21:56:30,607 - gdax_msgs - INFO - Stored 3454 messages in GdaxEthUsdMessage in 0.80s
+2017-12-07 21:57:31,059 - gdax_msgs - INFO - Stored 6361 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 21:58:31,028 - gdax_msgs - INFO - Stored 7190 messages in GdaxEthUsdMessage in 1.19s
+2017-12-07 21:59:30,944 - gdax_msgs - INFO - Stored 5568 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 22:00:30,622 - gdax_msgs - INFO - Stored 4443 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 22:01:30,747 - gdax_msgs - INFO - Stored 5466 messages in GdaxEthUsdMessage in 0.82s
+2017-12-07 22:02:31,313 - gdax_msgs - INFO - Stored 4970 messages in GdaxEthUsdMessage in 0.82s
+2017-12-07 22:03:31,417 - gdax_msgs - INFO - Stored 4809 messages in GdaxEthUsdMessage in 0.79s
+2017-12-07 22:04:31,359 - gdax_msgs - INFO - Stored 3566 messages in GdaxEthUsdMessage in 0.66s
+2017-12-07 22:05:31,489 - gdax_msgs - INFO - Stored 5308 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 22:06:31,423 - gdax_msgs - INFO - Stored 2891 messages in GdaxEthUsdMessage in 0.41s
+2017-12-07 22:07:31,822 - gdax_msgs - INFO - Stored 2683 messages in GdaxEthUsdMessage in 0.56s
+2017-12-07 22:08:31,749 - gdax_msgs - INFO - Stored 2478 messages in GdaxEthUsdMessage in 0.42s
+2017-12-07 22:09:31,919 - gdax_msgs - INFO - Stored 3843 messages in GdaxEthUsdMessage in 0.58s
+2017-12-07 22:10:32,406 - gdax_msgs - INFO - Stored 6315 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 22:11:32,586 - gdax_msgs - INFO - Stored 5350 messages in GdaxEthUsdMessage in 1.20s
+2017-12-07 22:12:32,804 - gdax_msgs - INFO - Stored 7741 messages in GdaxEthUsdMessage in 1.41s
+2017-12-07 22:13:32,785 - gdax_msgs - INFO - Stored 8503 messages in GdaxEthUsdMessage in 1.34s
+2017-12-07 22:14:32,731 - gdax_msgs - INFO - Stored 7599 messages in GdaxEthUsdMessage in 1.27s
+2017-12-07 22:15:32,779 - gdax_msgs - INFO - Stored 6618 messages in GdaxEthUsdMessage in 1.28s
+2017-12-07 22:16:32,782 - gdax_msgs - INFO - Stored 7320 messages in GdaxEthUsdMessage in 1.19s
+2017-12-07 22:17:32,699 - gdax_msgs - INFO - Stored 7306 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 22:18:32,929 - gdax_msgs - INFO - Stored 5295 messages in GdaxEthUsdMessage in 1.08s
+2017-12-07 22:19:32,858 - gdax_msgs - INFO - Stored 7501 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 22:20:33,258 - gdax_msgs - INFO - Stored 7413 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 22:21:33,173 - gdax_msgs - INFO - Stored 6705 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 22:22:32,700 - gdax_msgs - INFO - Stored 5037 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 22:23:32,790 - gdax_msgs - INFO - Stored 4532 messages in GdaxEthUsdMessage in 0.78s
+2017-12-07 22:24:32,744 - gdax_msgs - INFO - Stored 4123 messages in GdaxEthUsdMessage in 0.72s
+2017-12-07 22:24:38,002 - gdax_msgs - INFO - ==============================
+2017-12-07 22:24:38,002 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 22:24:48,768 - gdax_msgs - INFO - ==============================
+2017-12-07 22:25:33,052 - gdax_msgs - INFO - Stored 6065 messages in GdaxEthUsdMessage in 0.99s
+2017-12-07 22:26:33,417 - gdax_msgs - INFO - Stored 7388 messages in GdaxEthUsdMessage in 1.34s
+2017-12-07 22:27:33,967 - gdax_msgs - INFO - Stored 7201 messages in GdaxEthUsdMessage in 1.87s
+2017-12-07 22:28:33,251 - gdax_msgs - INFO - Stored 3819 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 22:29:32,745 - gdax_msgs - INFO - Stored 2858 messages in GdaxEthUsdMessage in 0.56s
+2017-12-07 22:30:32,639 - gdax_msgs - INFO - Stored 2975 messages in GdaxEthUsdMessage in 0.42s
+2017-12-07 22:31:32,947 - gdax_msgs - INFO - Stored 4917 messages in GdaxEthUsdMessage in 0.71s
+2017-12-07 22:32:33,335 - gdax_msgs - INFO - Stored 6517 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 22:33:33,586 - gdax_msgs - INFO - Stored 6207 messages in GdaxEthUsdMessage in 1.34s
+2017-12-07 22:34:33,314 - gdax_msgs - INFO - Stored 6941 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 22:35:33,590 - gdax_msgs - INFO - Stored 7919 messages in GdaxEthUsdMessage in 1.29s
+2017-12-07 22:36:33,646 - gdax_msgs - INFO - Stored 6771 messages in GdaxEthUsdMessage in 1.26s
+2017-12-07 22:37:33,447 - gdax_msgs - INFO - Stored 7010 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 22:38:33,784 - gdax_msgs - INFO - Stored 8805 messages in GdaxEthUsdMessage in 1.21s
+2017-12-07 22:39:33,748 - gdax_msgs - INFO - Stored 6859 messages in GdaxEthUsdMessage in 1.14s
+2017-12-07 22:40:33,819 - gdax_msgs - INFO - Stored 4964 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 22:41:34,249 - gdax_msgs - INFO - Stored 7030 messages in GdaxEthUsdMessage in 1.39s
+2017-12-07 22:42:33,999 - gdax_msgs - INFO - Stored 7481 messages in GdaxEthUsdMessage in 1.07s
+2017-12-07 22:43:34,232 - gdax_msgs - INFO - Stored 7660 messages in GdaxEthUsdMessage in 1.26s
+2017-12-07 22:44:34,029 - gdax_msgs - INFO - Stored 6092 messages in GdaxEthUsdMessage in 1.04s
+2017-12-07 22:45:34,035 - gdax_msgs - INFO - Stored 6475 messages in GdaxEthUsdMessage in 1.00s
+2017-12-07 22:46:34,257 - gdax_msgs - INFO - Stored 6357 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 22:47:35,390 - gdax_msgs - INFO - Stored 7665 messages in GdaxEthUsdMessage in 2.21s
+2017-12-07 22:48:34,200 - gdax_msgs - INFO - Stored 5929 messages in GdaxEthUsdMessage in 1.01s
+2017-12-07 22:49:33,948 - gdax_msgs - INFO - Stored 5115 messages in GdaxEthUsdMessage in 0.75s
+2017-12-07 22:50:34,237 - gdax_msgs - INFO - Stored 6152 messages in GdaxEthUsdMessage in 1.02s
+2017-12-07 22:51:34,267 - gdax_msgs - INFO - Stored 5983 messages in GdaxEthUsdMessage in 1.02s
+2017-12-07 22:52:34,076 - gdax_msgs - INFO - Stored 5922 messages in GdaxEthUsdMessage in 0.81s
+2017-12-07 22:53:34,918 - gdax_msgs - INFO - Stored 7349 messages in GdaxEthUsdMessage in 1.63s
+2017-12-07 22:54:34,412 - gdax_msgs - INFO - Stored 7077 messages in GdaxEthUsdMessage in 1.11s
+2017-12-07 22:55:34,485 - gdax_msgs - INFO - Stored 6877 messages in GdaxEthUsdMessage in 1.15s
+2017-12-07 22:56:34,796 - gdax_msgs - INFO - Stored 7794 messages in GdaxEthUsdMessage in 1.46s
+2017-12-07 22:57:34,666 - gdax_msgs - INFO - Stored 9173 messages in GdaxEthUsdMessage in 1.32s
+2017-12-07 22:58:35,005 - gdax_msgs - INFO - Stored 8750 messages in GdaxEthUsdMessage in 1.64s
+2017-12-07 22:59:34,799 - gdax_msgs - INFO - Stored 7163 messages in GdaxEthUsdMessage in 1.42s
+2017-12-07 23:00:34,763 - gdax_msgs - INFO - Stored 5683 messages in GdaxEthUsdMessage in 1.23s
+2017-12-07 23:01:35,761 - gdax_msgs - INFO - Stored 8956 messages in GdaxEthUsdMessage in 2.18s
+2017-12-07 23:02:34,592 - gdax_msgs - INFO - Stored 7499 messages in GdaxEthUsdMessage in 1.00s
+2017-12-07 23:03:34,966 - gdax_msgs - INFO - Stored 7026 messages in GdaxEthUsdMessage in 1.35s
+2017-12-07 23:04:34,734 - gdax_msgs - INFO - Stored 7637 messages in GdaxEthUsdMessage in 1.10s
+2017-12-07 23:05:35,458 - gdax_msgs - INFO - Stored 7102 messages in GdaxEthUsdMessage in 1.43s
+2017-12-07 23:06:35,281 - gdax_msgs - INFO - Stored 7481 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 23:07:35,699 - gdax_msgs - INFO - Stored 8390 messages in GdaxEthUsdMessage in 1.62s
+2017-12-07 23:08:35,762 - gdax_msgs - INFO - Stored 7912 messages in GdaxEthUsdMessage in 1.66s
+2017-12-07 23:09:35,784 - gdax_msgs - INFO - Stored 6189 messages in GdaxEthUsdMessage in 1.02s
+2017-12-07 23:10:30,006 - core_websocket - ERROR - Message error: No JSON object could be decoded
+Message: 
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 81, in _listen
+    msg = json.loads(msg)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2017-12-07 23:10:30,008 - core_websocket - INFO - Closing websocket
+2017-12-07 23:10:31,010 - core_websocket - INFO - Successfully closed Websocket
+2017-12-07 23:10:32,012 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['ETH-USD']}
+2017-12-07 23:10:32,135 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 23:10:32,137 - core_websocket - INFO - Listening for messages
+2017-12-07 23:10:36,135 - gdax_msgs - INFO - Stored 7285 messages in GdaxEthUsdMessage in 1.25s
+2017-12-07 23:11:36,705 - gdax_msgs - INFO - Stored 9079 messages in GdaxEthUsdMessage in 1.79s
+2017-12-07 23:12:35,959 - gdax_msgs - INFO - Stored 6268 messages in GdaxEthUsdMessage in 1.05s
+2017-12-07 23:13:35,568 - gdax_msgs - INFO - Stored 4056 messages in GdaxEthUsdMessage in 0.64s
+2017-12-07 23:14:35,979 - gdax_msgs - INFO - Stored 5072 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 23:15:36,010 - gdax_msgs - INFO - Stored 5592 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 23:16:35,908 - gdax_msgs - INFO - Stored 4875 messages in GdaxEthUsdMessage in 0.79s
+2017-12-07 23:17:35,502 - gdax_msgs - INFO - Stored 1603 messages in GdaxEthUsdMessage in 0.38s
+2017-12-07 23:18:36,282 - gdax_msgs - INFO - Stored 2266 messages in GdaxEthUsdMessage in 0.46s
+2017-12-07 23:19:36,703 - gdax_msgs - INFO - Stored 4697 messages in GdaxEthUsdMessage in 0.88s
+2017-12-07 23:20:38,037 - gdax_msgs - INFO - Stored 11211 messages in GdaxEthUsdMessage in 2.17s
+2017-12-07 23:21:36,964 - gdax_msgs - INFO - Stored 6624 messages in GdaxEthUsdMessage in 1.09s
+2017-12-07 23:22:36,756 - gdax_msgs - INFO - Stored 6122 messages in GdaxEthUsdMessage in 0.85s
+2017-12-07 23:23:37,081 - gdax_msgs - INFO - Stored 7119 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 23:24:36,981 - gdax_msgs - INFO - Stored 5723 messages in GdaxEthUsdMessage in 0.97s
+2017-12-07 23:24:38,049 - gdax_msgs - INFO - ==============================
+2017-12-07 23:24:38,050 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-07 23:24:46,043 - gdax_msgs - INFO - ==============================
+2017-12-07 23:25:37,118 - gdax_msgs - INFO - Stored 5975 messages in GdaxEthUsdMessage in 0.93s
+2017-12-07 23:26:36,945 - gdax_msgs - INFO - Stored 4444 messages in GdaxEthUsdMessage in 0.72s
+2017-12-07 23:27:37,224 - gdax_msgs - INFO - Stored 6331 messages in GdaxEthUsdMessage in 0.98s
+2017-12-07 23:28:37,624 - gdax_msgs - INFO - Stored 7588 messages in GdaxEthUsdMessage in 1.37s
+2017-12-07 23:29:37,510 - gdax_msgs - INFO - Stored 5975 messages in GdaxEthUsdMessage in 1.20s
+2017-12-07 23:30:37,737 - gdax_msgs - INFO - Stored 5756 messages in GdaxEthUsdMessage in 1.33s
+2017-12-07 23:31:37,941 - gdax_msgs - INFO - Stored 8359 messages in GdaxEthUsdMessage in 1.51s
+2017-12-07 23:32:36,969 - gdax_msgs - INFO - Stored 3705 messages in GdaxEthUsdMessage in 0.54s
+2017-12-07 23:33:37,304 - gdax_msgs - INFO - Stored 5911 messages in GdaxEthUsdMessage in 0.84s
+2017-12-07 23:34:37,120 - gdax_msgs - INFO - Stored 4015 messages in GdaxEthUsdMessage in 0.58s
+2017-12-07 23:35:38,227 - gdax_msgs - INFO - Stored 9359 messages in GdaxEthUsdMessage in 1.61s
+2017-12-07 23:36:37,788 - gdax_msgs - INFO - Stored 7256 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 23:37:38,037 - gdax_msgs - INFO - Stored 8431 messages in GdaxEthUsdMessage in 1.40s
+2017-12-07 23:38:37,974 - gdax_msgs - INFO - Stored 6726 messages in GdaxEthUsdMessage in 1.27s
+2017-12-07 23:39:38,473 - gdax_msgs - INFO - Stored 11861 messages in GdaxEthUsdMessage in 1.76s
+2017-12-07 23:40:37,854 - gdax_msgs - INFO - Stored 6382 messages in GdaxEthUsdMessage in 1.13s
+2017-12-07 23:41:38,400 - gdax_msgs - INFO - Stored 11149 messages in GdaxEthUsdMessage in 1.67s
+2017-12-07 23:42:38,292 - gdax_msgs - INFO - Stored 9885 messages in GdaxEthUsdMessage in 1.55s
+2017-12-07 23:43:38,588 - gdax_msgs - INFO - Stored 8291 messages in GdaxEthUsdMessage in 1.61s
+2017-12-07 23:44:38,764 - gdax_msgs - INFO - Stored 11985 messages in GdaxEthUsdMessage in 1.78s
+2017-12-07 23:45:38,927 - gdax_msgs - INFO - Stored 10429 messages in GdaxEthUsdMessage in 1.93s
+2017-12-07 23:46:38,024 - gdax_msgs - INFO - Stored 5103 messages in GdaxEthUsdMessage in 0.91s
+2017-12-07 23:47:38,409 - gdax_msgs - INFO - Stored 8042 messages in GdaxEthUsdMessage in 1.29s
+2017-12-07 23:48:37,885 - gdax_msgs - INFO - Stored 5124 messages in GdaxEthUsdMessage in 0.76s
+2017-12-07 23:49:38,136 - gdax_msgs - INFO - Stored 5679 messages in GdaxEthUsdMessage in 0.93s
+2017-12-07 23:50:38,221 - gdax_msgs - INFO - Stored 6618 messages in GdaxEthUsdMessage in 0.94s
+2017-12-07 23:51:38,456 - gdax_msgs - INFO - Stored 7112 messages in GdaxEthUsdMessage in 1.16s
+2017-12-07 23:52:38,659 - gdax_msgs - INFO - Stored 6705 messages in GdaxEthUsdMessage in 1.36s
+2017-12-07 23:53:38,081 - gdax_msgs - INFO - Stored 5116 messages in GdaxEthUsdMessage in 0.74s
+2017-12-07 23:54:38,599 - gdax_msgs - INFO - Stored 6470 messages in GdaxEthUsdMessage in 1.24s
+2017-12-07 23:55:38,318 - gdax_msgs - INFO - Stored 6470 messages in GdaxEthUsdMessage in 0.93s
+2017-12-07 23:56:39,056 - gdax_msgs - INFO - Stored 9576 messages in GdaxEthUsdMessage in 1.66s
+2017-12-07 23:57:39,480 - gdax_msgs - INFO - Stored 8414 messages in GdaxEthUsdMessage in 2.05s
+2017-12-07 23:58:39,124 - gdax_msgs - INFO - Stored 8443 messages in GdaxEthUsdMessage in 1.67s
+2017-12-07 23:59:39,811 - gdax_msgs - INFO - Stored 10535 messages in GdaxEthUsdMessage in 2.34s
+2017-12-08 00:00:38,885 - gdax_msgs - INFO - Stored 7636 messages in GdaxEthUsdMessage in 1.39s
+2017-12-08 00:01:39,454 - gdax_msgs - INFO - Stored 10345 messages in GdaxEthUsdMessage in 1.91s
+2017-12-08 00:02:38,686 - gdax_msgs - INFO - Stored 7139 messages in GdaxEthUsdMessage in 1.13s
+2017-12-08 00:03:38,904 - gdax_msgs - INFO - Stored 8908 messages in GdaxEthUsdMessage in 1.33s
+2017-12-08 00:04:38,633 - gdax_msgs - INFO - Stored 7455 messages in GdaxEthUsdMessage in 1.05s
+2017-12-08 00:05:38,507 - gdax_msgs - INFO - Stored 3768 messages in GdaxEthUsdMessage in 0.87s
+2017-12-08 00:06:38,284 - gdax_msgs - INFO - Stored 4185 messages in GdaxEthUsdMessage in 0.58s
+2017-12-08 00:07:38,068 - gdax_msgs - INFO - Stored 2244 messages in GdaxEthUsdMessage in 0.35s
+2017-12-08 00:08:38,666 - gdax_msgs - INFO - Stored 5606 messages in GdaxEthUsdMessage in 0.93s
+2017-12-08 00:09:39,052 - gdax_msgs - INFO - Stored 9916 messages in GdaxEthUsdMessage in 1.29s
+2017-12-08 00:10:38,649 - gdax_msgs - INFO - Stored 5980 messages in GdaxEthUsdMessage in 0.87s
+2017-12-08 00:11:38,210 - gdax_msgs - INFO - Stored 3216 messages in GdaxEthUsdMessage in 0.43s
+2017-12-08 00:12:39,167 - gdax_msgs - INFO - Stored 8504 messages in GdaxEthUsdMessage in 1.38s
+2017-12-08 00:13:39,060 - gdax_msgs - INFO - Stored 6083 messages in GdaxEthUsdMessage in 1.26s
+2017-12-08 00:14:39,244 - gdax_msgs - INFO - Stored 8610 messages in GdaxEthUsdMessage in 1.44s
+2017-12-08 00:15:39,119 - gdax_msgs - INFO - Stored 6940 messages in GdaxEthUsdMessage in 1.27s
+2017-12-08 00:16:38,808 - gdax_msgs - INFO - Stored 4726 messages in GdaxEthUsdMessage in 0.90s
+2017-12-08 00:17:38,569 - gdax_msgs - INFO - Stored 3031 messages in GdaxEthUsdMessage in 0.65s
+2017-12-08 00:18:38,919 - gdax_msgs - INFO - Stored 5169 messages in GdaxEthUsdMessage in 0.99s
+2017-12-08 00:19:39,091 - gdax_msgs - INFO - Stored 7086 messages in GdaxEthUsdMessage in 1.15s
+2017-12-08 00:20:38,832 - gdax_msgs - INFO - Stored 5117 messages in GdaxEthUsdMessage in 0.87s
+2017-12-08 00:21:39,138 - gdax_msgs - INFO - Stored 6573 messages in GdaxEthUsdMessage in 1.17s
+2017-12-08 00:22:39,104 - gdax_msgs - INFO - Stored 5979 messages in GdaxEthUsdMessage in 1.12s
+2017-12-08 00:23:40,362 - gdax_msgs - INFO - Stored 7070 messages in GdaxEthUsdMessage in 1.15s
+2017-12-08 00:24:38,078 - gdax_msgs - INFO - ==============================
+2017-12-08 00:24:38,081 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-08 00:24:41,674 - gdax_msgs - INFO - Stored 5368 messages in GdaxEthUsdMessage in 2.40s
+2017-12-08 00:26:38,505 - gdax_msgs - INFO - ==============================
+2017-12-08 00:26:40,104 - gdax_msgs - INFO - Stored 7579 messages in GdaxEthUsdMessage in 60.79s
+2017-12-08 00:26:40,809 - gdax_msgs - INFO - Stored 5096 messages in GdaxEthUsdMessage in 1.46s
+2017-12-08 00:27:40,764 - gdax_msgs - INFO - Stored 8517 messages in GdaxEthUsdMessage in 1.40s
+2017-12-08 00:28:40,574 - gdax_msgs - INFO - Stored 7472 messages in GdaxEthUsdMessage in 1.19s
+2017-12-08 00:29:40,130 - gdax_msgs - INFO - Stored 4768 messages in GdaxEthUsdMessage in 0.72s
+2017-12-08 00:30:40,783 - gdax_msgs - INFO - Stored 5899 messages in GdaxEthUsdMessage in 1.34s
+2017-12-08 00:31:40,518 - gdax_msgs - INFO - Stored 5671 messages in GdaxEthUsdMessage in 0.91s
+2017-12-08 00:32:40,507 - gdax_msgs - INFO - Stored 4800 messages in GdaxEthUsdMessage in 0.89s
+2017-12-08 00:33:40,151 - gdax_msgs - INFO - Stored 2782 messages in GdaxEthUsdMessage in 0.47s
+2017-12-08 00:34:40,595 - gdax_msgs - INFO - Stored 4067 messages in GdaxEthUsdMessage in 0.82s
+2017-12-08 00:35:40,858 - gdax_msgs - INFO - Stored 5685 messages in GdaxEthUsdMessage in 1.04s
+2017-12-08 00:36:40,777 - gdax_msgs - INFO - Stored 5337 messages in GdaxEthUsdMessage in 0.95s
+2017-12-08 00:37:40,745 - gdax_msgs - INFO - Stored 5954 messages in GdaxEthUsdMessage in 0.89s
+2017-12-08 00:38:40,470 - gdax_msgs - INFO - Stored 3863 messages in GdaxEthUsdMessage in 0.58s
+2017-12-08 00:39:40,738 - gdax_msgs - INFO - Stored 5089 messages in GdaxEthUsdMessage in 0.83s
+2017-12-08 00:40:41,719 - gdax_msgs - INFO - Stored 7823 messages in GdaxEthUsdMessage in 1.81s
+2017-12-08 00:41:41,153 - gdax_msgs - INFO - Stored 8139 messages in GdaxEthUsdMessage in 1.24s
+2017-12-08 00:42:41,175 - gdax_msgs - INFO - Stored 6780 messages in GdaxEthUsdMessage in 1.23s
+2017-12-08 00:43:41,550 - gdax_msgs - INFO - Stored 9402 messages in GdaxEthUsdMessage in 1.60s
+2017-12-08 00:44:41,116 - gdax_msgs - INFO - Stored 6831 messages in GdaxEthUsdMessage in 1.14s
+2017-12-08 00:45:41,068 - gdax_msgs - INFO - Stored 6743 messages in GdaxEthUsdMessage in 1.07s
+2017-12-08 00:46:40,810 - gdax_msgs - INFO - Stored 4484 messages in GdaxEthUsdMessage in 0.78s
+2017-12-08 00:47:40,882 - gdax_msgs - INFO - Stored 5063 messages in GdaxEthUsdMessage in 0.83s
+2017-12-08 00:48:41,315 - gdax_msgs - INFO - Stored 8201 messages in GdaxEthUsdMessage in 1.22s
+2017-12-08 00:49:41,186 - gdax_msgs - INFO - Stored 7191 messages in GdaxEthUsdMessage in 1.06s
+2017-12-08 00:50:41,719 - gdax_msgs - INFO - Stored 7428 messages in GdaxEthUsdMessage in 1.55s
+2017-12-08 00:51:41,768 - gdax_msgs - INFO - Stored 8002 messages in GdaxEthUsdMessage in 1.57s
+2017-12-08 00:52:41,235 - gdax_msgs - INFO - Stored 6332 messages in GdaxEthUsdMessage in 1.00s
+2017-12-08 00:53:40,979 - gdax_msgs - INFO - Stored 5164 messages in GdaxEthUsdMessage in 0.74s
+2017-12-08 00:54:41,216 - gdax_msgs - INFO - Stored 4258 messages in GdaxEthUsdMessage in 0.82s
+2017-12-08 00:55:41,343 - gdax_msgs - INFO - Stored 4459 messages in GdaxEthUsdMessage in 0.90s
+2017-12-08 00:56:41,755 - gdax_msgs - INFO - Stored 7209 messages in GdaxEthUsdMessage in 1.31s
+2017-12-08 00:57:41,506 - gdax_msgs - INFO - Stored 6709 messages in GdaxEthUsdMessage in 1.04s
+2017-12-08 00:58:41,319 - gdax_msgs - INFO - Stored 4192 messages in GdaxEthUsdMessage in 0.75s
+2017-12-08 00:59:41,866 - gdax_msgs - INFO - Stored 5411 messages in GdaxEthUsdMessage in 1.27s
+2017-12-08 01:00:42,191 - gdax_msgs - INFO - Stored 7595 messages in GdaxEthUsdMessage in 1.59s
+2017-12-08 01:01:41,499 - gdax_msgs - INFO - Stored 4473 messages in GdaxEthUsdMessage in 0.72s
+2017-12-08 01:02:41,307 - gdax_msgs - INFO - Stored 2801 messages in GdaxEthUsdMessage in 0.46s
+2017-12-08 01:03:41,786 - gdax_msgs - INFO - Stored 4252 messages in GdaxEthUsdMessage in 0.88s
+2017-12-08 01:04:41,553 - gdax_msgs - INFO - Stored 3893 messages in GdaxEthUsdMessage in 0.63s
+2017-12-08 01:05:42,048 - gdax_msgs - INFO - Stored 6302 messages in GdaxEthUsdMessage in 1.10s
+2017-12-08 01:06:41,823 - gdax_msgs - INFO - Stored 6042 messages in GdaxEthUsdMessage in 0.84s
+2017-12-08 01:07:42,425 - gdax_msgs - INFO - Stored 7759 messages in GdaxEthUsdMessage in 1.38s
+2017-12-08 01:08:42,112 - gdax_msgs - INFO - Stored 6105 messages in GdaxEthUsdMessage in 1.06s
+2017-12-08 01:09:41,782 - gdax_msgs - INFO - Stored 3958 messages in GdaxEthUsdMessage in 0.68s
+2017-12-08 01:10:42,418 - gdax_msgs - INFO - Stored 7969 messages in GdaxEthUsdMessage in 1.25s
+2017-12-08 01:11:43,155 - gdax_msgs - INFO - Stored 8036 messages in GdaxEthUsdMessage in 1.90s
+2017-12-08 01:12:42,703 - gdax_msgs - INFO - Stored 7076 messages in GdaxEthUsdMessage in 1.44s
+2017-12-08 01:13:50,727 - gdax_msgs - INFO - Stored 5324 messages in GdaxEthUsdMessage in 9.32s
+2017-12-08 01:14:41,935 - gdax_msgs - INFO - Stored 3173 messages in GdaxEthUsdMessage in 0.51s
+2017-12-08 01:15:42,497 - gdax_msgs - INFO - Stored 4893 messages in GdaxEthUsdMessage in 1.01s
+2017-12-08 01:16:42,082 - gdax_msgs - INFO - Stored 3881 messages in GdaxEthUsdMessage in 0.59s
+2017-12-08 01:17:42,487 - gdax_msgs - INFO - Stored 4648 messages in GdaxEthUsdMessage in 0.85s
+2017-12-08 01:18:42,465 - gdax_msgs - INFO - Stored 5207 messages in GdaxEthUsdMessage in 0.82s
+2017-12-08 01:19:42,464 - gdax_msgs - INFO - Stored 4776 messages in GdaxEthUsdMessage in 0.77s
+2017-12-08 01:20:42,580 - gdax_msgs - INFO - Stored 4843 messages in GdaxEthUsdMessage in 0.88s
+2017-12-08 01:21:42,409 - gdax_msgs - INFO - Stored 4949 messages in GdaxEthUsdMessage in 0.70s
+2017-12-08 01:22:42,359 - gdax_msgs - INFO - Stored 4141 messages in GdaxEthUsdMessage in 0.59s
+2017-12-08 01:23:43,093 - gdax_msgs - INFO - Stored 5775 messages in GdaxEthUsdMessage in 1.29s
+2017-12-08 01:24:38,082 - gdax_msgs - INFO - ==============================
+2017-12-08 01:24:38,082 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-08 01:24:46,886 - gdax_msgs - INFO - Stored 4525 messages in GdaxEthUsdMessage in 5.06s
+2017-12-08 01:24:51,760 - gdax_msgs - INFO - ==============================
+2017-12-08 01:25:42,580 - gdax_msgs - INFO - Stored 3637 messages in GdaxEthUsdMessage in 0.68s
+2017-12-08 01:26:42,994 - gdax_msgs - INFO - Stored 7143 messages in GdaxEthUsdMessage in 1.09s
+2017-12-08 01:27:43,175 - gdax_msgs - INFO - Stored 5481 messages in GdaxEthUsdMessage in 1.25s
+2017-12-08 01:28:42,633 - gdax_msgs - INFO - Stored 4323 messages in GdaxEthUsdMessage in 0.70s
+2017-12-08 01:29:42,631 - gdax_msgs - INFO - Stored 3422 messages in GdaxEthUsdMessage in 0.64s
+2017-12-08 01:30:42,643 - gdax_msgs - INFO - Stored 4385 messages in GdaxEthUsdMessage in 0.64s
+2017-12-08 01:31:43,963 - gdax_msgs - INFO - Stored 8221 messages in GdaxEthUsdMessage in 1.94s
+2017-12-08 01:32:43,648 - gdax_msgs - INFO - Stored 9592 messages in GdaxEthUsdMessage in 1.62s
+2017-12-08 01:33:43,851 - gdax_msgs - INFO - Stored 7917 messages in GdaxEthUsdMessage in 1.79s
+2017-12-08 01:34:43,026 - gdax_msgs - INFO - Stored 4804 messages in GdaxEthUsdMessage in 0.79s
+2017-12-08 01:35:43,014 - gdax_msgs - INFO - Stored 3644 messages in GdaxEthUsdMessage in 0.64s
+2017-12-08 01:36:43,099 - gdax_msgs - INFO - Stored 2865 messages in GdaxEthUsdMessage in 0.69s
+2017-12-08 01:37:42,892 - gdax_msgs - INFO - Stored 1537 messages in GdaxEthUsdMessage in 0.40s
+2017-12-08 01:38:43,199 - gdax_msgs - INFO - Stored 2952 messages in GdaxEthUsdMessage in 0.61s
+2017-12-08 01:39:42,999 - gdax_msgs - INFO - Stored 1617 messages in GdaxEthUsdMessage in 0.29s
+2017-12-08 01:40:43,642 - gdax_msgs - INFO - Stored 3265 messages in GdaxEthUsdMessage in 0.62s
+2017-12-08 01:41:43,497 - gdax_msgs - INFO - Stored 1997 messages in GdaxEthUsdMessage in 0.33s
+2017-12-08 01:42:43,895 - gdax_msgs - INFO - Stored 1874 messages in GdaxEthUsdMessage in 0.37s
+2017-12-08 01:43:44,154 - gdax_msgs - INFO - Stored 2917 messages in GdaxEthUsdMessage in 0.54s
+2017-12-08 01:44:44,099 - gdax_msgs - INFO - Stored 2438 messages in GdaxEthUsdMessage in 0.43s
+2017-12-08 01:45:44,315 - gdax_msgs - INFO - Stored 3349 messages in GdaxEthUsdMessage in 0.63s
+2017-12-08 01:46:44,501 - gdax_msgs - INFO - Stored 5492 messages in GdaxEthUsdMessage in 0.77s
+2017-12-08 01:47:44,236 - gdax_msgs - INFO - Stored 3469 messages in GdaxEthUsdMessage in 0.49s
+2017-12-08 01:48:44,277 - gdax_msgs - INFO - Stored 2530 messages in GdaxEthUsdMessage in 0.42s
+2017-12-08 01:49:44,446 - gdax_msgs - INFO - Stored 2877 messages in GdaxEthUsdMessage in 0.43s
+2017-12-08 01:50:44,888 - gdax_msgs - INFO - Stored 4883 messages in GdaxEthUsdMessage in 0.86s
+2017-12-08 01:51:44,430 - gdax_msgs - INFO - Stored 2317 messages in GdaxEthUsdMessage in 0.39s
+2017-12-08 01:52:44,583 - gdax_msgs - INFO - Stored 2084 messages in GdaxEthUsdMessage in 0.34s
+2017-12-08 01:53:44,654 - gdax_msgs - INFO - Stored 2441 messages in GdaxEthUsdMessage in 0.40s
+2017-12-08 01:54:44,913 - gdax_msgs - INFO - Stored 3462 messages in GdaxEthUsdMessage in 0.47s
+2017-12-08 01:55:45,041 - gdax_msgs - INFO - Stored 2284 messages in GdaxEthUsdMessage in 0.48s
+2017-12-08 01:56:45,473 - gdax_msgs - INFO - Stored 4019 messages in GdaxEthUsdMessage in 0.72s
+2017-12-08 01:57:45,585 - gdax_msgs - INFO - Stored 4192 messages in GdaxEthUsdMessage in 0.72s
+2017-12-08 01:58:45,586 - gdax_msgs - INFO - Stored 4371 messages in GdaxEthUsdMessage in 0.64s
+2017-12-08 01:59:45,894 - gdax_msgs - INFO - Stored 5276 messages in GdaxEthUsdMessage in 0.90s
+2017-12-08 02:00:45,899 - gdax_msgs - INFO - Stored 5996 messages in GdaxEthUsdMessage in 0.88s
+2017-12-08 02:01:46,121 - gdax_msgs - INFO - Stored 5509 messages in GdaxEthUsdMessage in 1.10s
+2017-12-08 02:04:13,586 - gdax_msgs - INFO - Stored 3230 messages in GdaxEthUsdMessage in 28.16s
+2017-12-08 02:04:13,998 - gdax_msgs - INFO - Stored 4983 messages in GdaxEthUsdMessage in 88.58s
+2017-12-08 02:04:45,772 - gdax_msgs - INFO - Stored 882 messages in GdaxEthUsdMessage in 0.19s
+2017-12-08 02:05:46,757 - gdax_msgs - INFO - Stored 5611 messages in GdaxEthUsdMessage in 1.06s
+2017-12-08 02:06:47,132 - gdax_msgs - INFO - Stored 6872 messages in GdaxEthUsdMessage in 1.40s
+2017-12-08 02:07:47,010 - gdax_msgs - INFO - Stored 6029 messages in GdaxEthUsdMessage in 1.23s
+2017-12-08 02:08:46,458 - gdax_msgs - INFO - Stored 5175 messages in GdaxEthUsdMessage in 0.65s
+2017-12-08 02:09:46,235 - gdax_msgs - INFO - Stored 1243 messages in GdaxEthUsdMessage in 0.22s
+2017-12-08 02:10:46,325 - gdax_msgs - INFO - Stored 1078 messages in GdaxEthUsdMessage in 0.30s
+2017-12-08 02:11:47,423 - gdax_msgs - INFO - Stored 7760 messages in GdaxEthUsdMessage in 1.34s
+2017-12-08 02:12:47,418 - gdax_msgs - INFO - Stored 8095 messages in GdaxEthUsdMessage in 1.28s
+2017-12-08 02:13:47,237 - gdax_msgs - INFO - Stored 6554 messages in GdaxEthUsdMessage in 1.09s
+2017-12-08 02:14:47,238 - gdax_msgs - INFO - Stored 5671 messages in GdaxEthUsdMessage in 1.06s
+2017-12-08 02:15:47,792 - gdax_msgs - INFO - Stored 6457 messages in GdaxEthUsdMessage in 1.33s
+2017-12-08 02:16:48,585 - gdax_msgs - INFO - Stored 6568 messages in GdaxEthUsdMessage in 2.05s
+2017-12-08 02:17:47,821 - gdax_msgs - INFO - Stored 8017 messages in GdaxEthUsdMessage in 1.28s
+2017-12-08 02:18:47,829 - gdax_msgs - INFO - Stored 8241 messages in GdaxEthUsdMessage in 1.27s
+2017-12-08 02:19:47,884 - gdax_msgs - INFO - Stored 6515 messages in GdaxEthUsdMessage in 1.31s
+2017-12-08 02:20:48,782 - gdax_msgs - INFO - Stored 6769 messages in GdaxEthUsdMessage in 2.10s
+2017-12-08 02:21:48,074 - gdax_msgs - INFO - Stored 6954 messages in GdaxEthUsdMessage in 1.34s
+2017-12-08 02:22:48,303 - gdax_msgs - INFO - Stored 6657 messages in GdaxEthUsdMessage in 1.47s
+2017-12-08 02:23:48,194 - gdax_msgs - INFO - Stored 7072 messages in GdaxEthUsdMessage in 1.32s
+2017-12-08 02:24:38,141 - gdax_msgs - INFO - ==============================
+2017-12-08 02:24:38,141 - gdax_msgs - INFO - Storing ETH-USD order book
+2017-12-08 02:24:49,397 - gdax_msgs - INFO - ==============================
+2017-12-08 02:24:49,404 - gdax_msgs - INFO - Stored 6029 messages in GdaxEthUsdMessage in 2.52s
+2017-12-08 02:25:47,706 - gdax_msgs - INFO - Stored 4626 messages in GdaxEthUsdMessage in 0.80s
+2017-12-08 02:26:48,954 - gdax_msgs - INFO - Stored 4206 messages in GdaxEthUsdMessage in 2.02s
+2017-12-08 02:27:48,083 - gdax_msgs - INFO - Stored 4640 messages in GdaxEthUsdMessage in 1.13s
+2017-12-08 02:28:47,499 - gdax_msgs - INFO - Stored 3710 messages in GdaxEthUsdMessage in 0.53s
+2017-12-08 02:29:47,462 - gdax_msgs - INFO - Stored 2678 messages in GdaxEthUsdMessage in 0.40s
+2017-12-08 02:30:48,526 - gdax_msgs - INFO - Stored 8439 messages in GdaxEthUsdMessage in 1.42s
+2017-12-08 02:31:48,734 - gdax_msgs - INFO - Stored 9488 messages in GdaxEthUsdMessage in 1.61s
+2017-12-08 02:32:48,841 - gdax_msgs - INFO - Stored 8641 messages in GdaxEthUsdMessage in 1.72s
+2017-12-08 02:33:48,169 - gdax_msgs - INFO - Stored 6464 messages in GdaxEthUsdMessage in 1.03s
+2017-12-08 02:34:48,061 - gdax_msgs - INFO - Stored 5523 messages in GdaxEthUsdMessage in 0.91s
+2017-12-08 02:35:48,138 - gdax_msgs - INFO - Stored 5916 messages in GdaxEthUsdMessage in 0.97s
+2017-12-08 02:36:48,712 - gdax_msgs - INFO - Stored 5423 messages in GdaxEthUsdMessage in 1.53s
+2017-12-08 02:37:48,179 - gdax_msgs - INFO - Stored 5359 messages in GdaxEthUsdMessage in 0.97s
+2017-12-08 02:38:48,020 - gdax_msgs - INFO - Stored 5478 messages in GdaxEthUsdMessage in 0.78s
+2017-12-08 02:39:48,396 - gdax_msgs - INFO - Stored 6631 messages in GdaxEthUsdMessage in 1.12s
+2017-12-08 02:40:48,565 - gdax_msgs - INFO - Stored 5711 messages in GdaxEthUsdMessage in 1.26s
+2017-12-08 02:41:49,375 - gdax_msgs - INFO - Stored 12027 messages in GdaxEthUsdMessage in 2.05s
+2017-12-08 02:42:48,559 - gdax_msgs - INFO - Stored 7761 messages in GdaxEthUsdMessage in 1.23s
+2017-12-08 02:43:48,990 - gdax_msgs - INFO - Stored 8197 messages in GdaxEthUsdMessage in 1.64s
+2017-12-08 02:44:48,625 - gdax_msgs - INFO - Stored 6430 messages in GdaxEthUsdMessage in 1.20s
+2017-12-08 02:45:48,545 - gdax_msgs - INFO - Stored 7156 messages in GdaxEthUsdMessage in 1.08s
+2017-12-08 02:46:48,839 - gdax_msgs - INFO - Stored 6184 messages in GdaxEthUsdMessage in 1.20s
+2017-12-08 02:47:48,690 - gdax_msgs - INFO - Stored 6112 messages in GdaxEthUsdMessage in 1.05s
+2017-12-08 02:48:48,994 - gdax_msgs - INFO - Stored 7077 messages in GdaxEthUsdMessage in 1.35s
+2017-12-08 02:49:48,889 - gdax_msgs - INFO - Stored 7271 messages in GdaxEthUsdMessage in 1.24s
+2017-12-08 02:50:49,376 - gdax_msgs - INFO - Stored 9335 messages in GdaxEthUsdMessage in 1.70s
+2017-12-08 02:51:48,558 - gdax_msgs - INFO - Stored 5869 messages in GdaxEthUsdMessage in 0.88s
+2017-12-08 02:52:48,791 - gdax_msgs - INFO - Stored 5850 messages in GdaxEthUsdMessage in 0.80s
+2017-12-08 02:53:49,196 - gdax_msgs - INFO - Stored 7813 messages in GdaxEthUsdMessage in 1.16s
+2017-12-08 02:54:48,939 - gdax_msgs - INFO - Stored 5124 messages in GdaxEthUsdMessage in 0.90s
+2017-12-08 02:55:49,309 - gdax_msgs - INFO - Stored 7323 messages in GdaxEthUsdMessage in 1.26s
+2017-12-08 02:56:49,346 - gdax_msgs - INFO - Stored 7187 messages in GdaxEthUsdMessage in 1.29s
+2017-12-08 02:57:49,544 - gdax_msgs - INFO - Stored 7156 messages in GdaxEthUsdMessage in 1.46s
+2017-12-08 02:58:49,665 - gdax_msgs - INFO - Stored 9268 messages in GdaxEthUsdMessage in 1.58s
+2017-12-08 02:59:49,298 - gdax_msgs - INFO - Stored 7678 messages in GdaxEthUsdMessage in 1.20s
+2017-12-08 03:00:48,918 - gdax_msgs - INFO - Stored 4601 messages in GdaxEthUsdMessage in 0.78s
+2017-12-08 03:01:48,866 - gdax_msgs - INFO - Stored 4712 messages in GdaxEthUsdMessage in 0.63s
+2017-12-08 03:02:49,357 - gdax_msgs - INFO - Stored 7808 messages in GdaxEthUsdMessage in 1.12s
+2017-12-08 03:03:49,842 - gdax_msgs - INFO - Stored 8906 messages in GdaxEthUsdMessage in 1.55s
+2017-12-08 03:04:49,959 - gdax_msgs - INFO - Stored 8750 messages in GdaxEthUsdMessage in 1.66s
+2017-12-08 03:05:49,983 - gdax_msgs - INFO - Stored 9382 messages in GdaxEthUsdMessage in 1.63s
+2017-12-08 03:06:51,057 - gdax_msgs - INFO - Stored 14564 messages in GdaxEthUsdMessage in 2.65s
+2017-12-08 03:07:50,149 - gdax_msgs - INFO - Stored 12252 messages in GdaxEthUsdMessage in 1.73s
+2017-12-08 03:08:50,202 - gdax_msgs - INFO - Stored 9345 messages in GdaxEthUsdMessage in 1.77s
+2017-12-08 03:09:49,693 - gdax_msgs - INFO - Stored 7671 messages in GdaxEthUsdMessage in 1.25s
+2017-12-08 03:10:49,554 - gdax_msgs - INFO - Stored 6128 messages in GdaxEthUsdMessage in 1.09s
+2017-12-08 03:11:50,984 - gdax_msgs - INFO - Stored 7275 messages in GdaxEthUsdMessage in 2.47s
+2017-12-08 03:12:50,662 - gdax_msgs - INFO - Stored 8810 messages in GdaxEthUsdMessage in 2.12s
+2017-12-08 03:13:50,341 - gdax_msgs - INFO - Stored 10091 messages in GdaxEthUsdMessage in 1.72s
+2017-12-08 03:14:50,289 - gdax_msgs - INFO - Stored 7259 messages in GdaxEthUsdMessage in 1.66s

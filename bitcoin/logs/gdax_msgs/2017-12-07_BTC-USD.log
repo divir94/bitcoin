@@ -1,0 +1,911 @@
+2017-12-07 14:24:36,593 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-12-07 14:24:36,758 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 14:24:36,761 - core_websocket - INFO - Listening for messages
+2017-12-07 14:24:36,848 - gdax_msgs - INFO - ==============================
+2017-12-07 14:24:36,848 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 14:24:44,696 - gdax_msgs - INFO - ==============================
+2017-12-07 14:25:38,832 - gdax_msgs - INFO - Stored 4958 messages in GdaxBtcUsdMessage in 2.19s
+2017-12-07 14:26:37,653 - gdax_msgs - INFO - Stored 2323 messages in GdaxBtcUsdMessage in 0.93s
+2017-12-07 14:27:37,794 - gdax_msgs - INFO - Stored 2563 messages in GdaxBtcUsdMessage in 1.04s
+2017-12-07 14:28:39,185 - gdax_msgs - INFO - Stored 5279 messages in GdaxBtcUsdMessage in 2.40s
+2017-12-07 14:29:38,848 - gdax_msgs - INFO - Stored 7552 messages in GdaxBtcUsdMessage in 2.04s
+2017-12-07 14:30:37,881 - gdax_msgs - INFO - Stored 3346 messages in GdaxBtcUsdMessage in 1.06s
+2017-12-07 14:31:38,537 - gdax_msgs - INFO - Stored 5918 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-07 14:32:38,342 - gdax_msgs - INFO - Stored 3571 messages in GdaxBtcUsdMessage in 1.22s
+2017-12-07 14:33:38,303 - gdax_msgs - INFO - Stored 3381 messages in GdaxBtcUsdMessage in 1.17s
+2017-12-07 14:34:38,594 - gdax_msgs - INFO - Stored 4179 messages in GdaxBtcUsdMessage in 1.45s
+2017-12-07 14:35:38,870 - gdax_msgs - INFO - Stored 3419 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-07 14:36:39,625 - gdax_msgs - INFO - Stored 7804 messages in GdaxBtcUsdMessage in 2.38s
+2017-12-07 14:37:38,505 - gdax_msgs - INFO - Stored 4733 messages in GdaxBtcUsdMessage in 1.23s
+2017-12-07 14:38:40,006 - gdax_msgs - INFO - Stored 7048 messages in GdaxBtcUsdMessage in 2.71s
+2017-12-07 14:39:38,536 - gdax_msgs - INFO - Stored 3198 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-07 14:40:38,724 - gdax_msgs - INFO - Stored 3834 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-07 14:41:38,254 - gdax_msgs - INFO - Stored 2444 messages in GdaxBtcUsdMessage in 0.84s
+2017-12-07 14:42:38,132 - gdax_msgs - INFO - Stored 1899 messages in GdaxBtcUsdMessage in 0.71s
+2017-12-07 14:43:39,353 - gdax_msgs - INFO - Stored 4989 messages in GdaxBtcUsdMessage in 1.93s
+2017-12-07 14:44:38,048 - gdax_msgs - INFO - Stored 1918 messages in GdaxBtcUsdMessage in 0.49s
+2017-12-07 14:45:38,480 - gdax_msgs - INFO - Stored 2330 messages in GdaxBtcUsdMessage in 0.91s
+2017-12-07 14:46:38,595 - gdax_msgs - INFO - Stored 3123 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-07 14:47:38,891 - gdax_msgs - INFO - Stored 3843 messages in GdaxBtcUsdMessage in 1.19s
+2017-12-07 14:48:39,229 - gdax_msgs - INFO - Stored 4298 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 14:49:39,422 - gdax_msgs - INFO - Stored 5571 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-07 14:50:39,764 - gdax_msgs - INFO - Stored 5944 messages in GdaxBtcUsdMessage in 1.81s
+2017-12-07 14:51:39,109 - gdax_msgs - INFO - Stored 4150 messages in GdaxBtcUsdMessage in 1.13s
+2017-12-07 14:52:39,055 - gdax_msgs - INFO - Stored 4235 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-07 14:53:38,895 - gdax_msgs - INFO - Stored 2225 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 14:54:38,851 - gdax_msgs - INFO - Stored 2098 messages in GdaxBtcUsdMessage in 0.76s
+2017-12-07 14:55:39,942 - gdax_msgs - INFO - Stored 4587 messages in GdaxBtcUsdMessage in 1.78s
+2017-12-07 14:56:39,474 - gdax_msgs - INFO - Stored 3845 messages in GdaxBtcUsdMessage in 1.29s
+2017-12-07 14:57:39,149 - gdax_msgs - INFO - Stored 2660 messages in GdaxBtcUsdMessage in 0.77s
+2017-12-07 14:58:40,473 - gdax_msgs - INFO - Stored 5478 messages in GdaxBtcUsdMessage in 1.96s
+2017-12-07 14:59:40,248 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 14:59:40,248 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 2754") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483065246, u'2017-12-07T14:58:38.407000Z', '2017-12-07T14:58:38.518470Z', u'received', u'16149.20000000', u'0.10000000', u'89721fcf-59de-4f4c-a30f-bab33deb6ef1', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483065247, u'2017-12-07T14:58:38.407000Z', '2017-12-07T14:58:38.518668Z', u'open', u'16149.20000000', None, u'89721fcf-59de-4f4c-a30f-bab33deb6ef1', u'sell', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4483065248, u'2017-12-07T14:58:38.414000Z', '2017-12-07T14:58:38.518854Z', u'done', u'15901.02000000', None, u'1fa0faed-40dd-4b95-8735-b1228c796390', u'buy', None, None, u'11.60570234', u'canceled', None, None, None, None, None, None, None), (4483065249, u'2017-12-07T14:58:38.438000Z', '2017-12-07T14:58:38.519020Z', u'received', u'15915.01000000', u'11.66914158', u'aeb3355f-4589-4848-8c59-a49e2d024821', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483065250, u'2017-12-07T14:58:38.438000Z', '2017-12-07T14:58:38.519596Z', u'open', u'15915.01000000', None, u'aeb3355f-4589-4848-8c59-a49e2d024821', u'buy', None, None, u'11.66914158', None, None, None, None, None, None, None, None), (4483065251, u'2017-12-07T14:58:38.453000Z', '2017-12-07T14:58:38.521100Z', u'done', u'16149.20000000', None, u'89721fcf-59de-4f4c-a30f-bab33deb6ef1', u'sell', None, None, u'0.10000000', u'canceled', None, None, None, None, None, None, None), (4483065252, u'2017-12-07T14:58:38.538000Z', '2017-12-07T14:58:38.644933Z', u'received', u'16259.97000000', u'0.04105433', u'85baa555-ee1a-4bdc-bca1-837ee85f2ec9', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483065253, u'2017-12-07T14:58:38.538000Z', '2017-12-07T14:58:38.645257Z', u'open', u'16259.97000000', None, u'85baa555-ee1a-4bdc-bca1-837ee85f2ec9', u'sell', None, None, u'0.04105433', None, None, None, None, None, None, None, None)  ... displaying 10 of 6147 total bound parameter sets ...  (4483071391, u'2017-12-07T14:59:38.532000Z', '2017-12-07T14:59:38.543726Z', u'received', u'16140.01000000', u'0.04667934', u'6e5a6292-7d6d-4d98-9079-5588d8601a11', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483071392, u'2017-12-07T14:59:38.532000Z', '2017-12-07T14:59:38.548449Z', u'open', u'16140.01000000', None, u'6e5a6292-7d6d-4d98-9079-5588d8601a11', u'sell', None, None, u'0.04667934', None, None, None, None, None, None, None, None))]
+2017-12-07 14:59:40,286 - gdax_msgs - INFO - Stored 6147 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-07 15:00:39,919 - gdax_msgs - INFO - Stored 4840 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-07 15:01:40,685 - gdax_msgs - INFO - Stored 7042 messages in GdaxBtcUsdMessage in 2.07s
+2017-12-07 15:02:40,728 - gdax_msgs - INFO - Stored 7737 messages in GdaxBtcUsdMessage in 2.08s
+2017-12-07 15:03:40,249 - gdax_msgs - INFO - Stored 5764 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-07 15:04:41,768 - gdax_msgs - INFO - Stored 5926 messages in GdaxBtcUsdMessage in 2.96s
+2017-12-07 15:05:40,256 - gdax_msgs - INFO - Stored 5635 messages in GdaxBtcUsdMessage in 1.40s
+2017-12-07 15:06:39,740 - gdax_msgs - INFO - Stored 3718 messages in GdaxBtcUsdMessage in 0.85s
+2017-12-07 15:07:39,756 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:07:39,757 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 829") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483112055, u'2017-12-07T15:06:38.921000Z', '2017-12-07T15:06:38.970353Z', u'done', u'16295.00000000', None, u'69b66087-da1d-4853-8500-1728d8bbe487', u'sell', None, None, u'0.02000000', u'canceled', None, None, None, None, None, None, None), (4483112056, u'2017-12-07T15:06:38.945000Z', '2017-12-07T15:06:38.970599Z', u'received', u'15675.92000000', u'1.00000000', u'882e35be-2c5e-45d5-b1e6-a02dcd630eaf', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483112057, u'2017-12-07T15:06:38.945000Z', '2017-12-07T15:06:38.970752Z', u'open', u'15675.92000000', None, u'882e35be-2c5e-45d5-b1e6-a02dcd630eaf', u'buy', None, None, u'1.00000000', None, None, None, None, None, None, None, None), (4483112058, u'2017-12-07T15:06:38.998000Z', '2017-12-07T15:06:39.022037Z', u'received', u'16303.43000000', u'0.09000000', u'a5b219b7-495d-4b80-b3fb-574e0250b9ba', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483112059, u'2017-12-07T15:06:38.998000Z', '2017-12-07T15:06:39.022366Z', u'open', u'16303.43000000', None, u'a5b219b7-495d-4b80-b3fb-574e0250b9ba', u'sell', None, None, u'0.09000000', None, None, None, None, None, None, None, None), (4483112060, u'2017-12-07T15:06:39.070000Z', '2017-12-07T15:06:39.098557Z', u'received', u'15667.92000000', u'2.00000000', u'cdcbabcc-2d1d-4479-b83c-58f7a8c4a772', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483112061, u'2017-12-07T15:06:39.070000Z', '2017-12-07T15:06:39.098735Z', u'open', u'15667.92000000', None, u'cdcbabcc-2d1d-4479-b83c-58f7a8c4a772', u'buy', None, None, u'2.00000000', None, None, None, None, None, None, None, None), (4483112062, u'2017-12-07T15:06:39.110000Z', '2017-12-07T15:06:39.116845Z', u'done', u'16303.43000000', None, u'a5b219b7-495d-4b80-b3fb-574e0250b9ba', u'sell', None, None, u'0.09000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 3158 total bound parameter sets ...  (4483115211, u'2017-12-07T15:07:38.879000Z', '2017-12-07T15:07:38.943904Z', u'received', u'16380.00000000', u'0.26462358', u'ba5592cf-78df-4a03-9bba-ceb0a455eb36', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483115212, u'2017-12-07T15:07:38.879000Z', '2017-12-07T15:07:38.944088Z', u'open', u'16380.00000000', None, u'ba5592cf-78df-4a03-9bba-ceb0a455eb36', u'sell', None, None, u'0.26462358', None, None, None, None, None, None, None, None))]
+2017-12-07 15:07:39,764 - gdax_msgs - INFO - Stored 3158 messages in GdaxBtcUsdMessage in 0.82s
+2017-12-07 15:08:39,866 - gdax_msgs - INFO - Stored 3171 messages in GdaxBtcUsdMessage in 0.91s
+2017-12-07 15:09:40,201 - gdax_msgs - INFO - Stored 5562 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 15:10:41,527 - gdax_msgs - INFO - Stored 5076 messages in GdaxBtcUsdMessage in 2.54s
+2017-12-07 15:11:41,587 - gdax_msgs - INFO - Stored 7551 messages in GdaxBtcUsdMessage in 2.58s
+2017-12-07 15:12:43,304 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:12:43,304 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 6474") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483136573, u'2017-12-07T15:11:38.981000Z', '2017-12-07T15:11:39.105108Z', u'done', u'15901.00000000', None, u'733cf019-f156-4c8b-9cb1-5cf509cd1f7b', u'buy', None, None, u'0.04984950', u'canceled', None, None, None, None, None, None, None), (4483136574, u'2017-12-07T15:11:38.996000Z', '2017-12-07T15:11:39.105472Z', u'received', None, None, u'7dcf12b0-67c2-404a-9954-fed0c907f47d', u'buy', u'market', u'2094.7630056760000000', None, None, None, None, None, None, None, None, None), (4483136575, u'2017-12-07T15:11:38.996000Z', '2017-12-07T15:11:39.105683Z', u'match', u'16489.99000000', u'0.12703240', None, u'sell', None, None, None, None, 26546751.0, u'd9501273-5582-427c-88fc-ea22b86a3280', u'7dcf12b0-67c2-404a-9954-fed0c907f47d', None, None, None, None), (4483136576, u'2017-12-07T15:11:38.996000Z', '2017-12-07T15:11:39.105833Z', u'done', None, None, u'7dcf12b0-67c2-404a-9954-fed0c907f47d', u'buy', None, None, None, u'filled', None, None, None, None, None, None, None), (4483136577, u'2017-12-07T15:11:39.003000Z', '2017-12-07T15:11:39.105986Z', u'done', u'16427.01000000', None, u'f5b7bb68-61c9-4da2-a0a7-a725611749d1', u'buy', None, None, u'0.05000000', u'canceled', None, None, None, None, None, None, None), (4483136578, u'2017-12-07T15:11:39.024000Z', '2017-12-07T15:11:39.106181Z', u'done', u'16743.00000000', None, u'e0bdaca6-d0e1-42c7-99ef-33e57dd99b04', u'sell', None, None, u'0.03218562', u'canceled', None, None, None, None, None, None, None), (4483136579, u'2017-12-07T15:11:39.035000Z', '2017-12-07T15:11:39.106486Z', u'received', u'1665.95000000', u'0.02000000', u'd74be607-33ba-4991-a2a1-1c8e4318569f', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483136580, u'2017-12-07T15:11:39.035000Z', '2017-12-07T15:11:39.106639Z', u'open', u'1665.95000000', None, u'd74be607-33ba-4991-a2a1-1c8e4318569f', u'buy', None, None, u'0.02000000', None, None, None, None, None, None, None, None)  ... displaying 10 of 7589 total bound parameter sets ...  (4483144160, u'2017-12-07T15:12:38.970000Z', '2017-12-07T15:12:39.087748Z', u'received', u'16469.67000000', u'0.05000000', u'239d057b-9fc8-42d3-99b9-669eb2ce6263', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483144161, u'2017-12-07T15:12:38.970000Z', '2017-12-07T15:12:39.088181Z', u'open', u'16469.67000000', None, u'239d057b-9fc8-42d3-99b9-669eb2ce6263', u'buy', None, None, u'0.05000000', None, None, None, None, None, None, None, None))]
+2017-12-07 15:12:43,337 - gdax_msgs - INFO - Stored 7589 messages in GdaxBtcUsdMessage in 4.25s
+2017-12-07 15:13:40,941 - gdax_msgs - INFO - Stored 6174 messages in GdaxBtcUsdMessage in 1.76s
+2017-12-07 15:14:40,881 - gdax_msgs - INFO - Stored 5500 messages in GdaxBtcUsdMessage in 1.59s
+2017-12-07 15:15:41,628 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:15:41,629 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 5005") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483155836, u'2017-12-07T15:14:36.610000Z', '2017-12-07T15:14:39.292871Z', u'match', u'16320.42000000', u'0.00349043', None, u'sell', None, None, None, None, 26548106.0, u'1f37363d-cc09-4b19-9e3c-b6ba29697f10', u'd7f54a48-0d3b-44bb-9b57-98e2f0ee58f7', None, None, None, None), (4483155837, u'2017-12-07T15:14:36.610000Z', '2017-12-07T15:14:39.411547Z', u'done', None, None, u'd7f54a48-0d3b-44bb-9b57-98e2f0ee58f7', u'buy', None, None, None, u'filled', None, None, None, None, None, None, None), (4483155838, u'2017-12-07T15:14:36.610000Z', '2017-12-07T15:14:39.411933Z', u'received', u'16465.44000000', u'0.02000000', u'5cf132d8-1005-44ba-b23a-8ee0c5d81ca1', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483155839, u'2017-12-07T15:14:36.610000Z', '2017-12-07T15:14:39.412338Z', u'open', u'16465.44000000', None, u'5cf132d8-1005-44ba-b23a-8ee0c5d81ca1', u'sell', None, None, u'0.02000000', None, None, None, None, None, None, None, None), (4483155840, u'2017-12-07T15:14:36.636000Z', '2017-12-07T15:14:39.412640Z', u'done', u'16010.01000000', None, u'3915c8b4-36d7-4159-8ca1-d60057d521f6', u'buy', None, None, u'4.75092800', u'canceled', None, None, None, None, None, None, None), (4483155841, u'2017-12-07T15:14:36.664000Z', '2017-12-07T15:14:39.412931Z', u'received', u'16920.00000000', u'0.03193466', u'c92c23b1-3f50-40e1-88aa-dd99de1aadd5', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483155842, u'2017-12-07T15:14:36.664000Z', '2017-12-07T15:14:39.413215Z', u'open', u'16920.00000000', None, u'c92c23b1-3f50-40e1-88aa-dd99de1aadd5', u'sell', None, None, u'0.03193466', None, None, None, None, None, None, None, None), (4483155843, u'2017-12-07T15:14:36.707000Z', '2017-12-07T15:14:39.413766Z', u'received', u'16296.00000000', u'0.01000000', u'4cc8908d-bbf0-4580-b8cc-781965e1277f', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None)  ... displaying 10 of 7069 total bound parameter sets ...  (4483162903, u'2017-12-07T15:15:39.310000Z', '2017-12-07T15:15:39.316053Z', u'received', u'16300.00000000', u'0.01026600', u'43385ce9-1fb1-41ae-84cc-30968c62ef9d', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483162904, u'2017-12-07T15:15:39.310000Z', '2017-12-07T15:15:39.321975Z', u'open', u'16300.00000000', None, u'43385ce9-1fb1-41ae-84cc-30968c62ef9d', u'buy', None, None, u'0.01026600', None, None, None, None, None, None, None, None))]
+2017-12-07 15:15:41,662 - gdax_msgs - INFO - Stored 7069 messages in GdaxBtcUsdMessage in 2.34s
+2017-12-07 15:16:40,964 - gdax_msgs - INFO - Stored 4826 messages in GdaxBtcUsdMessage in 1.60s
+2017-12-07 15:17:40,685 - gdax_msgs - INFO - Stored 5250 messages in GdaxBtcUsdMessage in 1.27s
+2017-12-07 15:18:40,587 - gdax_msgs - INFO - Stored 4463 messages in GdaxBtcUsdMessage in 1.10s
+2017-12-07 15:19:41,595 - gdax_msgs - INFO - Stored 6514 messages in GdaxBtcUsdMessage in 2.10s
+2017-12-07 15:20:41,477 - gdax_msgs - INFO - Stored 7754 messages in GdaxBtcUsdMessage in 1.92s
+2017-12-07 15:21:41,252 - gdax_msgs - INFO - Stored 7428 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-07 15:22:41,408 - gdax_msgs - INFO - Stored 7720 messages in GdaxBtcUsdMessage in 1.80s
+2017-12-07 15:23:42,441 - gdax_msgs - INFO - Stored 8450 messages in GdaxBtcUsdMessage in 2.66s
+2017-12-07 15:24:36,854 - gdax_msgs - INFO - ==============================
+2017-12-07 15:24:36,855 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 15:24:45,552 - gdax_msgs - INFO - Stored 7958 messages in GdaxBtcUsdMessage in 5.65s
+2017-12-07 15:24:48,103 - gdax_msgs - INFO - ==============================
+2017-12-07 15:25:41,482 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:25:41,482 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 2626") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483223268, u'2017-12-07T15:24:39.742000Z', '2017-12-07T15:24:40.024081Z', u'open', u'16898.00000000', None, u'660ad667-62b9-4493-b94d-53fc23b7079d', u'sell', None, None, u'0.05000000', None, None, None, None, None, None, None, None), (4483223269, u'2017-12-07T15:24:39.749000Z', '2017-12-07T15:24:40.024279Z', u'done', u'15640.42000000', None, u'6990bc7d-6d81-4e3f-a996-db67ecec00ba', u'buy', None, None, u'0.09625788', u'canceled', None, None, None, None, None, None, None), (4483223270, u'2017-12-07T15:24:39.754000Z', '2017-12-07T15:24:40.024522Z', u'received', u'16889.99000000', u'0.56600000', u'2af2a8da-5b68-44c5-8a2c-4f1c78f67d29', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483223271, u'2017-12-07T15:24:39.754000Z', '2017-12-07T15:24:40.024685Z', u'open', u'16889.99000000', None, u'2af2a8da-5b68-44c5-8a2c-4f1c78f67d29', u'buy', None, None, u'0.56600000', None, None, None, None, None, None, None, None), (4483223272, u'2017-12-07T15:24:39.766000Z', '2017-12-07T15:24:40.024972Z', u'received', u'16999.00000000', u'0.43819186', u'c3be7233-fb73-48e9-85a5-9125db84d0c0', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483223273, u'2017-12-07T15:24:39.766000Z', '2017-12-07T15:24:40.025136Z', u'open', u'16999.00000000', None, u'c3be7233-fb73-48e9-85a5-9125db84d0c0', u'sell', None, None, u'0.43819186', None, None, None, None, None, None, None, None), (4483223274, u'2017-12-07T15:24:39.773000Z', '2017-12-07T15:24:40.025339Z', u'received', u'15565.33000000', u'0.10000000', u'72792bc6-0c4b-40c9-95df-f7aa040a4b7b', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483223275, u'2017-12-07T15:24:39.773000Z', '2017-12-07T15:24:40.031907Z', u'open', u'15565.33000000', None, u'72792bc6-0c4b-40c9-95df-f7aa040a4b7b', u'buy', None, None, u'0.10000000', None, None, None, None, None, None, None, None)  ... displaying 10 of 7022 total bound parameter sets ...  (4483230288, u'2017-12-07T15:25:39.983000Z', '2017-12-07T15:25:40.052139Z', u'open', u'16866.12000000', None, u'd1a2690c-f281-40b4-9f2c-4c245e2914a3', u'buy', None, None, u'0.16000000', None, None, None, None, None, None, None, None), (4483230289, u'2017-12-07T15:25:39.986000Z', '2017-12-07T15:25:40.052334Z', u'done', u'16937.21000000', None, u'3b60747e-91a3-4abe-b5db-8f2866316921', u'buy', None, None, u'0.06846890', u'canceled', None, None, None, None, None, None, None))]
+2017-12-07 15:25:41,516 - gdax_msgs - INFO - Stored 7022 messages in GdaxBtcUsdMessage in 1.46s
+2017-12-07 15:26:41,392 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:26:41,392 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 99") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483230290, u'2017-12-07T15:25:40.006000Z', '2017-12-07T15:25:40.193648Z', u'received', u'16937.22000000', u'0.06846886', u'7315fb27-8f04-47e0-9ca0-5139f7af30d8', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483230291, u'2017-12-07T15:25:40.006000Z', '2017-12-07T15:25:40.193872Z', u'open', u'16937.22000000', None, u'7315fb27-8f04-47e0-9ca0-5139f7af30d8', u'buy', None, None, u'0.06846886', None, None, None, None, None, None, None, None), (4483230292, u'2017-12-07T15:25:40.016000Z', '2017-12-07T15:25:40.194036Z', u'done', u'16937.20000000', None, u'181961e5-affe-4388-a7dc-093be9532ab9', u'buy', None, None, u'0.75000000', u'canceled', None, None, None, None, None, None, None), (4483230293, u'2017-12-07T15:25:40.043000Z', '2017-12-07T15:25:40.194215Z', u'done', u'16937.19000000', None, u'017bc7e9-3cc6-4a9f-9b1b-a4450521639f', u'buy', None, None, u'0.09800000', u'canceled', None, None, None, None, None, None, None), (4483230294, u'2017-12-07T15:25:40.044000Z', '2017-12-07T15:25:40.194397Z', u'received', u'16937.22000000', u'0.75000000', u'244c6a98-24cf-4d23-a7c5-e9df401c6b25', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483230295, u'2017-12-07T15:25:40.044000Z', '2017-12-07T15:25:40.194538Z', u'open', u'16937.22000000', None, u'244c6a98-24cf-4d23-a7c5-e9df401c6b25', u'buy', None, None, u'0.75000000', None, None, None, None, None, None, None, None), (4483230296, u'2017-12-07T15:25:40.064000Z', '2017-12-07T15:25:40.194793Z', u'received', u'16900.00000000', u'0.85943536', u'60c75c4a-f98b-4d09-8d5d-f361babd67cc', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483230297, u'2017-12-07T15:25:40.064000Z', '2017-12-07T15:25:40.194948Z', u'open', u'16900.00000000', None, u'60c75c4a-f98b-4d09-8d5d-f361babd67cc', u'buy', None, None, u'0.85943536', None, None, None, None, None, None, None, None)  ... displaying 10 of 6206 total bound parameter sets ...  (4483236494, u'2017-12-07T15:26:39.917000Z', '2017-12-07T15:26:40.065595Z', u'received', u'16943.04000000', u'0.25100000', u'f61d5829-00c0-4d40-9b01-f76304e36c72', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483236495, u'2017-12-07T15:26:39.917000Z', '2017-12-07T15:26:40.065803Z', u'open', u'16943.04000000', None, u'f61d5829-00c0-4d40-9b01-f76304e36c72', u'buy', None, None, u'0.25100000', None, None, None, None, None, None, None, None))]
+2017-12-07 15:26:41,419 - gdax_msgs - INFO - Stored 6206 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-07 15:27:42,117 - gdax_msgs - INFO - Stored 7264 messages in GdaxBtcUsdMessage in 2.02s
+2017-12-07 15:28:42,903 - gdax_msgs - INFO - Stored 6919 messages in GdaxBtcUsdMessage in 2.47s
+2017-12-07 15:29:41,859 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 15:29:41,859 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 3503") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483250679, u'2017-12-07T15:28:38.485000Z', '2017-12-07T15:28:40.550946Z', u'done', u'16899.99000000', None, u'6bc54afe-2ee2-4eef-9013-6ce9657d579c', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4483250680, u'2017-12-07T15:28:38.536000Z', '2017-12-07T15:28:40.551383Z', u'received', u'16947.99000000', u'0.59740000', u'd431997a-c882-4954-b588-3b71c995aa93', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483250681, u'2017-12-07T15:28:38.536000Z', '2017-12-07T15:28:40.551550Z', u'open', u'16947.99000000', None, u'd431997a-c882-4954-b588-3b71c995aa93', u'sell', None, None, u'0.59740000', None, None, None, None, None, None, None, None), (4483250682, u'2017-12-07T15:28:38.561000Z', '2017-12-07T15:28:40.551835Z', u'received', u'16890.00000000', u'0.05000000', u'b8590e94-0689-4585-a515-7a8fbf11571b', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4483250683, u'2017-12-07T15:28:38.561000Z', '2017-12-07T15:28:40.552213Z', u'open', u'16890.00000000', None, u'b8590e94-0689-4585-a515-7a8fbf11571b', u'sell', None, None, u'0.05000000', None, None, None, None, None, None, None, None), (4483250684, u'2017-12-07T15:28:38.570000Z', '2017-12-07T15:28:40.552415Z', u'received', None, None, u'29170968-9253-4973-81b1-a51ab736266a', u'buy', u'market', u'9089.0972411227000000', None, None, None, None, None, None, None, None, None), (4483250685, u'2017-12-07T15:28:38.570000Z', '2017-12-07T15:28:40.552606Z', u'match', u'16844.99000000', u'0.16528995', None, u'sell', None, None, None, None, 26555527.0, u'208b0900-b8c6-42cf-81aa-bb6eca5bd98f', u'29170968-9253-4973-81b1-a51ab736266a', None, None, None, None), (4483250686, u'2017-12-07T15:28:38.570000Z', '2017-12-07T15:28:40.552844Z', u'done', u'16844.99000000', None, u'208b0900-b8c6-42cf-81aa-bb6eca5bd98f', u'sell', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None)  ... displaying 10 of 7251 total bound parameter sets ...  (4483257928, u'2017-12-07T15:29:40.421000Z', '2017-12-07T15:29:40.426410Z', u'received', u'15856.89000000', u'0.10000000', u'd7b98006-5203-4c9a-8ab0-a6b244bcb8d4', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4483257929, u'2017-12-07T15:29:40.421000Z', '2017-12-07T15:29:40.449332Z', u'open', u'15856.89000000', None, u'd7b98006-5203-4c9a-8ab0-a6b244bcb8d4', u'buy', None, None, u'0.10000000', None, None, None, None, None, None, None, None))]
+2017-12-07 15:29:41,889 - gdax_msgs - INFO - Stored 7251 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-07 15:30:42,925 - gdax_msgs - INFO - Stored 5317 messages in GdaxBtcUsdMessage in 2.42s
+2017-12-07 15:31:42,597 - gdax_msgs - INFO - Stored 7072 messages in GdaxBtcUsdMessage in 2.05s
+2017-12-07 15:32:42,064 - gdax_msgs - INFO - Stored 4741 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 15:33:42,790 - gdax_msgs - INFO - Stored 7089 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-07 15:34:42,129 - gdax_msgs - INFO - Stored 4819 messages in GdaxBtcUsdMessage in 1.54s
+2017-12-07 15:35:42,444 - gdax_msgs - INFO - Stored 5385 messages in GdaxBtcUsdMessage in 1.81s
+2017-12-07 15:36:42,586 - gdax_msgs - INFO - Stored 6498 messages in GdaxBtcUsdMessage in 1.90s
+2017-12-07 15:37:42,032 - gdax_msgs - INFO - Stored 7708 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-07 15:38:42,239 - gdax_msgs - INFO - Stored 6345 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-07 15:39:42,597 - gdax_msgs - INFO - Stored 7749 messages in GdaxBtcUsdMessage in 1.84s
+2017-12-07 15:40:44,615 - gdax_msgs - INFO - Stored 7611 messages in GdaxBtcUsdMessage in 3.83s
+2017-12-07 15:41:42,149 - gdax_msgs - INFO - Stored 6516 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 15:42:41,907 - gdax_msgs - INFO - Stored 5452 messages in GdaxBtcUsdMessage in 1.04s
+2017-12-07 15:43:41,934 - gdax_msgs - INFO - Stored 5054 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-07 15:44:42,030 - gdax_msgs - INFO - Stored 5069 messages in GdaxBtcUsdMessage in 1.11s
+2017-12-07 15:45:41,759 - gdax_msgs - INFO - Stored 4396 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 15:46:41,550 - gdax_msgs - INFO - Stored 3142 messages in GdaxBtcUsdMessage in 0.53s
+2017-12-07 15:47:42,096 - gdax_msgs - INFO - Stored 3012 messages in GdaxBtcUsdMessage in 1.04s
+2017-12-07 15:48:42,415 - gdax_msgs - INFO - Stored 6256 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-07 15:49:42,744 - gdax_msgs - INFO - Stored 4529 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-07 15:50:43,444 - gdax_msgs - INFO - Stored 4297 messages in GdaxBtcUsdMessage in 2.27s
+2017-12-07 15:51:42,271 - gdax_msgs - INFO - Stored 4891 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-07 15:52:43,118 - gdax_msgs - INFO - Stored 6977 messages in GdaxBtcUsdMessage in 1.84s
+2017-12-07 15:53:42,402 - gdax_msgs - INFO - Stored 5092 messages in GdaxBtcUsdMessage in 1.11s
+2017-12-07 15:54:43,226 - gdax_msgs - INFO - Stored 6174 messages in GdaxBtcUsdMessage in 1.90s
+2017-12-07 15:55:42,378 - gdax_msgs - INFO - Stored 3816 messages in GdaxBtcUsdMessage in 0.96s
+2017-12-07 15:56:42,215 - gdax_msgs - INFO - Stored 3408 messages in GdaxBtcUsdMessage in 0.77s
+2017-12-07 15:57:42,760 - gdax_msgs - INFO - Stored 6302 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 15:58:42,598 - gdax_msgs - INFO - Stored 5424 messages in GdaxBtcUsdMessage in 1.10s
+2017-12-07 15:59:42,574 - gdax_msgs - INFO - Stored 3313 messages in GdaxBtcUsdMessage in 0.84s
+2017-12-07 16:00:43,357 - gdax_msgs - INFO - Stored 5191 messages in GdaxBtcUsdMessage in 1.56s
+2017-12-07 16:01:42,987 - gdax_msgs - INFO - Stored 5689 messages in GdaxBtcUsdMessage in 1.12s
+2017-12-07 16:02:42,344 - gdax_msgs - INFO - Stored 2820 messages in GdaxBtcUsdMessage in 0.44s
+2017-12-07 16:03:42,809 - gdax_msgs - INFO - Stored 2520 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-07 16:04:42,272 - gdax_msgs - INFO - Stored 2149 messages in GdaxBtcUsdMessage in 0.32s
+2017-12-07 16:05:42,477 - gdax_msgs - INFO - Stored 2359 messages in GdaxBtcUsdMessage in 0.42s
+2017-12-07 16:06:43,600 - gdax_msgs - INFO - Stored 6809 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-07 16:07:44,623 - gdax_msgs - INFO - Stored 6789 messages in GdaxBtcUsdMessage in 2.50s
+2017-12-07 16:08:43,190 - gdax_msgs - INFO - Stored 4726 messages in GdaxBtcUsdMessage in 0.98s
+2017-12-07 16:09:43,092 - gdax_msgs - INFO - Stored 4074 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 16:10:42,796 - gdax_msgs - INFO - Stored 3050 messages in GdaxBtcUsdMessage in 0.51s
+2017-12-07 16:12:26,880 - gdax_msgs - INFO - Stored 8209 messages in GdaxBtcUsdMessage in 40.66s
+2017-12-07 16:12:47,649 - gdax_msgs - INFO - Stored 7491 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 16:13:47,489 - gdax_msgs - INFO - Stored 5622 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-07 16:14:48,187 - gdax_msgs - INFO - Stored 7450 messages in GdaxBtcUsdMessage in 1.68s
+2017-12-07 16:15:47,927 - gdax_msgs - INFO - Stored 5771 messages in GdaxBtcUsdMessage in 1.32s
+2017-12-07 16:16:47,499 - gdax_msgs - INFO - Stored 5155 messages in GdaxBtcUsdMessage in 0.88s
+2017-12-07 16:17:50,146 - gdax_msgs - INFO - Stored 6745 messages in GdaxBtcUsdMessage in 1.48s
+2017-12-07 16:18:51,139 - gdax_msgs - INFO - Stored 8746 messages in GdaxBtcUsdMessage in 2.46s
+2017-12-07 16:19:50,252 - gdax_msgs - INFO - Stored 5859 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-07 16:20:50,234 - gdax_msgs - INFO - Stored 6718 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-07 16:21:50,747 - gdax_msgs - INFO - Stored 7253 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-07 16:22:50,996 - gdax_msgs - INFO - Stored 7132 messages in GdaxBtcUsdMessage in 1.73s
+2017-12-07 16:23:50,547 - gdax_msgs - INFO - Stored 5211 messages in GdaxBtcUsdMessage in 1.20s
+2017-12-07 16:24:36,902 - gdax_msgs - INFO - ==============================
+2017-12-07 16:24:36,904 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 16:24:47,145 - gdax_msgs - INFO - ==============================
+2017-12-07 16:24:50,665 - gdax_msgs - INFO - Stored 5857 messages in GdaxBtcUsdMessage in 1.27s
+2017-12-07 16:25:51,931 - gdax_msgs - INFO - Stored 6580 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 16:26:52,190 - gdax_msgs - INFO - Stored 6658 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 16:27:52,017 - gdax_msgs - INFO - Stored 5417 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-07 16:28:51,839 - gdax_msgs - INFO - Stored 4961 messages in GdaxBtcUsdMessage in 0.84s
+2017-12-07 16:29:53,231 - gdax_msgs - INFO - Stored 1566 messages in GdaxBtcUsdMessage in 0.29s
+2017-12-07 16:30:53,327 - gdax_msgs - INFO - Stored 828 messages in GdaxBtcUsdMessage in 0.37s
+2017-12-07 16:31:53,482 - gdax_msgs - INFO - Stored 1088 messages in GdaxBtcUsdMessage in 0.31s
+2017-12-07 16:32:53,487 - gdax_msgs - INFO - Stored 317 messages in GdaxBtcUsdMessage in 0.11s
+2017-12-07 16:33:53,595 - gdax_msgs - INFO - Stored 603 messages in GdaxBtcUsdMessage in 0.22s
+2017-12-07 16:34:54,055 - gdax_msgs - INFO - Stored 4170 messages in GdaxBtcUsdMessage in 0.66s
+2017-12-07 16:35:53,933 - gdax_msgs - INFO - Stored 3044 messages in GdaxBtcUsdMessage in 0.50s
+2017-12-07 16:36:53,751 - gdax_msgs - INFO - Stored 1401 messages in GdaxBtcUsdMessage in 0.25s
+2017-12-07 16:37:54,144 - gdax_msgs - INFO - Stored 3693 messages in GdaxBtcUsdMessage in 0.52s
+2017-12-07 16:38:54,960 - gdax_msgs - INFO - Stored 6248 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 16:39:55,372 - gdax_msgs - INFO - Stored 6700 messages in GdaxBtcUsdMessage in 1.71s
+2017-12-07 16:40:54,738 - gdax_msgs - INFO - Stored 6258 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-07 16:41:54,701 - gdax_msgs - INFO - Stored 5940 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-07 16:42:54,489 - gdax_msgs - INFO - Stored 4156 messages in GdaxBtcUsdMessage in 0.80s
+2017-12-07 16:43:54,504 - gdax_msgs - INFO - Stored 4628 messages in GdaxBtcUsdMessage in 0.81s
+2017-12-07 16:44:55,046 - gdax_msgs - INFO - Stored 5690 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 16:45:54,924 - gdax_msgs - INFO - Stored 6132 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-07 16:46:54,741 - gdax_msgs - INFO - Stored 5880 messages in GdaxBtcUsdMessage in 0.97s
+2017-12-07 16:47:54,392 - gdax_msgs - INFO - Stored 3530 messages in GdaxBtcUsdMessage in 0.60s
+2017-12-07 16:48:56,700 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 16:48:56,700 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 5516") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4483656594, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.822925Z', u'done', u'16800.02000000', None, u'0ef656c7-368f-4eed-9ebb-ce5ac9a333ea', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4483656595, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.823298Z', u'match', u'16800.02000000', u'0.20000000', None, u'buy', None, None, None, None, 26595322.0, u'676136ac-a73b-4754-b131-f159e5b2ac97', u'da7797ce-fcf8-42b4-8400-efed892d30c6', None, None, None, None), (4483656596, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.826089Z', u'done', u'16800.02000000', None, u'676136ac-a73b-4754-b131-f159e5b2ac97', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4483656597, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.826304Z', u'match', u'16800.02000000', u'0.16240900', None, u'buy', None, None, None, None, 26595323.0, u'7ae6427e-4706-43c3-be8e-8ca8cbc6be49', u'da7797ce-fcf8-42b4-8400-efed892d30c6', None, None, None, None), (4483656598, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.858283Z', u'done', u'16800.02000000', None, u'7ae6427e-4706-43c3-be8e-8ca8cbc6be49', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4483656599, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.860983Z', u'match', u'16800.02000000', u'0.05756600', None, u'buy', None, None, None, None, 26595324.0, u'f0d7dff9-01e6-4529-9b56-dfc9cbebdecb', u'da7797ce-fcf8-42b4-8400-efed892d30c6', None, None, None, None), (4483656600, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.913839Z', u'done', u'16800.02000000', None, u'f0d7dff9-01e6-4529-9b56-dfc9cbebdecb', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4483656601, u'2017-12-07T16:47:53.038000Z', '2017-12-07T16:47:53.915742Z', u'match', u'16800.02000000', u'0.01879600', None, u'buy', None, None, None, None, 26595325.0, u'72578db0-80d6-4a26-9c05-2ecab461fe1f', u'da7797ce-fcf8-42b4-8400-efed892d30c6', None, None, None, None)  ... displaying 10 of 8581 total bound parameter sets ...  (4483665173, u'2017-12-07T16:48:53.736000Z', '2017-12-07T16:48:53.920852Z', u'received', None, None, u'19108369-5b0b-4d36-9116-54caf782def8', u'buy', u'market', u'7382.2742580904000000', None, None, None, None, None, None, None, None, None), (4483665174, u'2017-12-07T16:48:53.736000Z', '2017-12-07T16:48:53.926110Z', u'match', u'16935.02000000', u'0.01200000', None, u'sell', None, None, None, None, 26595867.0, u'2d9b59bc-f068-45a6-8c7e-28c486c90327', u'19108369-5b0b-4d36-9116-54caf782def8', None, None, None, None))]
+2017-12-07 16:48:56,738 - gdax_msgs - INFO - Stored 8581 messages in GdaxBtcUsdMessage in 2.80s
+2017-12-07 16:49:55,808 - gdax_msgs - INFO - Stored 8479 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-07 16:50:55,902 - gdax_msgs - INFO - Stored 9770 messages in GdaxBtcUsdMessage in 1.82s
+2017-12-07 16:51:55,666 - gdax_msgs - INFO - Stored 9535 messages in GdaxBtcUsdMessage in 1.58s
+2017-12-07 16:52:54,697 - gdax_msgs - INFO - Stored 3831 messages in GdaxBtcUsdMessage in 0.60s
+2017-12-07 16:53:54,897 - gdax_msgs - INFO - Stored 2846 messages in GdaxBtcUsdMessage in 0.45s
+2017-12-07 16:54:55,112 - gdax_msgs - INFO - Stored 3162 messages in GdaxBtcUsdMessage in 0.64s
+2017-12-07 16:55:54,870 - gdax_msgs - INFO - Stored 1214 messages in GdaxBtcUsdMessage in 0.27s
+2017-12-07 16:56:56,917 - gdax_msgs - INFO - Stored 5806 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-07 16:57:30,306 - core_websocket - ERROR - Message error: No JSON object could be decoded
+Message: 
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 81, in _listen
+    msg = json.loads(msg)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2017-12-07 16:57:30,348 - core_websocket - INFO - Closing websocket
+2017-12-07 16:57:31,352 - core_websocket - INFO - Successfully closed Websocket
+2017-12-07 16:57:32,353 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-12-07 16:57:32,458 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 16:57:32,458 - core_websocket - INFO - Listening for messages
+2017-12-07 16:57:57,645 - gdax_msgs - INFO - Stored 4883 messages in GdaxBtcUsdMessage in 2.06s
+2017-12-07 16:58:56,880 - gdax_msgs - INFO - Stored 4299 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 16:59:56,395 - gdax_msgs - INFO - Stored 2623 messages in GdaxBtcUsdMessage in 0.47s
+2017-12-07 17:00:56,799 - gdax_msgs - INFO - Stored 2009 messages in GdaxBtcUsdMessage in 0.75s
+2017-12-07 17:01:56,589 - gdax_msgs - INFO - Stored 1489 messages in GdaxBtcUsdMessage in 0.28s
+2017-12-07 17:02:57,123 - gdax_msgs - INFO - Stored 5466 messages in GdaxBtcUsdMessage in 0.80s
+2017-12-07 17:03:57,774 - gdax_msgs - INFO - Stored 6542 messages in GdaxBtcUsdMessage in 1.45s
+2017-12-07 17:04:57,634 - gdax_msgs - INFO - Stored 4348 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-07 17:05:57,398 - gdax_msgs - INFO - Stored 3781 messages in GdaxBtcUsdMessage in 0.80s
+2017-12-07 17:06:58,045 - gdax_msgs - INFO - Stored 5541 messages in GdaxBtcUsdMessage in 1.26s
+2017-12-07 17:07:57,497 - gdax_msgs - INFO - Stored 2754 messages in GdaxBtcUsdMessage in 0.66s
+2017-12-07 17:08:57,371 - gdax_msgs - INFO - Stored 2627 messages in GdaxBtcUsdMessage in 0.53s
+2017-12-07 17:09:57,466 - gdax_msgs - INFO - Stored 2966 messages in GdaxBtcUsdMessage in 0.46s
+2017-12-07 17:10:57,591 - gdax_msgs - INFO - Stored 2562 messages in GdaxBtcUsdMessage in 0.54s
+2017-12-07 17:11:57,909 - gdax_msgs - INFO - Stored 2445 messages in GdaxBtcUsdMessage in 0.82s
+2017-12-07 17:12:57,628 - gdax_msgs - INFO - Stored 2296 messages in GdaxBtcUsdMessage in 0.45s
+2017-12-07 17:13:57,608 - gdax_msgs - INFO - Stored 2061 messages in GdaxBtcUsdMessage in 0.42s
+2017-12-07 17:14:57,920 - gdax_msgs - INFO - Stored 2301 messages in GdaxBtcUsdMessage in 0.65s
+2017-12-07 17:15:57,820 - gdax_msgs - INFO - Stored 2477 messages in GdaxBtcUsdMessage in 0.36s
+2017-12-07 17:16:58,013 - gdax_msgs - INFO - Stored 2410 messages in GdaxBtcUsdMessage in 0.37s
+2017-12-07 17:17:58,108 - gdax_msgs - INFO - Stored 2083 messages in GdaxBtcUsdMessage in 0.36s
+2017-12-07 17:18:58,105 - gdax_msgs - INFO - Stored 2018 messages in GdaxBtcUsdMessage in 0.35s
+2017-12-07 17:19:58,549 - gdax_msgs - INFO - Stored 2408 messages in GdaxBtcUsdMessage in 0.56s
+2017-12-07 17:20:58,470 - gdax_msgs - INFO - Stored 2438 messages in GdaxBtcUsdMessage in 0.36s
+2017-12-07 17:21:58,815 - gdax_msgs - INFO - Stored 2194 messages in GdaxBtcUsdMessage in 0.61s
+2017-12-07 17:22:58,919 - gdax_msgs - INFO - Stored 3420 messages in GdaxBtcUsdMessage in 0.65s
+2017-12-07 17:23:58,904 - gdax_msgs - INFO - Stored 3877 messages in GdaxBtcUsdMessage in 0.61s
+2017-12-07 17:24:36,913 - gdax_msgs - INFO - ==============================
+2017-12-07 17:24:36,914 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 17:24:46,631 - gdax_msgs - INFO - ==============================
+2017-12-07 17:24:59,005 - gdax_msgs - INFO - Stored 3890 messages in GdaxBtcUsdMessage in 0.69s
+2017-12-07 17:25:59,078 - gdax_msgs - INFO - Stored 3430 messages in GdaxBtcUsdMessage in 0.76s
+2017-12-07 17:26:59,169 - gdax_msgs - INFO - Stored 3678 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 17:27:59,378 - gdax_msgs - INFO - Stored 3750 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-07 17:29:01,964 - gdax_msgs - INFO - Stored 15784 messages in GdaxBtcUsdMessage in 3.59s
+2017-12-07 17:29:47,559 - core_websocket - ERROR - Message error: Connection is already closed.
+Message: None
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 80, in _listen
+    msg = self.ws.recv()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 293, in recv
+    opcode, data = self.recv_data()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 310, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 323, in recv_data_frame
+    frame = self.recv_frame()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 357, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 336, in recv_frame
+    self.recv_header()
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 286, in recv_header
+    header = self.recv_strict(2)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_abnf.py", line 371, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 427, in _recv
+    return recv(self.sock, bufsize)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_socket.py", line 93, in recv
+    "Connection is already closed.")
+WebSocketConnectionClosedException: Connection is already closed.
+2017-12-07 17:29:47,560 - core_websocket - INFO - Closing websocket
+2017-12-07 17:29:47,560 - core_websocket - ERROR - Failed to close websocket:
+socket is already closed.
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 117, in close
+    self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 234, in send
+    return self.send_frame(frame)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 259, in send_frame
+    l = self._send(data)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_core.py", line 423, in _send
+    return send(self.sock, data)
+  File "/home/divir94/.local/lib/python2.7/site-packages/websocket/_socket.py", line 113, in send
+    raise WebSocketConnectionClosedException("socket is already closed.")
+WebSocketConnectionClosedException: socket is already closed.
+2017-12-07 17:29:48,561 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-12-07 17:30:34,248 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 17:30:34,249 - core_websocket - INFO - Listening for messages
+2017-12-07 17:30:37,734 - gdax_msgs - INFO - Stored 11342 messages in GdaxBtcUsdMessage in 3.47s
+2017-12-07 17:31:36,638 - gdax_msgs - INFO - Stored 9781 messages in GdaxBtcUsdMessage in 2.36s
+2017-12-07 17:32:36,498 - gdax_msgs - INFO - Stored 9170 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-07 17:33:35,980 - gdax_msgs - INFO - Stored 7798 messages in GdaxBtcUsdMessage in 1.66s
+2017-12-07 17:34:37,606 - gdax_msgs - INFO - Stored 11103 messages in GdaxBtcUsdMessage in 2.28s
+2017-12-07 17:35:38,090 - gdax_msgs - INFO - Stored 10836 messages in GdaxBtcUsdMessage in 2.57s
+2017-12-07 17:36:38,432 - gdax_msgs - INFO - Stored 11827 messages in GdaxBtcUsdMessage in 2.80s
+2017-12-07 17:37:37,895 - gdax_msgs - INFO - Stored 10472 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-07 17:38:37,585 - gdax_msgs - INFO - Stored 11051 messages in GdaxBtcUsdMessage in 1.82s
+2017-12-07 17:39:38,220 - gdax_msgs - INFO - Stored 12270 messages in GdaxBtcUsdMessage in 2.45s
+2017-12-07 17:40:47,999 - gdax_msgs - INFO - Stored 10977 messages in GdaxBtcUsdMessage in 3.23s
+2017-12-07 17:41:49,836 - gdax_msgs - INFO - Stored 15540 messages in GdaxBtcUsdMessage in 5.05s
+2017-12-07 17:42:48,080 - gdax_msgs - INFO - Stored 13794 messages in GdaxBtcUsdMessage in 3.28s
+2017-12-07 17:43:48,834 - gdax_msgs - INFO - Stored 13575 messages in GdaxBtcUsdMessage in 4.02s
+2017-12-07 17:44:47,827 - gdax_msgs - INFO - Stored 12676 messages in GdaxBtcUsdMessage in 3.00s
+2017-12-07 17:45:46,863 - gdax_msgs - INFO - Stored 11695 messages in GdaxBtcUsdMessage in 2.03s
+2017-12-07 17:46:47,074 - gdax_msgs - INFO - Stored 11360 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-07 17:47:46,569 - gdax_msgs - INFO - Stored 9522 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-07 17:48:47,183 - gdax_msgs - INFO - Stored 11493 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-07 17:49:47,818 - gdax_msgs - INFO - Stored 10986 messages in GdaxBtcUsdMessage in 2.74s
+2017-12-07 17:50:46,355 - gdax_msgs - INFO - Stored 6702 messages in GdaxBtcUsdMessage in 1.25s
+2017-12-07 17:51:46,516 - gdax_msgs - INFO - Stored 7155 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-07 17:52:48,033 - gdax_msgs - INFO - Stored 11788 messages in GdaxBtcUsdMessage in 2.58s
+2017-12-07 17:53:48,220 - gdax_msgs - INFO - Stored 10818 messages in GdaxBtcUsdMessage in 2.76s
+2017-12-07 17:55:00,413 - gdax_msgs - INFO - Stored 13622 messages in GdaxBtcUsdMessage in 3.21s
+2017-12-07 17:56:01,149 - gdax_msgs - INFO - Stored 15313 messages in GdaxBtcUsdMessage in 3.92s
+2017-12-07 17:56:59,921 - gdax_msgs - INFO - Stored 13369 messages in GdaxBtcUsdMessage in 2.68s
+2017-12-07 17:57:59,594 - gdax_msgs - INFO - Stored 10264 messages in GdaxBtcUsdMessage in 2.34s
+2017-12-07 17:58:59,152 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 17:58:59,152 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 1973") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4484150300, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.328023Z', u'done', u'16700.00000000', None, u'8fb3b49c-7a8b-4799-94d1-fe0f9f5c0fec', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4484150301, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.328264Z', u'match', u'16700.00000000', u'0.15695759', None, u'buy', None, None, None, None, 26626924.0, u'64c49c8d-eac7-458b-8e05-a076ca2e31a8', u'630215f4-e3e1-4370-8ab6-9aad13773206', None, None, None, None), (4484150302, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.416719Z', u'done', None, None, u'630215f4-e3e1-4370-8ab6-9aad13773206', u'sell', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4484150303, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.417274Z', u'received', None, u'0.06177000', u'e2e8e9a8-3e85-440e-a276-8a4d8d307036', u'sell', u'market', None, None, None, None, None, None, None, None, None, None), (4484150304, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.417704Z', u'match', u'16700.00000000', u'0.06177000', None, u'buy', None, None, None, None, 26626925.0, u'64c49c8d-eac7-458b-8e05-a076ca2e31a8', u'e2e8e9a8-3e85-440e-a276-8a4d8d307036', None, None, None, None), (4484150305, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.425659Z', u'done', None, None, u'e2e8e9a8-3e85-440e-a276-8a4d8d307036', u'sell', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4484150306, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.426163Z', u'received', u'16700.00000000', u'0.15000000', u'0b5095ee-c445-4c01-b068-9b5654511575', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4484150307, u'2017-12-07T17:57:57.053000Z', '2017-12-07T17:57:57.427260Z', u'match', u'16700.00000000', u'0.15000000', None, u'buy', None, None, None, None, 26626926.0, u'64c49c8d-eac7-458b-8e05-a076ca2e31a8', u'0b5095ee-c445-4c01-b068-9b5654511575', None, None, None, None)  ... displaying 10 of 10840 total bound parameter sets ...  (4484161138, u'2017-12-07T17:58:57.025000Z', '2017-12-07T17:58:57.334795Z', u'received', u'16348.41000000', u'2.32000000', u'6b38896b-10a3-47d3-8286-dcd2f8e44b15', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4484161139, u'2017-12-07T17:58:57.025000Z', '2017-12-07T17:58:57.334960Z', u'open', u'16348.41000000', None, u'6b38896b-10a3-47d3-8286-dcd2f8e44b15', u'buy', None, None, u'2.32000000', None, None, None, None, None, None, None, None))]
+2017-12-07 17:58:59,229 - gdax_msgs - INFO - Stored 10840 messages in GdaxBtcUsdMessage in 1.88s
+2017-12-07 17:59:59,299 - gdax_msgs - INFO - Stored 9344 messages in GdaxBtcUsdMessage in 1.94s
+2017-12-07 18:00:59,570 - gdax_msgs - INFO - Stored 11845 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-07 18:01:59,207 - gdax_msgs - INFO - Stored 11480 messages in GdaxBtcUsdMessage in 1.80s
+2017-12-07 18:02:59,531 - gdax_msgs - INFO - Stored 9446 messages in GdaxBtcUsdMessage in 2.03s
+2017-12-07 18:03:59,762 - gdax_msgs - INFO - Stored 10421 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-07 18:04:59,955 - gdax_msgs - INFO - Stored 8058 messages in GdaxBtcUsdMessage in 2.40s
+2017-12-07 18:06:00,272 - gdax_msgs - INFO - Stored 6712 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-07 18:06:58,640 - gdax_msgs - INFO - Stored 5147 messages in GdaxBtcUsdMessage in 0.98s
+2017-12-07 18:07:58,284 - gdax_msgs - INFO - Stored 2908 messages in GdaxBtcUsdMessage in 0.57s
+2017-12-07 18:08:59,229 - gdax_msgs - INFO - Stored 6469 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 18:10:01,751 - gdax_msgs - INFO - Stored 12585 messages in GdaxBtcUsdMessage in 3.97s
+2017-12-07 18:11:02,182 - gdax_msgs - INFO - Stored 14674 messages in GdaxBtcUsdMessage in 4.38s
+2017-12-07 18:12:00,938 - gdax_msgs - INFO - Stored 12857 messages in GdaxBtcUsdMessage in 3.11s
+2017-12-07 18:13:00,813 - gdax_msgs - INFO - Stored 12979 messages in GdaxBtcUsdMessage in 2.95s
+2017-12-07 18:14:02,857 - gdax_msgs - INFO - Stored 13987 messages in GdaxBtcUsdMessage in 4.78s
+2017-12-07 18:15:01,962 - gdax_msgs - INFO - Stored 15324 messages in GdaxBtcUsdMessage in 3.82s
+2017-12-07 18:16:00,793 - gdax_msgs - INFO - Stored 13480 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-07 18:17:01,035 - gdax_msgs - INFO - Stored 11836 messages in GdaxBtcUsdMessage in 2.85s
+2017-12-07 18:17:59,802 - gdax_msgs - INFO - Stored 8807 messages in GdaxBtcUsdMessage in 1.61s
+2017-12-07 18:18:59,891 - gdax_msgs - INFO - Stored 7165 messages in GdaxBtcUsdMessage in 1.62s
+2017-12-07 18:19:59,574 - gdax_msgs - INFO - Stored 6340 messages in GdaxBtcUsdMessage in 1.30s
+2017-12-07 18:21:01,603 - gdax_msgs - INFO - Stored 12146 messages in GdaxBtcUsdMessage in 3.27s
+2017-12-07 18:22:00,451 - gdax_msgs - INFO - Stored 9772 messages in GdaxBtcUsdMessage in 2.10s
+2017-12-07 18:23:03,306 - gdax_msgs - INFO - Stored 12700 messages in GdaxBtcUsdMessage in 4.95s
+2017-12-07 18:24:02,841 - gdax_msgs - INFO - Stored 14237 messages in GdaxBtcUsdMessage in 4.48s
+2017-12-07 18:24:36,921 - gdax_msgs - INFO - ==============================
+2017-12-07 18:24:36,921 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 18:24:47,776 - gdax_msgs - INFO - ==============================
+2017-12-07 18:25:00,646 - gdax_msgs - INFO - Stored 11630 messages in GdaxBtcUsdMessage in 2.27s
+2017-12-07 18:26:00,381 - gdax_msgs - INFO - Stored 9525 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-07 18:27:00,638 - gdax_msgs - INFO - Stored 9579 messages in GdaxBtcUsdMessage in 2.19s
+2017-12-07 18:28:00,483 - gdax_msgs - INFO - Stored 10151 messages in GdaxBtcUsdMessage in 1.96s
+2017-12-07 18:29:04,051 - gdax_msgs - INFO - Stored 16907 messages in GdaxBtcUsdMessage in 4.08s
+2017-12-07 18:30:03,612 - gdax_msgs - INFO - Stored 17580 messages in GdaxBtcUsdMessage in 3.63s
+2017-12-07 18:31:03,300 - gdax_msgs - INFO - Stored 9829 messages in GdaxBtcUsdMessage in 3.01s
+2017-12-07 18:32:03,327 - gdax_msgs - INFO - Stored 14531 messages in GdaxBtcUsdMessage in 2.92s
+2017-12-07 18:33:03,379 - gdax_msgs - INFO - Stored 10998 messages in GdaxBtcUsdMessage in 2.91s
+2017-12-07 18:34:02,056 - gdax_msgs - INFO - Stored 7183 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-07 18:35:03,854 - gdax_msgs - INFO - Stored 13450 messages in GdaxBtcUsdMessage in 2.19s
+2017-12-07 18:36:04,868 - gdax_msgs - INFO - Stored 15511 messages in GdaxBtcUsdMessage in 3.19s
+2017-12-07 18:37:04,251 - gdax_msgs - INFO - Stored 13104 messages in GdaxBtcUsdMessage in 2.40s
+2017-12-07 18:38:04,577 - gdax_msgs - INFO - Stored 13963 messages in GdaxBtcUsdMessage in 2.56s
+2017-12-07 18:39:04,435 - gdax_msgs - INFO - Stored 10925 messages in GdaxBtcUsdMessage in 2.38s
+2017-12-07 18:40:05,608 - gdax_msgs - INFO - Stored 14450 messages in GdaxBtcUsdMessage in 3.46s
+2017-12-07 18:41:04,400 - gdax_msgs - INFO - Stored 10953 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-07 18:42:03,742 - gdax_msgs - INFO - Stored 9170 messages in GdaxBtcUsdMessage in 1.54s
+2017-12-07 18:43:04,728 - gdax_msgs - INFO - Stored 11757 messages in GdaxBtcUsdMessage in 2.50s
+2017-12-07 18:44:03,336 - gdax_msgs - INFO - Stored 6348 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-07 18:45:04,997 - gdax_msgs - INFO - Stored 13014 messages in GdaxBtcUsdMessage in 2.74s
+2017-12-07 18:46:06,032 - gdax_msgs - INFO - Stored 14095 messages in GdaxBtcUsdMessage in 3.08s
+2017-12-07 18:47:05,708 - gdax_msgs - INFO - Stored 12440 messages in GdaxBtcUsdMessage in 2.68s
+2017-12-07 18:48:05,707 - gdax_msgs - INFO - Stored 13544 messages in GdaxBtcUsdMessage in 2.67s
+2017-12-07 18:49:05,213 - gdax_msgs - INFO - Stored 8754 messages in GdaxBtcUsdMessage in 2.15s
+2017-12-07 18:50:05,315 - gdax_msgs - INFO - Stored 10551 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-07 18:51:04,864 - gdax_msgs - INFO - Stored 9331 messages in GdaxBtcUsdMessage in 1.68s
+2017-12-07 18:52:06,718 - gdax_msgs - INFO - Stored 9727 messages in GdaxBtcUsdMessage in 3.50s
+2017-12-07 18:53:05,970 - gdax_msgs - INFO - Stored 12162 messages in GdaxBtcUsdMessage in 2.66s
+2017-12-07 18:54:06,621 - gdax_msgs - INFO - Stored 11412 messages in GdaxBtcUsdMessage in 3.27s
+2017-12-07 18:55:05,817 - gdax_msgs - INFO - Stored 9878 messages in GdaxBtcUsdMessage in 2.41s
+2017-12-07 18:56:05,019 - gdax_msgs - INFO - Stored 8124 messages in GdaxBtcUsdMessage in 1.60s
+2017-12-07 18:57:06,026 - gdax_msgs - INFO - Stored 11244 messages in GdaxBtcUsdMessage in 2.55s
+2017-12-07 18:58:07,169 - gdax_msgs - INFO - Stored 12033 messages in GdaxBtcUsdMessage in 3.66s
+2017-12-07 18:59:06,633 - gdax_msgs - INFO - Stored 11502 messages in GdaxBtcUsdMessage in 3.12s
+2017-12-07 19:00:07,009 - gdax_msgs - INFO - Stored 15401 messages in GdaxBtcUsdMessage in 3.32s
+2017-12-07 19:01:06,953 - gdax_msgs - INFO - Stored 12398 messages in GdaxBtcUsdMessage in 3.24s
+2017-12-07 19:02:06,787 - gdax_msgs - INFO - Stored 11907 messages in GdaxBtcUsdMessage in 3.07s
+2017-12-07 19:03:05,644 - gdax_msgs - INFO - Stored 10414 messages in GdaxBtcUsdMessage in 1.92s
+2017-12-07 19:04:06,330 - gdax_msgs - INFO - Stored 11535 messages in GdaxBtcUsdMessage in 2.59s
+2017-12-07 19:05:05,581 - gdax_msgs - INFO - Stored 9130 messages in GdaxBtcUsdMessage in 1.77s
+2017-12-07 19:06:07,009 - gdax_msgs - INFO - Stored 12019 messages in GdaxBtcUsdMessage in 3.19s
+2017-12-07 19:07:09,249 - gdax_msgs - INFO - Stored 14647 messages in GdaxBtcUsdMessage in 4.29s
+2017-12-07 19:08:08,585 - gdax_msgs - INFO - Stored 14090 messages in GdaxBtcUsdMessage in 3.61s
+2017-12-07 19:09:11,155 - gdax_msgs - INFO - Stored 16847 messages in GdaxBtcUsdMessage in 6.16s
+2017-12-07 19:10:09,959 - gdax_msgs - INFO - Stored 17755 messages in GdaxBtcUsdMessage in 4.96s
+2017-12-07 19:11:09,049 - gdax_msgs - INFO - Stored 15224 messages in GdaxBtcUsdMessage in 3.91s
+2017-12-07 19:12:09,425 - gdax_msgs - INFO - Stored 13903 messages in GdaxBtcUsdMessage in 4.26s
+2017-12-07 19:13:09,313 - gdax_msgs - INFO - Stored 12437 messages in GdaxBtcUsdMessage in 4.14s
+2017-12-07 19:14:07,994 - gdax_msgs - INFO - Stored 10917 messages in GdaxBtcUsdMessage in 2.73s
+2017-12-07 19:15:08,109 - gdax_msgs - INFO - Stored 8895 messages in GdaxBtcUsdMessage in 2.72s
+2017-12-07 19:16:07,888 - gdax_msgs - INFO - Stored 10321 messages in GdaxBtcUsdMessage in 2.46s
+2017-12-07 19:17:06,799 - gdax_msgs - INFO - Stored 6722 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 19:18:07,032 - gdax_msgs - INFO - Stored 6670 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 19:19:07,629 - gdax_msgs - INFO - Stored 8915 messages in GdaxBtcUsdMessage in 2.09s
+2017-12-07 19:20:08,538 - gdax_msgs - INFO - Stored 11902 messages in GdaxBtcUsdMessage in 2.95s
+2017-12-07 19:21:10,953 - gdax_msgs - INFO - Stored 14945 messages in GdaxBtcUsdMessage in 5.32s
+2017-12-07 19:22:09,281 - gdax_msgs - INFO - Stored 12845 messages in GdaxBtcUsdMessage in 3.64s
+2017-12-07 19:23:06,813 - gdax_msgs - INFO - Stored 6892 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-07 19:24:06,351 - gdax_msgs - INFO - Stored 2758 messages in GdaxBtcUsdMessage in 0.63s
+2017-12-07 19:24:37,119 - gdax_msgs - INFO - ==============================
+2017-12-07 19:24:37,120 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 19:24:46,083 - gdax_msgs - INFO - ==============================
+2017-12-07 19:25:10,229 - gdax_msgs - INFO - Stored 13887 messages in GdaxBtcUsdMessage in 4.50s
+2017-12-07 19:26:09,339 - gdax_msgs - INFO - Stored 14158 messages in GdaxBtcUsdMessage in 3.60s
+2017-12-07 19:27:09,064 - gdax_msgs - INFO - Stored 12542 messages in GdaxBtcUsdMessage in 3.05s
+2017-12-07 19:28:08,996 - gdax_msgs - INFO - Stored 12859 messages in GdaxBtcUsdMessage in 2.97s
+2017-12-07 19:29:07,600 - gdax_msgs - INFO - Stored 7850 messages in GdaxBtcUsdMessage in 1.57s
+2017-12-07 19:30:07,960 - gdax_msgs - INFO - Stored 8894 messages in GdaxBtcUsdMessage in 1.86s
+2017-12-07 19:31:08,932 - gdax_msgs - INFO - Stored 11177 messages in GdaxBtcUsdMessage in 2.82s
+2017-12-07 19:32:09,190 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-07 19:32:09,190 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 5280") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4485199445, u'2017-12-07T19:31:06.071000Z', '2017-12-07T19:31:06.226542Z', u'open', u'15886.94000000', None, u'1f806a51-b8c3-4680-8a3c-553bbca334a0', u'sell', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4485199446, u'2017-12-07T19:31:06.072000Z', '2017-12-07T19:31:06.226841Z', u'received', u'15616.91000000', u'0.00100000', u'0e3504ff-2f0b-41a5-b01c-1ae6e85e50da', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4485199447, u'2017-12-07T19:31:06.072000Z', '2017-12-07T19:31:06.227114Z', u'open', u'15616.91000000', None, u'0e3504ff-2f0b-41a5-b01c-1ae6e85e50da', u'buy', None, None, u'0.00100000', None, None, None, None, None, None, None, None), (4485199448, u'2017-12-07T19:31:06.073000Z', '2017-12-07T19:31:06.227287Z', u'received', u'15858.08000000', u'0.05683746', u'fe90ced1-d1b0-4fa3-b496-b9a3fa11a214', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4485199449, u'2017-12-07T19:31:06.073000Z', '2017-12-07T19:31:06.227499Z', u'match', u'15858.08000000', u'0.05683746', None, u'sell', None, None, None, None, 26669395.0, u'd1002a94-8758-4146-89cb-d510d94d3a99', u'fe90ced1-d1b0-4fa3-b496-b9a3fa11a214', None, None, None, None), (4485199450, u'2017-12-07T19:31:06.073000Z', '2017-12-07T19:31:06.227665Z', u'done', u'15858.08000000', None, u'fe90ced1-d1b0-4fa3-b496-b9a3fa11a214', u'buy', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4485199451, u'2017-12-07T19:31:06.077000Z', '2017-12-07T19:31:06.227826Z', u'done', u'15886.94000000', None, u'1f806a51-b8c3-4680-8a3c-553bbca334a0', u'sell', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4485199452, u'2017-12-07T19:31:06.078000Z', '2017-12-07T19:31:06.228025Z', u'received', u'16180.00000000', u'0.05000000', u'f6478386-7501-422e-9b9e-1f78d81a1fd1', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None)  ... displaying 10 of 15727 total bound parameter sets ...  (4485215170, u'2017-12-07T19:32:05.710000Z', '2017-12-07T19:32:06.118049Z', u'done', u'15645.02000000', None, u'5fc7afeb-86b6-4f03-9961-a62e52fa5af7', u'sell', None, None, u'0', u'filled', None, None, None, None, None, None, None), (4485215171, u'2017-12-07T19:32:05.710000Z', '2017-12-07T19:32:06.121019Z', u'match', u'15650.00000000', u'0.13819625', None, u'sell', None, None, None, None, 26670331.0, u'cd000a39-bf7a-4a90-a644-ff3f34ea2aca', u'f24b9738-eb9f-4f83-ba3b-9def4d280859', None, None, None, None))]
+2017-12-07 19:32:09,242 - gdax_msgs - INFO - Stored 15727 messages in GdaxBtcUsdMessage in 3.12s
+2017-12-07 19:33:07,276 - gdax_msgs - INFO - Stored 6281 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-07 19:34:06,577 - gdax_msgs - INFO - Stored 2067 messages in GdaxBtcUsdMessage in 0.40s
+2017-12-07 19:35:08,495 - gdax_msgs - INFO - Stored 11358 messages in GdaxBtcUsdMessage in 2.29s
+2017-12-07 19:36:09,938 - gdax_msgs - INFO - Stored 16088 messages in GdaxBtcUsdMessage in 3.72s
+2017-12-07 19:37:10,783 - gdax_msgs - INFO - Stored 17888 messages in GdaxBtcUsdMessage in 4.56s
+2017-12-07 19:38:09,334 - gdax_msgs - INFO - Stored 15119 messages in GdaxBtcUsdMessage in 3.09s
+2017-12-07 19:39:09,866 - gdax_msgs - INFO - Stored 12466 messages in GdaxBtcUsdMessage in 3.58s
+2017-12-07 19:40:10,275 - gdax_msgs - INFO - Stored 16484 messages in GdaxBtcUsdMessage in 3.97s
+2017-12-07 19:41:09,128 - gdax_msgs - INFO - Stored 12498 messages in GdaxBtcUsdMessage in 2.81s
+2017-12-07 19:42:08,620 - gdax_msgs - INFO - Stored 11109 messages in GdaxBtcUsdMessage in 2.19s
+2017-12-07 19:43:08,527 - gdax_msgs - INFO - Stored 9924 messages in GdaxBtcUsdMessage in 2.04s
+2017-12-07 19:44:08,507 - gdax_msgs - INFO - Stored 10435 messages in GdaxBtcUsdMessage in 2.01s
+2017-12-07 19:45:08,522 - gdax_msgs - INFO - Stored 10252 messages in GdaxBtcUsdMessage in 2.00s
+2017-12-07 19:46:10,823 - gdax_msgs - INFO - Stored 15053 messages in GdaxBtcUsdMessage in 4.28s
+2017-12-07 19:47:10,318 - gdax_msgs - INFO - Stored 13504 messages in GdaxBtcUsdMessage in 3.66s
+2017-12-07 19:48:11,201 - gdax_msgs - INFO - Stored 14134 messages in GdaxBtcUsdMessage in 4.50s
+2017-12-07 19:49:10,703 - gdax_msgs - INFO - Stored 12955 messages in GdaxBtcUsdMessage in 3.96s
+2017-12-07 19:50:12,820 - gdax_msgs - INFO - Stored 12785 messages in GdaxBtcUsdMessage in 6.07s
+2017-12-07 19:51:10,078 - gdax_msgs - INFO - Stored 12411 messages in GdaxBtcUsdMessage in 3.32s
+2017-12-07 19:52:09,418 - gdax_msgs - INFO - Stored 10972 messages in GdaxBtcUsdMessage in 2.63s
+2017-12-07 19:53:10,211 - gdax_msgs - INFO - Stored 11613 messages in GdaxBtcUsdMessage in 3.41s
+2017-12-07 19:54:10,021 - gdax_msgs - INFO - Stored 11516 messages in GdaxBtcUsdMessage in 3.13s
+2017-12-07 19:55:09,253 - gdax_msgs - INFO - Stored 9338 messages in GdaxBtcUsdMessage in 2.33s
+2017-12-07 19:56:10,040 - gdax_msgs - INFO - Stored 10906 messages in GdaxBtcUsdMessage in 2.66s
+2017-12-07 19:57:10,610 - gdax_msgs - INFO - Stored 10101 messages in GdaxBtcUsdMessage in 3.19s
+2017-12-07 19:58:09,121 - gdax_msgs - INFO - Stored 8979 messages in GdaxBtcUsdMessage in 1.66s
+2017-12-07 19:59:11,780 - gdax_msgs - INFO - Stored 13730 messages in GdaxBtcUsdMessage in 4.24s
+2017-12-07 20:00:11,696 - gdax_msgs - INFO - Stored 13900 messages in GdaxBtcUsdMessage in 4.13s
+2017-12-07 20:01:10,841 - gdax_msgs - INFO - Stored 13362 messages in GdaxBtcUsdMessage in 3.21s
+2017-12-07 20:02:12,507 - gdax_msgs - INFO - Stored 14978 messages in GdaxBtcUsdMessage in 4.86s
+2017-12-07 20:03:11,610 - gdax_msgs - INFO - Stored 14256 messages in GdaxBtcUsdMessage in 3.96s
+2017-12-07 20:04:09,876 - gdax_msgs - INFO - Stored 9748 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-07 20:05:09,319 - gdax_msgs - INFO - Stored 8361 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-07 20:06:09,888 - gdax_msgs - INFO - Stored 11789 messages in GdaxBtcUsdMessage in 2.20s
+2017-12-07 20:07:09,513 - gdax_msgs - INFO - Stored 10036 messages in GdaxBtcUsdMessage in 1.81s
+2017-12-07 20:08:09,308 - gdax_msgs - INFO - Stored 8378 messages in GdaxBtcUsdMessage in 1.59s
+2017-12-07 20:09:12,015 - gdax_msgs - INFO - Stored 10362 messages in GdaxBtcUsdMessage in 4.27s
+2017-12-07 20:10:10,286 - gdax_msgs - INFO - Stored 12087 messages in GdaxBtcUsdMessage in 2.54s
+2017-12-07 20:11:10,069 - gdax_msgs - INFO - Stored 11290 messages in GdaxBtcUsdMessage in 2.31s
+2017-12-07 20:12:10,906 - gdax_msgs - INFO - Stored 9350 messages in GdaxBtcUsdMessage in 3.13s
+2017-12-07 20:13:09,095 - gdax_msgs - INFO - Stored 6437 messages in GdaxBtcUsdMessage in 1.28s
+2017-12-07 20:14:09,392 - gdax_msgs - INFO - Stored 7473 messages in GdaxBtcUsdMessage in 1.52s
+2017-12-07 20:15:11,555 - gdax_msgs - INFO - Stored 12334 messages in GdaxBtcUsdMessage in 3.46s
+2017-12-07 20:16:11,779 - gdax_msgs - INFO - Stored 13859 messages in GdaxBtcUsdMessage in 3.68s
+2017-12-07 20:17:21,009 - gdax_msgs - INFO - Stored 15638 messages in GdaxBtcUsdMessage in 12.85s
+2017-12-07 20:18:11,891 - gdax_msgs - INFO - Stored 11633 messages in GdaxBtcUsdMessage in 3.72s
+2017-12-07 20:19:12,649 - gdax_msgs - INFO - Stored 15251 messages in GdaxBtcUsdMessage in 4.47s
+2017-12-07 20:20:11,969 - gdax_msgs - INFO - Stored 13038 messages in GdaxBtcUsdMessage in 3.79s
+2017-12-07 20:21:11,095 - gdax_msgs - INFO - Stored 11897 messages in GdaxBtcUsdMessage in 2.90s
+2017-12-07 20:22:10,368 - gdax_msgs - INFO - Stored 7007 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-07 20:23:09,305 - gdax_msgs - INFO - Stored 5275 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-07 20:24:09,691 - gdax_msgs - INFO - Stored 7607 messages in GdaxBtcUsdMessage in 1.46s
+2017-12-07 20:24:37,140 - gdax_msgs - INFO - ==============================
+2017-12-07 20:24:37,142 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 20:24:47,414 - gdax_msgs - INFO - ==============================
+2017-12-07 20:25:10,874 - gdax_msgs - INFO - Stored 12547 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-07 20:26:10,631 - gdax_msgs - INFO - Stored 9900 messages in GdaxBtcUsdMessage in 2.35s
+2017-12-07 20:27:11,008 - gdax_msgs - INFO - Stored 12741 messages in GdaxBtcUsdMessage in 2.65s
+2017-12-07 20:28:09,618 - gdax_msgs - INFO - Stored 6301 messages in GdaxBtcUsdMessage in 1.20s
+2017-12-07 20:29:10,658 - gdax_msgs - INFO - Stored 9734 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-07 20:30:11,211 - gdax_msgs - INFO - Stored 11927 messages in GdaxBtcUsdMessage in 2.72s
+2017-12-07 20:31:09,601 - gdax_msgs - INFO - Stored 5262 messages in GdaxBtcUsdMessage in 1.10s
+2017-12-07 20:32:10,349 - gdax_msgs - INFO - Stored 8291 messages in GdaxBtcUsdMessage in 1.76s
+2017-12-07 20:33:11,492 - gdax_msgs - INFO - Stored 12538 messages in GdaxBtcUsdMessage in 2.89s
+2017-12-07 20:34:12,552 - gdax_msgs - INFO - Stored 12543 messages in GdaxBtcUsdMessage in 3.91s
+2017-12-07 20:35:11,259 - gdax_msgs - INFO - Stored 12328 messages in GdaxBtcUsdMessage in 2.58s
+2017-12-07 20:36:10,149 - gdax_msgs - INFO - Stored 7913 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-07 20:37:10,938 - gdax_msgs - INFO - Stored 9990 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-07 20:38:10,829 - gdax_msgs - INFO - Stored 9620 messages in GdaxBtcUsdMessage in 2.09s
+2017-12-07 20:39:10,289 - gdax_msgs - INFO - Stored 4623 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-07 20:40:09,460 - gdax_msgs - INFO - Stored 3637 messages in GdaxBtcUsdMessage in 0.68s
+2017-12-07 20:41:09,617 - gdax_msgs - INFO - Stored 3803 messages in GdaxBtcUsdMessage in 0.79s
+2017-12-07 20:42:10,848 - gdax_msgs - INFO - Stored 10044 messages in GdaxBtcUsdMessage in 2.02s
+2017-12-07 20:43:10,883 - gdax_msgs - INFO - Stored 8965 messages in GdaxBtcUsdMessage in 1.95s
+2017-12-07 20:44:10,912 - gdax_msgs - INFO - Stored 9237 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-07 20:45:10,733 - gdax_msgs - INFO - Stored 8338 messages in GdaxBtcUsdMessage in 1.77s
+2017-12-07 20:46:11,573 - gdax_msgs - INFO - Stored 10504 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-07 20:47:10,548 - gdax_msgs - INFO - Stored 6498 messages in GdaxBtcUsdMessage in 1.57s
+2017-12-07 20:48:09,886 - gdax_msgs - INFO - Stored 5203 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-07 20:49:12,741 - gdax_msgs - INFO - Stored 11532 messages in GdaxBtcUsdMessage in 2.84s
+2017-12-07 20:50:12,028 - gdax_msgs - INFO - Stored 11505 messages in GdaxBtcUsdMessage in 2.10s
+2017-12-07 20:51:11,966 - gdax_msgs - INFO - Stored 9697 messages in GdaxBtcUsdMessage in 2.00s
+2017-12-07 20:52:11,801 - gdax_msgs - INFO - Stored 9688 messages in GdaxBtcUsdMessage in 1.84s
+2017-12-07 20:53:11,962 - gdax_msgs - INFO - Stored 10188 messages in GdaxBtcUsdMessage in 1.92s
+2017-12-07 20:54:11,547 - gdax_msgs - INFO - Stored 9479 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-07 20:55:13,283 - gdax_msgs - INFO - Stored 10555 messages in GdaxBtcUsdMessage in 3.20s
+2017-12-07 20:56:11,893 - gdax_msgs - INFO - Stored 6261 messages in GdaxBtcUsdMessage in 1.81s
+2017-12-07 20:57:12,690 - gdax_msgs - INFO - Stored 10372 messages in GdaxBtcUsdMessage in 2.58s
+2017-12-07 20:58:12,538 - gdax_msgs - INFO - Stored 10723 messages in GdaxBtcUsdMessage in 2.42s
+2017-12-07 20:59:12,556 - gdax_msgs - INFO - Stored 10314 messages in GdaxBtcUsdMessage in 2.41s
+2017-12-07 21:00:11,409 - gdax_msgs - INFO - Stored 3166 messages in GdaxBtcUsdMessage in 1.23s
+2017-12-07 21:01:10,944 - gdax_msgs - INFO - Stored 3544 messages in GdaxBtcUsdMessage in 0.75s
+2017-12-07 21:02:10,774 - gdax_msgs - INFO - Stored 3906 messages in GdaxBtcUsdMessage in 0.57s
+2017-12-07 21:03:13,126 - gdax_msgs - INFO - Stored 10605 messages in GdaxBtcUsdMessage in 2.88s
+2017-12-07 21:04:11,025 - gdax_msgs - INFO - Stored 4521 messages in GdaxBtcUsdMessage in 0.75s
+2017-12-07 21:05:12,787 - gdax_msgs - INFO - Stored 9875 messages in GdaxBtcUsdMessage in 2.46s
+2017-12-07 21:06:13,207 - gdax_msgs - INFO - Stored 11052 messages in GdaxBtcUsdMessage in 2.87s
+2017-12-07 21:07:12,958 - gdax_msgs - INFO - Stored 11414 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-07 21:08:11,860 - gdax_msgs - INFO - Stored 7774 messages in GdaxBtcUsdMessage in 1.48s
+2017-12-07 21:09:12,096 - gdax_msgs - INFO - Stored 8831 messages in GdaxBtcUsdMessage in 1.71s
+2017-12-07 21:10:10,905 - gdax_msgs - INFO - Stored 3502 messages in GdaxBtcUsdMessage in 0.52s
+2017-12-07 21:11:11,498 - gdax_msgs - INFO - Stored 5361 messages in GdaxBtcUsdMessage in 1.01s
+2017-12-07 21:12:11,501 - gdax_msgs - INFO - Stored 7310 messages in GdaxBtcUsdMessage in 1.00s
+2017-12-07 21:13:12,575 - gdax_msgs - INFO - Stored 10264 messages in GdaxBtcUsdMessage in 2.07s
+2017-12-07 21:14:12,980 - gdax_msgs - INFO - Stored 10193 messages in GdaxBtcUsdMessage in 2.45s
+2017-12-07 21:15:13,104 - gdax_msgs - INFO - Stored 13399 messages in GdaxBtcUsdMessage in 2.54s
+2017-12-07 21:16:12,149 - gdax_msgs - INFO - Stored 9873 messages in GdaxBtcUsdMessage in 1.48s
+2017-12-07 21:17:13,443 - gdax_msgs - INFO - Stored 12739 messages in GdaxBtcUsdMessage in 2.76s
+2017-12-07 21:18:12,249 - gdax_msgs - INFO - Stored 9969 messages in GdaxBtcUsdMessage in 1.56s
+2017-12-07 21:19:13,111 - gdax_msgs - INFO - Stored 10350 messages in GdaxBtcUsdMessage in 2.33s
+2017-12-07 21:20:12,863 - gdax_msgs - INFO - Stored 11988 messages in GdaxBtcUsdMessage in 2.07s
+2017-12-07 21:21:12,205 - gdax_msgs - INFO - Stored 8234 messages in GdaxBtcUsdMessage in 1.39s
+2017-12-07 21:22:12,955 - gdax_msgs - INFO - Stored 11004 messages in GdaxBtcUsdMessage in 2.08s
+2017-12-07 21:23:13,594 - gdax_msgs - INFO - Stored 11611 messages in GdaxBtcUsdMessage in 2.70s
+2017-12-07 21:24:13,323 - gdax_msgs - INFO - Stored 10728 messages in GdaxBtcUsdMessage in 2.33s
+2017-12-07 21:24:37,153 - gdax_msgs - INFO - ==============================
+2017-12-07 21:24:37,153 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 21:24:46,547 - gdax_msgs - INFO - ==============================
+2017-12-07 21:25:12,851 - gdax_msgs - INFO - Stored 11748 messages in GdaxBtcUsdMessage in 1.77s
+2017-12-07 21:26:12,972 - gdax_msgs - INFO - Stored 11837 messages in GdaxBtcUsdMessage in 1.88s
+2017-12-07 21:27:12,867 - gdax_msgs - INFO - Stored 9740 messages in GdaxBtcUsdMessage in 1.67s
+2017-12-07 21:28:13,577 - gdax_msgs - INFO - Stored 12862 messages in GdaxBtcUsdMessage in 2.34s
+2017-12-07 21:29:12,003 - gdax_msgs - INFO - Stored 4921 messages in GdaxBtcUsdMessage in 0.75s
+2017-12-07 21:30:12,150 - gdax_msgs - INFO - Stored 6507 messages in GdaxBtcUsdMessage in 0.89s
+2017-12-07 21:31:12,115 - gdax_msgs - INFO - Stored 6025 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 21:32:12,757 - gdax_msgs - INFO - Stored 8168 messages in GdaxBtcUsdMessage in 1.43s
+2017-12-07 21:33:12,483 - gdax_msgs - INFO - Stored 8572 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-07 21:34:14,456 - gdax_msgs - INFO - Stored 17486 messages in GdaxBtcUsdMessage in 3.11s
+2017-12-07 21:35:13,230 - gdax_msgs - INFO - Stored 11116 messages in GdaxBtcUsdMessage in 1.79s
+2017-12-07 21:36:14,477 - gdax_msgs - INFO - Stored 12006 messages in GdaxBtcUsdMessage in 2.99s
+2017-12-07 21:37:13,568 - gdax_msgs - INFO - Stored 11543 messages in GdaxBtcUsdMessage in 2.06s
+2017-12-07 21:38:13,477 - gdax_msgs - INFO - Stored 9824 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-07 21:39:13,137 - gdax_msgs - INFO - Stored 8499 messages in GdaxBtcUsdMessage in 1.61s
+2017-12-07 21:40:13,115 - gdax_msgs - INFO - Stored 10631 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-07 21:41:12,935 - gdax_msgs - INFO - Stored 6368 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-07 21:42:13,311 - gdax_msgs - INFO - Stored 10287 messages in GdaxBtcUsdMessage in 1.72s
+2017-12-07 21:43:12,596 - gdax_msgs - INFO - Stored 5963 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-07 21:44:12,771 - gdax_msgs - INFO - Stored 5715 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-07 21:45:12,401 - gdax_msgs - INFO - Stored 4927 messages in GdaxBtcUsdMessage in 0.69s
+2017-12-07 21:46:12,715 - gdax_msgs - INFO - Stored 6383 messages in GdaxBtcUsdMessage in 0.86s
+2017-12-07 21:47:13,550 - gdax_msgs - INFO - Stored 10291 messages in GdaxBtcUsdMessage in 1.70s
+2017-12-07 21:48:13,563 - gdax_msgs - INFO - Stored 8981 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-07 21:49:13,902 - gdax_msgs - INFO - Stored 9785 messages in GdaxBtcUsdMessage in 1.67s
+2017-12-07 21:50:13,770 - gdax_msgs - INFO - Stored 9321 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-07 21:51:13,781 - gdax_msgs - INFO - Stored 9250 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 21:52:15,449 - gdax_msgs - INFO - Stored 10798 messages in GdaxBtcUsdMessage in 3.14s
+2017-12-07 21:53:15,067 - gdax_msgs - INFO - Stored 13775 messages in GdaxBtcUsdMessage in 2.76s
+2017-12-07 21:54:14,448 - gdax_msgs - INFO - Stored 11499 messages in GdaxBtcUsdMessage in 2.13s
+2017-12-07 21:55:14,112 - gdax_msgs - INFO - Stored 10568 messages in GdaxBtcUsdMessage in 1.75s
+2017-12-07 21:56:13,619 - gdax_msgs - INFO - Stored 6354 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 21:57:13,041 - gdax_msgs - INFO - Stored 4088 messages in GdaxBtcUsdMessage in 0.65s
+2017-12-07 21:58:13,844 - gdax_msgs - INFO - Stored 9301 messages in GdaxBtcUsdMessage in 1.45s
+2017-12-07 21:59:13,717 - gdax_msgs - INFO - Stored 8721 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 22:00:13,275 - gdax_msgs - INFO - Stored 6025 messages in GdaxBtcUsdMessage in 0.85s
+2017-12-07 22:01:13,809 - gdax_msgs - INFO - Stored 9235 messages in GdaxBtcUsdMessage in 1.38s
+2017-12-07 22:02:13,124 - gdax_msgs - INFO - Stored 3504 messages in GdaxBtcUsdMessage in 0.65s
+2017-12-07 22:03:13,038 - gdax_msgs - INFO - Stored 2684 messages in GdaxBtcUsdMessage in 0.56s
+2017-12-07 22:04:12,856 - gdax_msgs - INFO - Stored 2236 messages in GdaxBtcUsdMessage in 0.32s
+2017-12-07 22:05:14,480 - gdax_msgs - INFO - Stored 3975 messages in GdaxBtcUsdMessage in 0.53s
+2017-12-07 22:06:15,296 - gdax_msgs - INFO - Stored 5868 messages in GdaxBtcUsdMessage in 1.28s
+2017-12-07 22:07:15,150 - gdax_msgs - INFO - Stored 6608 messages in GdaxBtcUsdMessage in 1.12s
+2017-12-07 22:08:14,701 - gdax_msgs - INFO - Stored 3760 messages in GdaxBtcUsdMessage in 0.52s
+2017-12-07 22:09:15,019 - gdax_msgs - INFO - Stored 5770 messages in GdaxBtcUsdMessage in 0.80s
+2017-12-07 22:10:16,742 - gdax_msgs - INFO - Stored 8332 messages in GdaxBtcUsdMessage in 2.50s
+2017-12-07 22:11:16,555 - gdax_msgs - INFO - Stored 10981 messages in GdaxBtcUsdMessage in 2.30s
+2017-12-07 22:12:15,652 - gdax_msgs - INFO - Stored 8134 messages in GdaxBtcUsdMessage in 1.29s
+2017-12-07 22:13:14,673 - gdax_msgs - INFO - Stored 1657 messages in GdaxBtcUsdMessage in 0.25s
+2017-12-07 22:14:15,901 - gdax_msgs - INFO - Stored 7377 messages in GdaxBtcUsdMessage in 1.41s
+2017-12-07 22:15:15,624 - gdax_msgs - INFO - Stored 7663 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-07 22:16:15,626 - gdax_msgs - INFO - Stored 6392 messages in GdaxBtcUsdMessage in 1.04s
+2017-12-07 22:17:15,495 - gdax_msgs - INFO - Stored 5888 messages in GdaxBtcUsdMessage in 0.91s
+2017-12-07 22:18:15,653 - gdax_msgs - INFO - Stored 6917 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-07 22:19:15,529 - gdax_msgs - INFO - Stored 6391 messages in GdaxBtcUsdMessage in 0.91s
+2017-12-07 22:20:15,759 - gdax_msgs - INFO - Stored 6954 messages in GdaxBtcUsdMessage in 1.01s
+2017-12-07 22:21:17,994 - gdax_msgs - INFO - Stored 11562 messages in GdaxBtcUsdMessage in 2.27s
+2017-12-07 22:22:17,378 - gdax_msgs - INFO - Stored 10260 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-07 22:23:16,576 - gdax_msgs - INFO - Stored 5204 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 22:24:16,752 - gdax_msgs - INFO - Stored 5134 messages in GdaxBtcUsdMessage in 1.00s
+2017-12-07 22:24:37,165 - gdax_msgs - INFO - ==============================
+2017-12-07 22:24:37,166 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 22:24:49,246 - gdax_msgs - INFO - ==============================
+2017-12-07 22:25:17,120 - gdax_msgs - INFO - Stored 8505 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-07 22:26:17,977 - gdax_msgs - INFO - Stored 11692 messages in GdaxBtcUsdMessage in 2.04s
+2017-12-07 22:27:18,300 - gdax_msgs - INFO - Stored 13590 messages in GdaxBtcUsdMessage in 2.36s
+2017-12-07 22:28:18,672 - gdax_msgs - INFO - Stored 9496 messages in GdaxBtcUsdMessage in 2.72s
+2017-12-07 22:29:16,740 - gdax_msgs - INFO - Stored 4394 messages in GdaxBtcUsdMessage in 0.77s
+2017-12-07 22:30:16,394 - gdax_msgs - INFO - Stored 2700 messages in GdaxBtcUsdMessage in 0.40s
+2017-12-07 22:31:17,479 - gdax_msgs - INFO - Stored 8196 messages in GdaxBtcUsdMessage in 1.47s
+2017-12-07 22:32:17,467 - gdax_msgs - INFO - Stored 7578 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-07 22:33:16,821 - gdax_msgs - INFO - Stored 4414 messages in GdaxBtcUsdMessage in 0.74s
+2017-12-07 22:34:17,289 - gdax_msgs - INFO - Stored 6035 messages in GdaxBtcUsdMessage in 1.19s
+2017-12-07 22:35:17,601 - gdax_msgs - INFO - Stored 8529 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 22:36:17,450 - gdax_msgs - INFO - Stored 6978 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-07 22:37:17,176 - gdax_msgs - INFO - Stored 6328 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-07 22:38:17,818 - gdax_msgs - INFO - Stored 6412 messages in GdaxBtcUsdMessage in 1.60s
+2017-12-07 22:39:17,126 - gdax_msgs - INFO - Stored 5587 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-07 22:40:16,949 - gdax_msgs - INFO - Stored 4383 messages in GdaxBtcUsdMessage in 0.69s
+2017-12-07 22:41:17,591 - gdax_msgs - INFO - Stored 4456 messages in GdaxBtcUsdMessage in 0.96s
+2017-12-07 22:42:18,585 - gdax_msgs - INFO - Stored 13226 messages in GdaxBtcUsdMessage in 1.95s
+2017-12-07 22:43:18,228 - gdax_msgs - INFO - Stored 8359 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 22:44:18,530 - gdax_msgs - INFO - Stored 9459 messages in GdaxBtcUsdMessage in 1.79s
+2017-12-07 22:45:18,331 - gdax_msgs - INFO - Stored 8697 messages in GdaxBtcUsdMessage in 1.59s
+2017-12-07 22:46:18,791 - gdax_msgs - INFO - Stored 9243 messages in GdaxBtcUsdMessage in 1.99s
+2017-12-07 22:47:18,774 - gdax_msgs - INFO - Stored 8945 messages in GdaxBtcUsdMessage in 1.93s
+2017-12-07 22:48:18,585 - gdax_msgs - INFO - Stored 8562 messages in GdaxBtcUsdMessage in 1.73s
+2017-12-07 22:49:18,879 - gdax_msgs - INFO - Stored 9568 messages in GdaxBtcUsdMessage in 1.98s
+2017-12-07 22:50:18,266 - gdax_msgs - INFO - Stored 6739 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-07 22:51:18,128 - gdax_msgs - INFO - Stored 7431 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-07 22:52:18,597 - gdax_msgs - INFO - Stored 8920 messages in GdaxBtcUsdMessage in 1.66s
+2017-12-07 22:53:18,478 - gdax_msgs - INFO - Stored 9086 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-07 22:54:18,233 - gdax_msgs - INFO - Stored 7058 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 22:55:19,159 - gdax_msgs - INFO - Stored 9153 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-07 22:56:18,129 - gdax_msgs - INFO - Stored 5446 messages in GdaxBtcUsdMessage in 1.11s
+2017-12-07 22:57:17,946 - gdax_msgs - INFO - Stored 5478 messages in GdaxBtcUsdMessage in 0.92s
+2017-12-07 22:58:18,889 - gdax_msgs - INFO - Stored 8689 messages in GdaxBtcUsdMessage in 1.85s
+2017-12-07 22:59:23,158 - gdax_msgs - INFO - Stored 9579 messages in GdaxBtcUsdMessage in 6.12s
+2017-12-07 23:00:18,109 - gdax_msgs - INFO - Stored 5989 messages in GdaxBtcUsdMessage in 1.06s
+2017-12-07 23:01:17,977 - gdax_msgs - INFO - Stored 5028 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-07 23:02:18,388 - gdax_msgs - INFO - Stored 5735 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-07 23:03:18,860 - gdax_msgs - INFO - Stored 8331 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-07 23:04:18,510 - gdax_msgs - INFO - Stored 7234 messages in GdaxBtcUsdMessage in 1.17s
+2017-12-07 23:05:18,587 - gdax_msgs - INFO - Stored 6046 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 23:06:18,867 - gdax_msgs - INFO - Stored 8337 messages in GdaxBtcUsdMessage in 1.51s
+2017-12-07 23:07:19,593 - gdax_msgs - INFO - Stored 10440 messages in GdaxBtcUsdMessage in 2.18s
+2017-12-07 23:08:20,778 - gdax_msgs - INFO - Stored 14794 messages in GdaxBtcUsdMessage in 3.35s
+2017-12-07 23:09:19,362 - gdax_msgs - INFO - Stored 12284 messages in GdaxBtcUsdMessage in 1.93s
+2017-12-07 23:09:30,046 - core_websocket - ERROR - Message error: No JSON object could be decoded
+Message: 
+Traceback (most recent call last):
+  File "bitcoin/websocket/core_ws.py", line 81, in _listen
+    msg = json.loads(msg)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2017-12-07 23:09:30,046 - core_websocket - INFO - Closing websocket
+2017-12-07 23:09:31,049 - core_websocket - INFO - Successfully closed Websocket
+2017-12-07 23:09:32,050 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-12-07 23:09:33,826 - core_websocket - INFO - Turning on heartbeat
+2017-12-07 23:09:33,827 - core_websocket - INFO - Listening for messages
+2017-12-07 23:10:20,394 - gdax_msgs - INFO - Stored 13303 messages in GdaxBtcUsdMessage in 2.94s
+2017-12-07 23:11:18,809 - gdax_msgs - INFO - Stored 8136 messages in GdaxBtcUsdMessage in 1.32s
+2017-12-07 23:12:18,570 - gdax_msgs - INFO - Stored 6431 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-07 23:13:18,865 - gdax_msgs - INFO - Stored 9337 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-07 23:14:18,932 - gdax_msgs - INFO - Stored 8062 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-07 23:15:20,179 - gdax_msgs - INFO - Stored 11332 messages in GdaxBtcUsdMessage in 2.56s
+2017-12-07 23:16:18,993 - gdax_msgs - INFO - Stored 7884 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-07 23:17:18,564 - gdax_msgs - INFO - Stored 5299 messages in GdaxBtcUsdMessage in 0.94s
+2017-12-07 23:18:19,089 - gdax_msgs - INFO - Stored 7683 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-07 23:19:18,770 - gdax_msgs - INFO - Stored 7080 messages in GdaxBtcUsdMessage in 1.10s
+2017-12-07 23:20:19,195 - gdax_msgs - INFO - Stored 8255 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-07 23:21:19,468 - gdax_msgs - INFO - Stored 8529 messages in GdaxBtcUsdMessage in 1.73s
+2017-12-07 23:22:19,235 - gdax_msgs - INFO - Stored 8953 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-07 23:23:20,078 - gdax_msgs - INFO - Stored 7711 messages in GdaxBtcUsdMessage in 2.19s
+2017-12-07 23:24:19,015 - gdax_msgs - INFO - Stored 6219 messages in GdaxBtcUsdMessage in 1.11s
+2017-12-07 23:24:37,219 - gdax_msgs - INFO - ==============================
+2017-12-07 23:24:37,220 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-07 23:24:46,046 - gdax_msgs - INFO - ==============================
+2017-12-07 23:25:19,108 - gdax_msgs - INFO - Stored 7528 messages in GdaxBtcUsdMessage in 1.19s
+2017-12-07 23:26:18,763 - gdax_msgs - INFO - Stored 4966 messages in GdaxBtcUsdMessage in 0.82s
+2017-12-07 23:27:18,814 - gdax_msgs - INFO - Stored 4463 messages in GdaxBtcUsdMessage in 0.86s
+2017-12-07 23:28:18,849 - gdax_msgs - INFO - Stored 5012 messages in GdaxBtcUsdMessage in 0.88s
+2017-12-07 23:29:18,925 - gdax_msgs - INFO - Stored 4595 messages in GdaxBtcUsdMessage in 0.96s
+2017-12-07 23:30:19,066 - gdax_msgs - INFO - Stored 5902 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-07 23:31:19,884 - gdax_msgs - INFO - Stored 10118 messages in GdaxBtcUsdMessage in 1.88s
+2017-12-07 23:32:19,108 - gdax_msgs - INFO - Stored 5937 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-07 23:33:18,887 - gdax_msgs - INFO - Stored 4218 messages in GdaxBtcUsdMessage in 0.77s
+2017-12-07 23:34:18,803 - gdax_msgs - INFO - Stored 4870 messages in GdaxBtcUsdMessage in 0.67s
+2017-12-07 23:35:18,991 - gdax_msgs - INFO - Stored 3777 messages in GdaxBtcUsdMessage in 0.79s
+2017-12-07 23:36:19,402 - gdax_msgs - INFO - Stored 6279 messages in GdaxBtcUsdMessage in 1.17s
+2017-12-07 23:37:19,657 - gdax_msgs - INFO - Stored 5849 messages in GdaxBtcUsdMessage in 1.43s
+2017-12-07 23:38:19,528 - gdax_msgs - INFO - Stored 7183 messages in GdaxBtcUsdMessage in 1.20s
+2017-12-07 23:39:19,286 - gdax_msgs - INFO - Stored 5684 messages in GdaxBtcUsdMessage in 0.93s
+2017-12-07 23:40:18,938 - gdax_msgs - INFO - Stored 3950 messages in GdaxBtcUsdMessage in 0.56s
+2017-12-07 23:41:18,937 - gdax_msgs - INFO - Stored 3241 messages in GdaxBtcUsdMessage in 0.55s
+2017-12-07 23:42:19,088 - gdax_msgs - INFO - Stored 4796 messages in GdaxBtcUsdMessage in 0.66s
+2017-12-07 23:43:19,619 - gdax_msgs - INFO - Stored 5079 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-07 23:44:19,994 - gdax_msgs - INFO - Stored 7154 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-07 23:45:19,407 - gdax_msgs - INFO - Stored 5044 messages in GdaxBtcUsdMessage in 0.76s
+2017-12-07 23:46:19,343 - gdax_msgs - INFO - Stored 5151 messages in GdaxBtcUsdMessage in 0.69s
+2017-12-07 23:47:19,342 - gdax_msgs - INFO - Stored 3624 messages in GdaxBtcUsdMessage in 0.68s
+2017-12-07 23:48:19,134 - gdax_msgs - INFO - Stored 2280 messages in GdaxBtcUsdMessage in 0.47s
+2017-12-07 23:49:19,962 - gdax_msgs - INFO - Stored 7381 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-07 23:50:19,168 - gdax_msgs - INFO - Stored 3219 messages in GdaxBtcUsdMessage in 0.45s
+2017-12-07 23:51:19,184 - gdax_msgs - INFO - Stored 2391 messages in GdaxBtcUsdMessage in 0.46s
+2017-12-07 23:52:20,262 - gdax_msgs - INFO - Stored 8540 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-07 23:53:19,849 - gdax_msgs - INFO - Stored 6728 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-07 23:54:21,712 - gdax_msgs - INFO - Stored 13121 messages in GdaxBtcUsdMessage in 2.94s
+2017-12-07 23:55:20,092 - gdax_msgs - INFO - Stored 8211 messages in GdaxBtcUsdMessage in 1.31s
+2017-12-07 23:56:19,832 - gdax_msgs - INFO - Stored 6588 messages in GdaxBtcUsdMessage in 0.96s
+2017-12-07 23:57:20,236 - gdax_msgs - INFO - Stored 6706 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-07 23:58:20,728 - gdax_msgs - INFO - Stored 9589 messages in GdaxBtcUsdMessage in 1.80s
+2017-12-07 23:59:20,077 - gdax_msgs - INFO - Stored 8198 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-08 00:00:20,869 - gdax_msgs - INFO - Stored 9369 messages in GdaxBtcUsdMessage in 1.94s
+2017-12-08 00:01:20,642 - gdax_msgs - INFO - Stored 8285 messages in GdaxBtcUsdMessage in 1.70s
+2017-12-08 00:02:20,557 - gdax_msgs - INFO - Stored 8971 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-08 00:03:20,877 - gdax_msgs - INFO - Stored 9614 messages in GdaxBtcUsdMessage in 1.83s
+2017-12-08 00:04:21,563 - gdax_msgs - INFO - Stored 11843 messages in GdaxBtcUsdMessage in 2.43s
+2017-12-08 00:05:21,854 - gdax_msgs - INFO - Stored 16021 messages in GdaxBtcUsdMessage in 2.72s
+2017-12-08 00:06:20,408 - gdax_msgs - INFO - Stored 7170 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-08 00:07:20,079 - gdax_msgs - INFO - Stored 5885 messages in GdaxBtcUsdMessage in 0.87s
+2017-12-08 00:08:20,091 - gdax_msgs - INFO - Stored 4404 messages in GdaxBtcUsdMessage in 0.87s
+2017-12-08 00:09:20,450 - gdax_msgs - INFO - Stored 4438 messages in GdaxBtcUsdMessage in 0.96s
+2017-12-08 00:10:20,318 - gdax_msgs - INFO - Stored 5105 messages in GdaxBtcUsdMessage in 0.79s
+2017-12-08 00:11:20,249 - gdax_msgs - INFO - Stored 4390 messages in GdaxBtcUsdMessage in 0.65s
+2017-12-08 00:12:20,733 - gdax_msgs - INFO - Stored 4418 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-08 00:13:20,940 - gdax_msgs - INFO - Stored 7868 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-08 00:14:20,621 - gdax_msgs - INFO - Stored 5438 messages in GdaxBtcUsdMessage in 0.92s
+2017-12-08 00:15:20,708 - gdax_msgs - INFO - Stored 5913 messages in GdaxBtcUsdMessage in 0.97s
+2017-12-08 00:16:21,731 - gdax_msgs - INFO - Stored 12963 messages in GdaxBtcUsdMessage in 1.98s
+2017-12-08 00:17:21,103 - gdax_msgs - INFO - Stored 6527 messages in GdaxBtcUsdMessage in 1.32s
+2017-12-08 00:18:20,425 - gdax_msgs - INFO - Stored 3979 messages in GdaxBtcUsdMessage in 0.56s
+2017-12-08 00:19:20,482 - gdax_msgs - INFO - Stored 2985 messages in GdaxBtcUsdMessage in 0.62s
+2017-12-08 00:20:21,172 - gdax_msgs - INFO - Stored 8060 messages in GdaxBtcUsdMessage in 1.22s
+2017-12-08 00:21:21,674 - gdax_msgs - INFO - Stored 8933 messages in GdaxBtcUsdMessage in 1.67s
+2017-12-08 00:22:20,549 - gdax_msgs - INFO - Stored 3617 messages in GdaxBtcUsdMessage in 0.51s
+2017-12-08 00:23:20,833 - gdax_msgs - INFO - Stored 5174 messages in GdaxBtcUsdMessage in 0.78s
+2017-12-08 00:24:22,066 - gdax_msgs - INFO - Stored 10751 messages in GdaxBtcUsdMessage in 1.99s
+2017-12-08 00:24:37,227 - gdax_msgs - INFO - ==============================
+2017-12-08 00:24:37,227 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-08 00:26:38,946 - gdax_msgs - INFO - ==============================
+2017-12-08 00:26:40,680 - gdax_msgs - INFO - Stored 9150 messages in GdaxBtcUsdMessage in 20.49s
+2017-12-08 00:26:41,116 - gdax_msgs - INFO - Stored 10311 messages in GdaxBtcUsdMessage in 81.02s
+2017-12-08 00:27:21,616 - gdax_msgs - INFO - Stored 8001 messages in GdaxBtcUsdMessage in 1.42s
+2017-12-08 00:28:21,850 - gdax_msgs - INFO - Stored 8143 messages in GdaxBtcUsdMessage in 1.63s
+2017-12-08 00:29:21,373 - gdax_msgs - INFO - Stored 6393 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-08 00:30:21,737 - gdax_msgs - INFO - Stored 9111 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-08 00:31:21,433 - gdax_msgs - INFO - Stored 7737 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-08 00:32:21,814 - gdax_msgs - INFO - Stored 6665 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-08 00:33:21,192 - gdax_msgs - INFO - Stored 4517 messages in GdaxBtcUsdMessage in 0.76s
+2017-12-08 00:34:21,058 - gdax_msgs - INFO - Stored 4524 messages in GdaxBtcUsdMessage in 0.62s
+2017-12-08 00:35:22,032 - gdax_msgs - INFO - Stored 9576 messages in GdaxBtcUsdMessage in 1.58s
+2017-12-08 00:36:21,739 - gdax_msgs - INFO - Stored 8716 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-08 00:37:21,679 - gdax_msgs - INFO - Stored 6186 messages in GdaxBtcUsdMessage in 1.16s
+2017-12-08 00:38:21,529 - gdax_msgs - INFO - Stored 6345 messages in GdaxBtcUsdMessage in 0.95s
+2017-12-08 00:39:21,658 - gdax_msgs - INFO - Stored 5839 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-08 00:40:21,991 - gdax_msgs - INFO - Stored 8978 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-08 00:41:22,274 - gdax_msgs - INFO - Stored 9259 messages in GdaxBtcUsdMessage in 1.63s
+2017-12-08 00:42:22,187 - gdax_msgs - INFO - Stored 9445 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-08 00:43:21,860 - gdax_msgs - INFO - Stored 6720 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-08 00:44:22,541 - gdax_msgs - INFO - Stored 10420 messages in GdaxBtcUsdMessage in 1.78s
+2017-12-08 00:45:22,989 - gdax_msgs - INFO - Stored 12801 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-08 00:46:21,410 - gdax_msgs - INFO - Stored 4957 messages in GdaxBtcUsdMessage in 0.63s
+2017-12-08 00:47:21,732 - gdax_msgs - INFO - Stored 6792 messages in GdaxBtcUsdMessage in 0.94s
+2017-12-08 00:48:22,310 - gdax_msgs - INFO - Stored 8416 messages in GdaxBtcUsdMessage in 1.52s
+2017-12-08 00:49:21,827 - gdax_msgs - INFO - Stored 6935 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-08 00:50:21,626 - gdax_msgs - INFO - Stored 5440 messages in GdaxBtcUsdMessage in 0.81s
+2017-12-08 00:51:22,181 - gdax_msgs - INFO - Stored 7408 messages in GdaxBtcUsdMessage in 1.32s
+2017-12-08 00:52:22,013 - gdax_msgs - INFO - Stored 7318 messages in GdaxBtcUsdMessage in 1.13s
+2017-12-08 00:53:22,552 - gdax_msgs - INFO - Stored 10482 messages in GdaxBtcUsdMessage in 1.67s
+2017-12-08 00:54:22,176 - gdax_msgs - INFO - Stored 5725 messages in GdaxBtcUsdMessage in 1.27s
+2017-12-08 00:55:21,764 - gdax_msgs - INFO - Stored 4823 messages in GdaxBtcUsdMessage in 0.85s
+2017-12-08 00:56:22,139 - gdax_msgs - INFO - Stored 5516 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-08 00:57:23,177 - gdax_msgs - INFO - Stored 14197 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-08 00:58:22,188 - gdax_msgs - INFO - Stored 7809 messages in GdaxBtcUsdMessage in 1.13s
+2017-12-08 00:59:22,990 - gdax_msgs - INFO - Stored 11425 messages in GdaxBtcUsdMessage in 1.85s
+2017-12-08 01:00:22,391 - gdax_msgs - INFO - Stored 6947 messages in GdaxBtcUsdMessage in 1.19s
+2017-12-08 01:01:22,129 - gdax_msgs - INFO - Stored 5889 messages in GdaxBtcUsdMessage in 0.84s
+2017-12-08 01:02:22,174 - gdax_msgs - INFO - Stored 5017 messages in GdaxBtcUsdMessage in 0.81s
+2017-12-08 01:03:22,378 - gdax_msgs - INFO - Stored 7050 messages in GdaxBtcUsdMessage in 1.00s
+2017-12-08 01:04:22,208 - gdax_msgs - INFO - Stored 5397 messages in GdaxBtcUsdMessage in 0.83s
+2017-12-08 01:05:22,850 - gdax_msgs - INFO - Stored 8700 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-08 01:06:22,750 - gdax_msgs - INFO - Stored 9008 messages in GdaxBtcUsdMessage in 1.30s
+2017-12-08 01:07:24,127 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-08 01:07:24,127 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 11936") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4488033471, u'2017-12-08T01:06:21.439000Z', '2017-12-08T01:06:21.448486Z', u'received', u'17144.91000000', u'0.58510000', u'e63668b1-97ee-41c4-af12-b8359c056409', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4488033472, u'2017-12-08T01:06:21.439000Z', '2017-12-08T01:06:21.448650Z', u'open', u'17144.91000000', None, u'e63668b1-97ee-41c4-af12-b8359c056409', u'buy', None, None, u'0.58510000', None, None, None, None, None, None, None, None), (4488033473, u'2017-12-08T01:06:21.453000Z', '2017-12-08T01:06:21.510738Z', u'done', u'17712.43000000', None, u'9a7cac40-f278-4e7c-b141-fdf205caeece', u'sell', None, None, u'2.00000000', u'canceled', None, None, None, None, None, None, None), (4488033474, u'2017-12-08T01:06:21.493000Z', '2017-12-08T01:06:21.511012Z', u'received', u'17102.29000000', u'0.10000000', u'f1b51c19-d3e5-4a94-a5a6-20472d183e20', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4488033475, u'2017-12-08T01:06:21.493000Z', '2017-12-08T01:06:21.511173Z', u'open', u'17102.29000000', None, u'f1b51c19-d3e5-4a94-a5a6-20472d183e20', u'buy', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4488033476, u'2017-12-08T01:06:21.557000Z', '2017-12-08T01:06:21.559169Z', u'done', u'17720.43000000', None, u'645bf30f-e502-4151-846b-db85d086b253', u'sell', None, None, u'3.00000000', u'canceled', None, None, None, None, None, None, None), (4488033477, u'2017-12-08T01:06:21.560000Z', '2017-12-08T01:06:21.587173Z', u'done', u'19091.04000000', None, u'ba38cc4c-a401-4f79-a803-bb4b427fcccc', u'sell', None, None, u'1.96000000', u'canceled', None, None, None, None, None, None, None), (4488033478, u'2017-12-08T01:06:21.563000Z', '2017-12-08T01:06:21.587369Z', u'done', u'17606.71000000', None, u'33d76ee3-63e7-40e6-a9be-2314ca50c18b', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 13880 total bound parameter sets ...  (4488047349, u'2017-12-08T01:07:21.476000Z', '2017-12-08T01:07:21.528781Z', u'open', u'17538.61000000', None, u'095e1b4a-eae0-4528-ad58-ab2e9c378471', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4488047350, u'2017-12-08T01:07:21.478000Z', '2017-12-08T01:07:21.528957Z', u'done', u'17538.63000000', None, u'8ea2d29d-f002-4bbc-b6ef-c1444f09bacf', u'sell', None, None, u'2.36000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-08 01:07:24,184 - gdax_msgs - INFO - Stored 13880 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-08 01:08:23,742 - gdax_msgs - INFO - Stored 10911 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-08 01:09:23,213 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-08 01:09:23,213 - db_util - ERROR - (_mysql_exceptions.DataError) (1406, "Data too long for column 'price' at row 874") [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4488058262, u'2017-12-08T01:08:21.541000Z', '2017-12-08T01:08:21.650375Z', u'done', u'17569.69000000', None, u'12c08354-32fe-41e4-aa35-25f56f2d40ca', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4488058263, u'2017-12-08T01:08:21.541000Z', '2017-12-08T01:08:21.650820Z', u'done', u'17505.13000000', None, u'80dfac53-6238-44e7-81d2-a21e8e366719', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4488058264, u'2017-12-08T01:08:21.542000Z', '2017-12-08T01:08:21.651078Z', u'done', u'17569.69000000', None, u'75483868-4de5-48d4-b84e-1d2531ba18a4', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4488058265, u'2017-12-08T01:08:21.545000Z', '2017-12-08T01:08:21.651420Z', u'done', u'17569.69000000', None, u'fbef275f-ccac-4bb0-8f15-6e15eabc8bde', u'sell', None, None, u'0.43595700', u'canceled', None, None, None, None, None, None, None), (4488058266, u'2017-12-08T01:08:21.557000Z', '2017-12-08T01:08:21.651713Z', u'done', u'17529.28000000', None, u'5117f6c7-80df-4531-bebd-4cd3b3f31990', u'buy', None, None, u'0.49300000', u'canceled', None, None, None, None, None, None, None), (4488058267, u'2017-12-08T01:08:21.559000Z', '2017-12-08T01:08:21.652092Z', u'received', u'17569.68000000', u'0.30000000', u'4633d934-5c9a-42db-a151-31d007185108', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4488058268, u'2017-12-08T01:08:21.559000Z', '2017-12-08T01:08:21.652382Z', u'open', u'17569.68000000', None, u'4633d934-5c9a-42db-a151-31d007185108', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4488058269, u'2017-12-08T01:08:21.561000Z', '2017-12-08T01:08:21.652661Z', u'done', u'17510.78000000', None, u'3a9838ef-f4fb-4115-9f18-fe63a1162d7f', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 12211 total bound parameter sets ...  (4488070471, u'2017-12-08T01:09:21.515000Z', '2017-12-08T01:09:21.518518Z', u'open', u'17424.33000000', None, u'f11849a8-e9e9-44fa-9bed-513c376bd313', u'buy', None, None, u'0.05000000', None, None, None, None, None, None, None, None), (4488070472, u'2017-12-08T01:09:21.530000Z', '2017-12-08T01:09:21.554379Z', u'received', u'17524.33000000', u'0.05000000', u'0ff995fc-4592-4c2d-b9d0-5124471942df', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None))]
+2017-12-08 01:09:23,253 - gdax_msgs - INFO - Stored 12211 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-08 01:10:22,638 - gdax_msgs - INFO - Stored 6284 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-08 01:11:22,591 - gdax_msgs - INFO - Stored 5381 messages in GdaxBtcUsdMessage in 1.00s
+2017-12-08 01:12:23,925 - gdax_msgs - INFO - Stored 12976 messages in GdaxBtcUsdMessage in 2.32s
+2017-12-08 01:13:50,732 - gdax_msgs - INFO - Stored 14788 messages in GdaxBtcUsdMessage in 29.12s
+2017-12-08 01:14:24,148 - gdax_msgs - INFO - Stored 15586 messages in GdaxBtcUsdMessage in 2.49s
+2017-12-08 01:15:24,493 - gdax_msgs - INFO - Stored 12998 messages in GdaxBtcUsdMessage in 2.84s
+2017-12-08 01:16:23,482 - gdax_msgs - INFO - Stored 11469 messages in GdaxBtcUsdMessage in 1.75s
+2017-12-08 01:17:23,701 - gdax_msgs - INFO - Stored 10033 messages in GdaxBtcUsdMessage in 1.88s
+2017-12-08 01:18:23,188 - gdax_msgs - INFO - Stored 8456 messages in GdaxBtcUsdMessage in 1.35s
+2017-12-08 01:19:23,202 - gdax_msgs - INFO - Stored 8139 messages in GdaxBtcUsdMessage in 1.28s
+2017-12-08 01:20:23,303 - gdax_msgs - INFO - Stored 6827 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-08 01:21:23,703 - gdax_msgs - INFO - Stored 7227 messages in GdaxBtcUsdMessage in 1.65s
+2017-12-08 01:22:23,536 - gdax_msgs - INFO - Stored 8935 messages in GdaxBtcUsdMessage in 1.39s
+2017-12-08 01:23:24,175 - gdax_msgs - INFO - Stored 10435 messages in GdaxBtcUsdMessage in 2.00s
+2017-12-08 01:24:23,488 - gdax_msgs - INFO - Stored 8549 messages in GdaxBtcUsdMessage in 1.29s
+2017-12-08 01:24:37,244 - gdax_msgs - INFO - ==============================
+2017-12-08 01:24:37,247 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-08 01:24:51,757 - gdax_msgs - INFO - ==============================
+2017-12-08 01:25:24,709 - gdax_msgs - INFO - Stored 14192 messages in GdaxBtcUsdMessage in 2.41s
+2017-12-08 01:26:24,363 - gdax_msgs - INFO - Stored 10129 messages in GdaxBtcUsdMessage in 2.06s
+2017-12-08 01:27:24,968 - gdax_msgs - INFO - Stored 14576 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-08 01:28:23,837 - gdax_msgs - INFO - Stored 8301 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-08 01:29:24,178 - gdax_msgs - INFO - Stored 10813 messages in GdaxBtcUsdMessage in 1.83s
+2017-12-08 01:30:23,952 - gdax_msgs - INFO - Stored 6951 messages in GdaxBtcUsdMessage in 1.59s
+2017-12-08 01:31:24,351 - gdax_msgs - INFO - Stored 9674 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-08 01:32:23,549 - gdax_msgs - INFO - Stored 6067 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-08 01:33:23,687 - gdax_msgs - INFO - Stored 6796 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-08 01:34:24,974 - gdax_msgs - INFO - Stored 13078 messages in GdaxBtcUsdMessage in 2.52s
+2017-12-08 01:35:24,833 - gdax_msgs - INFO - Stored 13437 messages in GdaxBtcUsdMessage in 2.37s
+2017-12-08 01:36:24,522 - gdax_msgs - INFO - Stored 12382 messages in GdaxBtcUsdMessage in 2.03s
+2017-12-08 01:37:23,687 - gdax_msgs - INFO - Stored 6192 messages in GdaxBtcUsdMessage in 1.16s
+2017-12-08 01:38:24,519 - gdax_msgs - INFO - Stored 11045 messages in GdaxBtcUsdMessage in 1.98s
+2017-12-08 01:39:24,413 - gdax_msgs - INFO - Stored 11352 messages in GdaxBtcUsdMessage in 1.86s
+2017-12-08 01:40:24,034 - gdax_msgs - INFO - Stored 8526 messages in GdaxBtcUsdMessage in 1.44s
+2017-12-08 01:41:24,978 - gdax_msgs - INFO - Stored 13848 messages in GdaxBtcUsdMessage in 2.38s
+2017-12-08 01:42:24,751 - gdax_msgs - INFO - Stored 13052 messages in GdaxBtcUsdMessage in 2.10s
+2017-12-08 01:43:24,907 - gdax_msgs - INFO - Stored 12213 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-08 01:44:24,579 - gdax_msgs - INFO - Stored 9345 messages in GdaxBtcUsdMessage in 1.89s
+2017-12-08 01:45:24,270 - gdax_msgs - INFO - Stored 9764 messages in GdaxBtcUsdMessage in 1.58s
+2017-12-08 01:46:24,196 - gdax_msgs - INFO - Stored 7638 messages in GdaxBtcUsdMessage in 1.48s
+2017-12-08 01:47:25,276 - gdax_msgs - INFO - Stored 14383 messages in GdaxBtcUsdMessage in 2.47s
+2017-12-08 01:48:24,285 - gdax_msgs - INFO - Stored 8939 messages in GdaxBtcUsdMessage in 1.46s
+2017-12-08 01:49:24,661 - gdax_msgs - INFO - Stored 10552 messages in GdaxBtcUsdMessage in 1.82s
+2017-12-08 01:50:24,530 - gdax_msgs - INFO - Stored 11158 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-08 01:51:24,982 - gdax_msgs - INFO - Stored 11891 messages in GdaxBtcUsdMessage in 2.13s
+2017-12-08 01:52:24,554 - gdax_msgs - INFO - Stored 10479 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-08 01:53:24,856 - gdax_msgs - INFO - Stored 10039 messages in GdaxBtcUsdMessage in 1.82s
+2017-12-08 01:54:26,887 - gdax_msgs - INFO - Stored 12853 messages in GdaxBtcUsdMessage in 3.84s
+2017-12-08 01:55:25,012 - gdax_msgs - INFO - Stored 11304 messages in GdaxBtcUsdMessage in 1.84s
+2017-12-08 01:56:25,897 - gdax_msgs - INFO - Stored 13950 messages in GdaxBtcUsdMessage in 2.72s
+2017-12-08 01:57:25,992 - gdax_msgs - INFO - Stored 12287 messages in GdaxBtcUsdMessage in 2.71s
+2017-12-08 01:58:25,523 - gdax_msgs - INFO - Stored 13033 messages in GdaxBtcUsdMessage in 2.23s
+2017-12-08 01:59:25,090 - gdax_msgs - INFO - Stored 8987 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-08 02:00:25,918 - gdax_msgs - INFO - Stored 12598 messages in GdaxBtcUsdMessage in 2.53s
+2017-12-08 02:01:26,307 - gdax_msgs - INFO - Stored 11729 messages in GdaxBtcUsdMessage in 2.92s
+2017-12-08 02:04:13,241 - gdax_msgs - INFO - Stored 12621 messages in GdaxBtcUsdMessage in 109.84s
+2017-12-08 02:04:15,666 - gdax_msgs - INFO - Stored 14945 messages in GdaxBtcUsdMessage in 52.26s
+2017-12-08 02:04:23,984 - gdax_msgs - INFO - Stored 2355 messages in GdaxBtcUsdMessage in 0.32s
+2017-12-08 02:05:24,716 - gdax_msgs - INFO - Stored 5923 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-08 02:06:27,287 - gdax_msgs - INFO - Stored 13731 messages in GdaxBtcUsdMessage in 3.55s
+2017-12-08 02:07:26,382 - gdax_msgs - INFO - Stored 14545 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-08 02:08:26,093 - gdax_msgs - INFO - Stored 13855 messages in GdaxBtcUsdMessage in 2.34s
+2017-12-08 02:09:24,421 - gdax_msgs - INFO - Stored 4919 messages in GdaxBtcUsdMessage in 0.66s
+2017-12-08 02:10:24,621 - gdax_msgs - INFO - Stored 3673 messages in GdaxBtcUsdMessage in 0.50s
+2017-12-08 02:11:27,309 - gdax_msgs - INFO - Stored 12200 messages in GdaxBtcUsdMessage in 3.18s
+2017-12-08 02:12:26,615 - gdax_msgs - INFO - Stored 15235 messages in GdaxBtcUsdMessage in 2.47s
+2017-12-08 02:13:26,955 - gdax_msgs - INFO - Stored 14595 messages in GdaxBtcUsdMessage in 2.79s
+2017-12-08 02:14:26,537 - gdax_msgs - INFO - Stored 13387 messages in GdaxBtcUsdMessage in 2.36s
+2017-12-08 02:15:27,761 - gdax_msgs - INFO - Stored 18339 messages in GdaxBtcUsdMessage in 3.59s
+2017-12-08 02:16:26,957 - gdax_msgs - INFO - Stored 14460 messages in GdaxBtcUsdMessage in 2.78s
+2017-12-08 02:17:27,261 - gdax_msgs - INFO - Stored 17061 messages in GdaxBtcUsdMessage in 3.07s
+2017-12-08 02:18:26,149 - gdax_msgs - INFO - Stored 10853 messages in GdaxBtcUsdMessage in 1.93s
+2017-12-08 02:19:26,047 - gdax_msgs - INFO - Stored 11077 messages in GdaxBtcUsdMessage in 1.80s
+2017-12-08 02:20:26,135 - gdax_msgs - INFO - Stored 9128 messages in GdaxBtcUsdMessage in 1.86s
+2017-12-08 02:21:26,921 - gdax_msgs - INFO - Stored 15196 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-08 02:22:26,994 - gdax_msgs - INFO - Stored 15109 messages in GdaxBtcUsdMessage in 2.70s
+2017-12-08 02:23:26,958 - gdax_msgs - INFO - Stored 14315 messages in GdaxBtcUsdMessage in 2.62s
+2017-12-08 02:24:25,380 - gdax_msgs - INFO - Stored 5972 messages in GdaxBtcUsdMessage in 1.03s
+2017-12-08 02:24:37,251 - gdax_msgs - INFO - ==============================
+2017-12-08 02:24:37,252 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-08 02:24:49,727 - gdax_msgs - INFO - ==============================
+2017-12-08 02:25:25,655 - gdax_msgs - INFO - Stored 7961 messages in GdaxBtcUsdMessage in 1.29s
+2017-12-08 02:26:25,899 - gdax_msgs - INFO - Stored 8772 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-08 02:27:25,711 - gdax_msgs - INFO - Stored 8505 messages in GdaxBtcUsdMessage in 1.30s
+2017-12-08 02:28:25,651 - gdax_msgs - INFO - Stored 6489 messages in GdaxBtcUsdMessage in 1.17s
+2017-12-08 02:29:25,889 - gdax_msgs - INFO - Stored 6726 messages in GdaxBtcUsdMessage in 1.40s
+2017-12-08 02:30:26,501 - gdax_msgs - INFO - Stored 10365 messages in GdaxBtcUsdMessage in 2.00s
+2017-12-08 02:31:26,864 - gdax_msgs - INFO - Stored 14577 messages in GdaxBtcUsdMessage in 2.35s
+2017-12-08 02:32:26,148 - gdax_msgs - INFO - Stored 8843 messages in GdaxBtcUsdMessage in 1.63s
+2017-12-08 02:33:26,677 - gdax_msgs - INFO - Stored 11747 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-08 02:34:26,586 - gdax_msgs - INFO - Stored 10496 messages in GdaxBtcUsdMessage in 2.06s
+2017-12-08 02:35:27,240 - gdax_msgs - INFO - Stored 13751 messages in GdaxBtcUsdMessage in 2.70s
+2017-12-08 02:36:26,483 - gdax_msgs - INFO - Stored 11133 messages in GdaxBtcUsdMessage in 1.93s
+2017-12-08 02:37:26,047 - gdax_msgs - INFO - Stored 8586 messages in GdaxBtcUsdMessage in 1.49s
+2017-12-08 02:38:27,588 - gdax_msgs - INFO - Stored 14697 messages in GdaxBtcUsdMessage in 2.98s
+2017-12-08 02:39:26,614 - gdax_msgs - INFO - Stored 12593 messages in GdaxBtcUsdMessage in 1.98s
+2017-12-08 02:40:26,765 - gdax_msgs - INFO - Stored 11511 messages in GdaxBtcUsdMessage in 2.09s
+2017-12-08 02:41:27,264 - gdax_msgs - INFO - Stored 14703 messages in GdaxBtcUsdMessage in 2.58s
+2017-12-08 02:42:27,582 - gdax_msgs - INFO - Stored 16263 messages in GdaxBtcUsdMessage in 2.88s
+2017-12-08 02:43:26,581 - gdax_msgs - INFO - Stored 11595 messages in GdaxBtcUsdMessage in 1.87s
+2017-12-08 02:44:26,927 - gdax_msgs - INFO - Stored 11958 messages in GdaxBtcUsdMessage in 2.20s
+2017-12-08 02:45:26,761 - gdax_msgs - INFO - Stored 11222 messages in GdaxBtcUsdMessage in 2.02s
+2017-12-08 02:46:27,030 - gdax_msgs - INFO - Stored 11782 messages in GdaxBtcUsdMessage in 2.28s
+2017-12-08 02:47:26,624 - gdax_msgs - INFO - Stored 10650 messages in GdaxBtcUsdMessage in 1.87s
+2017-12-08 02:48:26,737 - gdax_msgs - INFO - Stored 11682 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-08 02:49:26,819 - gdax_msgs - INFO - Stored 12210 messages in GdaxBtcUsdMessage in 2.05s
+2017-12-08 02:50:26,738 - gdax_msgs - INFO - Stored 11636 messages in GdaxBtcUsdMessage in 1.97s
+2017-12-08 02:51:26,841 - gdax_msgs - INFO - Stored 13159 messages in GdaxBtcUsdMessage in 2.07s
+2017-12-08 02:52:27,814 - gdax_msgs - INFO - Stored 11026 messages in GdaxBtcUsdMessage in 3.04s
+2017-12-08 02:53:26,264 - gdax_msgs - INFO - Stored 9171 messages in GdaxBtcUsdMessage in 1.47s
+2017-12-08 02:54:26,439 - gdax_msgs - INFO - Stored 9408 messages in GdaxBtcUsdMessage in 1.53s
+2017-12-08 02:55:27,136 - gdax_msgs - INFO - Stored 12813 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-08 02:56:26,950 - gdax_msgs - INFO - Stored 10504 messages in GdaxBtcUsdMessage in 2.03s
+2017-12-08 02:57:26,269 - gdax_msgs - INFO - Stored 8441 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-08 02:58:26,411 - gdax_msgs - INFO - Stored 8205 messages in GdaxBtcUsdMessage in 1.45s
+2017-12-08 02:59:30,501 - gdax_msgs - INFO - Stored 11778 messages in GdaxBtcUsdMessage in 5.52s
+2017-12-08 03:00:26,652 - gdax_msgs - INFO - Stored 9698 messages in GdaxBtcUsdMessage in 1.39s
+2017-12-08 03:01:26,557 - gdax_msgs - INFO - Stored 8982 messages in GdaxBtcUsdMessage in 1.26s
+2017-12-08 03:02:26,664 - gdax_msgs - INFO - Stored 7756 messages in GdaxBtcUsdMessage in 1.29s
+2017-12-08 03:03:27,181 - gdax_msgs - INFO - Stored 10105 messages in GdaxBtcUsdMessage in 1.79s
+2017-12-08 03:04:28,731 - gdax_msgs - INFO - Stored 12610 messages in GdaxBtcUsdMessage in 3.33s
+2017-12-08 03:05:27,827 - gdax_msgs - INFO - Stored 10119 messages in GdaxBtcUsdMessage in 2.40s
+2017-12-08 03:06:28,827 - gdax_msgs - INFO - Stored 16913 messages in GdaxBtcUsdMessage in 3.39s
+2017-12-08 03:07:27,080 - gdax_msgs - INFO - Stored 9517 messages in GdaxBtcUsdMessage in 1.63s
+2017-12-08 03:08:27,156 - gdax_msgs - INFO - Stored 10118 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-08 03:09:26,915 - gdax_msgs - INFO - Stored 8154 messages in GdaxBtcUsdMessage in 1.39s
+2017-12-08 03:10:26,932 - gdax_msgs - INFO - Stored 7169 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-08 03:11:27,351 - gdax_msgs - INFO - Stored 8610 messages in GdaxBtcUsdMessage in 1.73s
+2017-12-08 03:12:28,636 - gdax_msgs - INFO - Stored 11920 messages in GdaxBtcUsdMessage in 2.98s
+2017-12-08 03:13:28,200 - gdax_msgs - INFO - Stored 11661 messages in GdaxBtcUsdMessage in 2.53s
+2017-12-08 03:14:28,002 - gdax_msgs - INFO - Stored 10903 messages in GdaxBtcUsdMessage in 2.32s
+                                                                                                 
