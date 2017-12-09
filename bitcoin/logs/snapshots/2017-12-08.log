@@ -1,0 +1,2138 @@
+2017-12-08 03:28:10,809 - snapshots - ERROR - ====================
+2017-12-08 03:28:05.739865
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:10,823 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:28:17,804 - snapshots - ERROR - ====================
+2017-12-08 03:28:12.734636
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:17,805 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:28:24,512 - snapshots - ERROR - ====================
+2017-12-08 03:28:19.409301
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:24,534 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:28:31,618 - snapshots - ERROR - ====================
+2017-12-08 03:28:26.553162
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:31,621 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:28:40,788 - snapshots - ERROR - ====================
+2017-12-08 03:28:35.736035
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:40,790 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:28:59,424 - snapshots - ERROR - ====================
+2017-12-08 03:28:54.347109
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:28:59,435 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:29:27,698 - snapshots - ERROR - ====================
+2017-12-08 03:29:22.592247
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:29:27,699 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:29:58,483 - snapshots - ERROR - ====================
+2017-12-08 03:29:53.409469
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:29:58,484 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:30:05,020 - snapshots - ERROR - ====================
+2017-12-08 03:29:59.948047
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 03:30:05,021 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 03:34:13,277 - snapshots - ERROR - ====================
+2017-12-08 03:34:08.141251
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 03:34:13,280 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 05:04:04,061 - snapshots - ERROR - ====================
+2017-12-08 05:03:59.013244
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:04:04,069 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 05:04:10,564 - snapshots - ERROR - ====================
+2017-12-08 05:04:05.480783
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:04:10,566 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 05:04:18,076 - snapshots - ERROR - ====================
+2017-12-08 05:04:13.008654
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:04:18,078 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 05:04:31,887 - snapshots - ERROR - ====================
+2017-12-08 05:04:31.793698
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:04:31,889 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:04:43,896 - snapshots - ERROR - ====================
+2017-12-08 05:04:43.790811
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:04:43,905 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:05:39,304 - snapshots - ERROR - ====================
+2017-12-08 05:05:34.162956
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 05:05:39,307 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 05:06:00,044 - snapshots - ERROR - ====================
+2017-12-08 05:05:59.965673
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:06:00,048 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:06:28,076 - snapshots - ERROR - ====================
+2017-12-08 05:06:28.003386
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:06:28,080 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:10:23,221 - snapshots - ERROR - ====================
+2017-12-08 05:10:23.146032
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:10:23,230 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:10:50,812 - snapshots - ERROR - ====================
+2017-12-08 05:10:50.750159
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:10:50,817 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:13:38,002 - snapshots - ERROR - ====================
+2017-12-08 05:13:37.941519
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:13:38,003 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:14:10,335 - snapshots - ERROR - ====================
+2017-12-08 05:14:10.265101
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:14:10,336 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:14:24,959 - snapshots - ERROR - ====================
+2017-12-08 05:14:24.887280
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:14:24,961 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:14:37,611 - snapshots - ERROR - ====================
+2017-12-08 05:14:37.541066
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:14:37,613 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:14:49,246 - snapshots - ERROR - ====================
+2017-12-08 05:14:49.157393
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:14:49,246 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:17:21,523 - snapshots - ERROR - ====================
+2017-12-08 05:17:16.381416
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 05:17:21,527 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 05:17:57,535 - snapshots - ERROR - ====================
+2017-12-08 05:17:57.457657
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:17:57,539 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:18:12,322 - snapshots - ERROR - ====================
+2017-12-08 05:18:12.243482
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:18:12,324 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:18:30,887 - snapshots - ERROR - ====================
+2017-12-08 05:18:30.827044
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:18:30,888 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:18:45,550 - snapshots - ERROR - ====================
+2017-12-08 05:18:45.468870
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:18:45,553 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:18:47,015 - snapshots - ERROR - ====================
+2017-12-08 05:18:46.937693
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:18:47,018 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:19:10,950 - snapshots - ERROR - ====================
+2017-12-08 05:19:10.862223
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:19:10,951 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:19:59,237 - snapshots - ERROR - ====================
+2017-12-08 05:19:59.173677
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:19:59,240 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:20:58,196 - snapshots - ERROR - ====================
+2017-12-08 05:20:58.105543
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:20:58,197 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:21:02,987 - snapshots - ERROR - ====================
+2017-12-08 05:21:02.928919
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:21:02,989 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:22:53,397 - snapshots - ERROR - ====================
+2017-12-08 05:22:53.312079
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:22:53,398 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:23:59,980 - snapshots - ERROR - ====================
+2017-12-08 05:23:59.919771
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:23:59,983 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:25:04,542 - snapshots - ERROR - ====================
+2017-12-08 05:25:04.469652
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:25:04,545 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:25:10,039 - snapshots - ERROR - ====================
+2017-12-08 05:25:09.965459
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:25:10,039 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:25:28,907 - snapshots - ERROR - ====================
+2017-12-08 05:25:28.824137
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:25:28,909 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:26:41,582 - snapshots - ERROR - ====================
+2017-12-08 05:26:41.512838
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:26:41,582 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:26:55,742 - snapshots - ERROR - ====================
+2017-12-08 05:26:55.649656
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:26:55,746 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:27:36,228 - snapshots - ERROR - ====================
+2017-12-08 05:27:31.172920
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:27:36,231 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 05:29:19,253 - snapshots - ERROR - ====================
+2017-12-08 05:29:19.177662
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:29:19,262 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:29:46,552 - snapshots - ERROR - ====================
+2017-12-08 05:29:46.471896
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:29:46,555 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:29:48,016 - snapshots - ERROR - ====================
+2017-12-08 05:29:47.925015
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:29:48,016 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:30:14,529 - snapshots - ERROR - ====================
+2017-12-08 05:30:14.460059
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:30:14,536 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:30:37,037 - snapshots - ERROR - ====================
+2017-12-08 05:30:36.957127
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:30:37,037 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:31:35,652 - snapshots - ERROR - ====================
+2017-12-08 05:31:35.559552
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:31:35,653 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:36:09,361 - snapshots - ERROR - ====================
+2017-12-08 05:36:09.293285
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:36:09,366 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:37:48,024 - snapshots - ERROR - ====================
+2017-12-08 05:37:47.948831
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:37:48,025 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:40:25,216 - snapshots - ERROR - ====================
+2017-12-08 05:40:25.161128
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:40:25,224 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:40:28,281 - snapshots - ERROR - ====================
+2017-12-08 05:40:28.205562
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:40:28,282 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:41:12,184 - snapshots - ERROR - ====================
+2017-12-08 05:41:12.095246
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:41:12,184 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:41:49,903 - snapshots - ERROR - ====================
+2017-12-08 05:41:49.831006
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:41:49,905 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:42:32,651 - snapshots - ERROR - ====================
+2017-12-08 05:42:32.573638
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:42:32,655 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:42:45,543 - snapshots - ERROR - ====================
+2017-12-08 05:42:45.473667
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:42:45,547 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:42:52,223 - snapshots - ERROR - ====================
+2017-12-08 05:42:52.116558
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:42:52,229 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:43:45,752 - snapshots - ERROR - ====================
+2017-12-08 05:43:45.674347
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:43:45,757 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:43:57,008 - snapshots - ERROR - ====================
+2017-12-08 05:43:56.931387
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:43:57,018 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:47:43,659 - snapshots - ERROR - ====================
+2017-12-08 05:47:43.579486
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:47:43,663 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:49:04,579 - snapshots - ERROR - ====================
+2017-12-08 05:49:04.493109
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:49:04,579 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:49:17,795 - snapshots - ERROR - ====================
+2017-12-08 05:49:17.743895
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:49:17,797 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:50:11,628 - snapshots - ERROR - ====================
+2017-12-08 05:50:11.529319
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:50:11,630 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:50:27,941 - snapshots - ERROR - ====================
+2017-12-08 05:50:27.862854
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:50:27,942 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:50:52,645 - snapshots - ERROR - ====================
+2017-12-08 05:50:52.543006
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:50:52,649 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:50:56,317 - snapshots - ERROR - ====================
+2017-12-08 05:50:56.257709
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:50:56,322 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:54:20,113 - snapshots - ERROR - ====================
+2017-12-08 05:54:20.029484
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:54:20,118 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:55:39,098 - snapshots - ERROR - ====================
+2017-12-08 05:55:39.005821
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:55:39,099 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:56:41,224 - snapshots - ERROR - ====================
+2017-12-08 05:56:41.137584
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:56:41,225 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 05:57:52,426 - snapshots - ERROR - ====================
+2017-12-08 05:57:52.342781
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 05:57:52,426 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:00:57,752 - snapshots - ERROR - ====================
+2017-12-08 06:00:52.624345
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:00:57,757 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 06:03:16,020 - snapshots - ERROR - ====================
+2017-12-08 06:03:15.885291
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:03:16,025 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:05:10,081 - snapshots - ERROR - ====================
+2017-12-08 06:05:10.023445
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:05:10,083 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:05:14,976 - snapshots - ERROR - ====================
+2017-12-08 06:05:14.920194
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:05:14,976 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:05:49,400 - snapshots - ERROR - ====================
+2017-12-08 06:05:44.288746
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:05:49,403 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-12-08 06:05:55,858 - snapshots - ERROR - ====================
+2017-12-08 06:05:50.745496
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:05:55,859 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-12-08 06:06:02,312 - snapshots - ERROR - ====================
+2017-12-08 06:05:57.210309
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:06:02,316 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-12-08 06:06:08,699 - snapshots - ERROR - ====================
+2017-12-08 06:06:03.588541
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:06:08,700 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out. (read timeout=5)
+2017-12-08 06:06:26,069 - snapshots - ERROR - ====================
+2017-12-08 06:06:26.005672
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:06:26,071 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:07:36,623 - snapshots - ERROR - ====================
+2017-12-08 06:07:36.540896
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:07:36,625 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:07:38,078 - snapshots - ERROR - ====================
+2017-12-08 06:07:37.988895
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:07:38,080 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:08:53,444 - snapshots - ERROR - ====================
+2017-12-08 06:08:53.352644
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:08:53,450 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:09:24,937 - snapshots - ERROR - ====================
+2017-12-08 06:09:24.849327
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:09:24,941 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:09:51,446 - snapshots - ERROR - ====================
+2017-12-08 06:09:51.371889
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:09:51,446 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:11:47,583 - snapshots - ERROR - ====================
+2017-12-08 06:11:47.524320
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:11:47,584 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:12:05,979 - snapshots - ERROR - ====================
+2017-12-08 06:12:00.834521
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 06:12:05,981 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 06:12:45,797 - snapshots - ERROR - ====================
+2017-12-08 06:12:45.703364
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:12:45,798 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:13:19,027 - snapshots - ERROR - ====================
+2017-12-08 06:13:18.943058
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:13:19,032 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:13:20,431 - snapshots - ERROR - ====================
+2017-12-08 06:13:20.367561
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:13:20,432 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:13:21,895 - snapshots - ERROR - ====================
+2017-12-08 06:13:21.829659
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:13:21,895 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:14:57,615 - snapshots - ERROR - ====================
+2017-12-08 06:14:57.536446
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:14:57,616 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:15:33,334 - snapshots - ERROR - ====================
+2017-12-08 06:15:33.257693
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:15:33,334 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:16:11,636 - snapshots - ERROR - ====================
+2017-12-08 06:16:11.579485
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:16:11,636 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:16:28,570 - snapshots - ERROR - ====================
+2017-12-08 06:16:28.497680
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:16:28,570 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:19:15,734 - snapshots - ERROR - ====================
+2017-12-08 06:19:15.654145
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:19:15,742 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:19:19,020 - snapshots - ERROR - ====================
+2017-12-08 06:19:18.921659
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:19:19,024 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:20:36,136 - snapshots - ERROR - ====================
+2017-12-08 06:20:35.980992
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:20:36,136 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:21:31,124 - snapshots - ERROR - ====================
+2017-12-08 06:21:31.068618
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:21:31,129 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:21:35,984 - snapshots - ERROR - ====================
+2017-12-08 06:21:35.916165
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:21:35,991 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:21:49,443 - snapshots - ERROR - ====================
+2017-12-08 06:21:49.362987
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:21:49,445 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:22:42,660 - snapshots - ERROR - ====================
+2017-12-08 06:22:42.581722
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:22:42,661 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:22:45,779 - snapshots - ERROR - ====================
+2017-12-08 06:22:45.683383
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:22:45,781 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:23:41,615 - snapshots - ERROR - ====================
+2017-12-08 06:23:41.537036
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:23:41,621 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:23:51,756 - snapshots - ERROR - ====================
+2017-12-08 06:23:51.667411
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:23:51,757 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:24:38,034 - snapshots - ERROR - ====================
+2017-12-08 06:24:37.953655
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:24:38,034 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:25:00,644 - snapshots - ERROR - ====================
+2017-12-08 06:25:00.568015
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:25:00,645 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:29:01,957 - snapshots - ERROR - ====================
+2017-12-08 06:29:01.881923
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:29:01,957 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:29:20,095 - snapshots - ERROR - ====================
+2017-12-08 06:29:20.016461
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:29:20,099 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:29:31,450 - snapshots - ERROR - ====================
+2017-12-08 06:29:31.381679
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:29:31,451 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 06:30:02,198 - snapshots - ERROR - ====================
+2017-12-08 06:30:02.107747
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 06:30:02,199 - snapshots - ERROR - Invalid json format Content: {"message":"Internal server error"}
+2017-12-08 07:11:49,197 - snapshots - ERROR - ====================
+2017-12-08 07:11:44.072677
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 07:11:49,199 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 07:14:07,578 - snapshots - ERROR - ====================
+2017-12-08 07:14:02.444089
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 07:14:07,581 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 07:17:07,648 - snapshots - ERROR - ====================
+2017-12-08 07:17:02.410556
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 07:17:07,652 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 07:24:06,220 - snapshots - ERROR - ====================
+2017-12-08 07:24:01.080520
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 07:24:06,221 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 08:28:45,832 - snapshots - ERROR - ====================
+2017-12-08 08:28:40.705385
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 08:28:45,834 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 09:15:12,346 - snapshots - ERROR - ====================
+2017-12-08 09:15:07.217740
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 09:15:12,347 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 09:26:51,353 - snapshots - ERROR - ====================
+2017-12-08 09:26:46.217688
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 09:26:51,365 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 10:21:09,080 - snapshots - ERROR - ====================
+2017-12-08 10:21:03.954916
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 10:21:09,083 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:04:11,319 - snapshots - ERROR - ====================
+2017-12-08 11:04:06.189994
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:04:11,321 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:08:52,829 - snapshots - ERROR - ====================
+2017-12-08 11:08:47.690374
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:08:52,830 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:18:20,450 - snapshots - ERROR - ====================
+2017-12-08 11:18:15.355643
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:20,453 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:18:26,978 - snapshots - ERROR - ====================
+2017-12-08 11:18:21.866535
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:26,979 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:18:33,465 - snapshots - ERROR - ====================
+2017-12-08 11:18:28.355904
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:33,466 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:18:39,920 - snapshots - ERROR - ====================
+2017-12-08 11:18:34.817316
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:39,921 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:18:46,381 - snapshots - ERROR - ====================
+2017-12-08 11:18:41.293669
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:46,385 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:18:57,017 - snapshots - ERROR - ====================
+2017-12-08 11:18:51.920010
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:18:57,018 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:05,311 - snapshots - ERROR - ====================
+2017-12-08 11:19:00.204824
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:05,313 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:11,790 - snapshots - ERROR - ====================
+2017-12-08 11:19:06.692810
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:11,794 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:18,259 - snapshots - ERROR - ====================
+2017-12-08 11:19:13.164821
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:18,260 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:25,180 - snapshots - ERROR - ====================
+2017-12-08 11:19:20.089675
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:25,190 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:42,090 - snapshots - ERROR - ====================
+2017-12-08 11:19:37.003692
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:42,091 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:47,324 - snapshots - ERROR - ====================
+2017-12-08 11:19:42.092445
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:19:47,325 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:19:53,498 - snapshots - ERROR - ====================
+2017-12-08 11:19:48.377779
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:19:53,502 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:19:59,992 - snapshots - ERROR - ====================
+2017-12-08 11:19:54.901580
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:20:00,000 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:20:55,659 - snapshots - ERROR - ====================
+2017-12-08 11:20:50.534175
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:20:55,661 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:02,150 - snapshots - ERROR - ====================
+2017-12-08 11:20:57.039003
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:02,153 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:08,708 - snapshots - ERROR - ====================
+2017-12-08 11:21:03.600646
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:08,715 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:16,102 - snapshots - ERROR - ====================
+2017-12-08 11:21:10.998613
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:16,105 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:26,620 - snapshots - ERROR - ====================
+2017-12-08 11:21:21.521451
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:26,623 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:36,650 - snapshots - ERROR - ====================
+2017-12-08 11:21:31.567139
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:36,653 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:49,128 - snapshots - ERROR - ====================
+2017-12-08 11:21:44.036400
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:49,130 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:21:55,579 - snapshots - ERROR - ====================
+2017-12-08 11:21:50.488457
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:21:55,581 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:22:02,047 - snapshots - ERROR - ====================
+2017-12-08 11:21:56.939379
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:22:02,049 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:22:08,500 - snapshots - ERROR - ====================
+2017-12-08 11:22:03.411830
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:22:08,501 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:22:14,971 - snapshots - ERROR - ====================
+2017-12-08 11:22:09.866782
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:22:14,973 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:22:18,283 - snapshots - ERROR - ====================
+2017-12-08 11:22:18.151497
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:22:18,285 - snapshots - ERROR - No JSON object could be decoded
+2017-12-08 11:22:18,285 - snapshots - ERROR - Content: 
+2017-12-08 11:22:30,003 - snapshots - ERROR - ====================
+2017-12-08 11:22:24.912741
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:22:30,005 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:26:53,020 - snapshots - ERROR - ====================
+2017-12-08 11:26:47.854726
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:26:53,022 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:29:13,032 - snapshots - ERROR - ====================
+2017-12-08 11:29:07.941654
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:13,033 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:19,499 - snapshots - ERROR - ====================
+2017-12-08 11:29:14.404347
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:19,501 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:25,968 - snapshots - ERROR - ====================
+2017-12-08 11:29:20.876734
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:25,970 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:32,424 - snapshots - ERROR - ====================
+2017-12-08 11:29:27.327569
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:32,426 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:38,861 - snapshots - ERROR - ====================
+2017-12-08 11:29:33.770889
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:38,862 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:45,322 - snapshots - ERROR - ====================
+2017-12-08 11:29:40.224741
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:45,324 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:29:55,246 - snapshots - ERROR - ====================
+2017-12-08 11:29:50.161656
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:29:55,252 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:25,613 - snapshots - ERROR - ====================
+2017-12-08 11:32:20.523298
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:25,618 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:32,100 - snapshots - ERROR - ====================
+2017-12-08 11:32:26.992500
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:32,102 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:38,588 - snapshots - ERROR - ====================
+2017-12-08 11:32:33.471827
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:38,594 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:45,044 - snapshots - ERROR - ====================
+2017-12-08 11:32:39.955070
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:45,046 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:51,469 - snapshots - ERROR - ====================
+2017-12-08 11:32:46.384299
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:51,470 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:32:57,904 - snapshots - ERROR - ====================
+2017-12-08 11:32:52.819659
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:32:57,910 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:33:04,372 - snapshots - ERROR - ====================
+2017-12-08 11:32:59.279805
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:33:04,374 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:33:10,914 - snapshots - ERROR - ====================
+2017-12-08 11:33:05.819239
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:33:10,915 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 11:33:41,687 - snapshots - ERROR - ====================
+2017-12-08 11:33:41.488376
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:33:41,688 - snapshots - ERROR - No JSON object could be decoded
+2017-12-08 11:33:41,688 - snapshots - ERROR - Content: 
+2017-12-08 11:33:53,359 - snapshots - ERROR - ====================
+2017-12-08 11:33:53.164934
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:33:53,360 - snapshots - ERROR - No JSON object could be decoded
+2017-12-08 11:33:53,360 - snapshots - ERROR - Content: 
+2017-12-08 11:33:54,951 - snapshots - ERROR - ====================
+2017-12-08 11:33:54.743839
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 11:33:54,957 - snapshots - ERROR - No JSON object could be decoded
+2017-12-08 11:33:54,957 - snapshots - ERROR - Content: 
+2017-12-08 11:35:14,432 - snapshots - ERROR - ====================
+2017-12-08 11:35:09.296524
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:35:14,443 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 11:35:49,396 - snapshots - ERROR - ====================
+2017-12-08 11:35:44.266739
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 11:35:49,397 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 12:31:16,981 - snapshots - ERROR - ====================
+2017-12-08 12:31:11.851197
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 12:31:16,984 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 14:56:59,382 - snapshots - ERROR - ====================
+2017-12-08 14:56:54.255179
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 14:56:59,383 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 15:12:53,636 - snapshots - ERROR - ====================
+2017-12-08 15:12:48.505719
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 15:12:53,644 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 15:38:48,952 - snapshots - ERROR - ====================
+2017-12-08 15:38:43.818806
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 15:38:48,957 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 16:43:23,332 - snapshots - ERROR - ====================
+2017-12-08 16:43:18.212445
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 16:43:23,333 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 17:20:38,141 - snapshots - ERROR - ====================
+2017-12-08 17:20:34.765667
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 17:20:38,145 - snapshots - ERROR - No JSON object could be decoded
+2017-12-08 17:20:38,145 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca165697be52456 &bull; 2017-12-08 17:20:37 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca165697be52456</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-08 19:26:29,946 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-08 19:26:29,946 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `BitstampSnapshots`']
+2017-12-08 19:33:45,290 - snapshots - ERROR - ====================
+2017-12-08 19:33:40.229667
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 19:33:45,292 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 19:33:51,691 - snapshots - ERROR - ====================
+2017-12-08 19:33:46.651392
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 19:33:51,692 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 20:33:29,102 - snapshots - ERROR - ====================
+2017-12-08 20:33:23.917481
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 20:33:29,105 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-08 21:22:58,200 - snapshots - ERROR - ====================
+2017-12-08 21:22:53.139264
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 21:22:58,202 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 21:33:05,449 - snapshots - ERROR - ====================
+2017-12-08 21:33:00.399585
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-08 21:33:05,451 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-08 22:35:25,619 - db_util - ERROR - Failed to store in GdaxSnapshots
+2017-12-08 22:35:25,619 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'DESCRIBE `GdaxSnapshots`']
+2017-12-08 23:57:12,904 - snapshots - ERROR - ====================
+2017-12-08 23:57:07.779352
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-08 23:57:12,907 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 00:14:18,300 - snapshots - ERROR - ====================
+2017-12-09 00:14:13.157005
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 00:14:18,302 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 00:24:49,916 - snapshots - ERROR - ====================
+2017-12-09 00:24:49.844290
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 00:24:49,918 - snapshots - ERROR - Invalid json format Content: {"message":"Rate limit exceeded"}
+2017-12-09 00:50:07,718 - snapshots - ERROR - ====================
+2017-12-09 00:50:07.412204
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 00:50:07,720 - snapshots - ERROR - No JSON object could be decoded
+2017-12-09 00:50:07,720 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca3f7ec9af22462 &bull; 2017-12-09 00:50:07 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca3f7ec9af22462</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-09 00:51:11,928 - snapshots - ERROR - ====================
+2017-12-09 00:51:06.798142
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 00:51:11,929 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 01:49:28,120 - snapshots - ERROR - ====================
+2017-12-09 01:49:22.986905
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 01:49:28,122 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 01:51:46,956 - snapshots - ERROR - ====================
+2017-12-09 01:51:41.828346
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 01:51:46,959 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 03:21:49,204 - snapshots - ERROR - ====================
+2017-12-09 03:21:44.073419
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 03:21:49,207 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 03:54:12,432 - snapshots - ERROR - ====================
+2017-12-09 03:54:07.303891
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 03:54:12,437 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 03:55:26,272 - snapshots - ERROR - ====================
+2017-12-09 03:55:21.142257
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 03:55:26,274 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 04:36:32,380 - snapshots - ERROR - ====================
+2017-12-09 04:36:31.593733
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 04:36:32,381 - snapshots - ERROR - No JSON object could be decoded
+2017-12-09 04:36:32,381 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca54391dfd72444 &bull; 2017-12-09 04:36:32 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca54391dfd72444</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-09 04:55:49,693 - snapshots - ERROR - ====================
+2017-12-09 04:55:44.566958
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 04:55:49,695 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 05:19:12,311 - snapshots - ERROR - ====================
+2017-12-09 05:19:12.116148
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 05:19:12,313 - snapshots - ERROR - No JSON object could be decoded
+2017-12-09 05:19:12,317 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca582150d4723ea &bull; 2017-12-09 05:19:12 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca582150d4723ea</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-09 05:31:10,872 - snapshots - ERROR - ====================
+2017-12-09 05:31:05.733791
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 05:31:10,875 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 05:36:06,915 - snapshots - ERROR - ====================
+2017-12-09 05:36:01.761521
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 05:36:06,917 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 05:41:12,844 - snapshots - ERROR - ====================
+2017-12-09 05:41:07.777666
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 05:41:12,846 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 05:42:14,652 - snapshots - ERROR - ====================
+2017-12-09 05:42:09.573152
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 05:42:14,654 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 05:49:35,953 - snapshots - ERROR - ====================
+2017-12-09 05:49:30.820877
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 05:49:35,955 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 06:24:01,212 - snapshots - ERROR - ====================
+2017-12-09 06:23:56.061844
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 06:24:01,231 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 06:33:30,677 - snapshots - ERROR - ====================
+2017-12-09 06:33:25.547393
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 06:33:30,683 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 07:01:39,389 - snapshots - ERROR - ====================
+2017-12-09 07:01:34.259147
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 07:01:39,393 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 07:14:18,012 - snapshots - ERROR - ====================
+2017-12-09 07:14:12.851376
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 07:14:18,013 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 07:35:02,040 - snapshots - ERROR - ====================
+2017-12-09 07:34:56.886949
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 07:35:02,044 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 07:51:34,259 - snapshots - ERROR - ====================
+2017-12-09 07:51:29.131753
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 07:51:34,261 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 08:06:55,132 - snapshots - ERROR - ====================
+2017-12-09 08:06:50.003168
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 08:06:55,134 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 08:27:17,969 - snapshots - ERROR - ====================
+2017-12-09 08:27:12.916639
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 08:27:17,974 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 08:34:32,019 - snapshots - ERROR - ====================
+2017-12-09 08:34:26.855868
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 08:34:32,024 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 08:43:11,179 - snapshots - ERROR - ====================
+2017-12-09 08:43:06.035700
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 08:43:11,195 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 09:35:15,797 - snapshots - ERROR - ====================
+2017-12-09 09:35:10.646133
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 09:35:15,800 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 11:02:16,252 - snapshots - ERROR - ====================
+2017-12-09 11:02:11.120907
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 11:02:16,271 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 11:36:04,500 - snapshots - ERROR - ====================
+2017-12-09 11:35:59.376886
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 11:36:04,518 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 11:52:17,572 - snapshots - ERROR - ====================
+2017-12-09 11:52:12.425882
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 11:52:17,575 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 11:54:04,662 - snapshots - ERROR - ====================
+2017-12-09 11:53:59.529244
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 11:54:04,665 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 12:37:54,168 - snapshots - ERROR - ====================
+2017-12-09 12:37:49.028655
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 12:37:54,171 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 12:40:28,732 - snapshots - ERROR - ====================
+2017-12-09 12:40:23.595491
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 12:40:28,736 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 13:08:44,324 - snapshots - ERROR - ====================
+2017-12-09 13:08:39.194190
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 13:08:44,336 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 13:09:34,736 - snapshots - ERROR - ====================
+2017-12-09 13:09:29.576526
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 13:09:34,738 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 13:25:08,701 - snapshots - ERROR - ====================
+2017-12-09 13:25:03.567488
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 13:25:08,706 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 13:36:12,204 - snapshots - ERROR - ====================
+2017-12-09 13:36:07.058060
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 13:36:12,208 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 14:24:47,116 - snapshots - ERROR - ====================
+2017-12-09 14:24:46.742974
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 14:24:47,117 - snapshots - ERROR - No JSON object could be decoded
+2017-12-09 14:24:47,117 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca8a1446f822426 &bull; 2017-12-09 14:24:47 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca8a1446f822426</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-09 14:31:59,028 - snapshots - ERROR - ====================
+2017-12-09 14:31:53.891585
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 14:31:59,033 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 14:43:59,828 - snapshots - ERROR - ====================
+2017-12-09 14:43:54.759210
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 14:43:59,829 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 14:48:30,876 - snapshots - ERROR - ====================
+2017-12-09 14:48:25.749177
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 14:48:30,880 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 15:11:56,908 - snapshots - ERROR - ====================
+2017-12-09 15:11:51.781421
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 15:11:56,910 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 15:33:23,980 - snapshots - ERROR - ====================
+2017-12-09 15:33:18.845077
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 15:33:23,981 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 15:35:19,452 - snapshots - ERROR - ====================
+2017-12-09 15:35:14.327683
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 15:35:19,454 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 16:08:29,966 - snapshots - ERROR - ====================
+2017-12-09 16:08:24.840312
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 16:08:29,969 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 16:19:30,924 - snapshots - ERROR - ====================
+2017-12-09 16:19:25.774400
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 16:19:30,932 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 16:32:52,519 - snapshots - ERROR - ====================
+2017-12-09 16:32:47.390665
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 16:32:52,521 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 16:34:21,500 - snapshots - ERROR - ====================
+2017-12-09 16:34:16.456130
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 16:34:21,501 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 16:35:12,400 - snapshots - ERROR - ====================
+2017-12-09 16:35:07.348752
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 16:35:12,404 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 16:45:09,380 - snapshots - ERROR - ====================
+2017-12-09 16:45:04.245238
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 16:45:09,385 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 16:58:31,545 - snapshots - ERROR - ====================
+2017-12-09 16:58:26.400906
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 16:58:31,549 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:08:10,248 - snapshots - ERROR - ====================
+2017-12-09 17:08:05.111528
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:08:10,253 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:16:27,356 - snapshots - ERROR - ====================
+2017-12-09 17:16:22.292253
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 17:16:27,358 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 17:16:38,817 - snapshots - ERROR - ====================
+2017-12-09 17:16:33.745195
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 17:16:38,818 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 17:31:00,316 - snapshots - ERROR - ====================
+2017-12-09 17:30:55.079612
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:31:00,318 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:36:54,204 - snapshots - ERROR - ====================
+2017-12-09 17:36:49.066311
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:36:54,206 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:40:40,997 - snapshots - ERROR - ====================
+2017-12-09 17:40:35.863581
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:40:41,000 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:45:36,010 - snapshots - ERROR - ====================
+2017-12-09 17:45:30.872664
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:45:36,015 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:46:56,844 - snapshots - ERROR - ====================
+2017-12-09 17:46:51.786805
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 17:46:56,845 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 17:47:03,248 - snapshots - ERROR - ====================
+2017-12-09 17:46:58.201158
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 17:47:03,253 - snapshots - ERROR - HTTPSConnectionPool(host='api.gdax.com', port=443): Read timed out. (read timeout=5)
+2017-12-09 17:49:58,780 - snapshots - ERROR - ====================
+2017-12-09 17:49:53.657506
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 17:49:58,787 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 17:54:58,645 - snapshots - ERROR - ====================
+2017-12-09 17:54:58.300765
+Get request failed for: https://api.gdax.com/products/BTC-USD/book?level=2
+
+
+2017-12-09 17:54:58,649 - snapshots - ERROR - No JSON object could be decoded
+2017-12-09 17:54:58,650 - snapshots - ERROR - Content: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api.gdax.com | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if lte IE 9]><script type="text/javascript" src="/cdn-cgi/scripts/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+<script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script>
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              <span class="cf-error-type" data-translate="error">Error</span>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 3ca9d52aadaa2432 &bull; 2017-12-09 17:54:58 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline" data-translate="error_desc">Gateway time-out</h2>
+        </div><!-- /.error-overview -->
+
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="browser_desc">You</span>
+  <h3 class="cf-status-name" data-translate="browser_label">Browser</h3>
+  <span class="cf-status-label" data-translate="browser_status_label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="cloud_desc">Ashburn</span>
+  <h3 class="cf-status-name" data-translate="cloud_label">Cloudflare</h3>
+  <span class="cf-status-label" data-translate="cloud_status_label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc" data-translate="server_desc">api.gdax.com</span>
+  <h3 class="cf-status-name" data-translate="server_label">Host</h3>
+  <span class="cf-status-label" data-translate="server_status_label">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2 data-translate="what_happened">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+
+                <div class="cf-column">
+                    <h2 data-translate="what_can_i_do">What can I do?</h2>
+                    <p data-translate="try_again_in_a_few">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3ca9d52aadaa2432</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.199.20.126</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+
+2017-12-09 18:24:17,223 - snapshots - ERROR - ====================
+2017-12-09 18:24:12.088422
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 18:24:17,226 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 18:57:39,225 - snapshots - ERROR - ====================
+2017-12-09 18:57:34.086041
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 18:57:39,228 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 19:37:09,244 - snapshots - ERROR - ====================
+2017-12-09 19:37:04.119823
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 19:37:09,252 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 20:45:05,304 - snapshots - ERROR - ====================
+2017-12-09 20:45:00.172370
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 20:45:05,307 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 21:06:13,024 - snapshots - ERROR - ====================
+2017-12-09 21:06:07.901798
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 21:06:13,028 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 21:59:59,500 - snapshots - ERROR - ====================
+2017-12-09 21:59:54.317525
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 21:59:59,503 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 22:00:05,928 - snapshots - ERROR - ====================
+2017-12-09 22:00:00.799106
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 22:00:05,930 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
