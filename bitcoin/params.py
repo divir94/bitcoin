@@ -66,6 +66,8 @@ MSG_DTYPE = {
             'old_size': np.float_,
             'new_funds': np.float_,
             'old_funds': np.float_,
+            'product_id': np.object_,
+            'client_oid': np.object_,
         }
 }
 
