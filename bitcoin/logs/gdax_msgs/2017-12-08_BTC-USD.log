@@ -3022,3 +3022,562 @@ ValueError: No JSON object could be decoded
 2017-12-09 22:56:27,097 - gdax_msgs - INFO - Stored 10728 messages in GdaxBtcUsdMessage in 2.34s
 2017-12-09 22:57:26,473 - gdax_msgs - INFO - Stored 11153 messages in GdaxBtcUsdMessage in 1.70s
 2017-12-09 22:58:26,023 - gdax_msgs - INFO - Stored 7843 messages in GdaxBtcUsdMessage in 1.24s
+2017-12-09 22:59:27,039 - gdax_msgs - INFO - Stored 12333 messages in GdaxBtcUsdMessage in 2.18s
+2017-12-09 23:00:26,149 - gdax_msgs - INFO - Stored 6580 messages in GdaxBtcUsdMessage in 1.28s
+2017-12-09 23:01:27,254 - gdax_msgs - INFO - Stored 12865 messages in GdaxBtcUsdMessage in 2.34s
+2017-12-09 23:02:26,521 - gdax_msgs - INFO - Stored 9743 messages in GdaxBtcUsdMessage in 1.60s
+2017-12-09 23:03:26,055 - gdax_msgs - INFO - Stored 6851 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-09 23:04:25,786 - gdax_msgs - INFO - Stored 3993 messages in GdaxBtcUsdMessage in 0.75s
+2017-12-09 23:05:25,662 - gdax_msgs - INFO - Stored 2587 messages in GdaxBtcUsdMessage in 0.56s
+2017-12-09 23:06:27,545 - gdax_msgs - INFO - Stored 15099 messages in GdaxBtcUsdMessage in 2.43s
+2017-12-09 23:07:27,975 - gdax_msgs - INFO - Stored 15021 messages in GdaxBtcUsdMessage in 2.85s
+2017-12-09 23:08:27,716 - gdax_msgs - INFO - Stored 13842 messages in GdaxBtcUsdMessage in 2.53s
+2017-12-09 23:09:27,833 - gdax_msgs - INFO - Stored 15153 messages in GdaxBtcUsdMessage in 2.64s
+2017-12-09 23:10:27,453 - gdax_msgs - INFO - Stored 11388 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-09 23:11:27,513 - gdax_msgs - INFO - Stored 12256 messages in GdaxBtcUsdMessage in 2.31s
+2017-12-09 23:14:39,045 - gdax_msgs - INFO - Stored 10942 messages in GdaxBtcUsdMessage in 73.82s
+2017-12-09 23:14:39,095 - gdax_msgs - INFO - Stored 10955 messages in GdaxBtcUsdMessage in 13.84s
+2017-12-09 23:14:39,848 - gdax_msgs - INFO - Stored 13031 messages in GdaxBtcUsdMessage in 134.63s
+2017-12-09 23:15:27,398 - gdax_msgs - INFO - Stored 10514 messages in GdaxBtcUsdMessage in 2.10s
+2017-12-09 23:16:26,598 - gdax_msgs - INFO - Stored 7298 messages in GdaxBtcUsdMessage in 1.28s
+2017-12-09 23:17:27,265 - gdax_msgs - INFO - Stored 7958 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-09 23:18:27,244 - gdax_msgs - INFO - Stored 9576 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-09 23:19:27,110 - gdax_msgs - INFO - Stored 8660 messages in GdaxBtcUsdMessage in 1.48s
+2017-12-09 23:20:27,581 - gdax_msgs - INFO - Stored 9128 messages in GdaxBtcUsdMessage in 1.94s
+2017-12-09 23:21:27,209 - gdax_msgs - INFO - Stored 7200 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-09 23:22:27,501 - gdax_msgs - INFO - Stored 7071 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-09 23:23:28,477 - gdax_msgs - INFO - Stored 10193 messages in GdaxBtcUsdMessage in 2.63s
+2017-12-09 23:24:27,051 - gdax_msgs - INFO - Stored 7498 messages in GdaxBtcUsdMessage in 1.19s
+2017-12-09 23:24:49,322 - gdax_msgs - INFO - ==============================
+2017-12-09 23:24:49,322 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-09 23:24:58,785 - gdax_msgs - INFO - ==============================
+2017-12-09 23:25:26,988 - gdax_msgs - INFO - Stored 7506 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-09 23:26:27,292 - gdax_msgs - INFO - Stored 7656 messages in GdaxBtcUsdMessage in 1.38s
+2017-12-09 23:27:27,044 - gdax_msgs - INFO - Stored 6278 messages in GdaxBtcUsdMessage in 0.99s
+2017-12-09 23:28:27,619 - gdax_msgs - INFO - Stored 6981 messages in GdaxBtcUsdMessage in 1.54s
+2017-12-09 23:29:27,834 - gdax_msgs - INFO - Stored 10063 messages in GdaxBtcUsdMessage in 1.75s
+2017-12-09 23:30:27,254 - gdax_msgs - INFO - Stored 7282 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-09 23:46:56,564 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:46:56,564 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:46:56,564 - gdax_msgs - INFO - Stored 4106 messages in GdaxBtcUsdMessage in 30.09s
+2017-12-09 23:47:56,589 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:47:56,589 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:47:56,590 - gdax_msgs - INFO - Stored 2487 messages in GdaxBtcUsdMessage in 30.05s
+2017-12-09 23:48:56,894 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:48:56,894 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:48:56,895 - gdax_msgs - INFO - Stored 3672 messages in GdaxBtcUsdMessage in 30.06s
+2017-12-09 23:49:57,064 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:49:57,064 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:49:57,064 - gdax_msgs - INFO - Stored 2484 messages in GdaxBtcUsdMessage in 30.08s
+2017-12-09 23:50:57,142 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:50:57,143 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:50:57,143 - gdax_msgs - INFO - Stored 3329 messages in GdaxBtcUsdMessage in 30.09s
+2017-12-09 23:51:57,230 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:51:57,230 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:51:57,230 - gdax_msgs - INFO - Stored 3876 messages in GdaxBtcUsdMessage in 30.09s
+2017-12-09 23:52:57,364 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:52:57,364 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:52:57,364 - gdax_msgs - INFO - Stored 4391 messages in GdaxBtcUsdMessage in 30.09s
+2017-12-09 23:53:57,507 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:53:57,507 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:53:57,507 - gdax_msgs - INFO - Stored 3619 messages in GdaxBtcUsdMessage in 30.08s
+2017-12-09 23:54:57,553 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:54:57,554 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:54:57,554 - gdax_msgs - INFO - Stored 6695 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-09 23:55:57,733 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:55:57,734 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:55:57,734 - gdax_msgs - INFO - Stored 5330 messages in GdaxBtcUsdMessage in 30.11s
+2017-12-09 23:56:57,821 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:56:57,821 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:56:57,821 - gdax_msgs - INFO - Stored 6689 messages in GdaxBtcUsdMessage in 30.13s
+2017-12-09 23:57:57,814 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:57:57,814 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:57:57,814 - gdax_msgs - INFO - Stored 5215 messages in GdaxBtcUsdMessage in 30.11s
+2017-12-09 23:58:57,862 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:58:57,862 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:58:57,863 - gdax_msgs - INFO - Stored 8059 messages in GdaxBtcUsdMessage in 30.15s
+2017-12-09 23:59:57,862 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-09 23:59:57,862 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-09 23:59:57,862 - gdax_msgs - INFO - Stored 7950 messages in GdaxBtcUsdMessage in 30.14s
+2017-12-10 00:00:57,893 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:00:57,893 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:00:57,893 - gdax_msgs - INFO - Stored 5003 messages in GdaxBtcUsdMessage in 30.08s
+2017-12-10 00:01:58,035 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:01:58,035 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:01:58,035 - gdax_msgs - INFO - Stored 13853 messages in GdaxBtcUsdMessage in 30.20s
+2017-12-10 00:02:57,985 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:02:57,985 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:02:57,985 - gdax_msgs - INFO - Stored 8665 messages in GdaxBtcUsdMessage in 30.14s
+2017-12-10 00:03:58,071 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:03:58,071 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:03:58,071 - gdax_msgs - INFO - Stored 4174 messages in GdaxBtcUsdMessage in 30.09s
+2017-12-10 00:04:58,169 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:04:58,169 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:04:58,169 - gdax_msgs - INFO - Stored 8326 messages in GdaxBtcUsdMessage in 30.17s
+2017-12-10 00:05:58,391 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:05:58,391 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:05:58,391 - gdax_msgs - INFO - Stored 8524 messages in GdaxBtcUsdMessage in 30.34s
+2017-12-10 00:06:58,343 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:06:58,343 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:06:58,343 - gdax_msgs - INFO - Stored 11781 messages in GdaxBtcUsdMessage in 30.24s
+2017-12-10 00:07:58,296 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:07:58,296 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:07:58,296 - gdax_msgs - INFO - Stored 8002 messages in GdaxBtcUsdMessage in 30.14s
+2017-12-10 00:08:58,326 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:08:58,327 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:08:58,327 - gdax_msgs - INFO - Stored 4924 messages in GdaxBtcUsdMessage in 30.11s
+2017-12-10 00:09:58,394 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:09:58,394 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:09:58,394 - gdax_msgs - INFO - Stored 3904 messages in GdaxBtcUsdMessage in 30.17s
+2017-12-10 00:10:58,324 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:10:58,324 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:10:58,324 - gdax_msgs - INFO - Stored 2581 messages in GdaxBtcUsdMessage in 30.07s
+2017-12-10 00:11:58,344 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:11:58,345 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:11:58,345 - gdax_msgs - INFO - Stored 2613 messages in GdaxBtcUsdMessage in 30.08s
+2017-12-10 00:12:58,356 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:12:58,356 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:12:58,356 - gdax_msgs - INFO - Stored 4362 messages in GdaxBtcUsdMessage in 30.08s
+2017-12-10 00:13:58,424 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:13:58,424 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:13:58,424 - gdax_msgs - INFO - Stored 7270 messages in GdaxBtcUsdMessage in 30.15s
+2017-12-10 00:14:58,516 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:14:58,517 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:14:58,517 - gdax_msgs - INFO - Stored 12229 messages in GdaxBtcUsdMessage in 30.21s
+2017-12-10 00:16:15,047 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:16:24,592 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:16:38,254 - gdax_msgs - INFO - Stored 8570 messages in GdaxBtcUsdMessage in 69.94s
+2017-12-10 00:17:08,639 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:17:08,639 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:17:08,639 - gdax_msgs - INFO - Stored 1294 messages in GdaxBtcUsdMessage in 30.35s
+2017-12-10 00:18:08,874 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:18:08,874 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:18:08,874 - gdax_msgs - INFO - Stored 17051 messages in GdaxBtcUsdMessage in 30.53s
+2017-12-10 00:19:08,604 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:19:08,604 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:19:08,604 - gdax_msgs - INFO - Stored 8735 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:20:08,683 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:20:08,683 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:20:08,683 - gdax_msgs - INFO - Stored 11457 messages in GdaxBtcUsdMessage in 30.23s
+2017-12-10 00:21:08,820 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:21:08,821 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:21:08,821 - gdax_msgs - INFO - Stored 15254 messages in GdaxBtcUsdMessage in 30.33s
+2017-12-10 00:22:08,757 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:22:08,757 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:22:08,757 - gdax_msgs - INFO - Stored 12136 messages in GdaxBtcUsdMessage in 30.23s
+2017-12-10 00:23:08,796 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:23:08,796 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:23:08,796 - gdax_msgs - INFO - Stored 11406 messages in GdaxBtcUsdMessage in 30.26s
+2017-12-10 00:24:08,726 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:24:08,726 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:24:08,726 - gdax_msgs - INFO - Stored 8399 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:24:49,334 - gdax_msgs - INFO - ==============================
+2017-12-10 00:24:49,335 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-10 00:25:08,732 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:25:08,733 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:25:08,733 - gdax_msgs - INFO - Stored 10053 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:25:21,073 - db_util - ERROR - Failed to store in GdaxBtcUsdSnapshot
+2017-12-10 00:25:21,073 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:25:21,074 - gdax_msgs - INFO - ==============================
+2017-12-10 00:26:08,781 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:26:08,782 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:26:08,782 - gdax_msgs - INFO - Stored 10946 messages in GdaxBtcUsdMessage in 30.22s
+2017-12-10 00:27:08,844 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:27:08,844 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:27:08,844 - gdax_msgs - INFO - Stored 11768 messages in GdaxBtcUsdMessage in 30.27s
+2017-12-10 00:28:09,020 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:28:09,020 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:28:09,020 - gdax_msgs - INFO - Stored 11694 messages in GdaxBtcUsdMessage in 30.44s
+2017-12-10 00:29:08,897 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:29:08,897 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:29:08,897 - gdax_msgs - INFO - Stored 11260 messages in GdaxBtcUsdMessage in 30.31s
+2017-12-10 00:30:08,753 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:30:08,753 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:30:08,753 - gdax_msgs - INFO - Stored 9588 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 00:31:08,805 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:31:08,805 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:31:08,805 - gdax_msgs - INFO - Stored 9128 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:32:08,931 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:32:08,932 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:32:08,932 - gdax_msgs - INFO - Stored 11805 messages in GdaxBtcUsdMessage in 30.29s
+2017-12-10 00:33:08,935 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:33:08,935 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:33:08,935 - gdax_msgs - INFO - Stored 11125 messages in GdaxBtcUsdMessage in 30.28s
+2017-12-10 00:34:08,905 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:34:08,905 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:34:08,905 - gdax_msgs - INFO - Stored 10262 messages in GdaxBtcUsdMessage in 30.24s
+2017-12-10 00:35:08,918 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:35:08,918 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:35:08,918 - gdax_msgs - INFO - Stored 6076 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 00:36:09,132 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:36:09,132 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:36:09,132 - gdax_msgs - INFO - Stored 6318 messages in GdaxBtcUsdMessage in 30.15s
+2017-12-10 00:37:09,259 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:37:09,259 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:37:09,259 - gdax_msgs - INFO - Stored 11393 messages in GdaxBtcUsdMessage in 30.27s
+2017-12-10 00:38:09,181 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:38:09,181 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:38:09,181 - gdax_msgs - INFO - Stored 8751 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 00:39:09,218 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:39:09,219 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:39:09,219 - gdax_msgs - INFO - Stored 6487 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-10 00:40:09,247 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:40:09,247 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:40:09,247 - gdax_msgs - INFO - Stored 5736 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-10 00:41:09,297 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:41:09,297 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:41:09,297 - gdax_msgs - INFO - Stored 6173 messages in GdaxBtcUsdMessage in 30.13s
+2017-12-10 00:42:09,394 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:42:09,394 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:42:09,394 - gdax_msgs - INFO - Stored 9168 messages in GdaxBtcUsdMessage in 30.22s
+2017-12-10 00:43:09,367 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:43:09,367 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:43:09,367 - gdax_msgs - INFO - Stored 10045 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:44:09,539 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:44:09,540 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:44:09,540 - gdax_msgs - INFO - Stored 9984 messages in GdaxBtcUsdMessage in 30.33s
+2017-12-10 00:45:09,444 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:45:09,444 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:45:09,444 - gdax_msgs - INFO - Stored 11918 messages in GdaxBtcUsdMessage in 30.22s
+2017-12-10 00:46:09,442 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:46:09,442 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:46:09,442 - gdax_msgs - INFO - Stored 11682 messages in GdaxBtcUsdMessage in 30.19s
+2017-12-10 00:47:09,430 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:47:09,430 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:47:09,430 - gdax_msgs - INFO - Stored 6698 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-10 00:48:09,482 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:48:09,482 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:48:09,483 - gdax_msgs - INFO - Stored 6820 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 00:49:09,852 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:49:09,852 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:49:09,852 - gdax_msgs - INFO - Stored 13080 messages in GdaxBtcUsdMessage in 30.52s
+2017-12-10 00:50:09,824 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:50:09,824 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:50:09,824 - gdax_msgs - INFO - Stored 14518 messages in GdaxBtcUsdMessage in 30.43s
+2017-12-10 00:51:09,689 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:51:09,689 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:51:09,690 - gdax_msgs - INFO - Stored 10651 messages in GdaxBtcUsdMessage in 30.29s
+2017-12-10 00:52:09,624 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:52:09,624 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:52:09,624 - gdax_msgs - INFO - Stored 9238 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 00:53:09,621 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:53:09,621 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:53:09,621 - gdax_msgs - INFO - Stored 7192 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-10 00:54:09,706 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:54:09,706 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:54:09,706 - gdax_msgs - INFO - Stored 7041 messages in GdaxBtcUsdMessage in 30.13s
+2017-12-10 00:55:10,048 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:55:10,048 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:55:10,048 - gdax_msgs - INFO - Stored 15848 messages in GdaxBtcUsdMessage in 30.42s
+2017-12-10 00:56:09,977 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:56:09,977 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:56:09,977 - gdax_msgs - INFO - Stored 10143 messages in GdaxBtcUsdMessage in 30.34s
+2017-12-10 00:57:10,166 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:57:10,166 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:57:10,166 - gdax_msgs - INFO - Stored 9167 messages in GdaxBtcUsdMessage in 30.45s
+2017-12-10 00:58:10,047 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:58:10,048 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:58:10,048 - gdax_msgs - INFO - Stored 11558 messages in GdaxBtcUsdMessage in 30.33s
+2017-12-10 00:59:09,847 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 00:59:09,848 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 00:59:09,848 - gdax_msgs - INFO - Stored 6861 messages in GdaxBtcUsdMessage in 30.12s
+2017-12-10 01:00:10,319 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:00:10,319 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:00:10,319 - gdax_msgs - INFO - Stored 11813 messages in GdaxBtcUsdMessage in 30.55s
+2017-12-10 01:01:10,041 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:01:10,042 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:01:10,042 - gdax_msgs - INFO - Stored 6604 messages in GdaxBtcUsdMessage in 30.21s
+2017-12-10 01:02:10,002 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:02:10,002 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:02:10,002 - gdax_msgs - INFO - Stored 7837 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 01:03:10,265 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:03:10,265 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:03:10,266 - gdax_msgs - INFO - Stored 11143 messages in GdaxBtcUsdMessage in 30.34s
+2017-12-10 01:04:10,281 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:04:10,281 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:04:10,282 - gdax_msgs - INFO - Stored 7258 messages in GdaxBtcUsdMessage in 30.25s
+2017-12-10 01:05:11,008 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:05:11,008 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:05:11,008 - gdax_msgs - INFO - Stored 14964 messages in GdaxBtcUsdMessage in 30.95s
+2017-12-10 01:06:10,395 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:06:10,395 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:06:10,395 - gdax_msgs - INFO - Stored 14587 messages in GdaxBtcUsdMessage in 30.31s
+2017-12-10 01:07:10,323 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:07:10,323 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:07:10,323 - gdax_msgs - INFO - Stored 10954 messages in GdaxBtcUsdMessage in 30.22s
+2017-12-10 01:08:10,331 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:08:10,331 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:08:10,332 - gdax_msgs - INFO - Stored 11433 messages in GdaxBtcUsdMessage in 30.20s
+2017-12-10 01:09:10,424 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:09:10,424 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:09:10,424 - gdax_msgs - INFO - Stored 12415 messages in GdaxBtcUsdMessage in 30.25s
+2017-12-10 01:10:10,377 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:10:10,377 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:10:10,377 - gdax_msgs - INFO - Stored 9410 messages in GdaxBtcUsdMessage in 30.16s
+2017-12-10 01:11:10,423 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:11:10,424 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:11:10,424 - gdax_msgs - INFO - Stored 8924 messages in GdaxBtcUsdMessage in 30.19s
+2017-12-10 01:12:10,372 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:12:10,373 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:12:10,373 - gdax_msgs - INFO - Stored 6960 messages in GdaxBtcUsdMessage in 30.13s
+2017-12-10 01:13:10,350 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:13:10,350 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:13:10,350 - gdax_msgs - INFO - Stored 6094 messages in GdaxBtcUsdMessage in 30.11s
+2017-12-10 01:14:10,459 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:14:10,459 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:14:10,460 - gdax_msgs - INFO - Stored 9898 messages in GdaxBtcUsdMessage in 30.19s
+2017-12-10 01:15:10,453 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:15:10,453 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:15:10,453 - gdax_msgs - INFO - Stored 9699 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 01:16:10,496 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:16:10,496 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:16:10,496 - gdax_msgs - INFO - Stored 12607 messages in GdaxBtcUsdMessage in 30.19s
+2017-12-10 01:17:10,660 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:17:10,660 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:17:10,660 - gdax_msgs - INFO - Stored 11611 messages in GdaxBtcUsdMessage in 30.35s
+2017-12-10 01:18:10,537 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:18:10,537 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:18:10,537 - gdax_msgs - INFO - Stored 8807 messages in GdaxBtcUsdMessage in 30.22s
+2017-12-10 01:19:10,589 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:19:10,589 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:19:10,589 - gdax_msgs - INFO - Stored 10267 messages in GdaxBtcUsdMessage in 30.26s
+2017-12-10 01:20:10,540 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:20:10,540 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:20:10,540 - gdax_msgs - INFO - Stored 11406 messages in GdaxBtcUsdMessage in 30.20s
+2017-12-10 01:21:10,584 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:21:10,584 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:21:10,584 - gdax_msgs - INFO - Stored 14748 messages in GdaxBtcUsdMessage in 30.25s
+2017-12-10 01:22:10,516 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:22:10,516 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:22:10,516 - gdax_msgs - INFO - Stored 11421 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 01:23:10,632 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:23:10,633 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:23:10,633 - gdax_msgs - INFO - Stored 15095 messages in GdaxBtcUsdMessage in 30.29s
+2017-12-10 01:24:10,557 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:24:10,557 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:24:10,557 - gdax_msgs - INFO - Stored 8828 messages in GdaxBtcUsdMessage in 30.18s
+2017-12-10 01:24:49,390 - gdax_msgs - INFO - ==============================
+2017-12-10 01:24:49,391 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-10 01:25:10,525 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:25:10,526 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:25:10,526 - gdax_msgs - INFO - Stored 7232 messages in GdaxBtcUsdMessage in 30.14s
+2017-12-10 01:25:23,747 - db_util - ERROR - Failed to store in GdaxBtcUsdSnapshot
+2017-12-10 01:25:23,747 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:25:23,748 - gdax_msgs - INFO - ==============================
+2017-12-10 01:26:10,621 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:26:10,621 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:26:10,621 - gdax_msgs - INFO - Stored 12968 messages in GdaxBtcUsdMessage in 30.23s
+2017-12-10 01:27:10,610 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:27:10,610 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:27:10,610 - gdax_msgs - INFO - Stored 11569 messages in GdaxBtcUsdMessage in 30.17s
+2017-12-10 01:28:10,747 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:28:10,747 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:28:10,747 - gdax_msgs - INFO - Stored 12021 messages in GdaxBtcUsdMessage in 30.29s
+2017-12-10 01:29:10,710 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:29:10,710 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:29:10,710 - gdax_msgs - INFO - Stored 15352 messages in GdaxBtcUsdMessage in 30.25s
+2017-12-10 01:30:10,642 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:30:10,642 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:30:10,642 - gdax_msgs - INFO - Stored 11747 messages in GdaxBtcUsdMessage in 30.17s
+2017-12-10 01:31:10,767 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:31:10,768 - db_util - ERROR - QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30
+2017-12-10 01:31:10,768 - gdax_msgs - INFO - Stored 14313 messages in GdaxBtcUsdMessage in 30.27s
+2017-12-10 01:31:28,179 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:31:28,179 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514528317, u'2017-12-09T23:30:26.066000Z', '2017-12-09T23:30:26.145944Z', u'received', u'15191.52000000', u'0.50000000', u'a9d21c57-22c0-4a9a-accd-b93146605698', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514528318, u'2017-12-09T23:30:26.066000Z', '2017-12-09T23:30:26.146140Z', u'open', u'15191.52000000', None, u'a9d21c57-22c0-4a9a-accd-b93146605698', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514528319, u'2017-12-09T23:30:26.180000Z', '2017-12-09T23:30:26.219460Z', u'done', u'15191.52000000', None, u'5b69f679-b48c-4c52-b9ed-a8506944d427', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514528320, u'2017-12-09T23:30:26.181000Z', '2017-12-09T23:30:26.223884Z', u'done', u'15175.05000000', None, u'cb11dc2f-2659-4e65-a954-3a4e7348b534', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514528321, u'2017-12-09T23:30:26.198000Z', '2017-12-09T23:30:26.254043Z', u'done', u'15175.05000000', None, u'dd651c12-240d-40a3-8b40-b3415bfd3ea1', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514528322, u'2017-12-09T23:30:26.203000Z', '2017-12-09T23:30:26.254273Z', u'done', u'15191.52000000', None, u'01ab4f20-01be-4fe6-a810-05055c8383a5', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514528323, u'2017-12-09T23:30:26.209000Z', '2017-12-09T23:30:26.254514Z', u'done', u'15191.52000000', None, u'ca9ce9dc-c0ed-4f77-8f2b-a7d1c4e11e62', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514528324, u'2017-12-09T23:30:26.210000Z', '2017-12-09T23:30:26.254724Z', u'done', u'15191.52000000', None, u'a9d21c57-22c0-4a9a-accd-b93146605698', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 8282 total bound parameter sets ...  (4514536597, u'2017-12-09T23:31:26.059000Z', '2017-12-09T23:31:26.102280Z', u'received', u'15168.80000000', u'0.50000000', u'2ff9da06-9e8d-4903-bdf6-6df6e383b301', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514536598, u'2017-12-09T23:31:26.059000Z', '2017-12-09T23:31:26.104245Z', u'open', u'15168.80000000', None, u'2ff9da06-9e8d-4903-bdf6-6df6e383b301', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:31:28,209 - gdax_msgs - INFO - Stored 8282 messages in GdaxBtcUsdMessage in 7202.10s
+2017-12-10 01:31:43,330 - gdax_msgs - INFO - Stored 13495 messages in GdaxBtcUsdMessage in 2.74s
+2017-12-10 01:32:29,619 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:32:29,619 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514536599, u'2017-12-09T23:31:26.083000Z', '2017-12-09T23:31:26.176311Z', u'done', u'15212.72000000', None, u'26db2811-45a4-4718-8400-2cadc4554ed5', u'sell', None, None, u'0.00409266', u'canceled', None, None, None, None, None, None, None), (4514536600, u'2017-12-09T23:31:26.116000Z', '2017-12-09T23:31:26.176572Z', u'received', u'15209.12000000', u'0.02000000', u'ea3fe840-ad69-48b9-a9d0-a47ec362696b', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514536601, u'2017-12-09T23:31:26.116000Z', '2017-12-09T23:31:26.176739Z', u'open', u'15209.12000000', None, u'ea3fe840-ad69-48b9-a9d0-a47ec362696b', u'sell', None, None, u'0.02000000', None, None, None, None, None, None, None, None), (4514536602, u'2017-12-09T23:31:26.132000Z', '2017-12-09T23:31:26.176936Z', u'received', u'15194.11000000', u'0.01000000', u'5acd90d1-9cd3-45c0-b4d4-4034d7eb68fb', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514536603, u'2017-12-09T23:31:26.132000Z', '2017-12-09T23:31:26.177091Z', u'open', u'15194.11000000', None, u'5acd90d1-9cd3-45c0-b4d4-4034d7eb68fb', u'buy', None, None, u'0.01000000', None, None, None, None, None, None, None, None), (4514536604, u'2017-12-09T23:31:26.139000Z', '2017-12-09T23:31:26.187628Z', u'done', u'15189.48000000', None, u'0a4570cb-20b2-40db-b68d-134d4f749c99', u'buy', None, None, u'0.01000000', u'canceled', None, None, None, None, None, None, None), (4514536605, u'2017-12-09T23:31:26.146000Z', '2017-12-09T23:31:26.187891Z', u'received', u'16900.00000000', u'0.35000000', u'a618f066-8f13-4efb-b51e-c2d364bd5bbc', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514536606, u'2017-12-09T23:31:26.146000Z', '2017-12-09T23:31:26.188052Z', u'open', u'16900.00000000', None, u'a618f066-8f13-4efb-b51e-c2d364bd5bbc', u'sell', None, None, u'0.35000000', None, None, None, None, None, None, None, None)  ... displaying 10 of 10971 total bound parameter sets ...  (4514547568, u'2017-12-09T23:32:26.087000Z', '2017-12-09T23:32:26.130724Z', u'done', u'15147.27000000', None, u'1fa009d9-facc-4652-b600-febfa4890299', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514547569, u'2017-12-09T23:32:26.088000Z', '2017-12-09T23:32:26.131110Z', u'done', u'15204.58000000', None, u'7e22f6ee-df13-4267-8e4e-916bed46b207', u'sell', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:32:29,653 - gdax_msgs - INFO - Stored 10971 messages in GdaxBtcUsdMessage in 7203.52s
+2017-12-10 01:32:43,793 - gdax_msgs - INFO - Stored 12480 messages in GdaxBtcUsdMessage in 3.20s
+2017-12-10 01:33:42,300 - gdax_msgs - INFO - Stored 11204 messages in GdaxBtcUsdMessage in 1.69s
+2017-12-10 01:34:42,427 - gdax_msgs - INFO - Stored 12861 messages in GdaxBtcUsdMessage in 1.81s
+2017-12-10 01:35:17,555 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:35:17,555 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514560168, u'2017-12-09T23:33:26.137000Z', '2017-12-09T23:33:26.266380Z', u'received', u'15129.96000000', u'0.01195586', u'd6726261-f422-4e5a-9db3-2172c4b56cf2', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514560169, u'2017-12-09T23:33:26.137000Z', '2017-12-09T23:33:26.266572Z', u'open', u'15129.96000000', None, u'd6726261-f422-4e5a-9db3-2172c4b56cf2', u'sell', None, None, u'0.01195586', None, None, None, None, None, None, None, None), (4514560170, u'2017-12-09T23:33:26.139000Z', '2017-12-09T23:33:26.266751Z', u'received', u'15100.02000000', u'0.50000000', u'c5dc834c-605b-4c0c-adaa-078c0d479048', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514560171, u'2017-12-09T23:33:26.139000Z', '2017-12-09T23:33:26.266895Z', u'open', u'15100.02000000', None, u'c5dc834c-605b-4c0c-adaa-078c0d479048', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514560172, u'2017-12-09T23:33:26.141000Z', '2017-12-09T23:33:26.267046Z', u'done', u'15138.69000000', None, u'67ab9256-7996-4a86-8067-b4e4cf1469c3', u'sell', None, None, u'0.36970000', u'canceled', None, None, None, None, None, None, None), (4514560173, u'2017-12-09T23:33:26.143000Z', '2017-12-09T23:33:26.267201Z', u'received', u'15129.96000000', u'0.01040473', u'df761960-a904-4e0b-802b-270a6ef7e000', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514560174, u'2017-12-09T23:33:26.143000Z', '2017-12-09T23:33:26.267422Z', u'open', u'15129.96000000', None, u'df761960-a904-4e0b-802b-270a6ef7e000', u'sell', None, None, u'0.01040473', None, None, None, None, None, None, None, None), (4514560175, u'2017-12-09T23:33:26.144000Z', '2017-12-09T23:33:26.267601Z', u'received', u'15149.24000000', u'0.30000000', u'6f3df6f2-f1f9-4824-bbf7-41e613e8d45b', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None)  ... displaying 10 of 8278 total bound parameter sets ...  (4514568444, u'2017-12-09T23:34:26.142000Z', '2017-12-09T23:34:26.193545Z', u'received', u'14903.45000000', u'2.00000000', u'2062e4ea-d968-4886-b697-106eeb0f170b', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514568445, u'2017-12-09T23:34:26.142000Z', '2017-12-09T23:34:26.194056Z', u'open', u'14903.45000000', None, u'2062e4ea-d968-4886-b697-106eeb0f170b', u'buy', None, None, u'2.00000000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:35:17,556 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:35:17,565 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514547570, u'2017-12-09T23:32:26.097000Z', '2017-12-09T23:32:26.226485Z', u'done', u'15147.27000000', None, u'715d4c1e-1609-4d4c-abee-22f8aa511737', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514547571, u'2017-12-09T23:32:26.099000Z', '2017-12-09T23:32:26.226738Z', u'received', u'15147.28000000', u'0.30000000', u'2c5d3f62-c474-4c07-a760-378d5c9dd882', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514547572, u'2017-12-09T23:32:26.099000Z', '2017-12-09T23:32:26.226902Z', u'open', u'15147.28000000', None, u'2c5d3f62-c474-4c07-a760-378d5c9dd882', u'buy', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514547573, u'2017-12-09T23:32:26.123000Z', '2017-12-09T23:32:26.227088Z', u'received', u'15147.28000000', u'0.50000000', u'3f1c3035-1e4a-43c1-a2e5-3847faa21997', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514547574, u'2017-12-09T23:32:26.123000Z', '2017-12-09T23:32:26.227239Z', u'open', u'15147.28000000', None, u'3f1c3035-1e4a-43c1-a2e5-3847faa21997', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514547575, u'2017-12-09T23:32:26.124000Z', '2017-12-09T23:32:26.227420Z', u'received', u'15147.28000000', u'0.50000000', u'8ba2c5a1-117f-4c24-b141-c020083b0570', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514547576, u'2017-12-09T23:32:26.124000Z', '2017-12-09T23:32:26.227568Z', u'open', u'15147.28000000', None, u'8ba2c5a1-117f-4c24-b141-c020083b0570', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514547577, u'2017-12-09T23:32:26.130000Z', '2017-12-09T23:32:26.227738Z', u'done', u'15147.27000000', None, u'4c085fe6-3c00-4b01-aa6b-67dbc7fc31ab', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 12598 total bound parameter sets ...  (4514560166, u'2017-12-09T23:33:26.078000Z', '2017-12-09T23:33:26.130475Z', u'open', u'15123.59000000', None, u'ab9c0acb-96a3-46a0-a4bb-7a3598ee2d6b', u'buy', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4514560167, u'2017-12-09T23:33:26.108000Z', '2017-12-09T23:33:26.177991Z', u'done', u'15173.01000000', None, u'f4a1c8c4-7c63-4fa7-b0b2-5ad6098c359d', u'sell', None, None, u'0.12000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:35:17,611 - gdax_msgs - INFO - Stored 8278 messages in GdaxBtcUsdMessage in 7251.40s
+2017-12-10 01:35:17,610 - gdax_msgs - INFO - Stored 12598 messages in GdaxBtcUsdMessage in 7311.43s
+2017-12-10 01:35:33,939 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:35:33,939 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514568446, u'2017-12-09T23:34:26.179000Z', '2017-12-09T23:34:26.241528Z', u'done', u'15161.77000000', None, u'd2df16f8-a20f-4fa8-b955-96d6b38f7402', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514568447, u'2017-12-09T23:34:26.182000Z', '2017-12-09T23:34:26.241780Z', u'done', u'15179.93000000', None, u'f8a8f6d2-45bd-4c48-b75f-9901eba740cb', u'sell', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514568448, u'2017-12-09T23:34:26.185000Z', '2017-12-09T23:34:26.241953Z', u'done', u'15161.77000000', None, u'e5d291a7-5dde-4ee2-ae3a-0a61f8d8940f', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514568449, u'2017-12-09T23:34:26.186000Z', '2017-12-09T23:34:26.242123Z', u'done', u'15161.77000000', None, u'575fd03c-0934-49b4-8c26-8807dab7607c', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514568450, u'2017-12-09T23:34:26.187000Z', '2017-12-09T23:34:26.242282Z', u'done', u'15161.77000000', None, u'804a5bea-4a80-4f73-8f73-26f868353a94', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514568451, u'2017-12-09T23:34:26.192000Z', '2017-12-09T23:34:26.276855Z', u'done', u'15179.93000000', None, u'27b30edc-ad04-481d-8a4b-1103b9d719ce', u'sell', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514568452, u'2017-12-09T23:34:26.193000Z', '2017-12-09T23:34:26.277095Z', u'received', u'15161.76000000', u'0.30000000', u'da261df2-4f28-4cc8-9750-7e8681894315', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514568453, u'2017-12-09T23:34:26.193000Z', '2017-12-09T23:34:26.277270Z', u'open', u'15161.76000000', None, u'da261df2-4f28-4cc8-9750-7e8681894315', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None)  ... displaying 10 of 12392 total bound parameter sets ...  (4514580836, u'2017-12-09T23:35:26.170000Z', '2017-12-09T23:35:26.217859Z', u'open', u'15195.97000000', None, u'd2fc0303-8006-45f2-bf0f-d6f2768436c6', u'sell', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514580837, u'2017-12-09T23:35:26.173000Z', '2017-12-09T23:35:26.218099Z', u'received', u'14652.01000000', u'0.11079884', u'd49ac706-533f-47a3-96b6-cd98a1812e51', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None))]
+2017-12-10 01:35:33,988 - gdax_msgs - INFO - Stored 12392 messages in GdaxBtcUsdMessage in 7207.76s
+2017-12-10 01:35:42,784 - gdax_msgs - INFO - Stored 12657 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-10 01:36:43,143 - gdax_msgs - INFO - Stored 10903 messages in GdaxBtcUsdMessage in 2.51s
+2017-12-10 01:37:28,627 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:37:28,627 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514580838, u'2017-12-09T23:35:26.173000Z', '2017-12-09T23:35:26.218955Z', u'open', u'14652.01000000', None, u'd49ac706-533f-47a3-96b6-cd98a1812e51', u'buy', None, None, u'0.11079884', None, None, None, None, None, None, None, None), (4514580839, u'2017-12-09T23:35:26.175000Z', '2017-12-09T23:35:26.219155Z', u'received', u'15184.78000000', u'0.30000000', u'16c3a4bf-9a22-4eb6-ae44-f008f353dbf6', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514580840, u'2017-12-09T23:35:26.175000Z', '2017-12-09T23:35:26.309232Z', u'open', u'15184.78000000', None, u'16c3a4bf-9a22-4eb6-ae44-f008f353dbf6', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514580841, u'2017-12-09T23:35:26.176000Z', '2017-12-09T23:35:26.309441Z', u'received', u'14941.60000000', u'2.00000000', u'9ff2f57a-f5f6-4ead-b83a-03dc7f49b946', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514580842, u'2017-12-09T23:35:26.176000Z', '2017-12-09T23:35:26.309730Z', u'open', u'14941.60000000', None, u'9ff2f57a-f5f6-4ead-b83a-03dc7f49b946', u'buy', None, None, u'2.00000000', None, None, None, None, None, None, None, None), (4514580843, u'2017-12-09T23:35:26.186000Z', '2017-12-09T23:35:26.309911Z', u'done', u'15184.78000000', None, u'16c3a4bf-9a22-4eb6-ae44-f008f353dbf6', u'sell', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514580844, u'2017-12-09T23:35:26.188000Z', '2017-12-09T23:35:26.310072Z', u'done', u'15108.56000000', None, u'e6d2b270-d6ae-4da0-8b5b-9fe1adb425ab', u'buy', None, None, u'0.93990000', u'canceled', None, None, None, None, None, None, None), (4514580845, u'2017-12-09T23:35:26.197000Z', '2017-12-09T23:35:26.310240Z', u'done', u'15107.56000000', None, u'095dc46a-fe42-4e3c-93d5-5a28d810a699', u'buy', None, None, u'1.06010000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 11661 total bound parameter sets ...  (4514592497, u'2017-12-09T23:36:26.169000Z', '2017-12-09T23:36:26.230963Z', u'done', u'15196.84000000', None, u'e8f37b94-4313-4302-a7e5-82c2b000f5ec', u'sell', None, None, u'0.18474203', u'canceled', None, None, None, None, None, None, None), (4514592498, u'2017-12-09T23:36:26.191000Z', '2017-12-09T23:36:26.234078Z', u'received', u'15155.01000000', u'0.30000000', u'5c8f1d3d-9676-4c4b-b335-4f050dd777de', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None))]
+2017-12-10 01:37:28,638 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:37:28,638 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514592499, u'2017-12-09T23:36:26.191000Z', '2017-12-09T23:36:26.234706Z', u'open', u'15155.01000000', None, u'5c8f1d3d-9676-4c4b-b335-4f050dd777de', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514592500, u'2017-12-09T23:36:26.202000Z', '2017-12-09T23:36:26.307148Z', u'done', u'15155.03000000', None, u'94c5bd1e-e961-4ecb-afcc-e11b101f4982', u'sell', None, None, u'3.20000000', u'canceled', None, None, None, None, None, None, None), (4514592501, u'2017-12-09T23:36:26.205000Z', '2017-12-09T23:36:26.307369Z', u'received', u'15155.01000000', u'0.30000000', u'e2d80213-ce7a-42cc-96bd-a2e802cf2aab', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514592502, u'2017-12-09T23:36:26.205000Z', '2017-12-09T23:36:26.307641Z', u'open', u'15155.01000000', None, u'e2d80213-ce7a-42cc-96bd-a2e802cf2aab', u'sell', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514592503, u'2017-12-09T23:36:26.209000Z', '2017-12-09T23:36:26.307903Z', u'received', u'15155.02000000', u'0.50000000', u'fce864d0-877c-47b7-9975-aad46efddcee', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514592504, u'2017-12-09T23:36:26.209000Z', '2017-12-09T23:36:26.308073Z', u'open', u'15155.02000000', None, u'fce864d0-877c-47b7-9975-aad46efddcee', u'sell', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514592505, u'2017-12-09T23:36:26.243000Z', '2017-12-09T23:36:26.339980Z', u'done', u'15210.30000000', None, u'18e82b44-09ab-4cb5-adad-6ede93247bd0', u'sell', None, None, u'0.01000000', u'canceled', None, None, None, None, None, None, None), (4514592506, u'2017-12-09T23:36:26.301000Z', '2017-12-09T23:36:26.356869Z', u'received', u'14987.49000000', u'0.00910000', u'93b57593-fa4a-4365-8e19-060e2126fadb', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None)  ... displaying 10 of 9742 total bound parameter sets ...  (4514602239, u'2017-12-09T23:37:26.175000Z', '2017-12-09T23:37:26.214845Z', u'done', u'15169.99000000', None, u'61f6f203-5f55-4f6f-83da-e2af3769d4db', u'sell', None, None, u'0.69840000', u'canceled', None, None, None, None, None, None, None), (4514602240, u'2017-12-09T23:37:26.229000Z', '2017-12-09T23:37:26.271824Z', u'done', u'15125.08000000', None, u'b0649b26-4c5e-407c-a7e2-410e4eabe889', u'buy', None, None, u'0.06000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:37:28,682 - gdax_msgs - INFO - Stored 11661 messages in GdaxBtcUsdMessage in 7262.44s
+2017-12-10 01:37:28,694 - gdax_msgs - INFO - Stored 9742 messages in GdaxBtcUsdMessage in 7202.41s
+2017-12-10 01:37:44,012 - gdax_msgs - INFO - Stored 13800 messages in GdaxBtcUsdMessage in 3.37s
+2017-12-10 01:38:42,853 - gdax_msgs - INFO - Stored 14039 messages in GdaxBtcUsdMessage in 2.18s
+2017-12-10 01:39:39,699 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:39:39,700 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514602241, u'2017-12-09T23:37:26.394000Z', '2017-12-09T23:37:26.434972Z', u'done', u'15125.62000000', None, u'90f07939-d5bd-467f-9554-366c5438ff3a', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514602242, u'2017-12-09T23:37:26.397000Z', '2017-12-09T23:37:26.435993Z', u'done', u'15125.62000000', None, u'1a5254e3-e9fb-455e-aaf0-164061a44070', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514602243, u'2017-12-09T23:37:26.414000Z', '2017-12-09T23:37:26.453237Z', u'done', u'15125.62000000', None, u'60f910e0-1066-4bd9-8966-8b173a6eb797', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514602244, u'2017-12-09T23:37:26.416000Z', '2017-12-09T23:37:26.455086Z', u'done', u'15125.62000000', None, u'd0cbd509-be86-4065-bfa5-042dbf824d55', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514602245, u'2017-12-09T23:37:26.422000Z', '2017-12-09T23:37:26.462148Z', u'received', u'15125.63000000', u'0.30000000', u'cc26e00a-61ce-44be-9a41-7130754e4b8e', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514602246, u'2017-12-09T23:37:26.422000Z', '2017-12-09T23:37:26.463548Z', u'open', u'15125.63000000', None, u'cc26e00a-61ce-44be-9a41-7130754e4b8e', u'buy', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514602247, u'2017-12-09T23:37:26.428000Z', '2017-12-09T23:37:26.467585Z', u'done', u'15125.62000000', None, u'cbf018fb-b6ed-4f17-85aa-8469833d0aa7', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514602248, u'2017-12-09T23:37:26.429000Z', '2017-12-09T23:37:26.476563Z', u'done', u'15125.62000000', None, u'3d5977a9-579e-4cd6-81fd-0b2bfb1739fc', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 10137 total bound parameter sets ...  (4514612376, u'2017-12-09T23:38:26.183000Z', '2017-12-09T23:38:26.238296Z', u'open', u'15172.80000000', None, u'6c423733-2806-4b40-9dc4-224fb86399aa', u'sell', None, None, u'0.78900000', None, None, None, None, None, None, None, None), (4514612377, u'2017-12-09T23:38:26.222000Z', '2017-12-09T23:38:26.286411Z', u'received', u'15208.97000000', u'0.01000000', u'7c727a60-2c51-4b18-8a86-269ca4ad1b9f', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None))]
+2017-12-10 01:39:39,724 - gdax_msgs - INFO - Stored 10137 messages in GdaxBtcUsdMessage in 7273.43s
+2017-12-10 01:39:43,013 - gdax_msgs - INFO - Stored 10884 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-10 01:40:34,995 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:40:34,995 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514612378, u'2017-12-09T23:38:26.222000Z', '2017-12-09T23:38:26.389606Z', u'open', u'15208.97000000', None, u'7c727a60-2c51-4b18-8a86-269ca4ad1b9f', u'sell', None, None, u'0.01000000', None, None, None, None, None, None, None, None), (4514612379, u'2017-12-09T23:38:26.285000Z', '2017-12-09T23:38:26.390194Z', u'received', u'15487.24000000', u'0.10000000', u'b1c3a43b-c963-47a1-9399-6bea37646f96', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514612380, u'2017-12-09T23:38:26.285000Z', '2017-12-09T23:38:26.390356Z', u'open', u'15487.24000000', None, u'b1c3a43b-c963-47a1-9399-6bea37646f96', u'sell', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4514612381, u'2017-12-09T23:38:26.297000Z', '2017-12-09T23:38:26.390520Z', u'done', u'15125.03000000', None, u'33713cda-038b-4704-bf17-10532df27be5', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514612382, u'2017-12-09T23:38:26.300000Z', '2017-12-09T23:38:26.391146Z', u'done', u'15125.03000000', None, u'11e8c5b9-c5a5-4f21-bb41-1ce49796458e', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514612383, u'2017-12-09T23:38:26.301000Z', '2017-12-09T23:38:26.391325Z', u'done', u'15125.03000000', None, u'7d8f0dc2-ee26-4c7e-878d-ec993375f281', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514612384, u'2017-12-09T23:38:26.303000Z', '2017-12-09T23:38:26.391490Z', u'done', u'15125.03000000', None, u'f66e1dbc-8ddc-42b1-a8b6-7b8545afcc86', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514612385, u'2017-12-09T23:38:26.324000Z', '2017-12-09T23:38:26.392018Z', u'received', u'15125.04000000', u'0.30000000', u'bd456c14-9e44-4c7c-964c-962af27ad744', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None)  ... displaying 10 of 9700 total bound parameter sets ...  (4514622076, u'2017-12-09T23:39:26.249000Z', '2017-12-09T23:39:26.293986Z', u'open', u'15159.79000000', None, u'b22154de-6242-4993-89eb-437906056dd4', u'sell', None, None, u'0.26447797', None, None, None, None, None, None, None, None), (4514622077, u'2017-12-09T23:39:26.250000Z', '2017-12-09T23:39:26.294261Z', u'done', u'15141.19000000', None, u'88593b65-3407-4c23-8e2c-ed6e0038c5cd', u'buy', None, None, u'1.20000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:40:35,021 - gdax_msgs - INFO - Stored 9700 messages in GdaxBtcUsdMessage in 7268.72s
+2017-12-10 01:40:42,348 - gdax_msgs - INFO - Stored 10504 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-10 01:41:42,272 - gdax_msgs - INFO - Stored 9698 messages in GdaxBtcUsdMessage in 1.40s
+2017-12-10 01:41:50,771 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:41:50,771 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514622078, u'2017-12-09T23:39:26.264000Z', '2017-12-09T23:39:26.352764Z', u'done', u'15142.07000000', None, u'52d61eec-832a-477c-ab88-c27aa10eb9c0', u'buy', None, None, u'0.02000000', u'canceled', None, None, None, None, None, None, None), (4514622079, u'2017-12-09T23:39:26.266000Z', '2017-12-09T23:39:26.353020Z', u'received', u'15141.48000000', u'1.20000000', u'15f45010-9af3-4969-ac6d-2cecbd401b12', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514622080, u'2017-12-09T23:39:26.266000Z', '2017-12-09T23:39:26.353255Z', u'open', u'15141.48000000', None, u'15f45010-9af3-4969-ac6d-2cecbd401b12', u'buy', None, None, u'1.20000000', None, None, None, None, None, None, None, None), (4514622081, u'2017-12-09T23:39:26.267000Z', '2017-12-09T23:39:26.353465Z', u'done', u'15159.79000000', None, u'b22154de-6242-4993-89eb-437906056dd4', u'sell', None, None, u'0.26447797', u'canceled', None, None, None, None, None, None, None), (4514622082, u'2017-12-09T23:39:26.290000Z', '2017-12-09T23:39:26.355029Z', u'done', u'15159.80000000', None, u'3ac8444b-51ee-4400-bdd6-81fec96cca30', u'sell', None, None, u'2.74100000', u'canceled', None, None, None, None, None, None, None), (4514622083, u'2017-12-09T23:39:26.291000Z', '2017-12-09T23:39:26.355255Z', u'received', u'15159.78000000', u'0.26447797', u'abc0cf9a-6bbc-4e8d-a65f-8c08b4ae3215', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514622084, u'2017-12-09T23:39:26.291000Z', '2017-12-09T23:39:26.355412Z', u'open', u'15159.78000000', None, u'abc0cf9a-6bbc-4e8d-a65f-8c08b4ae3215', u'sell', None, None, u'0.26447797', None, None, None, None, None, None, None, None), (4514622085, u'2017-12-09T23:39:26.299000Z', '2017-12-09T23:39:26.355611Z', u'done', u'15159.78000000', None, u'abc0cf9a-6bbc-4e8d-a65f-8c08b4ae3215', u'sell', None, None, u'0.26447797', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 6714 total bound parameter sets ...  (4514628790, u'2017-12-09T23:40:25.860000Z', '2017-12-09T23:40:26.299668Z', u'received', u'15033.38000000', u'0.00350000', u'47b6cadd-cec4-4307-b7e1-1b92c65c5f09', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514628791, u'2017-12-09T23:40:25.860000Z', '2017-12-09T23:40:26.299836Z', u'open', u'15033.38000000', None, u'47b6cadd-cec4-4307-b7e1-1b92c65c5f09', u'buy', None, None, u'0.00350000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:41:50,796 - gdax_msgs - INFO - Stored 6714 messages in GdaxBtcUsdMessage in 7284.50s
+2017-12-10 01:42:43,704 - gdax_msgs - INFO - Stored 12700 messages in GdaxBtcUsdMessage in 2.76s
+2017-12-10 01:42:44,019 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:42:44,019 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514628792, u'2017-12-09T23:40:25.865000Z', '2017-12-09T23:40:26.343982Z', u'received', u'15032.92000000', u'0.00050000', u'2377af8b-1e47-4dd6-82c8-b65894444d12', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514628793, u'2017-12-09T23:40:25.865000Z', '2017-12-09T23:40:26.344167Z', u'open', u'15032.92000000', None, u'2377af8b-1e47-4dd6-82c8-b65894444d12', u'buy', None, None, u'0.00050000', None, None, None, None, None, None, None, None), (4514628794, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.344343Z', u'received', u'14959.08000000', u'0.00030000', u'32d06bde-03cd-441c-ad9b-f1ee1569b98c', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514628795, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.344557Z', u'open', u'14959.08000000', None, u'32d06bde-03cd-441c-ad9b-f1ee1569b98c', u'buy', None, None, u'0.00030000', None, None, None, None, None, None, None, None), (4514628796, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.344813Z', u'received', u'15033.38000000', u'0.00090000', u'17b6d272-651a-4cdc-8471-6e885e7fd7d9', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514628797, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.344991Z', u'open', u'15033.38000000', None, u'17b6d272-651a-4cdc-8471-6e885e7fd7d9', u'buy', None, None, u'0.00090000', None, None, None, None, None, None, None, None), (4514628798, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.345174Z', u'received', u'15032.92000000', u'0.00060000', u'd28e4b27-b2cd-4505-a12c-fa9b4e68e481', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514628799, u'2017-12-09T23:40:25.868000Z', '2017-12-09T23:40:26.345321Z', u'open', u'15032.92000000', None, u'd28e4b27-b2cd-4505-a12c-fa9b4e68e481', u'buy', None, None, u'0.00060000', None, None, None, None, None, None, None, None)  ... displaying 10 of 6866 total bound parameter sets ...  (4514635656, u'2017-12-09T23:41:26.288000Z', '2017-12-09T23:41:26.356655Z', u'received', u'17000.00000000', u'0.10000000', u'a3106a99-f62f-4685-8984-83edaf20df5c', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514635657, u'2017-12-09T23:41:26.288000Z', '2017-12-09T23:41:26.356805Z', u'open', u'17000.00000000', None, u'a3106a99-f62f-4685-8984-83edaf20df5c', u'sell', None, None, u'0.10000000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:42:44,035 - gdax_msgs - INFO - Stored 6866 messages in GdaxBtcUsdMessage in 7277.68s
+2017-12-10 01:43:42,335 - gdax_msgs - INFO - Stored 9390 messages in GdaxBtcUsdMessage in 1.38s
+2017-12-10 01:44:01,843 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:44:01,843 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514640138, u'2017-12-09T23:42:26.399000Z', '2017-12-09T23:42:26.434121Z', u'received', u'15169.81000000', u'0.07050000', u'791dcd38-b50b-4e80-82c9-62d2824f03e0', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514640139, u'2017-12-09T23:42:26.399000Z', '2017-12-09T23:42:26.434414Z', u'open', u'15169.81000000', None, u'791dcd38-b50b-4e80-82c9-62d2824f03e0', u'buy', None, None, u'0.07050000', None, None, None, None, None, None, None, None), (4514640140, u'2017-12-09T23:42:26.419000Z', '2017-12-09T23:42:26.467878Z', u'received', u'15354.24000000', u'1.00000000', u'd8afa43f-509f-4834-a129-c9da38dfa922', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514640141, u'2017-12-09T23:42:26.419000Z', '2017-12-09T23:42:26.468152Z', u'open', u'15354.24000000', None, u'd8afa43f-509f-4834-a129-c9da38dfa922', u'sell', None, None, u'1.00000000', None, None, None, None, None, None, None, None), (4514640142, u'2017-12-09T23:42:26.491000Z', '2017-12-09T23:42:26.526126Z', u'done', u'15169.80000000', None, u'13ab9e37-889c-498e-ba05-4e054dbdd11c', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514640143, u'2017-12-09T23:42:26.494000Z', '2017-12-09T23:42:26.526449Z', u'done', u'15169.80000000', None, u'bfc9cfd8-cc4b-4456-8de7-5b6efd46f693', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514640144, u'2017-12-09T23:42:26.502000Z', '2017-12-09T23:42:26.539227Z', u'done', u'15169.80000000', None, u'f1eaafc9-b3bd-41b0-8d86-cb04c7415ae8', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None), (4514640145, u'2017-12-09T23:42:26.503000Z', '2017-12-09T23:42:26.539436Z', u'done', u'15169.80000000', None, u'c0cb90ff-c0c6-4bbc-968d-74b6d5c6b81d', u'buy', None, None, u'0.30000000', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 7443 total bound parameter sets ...  (4514647579, u'2017-12-09T23:43:26.399000Z', '2017-12-09T23:43:26.427410Z', u'received', u'0.01000000', u'0.00651000', u'3b5f7653-7083-4e3a-b898-b860c7eaea1f', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514647580, u'2017-12-09T23:43:26.399000Z', '2017-12-09T23:43:26.428802Z', u'open', u'0.01000000', None, u'3b5f7653-7083-4e3a-b898-b860c7eaea1f', u'buy', None, None, u'0.00651000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:44:01,852 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:44:01,852 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514635658, u'2017-12-09T23:41:26.333000Z', '2017-12-09T23:41:26.403805Z', u'done', u'15157.80000000', None, u'9b17f8fb-35bb-4015-b070-1d8cab75efad', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514635659, u'2017-12-09T23:41:26.344000Z', '2017-12-09T23:41:26.404120Z', u'received', u'15157.81000000', u'0.50000000', u'0ac9120d-d05a-410b-baec-58b41ecdc65b', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514635660, u'2017-12-09T23:41:26.344000Z', '2017-12-09T23:41:26.404292Z', u'open', u'15157.81000000', None, u'0ac9120d-d05a-410b-baec-58b41ecdc65b', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514635661, u'2017-12-09T23:41:26.416000Z', '2017-12-09T23:41:26.454524Z', u'received', None, None, u'39481b69-72d4-4cf5-96ee-0029edb4d557', u'buy', u'market', u'141804.4787055846000000', None, None, None, None, None, None, None, None, None), (4514635662, u'2017-12-09T23:41:26.416000Z', '2017-12-09T23:41:26.454911Z', u'match', u'15197.50000000', u'0.50183564', None, u'sell', None, None, None, None, 27291652.0, u'382a7d82-71c8-48d6-bdf2-8e13ddf18230', u'39481b69-72d4-4cf5-96ee-0029edb4d557', None, None, None, None), (4514635663, u'2017-12-09T23:41:26.416000Z', '2017-12-09T23:41:26.460533Z', u'done', u'15197.50000000', None, u'382a7d82-71c8-48d6-bdf2-8e13ddf18230', u'sell', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None), (4514635664, u'2017-12-09T23:41:26.416000Z', '2017-12-09T23:41:26.460783Z', u'match', u'15197.50000000', u'1.00000000', None, u'sell', None, None, None, None, 27291653.0, u'37f93ec4-1d8e-43a9-b4cd-087a0cfe8452', u'39481b69-72d4-4cf5-96ee-0029edb4d557', None, None, None, None), (4514635665, u'2017-12-09T23:41:26.416000Z', '2017-12-09T23:41:26.465081Z', u'done', u'15197.50000000', None, u'37f93ec4-1d8e-43a9-b4cd-087a0cfe8452', u'sell', None, None, u'0.00000000', u'filled', None, None, None, None, None, None, None)  ... displaying 10 of 4480 total bound parameter sets ...  (4514640136, u'2017-12-09T23:42:26.296000Z', '2017-12-09T23:42:26.329676Z', u'open', u'15169.80000000', None, u'f1eaafc9-b3bd-41b0-8d86-cb04c7415ae8', u'buy', None, None, u'0.30000000', None, None, None, None, None, None, None, None), (4514640137, u'2017-12-09T23:42:26.393000Z', '2017-12-09T23:42:26.427061Z', u'done', u'15169.80000000', None, u'96d7f5d5-e686-41c4-84c6-698130d555b5', u'buy', None, None, u'0.07050000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:44:01,878 - gdax_msgs - INFO - Stored 4480 messages in GdaxBtcUsdMessage in 7295.45s
+2017-12-10 01:44:01,888 - gdax_msgs - INFO - Stored 7443 messages in GdaxBtcUsdMessage in 7235.46s
+2017-12-10 01:44:42,836 - gdax_msgs - INFO - Stored 10720 messages in GdaxBtcUsdMessage in 1.84s
+2017-12-10 01:45:43,598 - gdax_msgs - INFO - Stored 13910 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-10 01:46:12,915 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:46:12,915 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514647581, u'2017-12-09T23:43:26.421000Z', '2017-12-09T23:43:26.475720Z', u'received', u'0.01000000', u'0.00651000', u'15887654-cfb8-4f25-92d4-97b664226344', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514647582, u'2017-12-09T23:43:26.421000Z', '2017-12-09T23:43:26.475944Z', u'open', u'0.01000000', None, u'15887654-cfb8-4f25-92d4-97b664226344', u'buy', None, None, u'0.00651000', None, None, None, None, None, None, None, None), (4514647583, u'2017-12-09T23:43:26.490000Z', '2017-12-09T23:43:26.545591Z', u'received', u'0.01000000', u'5.31218000', u'0061daae-621f-4d0d-b1bb-dd121f7235c0', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514647584, u'2017-12-09T23:43:26.490000Z', '2017-12-09T23:43:26.554437Z', u'open', u'0.01000000', None, u'0061daae-621f-4d0d-b1bb-dd121f7235c0', u'buy', None, None, u'5.31218000', None, None, None, None, None, None, None, None), (4514647585, u'2017-12-09T23:43:26.534000Z', '2017-12-09T23:43:26.566158Z', u'received', u'0.01000000', u'5.31218000', u'9f0c5de3-14f3-45ec-bcf2-b0ea00ae36d9', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514647586, u'2017-12-09T23:43:26.534000Z', '2017-12-09T23:43:26.566421Z', u'open', u'0.01000000', None, u'9f0c5de3-14f3-45ec-bcf2-b0ea00ae36d9', u'buy', None, None, u'5.31218000', None, None, None, None, None, None, None, None), (4514647587, u'2017-12-09T23:43:26.544000Z', '2017-12-09T23:43:26.576584Z', u'received', u'158.47000000', u'5.71856000', u'9850fe55-7f36-4c6c-9646-7601ad4bb347', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514647588, u'2017-12-09T23:43:26.544000Z', '2017-12-09T23:43:26.576818Z', u'open', u'158.47000000', None, u'9850fe55-7f36-4c6c-9646-7601ad4bb347', u'buy', None, None, u'5.71856000', None, None, None, None, None, None, None, None)  ... displaying 10 of 6853 total bound parameter sets ...  (4514654432, u'2017-12-09T23:44:26.350000Z', '2017-12-09T23:44:26.375490Z', u'open', u'15235.98000000', None, u'0cd6c7fc-90d1-4cf3-b3aa-51cc517a63cd', u'sell', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4514654433, u'2017-12-09T23:44:26.420000Z', '2017-12-09T23:44:26.451828Z', u'done', u'15235.98000000', None, u'0cd6c7fc-90d1-4cf3-b3aa-51cc517a63cd', u'sell', None, None, u'0.10000000', u'canceled', None, None, None, None, None, None, None))]
+2017-12-10 01:46:12,928 - db_util - ERROR - Failed to store in GdaxBtcUsdMessage
+2017-12-10 01:46:12,929 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `GdaxBtcUsdMessage` (sequence, time, received_time, type, price, size, order_id, side, order_type, funds, remaining_size, reason, trade_id, maker_order_id, taker_order_id, new_size, old_size, new_funds, old_funds) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ((4514654434, u'2017-12-09T23:44:26.609000Z', '2017-12-09T23:44:26.637722Z', u'received', u'15189.00000000', u'0.06378480', u'80989eeb-196f-4f28-9afc-4a532964f70c', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514654435, u'2017-12-09T23:44:26.609000Z', '2017-12-09T23:44:26.637949Z', u'open', u'15189.00000000', None, u'80989eeb-196f-4f28-9afc-4a532964f70c', u'sell', None, None, u'0.06378480', None, None, None, None, None, None, None, None), (4514654436, u'2017-12-09T23:44:26.637000Z', '2017-12-09T23:44:26.661423Z', u'done', u'15147.13000000', None, u'0a5b62c5-0511-4344-90b2-e55769aa2e97', u'buy', None, None, u'0.50000000', u'canceled', None, None, None, None, None, None, None), (4514654437, u'2017-12-09T23:44:26.642000Z', '2017-12-09T23:44:26.668056Z', u'received', u'15147.14000000', u'0.50000000', u'2a4d4a36-c30f-4730-bf4d-ad373236071c', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514654438, u'2017-12-09T23:44:26.642000Z', '2017-12-09T23:44:26.668254Z', u'open', u'15147.14000000', None, u'2a4d4a36-c30f-4730-bf4d-ad373236071c', u'buy', None, None, u'0.50000000', None, None, None, None, None, None, None, None), (4514654439, u'2017-12-09T23:44:26.671000Z', '2017-12-09T23:44:26.696144Z', u'received', u'15236.10000000', u'0.10000000', u'8d17af28-4c83-45d8-b62a-9368efc556c0', u'sell', u'limit', None, None, None, None, None, None, None, None, None, None), (4514654440, u'2017-12-09T23:44:26.671000Z', '2017-12-09T23:44:26.698187Z', u'open', u'15236.10000000', None, u'8d17af28-4c83-45d8-b62a-9368efc556c0', u'sell', None, None, u'0.10000000', None, None, None, None, None, None, None, None), (4514654441, u'2017-12-09T23:44:26.738000Z', '2017-12-09T23:44:26.762216Z', u'done', u'15000.10000000', None, u'288fea0c-e7e4-4b40-aa65-99552f371a1a', u'buy', None, None, u'1.03018800', u'canceled', None, None, None, None, None, None, None)  ... displaying 10 of 4053 total bound parameter sets ...  (4514658485, u'2017-12-09T23:45:26.432000Z', '2017-12-09T23:45:26.468722Z', u'received', u'15010.94000000', u'1.00000000', u'b0a3fc75-d530-4ab1-a22f-18e92c8cc215', u'buy', u'limit', None, None, None, None, None, None, None, None, None, None), (4514658486, u'2017-12-09T23:45:26.432000Z', '2017-12-09T23:45:26.469126Z', u'open', u'15010.94000000', None, u'b0a3fc75-d530-4ab1-a22f-18e92c8cc215', u'buy', None, None, u'1.00000000', None, None, None, None, None, None, None, None))]
+2017-12-10 01:46:12,957 - gdax_msgs - INFO - Stored 4053 messages in GdaxBtcUsdMessage in 7246.48s
+2017-12-10 01:46:12,957 - gdax_msgs - INFO - Stored 6853 messages in GdaxBtcUsdMessage in 7306.50s
+2017-12-10 01:46:42,394 - gdax_msgs - INFO - Stored 10023 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-10 01:47:41,824 - gdax_msgs - INFO - Stored 4828 messages in GdaxBtcUsdMessage in 0.76s
+2017-12-10 01:48:42,240 - gdax_msgs - INFO - Stored 7034 messages in GdaxBtcUsdMessage in 1.15s
+2017-12-10 01:49:42,231 - gdax_msgs - INFO - Stored 8498 messages in GdaxBtcUsdMessage in 1.11s
+2017-12-10 01:50:42,217 - gdax_msgs - INFO - Stored 7205 messages in GdaxBtcUsdMessage in 1.07s
+2017-12-10 01:51:42,736 - gdax_msgs - INFO - Stored 9849 messages in GdaxBtcUsdMessage in 1.56s
+2017-12-10 01:52:42,671 - gdax_msgs - INFO - Stored 10709 messages in GdaxBtcUsdMessage in 1.46s
+2017-12-10 01:53:42,868 - gdax_msgs - INFO - Stored 10531 messages in GdaxBtcUsdMessage in 1.61s
+2017-12-10 01:54:42,686 - gdax_msgs - INFO - Stored 10508 messages in GdaxBtcUsdMessage in 1.42s
+2017-12-10 01:55:42,645 - gdax_msgs - INFO - Stored 9771 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-10 01:56:42,732 - gdax_msgs - INFO - Stored 9204 messages in GdaxBtcUsdMessage in 1.43s
+2017-12-10 01:57:42,538 - gdax_msgs - INFO - Stored 8482 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-10 01:58:43,365 - gdax_msgs - INFO - Stored 13596 messages in GdaxBtcUsdMessage in 1.95s
+2017-12-10 01:59:43,391 - gdax_msgs - INFO - Stored 12761 messages in GdaxBtcUsdMessage in 1.94s
+2017-12-10 02:00:43,433 - gdax_msgs - INFO - Stored 12075 messages in GdaxBtcUsdMessage in 1.95s
+2017-12-10 02:01:43,545 - gdax_msgs - INFO - Stored 13085 messages in GdaxBtcUsdMessage in 2.05s
+2017-12-10 02:02:44,309 - gdax_msgs - INFO - Stored 13548 messages in GdaxBtcUsdMessage in 2.79s
+2017-12-10 02:03:43,484 - gdax_msgs - INFO - Stored 12046 messages in GdaxBtcUsdMessage in 1.96s
+2017-12-10 02:04:44,137 - gdax_msgs - INFO - Stored 14290 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-10 02:05:43,199 - gdax_msgs - INFO - Stored 10210 messages in GdaxBtcUsdMessage in 1.66s
+2017-12-10 02:06:42,597 - gdax_msgs - INFO - Stored 6006 messages in GdaxBtcUsdMessage in 1.05s
+2017-12-10 02:08:42,472 - gdax_msgs - INFO - Stored 6268 messages in GdaxBtcUsdMessage in 0.88s
+2017-12-10 02:09:42,633 - gdax_msgs - INFO - Stored 6817 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-10 02:10:42,455 - gdax_msgs - INFO - Stored 4589 messages in GdaxBtcUsdMessage in 0.82s
+2017-12-10 02:11:42,660 - gdax_msgs - INFO - Stored 6598 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-10 02:12:42,603 - gdax_msgs - INFO - Stored 6117 messages in GdaxBtcUsdMessage in 0.89s
+2017-12-10 02:13:42,650 - gdax_msgs - INFO - Stored 5952 messages in GdaxBtcUsdMessage in 0.92s
+2017-12-10 02:14:43,090 - gdax_msgs - INFO - Stored 7859 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-10 02:15:42,687 - gdax_msgs - INFO - Stored 6385 messages in GdaxBtcUsdMessage in 0.90s
+2017-12-10 02:16:43,187 - gdax_msgs - INFO - Stored 8749 messages in GdaxBtcUsdMessage in 1.39s
+2017-12-10 02:17:43,589 - gdax_msgs - INFO - Stored 11408 messages in GdaxBtcUsdMessage in 1.78s
+2017-12-10 02:18:43,510 - gdax_msgs - INFO - Stored 9943 messages in GdaxBtcUsdMessage in 1.70s
+2017-12-10 02:18:59,023 - gdax_msgs - INFO - Stored 5583 messages in GdaxBtcUsdMessage in 677.45s
+2017-12-10 02:19:42,883 - gdax_msgs - INFO - Stored 7759 messages in GdaxBtcUsdMessage in 1.06s
+2017-12-10 02:20:43,177 - gdax_msgs - INFO - Stored 8155 messages in GdaxBtcUsdMessage in 1.30s
+2017-12-10 02:21:43,033 - gdax_msgs - INFO - Stored 7455 messages in GdaxBtcUsdMessage in 1.09s
+2017-12-10 02:22:43,605 - gdax_msgs - INFO - Stored 9336 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-10 02:23:43,715 - gdax_msgs - INFO - Stored 11845 messages in GdaxBtcUsdMessage in 1.75s
+2017-12-10 02:24:43,929 - gdax_msgs - INFO - Stored 11996 messages in GdaxBtcUsdMessage in 1.91s
+2017-12-10 02:24:49,397 - gdax_msgs - INFO - ==============================
+2017-12-10 02:24:49,398 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-10 02:24:57,117 - gdax_msgs - INFO - ==============================
+2017-12-10 02:25:43,074 - gdax_msgs - INFO - Stored 6563 messages in GdaxBtcUsdMessage in 1.04s
+2017-12-10 02:26:43,380 - gdax_msgs - INFO - Stored 9203 messages in GdaxBtcUsdMessage in 1.33s
+2017-12-10 02:27:43,751 - gdax_msgs - INFO - Stored 11169 messages in GdaxBtcUsdMessage in 1.70s
+2017-12-10 02:28:43,655 - gdax_msgs - INFO - Stored 9626 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-10 02:29:43,486 - gdax_msgs - INFO - Stored 7351 messages in GdaxBtcUsdMessage in 1.34s
+2017-12-10 02:30:43,677 - gdax_msgs - INFO - Stored 9912 messages in GdaxBtcUsdMessage in 1.51s
+2017-12-10 02:31:43,555 - gdax_msgs - INFO - Stored 9347 messages in GdaxBtcUsdMessage in 1.38s
+2017-12-10 02:32:43,734 - gdax_msgs - INFO - Stored 10376 messages in GdaxBtcUsdMessage in 1.54s
+2017-12-10 02:33:43,209 - gdax_msgs - INFO - Stored 6004 messages in GdaxBtcUsdMessage in 1.00s
+2017-12-10 02:34:43,318 - gdax_msgs - INFO - Stored 7722 messages in GdaxBtcUsdMessage in 1.08s
+2017-12-10 02:35:43,459 - gdax_msgs - INFO - Stored 5077 messages in GdaxBtcUsdMessage in 1.02s
+2017-12-10 02:36:43,325 - gdax_msgs - INFO - Stored 5212 messages in GdaxBtcUsdMessage in 0.88s
+2017-12-10 02:37:44,134 - gdax_msgs - INFO - Stored 7082 messages in GdaxBtcUsdMessage in 1.68s
+2017-12-10 02:38:43,670 - gdax_msgs - INFO - Stored 7603 messages in GdaxBtcUsdMessage in 1.14s
+2017-12-10 02:39:43,804 - gdax_msgs - INFO - Stored 6565 messages in GdaxBtcUsdMessage in 1.25s
+2017-12-10 02:40:44,060 - gdax_msgs - INFO - Stored 9931 messages in GdaxBtcUsdMessage in 1.50s
+2017-12-10 02:41:44,772 - gdax_msgs - INFO - Stored 12741 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-10 02:42:44,451 - gdax_msgs - INFO - Stored 11435 messages in GdaxBtcUsdMessage in 1.88s
+2017-12-10 02:43:44,834 - gdax_msgs - INFO - Stored 13318 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-10 02:44:44,225 - gdax_msgs - INFO - Stored 8894 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-10 02:45:45,488 - gdax_msgs - INFO - Stored 15495 messages in GdaxBtcUsdMessage in 2.60s
+2017-12-10 02:46:44,797 - gdax_msgs - INFO - Stored 12943 messages in GdaxBtcUsdMessage in 1.89s
+2017-12-10 02:47:45,328 - gdax_msgs - INFO - Stored 15565 messages in GdaxBtcUsdMessage in 2.42s
+2017-12-10 02:48:44,295 - gdax_msgs - INFO - Stored 8057 messages in GdaxBtcUsdMessage in 1.37s
+2017-12-10 02:49:44,476 - gdax_msgs - INFO - Stored 8618 messages in GdaxBtcUsdMessage in 1.52s
+2017-12-10 02:50:44,520 - gdax_msgs - INFO - Stored 10872 messages in GdaxBtcUsdMessage in 1.55s
+2017-12-10 02:51:44,930 - gdax_msgs - INFO - Stored 11476 messages in GdaxBtcUsdMessage in 1.96s
+2017-12-10 02:52:44,685 - gdax_msgs - INFO - Stored 10220 messages in GdaxBtcUsdMessage in 1.71s
+2017-12-10 02:53:45,038 - gdax_msgs - INFO - Stored 12208 messages in GdaxBtcUsdMessage in 2.06s
+2017-12-10 02:54:49,417 - gdax_msgs - INFO - Stored 13837 messages in GdaxBtcUsdMessage in 6.44s
+2017-12-10 02:55:45,208 - gdax_msgs - INFO - Stored 11715 messages in GdaxBtcUsdMessage in 2.16s
+2017-12-10 02:56:45,723 - gdax_msgs - INFO - Stored 13369 messages in GdaxBtcUsdMessage in 2.66s
+2017-12-10 02:57:45,389 - gdax_msgs - INFO - Stored 10254 messages in GdaxBtcUsdMessage in 2.33s
+2017-12-10 02:58:44,305 - gdax_msgs - INFO - Stored 8457 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-10 02:59:46,542 - gdax_msgs - INFO - Stored 13355 messages in GdaxBtcUsdMessage in 3.44s
+2017-12-10 03:00:49,373 - gdax_msgs - INFO - Stored 13595 messages in GdaxBtcUsdMessage in 6.27s
+2017-12-10 03:01:45,848 - gdax_msgs - INFO - Stored 12139 messages in GdaxBtcUsdMessage in 2.74s
+2017-12-10 03:02:46,970 - gdax_msgs - INFO - Stored 13127 messages in GdaxBtcUsdMessage in 3.85s
+2017-12-10 03:03:45,500 - gdax_msgs - INFO - Stored 11728 messages in GdaxBtcUsdMessage in 2.38s
+2017-12-10 03:04:45,911 - gdax_msgs - INFO - Stored 11520 messages in GdaxBtcUsdMessage in 2.77s
+2017-12-10 03:05:44,547 - gdax_msgs - INFO - Stored 8247 messages in GdaxBtcUsdMessage in 1.36s
+2017-12-10 03:06:45,060 - gdax_msgs - INFO - Stored 9128 messages in GdaxBtcUsdMessage in 1.87s
+2017-12-10 03:07:45,083 - gdax_msgs - INFO - Stored 10328 messages in GdaxBtcUsdMessage in 1.89s
+2017-12-10 03:08:47,520 - gdax_msgs - INFO - Stored 18186 messages in GdaxBtcUsdMessage in 4.28s
+2017-12-10 03:09:47,696 - gdax_msgs - INFO - Stored 16969 messages in GdaxBtcUsdMessage in 4.43s
+2017-12-10 03:10:46,665 - gdax_msgs - INFO - Stored 16354 messages in GdaxBtcUsdMessage in 3.38s
+2017-12-10 03:11:46,372 - gdax_msgs - INFO - Stored 16342 messages in GdaxBtcUsdMessage in 3.09s
+2017-12-10 03:12:45,551 - gdax_msgs - INFO - Stored 12050 messages in GdaxBtcUsdMessage in 2.25s
+2017-12-10 03:13:45,873 - gdax_msgs - INFO - Stored 13168 messages in GdaxBtcUsdMessage in 2.53s
+2017-12-10 03:14:45,392 - gdax_msgs - INFO - Stored 10429 messages in GdaxBtcUsdMessage in 1.96s
+2017-12-10 03:15:46,354 - gdax_msgs - INFO - Stored 13428 messages in GdaxBtcUsdMessage in 2.89s
+2017-12-10 03:16:45,683 - gdax_msgs - INFO - Stored 12828 messages in GdaxBtcUsdMessage in 2.20s
+2017-12-10 03:17:45,927 - gdax_msgs - INFO - Stored 12361 messages in GdaxBtcUsdMessage in 2.40s
+2017-12-10 03:18:45,156 - gdax_msgs - INFO - Stored 9306 messages in GdaxBtcUsdMessage in 1.62s
+2017-12-10 03:19:46,087 - gdax_msgs - INFO - Stored 15141 messages in GdaxBtcUsdMessage in 2.55s
+2017-12-10 03:20:46,366 - gdax_msgs - INFO - Stored 15169 messages in GdaxBtcUsdMessage in 2.81s
+2017-12-10 03:21:46,538 - gdax_msgs - INFO - Stored 16923 messages in GdaxBtcUsdMessage in 2.97s
+2017-12-10 03:22:46,131 - gdax_msgs - INFO - Stored 13163 messages in GdaxBtcUsdMessage in 2.53s
+2017-12-10 03:23:44,867 - gdax_msgs - INFO - Stored 8051 messages in GdaxBtcUsdMessage in 1.26s
+2017-12-10 03:24:46,779 - gdax_msgs - INFO - Stored 16976 messages in GdaxBtcUsdMessage in 3.16s
+2017-12-10 03:24:49,410 - gdax_msgs - INFO - ==============================
+2017-12-10 03:24:49,413 - gdax_msgs - INFO - Storing BTC-USD order book
+2017-12-10 03:24:58,440 - gdax_msgs - INFO - ==============================
+2017-12-10 03:25:46,829 - gdax_msgs - INFO - Stored 15719 messages in GdaxBtcUsdMessage in 3.20s
+2017-12-10 03:26:45,432 - gdax_msgs - INFO - Stored 9912 messages in GdaxBtcUsdMessage in 1.79s
+2017-12-10 03:27:46,202 - gdax_msgs - INFO - Stored 11154 messages in GdaxBtcUsdMessage in 2.50s
+2017-12-10 03:28:45,352 - gdax_msgs - INFO - Stored 8086 messages in GdaxBtcUsdMessage in 1.64s
+2017-12-10 03:29:45,587 - gdax_msgs - INFO - Stored 11233 messages in GdaxBtcUsdMessage in 1.87s
+2017-12-10 03:30:45,932 - gdax_msgs - INFO - Stored 11908 messages in GdaxBtcUsdMessage in 2.21s
+2017-12-10 03:31:45,724 - gdax_msgs - INFO - Stored 10883 messages in GdaxBtcUsdMessage in 1.99s
+2017-12-10 03:32:45,571 - gdax_msgs - INFO - Stored 9154 messages in GdaxBtcUsdMessage in 1.83s
+2017-12-10 03:33:45,493 - gdax_msgs - INFO - Stored 8450 messages in GdaxBtcUsdMessage in 1.74s
+2017-12-10 03:34:46,025 - gdax_msgs - INFO - Stored 11147 messages in GdaxBtcUsdMessage in 2.22s
+2017-12-10 03:35:46,309 - gdax_msgs - INFO - Stored 14350 messages in GdaxBtcUsdMessage in 2.48s
+2017-12-10 03:36:46,175 - gdax_msgs - INFO - Stored 11403 messages in GdaxBtcUsdMessage in 2.28s
+2017-12-10 03:37:46,209 - gdax_msgs - INFO - Stored 12791 messages in GdaxBtcUsdMessage in 2.31s
+2017-12-10 03:38:45,813 - gdax_msgs - INFO - Stored 10387 messages in GdaxBtcUsdMessage in 1.91s
+2017-12-10 03:41:54,888 - gdax_msgs - INFO - Stored 15985 messages in GdaxBtcUsdMessage in 130.97s
+2017-12-10 03:41:58,710 - gdax_msgs - INFO - Stored 12107 messages in GdaxBtcUsdMessage in 14.66s
+2017-12-10 03:41:59,492 - gdax_msgs - INFO - Stored 13565 messages in GdaxBtcUsdMessage in 75.47s
+2017-12-10 03:42:46,886 - gdax_msgs - INFO - Stored 15000 messages in GdaxBtcUsdMessage in 2.79s
+2017-12-10 03:43:46,799 - gdax_msgs - INFO - Stored 14623 messages in GdaxBtcUsdMessage in 2.67s
+2017-12-10 03:44:47,178 - gdax_msgs - INFO - Stored 14554 messages in GdaxBtcUsdMessage in 3.03s
+2017-12-10 03:45:46,948 - gdax_msgs - INFO - Stored 15514 messages in GdaxBtcUsdMessage in 2.78s
+2017-12-10 03:46:46,055 - gdax_msgs - INFO - Stored 13642 messages in GdaxBtcUsdMessage in 1.86s
+2017-12-10 03:47:46,647 - gdax_msgs - INFO - Stored 13534 messages in GdaxBtcUsdMessage in 2.45s
+2017-12-10 03:48:45,818 - gdax_msgs - INFO - Stored 10645 messages in GdaxBtcUsdMessage in 1.56s
+2017-12-10 03:49:46,418 - gdax_msgs - INFO - Stored 11246 messages in GdaxBtcUsdMessage in 2.12s
+2017-12-10 03:50:49,014 - gdax_msgs - INFO - Stored 15377 messages in GdaxBtcUsdMessage in 4.71s
+2017-12-10 03:51:47,077 - gdax_msgs - INFO - Stored 12672 messages in GdaxBtcUsdMessage in 2.73s
+2017-12-10 03:52:47,714 - gdax_msgs - INFO - Stored 12865 messages in GdaxBtcUsdMessage in 3.33s
+2017-12-10 03:53:47,439 - gdax_msgs - INFO - Stored 13567 messages in GdaxBtcUsdMessage in 3.05s
+2017-12-10 03:54:46,916 - gdax_msgs - INFO - Stored 12950 messages in GdaxBtcUsdMessage in 2.52s
+2017-12-10 03:55:47,970 - gdax_msgs - INFO - Stored 11383 messages in GdaxBtcUsdMessage in 3.53s
+2017-12-10 03:56:47,076 - gdax_msgs - INFO - Stored 10798 messages in GdaxBtcUsdMessage in 2.62s
+2017-12-10 03:57:45,683 - gdax_msgs - INFO - Stored 7298 messages in GdaxBtcUsdMessage in 1.21s
+2017-12-10 03:58:46,752 - gdax_msgs - INFO - Stored 9666 messages in GdaxBtcUsdMessage in 2.27s

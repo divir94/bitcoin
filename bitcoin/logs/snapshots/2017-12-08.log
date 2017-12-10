@@ -2136,3 +2136,35 @@ Get request failed for: https://www.bitstamp.net/api/order_book/
 
 
 2017-12-09 22:00:05,930 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 23:16:42,860 - snapshots - ERROR - ====================
+2017-12-09 23:16:37.734823
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 23:16:42,862 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 23:32:36,096 - snapshots - ERROR - ====================
+2017-12-09 23:32:30.962344
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 23:32:36,101 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-09 23:57:24,396 - snapshots - ERROR - ====================
+2017-12-09 23:57:19.270018
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-09 23:57:24,397 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-10 03:11:08,339 - db_util - ERROR - Failed to store in BitstampSnapshots
+2017-12-10 03:11:08,364 - db_util - ERROR - (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'INSERT INTO `BitstampSnapshots` (time, price, side, size, id) VALUES (%s, %s, %s, %s, %s)'] [parameters: ((datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13829.00', 'bid', u'0.15185479', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13828.99', 'bid', u'0.00361343', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13828.00', 'bid', u'0.20052036', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13826.98', 'bid', u'1.52731789', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13810.00', 'bid', u'0.12611223', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13782.23', 'bid', u'0.17165738', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13782.22', 'bid', u'0.22148658', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'13782.19', 'bid', u'0.54375000', '1512868256')  ... displaying 10 of 100 total bound parameter sets ...  (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'14170.00', 'ask', u'0.06000000', '1512868256'), (datetime.datetime(2017, 12, 10, 1, 10, 52, 415673), u'14170.01', 'ask', u'0.06484056', '1512868256'))]
+2017-12-10 03:29:00,456 - snapshots - ERROR - ====================
+2017-12-10 03:28:55.324104
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-10 03:29:00,461 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
+2017-12-10 03:46:49,221 - snapshots - ERROR - ====================
+2017-12-10 03:46:44.099869
+Get request failed for: https://www.bitstamp.net/api/order_book/
+
+
+2017-12-10 03:46:49,228 - snapshots - ERROR - HTTPSConnectionPool(host='www.bitstamp.net', port=443): Read timed out.
