@@ -11,7 +11,6 @@ class MomStrategy(object):
     """
     Time series momentum strategy that goes long/short based on the price change over the past minute.
     The idea is to long the top decile and short the bottom decile of past price changes.
-    The decile bounds are updated in an expanding window.
     """
     def __init__(self):
         # go long/short if past price change is more/less than this amount
@@ -19,6 +18,7 @@ class MomStrategy(object):
         self.short_thresh = -5
         # num seconds in the past to look at to calculate past price change
         self.lookback = 60
+        self.time_delta = 5
         # deque is double sided queue of dict(time, vwap)
         self.past_vwaps = deque()
 
@@ -58,8 +58,11 @@ class MomStrategy(object):
         # get view
         last_vwap = self.past_vwaps[0]
         time_delta = (current_time - last_vwap.time).total_seconds()
-        past_price_change = price - last_vwap.price if time_delta > self.long_thresh else np.nan
-        if past_price_change >= self.long_thresh:
+        past_price_change = price - last_vwap.price
+
+        if time_delta < (self.lookback - self.time_delta):
+            view = np.nan
+        elif past_price_change >= self.long_thresh:
             view = 1
         elif past_price_change <= self.short_thresh:
             view = -1
@@ -70,6 +73,5 @@ class MomStrategy(object):
         context.record(time=book.timestamp,
                        view=view,
                        price=price,
-                       num_msgs=len(self.past_vwaps),
                        past_price=last_vwap.price,
                        past_price_change=past_price_change)
