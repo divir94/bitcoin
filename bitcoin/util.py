@@ -45,28 +45,6 @@ def time_to_str(timestamp):
     return time_str
 
 
-def df_as_type(df, types):
-    """
-    Convert df columns to dtypes. Modifies input df.
-
-    Parameters
-    ----------
-    df: pd.DataFrame
-    types: dict
-        column name to types
-
-    Returns
-    -------
-    pd.DataFrame
-    """
-    missing_types = set(types.keys()).difference(set(df.columns))
-    assert not missing_types, 'Missing dtypes: {}'.format(missing_types)
-    for col in df.columns:
-        _type = types[col]
-        df[col] = df[col].astype(_type)
-    return df
-
-
 def parse_message(msg, exchange):
     """
     Convert message to appropriate dtypes.

@@ -1,8 +1,13 @@
 import pandas as pd
+import cufflinks as cf
 
-import bitcoin.storage.util as sutil
 import bitcoin.strategies.util as autil
 import bitcoin.util as util
+
+import bitcoin.backtester.util as butil
+
+
+cf.go_offline()
 
 
 class ViewGen(object):
@@ -19,8 +24,25 @@ class ViewGen(object):
             implements rebalance method
         """
         self.strategy = strategy
-        self._context = Context()
-        self.exchange = 'GDAX'
+        self._context = butil.Context()
+
+    def run(self, book):
+        """
+        Generate the view by calling strategy's rebalance method and updates `self.result` with the view and
+        other variables from the strategy.
+
+        Parameters
+        ----------
+        book: GdaxOrderBook
+
+        Returns
+        -------
+        view: namedtuple
+            size: +1, 0 or -1
+            price: best price to pay
+        """
+        view = self.strategy.rebalance(self._context, book)
+        return view
 
     @property
     @util.memoize
@@ -43,38 +65,10 @@ class ViewGen(object):
         df['cum_return'] = df['returns'].cumsum()
         return df
 
-    def run(self, data, end=None):
-        """
-        Generate the view by calling strategy's rebalance method and updates `self.result` with the view and
-        other variables from the strategy.
-
-        Parameters
-        ----------
-        data: namedtuple
-            has book and messages as fields
-        end: pd.datetime or str
-            used to end the viewgen early
-
-        Returns
-        -------
-        self.result
-        """
-        self._context = Context()
-        book = sutil.df_to_book(data.book)
-        messages = data.messages
-
-        for msg in messages:
-            if end and book.timestamp > end:
-                return
-
-            # received messages have no impact
-            if msg['type'] == 'received':
-                continue
-
-            self.strategy.rebalance(self._context, book)
-            book.process_message(msg)
-
     def create_tear_sheet(self):
+        """
+        Visualizes the result of viewgen.
+        """
         self.returns_tear()
         self.trades_dist_tear()
         autil.get_mom_deciles(self.result.price)
@@ -85,7 +79,8 @@ class ViewGen(object):
             1. Dollar cumulative return and price vs time
             2. Dollar return and price vs time
             3. Dollar return distribution
-            4. Mean return by view
+            4. View time series
+            5. Mean return by view
         """
         df = self.result
 
@@ -110,6 +105,17 @@ class ViewGen(object):
                        xTitle='Return',
                        yTitle='Occurrences')
 
+        # view time series
+        figure = df[['view', 'price']].iplot(title='View and Price',
+                                             kind='area',
+                                             fill=True,
+                                             secondary_y='price',
+                                             yTitle='View',
+                                             secondary_y_title='Price',
+                                             asFigure=True)
+        figure['data'][0]['line']['shape'] = 'hv'
+        cf.iplot(figure)
+
         # view statistics
         return_group = df.groupby(df.view)['fwd_price_change']
         view_stats = return_group.describe()
@@ -128,21 +134,3 @@ class ViewGen(object):
         """
         num_trades = self.result.groupby(pd.TimeGrouper('1T')).size()
         num_trades.iplot(title='Number of Trades', xTitle='Time', yTitle='Num Trades')
-
-
-class Context(object):
-    """
-    Records local variables from strategy at every rebalance.
-    """
-    def __init__(self):
-        self._recorded_vars = []
-
-    @property
-    def result(self):
-        df = pd.DataFrame(self._recorded_vars).drop_duplicates()
-        if 'time' in df.columns:
-            df.set_index('time', inplace=True)
-        return df
-
-    def record(self, **kwargs):
-        self._recorded_vars.append(kwargs)

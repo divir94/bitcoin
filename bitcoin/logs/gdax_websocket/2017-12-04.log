@@ -1,0 +1,26 @@
+2017-12-04 21:56:04,616 - core_websocket - INFO - Connecting to url: wss://ws-feed.gdax.com channel: {'type': 'subscribe', 'product_ids': ['BTC-USD']}
+2017-12-04 21:56:04,875 - core_websocket - INFO - Turning on heartbeat
+2017-12-04 21:56:04,877 - core_websocket - INFO - Listening for messages
+2017-12-04 21:56:05,005 - gdax_websocket - INFO - Restarting sync
+2017-12-04 21:56:05,005 - gdax_websocket - INFO - ==============================
+2017-12-04 21:56:05,006 - gdax_websocket - INFO - Loading book
+2017-12-04 21:56:07,020 - gdax_websocket - INFO - Got book: 4468359587
+2017-12-04 21:56:07,021 - gdax_websocket - INFO - Applying queued msgs: 4468359587
+2017-12-04 21:56:07,025 - gdax_websocket - INFO - Book ready: 4468359627
+2017-12-04 21:56:07,026 - gdax_websocket - INFO - ==============================
+2017-12-04 21:56:07,036 - gdax_websocket - WARNING - Out of sync: book(4468359627), message(4468359629)
+2017-12-04 21:56:07,037 - gdax_websocket - INFO - Restarting sync
+2017-12-04 21:56:07,037 - gdax_websocket - INFO - ==============================
+2017-12-04 21:56:07,038 - gdax_websocket - INFO - Loading book
+2017-12-04 21:56:09,190 - gdax_websocket - INFO - Got book: 4468359688
+2017-12-04 21:56:09,193 - gdax_websocket - INFO - Applying queued msgs: 4468359688
+2017-12-04 21:56:09,210 - gdax_websocket - INFO - Book ready: 4468359867
+2017-12-04 21:56:09,211 - gdax_websocket - INFO - ==============================
+2017-12-04 21:56:09,211 - gdax_websocket - WARNING - Out of sync: book(4468359867), message(4468359869)
+2017-12-04 21:56:09,230 - gdax_websocket - INFO - Restarting sync
+2017-12-04 21:56:09,231 - gdax_websocket - INFO - ==============================
+2017-12-04 21:56:09,231 - gdax_websocket - INFO - Loading book
+2017-12-04 21:56:10,968 - gdax_websocket - INFO - Got book: 4468359890
+2017-12-04 21:56:10,969 - gdax_websocket - INFO - Applying queued msgs: 4468359890
+2017-12-04 21:56:10,970 - gdax_websocket - INFO - Book ready: 4468359940
+2017-12-04 21:56:10,970 - gdax_websocket - INFO - ==============================

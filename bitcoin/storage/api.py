@@ -8,7 +8,7 @@ import bitcoin.util as util
 
 
 logger = lc.config_logger('storage_api', level='DEBUG', file_handler=False)
-Dataset = namedtuple('Dataset', ['book', 'messages'])
+Dataset = namedtuple('Dataset', ['books', 'messages'])
 
 
 def get_book(at=None, exchange=None, product=None):
@@ -152,8 +152,8 @@ def get_messages(start=None, end=None, exchange=None, product=None):
     and_cond = 'AND' if start_cond and end_cond else ''
 
     sql = '''
-        SELECT * from {table} 
-        {where_cond} {start_cond} {and_cond} {end_cond}
+    SELECT * from {table} 
+    {where_cond} {start_cond} {and_cond} {end_cond}
     '''.format(table=table_name,
                where_cond=where_cond,
                and_cond=and_cond,
@@ -184,19 +184,23 @@ def store_dataset(name, start, end, exchange=None, product=None):
     None
     """
     exchange = exchange or pms.DEFAULT_EXCHANGE
+    product = product or pms.DEFAULT_PRODUCT
 
-    # get book
-    book = get_book(at=start, exchange=exchange, product=product)
-    book_df = book.to_df(level_type=3)
+    # get books
+    table_name = pms.SNAPSHOT_TBL[exchange][product]
+    sql = '''
+    SELECT * FROM {table}
+    WHERE received_time between "{start}" and "{end}"
+    '''.format(table=table_name, start=util.time_to_str(start), end=util.time_to_str(end))
+    books_df = pd.read_sql(sql, con=sutil.ENGINE)
 
     # get messages
-    start = start - pd.offsets.Timedelta('1m')
     msg_generator = get_messages(start=start, end=end, exchange=exchange, product=product)
     msg_df = pd.DataFrame(list(msg_generator))
 
     # store
     fname = '../data/{}.hdf5'.format(name)
-    book_df.to_hdf(fname, 'book')
+    books_df.to_hdf(fname, 'books')
     msg_df.to_hdf(fname, 'messages')
 
 
@@ -215,8 +219,12 @@ def get_dataset(name):
         fields: [book, messages]
     """
     fname = '../data/{}.hdf5'.format(name)
-    book_df = pd.read_hdf(fname, 'book')
+    books_df = pd.read_hdf(fname, 'books')
     msg_df = pd.read_hdf(fname, 'messages')
     msg_lst = msg_df.to_dict(orient='records')
-    dataset = Dataset(book=book_df, messages=msg_lst)
+    dataset = Dataset(books=books_df, messages=msg_lst)
+
+    num_books = len(books_df['sequence'].unique())
+    num_msgs = len(msg_lst)
+    logger.info('Got {:,} messages and {} books'.format(num_msgs, num_books))
     return dataset

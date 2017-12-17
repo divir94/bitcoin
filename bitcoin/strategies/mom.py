@@ -2,6 +2,7 @@ import numpy as np
 from collections import deque, namedtuple
 
 import bitcoin.strategies.util as sutil
+import bitcoin.backtester.util as butil
 
 
 vwap = namedtuple('item', ['time', 'price'])
@@ -35,7 +36,9 @@ class MomStrategy(object):
 
         Returns
         -------
-        None
+        view: namedtuple
+            size: is +1, 0 or -1
+            price: mid vwap
         """
         # get current vwap
         price = sutil.get_vwap(book, size=1)
@@ -61,17 +64,19 @@ class MomStrategy(object):
         past_price_change = price - last_vwap.price
 
         if time_delta < (self.lookback - self.time_delta):
-            view = np.nan
+            view_size = np.nan
         elif past_price_change >= self.long_thresh:
-            view = 1
+            view_size = 1
         elif past_price_change <= self.short_thresh:
-            view = -1
+            view_size = -1
         else:
-            view = 0
+            view_size = 0
 
         # record
+        view = butil.View(size=view_size, price=price)
         context.record(time=book.timestamp,
-                       view=view,
+                       view=view_size,
                        price=price,
                        past_price=last_vwap.price,
                        past_price_change=past_price_change)
+        return view
