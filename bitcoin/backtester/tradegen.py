@@ -90,16 +90,16 @@ class TradeGen(object):
         -------
         None
         """
-        fill_inst = get_fill_instructions(open_orders=self._open_orders.values(),
-                                          message=message,
-                                          book=book)
+        fill_inst = self.get_fill_instructions(open_orders=self._open_orders.values(),
+                                               message=message,
+                                               book=book)
         self.handle_instructions(fill_inst)
 
-        order_inst = get_order_instructions(open_orders=self._open_orders.values(),
-                                            view=view,
-                                            exposure=self.exposure,
-                                            book=book,
-                                            sig_price_chg=self.sig_price_chg)
+        order_inst = self.get_order_instructions(open_orders=self._open_orders.values(),
+                                                 view=view,
+                                                 exposure=self.exposure,
+                                                 book=book,
+                                                 sig_price_chg=self.sig_price_chg)
         self.handle_instructions(order_inst)
 
     def handle_instructions(self, instructions):
@@ -223,129 +223,130 @@ class TradeGen(object):
         # remove from open orders
         del self._open_orders[done_inst.order_id]
 
+    @staticmethod
+    def get_fill_instructions(open_orders, message, book):
+        """
+        Get fill and done instructions.
 
-def get_fill_instructions(open_orders, message, book):
-    """
-    Get fill and done instructions.
+        Parameters
+        ----------
+        open_orders: list[dict]
+        message: dict
+        book: GdaxOrderBook
 
-    Parameters
-    ----------
-    open_orders: list[dict]
-    message: dict
-    book: GdaxOrderBook
+        Returns
+        -------
+        list
+        """
+        fill_inst = []
+        if not message['type'] == 'match':
+            return fill_inst
 
-    Returns
-    -------
-    list
-    """
-    fill_inst = []
-    if not message['type'] == 'match':
+        # the message side field indicates the maker order side
+        maker_side = message['side']
+        match_price = message['price']
+        match_size = message['size']
+        # if maker_time is None, it means that the maker order existed before we got a snapshot and
+        # thus we don't have a timestamp. In this case, our order was after the maker order
+        maker_time = book.order_to_time.get(message['maker_order_id'])
+
+        for order in open_orders:
+            # our order is competitive if it has a better price than the match price
+            competitive_price = order['price'] > match_price if order['size'] > 0 else order['price'] < match_price
+            # match at same price if our order came before. Note that order.timestamp < None is False and implies
+            # that maker order is created before we got the snapshot
+            earlier_time = maker_time and (order['start_time'] < maker_time)
+            early_at_same_price = (order['price'] == match_price) and earlier_time
+            # order has to be same side as maker i.e. opposite side of taker
+            same_side_as_maker = butil.SIDE_DICT[maker_side] == np.sign(order['size'])
+            if same_side_as_maker and (competitive_price or early_at_same_price):
+                fill_size = min(match_size, order['remaining_size'])
+
+                # fill order
+                fill_inst.append(
+                    butil.FillOrder(order_id=order['order_id'], fill_time=book.timestamp, fill_size=fill_size)
+                )
+
+                # done order
+                if fill_size == order['remaining_size']:
+                    fill_inst.append(
+                        butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='filled')
+                    )
+
         return fill_inst
 
-    # the message side field indicates the maker order side
-    maker_side = message['side']
-    match_price = message['price']
-    match_size = message['size']
-    # if maker_time is None, it means that the maker order existed before we got a snapshot and
-    # thus we don't have a timestamp. In this case, our order was after the maker order
-    maker_time = book.order_to_time.get(message['maker_order_id'])
+    # TODO(divir): break this into smaller and more manageable functions
+    @staticmethod
+    def get_order_instructions(open_orders, view, exposure, book, sig_price_chg):
+        """
+        Get open cancel order instructions.
 
-    for order in open_orders:
-        # our order is competitive if it has a better price than the match price
-        competitive_price = order['price'] > match_price if order['size'] > 0 else order['price'] < match_price
-        # match at same price if our order came before. Note that order.timestamp < None is False and implies
-        # that maker order is created before we got the snapshot
-        earlier_time = maker_time and (order['start_time'] < maker_time)
-        early_at_same_price = (order['price'] == match_price) and earlier_time
-        # order has to be same side as maker i.e. opposite side of taker
-        same_side_as_maker = butil.SIDE_DICT[maker_side] == np.sign(order['size'])
-        if same_side_as_maker and (competitive_price or early_at_same_price):
-            fill_size = min(match_size, order['remaining_size'])
+        Parameters
+        ----------
+        open_orders: list[dict]
+        view: namedtuple
+        exposure: float
+        book: GdaxOrderBook
+        sig_price_chg: float
 
-            # fill order
-            fill_inst.append(
-                butil.FillOrder(order_id=order['order_id'], fill_time=book.timestamp, fill_size=fill_size)
-            )
+        Returns
+        -------
+        list
+        """
+        eps = 1e-4
+        cancel_inst = []
+        open_inst = []
 
-            # done order
-            if fill_size == order['remaining_size']:
-                fill_inst.append(
-                    butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='filled')
-                )
+        target_size = view.size - exposure
+        target_bid, target_ask = butil.get_competitive_prices(book)
+        target_price = min(target_bid, view.price) if target_size >= 0 else max(target_ask, view.price)
 
-    return fill_inst
-
-
-def get_order_instructions(open_orders, view, exposure, book, sig_price_chg):
-    """
-    Get open cancel order instructions.
-
-    Parameters
-    ----------
-    open_orders: list[dict]
-    view: namedtuple
-    exposure: float
-    book: GdaxOrderBook
-    sig_price_chg: float
-
-    Returns
-    -------
-    list
-    """
-    eps = 1e-4
-    cancel_inst = []
-    open_inst = []
-
-    target_size = view.size - exposure
-    target_bid, target_ask = butil.get_competitive_prices(book)
-    target_price = min(target_bid, view.price) if target_size >= 0 else max(target_ask, view.price)
-
-    # if exposure is same as view, cancel all orders
-    if np.isnan(target_size) or abs(target_size) < eps:
-        for order in open_orders:
-            cancel_inst.append(
-                butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
-            )
-        return cancel_inst
-
-    if open_orders:
-        # track exposure in open orders
-        open_exposure = 0
-
-        # cancel all orders on opposite side or with significant price change
-        for order in open_orders:
-            opp_side = np.sign(order['size']) != np.sign(target_size)
-            price_close = util.is_close(order['price'], target_price, abs_tol=sig_price_chg)
-
-            if opp_side or not price_close:
+        # if exposure is same as view, cancel all orders
+        if np.isnan(target_size) or abs(target_size) < eps:
+            for order in open_orders:
                 cancel_inst.append(
                     butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
                 )
-            else:
-                open_exposure += np.sign(order['size']) * order['remaining_size']
+            return cancel_inst
 
-        # adjust target size and place new orders
-        if abs(open_exposure) > abs(target_size):
-            assert np.sign(open_exposure) == np.sign(target_size), '{}, {}'.format(open_exposure, target_size)
-            while abs(open_exposure) > abs(target_size):
-                # cut down open exposure
-                order = open_orders.pop()
-                cancel_inst.append(
-                    butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
+        if open_orders:
+            # track exposure in open orders
+            open_exposure = 0
+
+            # cancel all orders on opposite side or with significant price change
+            for order in open_orders:
+                opp_side = np.sign(order['size']) != np.sign(target_size)
+                price_close = util.is_close(order['price'], target_price, abs_tol=sig_price_chg)
+
+                if opp_side or not price_close:
+                    cancel_inst.append(
+                        butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
+                    )
+                else:
+                    open_exposure += np.sign(order['size']) * order['remaining_size']
+
+            # adjust target size and place new orders
+            if abs(open_exposure) > abs(target_size):
+                assert np.sign(open_exposure) == np.sign(target_size), '{}, {}'.format(open_exposure, target_size)
+                while abs(open_exposure) > abs(target_size):
+                    # cut down open exposure
+                    order = open_orders.pop()
+                    cancel_inst.append(
+                        butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
+                    )
+                    open_exposure -= np.sign(order['size']) * order['remaining_size']
+
+            # open new order
+            size = target_size - open_exposure
+            if abs(size) > eps:
+                open_inst.append(
+                    butil.OpenOrder(time=book.timestamp, price=target_price, size=size)
                 )
-                open_exposure -= np.sign(order['size']) * order['remaining_size']
-
-        # open new order
-        size = target_size - open_exposure
-        if abs(size) > eps:
+        else:
+            # no open orders. create new order with target size
             open_inst.append(
-                butil.OpenOrder(time=book.timestamp, price=target_price, size=size)
+                butil.OpenOrder(time=book.timestamp, price=target_price, size=target_size)
             )
-    else:
-        # no open orders. create new order with target size
-        open_inst.append(
-            butil.OpenOrder(time=book.timestamp, price=target_price, size=target_size)
-        )
 
-    all_orders = open_inst + cancel_inst
-    return all_orders
+        all_orders = open_inst + cancel_inst
+        return all_orders
