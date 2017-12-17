@@ -82,7 +82,7 @@ def df_to_book(df):
 
 def book_to_df(data, timestamp):
     """
-    Convert order book data to dataframe.
+    Convert order book data to DataFrame.
 
     Parameters
     ----------

@@ -1,9 +1,7 @@
-import uuid
 import numpy as np
 import pandas as pd
 
 import bitcoin.logs.logger as lc
-from bitcoin.backtester.orders import *
 
 
 logger = lc.config_logger('strategy_util', level='INFO', file_handler=False)
@@ -40,67 +38,6 @@ def get_vwap(book, size):
     avg_ask = vwap['asks'] / size
     mid_vwap = (avg_bid + avg_ask) / 2
     return mid_vwap
-
-
-def get_competitive_prices(best_bid, best_ask):
-    spread = best_ask - best_bid
-    if spread == 0.01:
-        target_bid, target_ask = best_bid, best_ask
-    else:
-        target_bid, target_ask = best_bid + 0.01, best_ask - 0.01
-    return target_bid, target_ask
-
-
-def generate_orders(view, exposure, current_orders, best_bid, best_ask, sig_price_change=1):
-    """
-    Get new orders from view and current orders. Places orders at the most competitive price.
-    """
-    trade_size = abs(view - exposure)
-    eps = 1e-4
-    cancel_orders = []
-    new_orders = []
-
-    # current orders
-    buy_order = current_orders.get(OrderSide.BUY)
-    sell_order = current_orders.get(OrderSide.SELL)
-
-    # get target price and side
-    target_bid, target_ask = get_competitive_prices(best_bid, best_ask)
-    side = OrderSide.BUY if view > exposure else OrderSide.SELL
-    target_price = target_bid if side == OrderSide.BUY else target_ask
-
-    # cancel opposite side
-    opp_side_order = sell_order if side == OrderSide.BUY else buy_order
-    if opp_side_order:
-        cancel_orders.append(CancelOrder(opp_side_order.id))
-
-    # cancel same side ONLY if bigger or there is significant price change
-    same_side_order = buy_order if side == OrderSide.BUY else sell_order
-    if same_side_order:
-        is_bigger = same_side_order.size > trade_size
-        sig_change = abs(same_side_order.price - target_price) > sig_price_change
-        if is_bigger or sig_change:
-            cancel_orders.append(CancelOrder(same_side_order.id))
-
-    # place new order ONLY if there is no order on the same side
-    elif trade_size > eps:
-        new_order = LimitOrder(id=uuid.uuid4(),
-                               side=side,
-                               price=target_price,
-                               size=trade_size)
-        new_orders.append(new_order)
-
-    all_orders = new_orders + cancel_orders
-    return all_orders
-
-
-# TODO(divir): finish this
-def filter_orders(orders, balance):
-    """
-    Remove orders for which we don't have enough balance.
-    """
-    new_orders = orders
-    return new_orders
 
 
 def get_mom_deciles(prices, bins=10):
