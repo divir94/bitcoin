@@ -37,8 +37,9 @@ class ViewGen(object):
 
         Returns
         -------
-        int
-            view is +1, 0 or -1
+        view: namedtuple
+            size: +1, 0 or -1
+            price: best price to pay
         """
         view = self.strategy.rebalance(self._context, book)
         return view

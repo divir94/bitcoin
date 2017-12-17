@@ -8,49 +8,88 @@ import bitcoin.util as util
 
 class TradeGen(object):
     """
+    Implements the view by placing orders. Since you can only have one view at every point in time,
+    it is currently not possible to have more than one order resting on the book.
     """
     def __init__(self):
-        # balance_cols: ['usd', 'btc', 'value', 'trade_pnl']
-        self._balance = []
+        self.sig_price_chg = 1.
 
-        # orders_cols: ['order_id', 'price', 'size', 'status', 'remaining_size', 'start_time', 'end_time']
+        # balance records usd and btc and other accounting measures
+        self._balance = []
+        self._balance_cols = ['time', 'usd', 'btc', 'price', 'value']
+
+        # orders record how long it took to execute each order and at what price
         # sign of size determines side
         self._orders = {}
+        self._orders_cols = ['order_id', 'start_time', 'end_time', 'status', 'time_elapsed', 'price', 'size',
+                             'remaining_size']
 
-        # fills_cols: ['fill_id', 'order_id', 'fill_time', 'price', 'fill_size', 'remaining_size', 'order_time',
-        #              'order_size']
+        # fills record individual fills for orders
         # fill_size is always positive
         self._fills = {}
+        self._fills_cols = ['order_id', 'fill_id', 'order_time', 'fill_time', 'price', 'fill_size',
+                            'order_size', 'remaining_size']
 
         self._open_orders = {}
 
     @property
     @util.memoize
     def balance(self):
-        df = pd.DataFrame(self._balance).set_index('time')
+        df = pd.DataFrame(self._balance)
+
+        # new columns
         df['value'] = df['usd'] + df['price'] * df['btc']
+
+        # index
+        df = df[self._balance_cols].set_index('time')
         return df
 
     @property
     @util.memoize
     def orders(self):
-        df = pd.DataFrame.from_dict(self._orders, orient='index').sort_values('start_time')
-        df.index.name = 'order_id'
-        df.drop('order_id', axis=1, inplace=True)
+        df = pd.DataFrame.from_dict(self._orders, orient='index')
+
+        # new columns
+        df['time_elapsed'] = (df.end_time - df.start_time).dt.total_seconds()
+
+        # index
+        df = df[self._orders_cols].set_index('order_id').sort_values('start_time')
         return df
 
     @property
     @util.memoize
     def fills(self):
-        df = pd.DataFrame.from_dict(self._fills, orient='index').sort_values('fill_time')
-        df.set_index(['order_id', 'fill_id'], inplace=True)
+        df = pd.DataFrame.from_dict(self._fills, orient='index')
+
+        # index
+        df = df[self._fills_cols].set_index(['order_id', 'fill_id']).sort_values('fill_time')
         return df
 
     @property
     def exposure(self):
+        """
+        Exposure tracks the view and is equal to the amount of crypto held (not including open orders).
+
+        Returns
+        -------
+        int
+        """
         return self._balance[-1]['btc'] if self._balance else 0
 
     def run(self, view, message, book):
+        """
+        Get fills and place orders.
+
+        Parameters
+        ----------
+        view: namedtuple
+        message: dict
+        book: GdaxOrderBook
+
+        Returns
+        -------
+        None
+        """
         fill_inst = get_fill_instructions(open_orders=self._open_orders.values(),
                                           message=message,
                                           book=book)
@@ -59,10 +98,22 @@ class TradeGen(object):
         order_inst = get_order_instructions(open_orders=self._open_orders.values(),
                                             view=view,
                                             exposure=self.exposure,
-                                            book=book)
+                                            book=book,
+                                            sig_price_chg=self.sig_price_chg)
         self.handle_instructions(order_inst)
 
     def handle_instructions(self, instructions):
+        """
+        Instructions update balance, orders and fills.
+
+        Parameters
+        ----------
+        instructions: list
+
+        Returns
+        -------
+        None
+        """
         for inst in instructions:
             if isinstance(inst, butil.FillOrder):
                 self.handle_fill_order(inst)
@@ -77,6 +128,17 @@ class TradeGen(object):
                 raise ValueError('Invalid instruction {}'.format(inst))
 
     def handle_open_order(self, open_inst):
+        """
+        Add to orders and open_orders.
+
+        Parameters
+        ----------
+        open_inst: namedtuple
+
+        Returns
+        -------
+        None
+        """
         order_id = uuid.uuid4().hex
 
         order = dict(
@@ -94,9 +156,20 @@ class TradeGen(object):
         self._open_orders[order_id] = order
 
     def handle_fill_order(self, fill_inst):
+        """
+        Update orders, add to bill and add to balance.
+
+        Parameters
+        ----------
+        fill_inst: namedtuple
+
+        Returns
+        -------
+        None
+        """
         fill_id = uuid.uuid4().hex
 
-        # update order
+        # update remaining size of order
         remaining_size = self._orders[fill_inst.order_id]['remaining_size']
         assert fill_inst.fill_size <= remaining_size, (
             'remaining size: {}, order fill: {}'.format(remaining_size, fill_inst.fill_size)
@@ -133,6 +206,17 @@ class TradeGen(object):
         ))
 
     def handle_done_order(self, done_inst):
+        """
+        Done order is sent for cancelled or filled orders. Updates orders and open orders.
+
+        Parameters
+        ----------
+        done_inst: namedtuple
+
+        Returns
+        -------
+        None
+        """
         self._orders[done_inst.order_id]['end_time'] = done_inst.time
         self._orders[done_inst.order_id]['status'] = done_inst.status
 
@@ -141,6 +225,19 @@ class TradeGen(object):
 
 
 def get_fill_instructions(open_orders, message, book):
+    """
+    Get fill and done instructions.
+
+    Parameters
+    ----------
+    open_orders: list[dict]
+    message: dict
+    book: GdaxOrderBook
+
+    Returns
+    -------
+    list
+    """
     fill_inst = []
     if not message['type'] == 'match':
         return fill_inst
@@ -179,14 +276,28 @@ def get_fill_instructions(open_orders, message, book):
     return fill_inst
 
 
-def get_order_instructions(open_orders, view, exposure, book):
+def get_order_instructions(open_orders, view, exposure, book, sig_price_chg):
+    """
+    Get open cancel order instructions.
+
+    Parameters
+    ----------
+    open_orders: list[dict]
+    view: namedtuple
+    exposure: float
+    book: GdaxOrderBook
+    sig_price_chg: float
+
+    Returns
+    -------
+    list
+    """
     eps = 1e-4
-    price_chg_threshold = 1
     cancel_inst = []
     open_inst = []
 
     target_size = view.size - exposure
-    target_bid, target_ask = _get_competitive_prices(book)
+    target_bid, target_ask = butil.get_competitive_prices(book)
     target_price = min(target_bid, view.price) if target_size >= 0 else max(target_ask, view.price)
 
     # if exposure is same as view, cancel all orders
@@ -204,14 +315,14 @@ def get_order_instructions(open_orders, view, exposure, book):
         # cancel all orders on opposite side or with significant price change
         for order in open_orders:
             opp_side = np.sign(order['size']) != np.sign(target_size)
-            price_close = util.is_close(order['price'], target_price, abs_tol=price_chg_threshold)
+            price_close = util.is_close(order['price'], target_price, abs_tol=sig_price_chg)
 
             if opp_side or not price_close:
                 cancel_inst.append(
                     butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
                 )
             else:
-                open_exposure += order['size']
+                open_exposure += np.sign(order['size']) * order['remaining_size']
 
         # adjust target size and place new orders
         if abs(open_exposure) > abs(target_size):
@@ -222,7 +333,7 @@ def get_order_instructions(open_orders, view, exposure, book):
                 cancel_inst.append(
                     butil.DoneOrder(order_id=order['order_id'], time=book.timestamp, status='cancelled')
                 )
-                open_exposure -= order['size']
+                open_exposure -= np.sign(order['size']) * order['remaining_size']
 
         # open new order
         size = target_size - open_exposure
@@ -238,13 +349,3 @@ def get_order_instructions(open_orders, view, exposure, book):
 
     all_orders = open_inst + cancel_inst
     return all_orders
-
-
-def _get_competitive_prices(book):
-    best_bid, best_ask = book.get_best_bid_ask()
-    spread = best_ask - best_bid
-    if spread == 0.01:
-        target_bid, target_ask = best_bid, best_ask
-    else:
-        target_bid, target_ask = best_bid + 0.01, best_ask - 0.01
-    return target_bid, target_ask

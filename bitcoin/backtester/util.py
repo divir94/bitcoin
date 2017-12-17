@@ -30,3 +30,24 @@ class Context(object):
 
     def record(self, **kwargs):
         self._recorded_vars.append(kwargs)
+
+
+def get_competitive_prices(book):
+    """
+    Get target bid and ask prices that are 1 cent above the best bid/ask or at the best bid/ask.
+
+    Parameters
+    ----------
+    book: GdaxOrderBook
+
+    Returns
+    -------
+    tuple(float, float)
+    """
+    best_bid, best_ask = book.get_best_bid_ask()
+    spread = best_ask - best_bid
+    if spread == 0.01:
+        target_bid, target_ask = best_bid, best_ask
+    else:
+        target_bid, target_ask = best_bid + 0.01, best_ask - 0.01
+    return target_bid, target_ask

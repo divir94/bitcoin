@@ -17,8 +17,8 @@ class BackTester(object):
 
     def run(self, data, end=None, run_tradegen=False):
         """
-        Generate the view by calling strategy's rebalance method and updates `self.result` with the view and
-        other variables from the strategy.
+        Run viewgen and tradegen. Viewgen outputs how much and at what price to buy for and tradegen implements
+        the view by placing limit orders.
 
         Parameters
         ----------

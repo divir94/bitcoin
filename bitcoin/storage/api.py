@@ -219,4 +219,5 @@ def get_dataset(name):
     msg_df = pd.read_hdf(fname, 'messages')
     msg_lst = msg_df.to_dict(orient='records')
     dataset = Dataset(book=book_df, messages=msg_lst)
+    logger.info('Got {} messages and book starts at {}'.format(len(msg_lst), book_df.iloc[0]['received_time']))
     return dataset
