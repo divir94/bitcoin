@@ -16,7 +16,7 @@ class BackTester(object):
         self.viewgen = vg.ViewGen(strategy)
         self.tradegen = tg.TradeGen()
 
-    def run(self, data, end=None, run_tradegen=False):
+    def run(self, data, start=None, end=None, run_tradegen=False):
         """
         Run viewgen and tradegen. Viewgen outputs how much and at what price to buy for and tradegen implements
         the view by placing limit orders.
@@ -25,7 +25,8 @@ class BackTester(object):
         ----------
         data: namedtuple
             has book and messages as fields
-        end: pd.datetime or str
+        start: datetime or str
+        end: datetime or str
             used to end the backtester early
         run_tradegen: bool
 
@@ -33,32 +34,45 @@ class BackTester(object):
         -------
         self.result
         """
+        start = pd.to_datetime(start)
+        end = pd.to_datetime(end)
         book = None
         messages = data.messages
+
         if not data.messages:
             logger.error('No messages found!')
             return
 
         for msg in messages:
-            # if msg['sequence'] == 4339585732:
-            #     import pdb
-            #     pdb.set_trace()
+            # continue till start
+            if start and msg['time'] < start:
+                continue
 
-            # get book
-            if not book or (msg['sequence'] > (book.sequence + 1)):
+            # return when reached the end
+            if end and book is not None and book.timestamp > end:
+                return
+
+            # get a new book if no book defined or missing sequence
+            if not book or msg['sequence'] > book.sequence + 1:
                 book = self.get_next_book(sequence=msg['sequence'],
                                           timestamp=msg['time'],
                                           books_df=data.books)
+                # no more books available
+                if book is None:
+                    return
+                # cancel open orders
+                self.tradegen.cancel_all_orders(msg['time'])
 
-            if end and book.timestamp > end:
-                return
+            # skip earlier messages
+            if book is not None and msg['sequence'] < book.sequence:
+                continue
 
-            # received messages have no impact
+            # received messages have no impact, but increment book
             if msg['type'] == 'received':
                 book.sequence = msg['sequence']
                 continue
 
-            # viewgen and tradegen
+            # run viewgen and tradegen
             view = self.viewgen.run(book=book)
 
             if run_tradegen:
@@ -92,12 +106,14 @@ class BackTester(object):
         next_seq_idx = seq_list.bisect_left(sequence)
 
         if next_seq_idx >= len(seq_list):
-            logger.error('No book found after {} at {}. Available books: {}'.format(sequence, timestamp, seq_list))
+            logger.error('No book found after {} ({}). Available books: {}'.format(timestamp, sequence, seq_list))
             return
 
         # next book
         next_seq = seq_list[next_seq_idx]
         book_df = books_df[books_df['sequence'] == next_seq]
         book = sutil.df_to_book(book_df)
-        logger.info('At {}. Got book {} at {}'.format(sequence, book.sequence, book.timestamp))
+        logger.info('Current message at {} ({}). Got book at {} ({})'.format(
+            timestamp, sequence, book.sequence, book.timestamp)
+        )
         return book

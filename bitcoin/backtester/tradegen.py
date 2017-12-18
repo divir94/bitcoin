@@ -223,6 +223,22 @@ class TradeGen(object):
         # remove from open orders
         del self._open_orders[done_inst.order_id]
 
+    def cancel_all_orders(self, timestamp):
+        """
+        Cancel all open orders. Called when there is missing data and the book needs to be recreated.
+
+        Parameters
+        ----------
+        timestamp: datetime
+
+        Returns
+        -------
+        None
+        """
+        cancel_inst = [butil.DoneOrder(order_id=order['order_id'], time=timestamp, status='cancelled')
+                       for order in self._open_orders.values()]
+        self.handle_instructions(cancel_inst)
+
     @staticmethod
     def get_fill_instructions(open_orders, message, book):
         """
