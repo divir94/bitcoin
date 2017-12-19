@@ -218,7 +218,12 @@ class TradeGen(object):
         None
         """
         self._orders[done_inst.order_id]['end_time'] = done_inst.time
-        self._orders[done_inst.order_id]['status'] = done_inst.status
+
+        # fill status
+        order = self._orders[done_inst.order_id]
+        is_partial_fill = (done_inst.status == 'cancelled') & (order['size'] != order['remaining_size'])
+        status = 'partial fill' if is_partial_fill else done_inst.status
+        self._orders[done_inst.order_id]['status'] = status
 
         # remove from open orders
         del self._open_orders[done_inst.order_id]
