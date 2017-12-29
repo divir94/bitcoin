@@ -1,11 +1,16 @@
 import json
-import logging
 import time
+import yaml
+import pandas as pd
+from datetime import timedelta
 from threading import Thread
-from websocket import create_connection
+from websocket import create_connection, WebSocketConnectionClosedException
+
+import bitcoin.logs.logger as lc
+import bitcoin.util as util
 
 
-logger = logging.getLogger('core_websocket')
+logger = lc.config_logger('core_ws')
 
 
 class WebSocket(object):
@@ -13,18 +18,22 @@ class WebSocket(object):
     The core websocket connects and listens for messages. It is independent of any crypto specific stuff i.e.
     it does not maintain any order book information.
     """
-    def __init__(self, url, channel, heartbeat=True):
+    def __init__(self, url, products=None, channels=None):
         self.url = url
-        self.channel = channel
-        self.ws = None
+        self.channels = channels
+        self.products = products
 
-        self.ping_freq = 30
-        self.heartbeat = heartbeat
-        self.last_heartbeat = time.time()
-        self.heartbeat_tol = 2
-        self.check_freq = None
-        self.last_check = time.time()
+        self.ws = None
+        self.thread = None
         self.stop = False
+
+        self.ping_freq = timedelta(seconds=30)
+        self.store_freq = timedelta(seconds=60)
+        self.last_ping_time = pd.datetime.utcnow()
+        self.last_store_time = pd.datetime.utcnow()
+
+        self.store_path = '../data/trades.hdf5'
+        self.trades = pd.DataFrame()
         
     def start(self):
         """
@@ -33,92 +42,86 @@ class WebSocket(object):
         def _go():
             self._connect()
             self._listen()
+            self._disconnect()
 
-        _go()
+        self.stop = False
+        self.thread = Thread(target=_go)
+        self.thread.start()
 
     def _connect(self):
         """
         Create websocket object and send initial message.
         """
-        logger.info('Connecting to url: {} channel: {}'.format(self.url, self.channel))
-        self.ws = create_connection(self.url)
-        self.ws.send(json.dumps(self.channel))
+        params = dict(type='subscribe', product_ids=self.products, channels=self.channels)
 
-        # heatbeat
-        if self.heartbeat:
-            logger.info('Turning on heartbeat')
-            self.ws.send(json.dumps({'type': 'heartbeat', 'on': True}))
-            self.last_heartbeat = time.time()
+        self.ws = create_connection(self.url)
+        self.ws.send(json.dumps(params))
+
+        logger.info('Subscribed to {}'.format(params))
 
     def _listen(self):
         """
         Listen forever and call message handler. Also, send frequent pings and check for missing heartbeat.
         """
         logger.info('Listening for messages')
-        self.stop = False
 
         while not self.stop:
-            # ping every few seconds to keep connection alive
-            if int(time.time() % self.ping_freq) == 0:
-                self.ws.ping('keepalive')
-
-            # restart if we missed a heartbeat
-            if self.heartbeat and (time.time() - self.last_heartbeat) > self.heartbeat_tol:
-                logger.error('Missed a heartbeat!')
-                self.close()
-                self.start()
-                return
-
-            # check book
-            if self.check_freq and (time.time() - self.last_check) > self.check_freq:
-                Thread(target=self.check_book).start()
-                self.last_check = time.time()
-
-            # save heartbeat and handle message
-            msg = None
             try:
-                msg = self.ws.recv()
-                msg = json.loads(msg)
+                # ping
+                time_elapsed = util.time_elapsed(self.last_ping_time, self.ping_freq)
+                if time_elapsed:
+                    self.ws.ping('keepalive')
+                    self.last_ping_time = pd.datetime.utcnow()
+
+                # store
+                time_elapsed = util.time_elapsed(self.last_store_time, self.store_freq)
+                if time_elapsed:
+                    self.trades.to_hdf(self.store_path, 'trades', append=True)
+                    logger.info('Wrote {} records data to disk'.format(self.trades.shape[0]))
+                    self.trades = pd.DataFrame()
+                    self.last_store_time = pd.datetime.utcnow()
+
+                # parse data
+                data = self.ws.recv()
+                msg = yaml.safe_load(data)
+
+            except ValueError as e:
+                self.on_error(e)
             except Exception as e:
-                self.on_error(e, msg)
+                self.on_error(e)
             else:
-                if self.heartbeat and msg['type'] == 'heartbeat':
-                    logger.debug('Got heartbeat: {}'.format(msg))
-                else:
-                    self.on_message(msg)
-                self.last_heartbeat = time.time()
+                self.on_message(msg)
 
-    def on_message(self, msg):
-        raise NotImplementedError
-
-    def check_book(self):
-        pass
-
-    def on_error(self, error, msg):
-        logger.exception('Message error: {}\nMessage: {}'.format(error, msg))
-        self.close()
-        self.start()
+    def _disconnect(self):
+        try:
+            if self.ws:
+                self.ws.close()
+        except WebSocketConnectionClosedException as e:
+            logger.error(e)
+        logger.info('Disconnected websocket')
 
     def close(self):
-        """
-        Close the connection and turn off heartbeat.
-        """
-        logger.info('Closing websocket')
-        if self.stop:
-            logger.info('Socket already closed!')
-            return
-
-        # stop listening for new messages
+        logger.info('Closing websocket thread')
         self.stop = True
+        self.thread.join()
 
-        try:
-            # turn off heartbeat
-            if self.heartbeat:
-                self.ws.send(json.dumps({'type': 'heartbeat', 'on': False}))
-            # close the websocket
+    def on_message(self, msg):
+        if msg['type'] == 'ticker':
+            self.trades = self.trades.append(msg, ignore_index=True)
+
+    def on_error(self, e, data=None):
+        # self.stop = True
+        logger.error('{} - data: {}'.format(e, data))
+
+
+if __name__ == '__main__':
+    import bitcoin.params as pms
+
+    ws = WebSocket(url=pms.WS_URL['GDAX'], products=['BTC-USD'], channels=['ticker', 'heartbeat'])
+    ws.start()
+
+    try:
+        while True:
             time.sleep(1)
-            self.ws.close()
-            logger.info('Successfully closed Websocket')
-        except Exception as e:
-            logger.exception('Failed to close websocket:\n{}'.format(e))
-        time.sleep(1)
+    except KeyboardInterrupt:
+        ws.close()

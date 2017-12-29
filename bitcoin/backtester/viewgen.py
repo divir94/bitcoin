@@ -26,7 +26,7 @@ class ViewGen(object):
         self.strategy = strategy
         self._context = butil.Context()
 
-    def run(self, book):
+    def run(self, book=None, msg=None):
         """
         Generate the view by calling strategy's rebalance method and updates `self.result` with the view and
         other variables from the strategy.
@@ -34,6 +34,7 @@ class ViewGen(object):
         Parameters
         ----------
         book: GdaxOrderBook
+        msg: dict
 
         Returns
         -------
@@ -41,7 +42,7 @@ class ViewGen(object):
             size: +1, 0 or -1
             price: best price to pay
         """
-        view = self.strategy.rebalance(self._context, book)
+        view = self.strategy.rebalance(context=self._context, book=book, msg=msg)
         return view
 
     @property
@@ -57,8 +58,6 @@ class ViewGen(object):
             columns: [price, view, view_diff, returns, cum_return ...]
         """
         df = self._context.result
-        df['view_diff'] = df['view'].diff()
-        df = df[df['view_diff'].abs() > 0]
         # return
         df['fwd_price_change'] = df['price'].shift(-1) - df['price']
         df['returns'] = df['fwd_price_change'] * df['view']

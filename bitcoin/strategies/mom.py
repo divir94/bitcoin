@@ -22,8 +22,9 @@ class MomStrategy(object):
         self.time_delta = 5
         # deque is double sided queue of dict(time, vwap)
         self.past_vwaps = deque()
+        self.prev_view = None
 
-    def rebalance(self, context, book):
+    def rebalance(self, context, book, msg):
         """
         Record view and other variables in the context.
 
@@ -74,9 +75,15 @@ class MomStrategy(object):
 
         # record
         view = butil.View(size=view_size, price=price)
-        context.record(time=book.timestamp,
-                       view=view_size,
-                       price=price,
-                       past_price=last_vwap.price,
-                       past_price_change=past_price_change)
+        view_diff = view.size - self.prev_view.size if self.prev_view else None
+
+        if self.prev_view and abs(view_diff) > 0:
+            context.record(time=book.timestamp,
+                           view=view_size,
+                           view_diff=view_diff,
+                           price=price,
+                           past_price=last_vwap.price,
+                           past_price_change=past_price_change)
+
+        self.prev_view = view
         return view

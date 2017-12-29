@@ -73,7 +73,7 @@ class BackTester(object):
                 continue
 
             # run viewgen and tradegen
-            view = self.viewgen.run(book=book)
+            view = self.viewgen.run(book=book, msg=msg)
 
             if run_tradegen:
                 self.tradegen.run(view=view, message=msg, book=book)
