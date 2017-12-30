@@ -163,7 +163,7 @@ def get_messages(start=None, end=None, exchange=None, product=None):
     messages = sutil.xread_sql(sql)
 
     for msg in messages:
-        msg = util.parse_message(msg, exchange)
+        msg = util.parse_message(msg)
         yield msg
 
 

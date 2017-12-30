@@ -45,20 +45,19 @@ def time_to_str(timestamp):
     return time_str
 
 
-def parse_message(msg, exchange):
+def parse_message(msg):
     """
     Convert message to appropriate dtypes.
 
     Parameters
     ----------
     msg: dict
-    exchange: str
 
     Returns
     -------
     dict
     """
-    dtypes = pms.MSG_DTYPE[exchange]
+    dtypes = pms.MSG_DTYPE[pms.DEFAULT_EXCHANGE]
     result = {k: dtypes[k](v) for k, v in msg.iteritems() if v}
     return result
 
