@@ -29,8 +29,8 @@ class GdaxWebSocket(cws.WebSocket):
         self.gdax_client = gdax.PublicClient()
         self.product_id = product
         self.ignore_msgs = ['subscriptions', 'heartbeat']
-        self.last_heartbeat = datetime.utcnow()
-        self.heartbeat_freq = timedelta(seconds=30)
+        self.last_heartbeat = None
+        self.heartbeat_freq = timedelta(seconds=2)
 
         self.restart = True  # load the order book
         self.syncing = False  # sync in process i.e. loading order book or applying messages
@@ -99,12 +99,23 @@ class GdaxWebSocket(cws.WebSocket):
         logger.info('Book ready: {}'.format(book.sequence))
 
     def check_heartbeat(self, msg):
+        """
+        Restart websocket if heartbeat is missed.
+
+        Parameters
+        ----------
+        msg: dict
+        """
         missed_hb = util.time_elapsed(self.last_heartbeat, self.heartbeat_freq)
+        # restart websocket
         if missed_hb:
-            logger.error('Missed heartbeat!')
+            last_hb = (datetime.utcnow() - self.last_heartbeat).seconds if self.last_heartbeat else None
+            logger.error('Missed heartbeat! Last heartbeat {}s'.format(last_hb))
+            self.last_heartbeat = None
             self.close()
             self.start()
 
+        # reset time
         if msg['type'] == 'heartbeat':
             logger.info('Got heartbeat')
             self.last_heartbeat = datetime.utcnow()

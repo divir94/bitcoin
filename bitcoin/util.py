@@ -66,6 +66,8 @@ def time_elapsed(last_time, tdelta):
     """
     Has it been more than `tdelta` since `last_time` in UTC?
     """
+    if not last_time:
+        return False
     return (datetime.utcnow() - last_time).seconds >= tdelta.seconds
 
 

@@ -43,8 +43,15 @@ class WebSocket(object):
         params = dict(type='subscribe', product_ids=self.products, channels=self.channels)
         logger.info('Subscribing to {}'.format(params))
 
-        self.ws = create_connection(self.url)
-        self.ws.send(json.dumps(params))
+        connected = False
+
+        while not connected:
+            try:
+                self.ws = create_connection(self.url)
+                self.ws.send(json.dumps(params))
+                connected = True
+            except Exception as e:
+                logger.error('Failed to connect: {}'.format(e))
 
     def _listen(self):
         """
@@ -60,7 +67,7 @@ class WebSocket(object):
                     self.ws.ping('keepalive')
                     self.last_ping_time = pd.datetime.utcnow()
             except Exception as e:
-                logger.info('Failed to ping: {}'.format(e))
+                logger.error('Failed to ping: {}'.format(e))
 
             # parse data
             try:
