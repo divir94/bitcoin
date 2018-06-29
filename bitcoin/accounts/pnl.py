@@ -7,15 +7,6 @@ import bitcoin.gdax as gdax
 import bitcoin.bitstamp.client as bitstamp
 
 
-gdax_client = gdax.AuthenticatedClient(key="8e944b216e435691b071dd3f0f62caa9",
-                                       b64secret="uSysPzywwj3LUlPuuNkKEHRpxhd4A+K/JGwbEfrc28nkd4c6qMLwr1IbRsw1GB1BKQzVXoj88n/WjMvIAvv/MA==",
-                                       passphrase="ltg10b8unuo")
-
-bitstamp_client = bitstamp.Trading(username='752298',
-                                   key='nFydjyriZNMhuSCYRFobnsv68OeIH9jx',
-                                   secret='55Cpc6DD2Fm6tY4OJ7GIzmpG3t7NCLGi')
-
-
 def get_gdax_fills(limit=100):
     # get df
     fills = gdax_client.get_fills(limit=limit)
